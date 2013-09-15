@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<introContent>
+	<!-- Root page -->
+	<page id="root" style="html/style.css" style-id="page">
+		<link
+			url="http://org.eclipse.ui.intro/execute?decode=true&#38;command=org.eclipse.ui.newWizard(newWizardId%3Dde.unidue.ecg.dialogScript.ui.wizard.CustomDialogScriptNewProjectWizard)&#38;standby=true"
+			id="create-new-project">
+			<img src="icons/newProject.png" alt="Create a new default dialog script project" />
+			<text>Create a new default dialog script project</text>
+		</link>
+	</page>
+
+	<!-- Standby page -->
+	<page id="standby" style="html/style.css" style-id="page">
+		<title style-id="intro-header">Standby Page</title>
+	</page>
+
+	<!-- Tutorials page -->
+	<page id="tutorials" style="html/style.css" style-id="page">
+		<title style-id="intro-header">Tutorials</title>
+		<text>This page under construction</text>
+	</page>
+</introContent>

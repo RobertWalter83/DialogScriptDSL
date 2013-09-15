@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/de.unidue.ecg.dialogScript/src-gen" editDirectory="/de.unidue.ecg.dialogScript.edit/src"
+    editorDirectory="/de.unidue.ecg.dialogScript.editor/src" modelPluginID="de.unidue.ecg.dialogScript"
+    forceOverwrite="true" modelName="DialogScript" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    complianceLevel="5.0" copyrightFields="false" editPluginID="de.unidue.ecg.dialogScript.edit"
+    editorPluginID="de.unidue.ecg.dialogScript.editor" runtimeVersion="2.10">
+  <genPackages prefix="DialogScript" basePackage="de.unidue.ecg.dialogScript" disposableProviderFactory="true"
+      fileExtensions="dialog" ecorePackage="DialogScript.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="DialogScript.ecore#//Modifier">
+      <genEnumLiterals ecoreEnumLiteral="DialogScript.ecore#//Modifier/single"/>
+      <genEnumLiterals ecoreEnumLiteral="DialogScript.ecore#//Modifier/random"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="DialogScript.ecore#//SwitchValue">
+      <genEnumLiterals ecoreEnumLiteral="DialogScript.ecore#//SwitchValue/on"/>
+      <genEnumLiterals ecoreEnumLiteral="DialogScript.ecore#//SwitchValue/off"/>
+    </genEnums>
+    <genClasses ecoreClass="DialogScript.ecore#//Script">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DialogScript.ecore#//Script/charactersDefinition"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DialogScript.ecore#//Script/switchesDefinition"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DialogScript.ecore#//Script/conditionsDefinition"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DialogScript.ecore#//Script/scenes"/>
+    </genClasses>
+    <genClasses ecoreClass="DialogScript.ecore#//CharactersDefintion">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DialogScript.ecore#//CharactersDefintion/characters"/>
+    </genClasses>
+    <genClasses ecoreClass="DialogScript.ecore#//CharacterDefinition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DialogScript.ecore#//CharacterDefinition/name"/>
+    </genClasses>
+    <genClasses ecoreClass="DialogScript.ecore#//SwitchesDefinition">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DialogScript.ecore#//SwitchesDefinition/switches"/>
+    </genClasses>
+    <genClasses ecoreClass="DialogScript.ecore#//SwitchDefinition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DialogScript.ecore#//SwitchDefinition/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DialogScript.ecore#//SwitchDefinition/value"/>
+    </genClasses>
+    <genClasses ecoreClass="DialogScript.ecore#//ConditionsDefinition">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DialogScript.ecore#//ConditionsDefinition/conditions"/>
+    </genClasses>
+    <genClasses ecoreClass="DialogScript.ecore#//ConditionDefinition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DialogScript.ecore#//ConditionDefinition/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DialogScript.ecore#//ConditionDefinition/switchList"/>
+    </genClasses>
+    <genClasses ecoreClass="DialogScript.ecore#//Scene">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DialogScript.ecore#//Scene/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DialogScript.ecore#//Scene/dialog"/>
+    </genClasses>
+    <genClasses ecoreClass="DialogScript.ecore#//Dialog">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DialogScript.ecore#//Dialog/defaults"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DialogScript.ecore#//Dialog/firstTime"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DialogScript.ecore#//Dialog/recursives"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DialogScript.ecore#//Dialog/partingLines"/>
+    </genClasses>
+    <genClasses ecoreClass="DialogScript.ecore#//Recursive"/>
+    <genClasses ecoreClass="DialogScript.ecore#//Defaults">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DialogScript.ecore#//Defaults/comment"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DialogScript.ecore#//Defaults/body"/>
+    </genClasses>
+    <genClasses ecoreClass="DialogScript.ecore#//FirstTime">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DialogScript.ecore#//FirstTime/comment"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DialogScript.ecore#//FirstTime/body"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DialogScript.ecore#//FirstTime/otherTimes"/>
+    </genClasses>
+    <genClasses ecoreClass="DialogScript.ecore#//OtherTimes">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DialogScript.ecore#//OtherTimes/comment"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DialogScript.ecore#//OtherTimes/body"/>
+    </genClasses>
+    <genClasses ecoreClass="DialogScript.ecore#//PartingLines">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DialogScript.ecore#//PartingLines/comment"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DialogScript.ecore#//PartingLines/body"/>
+    </genClasses>
+    <genClasses ecoreClass="DialogScript.ecore#//Hub">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DialogScript.ecore#//Hub/isHidden"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DialogScript.ecore#//Hub/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DialogScript.ecore#//Hub/hubComment"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DialogScript.ecore#//Hub/choiceDialogs"/>
+    </genClasses>
+    <genClasses ecoreClass="DialogScript.ecore#//AbstractChoiceDialog">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DialogScript.ecore#//AbstractChoiceDialog/modifiers"/>
+    </genClasses>
+    <genClasses ecoreClass="DialogScript.ecore#//ConditionalChoiceDialog">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DialogScript.ecore#//ConditionalChoiceDialog/conditionList"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DialogScript.ecore#//ConditionalChoiceDialog/comment"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DialogScript.ecore#//ConditionalChoiceDialog/choiceDialogs"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DialogScript.ecore#//ConditionalChoiceDialog/otherwiseChoices"/>
+    </genClasses>
+    <genClasses ecoreClass="DialogScript.ecore#//OtherwiseChoice">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DialogScript.ecore#//OtherwiseChoice/modifiers"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DialogScript.ecore#//OtherwiseChoice/conditionList"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DialogScript.ecore#//OtherwiseChoice/comment"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DialogScript.ecore#//OtherwiseChoice/choices"/>
+    </genClasses>
+    <genClasses ecoreClass="DialogScript.ecore#//ChoiceDialog">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DialogScript.ecore#//ChoiceDialog/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DialogScript.ecore#//ChoiceDialog/choiceComment"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DialogScript.ecore#//ChoiceDialog/body"/>
+    </genClasses>
+    <genClasses ecoreClass="DialogScript.ecore#//ConditionList">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DialogScript.ecore#//ConditionList/conditions"/>
+    </genClasses>
+    <genClasses ecoreClass="DialogScript.ecore#//Jump"/>
+    <genClasses ecoreClass="DialogScript.ecore#//InvokeHub">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DialogScript.ecore#//InvokeHub/hub"/>
+    </genClasses>
+    <genClasses ecoreClass="DialogScript.ecore#//InvokeScene">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DialogScript.ecore#//InvokeScene/scene"/>
+    </genClasses>
+    <genClasses ecoreClass="DialogScript.ecore#//Exit">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DialogScript.ecore#//Exit/exitHub"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DialogScript.ecore#//Exit/exitScene"/>
+    </genClasses>
+    <genClasses ecoreClass="DialogScript.ecore#//Conditional">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DialogScript.ecore#//Conditional/conditionList"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DialogScript.ecore#//Conditional/comment"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DialogScript.ecore#//Conditional/body"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DialogScript.ecore#//Conditional/otherwiseList"/>
+    </genClasses>
+    <genClasses ecoreClass="DialogScript.ecore#//SwitchList">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DialogScript.ecore#//SwitchList/switches"/>
+    </genClasses>
+    <genClasses ecoreClass="DialogScript.ecore#//Switch">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DialogScript.ecore#//Switch/switch"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DialogScript.ecore#//Switch/value"/>
+    </genClasses>
+    <genClasses ecoreClass="DialogScript.ecore#//ConditionalBody">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DialogScript.ecore#//ConditionalBody/statements"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DialogScript.ecore#//ConditionalBody/switchOn"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DialogScript.ecore#//ConditionalBody/switchOff"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DialogScript.ecore#//ConditionalBody/jump"/>
+    </genClasses>
+    <genClasses ecoreClass="DialogScript.ecore#//Statement"/>
+    <genClasses ecoreClass="DialogScript.ecore#//Otherwise">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DialogScript.ecore#//Otherwise/modifiers"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DialogScript.ecore#//Otherwise/conditionList"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DialogScript.ecore#//Otherwise/comment"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DialogScript.ecore#//Otherwise/body"/>
+    </genClasses>
+    <genClasses ecoreClass="DialogScript.ecore#//SwitchOff">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DialogScript.ecore#//SwitchOff/sets"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DialogScript.ecore#//SwitchOff/comment"/>
+    </genClasses>
+    <genClasses ecoreClass="DialogScript.ecore#//SwitchOn">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DialogScript.ecore#//SwitchOn/sets"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DialogScript.ecore#//SwitchOn/comment"/>
+    </genClasses>
+    <genClasses ecoreClass="DialogScript.ecore#//DialogLine">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DialogScript.ecore#//DialogLine/character"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DialogScript.ecore#//DialogLine/lines"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DialogScript.ecore#//DialogLine/comment"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

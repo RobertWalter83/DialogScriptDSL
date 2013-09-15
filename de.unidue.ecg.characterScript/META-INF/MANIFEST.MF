@@ -1,0 +1,37 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: de.unidue.ecg.characterScript
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: de.unidue.ecg.characterScript; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.xtext;visibility:=reexport,
+ org.eclipse.xtext.xbase;resolution:=optional;visibility:=reexport,
+ org.eclipse.xtext.generator;resolution:=optional,
+ org.apache.commons.logging;bundle-version="1.0.4";resolution:=optional,
+ org.eclipse.emf.codegen.ecore;resolution:=optional,
+ org.eclipse.emf.mwe.utils;resolution:=optional,
+ org.eclipse.emf.mwe2.launch;resolution:=optional,
+ org.eclipse.xtext.util,
+ org.eclipse.emf.ecore,
+ org.eclipse.emf.common,
+ org.antlr.runtime,
+ org.eclipse.xtext.common.types,
+ de.unidue.ecg.common;bundle-version="1.0.0"
+Import-Package: org.apache.log4j,
+ org.eclipse.xtext.xbase.lib
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Export-Package: de.unidue.ecg.characterScript,
+ de.unidue.ecg.characterScript.services,
+ de.unidue.ecg.characterScript.characterScript,
+ de.unidue.ecg.characterScript.characterScript.impl,
+ de.unidue.ecg.characterScript.characterScript.util,
+ de.unidue.ecg.characterScript.serializer,
+ de.unidue.ecg.characterScript.parser.antlr,
+ de.unidue.ecg.characterScript.parser.antlr.internal,
+ de.unidue.ecg.characterScript.validation,
+ de.unidue.ecg.characterScript.generator,
+ de.unidue.ecg.characterScript.formatting,
+ de.unidue.ecg.characterScript.scoping,
+ de.unidue.ecg.characterScript.util
+

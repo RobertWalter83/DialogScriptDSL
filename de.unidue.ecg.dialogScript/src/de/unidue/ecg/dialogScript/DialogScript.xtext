@@ -1,0 +1,165 @@
+grammar de.unidue.ecg.dialogScript.DialogScript with org.eclipse.xtext.common.Terminals
+
+generate dialogScript "http://www.unidue.de/ecg/dialogScript/DialogScript"
+import "http://www.unidue.de/ecg/characterScript/CharacterScript" as chara
+
+Script:
+	{Script}
+	charactersDefinition=CharactersDefintion?
+	switchesDefinition=SwitchesDefinition?
+	conditionsDefinition=ConditionsDefinition?
+	scenes+=Scene*;
+
+CharactersDefintion:
+	'characters' ':' characters+=CharacterDefinition (',' characters+=CharacterDefinition)*;
+
+CharacterDefinition:
+	name=ID;
+
+SwitchesDefinition:
+	'switches' ':' switches+=SwitchDefinition (',' switches+=SwitchDefinition)*;
+
+SwitchDefinition:
+	name=ID ('is' value=SwitchValue)?;
+
+ConditionsDefinition:
+	'conditions'
+	conditions+=ConditionDefinition (conditions+=ConditionDefinition)*
+	'end';
+
+ConditionDefinition:
+	name=ID 'when' switchList=SwitchList;
+
+Scene:
+	{Scene}
+	'scene' name=StringID
+	dialog=Dialog
+	'end' 'scene';
+
+Dialog:
+	{Dialog}
+	defaults=Defaults?
+	firstTime=FirstTime?
+	recursives+=Recursive*
+	partingLines=PartingLines?;
+
+Recursive:
+	Conditional | Hub | DialogLine;
+
+Defaults:
+	{Defaults}
+	'defaults' comment=COMMENT?
+	body=ConditionalBody
+	'end';
+
+FirstTime:
+	{FirstTime}
+	'first' 'time' comment=COMMENT?
+	body=ConditionalBody
+	otherTimes=OtherTimes?
+	'end';
+
+OtherTimes:
+	{OtherTimes}
+	'else' comment=COMMENT?
+	body=ConditionalBody;
+
+PartingLines:
+	{PartingLines}
+	'parting' comment=COMMENT?
+	body=ConditionalBody
+	'end';
+
+Hub:
+	(isHidden?='hidden')? 'hub' name=StringID hubComment=COMMENT?
+	choiceDialogs+=AbstractChoiceDialog*
+	'end';
+
+AbstractChoiceDialog:
+	ChoiceDialog | ConditionalChoiceDialog | Conditional;
+
+ConditionalChoiceDialog:
+	modifiers+=Modifier* 'choices' 'if' '(' conditionList=ConditionList ')' comment=COMMENT?
+	choiceDialogs+=ChoiceDialog+
+	otherwiseChoices+=OtherwiseChoice*
+	'end';
+
+OtherwiseChoice:
+	modifiers+=Modifier* 'choices' 'else' (=> 'if' '(' conditionList=ConditionList ')')? comment=COMMENT?
+	choices+=ChoiceDialog+;
+
+StringID:
+	STRING;
+
+ChoiceDialog:
+	{ChoiceDialog}
+	modifiers+=Modifier* 'choice' name=StringID choiceComment=COMMENT?
+	body=ConditionalBody
+	'end';
+
+enum Modifier:
+	single | random;
+
+ConditionList:
+	conditions+=[ConditionDefinition] ('or' conditions+=[ConditionDefinition])*;
+
+Jump:
+	Exit | InvokeHub | InvokeScene;
+
+InvokeHub:
+	'enter' 'hub' hub=[Hub|StringID];
+
+InvokeScene:
+	'enter' 'scene' scene=[Scene|StringID];
+
+Exit:
+	{Exit}
+	'exit' (exitHub?='hub' | exitScene?='scene');
+
+Conditional:
+	modifiers+=Modifier* 'if' '(' conditionList=ConditionList ')' comment=COMMENT?
+	body=ConditionalBody
+	otherwiseList+=Otherwise*
+	'end';
+
+SwitchList:
+	switches+=Switch ('and' switches+=Switch)*;
+
+Switch:
+	switch=[SwitchDefinition] 'is' value=SwitchValue;
+
+enum SwitchValue:
+	on | off;
+
+ConditionalBody:
+	{ConditionalBody}
+	statements+=Statement*
+	switchOn=SwitchOn?
+	switchOff=SwitchOff?
+	jump=Jump?;
+
+Statement:
+	DialogLine | Conditional;
+
+Otherwise:
+	modifiers+=Modifier* 'else' (=> 'if' '(' conditionList=ConditionList ')')? comment=COMMENT?
+	body=ConditionalBody;
+
+SwitchOff:
+	'switch' 'off' sets+=[SwitchDefinition] (',' sets+=[SwitchDefinition])* comment=COMMENT?;
+
+SwitchOn:
+	'switch' 'on' sets+=[SwitchDefinition] (',' sets+=[SwitchDefinition])* comment=COMMENT?;
+
+DialogLine:
+	//character=[chara::Character] ':' lines=StringID comment=COMMENT?;
+	character=[CharacterDefinition] ':' lines=StringID comment=COMMENT?;
+
+terminal COMMENT:
+	'['->']';
+
+terminal STRING:
+	'"' ('\\' ('b' | 't' | 'n' | 'f' | 'r' | 'u' | '"' | "'" | '\\' | '{') | WILDCARD | !('\\' | '"' | '{'))* '"';
+
+terminal fragment WILDCARD:
+	'{' ('a'..'z' | 'A'..'Z' | '_') ('a'..'z' | 'A'..'Z' | '_' | '0'..'9')* '}';

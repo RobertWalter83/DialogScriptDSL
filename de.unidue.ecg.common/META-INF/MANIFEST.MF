@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: de.unidue.ecg.common
+Bundle-SymbolicName: de.unidue.ecg.common
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: de.unidue.ecg.common.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.xtext.xbase.lib;bundle-version="2.4.3",
+ org.eclipse.xtext;bundle-version="2.4.3"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-ActivationPolicy: lazy
+Export-Package: de.unidue.ecg.common.linking

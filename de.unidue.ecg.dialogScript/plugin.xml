@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<plugin>
+
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <package 
+       uri = "http://www.unidue.de/ecg/dialogScript/DialogScript" 
+       class = "de.unidue.ecg.dialogScript.dialogScript.DialogScriptPackage"
+       genModel = "de/unidue/ecg/dialogScript/DialogScript.genmodel" /> 
+	
+  </extension>
+  <extension
+        id="dialogScriptDSL"
+        point="org.eclipse.core.runtime.products">
+     <product
+           application="org.eclipse.e4.ui.workbench.swt.E4Application"
+           name="DialogScriptDSL">
+        <property
+              name="appName"
+              value="DialogScriptDSL">
+        </property>
+     </product>
+  </extension>
+
+
+
+</plugin>

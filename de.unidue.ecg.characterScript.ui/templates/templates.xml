@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<templates>
+	<template autoinsert="true"
+		context="de.unidue.ecg.characterScript.CharacterScript.Import"
+		deleted="false" description="insert import statement"
+		enabled="true" id="ImportStatementTemplate" name="template: import statement">import ${templateName}
+</template>
+	<template autoinsert="true"
+		context="de.unidue.ecg.characterScript.CharacterScript.Customs"
+		deleted="false" description="insert custom attributes section"
+		enabled="true" id="CustomsTemplate" name="template: custom attributes">custom attributes 
+	${attributeName} as ${attributeType}
+	${cursor}
+end
+</template>
+<template autoinsert="true"
+		context="de.unidue.ecg.characterScript.CharacterScript.Template"
+		deleted="false" description="insert character template"
+		enabled="true" id="TemplateTemplate" name="template: character template">template ${templateName}
+	${cursor}
+end	
+</template>
+<template autoinsert="true"
+		context="de.unidue.ecg.characterScript.CharacterScript.CustomAttribute"
+		deleted="false" description="insert custom attribute"
+		enabled="true" id="CustomAttributeTemplate" name="template: custom attribute">${attributeName} as ${attributeType}
+	${cursor}
+end	
+</template>
+<template autoinsert="true"
+		context="de.unidue.ecg.characterScript.CharacterScript.Character"
+		deleted="false" description="insert empty character"
+		enabled="true" id="EmptyCharacterTemplate" name="template: empty character">character ${characterName} 
+	${cursor}
+end	
+</template>
+</templates>

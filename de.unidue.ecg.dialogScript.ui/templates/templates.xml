@@ -1,0 +1,872 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<templates>
+	<template autoinsert="true"
+		context="de.unidue.ecg.dialogScript.DialogScript.CharactersDefintion"
+		deleted="false" description="insert characters definition template"
+		enabled="true" id="CharactersDefinitionTemplate" name="template: characters definition">characters: ${character1}, ${character2}
+</template>
+	<template autoinsert="true"
+		context="de.unidue.ecg.dialogScript.DialogScript.SwitchesDefinition"
+		deleted="false" description="insert switches definition template"
+		enabled="true" id="SwitchesDefinitionTemplate" name="template: switches definition">switches: ${switch1}, ${switch2}
+</template>
+	<template autoinsert="true"
+		context="de.unidue.ecg.dialogScript.DialogScript.SwitchDefinition"
+		deleted="false" description="insert activated switch"
+		enabled="true" id="ActiveSwitch" name="template: active switch">${switch1} is on</template>
+	<template autoinsert="true"
+		context="de.unidue.ecg.dialogScript.DialogScript.SwitchDefinition"
+		deleted="false" description="insert deactivated switch"
+		enabled="true" id="InActiveSwitch" name="template: inactive switch">${switch1} is off</template>
+	<template autoinsert="true"
+		context="de.unidue.ecg.dialogScript.DialogScript.ConditionsDefinition"
+		deleted="false" description="insert conditions definition template"
+		enabled="true" id="ConditionsDefinitionTemplate" name="template: conditions definition">conditions 
+	${Condition} when ${switch1:CrossReference('Switch.switch')} is ${value1:Enum('SwitchValue')} and ${switch2:CrossReference('Switch.switch')} is ${value2:Enum('SwitchValue')}
+	${cursor}
+end
+	</template>
+	<template autoinsert="true"
+		context="de.unidue.ecg.dialogScript.DialogScript.Switch"
+		deleted="false" description="insert switch list element"
+		enabled="true" id="ConditionsDefinitionTemplate" name="template: switch list element">${switch1} is ${off:Enum('SwitchValue')} 
+</template>
+	<template autoinsert="true"
+		context="de.unidue.ecg.dialogScript.DialogScript.ConditionDefinition"
+		deleted="false" description="insert condition definition template"
+		enabled="true" id="ConditionDefinitionTemplate" name="template: condition">${Condition} when ${switch1:CrossReference('Switch.switch')} is ${off:Enum('SwitchValue')} 
+</template>
+	<template autoinsert="true"
+		context="de.unidue.ecg.dialogScript.DialogScript.Defaults"
+		deleted="false" description="insert 'default' dialog lines"
+		enabled="true" id="DefaultDialogLines" name="template: 'default'-dialog">defaults 
+	${character:CrossReference('DialogLine.character')}: "${DialogLine}"
+	${cursor}
+end	
+	</template>
+	<template autoinsert="true"
+		context="de.unidue.ecg.dialogScript.DialogScript.FirstTime"
+		deleted="false" description="insert 'first time only' dialog lines"
+		enabled="true" id="FirstTimeDialogLines" name="template: 'first time only'-dialog">first time 
+	${character:CrossReference('DialogLine.character')}: "${DialogLine}"
+	${cursor}
+end	
+	</template>
+	<template autoinsert="true"
+		context="de.unidue.ecg.dialogScript.DialogScript.OtherTimes"
+		deleted="false" description="insert default dialog lines for when no condition is met"
+		enabled="true" id="OtherTimesDialogLines" name="template: 'other times' dialog">else 
+	${character:CrossReference('DialogLine.character')}: "${DialogLine}"
+	${cursor}
+	</template>
+	<template autoinsert="true"
+		context="de.unidue.ecg.dialogScript.DialogScript.Conditional"
+		deleted="false" description="insert conditional dialog lines"
+		enabled="true" id="SimpleConditionalStatement" name="template: conditional dialog lines">if (${condition:CrossReference('ConditionList.conditions')}) 
+	${character:CrossReference('DialogLine.character')}: "${DialogLine}"
+	${cursor}
+end
+	</template>
+	<template autoinsert="true"
+		context="de.unidue.ecg.dialogScript.DialogScript.Otherwise"
+		deleted="false" description="insert alternative condition"
+		enabled="true" id="InsertAlternativeCondition" name="template: alternative dialog lines">else if (${condition:CrossReference('ConditionList.conditions')}) 
+	${character:CrossReference('DialogLine.character')}: "${DialogLine}"
+	${cursor}
+	</template>
+	<template autoinsert="true"
+		context="de.unidue.ecg.dialogScript.DialogScript.Otherwise"
+		deleted="false" description="insert alternative condition"
+		enabled="true" id="InsertDefaultBehavior" name="template: default conditional dialog lines">else 
+	${character:CrossReference('DialogLine.character')}: "${DialogLine}"
+	${cursor}
+	</template>
+	<template autoinsert="true"
+		context="de.unidue.ecg.dialogScript.DialogScript.Hub"
+		deleted="false" description="insert a hub"
+		enabled="true" id="Hub" name="template: hub">hub "${HubName}" 
+	${cursor}
+end
+	</template>
+	<template autoinsert="true"
+		context="de.unidue.ecg.dialogScript.DialogScript.ConditionalChoiceDialog"
+		deleted="false" description="insert conditional choices"
+		enabled="true" id="ConditionalChoiceDialog" name="template: conditional choices">choices if (${condition:CrossReference('ConditionList.conditions')}) 
+	${cursor}
+end
+	</template>
+	<template autoinsert="true"
+		context="de.unidue.ecg.dialogScript.DialogScript.OtherwiseChoice"
+		deleted="false" description="insert alternative choices"
+		enabled="true" id="OtherwiseChoices" name="template: alternative choices">choices else if (${condition:CrossReference('ConditionList.conditions')}) 
+	${cursor}
+	</template>
+	<template autoinsert="true"
+		context="de.unidue.ecg.dialogScript.DialogScript.OtherwiseChoice"
+		deleted="false" description="insert alternative choices"
+		enabled="true" id="DefaultChoices" name="template: default choices">choices else
+	${cursor}
+	</template>
+	<template autoinsert="true"
+		context="de.unidue.ecg.dialogScript.DialogScript.ChoiceDialog"
+		deleted="false" description="insert alternative condition"
+		enabled="true" id="ChoiceDialog" name="template: choice dialog">choice "${ChoiceName}"
+	${character:CrossReference('DialogLine.character')}: "${DialogLine}"
+	${cursor}
+end
+	</template>
+	<template autoinsert="true"
+		context="de.unidue.ecg.dialogScript.DialogScript.InvokeScene"
+		deleted="false" description="insert scene invocation"
+		enabled="true" id="InvokeScene" name="template: invoke scene">enter scene "${scene:CrossReference('InvokeScene.scene')}"
+	</template>
+	<template autoinsert="true"
+		context="de.unidue.ecg.dialogScript.DialogScript.InvokeHub"
+		deleted="false" description="insert hub invocation"
+		enabled="true" id="InvokeHub" name="template: invoke hub">enter hub "${hub:CrossReference('InvokeHub.hub')}"
+	</template>
+	<template autoinsert="true"
+		context="de.unidue.ecg.dialogScript.DialogScript.Exit"
+		deleted="false" description="insert scene exit"
+		enabled="true" id="ExitScence" name="template: exit scene">exit scene
+	</template>
+	<template autoinsert="true"
+		context="de.unidue.ecg.dialogScript.DialogScript.Exit"
+		deleted="false" description="insert hub exit"
+		enabled="true" id="ExitHub" name="template: exit hub">exit hub
+	</template>
+	<template autoinsert="true"
+		context="de.unidue.ecg.dialogScript.DialogScript.PartingLines"
+		deleted="false" description="insert final dialog lines (for when all information has been received)"
+		enabled="true" id="FinalDialogLines" name="template: final dialog">parting 
+	${character:CrossReference('DialogLine.character')}: "${DialogLine}"
+	${cursor}
+end
+	</template>
+	<template autoinsert="true"
+		context="de.unidue.ecg.dialogScript.DialogScript.COMMENT"
+		deleted="false" description="insert comment"
+		enabled="true" id="InsertComment" name="template: comment">[${CommentGoesHere}]
+	</template>
+	<template autoinsert="true"
+		context="de.unidue.ecg.dialogScript.DialogScript.SwitchOn"
+		deleted="false" description="set condition"
+		enabled="true" id="SwitchOn" name="template: switch on">switch on ${switch1:CrossReference('SwitchOn.sets')} 
+	</template>
+	<template autoinsert="true"
+		context="de.unidue.ecg.dialogScript.DialogScript.SwitchOff"
+		deleted="false" description="set condition"
+		enabled="true" id="SwitchOff" name="template: switch off">switch off ${switch1:CrossReference('SwitchOff.sets')}
+	</template>
+	<template autoinsert="true"
+		context="de.unidue.ecg.dialogScript.DialogScript.Scene"
+		deleted="false" description="insert scene template"
+		enabled="true" id="SceneTemplate" name="template: scene">scene "${SceneName}"
+	${cursor}
+end scene</template>
+	<template autoinsert="true"
+		context="de.unidue.ecg.dialogScript.DialogScript.DialogLine"
+		deleted="false" description="insert dialog line template" enabled="true"
+		id="DialogLineTemplate" name="template: dialog line">${character:CrossReference('DialogLine.character')}: "${DialogLine}"
+${cursor}
+	</template>
+	<template autoinsert="true"
+		context="de.unidue.ecg.dialogScript.DialogScript.CharactersDefintion"
+		deleted="false" description="insert complete sample scene" enabled="true"
+		id="CompleteSceneExample" name="example script: complete scene">characters: Scout, Skull
+switches: talked_Skull is off, name, blinky_Nigel, skull_Nigel, pole,
+skull_Rock, skull_Moved
+
+conditions
+	HasTalkedSkull when talked_Skull is off
+	HasTalkedPole when pole is off
+	HasTalkedSkullRock when skull_Rock is off
+	HasNotTalkedJake when name is off
+	KnowsNameIsNigel when blinky_Nigel is on and skull_Nigel is off
+	IsSkullMoved when skull_Moved is on
+end
+
+scene "Larger Scene Sample"
+
+	defaults
+		Skull: "Hey!"
+	end
+
+	first time
+		Skull: "What are you doing here?"
+		Scout: "Huh!?"
+	else
+		Skull: "You again."
+
+		if (HasNotTalkedJake)
+			Scout: "Hi Jake!"
+		else if (KnowsNameIsNigel)
+			Scout: "Nigel, how's it hangin'?"
+		end
+	end
+
+	hub "Main Hub"
+
+		single choice "Talking Skull"
+			Scout: "I never expected you to talk."
+			Skull: "Why not? You seem to be doing remarkably well for a pussy-cat."
+			Scout: "But you're just a skull."
+			Skull: "So, you've got something against skulls have you?"
+			Scout: "No, I..."
+			Skull: "It's always the same - prejudice just follows me around."
+			Scout: "Really?"
+			Skull: "Well, not that I actually go anywhere..."
+			Skull: "I blame Ray Harryhausen for stereotyping the whole subject of skeletons."
+			switch on talked_Skull
+		end
+
+		choices if (HasNotTalkedJake or KnowsNameIsNigel)
+
+			choice "Name"
+
+				if (HasNotTalkedJake)
+					Scout: "What's your name?"
+					Skull: "I'm not in the habit of giving my name out to just anyone, you know."
+					Scout: "It's something embarrassing, isn't it?"
+					Skull: "Not at all! It's, er... Cutthroat Jake! Yes."
+					Scout: "You just made that up."
+					Skull: "No I didn’t!"
+					Skull: "You can call me Jake if you like."
+					switch on name
+				else if (KnowsNameIsNigel)
+					Scout: "That mouse over there..."
+					Skull: "I hate that mouse.  Do you have any idea what he did to me?"
+					Scout: "I..."
+					Skull: "He had the audacity to build a nest in my eye socket."
+					Skull: "I was only able to drive him out by whistling for six hours straight."
+					Skull: "Do you realise how difficult that is when you don’t have any lips...?"
+					Scout: "The mouse told me your real name is Nigel."
+					Skull: "Well..."
+					Scout: "What sort of a name is Nigel for a skull?"
+					Skull: "I know, I know..."
+					switch on skull_Nigel
+				end
+			end
+		end
+
+		single choice "Pole"
+
+			if (IsSkullMoved)
+				Scout: "Why were you stuck on that pole?"
+				Skull: "I was placed there as a warning to intruders."
+			else
+				Scout: "Why are you stuck on that pole?"
+				Skull: "I've been placed here as a warning to intruders."
+			end
+			Scout: "Intruders?"
+			Skull: "People like yourself, who come here looking for the treasure hidden in Skull Rock."
+			Skull: "Oops!  Forget I ever said that."
+			Scout: "Not very good at your job are you?"
+			Skull: "You call this a job? It’s certainly not one I would have chosen myself, if I’d had any say in the matter."
+			Skull: "It's not as if I can just walk away and get another job."
+			Skull: "When a skull doesn't even have the rest of his skeleton with him, career options are severely limited."
+			Scout: "Talk a lot, don't you?"
+			Skull: "It's the sheer and utter boredom – I haven't had a decent conversation in forty three years."
+			Skull: "Listen, you won't tell anyone that I mentioned the treasure, will you?"
+			switch on pole
+		end
+
+		single choice "Skull Rock"
+			Scout: "What can you tell me about Skull Rock?"
+			Skull: "Not very much, I'm afraid.  I’ve never even seen it."
+			Scout: "Why, because you don’t have any eyes?"
+			Skull: "No, I can see you just fine."
+			Scout: "Weird, that..."
+			Skull: "Ever since I was placed here I’ve been facing in the same direction."
+			Skull: "And the local monkeys are really awful – telling me how beautiful the view is and how wonderful the sun looks as it sets over the sea."
+			Scout: "Now, don’t get upset."
+			Skull: "I’d weep if I had any tear ducts..."
+			switch on skull_Rock
+		end
+
+		choice "Exit"
+			Scout: "I’ll be seeing you."
+			Skull: "Okay, bye.  Don't forget to come back soon."
+			exit scene
+		end
+	end
+
+end scene
+	</template>
+	<template autoinsert="true"
+		context="de.unidue.ecg.dialogScript.DialogScript.CharactersDefintion"
+		deleted="false" description="insert Heavy Rain sample" enabled="true"
+		id="HeavyRainSceneSample" name="example script: Heavy Rain">characters: LAUREN, SCOTT
+switches: convince, compassionate, persist, trick, buy, disappearance, johnny, johnnysHome, 
+		  suspect, inRoomCenter is on, offerCigarette, police, johnnysFather, leads
+
+conditions
+	UnlockPhase2A 		   when convince      is on and compassionate  is on
+	UnlockPhase2B 		   when convince      is on and persist        is on
+	UnlockPhase2C 		   when compassionate is on and persist        is on
+	TriedToBuy    		   when buy           is on
+	HasTalkedDisappearance when disappearance is on
+	HasTalkedJohnny        when johnny        is on
+	HasTalkedJohnnysHome   when johnnysHome   is on
+	HasTalkedSuspect       when suspect       is on
+	HasntOfferedCigarette  when inRoomCenter  is on and offerCigarette is off
+	TimesUpA			   when police 		  is on and johnnysFather  is on
+	TimesUpB			   when police 		  is on and leads 		   is on
+	TimesUpC			   when leads 		  is on and johnnysFather  is on
+	TimesUpD			   when leads		  is on and johnnysFather  is on and police is on
+end	
+
+scene "LAUREN’S MOTEL ROOM. EVENING" 
+
+	first time
+		SCOTT: "My name is Scott Shelby. I’m a private detective. 
+				The families of the victims of the Origami Killer 
+				asked me to investigate the murders. I came here 
+				just to ask you some questions about Johnny."
+		LAUREN: "I already told the police all I know and have nothing 
+				to add. Leave me alone."
+	end
+		
+	if (TriedToBuy) 
+		LAUREN: "Leave me alone."
+		exit scene 
+	end 
+
+	hub "Phase 1"
+	
+		single choice "Convince" 
+			SCOTT: "The killer is walking around free as we speak. 
+					He’ll kill again if he’s not arrested."
+			LAUREN: "My Johnny’s dead, so what difference does it make?" 
+			switch on convince
+		end
+		
+		single choice "Compassionate"
+			SCOTT: "I understand, Lauren. I know what you’re going through."
+			LAUREN: "Oh, yeah? You know what it feels like to find your own 
+					son’s body on a wasteland? I’m sorry, I don’t believe you 
+					have the slightest idea what I’m going through, Mr. Shelby."
+			switch on compassionate
+		end
+		
+		single choice "Persist"
+			SCOTT: "There’ll be other victims if we don’t stop the killer. 
+					You have got to help me, Lauren. You may know something 
+					that can aid the investigation."
+			LAUREN: "Help you? There’s nothing you can do! My son is dead! 
+					Do you hear me? He’s dead!"
+			switch on persist
+		end		
+	
+		choices if (UnlockPhase2A or UnlockPhase2B or UnlockPhase2C)
+			choice "Trick" 
+				SCOTT: "If we don’t find the killer, there’ll be other mothers 
+						who find their son’s body on a deserted wasteland. 
+						But you’re right! Why should you care? It’s not your problem 
+						anymore, right?" 
+				[Long pause, Lauren will sit down on the bed before she continues]
+				LAUREN: "What do you want to know?"
+				switch on trick 
+				enter hub "Phase 2"	
+			end
+			
+			choice "Buy" 
+				SCOTT: "I bought ten minutes of your time, didn’t I? All I ask is 
+						that you use that time to answer some questions"
+				LAUREN: "You want to pay me to tell you about my son, is that it? 
+						 You can buy my body, Mr. Shelby, but my son is not for sale! 
+						 Get out of here! GET THE FUCK OUT!"
+				switch on buy
+				exit scene	
+			end
+		end
+	end
+		 
+	hub "Phase 2" 
+		random if (TimesUpA or TimesUpB or TimesUpC)  
+			LAUREN: "Time's up Mr. Shelby. I hope you got what you wanted.
+					 Now get of here."
+			exit scene
+		end
+		
+		if (TimesUpD)  
+			LAUREN: "Time's up Mr. Shelby. I hope you got what you wanted.
+					 Now get of here."
+			exit scene
+		end
+		
+		single random if (HasntOfferedCigarette) [Random, when the player does not move towards the bed]
+			LAUREN:	"Do you want a cigarette?"
+			SCOTT:	"No thanks, I quit."
+			LAUREN: "That's brave."
+			switch on offerCigarette
+		end
+			
+		single choice "Disappearance"
+			SCOTT: "How did your son disappear?"
+			LAUREN: "He used to go play with the neighborhood kids after school. 
+					It was pouring down something awful that day. I’ll never forget it. 
+					All his friends came home 'round 3, all except him."
+			switch on disappearance			
+		end
+		
+		single choice "Johnny?"
+			SCOTT: "Tell me about Johnny. What kind of kid was he?"
+			LAUREN: "Johnny was really a good boy. Sometimes, he fought with other kids 
+					who called me a… you know. In his own way, I think he understood 
+					what was going on."
+			switch on johnny
+		end
+		
+		single choice "Suspect"
+			SCOTT: "Did you suspect anyone after he disappeared?"
+			LAUREN: "I meet a lot of pretty shady characters in my line of work. 
+					 Sure, I thought of it at first. But it didn’t seem to make any sense. 
+					 I don’t believe any of my clients could have done that to my Johnny... 
+					 and all those other kids?"
+			switch on suspect
+		end
+		
+		single choice "Johnny's home"
+			SCOTT: "Did Johnny live with you?"
+			LAUREN: "Yes. Of course I made sure he never met any of my clients. 
+					 I wanted to stop, you know... but we needed the money. 
+					 I was trying to earn enough to get us out of here."
+			switch on johnnysHome				
+		end
+						
+		random choices if (HasTalkedDisappearance or HasTalkedJohnny or HasTalkedJohnnysHome or HasTalkedSuspect)
+		
+			single choice "Police"
+				SCOTT: "When did you sound the alarm?"
+				LAUREN: "About eight o’clock. I began to get worried, I went all around the 
+						 neighborhood, I went to the wasteland where they liked to play, 
+						 I went to see his friends. I called the cops about ten o’clock."
+				switch on police
+			end
+			
+			single choice "Johnny's father"
+				SCOTT: "Tell me about Johnny’s father."
+				LAUREN: "A loser without a job who liked to beat me after a few drinks...
+						 He left the day Johnny disappeared. I ain’t seen him since. Coward! 
+						 Good thing he left."
+				switch on johnnysFather
+			end
+
+			single choice "Leads"
+				SCOTT: "Do you know if they found anything on the wasteland? Any leads or witnesses?"
+				LAUREN: "No. They said he must’ve run away and would probably end up coming back. 
+						 His body was found five days later with an origami figure in his hand and 
+						 an orchid on his chest."
+				switch on leads
+			end
+		end
+	end
+
+end scene
+	</template>
+	<template autoinsert="true"
+		context="de.unidue.ecg.dialogScript.DialogScript.CharactersDefintion"
+		deleted="false" description="insert Risen sample" enabled="true"
+		id="RisenSceneSample" name="example script: Risen">characters: PROTAGONIST, JAN
+switches: place, foodOrGold, safe, offer, harbourTownQuest, followJanToTheWest
+
+conditions
+	AskedAboutPlace when place is on
+	AskedAboutFoodOrGold when foodOrGold is on 
+	AskedAboutSafety when safe is on
+	TalkedOffer when offer is on  
+end
+
+scene "BANDIT OUTPOST"
+
+	first time
+		PROTAGONIST: "I found this sword."
+		JAN: "Good! I hope you know how to use it."
+	end
+
+	hub "Main"
+
+		single choice "place"
+			PROTAGONIST: "What can you tell me about this place?"
+			JAN: "What do want to know?"
+			switch on place
+		end
+
+		single choice "girl"
+			PROTAGONIST: "There’s a girl came ashore with me, she’s in an abandoned house to the South."
+			JAN: "South... Must be the old ship wrecker's house."
+			JAN: "I’ll head that way later."
+			JAN: "If she’s there."
+			JAN: "I’ll take her somewhere safe."
+		end
+
+		single choice "help"
+			PROTAGONIST: "I could do with some help before I go. I’m injured."
+			JAN: "Hmm, so you are."
+			JAN: "There’s a water barrel in the corner. 
+ 				  Take a good drink and freshen up. You stink of sea water."
+			JAN: "If you’re planning on getting hurt again, you should get your hands on a few healing potions."
+			PROTAGONIST: "Where can I find some?"
+			JAN: "Well, they don’t grow on trees. You’ll have to find a trader for those. 
+ 				  There are a few traders still around."
+		end
+
+		choices if (AskedAboutPlace)
+
+			single choice "FoodOrGold"
+				PROTAGONIST: "Looks like I’m going to be stuck here for a while. 
+ 							  Anywhere I can get some food or pick up some gold?"
+				JAN: "Ha! Not round here at any rate!"
+				JAN: "I just asked for this post so I can watch the storms. Amazing things when they blow past."
+				JAN: "Strange how they never come inland."
+				JAN: "Two weeks ago I would have sent you straight to Harbour Town. But not anymore."
+				PROTAGONIST: "Why not?"
+				JAN: "It’s full of inquisition. Protecting those ruins and recruiting 
+ 					  for the damn white robed cult at the Monestary."
+				JAN: "I’m with the Don myself. We’re the ones who’re still free. 
+ 					  Living in a camp in the middle of a swamp. But freedom’s freedom."
+				JAN: "I’d head to the swamp, see if the Don’ll take you in, 
+ 	   				  or try your luck in Harbour Town. Just stay away from the Monestary."
+				switch on foodOrGold
+			end
+
+			single choice "monestary"
+				PROTAGONIST: "You mentioned a Monestary. What happens there?"
+				JAN: "The last place you wanna be!"
+				JAN: "It’s where the Inquisition train their recruits. 
+ 					  Brain wash’em!"
+				JAN: "Stay well away from there."
+			end
+		end
+
+		choices if (AskedAboutFoodOrGold)
+
+			single choice "Safe"
+				PROTAGONIST: "So, is Harbour Town safe? What are the Inquisition doing there?"
+				JAN: "Not much at the moment. There are still some of our boys in there. 
+ 					  They might help you out."
+				JAN: "And that white robed lot probably won’t bother you too much."
+				JAN: "I can show you the way, but believe me, you’d be better off at our camp."
+				switch on safe
+			end
+
+			single choice "Offer"
+				PROTAGONIST: "What’s the Don got to offer me?"
+				JAN: "Meat, bear, a job? They might even train you as a fighter. You got a sword, after all. 
+ 					  Most they’ll let you have up at the Monestary is a staff! Just a big stick! That’s not a real weapon!"
+				switch on offer
+			end
+		end
+
+		choices if (AskedAboutSafety)
+
+			single choice "Harbour Town"
+				PROTAGONIST: "Can you show me the way to Harbour Town?"
+				JAN: "Sure. Follow me."
+				switch on harbourTownQuest
+				exit scene
+			end
+		end
+
+		choices if (TalkedOffer)
+
+			single choice "Camp"
+				PROTAGONIST: "All right, show me the way to your camp."
+				JAN: "Good man! Follow me."
+				switch on followJanToTheWest
+				exit scene
+			end
+		end
+
+		choice "End"
+
+			exit scene
+		end
+	end
+
+end scene
+	</template>
+	<template autoinsert="true"
+		context="de.unidue.ecg.dialogScript.DialogScript.CharactersDefintion"
+		deleted="false" description="insert Mass Effect 2 sample" enabled="true"
+		id="ME2SceneSample" name="example script: Mass Effect 2">characters: EDI, SHEPARD, GRUNT
+switches: openTank, gaveName, phase5, convinced, playerShoots, shooting,
+hasShot
+
+conditions
+	OpenTank when openTank is on
+	KnowsName when gaveName is on
+	Phase5 when phase5 is on
+	GruntIsConvinced when convinced is on
+	PlayerShoots when playerShoots is on
+	EndsWithShooting when shooting is on
+	DoneShooting when hasShot is on
+end
+
+scene "NORMANDY SR-2. PORT CARGO. OPENING THE TANK."
+
+	defaults
+		EDI: "The subject is stable, Shepard. Integration with onboard systems was seamless."
+	end
+
+	hub "Phase 1"
+
+		choice "Keep it sealed."
+
+			exit hub
+		end
+
+		choice "Open the tank"
+			SHEPARD: "Stand by. I'm going to open the tank and let him out."
+			EDI: "Cerberus protocol is very clear regarding untested alien technology."
+			enter hub "Phase 2"
+		end
+
+		choice "Is he aware?"
+			SHEPARD: "Can he see anything in there? Does he know where he is?"
+			EDI: "Unlikely. Current neural patterns indicate minimum cognition. 
+				  Barring ship-wide power loss, the nutrients in the tank could sustain him for over a year."
+		end
+
+		choice "Is he dangerous?"
+			SHEPARD: "Any idea how dangerous this guy is?"
+			EDI: "He is a krogan, Shepard. If you are asking whether he is actively hostile, 
+				  I don't have the necessary data to answer. Okeer's technology could impart data, 
+				  not methods of thinking. The subject may know of his views, but would not necessarily share them."
+		end
+
+		choice "Detect anything odd?"
+			SHEPARD: "What can you tell me about this guy? Anything unusual?"
+			EDI: "The subject is an exceptional example of the krogan species, with fully formed primary, 
+				  secondary, and tertiary organs, where applicable. No defects of any kind, aside from the
+				  genetic markers of the genophage present in all krogan. I cannot judge mental functioning."
+		end
+	end
+
+	hidden hub "Phase 2"
+
+		single choice "Leave him where he is then"
+
+			exit hub
+		end
+
+		single choice "He's to valuable to leave"
+			SHEPARD: "He's either a powerful addition to the crew or a time bomb. I'd rather deal with it now."
+			switch on openTank
+			exit hub
+		end
+
+		single choice "Do as I say, EDI"
+			SHEPARD: "I won't be second guessed on my own ship, by my own ship. Do it."
+			switch on openTank
+			exit hub
+		end
+	end
+
+	if (OpenTank)
+		EDI: "Very well, Shepard. The controls are online. The switch - and consequences - are yours."
+		[Cutscene where the tank is opened, forwarding to next scene]
+		enter scene "NORMANDY SR-2. PORT CARGO. RECRUITING GRUNT."
+	end
+
+	parting
+		SHEPARD: "I'm leaving it the way it is. Make sure nobody tempers with it."
+		EDI: "Of course, Shepard."
+	end
+
+end scene
+
+scene "NORMANDY SR-2. PORT CARGO. RECRUITING GRUNT."
+
+	first time [Grunt smashes Shepard against the wall and holds him there]
+		GRUNT: "Human. {Gender}. Before you die, I need a name."
+	end
+
+	hub "Phase 3"
+
+		choice "You'll get more than that"
+			SHEPARD: "I'm Commander Shepard, and I don't take threats lightly. I suggest you relax."
+			exit hub
+		end
+
+		choice "Of course"
+			SHEPARD: "I'm Commander Shepard of the Normandy."
+			exit hub
+		end
+	end
+	
+	GRUNT: "Not your name. Mine. I am trained. I know things, but the tank... Okeer couldn't implant connection. 
+            His words are hollow. Warlord, legacy, grunt... grunt. \"Grunt\" was among the last. It has no meaning. 
+			It'll do. I am Grunt."
+
+	hub "Phase 4"
+
+		choice "Why \"Grunt\"?"
+			SHEPARD: "You wouldn't prefer \"Okeer\"? Or \"legacy\"?"
+			GRUNT: "It's short. Matches the training in my blood. The other words are big things I don't feel. 
+					Maybe they fit your mouth better. I feel nothing for Okeer's clan or his enemies. 
+					I will do what I am bred to do... fight and determine the strongest -- but his imprint has failed."
+			exit hub
+		end
+
+		choice "You want to die?"
+			SHEPARD: "Why do you want me to try to kill you?"
+			GRUNT: "Want? I do what I am meant to-- fight and reveal the strongest. Nothing in the tank ever asked what I want. 
+					I feel nothing for Okeer's clan or his enemies. That imprint failed. He has failed."
+			exit hub
+		end
+		
+	end
+	
+	GRUNT: "Without a reason that's mine, one fight is as good as any other. Might as well start with you."
+
+	hub "Phase 5"
+
+		choice "Join my crew. We’ll find it" [Paragon choice]
+			SHEPARD: "I have a strong ship and a strong crew, a strong clan. You'd make it stronger."
+			GRUNT: "If you're weak and choose weak enemies, I'll have to kill you."
+			SHEPARD: "Our enemies are worthy. No doubt about that."
+			switch on convinced
+			exit hub
+		end
+
+		choice "You feel nothing for Okeer?"
+			SHEPARD: "Is it that easy for Okeer's perfect krogan to abandon his mission?"
+			GRUNT: "Okeer is just a voice in the tank. If his imprints are true, then he created something stronger than him. 
+					So he's not worthy of me. And if his hatreds aren't strong enough to compel me, they've failed, too. 
+					I feel nothing. I have no connection."
+		end
+
+		choice "My command is your reason" [Renegade choice]
+			SHEPARD: "I took you and I released you. Follow my command, and you'll have purpose."
+			GRUNT: "Nothing in the tank imprints indicated humans could be so forceful. You command as though you've earned it."
+			SHEPARD: "My enemies threaten galaxies. Everyone on my ship has earned their place."
+			switch on convinced
+			exit hub
+		end
+
+		choice "Stand down or else"
+			SHEPARD: "I'm offering you the chance to join my crew. Stand down. I won't ask again."
+			GRUNT: "Asking marks you as unworthy. That's why you'll die first."
+
+			if (PlayerShoots) [Player chooses to shoot Grunt in an QTE]
+				SHEPARD: "You will stand down."
+				switch on hasShot
+				exit hub
+			else
+				enter hub "Phase 6-1"
+			end
+		end
+
+		choice "I released you. You owe me"
+			SHEPARD: "You should show more gratitude. Refusing an ally can bite you in the ass."
+			GRUNT: "If I can brush an ally aside, what use are they? You're only worthy of dying first."
+			enter hub "Phase 6-1"
+		end
+	end
+
+	hidden hub "Phase 6-1"
+
+		choice "You leave me no choice"
+			SHEPARD: "I gave you a chance. This is on you."
+			switch on shooting
+			exit hub
+		end
+
+		choice "I was being generous"
+			SHEPARD: "Talking was the generous Plan A. Here's Plan B."
+			switch on shooting
+			exit hub
+		end
+	end
+
+	if (GruntIsConvinced)
+		GRUNT: "Hmm. Hmph! That's... acceptable. I'll fight for you."
+		[camera reveals that Shepard has been pointing his gun at Grunt the whole time]
+		SHEPARD: "I'm glad you saw reason."
+		GRUNT: "Hmm? Ha! Offer one hand, but arm the other."
+	else if (EndsWithShooting)
+		[gets shot by Shepard several times, but shows no signs of weakness]
+		GRUNT: "Huh?"
+		switch on hasShot
+	end
+
+	if (DoneShooting)
+		GRUNT: "You offer one hand but arm the other -- and don't hesitate. Maybe you are worthy. You will give me strong enemies? 
+				A chance to find my own reason for the skills in my blood? Very well. I will fight for you."
+		SHEPARD: "Try that again and I won't be so patient."
+	end
+
+	parting
+		GRUNT: "Wise, Shepard. If I find a clan, if I find what I... I want, I will be honored to eventually pit them against you."
+	end
+
+end scene
+	</template>
+	<template autoinsert="true"
+		context="de.unidue.ecg.dialogScript.DialogScript.CharactersDefintion"
+		deleted="false" description="insert minimal sample scene" enabled="true"
+		id="MinimalSceneExample" name="example script: minimal scene">characters: Tom, Jerry
+
+scene "minimal scene sample"
+
+	Tom: "Hey!"
+	// add further dialog here
+
+end scene
+	</template>	
+	<template autoinsert="true"
+		context="de.unidue.ecg.dialogScript.DialogScript.CharactersDefintion"
+		deleted="false" description="insert empty scene + hints" enabled="true"
+		id="HintTemplate" name="template: empty scene + hints">/* Some useful shortcuts
+ * CTRL+SPACE: Get context sensitive help at the current cursor position
+ * CTRL+SHIFT+F: Auto-format your file
+ */
+characters: ${commaSeparatedListOfCharacterNames}
+switches: ${switch1} is ${value1:Enum('SwitchValue')}, ${switch2} is ${value2:Enum('SwitchValue')}, ${switch3} is ${value3:Enum('SwitchValue')}
+
+conditions 
+	${Condition} when ${switch1:CrossReference('Switch.switch')} is ${value4:Enum('SwitchValue')} and ${switch2:CrossReference('Switch.switch')} is ${value5:Enum('SwitchValue')}
+end
+
+scene "${sceneName}"
+	/********* HINTS (feel free to remove) *********
+	Start your dialog here
+	You basically have following options
+	- 'defaults': use the defaults statement at the beginning to 
+	  specify dialog that will be played every time the scene is triggered
+	- 'first time' dialog lines: Use the keywords 'first time'
+	  to introduce dialog lines which are only spoken once, when
+	  the dialog is triggered the first time
+	- 'other times' dialog lines: Add alternatives inside the first time
+	  statement to introduce dialog lines which are shown instead
+	- Conditional dialog lines: Use the statement 
+	  'if (${Condition1} 'or' ${Condition2} ...)'
+	  	${Body1}
+	  'else' 'if'(${Condition3}) 
+	  	${Body2}
+	  'else'
+	  	${Body3}
+	  'end'
+	  to introduce dialog lines which are only played when
+	  the conditions are met.
+	- You can create nested conditions by using the conditional statement somewhere in a Body 
+	- Hubs: use the 'hub' keyword to create hubs of dialog where players have Choices
+	- By default, hubs are "entered" when the dialog flow reaches a hub. Use the modifier 'hidden' 
+	  to mark a hub as hidden for the general dialog flow and only accessible by an explicitly invoking it
+	  using the 'enter hub' "${hubName}" statement at the end of a dialog block
+	- Choices can only be used in hubs. You can create conditional choices ('choices if ...')
+	- You can also enter scenes that way ('enter scene' "${otherSceneName}")
+	- Choices can be marked as 'single' and/or 'random'
+	- 'single' makes sure that this choice will be hidden once the player has chosen it
+	- 'random' indicates that a choice might only be available by chance 
+	  (the concrete implementation of that remains part of the dialog engine)
+	- final dialog lines: Use the keywords 'parting' to
+	  introduce dialog lines that are shown if all information has been
+	  gathered by the player
+	*********** HINT END **************/
+	${cursor}
+end scene
+	</template>
+</templates>

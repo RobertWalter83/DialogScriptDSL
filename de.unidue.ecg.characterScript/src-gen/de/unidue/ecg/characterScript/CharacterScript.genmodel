@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/de.unidue.ecg.characterScript/src-gen" editDirectory="/de.unidue.ecg.characterScript.edit/src"
+    editorDirectory="/de.unidue.ecg.characterScript.editor/src" modelPluginID="de.unidue.ecg.characterScript"
+    forceOverwrite="true" modelName="CharacterScript" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    complianceLevel="5.0" copyrightFields="false" editPluginID="de.unidue.ecg.characterScript.edit"
+    editorPluginID="de.unidue.ecg.characterScript.editor" runtimeVersion="2.9">
+  <genPackages prefix="CharacterScript" basePackage="de.unidue.ecg.characterScript"
+      disposableProviderFactory="true" fileExtensions="chara" ecorePackage="CharacterScript.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="CharacterScript.ecore#//AttributeType">
+      <genEnumLiterals ecoreEnumLiteral="CharacterScript.ecore#//AttributeType/NUMBER"/>
+      <genEnumLiterals ecoreEnumLiteral="CharacterScript.ecore#//AttributeType/TEXT"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="CharacterScript.ecore#//CharaType">
+      <genEnumLiterals ecoreEnumLiteral="CharacterScript.ecore#//CharaType/PC"/>
+      <genEnumLiterals ecoreEnumLiteral="CharacterScript.ecore#//CharaType/NPC"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="CharacterScript.ecore#//CharaSex">
+      <genEnumLiterals ecoreEnumLiteral="CharacterScript.ecore#//CharaSex/male"/>
+      <genEnumLiterals ecoreEnumLiteral="CharacterScript.ecore#//CharaSex/female"/>
+    </genEnums>
+    <genClasses ecoreClass="CharacterScript.ecore#//Characters">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CharacterScript.ecore#//Characters/imports"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CharacterScript.ecore#//Characters/templates"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CharacterScript.ecore#//Characters/customs"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CharacterScript.ecore#//Characters/characters"/>
+    </genClasses>
+    <genClasses ecoreClass="CharacterScript.ecore#//Import">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CharacterScript.ecore#//Import/importedNamespace"/>
+    </genClasses>
+    <genClasses ecoreClass="CharacterScript.ecore#//Template">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CharacterScript.ecore#//Template/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CharacterScript.ecore#//Template/defaults"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CharacterScript.ecore#//Template/customs"/>
+    </genClasses>
+    <genClasses ecoreClass="CharacterScript.ecore#//CustomAttribute">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CharacterScript.ecore#//CustomAttribute/caName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CharacterScript.ecore#//CustomAttribute/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CharacterScript.ecore#//CustomAttribute/enumValues"/>
+    </genClasses>
+    <genClasses ecoreClass="CharacterScript.ecore#//CustomAttributeName">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CharacterScript.ecore#//CustomAttributeName/name"/>
+    </genClasses>
+    <genClasses ecoreClass="CharacterScript.ecore#//EnumValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CharacterScript.ecore#//EnumValue/name"/>
+    </genClasses>
+    <genClasses ecoreClass="CharacterScript.ecore#//Customs">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CharacterScript.ecore#//Customs/customAttributes"/>
+    </genClasses>
+    <genClasses ecoreClass="CharacterScript.ecore#//Character">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CharacterScript.ecore#//Character/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CharacterScript.ecore#//Character/template"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CharacterScript.ecore#//Character/properties"/>
+    </genClasses>
+    <genClasses ecoreClass="CharacterScript.ecore#//Property">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CharacterScript.ecore#//Property/comment"/>
+    </genClasses>
+    <genClasses ecoreClass="CharacterScript.ecore#//DefaultProperty"/>
+    <genClasses ecoreClass="CharacterScript.ecore#//FullName">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CharacterScript.ecore#//FullName/value"/>
+    </genClasses>
+    <genClasses ecoreClass="CharacterScript.ecore#//Description">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CharacterScript.ecore#//Description/value"/>
+    </genClasses>
+    <genClasses ecoreClass="CharacterScript.ecore#//Type">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CharacterScript.ecore#//Type/value"/>
+    </genClasses>
+    <genClasses ecoreClass="CharacterScript.ecore#//Age">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CharacterScript.ecore#//Age/value"/>
+    </genClasses>
+    <genClasses ecoreClass="CharacterScript.ecore#//Sex">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CharacterScript.ecore#//Sex/value"/>
+    </genClasses>
+    <genClasses ecoreClass="CharacterScript.ecore#//CustomProperty">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CharacterScript.ecore#//CustomProperty/customAttributeRef"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CharacterScript.ecore#//CustomProperty/stringValue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CharacterScript.ecore#//CustomProperty/intValue"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CharacterScript.ecore#//CustomProperty/enumValue"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

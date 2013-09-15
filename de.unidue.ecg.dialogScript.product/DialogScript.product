@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?pde version="3.5"?>
+
+<product name="DialogScriptDSL" id="de.unidue.ecg.dialogScript.product.product" application="org.eclipse.ui.ide.workbench" useFeatures="true" includeLaunchers="true">
+
+   <configIni use="default">
+   </configIni>
+
+   <launcherArgs>
+      <vmArgsMac>-XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts</vmArgsMac>
+   </launcherArgs>
+
+   <windowImages i16="/de.unidue.ecg.dialogScript.product/icons/icon16.png" i32="/de.unidue.ecg.dialogScript.product/icons/icon32.png" i48="/de.unidue.ecg.dialogScript.product/icons/icon48.png" i64="/de.unidue.ecg.dialogScript.product/icons/icon64.png"/>
+
+   <splash
+      location="de.unidue.ecg.dialogScript.product"
+      startupProgressRect="5,283,490,14"
+      startupMessageRect="5,269,490,18"
+      startupForegroundColor="FFFFFF" />
+   <launcher name="DialogScriptDSL">
+      <solaris/>
+      <win useIco="false">
+         <bmp/>
+      </win>
+   </launcher>
+
+   <vm>
+   </vm>
+
+   <plugins>
+   </plugins>
+
+   <features>
+      <feature id="de.unidue.ecg.character.feature" version="1.0.0.qualifier"/>
+      <feature id="de.unidue.ecg.dialogScript.feature" version="1.0.0.qualifier"/>
+      <feature id="de.unidue.ecg.dialogScript.platform.feature" version="1.0.0.qualifier"/>
+   </features>
+
+
+</product>

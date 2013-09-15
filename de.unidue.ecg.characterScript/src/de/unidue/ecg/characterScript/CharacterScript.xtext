@@ -1,0 +1,78 @@
+grammar de.unidue.ecg.characterScript.CharacterScript with org.eclipse.xtext.common.Terminals
+
+generate characterScript "http://www.unidue.de/ecg/characterScript/CharacterScript"
+
+Characters:
+	imports+=Import*
+	templates+=Template*
+	customs=Customs?
+	characters+=Character*;
+
+Import:
+	'import' importedNamespace=ID;
+
+Template:
+	'template' name=ID
+	defaults+=DefaultAttribute*
+	customs+=CustomAttribute*
+	'end';
+
+DefaultAttribute:
+	'full name' | 'age' | 'description' | 'sex' | 'type';
+
+CustomAttribute:
+	caName=CustomAttributeName 'as' (type=AttributeType | '(' enumValues+=EnumValue (',' enumValues+=EnumValue)* ')');
+
+CustomAttributeName:
+	name=ID;
+
+EnumValue:
+	name=ID;
+
+enum AttributeType:
+	NUMBER | TEXT;
+
+Customs:
+	'custom' 'attributes'
+	customAttributes+=CustomAttribute (customAttributes+=CustomAttribute)*
+	'end';
+
+Character:
+	'character' name=ID ('uses' template=[Template])?
+	properties+=Property*
+	'end';
+
+Property:
+	DefaultProperty | CustomProperty;
+
+DefaultProperty:
+	FullName | Description | Type | Age | Sex;
+
+FullName:
+	'full name' value=STRING comment=COMMENT?;
+
+Description:
+	'description' value=STRING comment=COMMENT?;
+
+Type:
+	'type' value=CharaType comment=COMMENT?;
+
+enum CharaType:
+	PC | NPC;
+
+Age:
+	'age' value=INT comment=COMMENT?;
+
+Sex:
+	'sex' value=CharaSex comment=COMMENT?;
+
+enum CharaSex:
+	male | female;
+
+CustomProperty:
+	customAttributeRef=[CustomAttributeName|ID]
+	(stringValue=STRING | intValue=INT | enumValue=[EnumValue|ID])
+	comment=COMMENT?;
+
+terminal COMMENT:
+	'['->']';
