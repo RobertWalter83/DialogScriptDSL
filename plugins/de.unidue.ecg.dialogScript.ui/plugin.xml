@@ -5,13 +5,13 @@
 	<extension point="org.eclipse.ui.perspectiveExtensions">
 	  <perspectiveExtension 
 	    targetID="*">
-	    <newWizardShortcut id="de.unidue.ecg.dialogScript.ui.wizard.CustomDialogScriptNewProjectWizard"/>
+	    <newWizardShortcut id="de.unidue.ecg.dialogScript.ui.wizard.DialogScriptNewProjectWizard"/>
 	  </perspectiveExtension>
 	</extension>
 	<extension point="org.eclipse.ui.perspectiveExtensions">
 	  <perspectiveExtension 
 	    targetID="*">
-	    <newWizardShortcut id="de.unidue.ecg.dialogScript.ui.wizard.NewDialogScriptWizard"/>
+	    <newWizardShortcut id="de.unidue.ecg.dialogScript.ui.wizard.DialogScriptNewDialogScriptWizard"/>
 	  </perspectiveExtension>
 	</extension>
     <extension
@@ -411,9 +411,9 @@
       </category>
       <wizard
             category="de.unidue.ecg.dialogScript.ui"
-            class="de.unidue.ecg.dialogScript.ui.DialogScriptExecutableExtensionFactory:de.unidue.ecg.dialogScript.ui.wizard.CustomDialogScriptNewProjectWizard"
+            class="de.unidue.ecg.dialogScript.ui.DialogScriptExecutableExtensionFactory:de.unidue.ecg.dialogScript.ui.wizard.DialogScriptNewProjectWizard"
             icon="icons/icon16.png"
-            id="de.unidue.ecg.dialogScript.ui.wizard.CustomDialogScriptNewProjectWizard"
+            id="de.unidue.ecg.dialogScript.ui.wizard.DialogScriptNewProjectWizard"
             name="New DialogScript project"
             project="true">
       </wizard>
@@ -426,9 +426,9 @@
      </category>
      <wizard
            category="de.unidue.ecg.dialogScript.ui"
-           class="de.unidue.ecg.dialogScript.ui.wizard.NewDialogScriptWizard"
+           class="de.unidue.ecg.dialogScript.ui.wizard.DialogScriptNewDialogScriptWizard"
            icon="icons/icon16.png"
-           id="de.unidue.ecg.dialogScript.ui.wizard.NewDialogScriptWizard"
+           id="de.unidue.ecg.dialogScript.ui.wizard.DialogScriptNewDialogScriptWizard"
            name="New DialogScript script">
      </wizard>
   </extension>

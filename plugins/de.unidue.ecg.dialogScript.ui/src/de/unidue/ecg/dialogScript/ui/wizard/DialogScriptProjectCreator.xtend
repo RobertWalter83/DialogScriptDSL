@@ -21,7 +21,7 @@ import org.eclipse.xtext.ui.wizard.IProjectCreator
 import org.eclipse.xtext.ui.wizard.IProjectInfo
 import org.eclipse.xtext.ui.wizard.Messages
 
-class CustomDialogScriptProjectCreator extends WorkspaceModifyOperation implements IProjectCreator {
+class DialogScriptProjectCreator extends WorkspaceModifyOperation implements IProjectCreator {
 
 	@Inject var Provider<ProjectFactory> projectFactoryProvider
 

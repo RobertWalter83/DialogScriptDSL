@@ -5,6 +5,7 @@ package de.unidue.ecg.characterScript.ui.quickfix
 
 import com.google.inject.Inject
 import de.unidue.ecg.characterScript.characterScript.Age
+import de.unidue.ecg.characterScript.characterScript.AttributeType
 import de.unidue.ecg.characterScript.characterScript.Character
 import de.unidue.ecg.characterScript.characterScript.CharacterScriptFactory
 import de.unidue.ecg.characterScript.characterScript.CharacterScriptPackage
@@ -18,17 +19,13 @@ import de.unidue.ecg.characterScript.validation.CharacterScriptValidator
 import de.unidue.ecg.common.linking.CustomLinkingDiagnosticMessageProvider
 import org.eclipse.xtext.EcoreUtil2
 import org.eclipse.xtext.diagnostics.Diagnostic
+import org.eclipse.xtext.nodemodel.impl.HiddenLeafNode
+import org.eclipse.xtext.nodemodel.impl.LeafNode
+import org.eclipse.xtext.nodemodel.util.NodeModelUtils
 import org.eclipse.xtext.ui.editor.quickfix.DefaultQuickfixProvider
 import org.eclipse.xtext.ui.editor.quickfix.Fix
 import org.eclipse.xtext.ui.editor.quickfix.IssueResolutionAcceptor
 import org.eclipse.xtext.validation.Issue
-import de.unidue.ecg.characterScript.characterScript.AttributeType
-import org.eclipse.xtext.resource.XtextResource
-import org.eclipse.xtext.nodemodel.util.NodeModelUtils
-import org.eclipse.xtext.nodemodel.INode
-import org.eclipse.xtext.nodemodel.impl.LeafNode
-import org.eclipse.xtext.nodemodel.impl.HiddenLeafNode
-import de.unidue.ecg.characterScript.characterScript.EnumValue
 
 /**
  * Custom quickfixes.

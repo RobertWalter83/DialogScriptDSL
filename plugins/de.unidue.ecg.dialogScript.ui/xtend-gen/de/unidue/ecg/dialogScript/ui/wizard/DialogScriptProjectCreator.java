@@ -30,7 +30,7 @@ import org.eclipse.xtext.xbase.lib.Exceptions;
 import org.eclipse.xtext.xbase.lib.Functions.Function0;
 
 @SuppressWarnings("all")
-public class CustomDialogScriptProjectCreator extends WorkspaceModifyOperation implements IProjectCreator {
+public class DialogScriptProjectCreator extends WorkspaceModifyOperation implements IProjectCreator {
   @Inject
   private Provider<ProjectFactory> projectFactoryProvider;
   
@@ -42,7 +42,7 @@ public class CustomDialogScriptProjectCreator extends WorkspaceModifyOperation i
   
   private final ImmutableList<String> FOLDER_LIST = new Function0<ImmutableList<String>>() {
     public ImmutableList<String> apply() {
-      ImmutableList<String> _of = ImmutableList.<String>of(CustomDialogScriptProjectCreator.SCRIPT_ROOT);
+      ImmutableList<String> _of = ImmutableList.<String>of(DialogScriptProjectCreator.SCRIPT_ROOT);
       return _of;
     }
   }.apply();

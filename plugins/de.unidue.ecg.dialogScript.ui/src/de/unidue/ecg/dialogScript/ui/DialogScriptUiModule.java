@@ -11,12 +11,12 @@ import org.eclipse.xtext.ui.resource.IResourceSetProvider;
 import org.eclipse.xtext.ui.resource.SimpleResourceSetProvider;
 import org.eclipse.xtext.ui.wizard.IProjectCreator;
 
-import de.unidue.ecg.dialogScript.ui.editor.syntaxcoloring.MyHighlightingConfiguration;
-import de.unidue.ecg.dialogScript.ui.editor.syntaxcoloring.MySemanticHighlightingCalculator;
+import de.unidue.ecg.dialogScript.ui.editor.syntaxcoloring.DialogScriptHighlightingConfiguration;
+import de.unidue.ecg.dialogScript.ui.editor.syntaxcoloring.DialogScriptSemanticHighlightingCalculator;
 import de.unidue.ecg.common.ui.contentassist.TemplatePreferringCompletionProposalProvider;
 import de.unidue.ecg.dialogScript.ui.editor.templates.TerminalRuleAwareTemplateContextTypeRegistry;
 import de.unidue.ecg.dialogScript.ui.editor.templates.TerminalRuleAwareTemplateProposalProvider;
-import de.unidue.ecg.dialogScript.ui.wizard.CustomDialogScriptProjectCreator;
+import de.unidue.ecg.dialogScript.ui.wizard.DialogScriptProjectCreator;
 
 
 /**
@@ -28,15 +28,15 @@ public class DialogScriptUiModule extends de.unidue.ecg.dialogScript.ui.Abstract
 	}
 	
 	public Class<? extends IProjectCreator> bindIProjectCreator() {
-		return CustomDialogScriptProjectCreator.class;
+		return DialogScriptProjectCreator.class;
 	}
 	
 	public Class<? extends org.eclipse.xtext.ui.editor.syntaxcoloring.IHighlightingConfiguration> bindIHighlightingConfiguration() {
-		return MyHighlightingConfiguration.class;
+		return DialogScriptHighlightingConfiguration.class;
 	}
 	
 	public Class<? extends org.eclipse.xtext.ui.editor.syntaxcoloring.ISemanticHighlightingCalculator>bindISemanticHighlightingCalculator() {
-		return MySemanticHighlightingCalculator.class;
+		return DialogScriptSemanticHighlightingCalculator.class;
 	}
 	
 	@Override

@@ -49,42 +49,6 @@ class DialogScriptValidator extends AbstractDialogScriptValidator {
 	public static val DUPLICATED_MODIFIER = 'duplicatedModifier'
 	public static val WRONG_CONDTIONAL_USAGE = 'wrongConditionalUsage'
 
-	//	@Check
-	//	def checkSceneDescriptionIsNotEmpty(Scene scene) {
-	//		if (scene.sceneDescription.trim.equals('-'))
-	//			warning('Scene description should not be empty', DialogScriptPackage.Literals.SCENE__SCENE_DESCRIPTION,
-	//				EMPTY_SCENE)
-	//	}
-	//	@Check
-	//	def checkSceneDescriptionIsNotTemplate(Scene scene) {
-	//		if (scene.sceneDescription.contains('sceneDescription_SingleLineOnly'))
-	//			info('Try to find a meaningful description for your scene',
-	//				DialogScriptPackage.Literals.SCENE__SCENE_DESCRIPTION, EMPTY_SCENE)
-	//	}
-	//	@Check
-	//	def checkSceneContainsComment(Scene scene) {
-	//		if ((scene.sceneDescription.indexOf('[') < scene.sceneDescription.indexOf(']') &&
-	//			scene.sceneDescription.indexOf('[') >= 0) || (scene.sceneDescription.indexOf('//') >= 0)) {
-	//			warning(
-	//				'The comment in your scene description is not recognized as a comment (note the missing formatting!). Use a new line to provide a comment for the scene description.',
-	//				DialogScriptPackage.Literals.SCENE__SCENE_DESCRIPTION, COMMENT_IN_SCENE)
-	//		}
-	//	}
-	
-//	@Check
-//	def checkForUnreachableOtherwiseStatements(Dialog dialog) {
-//		for (Conditional conditional : dialog.recursives.filter(Conditional)) {
-//			if (conditional.otherwiseList != null) {
-//				val unreachable = conditional.otherwiseList.findFirst[it.conditionList == null]
-//				if (unreachable != null) {
-//					warning(
-//						'Unreachable area: Unconditional dialog on the most outer level of a conditional statement is ignored. Use the \'Other times\' statement instead!',
-//						unreachable, DialogScriptPackage.Literals.OTHERWISE__BODY, UNREACHABLE_OTHERWISE_STATEMENT)
-//				}
-//			}
-//		}
-//	}
-	
 	@Check
 	def checkHubCanBeLeft(Hub hub) {
 		val allContents = hub.eAllContents
