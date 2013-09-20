@@ -190,7 +190,7 @@ public class CharacterScriptSemanticSequencer extends AbstractDelegatingSemantic
 	
 	/**
 	 * Constraint:
-	 *     (customAttributeRef=[CustomAttributeName|ID] (stringValue=STRING | intValue=INT | enumValue=[EnumValue|ID]) comment=COMMENT?)
+	 *     (customAttributeRef=[CustomAttributeName|ID] (stringValue=STRING | intValue=INT | enumValue=[EnumValue|EnumID]) comment=COMMENT?)
 	 */
 	protected void sequence_CustomProperty(EObject context, CustomProperty semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -217,7 +217,7 @@ public class CharacterScriptSemanticSequencer extends AbstractDelegatingSemantic
 	
 	/**
 	 * Constraint:
-	 *     name=ID
+	 *     name=EnumID
 	 */
 	protected void sequence_EnumValue(EObject context, EnumValue semanticObject) {
 		if(errorAcceptor != null) {
@@ -226,7 +226,7 @@ public class CharacterScriptSemanticSequencer extends AbstractDelegatingSemantic
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getEnumValueAccess().getNameIDTerminalRuleCall_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getEnumValueAccess().getNameEnumIDParserRuleCall_0(), semanticObject.getName());
 		feeder.finish();
 	}
 	

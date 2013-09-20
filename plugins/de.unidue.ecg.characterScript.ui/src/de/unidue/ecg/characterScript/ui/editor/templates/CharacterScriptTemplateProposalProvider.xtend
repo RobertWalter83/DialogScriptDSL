@@ -39,24 +39,22 @@ class CharacterScriptTemplateProposalProvider extends DefaultTemplateProposalPro
 		this.numberTemplateCounter = 0
 		if (templateContext instanceof XtextTemplateContext) {
 			val xTemplateContext = templateContext as XtextTemplateContext
-			val scopProvider = xTemplateContext.scopeProvider
 			val id = helper.getId(grammarAccess.characterRule)
 
 			if (xTemplateContext.contextType.id.equals(id)) {
 				if (context.currentModel != null) {
+					val scopProvider = xTemplateContext.scopeProvider
 					val scope = scopProvider.getScope(context.currentModel,
 						CharacterScriptPackage.Literals.CHARACTER__TEMPLATE)
 					val templates = newArrayList
 
-					if (scope instanceof ImportScope) {
-						scope.allElements.forEach [
-							val resolved = EcoreUtil2.resolve(it.EObjectOrProxy, context.resource.resourceSet)
-							if (resolved instanceof Template) {
-								val source = resolved as Template
-								templates.add(source.createDynamicTemplate)
-							}
-						]
-					}
+					scope.allElements.forEach [
+						val resolved = EcoreUtil2.resolve(it.EObjectOrProxy, context.resource.resourceSet)
+						if (resolved instanceof Template) {
+							val source = resolved as Template
+							templates.add(source.createDynamicTemplate)
+						}
+					]
 
 					templates.forEach [
 						val proposal = createProposal(templateContext, context, image, relevance)
@@ -101,7 +99,7 @@ class CharacterScriptTemplateProposalProvider extends DefaultTemplateProposalPro
 		if (!attribute.enumValues.empty) {
 			return "${" + attribute.enumValues?.get(0).name + ":Enum('value')}"
 		}
-		switch (attribute.type.name) {
+		switch (attribute.type.getName()) {
 			case "NUMBER": return "${" + (this.numberTemplateCounter = this.numberTemplateCounter + 1) + "}"
 			case "TEXT": return "\"${" + attribute.caName.name.replaceAll("\\s+", "") + "Value}\""
 		}

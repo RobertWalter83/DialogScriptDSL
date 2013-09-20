@@ -3,18 +3,27 @@
  */
 package de.unidue.ecg.characterScript.ui.contentassist;
 
+import com.google.common.base.Objects;
 import de.unidue.ecg.characterScript.characterScript.AttributeType;
 import de.unidue.ecg.characterScript.characterScript.CustomAttribute;
 import de.unidue.ecg.characterScript.characterScript.CustomAttributeName;
 import de.unidue.ecg.characterScript.characterScript.CustomProperty;
 import de.unidue.ecg.characterScript.characterScript.EnumValue;
+import de.unidue.ecg.characterScript.characterScript.Template;
 import de.unidue.ecg.characterScript.ui.contentassist.AbstractCharacterScriptProposalProvider;
+import java.util.ArrayList;
+import java.util.List;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.Assignment;
+import org.eclipse.xtext.Keyword;
 import org.eclipse.xtext.RuleCall;
 import org.eclipse.xtext.ui.editor.contentassist.ContentAssistContext;
 import org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalAcceptor;
+import org.eclipse.xtext.xbase.lib.CollectionLiterals;
+import org.eclipse.xtext.xbase.lib.Functions.Function0;
+import org.eclipse.xtext.xbase.lib.IterableExtensions;
+import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
 
 /**
  * see http://www.eclipse.org/Xtext/documentation.html#contentAssist on how to customize content assistant
@@ -51,7 +60,7 @@ public class CharacterScriptProposalProvider extends AbstractCharacterScriptProp
         _or = true;
       } else {
         AttributeType _type = ca.getType();
-        String _name = _type.name();
+        String _name = _type.getName();
         boolean _equals = _name.equals("NUMBER");
         boolean _not_1 = (!_equals);
         _or = (_not || _not_1);
@@ -77,7 +86,7 @@ public class CharacterScriptProposalProvider extends AbstractCharacterScriptProp
         _or = true;
       } else {
         AttributeType _type = ca.getType();
-        String _name = _type.name();
+        String _name = _type.getName();
         boolean _equals = _name.equals("TEXT");
         boolean _not_1 = (!_equals);
         _or = (_not || _not_1);
@@ -89,7 +98,57 @@ public class CharacterScriptProposalProvider extends AbstractCharacterScriptProp
     super.complete_STRING(model, ruleCall, context, acceptor);
   }
   
-  public void complete_DefaultAttribute(final EObject model, final RuleCall ruleCall, final ContentAssistContext context, final ICompletionProposalAcceptor acceptor) {
-    super.complete_DefaultAttribute(model, ruleCall, context, acceptor);
+  public void completeKeyword(final Keyword keyword, final ContentAssistContext contentAssistContext, final ICompletionProposalAcceptor acceptor) {
+    final EObject model = contentAssistContext.getCurrentModel();
+    boolean _matched = false;
+    if (!_matched) {
+      if (model instanceof de.unidue.ecg.characterScript.characterScript.Character) {
+        final de.unidue.ecg.characterScript.characterScript.Character _character = (de.unidue.ecg.characterScript.characterScript.Character)model;
+        _matched=true;
+        boolean _and = false;
+        Template _template = _character.getTemplate();
+        boolean _notEquals = (!Objects.equal(_template, null));
+        if (!_notEquals) {
+          _and = false;
+        } else {
+          Template _template_1 = _character.getTemplate();
+          boolean _filter = this.filter(keyword, _template_1);
+          _and = (_notEquals && _filter);
+        }
+        if (_and) {
+          return;
+        }
+      }
+    }
+    super.completeKeyword(keyword, contentAssistContext, acceptor);
+  }
+  
+  private final List<String> keywordsToFilter = new Function0<List<String>>() {
+    public List<String> apply() {
+      List<String> _newImmutableList = CollectionLiterals.<String>newImmutableList("age", "sex", "description", "full name", "type");
+      return _newImmutableList;
+    }
+  }.apply();
+  
+  private boolean filter(final Keyword keyword, final Template template) {
+    boolean _equals = Objects.equal(template, null);
+    if (_equals) {
+      return false;
+    }
+    final ArrayList<String> filterList = CollectionLiterals.<String>newArrayList();
+    filterList.addAll(this.keywordsToFilter);
+    EList<String> _defaults = template.getDefaults();
+    final Procedure1<String> _function = new Procedure1<String>() {
+      public void apply(final String it) {
+        filterList.remove(it);
+      }
+    };
+    IterableExtensions.<String>forEach(_defaults, _function);
+    String _value = keyword.getValue();
+    boolean _contains = filterList.contains(_value);
+    if (_contains) {
+      return true;
+    }
+    return false;
   }
 }

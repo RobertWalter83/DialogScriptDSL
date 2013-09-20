@@ -4,18 +4,22 @@
 package de.unidue.ecg.characterScript.ui.labeling
 
 import com.google.inject.Inject
+import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider
+import org.eclipse.xtext.ui.label.DefaultEObjectLabelProvider
 
 /**
  * Provides labels for a EObjects.
  * 
  * see http://www.eclipse.org/Xtext/documentation.html#labelProvider
  */
-class CharacterScriptLabelProvider extends org.eclipse.xtext.ui.label.DefaultEObjectLabelProvider {
+class CharacterScriptLabelProvider extends DefaultEObjectLabelProvider {
 
 	@Inject
-	new(org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider delegate) {
+	new(AdapterFactoryLabelProvider delegate) {
 		super(delegate);
 	}
+	
+	
 
 	// Labels and icons can be computed like this:
 	

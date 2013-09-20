@@ -19,13 +19,13 @@ import de.unidue.ecg.characterScript.validation.CharacterScriptValidator
 import de.unidue.ecg.common.linking.CustomLinkingDiagnosticMessageProvider
 import org.eclipse.xtext.EcoreUtil2
 import org.eclipse.xtext.diagnostics.Diagnostic
-import org.eclipse.xtext.nodemodel.impl.HiddenLeafNode
-import org.eclipse.xtext.nodemodel.impl.LeafNode
-import org.eclipse.xtext.nodemodel.util.NodeModelUtils
 import org.eclipse.xtext.ui.editor.quickfix.DefaultQuickfixProvider
 import org.eclipse.xtext.ui.editor.quickfix.Fix
 import org.eclipse.xtext.ui.editor.quickfix.IssueResolutionAcceptor
 import org.eclipse.xtext.validation.Issue
+import org.eclipse.xtext.nodemodel.util.NodeModelUtils
+import org.eclipse.xtext.nodemodel.impl.LeafNode
+import org.eclipse.xtext.nodemodel.impl.HiddenLeafNode
 
 /**
  * Custom quickfixes.
@@ -39,9 +39,14 @@ class CharacterScriptQuickfixProvider extends DefaultQuickfixProvider {
 	@Fix(CharacterScriptValidator.UNRESOLVED_TEMPLATE)
 	def createImport(Issue issue, IssueResolutionAcceptor acceptor) {
 		val linkText = issue.data.get(0)
+		issue.addImportTemplateFix(acceptor, linkText)
+		issue.addLocalTemplateFix(acceptor, linkText)
+	}
 
+	def addImportTemplateFix(Issue issue, IssueResolutionAcceptor acceptor, String linkText) {
 		if (linkText != null) {
-			acceptor.accept(issue, 'Import \'' + linkText + '\'', 'Import \'' + linkText + '\'', null) [ element, context |
+
+			acceptor.accept(issue, 'Add import for \'' + linkText + '\'', 'Add import for \'' + linkText + '\'', null) [ element, context |
 				if (element instanceof Character) {
 
 					val root = EcoreUtil2.getContainerOfType(element, Characters)
@@ -51,6 +56,7 @@ class CharacterScriptQuickfixProvider extends DefaultQuickfixProvider {
 					root.imports.add(^import)
 				}
 			]
+
 		}
 	}
 
@@ -59,8 +65,15 @@ class CharacterScriptQuickfixProvider extends DefaultQuickfixProvider {
 		val linkText = customLinkingDiagnosticMessageProvider.getLinkText(issue,
 			CharacterScriptPackage.eINSTANCE.template)
 
+		issue.addImportTemplateFix(acceptor, linkText)
+		issue.addLocalTemplateFix(acceptor, linkText)
+
+	}
+
+	def void addLocalTemplateFix(Issue issue, IssueResolutionAcceptor acceptor, String linkText) {
 		if (linkText != null) {
-			acceptor.accept(issue, 'Create template \'' + linkText + '\'', 'Create template \'' + linkText + '\'', null) [ element, context |
+
+			acceptor.accept(issue, 'Create local template \'' + linkText + '\'', 'Create local template \'' + linkText + '\'', null) [ element, context |
 				if (element instanceof Character) {
 
 					val model = EcoreUtil2.getContainerOfType(element, Characters)
@@ -86,9 +99,27 @@ class CharacterScriptQuickfixProvider extends DefaultQuickfixProvider {
 								template.defaults.add("type")
 							}
 							CustomProperty: {
+//								val caName = CharacterScriptFactory.eINSTANCE.createCustomAttributeName
+//								val ca = CharacterScriptFactory.eINSTANCE.createCustomAttribute
+//								
+//								caName.name = it.customAttributeRef.name
+//								ca.caName = caName
+//								
+//								if (it.enumValue != null) {
+//									val enumValue = CharacterScriptFactory.eINSTANCE.createEnumValue
+//									enumValue.name = it.enumValue.name
+//									ca.enumValues.add(enumValue)
+//									
+//								} else if (it.stringValue != null) {
+//									ca.type = AttributeType.TEXT
+//								} else {
+//									ca.type = AttributeType.NUMBER
+//								}
+//								template.customs.add(ca)
 								val nodeForCARef = NodeModelUtils.findActualNodeFor(it)
 								val nodeCandidates = nodeForCARef.asTreeIterable.filter(LeafNode).filter[
 									!(it instanceof HiddenLeafNode)]
+									
 								if (nodeCandidates.length <= 2) {
 
 									val ca = CharacterScriptFactory.eINSTANCE.createCustomAttribute
@@ -97,14 +128,13 @@ class CharacterScriptQuickfixProvider extends DefaultQuickfixProvider {
 									caName.name = nodeCandidates.get(0).text
 									ca.caName = caName
 
-									if(it.enumValue != null) {
+									if (it.enumValue != null) {
 										if (nodeCandidates.get(1) != null) {
 											val ev = CharacterScriptFactory.eINSTANCE.createEnumValue
 											ev.name = nodeCandidates.get(1).text
 											ca.enumValues.add(ev)
-										}										
-									}
-									else if (it.stringValue != null) {
+										}
+									} else if (it.stringValue != null) {
 										ca.type = AttributeType.TEXT
 									} else {
 										ca.type = AttributeType.NUMBER

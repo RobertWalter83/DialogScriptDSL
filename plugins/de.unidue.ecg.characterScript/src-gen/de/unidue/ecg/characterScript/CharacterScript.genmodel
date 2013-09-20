@@ -4,7 +4,7 @@
     editorDirectory="/de.unidue.ecg.characterScript.editor/src" modelPluginID="de.unidue.ecg.characterScript"
     forceOverwrite="true" modelName="CharacterScript" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     complianceLevel="5.0" copyrightFields="false" editPluginID="de.unidue.ecg.characterScript.edit"
-    editorPluginID="de.unidue.ecg.characterScript.editor" runtimeVersion="2.9">
+    editorPluginID="de.unidue.ecg.characterScript.editor" runtimeVersion="2.10">
   <genPackages prefix="CharacterScript" basePackage="de.unidue.ecg.characterScript"
       disposableProviderFactory="true" fileExtensions="chara" ecorePackage="CharacterScript.ecore#/">
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="CharacterScript.ecore#//AttributeType">

@@ -253,17 +253,37 @@ public class CharacterScriptGrammarAccess extends AbstractGrammarElementFinder {
 	public class EnumValueElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "EnumValue");
 		private final Assignment cNameAssignment = (Assignment)rule.eContents().get(1);
-		private final RuleCall cNameIDTerminalRuleCall_0 = (RuleCall)cNameAssignment.eContents().get(0);
+		private final RuleCall cNameEnumIDParserRuleCall_0 = (RuleCall)cNameAssignment.eContents().get(0);
 		
 		//EnumValue:
-		//	name=ID;
+		//	name=EnumID;
 		public ParserRule getRule() { return rule; }
 
-		//name=ID
+		//name=EnumID
 		public Assignment getNameAssignment() { return cNameAssignment; }
 
+		//EnumID
+		public RuleCall getNameEnumIDParserRuleCall_0() { return cNameEnumIDParserRuleCall_0; }
+	}
+
+	public class EnumIDElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "EnumID");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cINTTerminalRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cIDTerminalRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		
+		//EnumID:
+		//	INT | ID;
+		public ParserRule getRule() { return rule; }
+
+		//INT | ID
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//INT
+		public RuleCall getINTTerminalRuleCall_0() { return cINTTerminalRuleCall_0; }
+
 		//ID
-		public RuleCall getNameIDTerminalRuleCall_0() { return cNameIDTerminalRuleCall_0; }
+		public RuleCall getIDTerminalRuleCall_1() { return cIDTerminalRuleCall_1; }
 	}
 
 	public class CustomsElements extends AbstractParserRuleElementFinder {
@@ -585,18 +605,22 @@ public class CharacterScriptGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cStringValueSTRINGTerminalRuleCall_1_0_0 = (RuleCall)cStringValueAssignment_1_0.eContents().get(0);
 		private final Assignment cIntValueAssignment_1_1 = (Assignment)cAlternatives_1.eContents().get(1);
 		private final RuleCall cIntValueINTTerminalRuleCall_1_1_0 = (RuleCall)cIntValueAssignment_1_1.eContents().get(0);
-		private final Assignment cEnumValueAssignment_1_2 = (Assignment)cAlternatives_1.eContents().get(2);
-		private final CrossReference cEnumValueEnumValueCrossReference_1_2_0 = (CrossReference)cEnumValueAssignment_1_2.eContents().get(0);
-		private final RuleCall cEnumValueEnumValueIDTerminalRuleCall_1_2_0_1 = (RuleCall)cEnumValueEnumValueCrossReference_1_2_0.eContents().get(1);
+		private final Group cGroup_1_2 = (Group)cAlternatives_1.eContents().get(2);
+		private final Keyword cLeftParenthesisKeyword_1_2_0 = (Keyword)cGroup_1_2.eContents().get(0);
+		private final Assignment cEnumValueAssignment_1_2_1 = (Assignment)cGroup_1_2.eContents().get(1);
+		private final CrossReference cEnumValueEnumValueCrossReference_1_2_1_0 = (CrossReference)cEnumValueAssignment_1_2_1.eContents().get(0);
+		private final RuleCall cEnumValueEnumValueEnumIDParserRuleCall_1_2_1_0_1 = (RuleCall)cEnumValueEnumValueCrossReference_1_2_1_0.eContents().get(1);
+		private final Keyword cRightParenthesisKeyword_1_2_2 = (Keyword)cGroup_1_2.eContents().get(2);
 		private final Assignment cCommentAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cCommentCOMMENTTerminalRuleCall_2_0 = (RuleCall)cCommentAssignment_2.eContents().get(0);
 		
 		//CustomProperty:
-		//	customAttributeRef=[CustomAttributeName] (stringValue=STRING | intValue=INT | enumValue=[EnumValue])
+		//	customAttributeRef=[CustomAttributeName] (stringValue=STRING | intValue=INT | "(" enumValue=[EnumValue|EnumID] ")")
 		//	comment=COMMENT?;
 		public ParserRule getRule() { return rule; }
 
-		//customAttributeRef=[CustomAttributeName] (stringValue=STRING | intValue=INT | enumValue=[EnumValue]) comment=COMMENT?
+		//customAttributeRef=[CustomAttributeName] (stringValue=STRING | intValue=INT | "(" enumValue=[EnumValue|EnumID] ")")
+		//comment=COMMENT?
 		public Group getGroup() { return cGroup; }
 
 		//customAttributeRef=[CustomAttributeName]
@@ -608,7 +632,7 @@ public class CharacterScriptGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getCustomAttributeRefCustomAttributeNameIDTerminalRuleCall_0_0_1() { return cCustomAttributeRefCustomAttributeNameIDTerminalRuleCall_0_0_1; }
 
-		//stringValue=STRING | intValue=INT | enumValue=[EnumValue]
+		//stringValue=STRING | intValue=INT | "(" enumValue=[EnumValue|EnumID] ")"
 		public Alternatives getAlternatives_1() { return cAlternatives_1; }
 
 		//stringValue=STRING
@@ -623,14 +647,23 @@ public class CharacterScriptGrammarAccess extends AbstractGrammarElementFinder {
 		//INT
 		public RuleCall getIntValueINTTerminalRuleCall_1_1_0() { return cIntValueINTTerminalRuleCall_1_1_0; }
 
-		//enumValue=[EnumValue]
-		public Assignment getEnumValueAssignment_1_2() { return cEnumValueAssignment_1_2; }
+		//"(" enumValue=[EnumValue|EnumID] ")"
+		public Group getGroup_1_2() { return cGroup_1_2; }
 
-		//[EnumValue]
-		public CrossReference getEnumValueEnumValueCrossReference_1_2_0() { return cEnumValueEnumValueCrossReference_1_2_0; }
+		//"("
+		public Keyword getLeftParenthesisKeyword_1_2_0() { return cLeftParenthesisKeyword_1_2_0; }
 
-		//ID
-		public RuleCall getEnumValueEnumValueIDTerminalRuleCall_1_2_0_1() { return cEnumValueEnumValueIDTerminalRuleCall_1_2_0_1; }
+		//enumValue=[EnumValue|EnumID]
+		public Assignment getEnumValueAssignment_1_2_1() { return cEnumValueAssignment_1_2_1; }
+
+		//[EnumValue|EnumID]
+		public CrossReference getEnumValueEnumValueCrossReference_1_2_1_0() { return cEnumValueEnumValueCrossReference_1_2_1_0; }
+
+		//EnumID
+		public RuleCall getEnumValueEnumValueEnumIDParserRuleCall_1_2_1_0_1() { return cEnumValueEnumValueEnumIDParserRuleCall_1_2_1_0_1; }
+
+		//")"
+		public Keyword getRightParenthesisKeyword_1_2_2() { return cRightParenthesisKeyword_1_2_2; }
 
 		//comment=COMMENT?
 		public Assignment getCommentAssignment_2() { return cCommentAssignment_2; }
@@ -731,6 +764,7 @@ public class CharacterScriptGrammarAccess extends AbstractGrammarElementFinder {
 	private CustomAttributeElements pCustomAttribute;
 	private CustomAttributeNameElements pCustomAttributeName;
 	private EnumValueElements pEnumValue;
+	private EnumIDElements pEnumID;
 	private AttributeTypeElements unknownRuleAttributeType;
 	private CustomsElements pCustoms;
 	private CharacterElements pCharacter;
@@ -845,13 +879,23 @@ public class CharacterScriptGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//EnumValue:
-	//	name=ID;
+	//	name=EnumID;
 	public EnumValueElements getEnumValueAccess() {
 		return (pEnumValue != null) ? pEnumValue : (pEnumValue = new EnumValueElements());
 	}
 	
 	public ParserRule getEnumValueRule() {
 		return getEnumValueAccess().getRule();
+	}
+
+	//EnumID:
+	//	INT | ID;
+	public EnumIDElements getEnumIDAccess() {
+		return (pEnumID != null) ? pEnumID : (pEnumID = new EnumIDElements());
+	}
+	
+	public ParserRule getEnumIDRule() {
+		return getEnumIDAccess().getRule();
 	}
 
 	//enum AttributeType:
@@ -975,7 +1019,7 @@ public class CharacterScriptGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//CustomProperty:
-	//	customAttributeRef=[CustomAttributeName] (stringValue=STRING | intValue=INT | enumValue=[EnumValue])
+	//	customAttributeRef=[CustomAttributeName] (stringValue=STRING | intValue=INT | "(" enumValue=[EnumValue|EnumID] ")")
 	//	comment=COMMENT?;
 	public CustomPropertyElements getCustomPropertyAccess() {
 		return (pCustomProperty != null) ? pCustomProperty : (pCustomProperty = new CustomPropertyElements());

@@ -17,15 +17,14 @@ end
 		context="de.unidue.ecg.characterScript.CharacterScript.Template"
 		deleted="false" description="insert character template"
 		enabled="true" id="TemplateTemplate" name="template: character template">template ${templateName}
-	${cursor}
-end	
+${cursor}
+end
 </template>
 <template autoinsert="true"
 		context="de.unidue.ecg.characterScript.CharacterScript.CustomAttribute"
 		deleted="false" description="insert custom attribute"
 		enabled="true" id="CustomAttributeTemplate" name="template: custom attribute">${attributeName} as ${attributeType}
 	${cursor}
-end	
 </template>
 <template autoinsert="true"
 		context="de.unidue.ecg.characterScript.CharacterScript.Character"

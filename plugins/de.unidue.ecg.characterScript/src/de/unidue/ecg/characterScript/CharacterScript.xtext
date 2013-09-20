@@ -27,7 +27,11 @@ CustomAttributeName:
 	name=ID;
 
 EnumValue:
-	name=ID;
+	name=EnumID;
+
+EnumID:
+	INT | ID
+;
 
 enum AttributeType:
 	NUMBER | TEXT;
@@ -71,7 +75,7 @@ enum CharaSex:
 
 CustomProperty:
 	customAttributeRef=[CustomAttributeName|ID]
-	(stringValue=STRING | intValue=INT | enumValue=[EnumValue|ID])
+	(stringValue=STRING | intValue=INT | '('enumValue=[EnumValue|EnumID]')')
 	comment=COMMENT?;
 
 terminal COMMENT:

@@ -313,7 +313,7 @@ public class CharacterScriptValidator extends AbstractCharacterScriptValidator {
         boolean _equals_1 = Objects.equal(matchedTemplate, null);
         if (_equals_1) {
           String _name = template.getName();
-          String _plus = ("Cannot resolve the template " + _name);
+          String _plus = ("Missing import for template " + _name);
           String _name_1 = template.getName();
           this.error(_plus, 
             Literals.CHARACTER__TEMPLATE, CharacterScriptValidator.UNRESOLVED_TEMPLATE, _name_1);

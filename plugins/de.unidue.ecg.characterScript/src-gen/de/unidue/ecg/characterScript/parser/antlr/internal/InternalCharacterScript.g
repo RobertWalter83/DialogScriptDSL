@@ -503,24 +503,60 @@ ruleEnumValue returns [EObject current=null]
     @after { leaveRule(); }:
 (
 (
-		lv_name_0_0=RULE_ID
-		{
-			newLeafNode(lv_name_0_0, grammarAccess.getEnumValueAccess().getNameIDTerminalRuleCall_0()); 
-		}
-		{
+		{ 
+	        newCompositeNode(grammarAccess.getEnumValueAccess().getNameEnumIDParserRuleCall_0()); 
+	    }
+		lv_name_0_0=ruleEnumID		{
 	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getEnumValueRule());
+	            $current = createModelElementForParent(grammarAccess.getEnumValueRule());
 	        }
-       		setWithLastConsumed(
+       		set(
        			$current, 
        			"name",
         		lv_name_0_0, 
-        		"ID");
+        		"EnumID");
+	        afterParserOrEnumRuleCall();
 	    }
 
 )
 )
 ;
+
+
+
+
+
+// Entry rule entryRuleEnumID
+entryRuleEnumID returns [String current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getEnumIDRule()); } 
+	 iv_ruleEnumID=ruleEnumID 
+	 { $current=$iv_ruleEnumID.current.getText(); }  
+	 EOF 
+;
+
+// Rule EnumID
+ruleEnumID returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(    this_INT_0=RULE_INT    {
+		$current.merge(this_INT_0);
+    }
+
+    { 
+    newLeafNode(this_INT_0, grammarAccess.getEnumIDAccess().getINTTerminalRuleCall_0()); 
+    }
+
+    |    this_ID_1=RULE_ID    {
+		$current.merge(this_ID_1);
+    }
+
+    { 
+    newLeafNode(this_ID_1, grammarAccess.getEnumIDAccess().getIDTerminalRuleCall_1()); 
+    }
+)
+    ;
 
 
 
@@ -1157,24 +1193,34 @@ ruleCustomProperty returns [EObject current=null]
 
 )
 )
-    |(
+    |(	otherlv_3='(' 
+    {
+    	newLeafNode(otherlv_3, grammarAccess.getCustomPropertyAccess().getLeftParenthesisKeyword_1_2_0());
+    }
+(
 (
 		{
 			if ($current==null) {
 	            $current = createModelElement(grammarAccess.getCustomPropertyRule());
 	        }
         }
-	otherlv_3=RULE_ID
-	{
-		newLeafNode(otherlv_3, grammarAccess.getCustomPropertyAccess().getEnumValueEnumValueCrossReference_1_2_0()); 
-	}
+		{ 
+	        newCompositeNode(grammarAccess.getCustomPropertyAccess().getEnumValueEnumValueCrossReference_1_2_1_0()); 
+	    }
+		ruleEnumID		{ 
+	        afterParserOrEnumRuleCall();
+	    }
 
 )
+)	otherlv_5=')' 
+    {
+    	newLeafNode(otherlv_5, grammarAccess.getCustomPropertyAccess().getRightParenthesisKeyword_1_2_2());
+    }
 ))(
 (
-		lv_comment_4_0=RULE_COMMENT
+		lv_comment_6_0=RULE_COMMENT
 		{
-			newLeafNode(lv_comment_4_0, grammarAccess.getCustomPropertyAccess().getCommentCOMMENTTerminalRuleCall_2_0()); 
+			newLeafNode(lv_comment_6_0, grammarAccess.getCustomPropertyAccess().getCommentCOMMENTTerminalRuleCall_2_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -1183,7 +1229,7 @@ ruleCustomProperty returns [EObject current=null]
        		setWithLastConsumed(
        			$current, 
        			"comment",
-        		lv_comment_4_0, 
+        		lv_comment_6_0, 
         		"COMMENT");
 	    }
 

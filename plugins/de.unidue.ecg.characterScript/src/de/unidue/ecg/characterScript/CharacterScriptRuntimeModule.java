@@ -5,7 +5,9 @@ package de.unidue.ecg.characterScript;
 
 import org.eclipse.xtext.linking.ILinkingDiagnosticMessageProvider;
 import org.eclipse.xtext.scoping.IScopeProvider;
+import org.eclipse.xtext.scoping.impl.ImportedNamespaceAwareLocalScopeProvider;
 
+import de.unidue.ecg.characterScript.scoping.CharacterScriptImportScopeProvider;
 import de.unidue.ecg.characterScript.scoping.CharacterScriptScopeProvider;
 import de.unidue.ecg.common.linking.CustomLinkingDiagnosticMessageProvider;
 
@@ -17,6 +19,10 @@ public class CharacterScriptRuntimeModule extends de.unidue.ecg.characterScript.
 	@Override
 	public Class<? extends IScopeProvider> bindIScopeProvider() {
 		return CharacterScriptScopeProvider.class;
+	}
+	
+	public Class<? extends ImportedNamespaceAwareLocalScopeProvider> bindImportScopeProvider() {
+		return CharacterScriptImportScopeProvider.class;
 	}
 	
 	public Class<? extends ILinkingDiagnosticMessageProvider> bindILinkingDiagnosticMessageProvider() {

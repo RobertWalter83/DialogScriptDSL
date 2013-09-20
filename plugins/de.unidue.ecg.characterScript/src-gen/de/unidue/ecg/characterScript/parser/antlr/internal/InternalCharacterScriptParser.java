@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalCharacterScriptParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_COMMENT", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'import'", "'template'", "'end'", "'full name'", "'age'", "'description'", "'sex'", "'type'", "'as'", "'('", "','", "')'", "'custom'", "'attributes'", "'character'", "'uses'", "'NUMBER'", "'TEXT'", "'PC'", "'NPC'", "'male'", "'female'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_COMMENT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'import'", "'template'", "'end'", "'full name'", "'age'", "'description'", "'sex'", "'type'", "'as'", "'('", "','", "')'", "'custom'", "'attributes'", "'character'", "'uses'", "'NUMBER'", "'TEXT'", "'PC'", "'NPC'", "'male'", "'female'"
     };
     public static final int RULE_ID=4;
     public static final int T__29=29;
@@ -36,14 +36,14 @@ public class InternalCharacterScriptParser extends AbstractInternalAntlrParser {
     public static final int RULE_ANY_OTHER=11;
     public static final int T__21=21;
     public static final int T__20=20;
-    public static final int RULE_COMMENT=6;
+    public static final int RULE_COMMENT=7;
     public static final int RULE_SL_COMMENT=9;
     public static final int EOF=-1;
     public static final int RULE_ML_COMMENT=8;
     public static final int T__30=30;
     public static final int T__19=19;
     public static final int T__31=31;
-    public static final int RULE_STRING=5;
+    public static final int RULE_STRING=6;
     public static final int T__32=32;
     public static final int T__33=33;
     public static final int T__16=16;
@@ -53,7 +53,7 @@ public class InternalCharacterScriptParser extends AbstractInternalAntlrParser {
     public static final int T__12=12;
     public static final int T__14=14;
     public static final int T__13=13;
-    public static final int RULE_INT=7;
+    public static final int RULE_INT=5;
     public static final int RULE_WS=10;
 
     // delegates
@@ -1249,37 +1249,43 @@ public class InternalCharacterScriptParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEnumValue"
-    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:500:1: ruleEnumValue returns [EObject current=null] : ( (lv_name_0_0= RULE_ID ) ) ;
+    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:500:1: ruleEnumValue returns [EObject current=null] : ( (lv_name_0_0= ruleEnumID ) ) ;
     public final EObject ruleEnumValue() throws RecognitionException {
         EObject current = null;
 
-        Token lv_name_0_0=null;
+        AntlrDatatypeRuleToken lv_name_0_0 = null;
+
 
          enterRule(); 
             
         try {
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:503:28: ( ( (lv_name_0_0= RULE_ID ) ) )
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:504:1: ( (lv_name_0_0= RULE_ID ) )
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:503:28: ( ( (lv_name_0_0= ruleEnumID ) ) )
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:504:1: ( (lv_name_0_0= ruleEnumID ) )
             {
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:504:1: ( (lv_name_0_0= RULE_ID ) )
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:505:1: (lv_name_0_0= RULE_ID )
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:504:1: ( (lv_name_0_0= ruleEnumID ) )
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:505:1: (lv_name_0_0= ruleEnumID )
             {
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:505:1: (lv_name_0_0= RULE_ID )
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:506:3: lv_name_0_0= RULE_ID
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:505:1: (lv_name_0_0= ruleEnumID )
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:506:3: lv_name_0_0= ruleEnumID
             {
-            lv_name_0_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleEnumValue1024); 
+             
+            	        newCompositeNode(grammarAccess.getEnumValueAccess().getNameEnumIDParserRuleCall_0()); 
+            	    
+            pushFollow(FOLLOW_ruleEnumID_in_ruleEnumValue1028);
+            lv_name_0_0=ruleEnumID();
 
-            			newLeafNode(lv_name_0_0, grammarAccess.getEnumValueAccess().getNameIDTerminalRuleCall_0()); 
-            		
+            state._fsp--;
+
 
             	        if (current==null) {
-            	            current = createModelElement(grammarAccess.getEnumValueRule());
+            	            current = createModelElementForParent(grammarAccess.getEnumValueRule());
             	        }
-                   		setWithLastConsumed(
+                   		set(
                    			current, 
                    			"name",
                     		lv_name_0_0, 
-                    		"ID");
+                    		"EnumID");
+            	        afterParserOrEnumRuleCall();
             	    
 
             }
@@ -1304,8 +1310,121 @@ public class InternalCharacterScriptParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleEnumValue"
 
 
+    // $ANTLR start "entryRuleEnumID"
+    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:530:1: entryRuleEnumID returns [String current=null] : iv_ruleEnumID= ruleEnumID EOF ;
+    public final String entryRuleEnumID() throws RecognitionException {
+        String current = null;
+
+        AntlrDatatypeRuleToken iv_ruleEnumID = null;
+
+
+        try {
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:531:2: (iv_ruleEnumID= ruleEnumID EOF )
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:532:2: iv_ruleEnumID= ruleEnumID EOF
+            {
+             newCompositeNode(grammarAccess.getEnumIDRule()); 
+            pushFollow(FOLLOW_ruleEnumID_in_entryRuleEnumID1064);
+            iv_ruleEnumID=ruleEnumID();
+
+            state._fsp--;
+
+             current =iv_ruleEnumID.getText(); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleEnumID1075); 
+
+            }
+
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleEnumID"
+
+
+    // $ANTLR start "ruleEnumID"
+    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:539:1: ruleEnumID returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_INT_0= RULE_INT | this_ID_1= RULE_ID ) ;
+    public final AntlrDatatypeRuleToken ruleEnumID() throws RecognitionException {
+        AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
+
+        Token this_INT_0=null;
+        Token this_ID_1=null;
+
+         enterRule(); 
+            
+        try {
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:542:28: ( (this_INT_0= RULE_INT | this_ID_1= RULE_ID ) )
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:543:1: (this_INT_0= RULE_INT | this_ID_1= RULE_ID )
+            {
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:543:1: (this_INT_0= RULE_INT | this_ID_1= RULE_ID )
+            int alt10=2;
+            int LA10_0 = input.LA(1);
+
+            if ( (LA10_0==RULE_INT) ) {
+                alt10=1;
+            }
+            else if ( (LA10_0==RULE_ID) ) {
+                alt10=2;
+            }
+            else {
+                NoViableAltException nvae =
+                    new NoViableAltException("", 10, 0, input);
+
+                throw nvae;
+            }
+            switch (alt10) {
+                case 1 :
+                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:543:6: this_INT_0= RULE_INT
+                    {
+                    this_INT_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleEnumID1115); 
+
+                    		current.merge(this_INT_0);
+                        
+                     
+                        newLeafNode(this_INT_0, grammarAccess.getEnumIDAccess().getINTTerminalRuleCall_0()); 
+                        
+
+                    }
+                    break;
+                case 2 :
+                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:551:10: this_ID_1= RULE_ID
+                    {
+                    this_ID_1=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleEnumID1141); 
+
+                    		current.merge(this_ID_1);
+                        
+                     
+                        newLeafNode(this_ID_1, grammarAccess.getEnumIDAccess().getIDTerminalRuleCall_1()); 
+                        
+
+                    }
+                    break;
+
+            }
+
+
+            }
+
+             leaveRule(); 
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleEnumID"
+
+
     // $ANTLR start "entryRuleCustoms"
-    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:530:1: entryRuleCustoms returns [EObject current=null] : iv_ruleCustoms= ruleCustoms EOF ;
+    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:566:1: entryRuleCustoms returns [EObject current=null] : iv_ruleCustoms= ruleCustoms EOF ;
     public final EObject entryRuleCustoms() throws RecognitionException {
         EObject current = null;
 
@@ -1313,17 +1432,17 @@ public class InternalCharacterScriptParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:531:2: (iv_ruleCustoms= ruleCustoms EOF )
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:532:2: iv_ruleCustoms= ruleCustoms EOF
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:567:2: (iv_ruleCustoms= ruleCustoms EOF )
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:568:2: iv_ruleCustoms= ruleCustoms EOF
             {
              newCompositeNode(grammarAccess.getCustomsRule()); 
-            pushFollow(FOLLOW_ruleCustoms_in_entryRuleCustoms1064);
+            pushFollow(FOLLOW_ruleCustoms_in_entryRuleCustoms1186);
             iv_ruleCustoms=ruleCustoms();
 
             state._fsp--;
 
              current =iv_ruleCustoms; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleCustoms1074); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleCustoms1196); 
 
             }
 
@@ -1341,7 +1460,7 @@ public class InternalCharacterScriptParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleCustoms"
-    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:539:1: ruleCustoms returns [EObject current=null] : (otherlv_0= 'custom' otherlv_1= 'attributes' ( (lv_customAttributes_2_0= ruleCustomAttribute ) ) ( (lv_customAttributes_3_0= ruleCustomAttribute ) )* otherlv_4= 'end' ) ;
+    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:575:1: ruleCustoms returns [EObject current=null] : (otherlv_0= 'custom' otherlv_1= 'attributes' ( (lv_customAttributes_2_0= ruleCustomAttribute ) ) ( (lv_customAttributes_3_0= ruleCustomAttribute ) )* otherlv_4= 'end' ) ;
     public final EObject ruleCustoms() throws RecognitionException {
         EObject current = null;
 
@@ -1356,30 +1475,30 @@ public class InternalCharacterScriptParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:542:28: ( (otherlv_0= 'custom' otherlv_1= 'attributes' ( (lv_customAttributes_2_0= ruleCustomAttribute ) ) ( (lv_customAttributes_3_0= ruleCustomAttribute ) )* otherlv_4= 'end' ) )
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:543:1: (otherlv_0= 'custom' otherlv_1= 'attributes' ( (lv_customAttributes_2_0= ruleCustomAttribute ) ) ( (lv_customAttributes_3_0= ruleCustomAttribute ) )* otherlv_4= 'end' )
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:578:28: ( (otherlv_0= 'custom' otherlv_1= 'attributes' ( (lv_customAttributes_2_0= ruleCustomAttribute ) ) ( (lv_customAttributes_3_0= ruleCustomAttribute ) )* otherlv_4= 'end' ) )
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:579:1: (otherlv_0= 'custom' otherlv_1= 'attributes' ( (lv_customAttributes_2_0= ruleCustomAttribute ) ) ( (lv_customAttributes_3_0= ruleCustomAttribute ) )* otherlv_4= 'end' )
             {
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:543:1: (otherlv_0= 'custom' otherlv_1= 'attributes' ( (lv_customAttributes_2_0= ruleCustomAttribute ) ) ( (lv_customAttributes_3_0= ruleCustomAttribute ) )* otherlv_4= 'end' )
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:543:3: otherlv_0= 'custom' otherlv_1= 'attributes' ( (lv_customAttributes_2_0= ruleCustomAttribute ) ) ( (lv_customAttributes_3_0= ruleCustomAttribute ) )* otherlv_4= 'end'
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:579:1: (otherlv_0= 'custom' otherlv_1= 'attributes' ( (lv_customAttributes_2_0= ruleCustomAttribute ) ) ( (lv_customAttributes_3_0= ruleCustomAttribute ) )* otherlv_4= 'end' )
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:579:3: otherlv_0= 'custom' otherlv_1= 'attributes' ( (lv_customAttributes_2_0= ruleCustomAttribute ) ) ( (lv_customAttributes_3_0= ruleCustomAttribute ) )* otherlv_4= 'end'
             {
-            otherlv_0=(Token)match(input,24,FOLLOW_24_in_ruleCustoms1111); 
+            otherlv_0=(Token)match(input,24,FOLLOW_24_in_ruleCustoms1233); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getCustomsAccess().getCustomKeyword_0());
                 
-            otherlv_1=(Token)match(input,25,FOLLOW_25_in_ruleCustoms1123); 
+            otherlv_1=(Token)match(input,25,FOLLOW_25_in_ruleCustoms1245); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getCustomsAccess().getAttributesKeyword_1());
                 
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:551:1: ( (lv_customAttributes_2_0= ruleCustomAttribute ) )
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:552:1: (lv_customAttributes_2_0= ruleCustomAttribute )
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:587:1: ( (lv_customAttributes_2_0= ruleCustomAttribute ) )
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:588:1: (lv_customAttributes_2_0= ruleCustomAttribute )
             {
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:552:1: (lv_customAttributes_2_0= ruleCustomAttribute )
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:553:3: lv_customAttributes_2_0= ruleCustomAttribute
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:588:1: (lv_customAttributes_2_0= ruleCustomAttribute )
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:589:3: lv_customAttributes_2_0= ruleCustomAttribute
             {
              
             	        newCompositeNode(grammarAccess.getCustomsAccess().getCustomAttributesCustomAttributeParserRuleCall_2_0()); 
             	    
-            pushFollow(FOLLOW_ruleCustomAttribute_in_ruleCustoms1144);
+            pushFollow(FOLLOW_ruleCustomAttribute_in_ruleCustoms1266);
             lv_customAttributes_2_0=ruleCustomAttribute();
 
             state._fsp--;
@@ -1401,28 +1520,28 @@ public class InternalCharacterScriptParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:569:2: ( (lv_customAttributes_3_0= ruleCustomAttribute ) )*
-            loop10:
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:605:2: ( (lv_customAttributes_3_0= ruleCustomAttribute ) )*
+            loop11:
             do {
-                int alt10=2;
-                int LA10_0 = input.LA(1);
+                int alt11=2;
+                int LA11_0 = input.LA(1);
 
-                if ( (LA10_0==RULE_ID) ) {
-                    alt10=1;
+                if ( (LA11_0==RULE_ID) ) {
+                    alt11=1;
                 }
 
 
-                switch (alt10) {
+                switch (alt11) {
             	case 1 :
-            	    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:570:1: (lv_customAttributes_3_0= ruleCustomAttribute )
+            	    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:606:1: (lv_customAttributes_3_0= ruleCustomAttribute )
             	    {
-            	    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:570:1: (lv_customAttributes_3_0= ruleCustomAttribute )
-            	    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:571:3: lv_customAttributes_3_0= ruleCustomAttribute
+            	    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:606:1: (lv_customAttributes_3_0= ruleCustomAttribute )
+            	    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:607:3: lv_customAttributes_3_0= ruleCustomAttribute
             	    {
             	     
             	    	        newCompositeNode(grammarAccess.getCustomsAccess().getCustomAttributesCustomAttributeParserRuleCall_3_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleCustomAttribute_in_ruleCustoms1165);
+            	    pushFollow(FOLLOW_ruleCustomAttribute_in_ruleCustoms1287);
             	    lv_customAttributes_3_0=ruleCustomAttribute();
 
             	    state._fsp--;
@@ -1446,11 +1565,11 @@ public class InternalCharacterScriptParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop10;
+            	    break loop11;
                 }
             } while (true);
 
-            otherlv_4=(Token)match(input,14,FOLLOW_14_in_ruleCustoms1178); 
+            otherlv_4=(Token)match(input,14,FOLLOW_14_in_ruleCustoms1300); 
 
                 	newLeafNode(otherlv_4, grammarAccess.getCustomsAccess().getEndKeyword_4());
                 
@@ -1475,7 +1594,7 @@ public class InternalCharacterScriptParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleCharacter"
-    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:599:1: entryRuleCharacter returns [EObject current=null] : iv_ruleCharacter= ruleCharacter EOF ;
+    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:635:1: entryRuleCharacter returns [EObject current=null] : iv_ruleCharacter= ruleCharacter EOF ;
     public final EObject entryRuleCharacter() throws RecognitionException {
         EObject current = null;
 
@@ -1483,17 +1602,17 @@ public class InternalCharacterScriptParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:600:2: (iv_ruleCharacter= ruleCharacter EOF )
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:601:2: iv_ruleCharacter= ruleCharacter EOF
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:636:2: (iv_ruleCharacter= ruleCharacter EOF )
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:637:2: iv_ruleCharacter= ruleCharacter EOF
             {
              newCompositeNode(grammarAccess.getCharacterRule()); 
-            pushFollow(FOLLOW_ruleCharacter_in_entryRuleCharacter1214);
+            pushFollow(FOLLOW_ruleCharacter_in_entryRuleCharacter1336);
             iv_ruleCharacter=ruleCharacter();
 
             state._fsp--;
 
              current =iv_ruleCharacter; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleCharacter1224); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleCharacter1346); 
 
             }
 
@@ -1511,7 +1630,7 @@ public class InternalCharacterScriptParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleCharacter"
-    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:608:1: ruleCharacter returns [EObject current=null] : (otherlv_0= 'character' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'uses' ( (otherlv_3= RULE_ID ) ) )? ( (lv_properties_4_0= ruleProperty ) )* otherlv_5= 'end' ) ;
+    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:644:1: ruleCharacter returns [EObject current=null] : (otherlv_0= 'character' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'uses' ( (otherlv_3= RULE_ID ) ) )? ( (lv_properties_4_0= ruleProperty ) )* otherlv_5= 'end' ) ;
     public final EObject ruleCharacter() throws RecognitionException {
         EObject current = null;
 
@@ -1526,23 +1645,23 @@ public class InternalCharacterScriptParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:611:28: ( (otherlv_0= 'character' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'uses' ( (otherlv_3= RULE_ID ) ) )? ( (lv_properties_4_0= ruleProperty ) )* otherlv_5= 'end' ) )
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:612:1: (otherlv_0= 'character' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'uses' ( (otherlv_3= RULE_ID ) ) )? ( (lv_properties_4_0= ruleProperty ) )* otherlv_5= 'end' )
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:647:28: ( (otherlv_0= 'character' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'uses' ( (otherlv_3= RULE_ID ) ) )? ( (lv_properties_4_0= ruleProperty ) )* otherlv_5= 'end' ) )
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:648:1: (otherlv_0= 'character' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'uses' ( (otherlv_3= RULE_ID ) ) )? ( (lv_properties_4_0= ruleProperty ) )* otherlv_5= 'end' )
             {
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:612:1: (otherlv_0= 'character' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'uses' ( (otherlv_3= RULE_ID ) ) )? ( (lv_properties_4_0= ruleProperty ) )* otherlv_5= 'end' )
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:612:3: otherlv_0= 'character' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'uses' ( (otherlv_3= RULE_ID ) ) )? ( (lv_properties_4_0= ruleProperty ) )* otherlv_5= 'end'
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:648:1: (otherlv_0= 'character' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'uses' ( (otherlv_3= RULE_ID ) ) )? ( (lv_properties_4_0= ruleProperty ) )* otherlv_5= 'end' )
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:648:3: otherlv_0= 'character' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'uses' ( (otherlv_3= RULE_ID ) ) )? ( (lv_properties_4_0= ruleProperty ) )* otherlv_5= 'end'
             {
-            otherlv_0=(Token)match(input,26,FOLLOW_26_in_ruleCharacter1261); 
+            otherlv_0=(Token)match(input,26,FOLLOW_26_in_ruleCharacter1383); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getCharacterAccess().getCharacterKeyword_0());
                 
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:616:1: ( (lv_name_1_0= RULE_ID ) )
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:617:1: (lv_name_1_0= RULE_ID )
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:652:1: ( (lv_name_1_0= RULE_ID ) )
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:653:1: (lv_name_1_0= RULE_ID )
             {
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:617:1: (lv_name_1_0= RULE_ID )
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:618:3: lv_name_1_0= RULE_ID
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:653:1: (lv_name_1_0= RULE_ID )
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:654:3: lv_name_1_0= RULE_ID
             {
-            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleCharacter1278); 
+            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleCharacter1400); 
 
             			newLeafNode(lv_name_1_0, grammarAccess.getCharacterAccess().getNameIDTerminalRuleCall_1_0()); 
             		
@@ -1562,33 +1681,33 @@ public class InternalCharacterScriptParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:634:2: (otherlv_2= 'uses' ( (otherlv_3= RULE_ID ) ) )?
-            int alt11=2;
-            int LA11_0 = input.LA(1);
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:670:2: (otherlv_2= 'uses' ( (otherlv_3= RULE_ID ) ) )?
+            int alt12=2;
+            int LA12_0 = input.LA(1);
 
-            if ( (LA11_0==27) ) {
-                alt11=1;
+            if ( (LA12_0==27) ) {
+                alt12=1;
             }
-            switch (alt11) {
+            switch (alt12) {
                 case 1 :
-                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:634:4: otherlv_2= 'uses' ( (otherlv_3= RULE_ID ) )
+                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:670:4: otherlv_2= 'uses' ( (otherlv_3= RULE_ID ) )
                     {
-                    otherlv_2=(Token)match(input,27,FOLLOW_27_in_ruleCharacter1296); 
+                    otherlv_2=(Token)match(input,27,FOLLOW_27_in_ruleCharacter1418); 
 
                         	newLeafNode(otherlv_2, grammarAccess.getCharacterAccess().getUsesKeyword_2_0());
                         
-                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:638:1: ( (otherlv_3= RULE_ID ) )
-                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:639:1: (otherlv_3= RULE_ID )
+                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:674:1: ( (otherlv_3= RULE_ID ) )
+                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:675:1: (otherlv_3= RULE_ID )
                     {
-                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:639:1: (otherlv_3= RULE_ID )
-                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:640:3: otherlv_3= RULE_ID
+                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:675:1: (otherlv_3= RULE_ID )
+                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:676:3: otherlv_3= RULE_ID
                     {
 
                     			if (current==null) {
                     	            current = createModelElement(grammarAccess.getCharacterRule());
                     	        }
                             
-                    otherlv_3=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleCharacter1316); 
+                    otherlv_3=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleCharacter1438); 
 
                     		newLeafNode(otherlv_3, grammarAccess.getCharacterAccess().getTemplateTemplateCrossReference_2_1_0()); 
                     	
@@ -1604,28 +1723,28 @@ public class InternalCharacterScriptParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:651:4: ( (lv_properties_4_0= ruleProperty ) )*
-            loop12:
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:687:4: ( (lv_properties_4_0= ruleProperty ) )*
+            loop13:
             do {
-                int alt12=2;
-                int LA12_0 = input.LA(1);
+                int alt13=2;
+                int LA13_0 = input.LA(1);
 
-                if ( (LA12_0==RULE_ID||(LA12_0>=15 && LA12_0<=19)) ) {
-                    alt12=1;
+                if ( (LA13_0==RULE_ID||(LA13_0>=15 && LA13_0<=19)) ) {
+                    alt13=1;
                 }
 
 
-                switch (alt12) {
+                switch (alt13) {
             	case 1 :
-            	    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:652:1: (lv_properties_4_0= ruleProperty )
+            	    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:688:1: (lv_properties_4_0= ruleProperty )
             	    {
-            	    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:652:1: (lv_properties_4_0= ruleProperty )
-            	    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:653:3: lv_properties_4_0= ruleProperty
+            	    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:688:1: (lv_properties_4_0= ruleProperty )
+            	    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:689:3: lv_properties_4_0= ruleProperty
             	    {
             	     
             	    	        newCompositeNode(grammarAccess.getCharacterAccess().getPropertiesPropertyParserRuleCall_3_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleProperty_in_ruleCharacter1339);
+            	    pushFollow(FOLLOW_ruleProperty_in_ruleCharacter1461);
             	    lv_properties_4_0=ruleProperty();
 
             	    state._fsp--;
@@ -1649,11 +1768,11 @@ public class InternalCharacterScriptParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop12;
+            	    break loop13;
                 }
             } while (true);
 
-            otherlv_5=(Token)match(input,14,FOLLOW_14_in_ruleCharacter1352); 
+            otherlv_5=(Token)match(input,14,FOLLOW_14_in_ruleCharacter1474); 
 
                 	newLeafNode(otherlv_5, grammarAccess.getCharacterAccess().getEndKeyword_4());
                 
@@ -1678,7 +1797,7 @@ public class InternalCharacterScriptParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleProperty"
-    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:681:1: entryRuleProperty returns [EObject current=null] : iv_ruleProperty= ruleProperty EOF ;
+    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:717:1: entryRuleProperty returns [EObject current=null] : iv_ruleProperty= ruleProperty EOF ;
     public final EObject entryRuleProperty() throws RecognitionException {
         EObject current = null;
 
@@ -1686,17 +1805,17 @@ public class InternalCharacterScriptParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:682:2: (iv_ruleProperty= ruleProperty EOF )
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:683:2: iv_ruleProperty= ruleProperty EOF
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:718:2: (iv_ruleProperty= ruleProperty EOF )
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:719:2: iv_ruleProperty= ruleProperty EOF
             {
              newCompositeNode(grammarAccess.getPropertyRule()); 
-            pushFollow(FOLLOW_ruleProperty_in_entryRuleProperty1388);
+            pushFollow(FOLLOW_ruleProperty_in_entryRuleProperty1510);
             iv_ruleProperty=ruleProperty();
 
             state._fsp--;
 
              current =iv_ruleProperty; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleProperty1398); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleProperty1520); 
 
             }
 
@@ -1714,7 +1833,7 @@ public class InternalCharacterScriptParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleProperty"
-    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:690:1: ruleProperty returns [EObject current=null] : (this_DefaultProperty_0= ruleDefaultProperty | this_CustomProperty_1= ruleCustomProperty ) ;
+    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:726:1: ruleProperty returns [EObject current=null] : (this_DefaultProperty_0= ruleDefaultProperty | this_CustomProperty_1= ruleCustomProperty ) ;
     public final EObject ruleProperty() throws RecognitionException {
         EObject current = null;
 
@@ -1726,33 +1845,33 @@ public class InternalCharacterScriptParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:693:28: ( (this_DefaultProperty_0= ruleDefaultProperty | this_CustomProperty_1= ruleCustomProperty ) )
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:694:1: (this_DefaultProperty_0= ruleDefaultProperty | this_CustomProperty_1= ruleCustomProperty )
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:729:28: ( (this_DefaultProperty_0= ruleDefaultProperty | this_CustomProperty_1= ruleCustomProperty ) )
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:730:1: (this_DefaultProperty_0= ruleDefaultProperty | this_CustomProperty_1= ruleCustomProperty )
             {
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:694:1: (this_DefaultProperty_0= ruleDefaultProperty | this_CustomProperty_1= ruleCustomProperty )
-            int alt13=2;
-            int LA13_0 = input.LA(1);
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:730:1: (this_DefaultProperty_0= ruleDefaultProperty | this_CustomProperty_1= ruleCustomProperty )
+            int alt14=2;
+            int LA14_0 = input.LA(1);
 
-            if ( ((LA13_0>=15 && LA13_0<=19)) ) {
-                alt13=1;
+            if ( ((LA14_0>=15 && LA14_0<=19)) ) {
+                alt14=1;
             }
-            else if ( (LA13_0==RULE_ID) ) {
-                alt13=2;
+            else if ( (LA14_0==RULE_ID) ) {
+                alt14=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 13, 0, input);
+                    new NoViableAltException("", 14, 0, input);
 
                 throw nvae;
             }
-            switch (alt13) {
+            switch (alt14) {
                 case 1 :
-                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:695:5: this_DefaultProperty_0= ruleDefaultProperty
+                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:731:5: this_DefaultProperty_0= ruleDefaultProperty
                     {
                      
                             newCompositeNode(grammarAccess.getPropertyAccess().getDefaultPropertyParserRuleCall_0()); 
                         
-                    pushFollow(FOLLOW_ruleDefaultProperty_in_ruleProperty1445);
+                    pushFollow(FOLLOW_ruleDefaultProperty_in_ruleProperty1567);
                     this_DefaultProperty_0=ruleDefaultProperty();
 
                     state._fsp--;
@@ -1765,12 +1884,12 @@ public class InternalCharacterScriptParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:705:5: this_CustomProperty_1= ruleCustomProperty
+                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:741:5: this_CustomProperty_1= ruleCustomProperty
                     {
                      
                             newCompositeNode(grammarAccess.getPropertyAccess().getCustomPropertyParserRuleCall_1()); 
                         
-                    pushFollow(FOLLOW_ruleCustomProperty_in_ruleProperty1472);
+                    pushFollow(FOLLOW_ruleCustomProperty_in_ruleProperty1594);
                     this_CustomProperty_1=ruleCustomProperty();
 
                     state._fsp--;
@@ -1803,7 +1922,7 @@ public class InternalCharacterScriptParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleDefaultProperty"
-    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:721:1: entryRuleDefaultProperty returns [EObject current=null] : iv_ruleDefaultProperty= ruleDefaultProperty EOF ;
+    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:757:1: entryRuleDefaultProperty returns [EObject current=null] : iv_ruleDefaultProperty= ruleDefaultProperty EOF ;
     public final EObject entryRuleDefaultProperty() throws RecognitionException {
         EObject current = null;
 
@@ -1811,17 +1930,17 @@ public class InternalCharacterScriptParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:722:2: (iv_ruleDefaultProperty= ruleDefaultProperty EOF )
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:723:2: iv_ruleDefaultProperty= ruleDefaultProperty EOF
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:758:2: (iv_ruleDefaultProperty= ruleDefaultProperty EOF )
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:759:2: iv_ruleDefaultProperty= ruleDefaultProperty EOF
             {
              newCompositeNode(grammarAccess.getDefaultPropertyRule()); 
-            pushFollow(FOLLOW_ruleDefaultProperty_in_entryRuleDefaultProperty1507);
+            pushFollow(FOLLOW_ruleDefaultProperty_in_entryRuleDefaultProperty1629);
             iv_ruleDefaultProperty=ruleDefaultProperty();
 
             state._fsp--;
 
              current =iv_ruleDefaultProperty; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleDefaultProperty1517); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleDefaultProperty1639); 
 
             }
 
@@ -1839,7 +1958,7 @@ public class InternalCharacterScriptParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleDefaultProperty"
-    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:730:1: ruleDefaultProperty returns [EObject current=null] : (this_FullName_0= ruleFullName | this_Description_1= ruleDescription | this_Type_2= ruleType | this_Age_3= ruleAge | this_Sex_4= ruleSex ) ;
+    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:766:1: ruleDefaultProperty returns [EObject current=null] : (this_FullName_0= ruleFullName | this_Description_1= ruleDescription | this_Type_2= ruleType | this_Age_3= ruleAge | this_Sex_4= ruleSex ) ;
     public final EObject ruleDefaultProperty() throws RecognitionException {
         EObject current = null;
 
@@ -1857,52 +1976,52 @@ public class InternalCharacterScriptParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:733:28: ( (this_FullName_0= ruleFullName | this_Description_1= ruleDescription | this_Type_2= ruleType | this_Age_3= ruleAge | this_Sex_4= ruleSex ) )
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:734:1: (this_FullName_0= ruleFullName | this_Description_1= ruleDescription | this_Type_2= ruleType | this_Age_3= ruleAge | this_Sex_4= ruleSex )
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:769:28: ( (this_FullName_0= ruleFullName | this_Description_1= ruleDescription | this_Type_2= ruleType | this_Age_3= ruleAge | this_Sex_4= ruleSex ) )
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:770:1: (this_FullName_0= ruleFullName | this_Description_1= ruleDescription | this_Type_2= ruleType | this_Age_3= ruleAge | this_Sex_4= ruleSex )
             {
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:734:1: (this_FullName_0= ruleFullName | this_Description_1= ruleDescription | this_Type_2= ruleType | this_Age_3= ruleAge | this_Sex_4= ruleSex )
-            int alt14=5;
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:770:1: (this_FullName_0= ruleFullName | this_Description_1= ruleDescription | this_Type_2= ruleType | this_Age_3= ruleAge | this_Sex_4= ruleSex )
+            int alt15=5;
             switch ( input.LA(1) ) {
             case 15:
                 {
-                alt14=1;
+                alt15=1;
                 }
                 break;
             case 17:
                 {
-                alt14=2;
+                alt15=2;
                 }
                 break;
             case 19:
                 {
-                alt14=3;
+                alt15=3;
                 }
                 break;
             case 16:
                 {
-                alt14=4;
+                alt15=4;
                 }
                 break;
             case 18:
                 {
-                alt14=5;
+                alt15=5;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 14, 0, input);
+                    new NoViableAltException("", 15, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt14) {
+            switch (alt15) {
                 case 1 :
-                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:735:5: this_FullName_0= ruleFullName
+                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:771:5: this_FullName_0= ruleFullName
                     {
                      
                             newCompositeNode(grammarAccess.getDefaultPropertyAccess().getFullNameParserRuleCall_0()); 
                         
-                    pushFollow(FOLLOW_ruleFullName_in_ruleDefaultProperty1564);
+                    pushFollow(FOLLOW_ruleFullName_in_ruleDefaultProperty1686);
                     this_FullName_0=ruleFullName();
 
                     state._fsp--;
@@ -1915,12 +2034,12 @@ public class InternalCharacterScriptParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:745:5: this_Description_1= ruleDescription
+                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:781:5: this_Description_1= ruleDescription
                     {
                      
                             newCompositeNode(grammarAccess.getDefaultPropertyAccess().getDescriptionParserRuleCall_1()); 
                         
-                    pushFollow(FOLLOW_ruleDescription_in_ruleDefaultProperty1591);
+                    pushFollow(FOLLOW_ruleDescription_in_ruleDefaultProperty1713);
                     this_Description_1=ruleDescription();
 
                     state._fsp--;
@@ -1933,12 +2052,12 @@ public class InternalCharacterScriptParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:755:5: this_Type_2= ruleType
+                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:791:5: this_Type_2= ruleType
                     {
                      
                             newCompositeNode(grammarAccess.getDefaultPropertyAccess().getTypeParserRuleCall_2()); 
                         
-                    pushFollow(FOLLOW_ruleType_in_ruleDefaultProperty1618);
+                    pushFollow(FOLLOW_ruleType_in_ruleDefaultProperty1740);
                     this_Type_2=ruleType();
 
                     state._fsp--;
@@ -1951,12 +2070,12 @@ public class InternalCharacterScriptParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:765:5: this_Age_3= ruleAge
+                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:801:5: this_Age_3= ruleAge
                     {
                      
                             newCompositeNode(grammarAccess.getDefaultPropertyAccess().getAgeParserRuleCall_3()); 
                         
-                    pushFollow(FOLLOW_ruleAge_in_ruleDefaultProperty1645);
+                    pushFollow(FOLLOW_ruleAge_in_ruleDefaultProperty1767);
                     this_Age_3=ruleAge();
 
                     state._fsp--;
@@ -1969,12 +2088,12 @@ public class InternalCharacterScriptParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:775:5: this_Sex_4= ruleSex
+                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:811:5: this_Sex_4= ruleSex
                     {
                      
                             newCompositeNode(grammarAccess.getDefaultPropertyAccess().getSexParserRuleCall_4()); 
                         
-                    pushFollow(FOLLOW_ruleSex_in_ruleDefaultProperty1672);
+                    pushFollow(FOLLOW_ruleSex_in_ruleDefaultProperty1794);
                     this_Sex_4=ruleSex();
 
                     state._fsp--;
@@ -2007,7 +2126,7 @@ public class InternalCharacterScriptParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleFullName"
-    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:791:1: entryRuleFullName returns [EObject current=null] : iv_ruleFullName= ruleFullName EOF ;
+    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:827:1: entryRuleFullName returns [EObject current=null] : iv_ruleFullName= ruleFullName EOF ;
     public final EObject entryRuleFullName() throws RecognitionException {
         EObject current = null;
 
@@ -2015,17 +2134,17 @@ public class InternalCharacterScriptParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:792:2: (iv_ruleFullName= ruleFullName EOF )
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:793:2: iv_ruleFullName= ruleFullName EOF
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:828:2: (iv_ruleFullName= ruleFullName EOF )
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:829:2: iv_ruleFullName= ruleFullName EOF
             {
              newCompositeNode(grammarAccess.getFullNameRule()); 
-            pushFollow(FOLLOW_ruleFullName_in_entryRuleFullName1707);
+            pushFollow(FOLLOW_ruleFullName_in_entryRuleFullName1829);
             iv_ruleFullName=ruleFullName();
 
             state._fsp--;
 
              current =iv_ruleFullName; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleFullName1717); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleFullName1839); 
 
             }
 
@@ -2043,7 +2162,7 @@ public class InternalCharacterScriptParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleFullName"
-    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:800:1: ruleFullName returns [EObject current=null] : (otherlv_0= 'full name' ( (lv_value_1_0= RULE_STRING ) ) ( (lv_comment_2_0= RULE_COMMENT ) )? ) ;
+    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:836:1: ruleFullName returns [EObject current=null] : (otherlv_0= 'full name' ( (lv_value_1_0= RULE_STRING ) ) ( (lv_comment_2_0= RULE_COMMENT ) )? ) ;
     public final EObject ruleFullName() throws RecognitionException {
         EObject current = null;
 
@@ -2054,23 +2173,23 @@ public class InternalCharacterScriptParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:803:28: ( (otherlv_0= 'full name' ( (lv_value_1_0= RULE_STRING ) ) ( (lv_comment_2_0= RULE_COMMENT ) )? ) )
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:804:1: (otherlv_0= 'full name' ( (lv_value_1_0= RULE_STRING ) ) ( (lv_comment_2_0= RULE_COMMENT ) )? )
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:839:28: ( (otherlv_0= 'full name' ( (lv_value_1_0= RULE_STRING ) ) ( (lv_comment_2_0= RULE_COMMENT ) )? ) )
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:840:1: (otherlv_0= 'full name' ( (lv_value_1_0= RULE_STRING ) ) ( (lv_comment_2_0= RULE_COMMENT ) )? )
             {
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:804:1: (otherlv_0= 'full name' ( (lv_value_1_0= RULE_STRING ) ) ( (lv_comment_2_0= RULE_COMMENT ) )? )
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:804:3: otherlv_0= 'full name' ( (lv_value_1_0= RULE_STRING ) ) ( (lv_comment_2_0= RULE_COMMENT ) )?
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:840:1: (otherlv_0= 'full name' ( (lv_value_1_0= RULE_STRING ) ) ( (lv_comment_2_0= RULE_COMMENT ) )? )
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:840:3: otherlv_0= 'full name' ( (lv_value_1_0= RULE_STRING ) ) ( (lv_comment_2_0= RULE_COMMENT ) )?
             {
-            otherlv_0=(Token)match(input,15,FOLLOW_15_in_ruleFullName1754); 
+            otherlv_0=(Token)match(input,15,FOLLOW_15_in_ruleFullName1876); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getFullNameAccess().getFullNameKeyword_0());
                 
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:808:1: ( (lv_value_1_0= RULE_STRING ) )
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:809:1: (lv_value_1_0= RULE_STRING )
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:844:1: ( (lv_value_1_0= RULE_STRING ) )
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:845:1: (lv_value_1_0= RULE_STRING )
             {
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:809:1: (lv_value_1_0= RULE_STRING )
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:810:3: lv_value_1_0= RULE_STRING
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:845:1: (lv_value_1_0= RULE_STRING )
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:846:3: lv_value_1_0= RULE_STRING
             {
-            lv_value_1_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleFullName1771); 
+            lv_value_1_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleFullName1893); 
 
             			newLeafNode(lv_value_1_0, grammarAccess.getFullNameAccess().getValueSTRINGTerminalRuleCall_1_0()); 
             		
@@ -2090,21 +2209,21 @@ public class InternalCharacterScriptParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:826:2: ( (lv_comment_2_0= RULE_COMMENT ) )?
-            int alt15=2;
-            int LA15_0 = input.LA(1);
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:862:2: ( (lv_comment_2_0= RULE_COMMENT ) )?
+            int alt16=2;
+            int LA16_0 = input.LA(1);
 
-            if ( (LA15_0==RULE_COMMENT) ) {
-                alt15=1;
+            if ( (LA16_0==RULE_COMMENT) ) {
+                alt16=1;
             }
-            switch (alt15) {
+            switch (alt16) {
                 case 1 :
-                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:827:1: (lv_comment_2_0= RULE_COMMENT )
+                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:863:1: (lv_comment_2_0= RULE_COMMENT )
                     {
-                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:827:1: (lv_comment_2_0= RULE_COMMENT )
-                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:828:3: lv_comment_2_0= RULE_COMMENT
+                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:863:1: (lv_comment_2_0= RULE_COMMENT )
+                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:864:3: lv_comment_2_0= RULE_COMMENT
                     {
-                    lv_comment_2_0=(Token)match(input,RULE_COMMENT,FOLLOW_RULE_COMMENT_in_ruleFullName1793); 
+                    lv_comment_2_0=(Token)match(input,RULE_COMMENT,FOLLOW_RULE_COMMENT_in_ruleFullName1915); 
 
                     			newLeafNode(lv_comment_2_0, grammarAccess.getFullNameAccess().getCommentCOMMENTTerminalRuleCall_2_0()); 
                     		
@@ -2148,7 +2267,7 @@ public class InternalCharacterScriptParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleDescription"
-    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:852:1: entryRuleDescription returns [EObject current=null] : iv_ruleDescription= ruleDescription EOF ;
+    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:888:1: entryRuleDescription returns [EObject current=null] : iv_ruleDescription= ruleDescription EOF ;
     public final EObject entryRuleDescription() throws RecognitionException {
         EObject current = null;
 
@@ -2156,17 +2275,17 @@ public class InternalCharacterScriptParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:853:2: (iv_ruleDescription= ruleDescription EOF )
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:854:2: iv_ruleDescription= ruleDescription EOF
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:889:2: (iv_ruleDescription= ruleDescription EOF )
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:890:2: iv_ruleDescription= ruleDescription EOF
             {
              newCompositeNode(grammarAccess.getDescriptionRule()); 
-            pushFollow(FOLLOW_ruleDescription_in_entryRuleDescription1835);
+            pushFollow(FOLLOW_ruleDescription_in_entryRuleDescription1957);
             iv_ruleDescription=ruleDescription();
 
             state._fsp--;
 
              current =iv_ruleDescription; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleDescription1845); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleDescription1967); 
 
             }
 
@@ -2184,7 +2303,7 @@ public class InternalCharacterScriptParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleDescription"
-    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:861:1: ruleDescription returns [EObject current=null] : (otherlv_0= 'description' ( (lv_value_1_0= RULE_STRING ) ) ( (lv_comment_2_0= RULE_COMMENT ) )? ) ;
+    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:897:1: ruleDescription returns [EObject current=null] : (otherlv_0= 'description' ( (lv_value_1_0= RULE_STRING ) ) ( (lv_comment_2_0= RULE_COMMENT ) )? ) ;
     public final EObject ruleDescription() throws RecognitionException {
         EObject current = null;
 
@@ -2195,23 +2314,23 @@ public class InternalCharacterScriptParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:864:28: ( (otherlv_0= 'description' ( (lv_value_1_0= RULE_STRING ) ) ( (lv_comment_2_0= RULE_COMMENT ) )? ) )
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:865:1: (otherlv_0= 'description' ( (lv_value_1_0= RULE_STRING ) ) ( (lv_comment_2_0= RULE_COMMENT ) )? )
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:900:28: ( (otherlv_0= 'description' ( (lv_value_1_0= RULE_STRING ) ) ( (lv_comment_2_0= RULE_COMMENT ) )? ) )
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:901:1: (otherlv_0= 'description' ( (lv_value_1_0= RULE_STRING ) ) ( (lv_comment_2_0= RULE_COMMENT ) )? )
             {
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:865:1: (otherlv_0= 'description' ( (lv_value_1_0= RULE_STRING ) ) ( (lv_comment_2_0= RULE_COMMENT ) )? )
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:865:3: otherlv_0= 'description' ( (lv_value_1_0= RULE_STRING ) ) ( (lv_comment_2_0= RULE_COMMENT ) )?
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:901:1: (otherlv_0= 'description' ( (lv_value_1_0= RULE_STRING ) ) ( (lv_comment_2_0= RULE_COMMENT ) )? )
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:901:3: otherlv_0= 'description' ( (lv_value_1_0= RULE_STRING ) ) ( (lv_comment_2_0= RULE_COMMENT ) )?
             {
-            otherlv_0=(Token)match(input,17,FOLLOW_17_in_ruleDescription1882); 
+            otherlv_0=(Token)match(input,17,FOLLOW_17_in_ruleDescription2004); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getDescriptionAccess().getDescriptionKeyword_0());
                 
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:869:1: ( (lv_value_1_0= RULE_STRING ) )
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:870:1: (lv_value_1_0= RULE_STRING )
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:905:1: ( (lv_value_1_0= RULE_STRING ) )
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:906:1: (lv_value_1_0= RULE_STRING )
             {
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:870:1: (lv_value_1_0= RULE_STRING )
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:871:3: lv_value_1_0= RULE_STRING
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:906:1: (lv_value_1_0= RULE_STRING )
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:907:3: lv_value_1_0= RULE_STRING
             {
-            lv_value_1_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleDescription1899); 
+            lv_value_1_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleDescription2021); 
 
             			newLeafNode(lv_value_1_0, grammarAccess.getDescriptionAccess().getValueSTRINGTerminalRuleCall_1_0()); 
             		
@@ -2231,21 +2350,21 @@ public class InternalCharacterScriptParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:887:2: ( (lv_comment_2_0= RULE_COMMENT ) )?
-            int alt16=2;
-            int LA16_0 = input.LA(1);
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:923:2: ( (lv_comment_2_0= RULE_COMMENT ) )?
+            int alt17=2;
+            int LA17_0 = input.LA(1);
 
-            if ( (LA16_0==RULE_COMMENT) ) {
-                alt16=1;
+            if ( (LA17_0==RULE_COMMENT) ) {
+                alt17=1;
             }
-            switch (alt16) {
+            switch (alt17) {
                 case 1 :
-                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:888:1: (lv_comment_2_0= RULE_COMMENT )
+                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:924:1: (lv_comment_2_0= RULE_COMMENT )
                     {
-                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:888:1: (lv_comment_2_0= RULE_COMMENT )
-                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:889:3: lv_comment_2_0= RULE_COMMENT
+                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:924:1: (lv_comment_2_0= RULE_COMMENT )
+                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:925:3: lv_comment_2_0= RULE_COMMENT
                     {
-                    lv_comment_2_0=(Token)match(input,RULE_COMMENT,FOLLOW_RULE_COMMENT_in_ruleDescription1921); 
+                    lv_comment_2_0=(Token)match(input,RULE_COMMENT,FOLLOW_RULE_COMMENT_in_ruleDescription2043); 
 
                     			newLeafNode(lv_comment_2_0, grammarAccess.getDescriptionAccess().getCommentCOMMENTTerminalRuleCall_2_0()); 
                     		
@@ -2289,7 +2408,7 @@ public class InternalCharacterScriptParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleType"
-    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:913:1: entryRuleType returns [EObject current=null] : iv_ruleType= ruleType EOF ;
+    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:949:1: entryRuleType returns [EObject current=null] : iv_ruleType= ruleType EOF ;
     public final EObject entryRuleType() throws RecognitionException {
         EObject current = null;
 
@@ -2297,17 +2416,17 @@ public class InternalCharacterScriptParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:914:2: (iv_ruleType= ruleType EOF )
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:915:2: iv_ruleType= ruleType EOF
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:950:2: (iv_ruleType= ruleType EOF )
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:951:2: iv_ruleType= ruleType EOF
             {
              newCompositeNode(grammarAccess.getTypeRule()); 
-            pushFollow(FOLLOW_ruleType_in_entryRuleType1963);
+            pushFollow(FOLLOW_ruleType_in_entryRuleType2085);
             iv_ruleType=ruleType();
 
             state._fsp--;
 
              current =iv_ruleType; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleType1973); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleType2095); 
 
             }
 
@@ -2325,7 +2444,7 @@ public class InternalCharacterScriptParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleType"
-    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:922:1: ruleType returns [EObject current=null] : (otherlv_0= 'type' ( (lv_value_1_0= ruleCharaType ) ) ( (lv_comment_2_0= RULE_COMMENT ) )? ) ;
+    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:958:1: ruleType returns [EObject current=null] : (otherlv_0= 'type' ( (lv_value_1_0= ruleCharaType ) ) ( (lv_comment_2_0= RULE_COMMENT ) )? ) ;
     public final EObject ruleType() throws RecognitionException {
         EObject current = null;
 
@@ -2337,26 +2456,26 @@ public class InternalCharacterScriptParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:925:28: ( (otherlv_0= 'type' ( (lv_value_1_0= ruleCharaType ) ) ( (lv_comment_2_0= RULE_COMMENT ) )? ) )
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:926:1: (otherlv_0= 'type' ( (lv_value_1_0= ruleCharaType ) ) ( (lv_comment_2_0= RULE_COMMENT ) )? )
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:961:28: ( (otherlv_0= 'type' ( (lv_value_1_0= ruleCharaType ) ) ( (lv_comment_2_0= RULE_COMMENT ) )? ) )
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:962:1: (otherlv_0= 'type' ( (lv_value_1_0= ruleCharaType ) ) ( (lv_comment_2_0= RULE_COMMENT ) )? )
             {
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:926:1: (otherlv_0= 'type' ( (lv_value_1_0= ruleCharaType ) ) ( (lv_comment_2_0= RULE_COMMENT ) )? )
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:926:3: otherlv_0= 'type' ( (lv_value_1_0= ruleCharaType ) ) ( (lv_comment_2_0= RULE_COMMENT ) )?
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:962:1: (otherlv_0= 'type' ( (lv_value_1_0= ruleCharaType ) ) ( (lv_comment_2_0= RULE_COMMENT ) )? )
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:962:3: otherlv_0= 'type' ( (lv_value_1_0= ruleCharaType ) ) ( (lv_comment_2_0= RULE_COMMENT ) )?
             {
-            otherlv_0=(Token)match(input,19,FOLLOW_19_in_ruleType2010); 
+            otherlv_0=(Token)match(input,19,FOLLOW_19_in_ruleType2132); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getTypeAccess().getTypeKeyword_0());
                 
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:930:1: ( (lv_value_1_0= ruleCharaType ) )
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:931:1: (lv_value_1_0= ruleCharaType )
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:966:1: ( (lv_value_1_0= ruleCharaType ) )
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:967:1: (lv_value_1_0= ruleCharaType )
             {
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:931:1: (lv_value_1_0= ruleCharaType )
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:932:3: lv_value_1_0= ruleCharaType
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:967:1: (lv_value_1_0= ruleCharaType )
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:968:3: lv_value_1_0= ruleCharaType
             {
              
             	        newCompositeNode(grammarAccess.getTypeAccess().getValueCharaTypeEnumRuleCall_1_0()); 
             	    
-            pushFollow(FOLLOW_ruleCharaType_in_ruleType2031);
+            pushFollow(FOLLOW_ruleCharaType_in_ruleType2153);
             lv_value_1_0=ruleCharaType();
 
             state._fsp--;
@@ -2378,21 +2497,21 @@ public class InternalCharacterScriptParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:948:2: ( (lv_comment_2_0= RULE_COMMENT ) )?
-            int alt17=2;
-            int LA17_0 = input.LA(1);
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:984:2: ( (lv_comment_2_0= RULE_COMMENT ) )?
+            int alt18=2;
+            int LA18_0 = input.LA(1);
 
-            if ( (LA17_0==RULE_COMMENT) ) {
-                alt17=1;
+            if ( (LA18_0==RULE_COMMENT) ) {
+                alt18=1;
             }
-            switch (alt17) {
+            switch (alt18) {
                 case 1 :
-                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:949:1: (lv_comment_2_0= RULE_COMMENT )
+                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:985:1: (lv_comment_2_0= RULE_COMMENT )
                     {
-                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:949:1: (lv_comment_2_0= RULE_COMMENT )
-                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:950:3: lv_comment_2_0= RULE_COMMENT
+                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:985:1: (lv_comment_2_0= RULE_COMMENT )
+                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:986:3: lv_comment_2_0= RULE_COMMENT
                     {
-                    lv_comment_2_0=(Token)match(input,RULE_COMMENT,FOLLOW_RULE_COMMENT_in_ruleType2048); 
+                    lv_comment_2_0=(Token)match(input,RULE_COMMENT,FOLLOW_RULE_COMMENT_in_ruleType2170); 
 
                     			newLeafNode(lv_comment_2_0, grammarAccess.getTypeAccess().getCommentCOMMENTTerminalRuleCall_2_0()); 
                     		
@@ -2436,7 +2555,7 @@ public class InternalCharacterScriptParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAge"
-    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:974:1: entryRuleAge returns [EObject current=null] : iv_ruleAge= ruleAge EOF ;
+    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1010:1: entryRuleAge returns [EObject current=null] : iv_ruleAge= ruleAge EOF ;
     public final EObject entryRuleAge() throws RecognitionException {
         EObject current = null;
 
@@ -2444,17 +2563,17 @@ public class InternalCharacterScriptParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:975:2: (iv_ruleAge= ruleAge EOF )
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:976:2: iv_ruleAge= ruleAge EOF
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1011:2: (iv_ruleAge= ruleAge EOF )
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1012:2: iv_ruleAge= ruleAge EOF
             {
              newCompositeNode(grammarAccess.getAgeRule()); 
-            pushFollow(FOLLOW_ruleAge_in_entryRuleAge2090);
+            pushFollow(FOLLOW_ruleAge_in_entryRuleAge2212);
             iv_ruleAge=ruleAge();
 
             state._fsp--;
 
              current =iv_ruleAge; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleAge2100); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleAge2222); 
 
             }
 
@@ -2472,7 +2591,7 @@ public class InternalCharacterScriptParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAge"
-    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:983:1: ruleAge returns [EObject current=null] : (otherlv_0= 'age' ( (lv_value_1_0= RULE_INT ) ) ( (lv_comment_2_0= RULE_COMMENT ) )? ) ;
+    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1019:1: ruleAge returns [EObject current=null] : (otherlv_0= 'age' ( (lv_value_1_0= RULE_INT ) ) ( (lv_comment_2_0= RULE_COMMENT ) )? ) ;
     public final EObject ruleAge() throws RecognitionException {
         EObject current = null;
 
@@ -2483,23 +2602,23 @@ public class InternalCharacterScriptParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:986:28: ( (otherlv_0= 'age' ( (lv_value_1_0= RULE_INT ) ) ( (lv_comment_2_0= RULE_COMMENT ) )? ) )
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:987:1: (otherlv_0= 'age' ( (lv_value_1_0= RULE_INT ) ) ( (lv_comment_2_0= RULE_COMMENT ) )? )
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1022:28: ( (otherlv_0= 'age' ( (lv_value_1_0= RULE_INT ) ) ( (lv_comment_2_0= RULE_COMMENT ) )? ) )
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1023:1: (otherlv_0= 'age' ( (lv_value_1_0= RULE_INT ) ) ( (lv_comment_2_0= RULE_COMMENT ) )? )
             {
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:987:1: (otherlv_0= 'age' ( (lv_value_1_0= RULE_INT ) ) ( (lv_comment_2_0= RULE_COMMENT ) )? )
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:987:3: otherlv_0= 'age' ( (lv_value_1_0= RULE_INT ) ) ( (lv_comment_2_0= RULE_COMMENT ) )?
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1023:1: (otherlv_0= 'age' ( (lv_value_1_0= RULE_INT ) ) ( (lv_comment_2_0= RULE_COMMENT ) )? )
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1023:3: otherlv_0= 'age' ( (lv_value_1_0= RULE_INT ) ) ( (lv_comment_2_0= RULE_COMMENT ) )?
             {
-            otherlv_0=(Token)match(input,16,FOLLOW_16_in_ruleAge2137); 
+            otherlv_0=(Token)match(input,16,FOLLOW_16_in_ruleAge2259); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getAgeAccess().getAgeKeyword_0());
                 
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:991:1: ( (lv_value_1_0= RULE_INT ) )
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:992:1: (lv_value_1_0= RULE_INT )
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1027:1: ( (lv_value_1_0= RULE_INT ) )
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1028:1: (lv_value_1_0= RULE_INT )
             {
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:992:1: (lv_value_1_0= RULE_INT )
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:993:3: lv_value_1_0= RULE_INT
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1028:1: (lv_value_1_0= RULE_INT )
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1029:3: lv_value_1_0= RULE_INT
             {
-            lv_value_1_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleAge2154); 
+            lv_value_1_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleAge2276); 
 
             			newLeafNode(lv_value_1_0, grammarAccess.getAgeAccess().getValueINTTerminalRuleCall_1_0()); 
             		
@@ -2519,21 +2638,21 @@ public class InternalCharacterScriptParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1009:2: ( (lv_comment_2_0= RULE_COMMENT ) )?
-            int alt18=2;
-            int LA18_0 = input.LA(1);
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1045:2: ( (lv_comment_2_0= RULE_COMMENT ) )?
+            int alt19=2;
+            int LA19_0 = input.LA(1);
 
-            if ( (LA18_0==RULE_COMMENT) ) {
-                alt18=1;
+            if ( (LA19_0==RULE_COMMENT) ) {
+                alt19=1;
             }
-            switch (alt18) {
+            switch (alt19) {
                 case 1 :
-                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1010:1: (lv_comment_2_0= RULE_COMMENT )
+                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1046:1: (lv_comment_2_0= RULE_COMMENT )
                     {
-                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1010:1: (lv_comment_2_0= RULE_COMMENT )
-                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1011:3: lv_comment_2_0= RULE_COMMENT
+                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1046:1: (lv_comment_2_0= RULE_COMMENT )
+                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1047:3: lv_comment_2_0= RULE_COMMENT
                     {
-                    lv_comment_2_0=(Token)match(input,RULE_COMMENT,FOLLOW_RULE_COMMENT_in_ruleAge2176); 
+                    lv_comment_2_0=(Token)match(input,RULE_COMMENT,FOLLOW_RULE_COMMENT_in_ruleAge2298); 
 
                     			newLeafNode(lv_comment_2_0, grammarAccess.getAgeAccess().getCommentCOMMENTTerminalRuleCall_2_0()); 
                     		
@@ -2577,7 +2696,7 @@ public class InternalCharacterScriptParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleSex"
-    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1035:1: entryRuleSex returns [EObject current=null] : iv_ruleSex= ruleSex EOF ;
+    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1071:1: entryRuleSex returns [EObject current=null] : iv_ruleSex= ruleSex EOF ;
     public final EObject entryRuleSex() throws RecognitionException {
         EObject current = null;
 
@@ -2585,17 +2704,17 @@ public class InternalCharacterScriptParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1036:2: (iv_ruleSex= ruleSex EOF )
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1037:2: iv_ruleSex= ruleSex EOF
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1072:2: (iv_ruleSex= ruleSex EOF )
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1073:2: iv_ruleSex= ruleSex EOF
             {
              newCompositeNode(grammarAccess.getSexRule()); 
-            pushFollow(FOLLOW_ruleSex_in_entryRuleSex2218);
+            pushFollow(FOLLOW_ruleSex_in_entryRuleSex2340);
             iv_ruleSex=ruleSex();
 
             state._fsp--;
 
              current =iv_ruleSex; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleSex2228); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleSex2350); 
 
             }
 
@@ -2613,7 +2732,7 @@ public class InternalCharacterScriptParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSex"
-    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1044:1: ruleSex returns [EObject current=null] : (otherlv_0= 'sex' ( (lv_value_1_0= ruleCharaSex ) ) ( (lv_comment_2_0= RULE_COMMENT ) )? ) ;
+    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1080:1: ruleSex returns [EObject current=null] : (otherlv_0= 'sex' ( (lv_value_1_0= ruleCharaSex ) ) ( (lv_comment_2_0= RULE_COMMENT ) )? ) ;
     public final EObject ruleSex() throws RecognitionException {
         EObject current = null;
 
@@ -2625,26 +2744,26 @@ public class InternalCharacterScriptParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1047:28: ( (otherlv_0= 'sex' ( (lv_value_1_0= ruleCharaSex ) ) ( (lv_comment_2_0= RULE_COMMENT ) )? ) )
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1048:1: (otherlv_0= 'sex' ( (lv_value_1_0= ruleCharaSex ) ) ( (lv_comment_2_0= RULE_COMMENT ) )? )
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1083:28: ( (otherlv_0= 'sex' ( (lv_value_1_0= ruleCharaSex ) ) ( (lv_comment_2_0= RULE_COMMENT ) )? ) )
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1084:1: (otherlv_0= 'sex' ( (lv_value_1_0= ruleCharaSex ) ) ( (lv_comment_2_0= RULE_COMMENT ) )? )
             {
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1048:1: (otherlv_0= 'sex' ( (lv_value_1_0= ruleCharaSex ) ) ( (lv_comment_2_0= RULE_COMMENT ) )? )
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1048:3: otherlv_0= 'sex' ( (lv_value_1_0= ruleCharaSex ) ) ( (lv_comment_2_0= RULE_COMMENT ) )?
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1084:1: (otherlv_0= 'sex' ( (lv_value_1_0= ruleCharaSex ) ) ( (lv_comment_2_0= RULE_COMMENT ) )? )
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1084:3: otherlv_0= 'sex' ( (lv_value_1_0= ruleCharaSex ) ) ( (lv_comment_2_0= RULE_COMMENT ) )?
             {
-            otherlv_0=(Token)match(input,18,FOLLOW_18_in_ruleSex2265); 
+            otherlv_0=(Token)match(input,18,FOLLOW_18_in_ruleSex2387); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getSexAccess().getSexKeyword_0());
                 
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1052:1: ( (lv_value_1_0= ruleCharaSex ) )
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1053:1: (lv_value_1_0= ruleCharaSex )
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1088:1: ( (lv_value_1_0= ruleCharaSex ) )
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1089:1: (lv_value_1_0= ruleCharaSex )
             {
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1053:1: (lv_value_1_0= ruleCharaSex )
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1054:3: lv_value_1_0= ruleCharaSex
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1089:1: (lv_value_1_0= ruleCharaSex )
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1090:3: lv_value_1_0= ruleCharaSex
             {
              
             	        newCompositeNode(grammarAccess.getSexAccess().getValueCharaSexEnumRuleCall_1_0()); 
             	    
-            pushFollow(FOLLOW_ruleCharaSex_in_ruleSex2286);
+            pushFollow(FOLLOW_ruleCharaSex_in_ruleSex2408);
             lv_value_1_0=ruleCharaSex();
 
             state._fsp--;
@@ -2666,21 +2785,21 @@ public class InternalCharacterScriptParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1070:2: ( (lv_comment_2_0= RULE_COMMENT ) )?
-            int alt19=2;
-            int LA19_0 = input.LA(1);
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1106:2: ( (lv_comment_2_0= RULE_COMMENT ) )?
+            int alt20=2;
+            int LA20_0 = input.LA(1);
 
-            if ( (LA19_0==RULE_COMMENT) ) {
-                alt19=1;
+            if ( (LA20_0==RULE_COMMENT) ) {
+                alt20=1;
             }
-            switch (alt19) {
+            switch (alt20) {
                 case 1 :
-                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1071:1: (lv_comment_2_0= RULE_COMMENT )
+                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1107:1: (lv_comment_2_0= RULE_COMMENT )
                     {
-                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1071:1: (lv_comment_2_0= RULE_COMMENT )
-                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1072:3: lv_comment_2_0= RULE_COMMENT
+                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1107:1: (lv_comment_2_0= RULE_COMMENT )
+                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1108:3: lv_comment_2_0= RULE_COMMENT
                     {
-                    lv_comment_2_0=(Token)match(input,RULE_COMMENT,FOLLOW_RULE_COMMENT_in_ruleSex2303); 
+                    lv_comment_2_0=(Token)match(input,RULE_COMMENT,FOLLOW_RULE_COMMENT_in_ruleSex2425); 
 
                     			newLeafNode(lv_comment_2_0, grammarAccess.getSexAccess().getCommentCOMMENTTerminalRuleCall_2_0()); 
                     		
@@ -2724,7 +2843,7 @@ public class InternalCharacterScriptParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleCustomProperty"
-    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1096:1: entryRuleCustomProperty returns [EObject current=null] : iv_ruleCustomProperty= ruleCustomProperty EOF ;
+    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1132:1: entryRuleCustomProperty returns [EObject current=null] : iv_ruleCustomProperty= ruleCustomProperty EOF ;
     public final EObject entryRuleCustomProperty() throws RecognitionException {
         EObject current = null;
 
@@ -2732,17 +2851,17 @@ public class InternalCharacterScriptParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1097:2: (iv_ruleCustomProperty= ruleCustomProperty EOF )
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1098:2: iv_ruleCustomProperty= ruleCustomProperty EOF
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1133:2: (iv_ruleCustomProperty= ruleCustomProperty EOF )
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1134:2: iv_ruleCustomProperty= ruleCustomProperty EOF
             {
              newCompositeNode(grammarAccess.getCustomPropertyRule()); 
-            pushFollow(FOLLOW_ruleCustomProperty_in_entryRuleCustomProperty2345);
+            pushFollow(FOLLOW_ruleCustomProperty_in_entryRuleCustomProperty2467);
             iv_ruleCustomProperty=ruleCustomProperty();
 
             state._fsp--;
 
              current =iv_ruleCustomProperty; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleCustomProperty2355); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleCustomProperty2477); 
 
             }
 
@@ -2760,7 +2879,7 @@ public class InternalCharacterScriptParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleCustomProperty"
-    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1105:1: ruleCustomProperty returns [EObject current=null] : ( ( (otherlv_0= RULE_ID ) ) ( ( (lv_stringValue_1_0= RULE_STRING ) ) | ( (lv_intValue_2_0= RULE_INT ) ) | ( (otherlv_3= RULE_ID ) ) ) ( (lv_comment_4_0= RULE_COMMENT ) )? ) ;
+    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1141:1: ruleCustomProperty returns [EObject current=null] : ( ( (otherlv_0= RULE_ID ) ) ( ( (lv_stringValue_1_0= RULE_STRING ) ) | ( (lv_intValue_2_0= RULE_INT ) ) | (otherlv_3= '(' ( ( ruleEnumID ) ) otherlv_5= ')' ) ) ( (lv_comment_6_0= RULE_COMMENT ) )? ) ;
     public final EObject ruleCustomProperty() throws RecognitionException {
         EObject current = null;
 
@@ -2768,29 +2887,30 @@ public class InternalCharacterScriptParser extends AbstractInternalAntlrParser {
         Token lv_stringValue_1_0=null;
         Token lv_intValue_2_0=null;
         Token otherlv_3=null;
-        Token lv_comment_4_0=null;
+        Token otherlv_5=null;
+        Token lv_comment_6_0=null;
 
          enterRule(); 
             
         try {
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1108:28: ( ( ( (otherlv_0= RULE_ID ) ) ( ( (lv_stringValue_1_0= RULE_STRING ) ) | ( (lv_intValue_2_0= RULE_INT ) ) | ( (otherlv_3= RULE_ID ) ) ) ( (lv_comment_4_0= RULE_COMMENT ) )? ) )
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1109:1: ( ( (otherlv_0= RULE_ID ) ) ( ( (lv_stringValue_1_0= RULE_STRING ) ) | ( (lv_intValue_2_0= RULE_INT ) ) | ( (otherlv_3= RULE_ID ) ) ) ( (lv_comment_4_0= RULE_COMMENT ) )? )
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1144:28: ( ( ( (otherlv_0= RULE_ID ) ) ( ( (lv_stringValue_1_0= RULE_STRING ) ) | ( (lv_intValue_2_0= RULE_INT ) ) | (otherlv_3= '(' ( ( ruleEnumID ) ) otherlv_5= ')' ) ) ( (lv_comment_6_0= RULE_COMMENT ) )? ) )
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1145:1: ( ( (otherlv_0= RULE_ID ) ) ( ( (lv_stringValue_1_0= RULE_STRING ) ) | ( (lv_intValue_2_0= RULE_INT ) ) | (otherlv_3= '(' ( ( ruleEnumID ) ) otherlv_5= ')' ) ) ( (lv_comment_6_0= RULE_COMMENT ) )? )
             {
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1109:1: ( ( (otherlv_0= RULE_ID ) ) ( ( (lv_stringValue_1_0= RULE_STRING ) ) | ( (lv_intValue_2_0= RULE_INT ) ) | ( (otherlv_3= RULE_ID ) ) ) ( (lv_comment_4_0= RULE_COMMENT ) )? )
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1109:2: ( (otherlv_0= RULE_ID ) ) ( ( (lv_stringValue_1_0= RULE_STRING ) ) | ( (lv_intValue_2_0= RULE_INT ) ) | ( (otherlv_3= RULE_ID ) ) ) ( (lv_comment_4_0= RULE_COMMENT ) )?
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1145:1: ( ( (otherlv_0= RULE_ID ) ) ( ( (lv_stringValue_1_0= RULE_STRING ) ) | ( (lv_intValue_2_0= RULE_INT ) ) | (otherlv_3= '(' ( ( ruleEnumID ) ) otherlv_5= ')' ) ) ( (lv_comment_6_0= RULE_COMMENT ) )? )
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1145:2: ( (otherlv_0= RULE_ID ) ) ( ( (lv_stringValue_1_0= RULE_STRING ) ) | ( (lv_intValue_2_0= RULE_INT ) ) | (otherlv_3= '(' ( ( ruleEnumID ) ) otherlv_5= ')' ) ) ( (lv_comment_6_0= RULE_COMMENT ) )?
             {
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1109:2: ( (otherlv_0= RULE_ID ) )
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1110:1: (otherlv_0= RULE_ID )
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1145:2: ( (otherlv_0= RULE_ID ) )
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1146:1: (otherlv_0= RULE_ID )
             {
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1110:1: (otherlv_0= RULE_ID )
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1111:3: otherlv_0= RULE_ID
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1146:1: (otherlv_0= RULE_ID )
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1147:3: otherlv_0= RULE_ID
             {
 
             			if (current==null) {
             	            current = createModelElement(grammarAccess.getCustomPropertyRule());
             	        }
                     
-            otherlv_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleCustomProperty2400); 
+            otherlv_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleCustomProperty2522); 
 
             		newLeafNode(otherlv_0, grammarAccess.getCustomPropertyAccess().getCustomAttributeRefCustomAttributeNameCrossReference_0_0()); 
             	
@@ -2800,42 +2920,42 @@ public class InternalCharacterScriptParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1122:2: ( ( (lv_stringValue_1_0= RULE_STRING ) ) | ( (lv_intValue_2_0= RULE_INT ) ) | ( (otherlv_3= RULE_ID ) ) )
-            int alt20=3;
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1158:2: ( ( (lv_stringValue_1_0= RULE_STRING ) ) | ( (lv_intValue_2_0= RULE_INT ) ) | (otherlv_3= '(' ( ( ruleEnumID ) ) otherlv_5= ')' ) )
+            int alt21=3;
             switch ( input.LA(1) ) {
             case RULE_STRING:
                 {
-                alt20=1;
+                alt21=1;
                 }
                 break;
             case RULE_INT:
                 {
-                alt20=2;
+                alt21=2;
                 }
                 break;
-            case RULE_ID:
+            case 21:
                 {
-                alt20=3;
+                alt21=3;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 20, 0, input);
+                    new NoViableAltException("", 21, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt20) {
+            switch (alt21) {
                 case 1 :
-                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1122:3: ( (lv_stringValue_1_0= RULE_STRING ) )
+                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1158:3: ( (lv_stringValue_1_0= RULE_STRING ) )
                     {
-                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1122:3: ( (lv_stringValue_1_0= RULE_STRING ) )
-                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1123:1: (lv_stringValue_1_0= RULE_STRING )
+                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1158:3: ( (lv_stringValue_1_0= RULE_STRING ) )
+                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1159:1: (lv_stringValue_1_0= RULE_STRING )
                     {
-                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1123:1: (lv_stringValue_1_0= RULE_STRING )
-                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1124:3: lv_stringValue_1_0= RULE_STRING
+                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1159:1: (lv_stringValue_1_0= RULE_STRING )
+                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1160:3: lv_stringValue_1_0= RULE_STRING
                     {
-                    lv_stringValue_1_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleCustomProperty2418); 
+                    lv_stringValue_1_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleCustomProperty2540); 
 
                     			newLeafNode(lv_stringValue_1_0, grammarAccess.getCustomPropertyAccess().getStringValueSTRINGTerminalRuleCall_1_0_0()); 
                     		
@@ -2859,15 +2979,15 @@ public class InternalCharacterScriptParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1141:6: ( (lv_intValue_2_0= RULE_INT ) )
+                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1177:6: ( (lv_intValue_2_0= RULE_INT ) )
                     {
-                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1141:6: ( (lv_intValue_2_0= RULE_INT ) )
-                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1142:1: (lv_intValue_2_0= RULE_INT )
+                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1177:6: ( (lv_intValue_2_0= RULE_INT ) )
+                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1178:1: (lv_intValue_2_0= RULE_INT )
                     {
-                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1142:1: (lv_intValue_2_0= RULE_INT )
-                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1143:3: lv_intValue_2_0= RULE_INT
+                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1178:1: (lv_intValue_2_0= RULE_INT )
+                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1179:3: lv_intValue_2_0= RULE_INT
                     {
-                    lv_intValue_2_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleCustomProperty2446); 
+                    lv_intValue_2_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleCustomProperty2568); 
 
                     			newLeafNode(lv_intValue_2_0, grammarAccess.getCustomPropertyAccess().getIntValueINTTerminalRuleCall_1_1_0()); 
                     		
@@ -2891,26 +3011,47 @@ public class InternalCharacterScriptParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1160:6: ( (otherlv_3= RULE_ID ) )
+                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1196:6: (otherlv_3= '(' ( ( ruleEnumID ) ) otherlv_5= ')' )
                     {
-                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1160:6: ( (otherlv_3= RULE_ID ) )
-                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1161:1: (otherlv_3= RULE_ID )
+                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1196:6: (otherlv_3= '(' ( ( ruleEnumID ) ) otherlv_5= ')' )
+                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1196:8: otherlv_3= '(' ( ( ruleEnumID ) ) otherlv_5= ')'
                     {
-                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1161:1: (otherlv_3= RULE_ID )
-                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1162:3: otherlv_3= RULE_ID
+                    otherlv_3=(Token)match(input,21,FOLLOW_21_in_ruleCustomProperty2592); 
+
+                        	newLeafNode(otherlv_3, grammarAccess.getCustomPropertyAccess().getLeftParenthesisKeyword_1_2_0());
+                        
+                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1200:1: ( ( ruleEnumID ) )
+                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1201:1: ( ruleEnumID )
+                    {
+                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1201:1: ( ruleEnumID )
+                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1202:3: ruleEnumID
                     {
 
                     			if (current==null) {
                     	            current = createModelElement(grammarAccess.getCustomPropertyRule());
                     	        }
                             
-                    otherlv_3=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleCustomProperty2477); 
+                     
+                    	        newCompositeNode(grammarAccess.getCustomPropertyAccess().getEnumValueEnumValueCrossReference_1_2_1_0()); 
+                    	    
+                    pushFollow(FOLLOW_ruleEnumID_in_ruleCustomProperty2615);
+                    ruleEnumID();
 
-                    		newLeafNode(otherlv_3, grammarAccess.getCustomPropertyAccess().getEnumValueEnumValueCrossReference_1_2_0()); 
-                    	
+                    state._fsp--;
+
+                     
+                    	        afterParserOrEnumRuleCall();
+                    	    
 
                     }
 
+
+                    }
+
+                    otherlv_5=(Token)match(input,23,FOLLOW_23_in_ruleCustomProperty2627); 
+
+                        	newLeafNode(otherlv_5, grammarAccess.getCustomPropertyAccess().getRightParenthesisKeyword_1_2_2());
+                        
 
                     }
 
@@ -2920,23 +3061,23 @@ public class InternalCharacterScriptParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1173:3: ( (lv_comment_4_0= RULE_COMMENT ) )?
-            int alt21=2;
-            int LA21_0 = input.LA(1);
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1219:3: ( (lv_comment_6_0= RULE_COMMENT ) )?
+            int alt22=2;
+            int LA22_0 = input.LA(1);
 
-            if ( (LA21_0==RULE_COMMENT) ) {
-                alt21=1;
+            if ( (LA22_0==RULE_COMMENT) ) {
+                alt22=1;
             }
-            switch (alt21) {
+            switch (alt22) {
                 case 1 :
-                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1174:1: (lv_comment_4_0= RULE_COMMENT )
+                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1220:1: (lv_comment_6_0= RULE_COMMENT )
                     {
-                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1174:1: (lv_comment_4_0= RULE_COMMENT )
-                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1175:3: lv_comment_4_0= RULE_COMMENT
+                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1220:1: (lv_comment_6_0= RULE_COMMENT )
+                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1221:3: lv_comment_6_0= RULE_COMMENT
                     {
-                    lv_comment_4_0=(Token)match(input,RULE_COMMENT,FOLLOW_RULE_COMMENT_in_ruleCustomProperty2495); 
+                    lv_comment_6_0=(Token)match(input,RULE_COMMENT,FOLLOW_RULE_COMMENT_in_ruleCustomProperty2646); 
 
-                    			newLeafNode(lv_comment_4_0, grammarAccess.getCustomPropertyAccess().getCommentCOMMENTTerminalRuleCall_2_0()); 
+                    			newLeafNode(lv_comment_6_0, grammarAccess.getCustomPropertyAccess().getCommentCOMMENTTerminalRuleCall_2_0()); 
                     		
 
                     	        if (current==null) {
@@ -2945,7 +3086,7 @@ public class InternalCharacterScriptParser extends AbstractInternalAntlrParser {
                            		setWithLastConsumed(
                            			current, 
                            			"comment",
-                            		lv_comment_4_0, 
+                            		lv_comment_6_0, 
                             		"COMMENT");
                     	    
 
@@ -2978,7 +3119,7 @@ public class InternalCharacterScriptParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAttributeType"
-    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1199:1: ruleAttributeType returns [Enumerator current=null] : ( (enumLiteral_0= 'NUMBER' ) | (enumLiteral_1= 'TEXT' ) ) ;
+    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1245:1: ruleAttributeType returns [Enumerator current=null] : ( (enumLiteral_0= 'NUMBER' ) | (enumLiteral_1= 'TEXT' ) ) ;
     public final Enumerator ruleAttributeType() throws RecognitionException {
         Enumerator current = null;
 
@@ -2987,33 +3128,33 @@ public class InternalCharacterScriptParser extends AbstractInternalAntlrParser {
 
          enterRule(); 
         try {
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1201:28: ( ( (enumLiteral_0= 'NUMBER' ) | (enumLiteral_1= 'TEXT' ) ) )
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1202:1: ( (enumLiteral_0= 'NUMBER' ) | (enumLiteral_1= 'TEXT' ) )
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1247:28: ( ( (enumLiteral_0= 'NUMBER' ) | (enumLiteral_1= 'TEXT' ) ) )
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1248:1: ( (enumLiteral_0= 'NUMBER' ) | (enumLiteral_1= 'TEXT' ) )
             {
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1202:1: ( (enumLiteral_0= 'NUMBER' ) | (enumLiteral_1= 'TEXT' ) )
-            int alt22=2;
-            int LA22_0 = input.LA(1);
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1248:1: ( (enumLiteral_0= 'NUMBER' ) | (enumLiteral_1= 'TEXT' ) )
+            int alt23=2;
+            int LA23_0 = input.LA(1);
 
-            if ( (LA22_0==28) ) {
-                alt22=1;
+            if ( (LA23_0==28) ) {
+                alt23=1;
             }
-            else if ( (LA22_0==29) ) {
-                alt22=2;
+            else if ( (LA23_0==29) ) {
+                alt23=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 22, 0, input);
+                    new NoViableAltException("", 23, 0, input);
 
                 throw nvae;
             }
-            switch (alt22) {
+            switch (alt23) {
                 case 1 :
-                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1202:2: (enumLiteral_0= 'NUMBER' )
+                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1248:2: (enumLiteral_0= 'NUMBER' )
                     {
-                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1202:2: (enumLiteral_0= 'NUMBER' )
-                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1202:4: enumLiteral_0= 'NUMBER'
+                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1248:2: (enumLiteral_0= 'NUMBER' )
+                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1248:4: enumLiteral_0= 'NUMBER'
                     {
-                    enumLiteral_0=(Token)match(input,28,FOLLOW_28_in_ruleAttributeType2551); 
+                    enumLiteral_0=(Token)match(input,28,FOLLOW_28_in_ruleAttributeType2702); 
 
                             current = grammarAccess.getAttributeTypeAccess().getNUMBEREnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_0, grammarAccess.getAttributeTypeAccess().getNUMBEREnumLiteralDeclaration_0()); 
@@ -3025,12 +3166,12 @@ public class InternalCharacterScriptParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1208:6: (enumLiteral_1= 'TEXT' )
+                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1254:6: (enumLiteral_1= 'TEXT' )
                     {
-                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1208:6: (enumLiteral_1= 'TEXT' )
-                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1208:8: enumLiteral_1= 'TEXT'
+                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1254:6: (enumLiteral_1= 'TEXT' )
+                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1254:8: enumLiteral_1= 'TEXT'
                     {
-                    enumLiteral_1=(Token)match(input,29,FOLLOW_29_in_ruleAttributeType2568); 
+                    enumLiteral_1=(Token)match(input,29,FOLLOW_29_in_ruleAttributeType2719); 
 
                             current = grammarAccess.getAttributeTypeAccess().getTEXTEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_1, grammarAccess.getAttributeTypeAccess().getTEXTEnumLiteralDeclaration_1()); 
@@ -3062,7 +3203,7 @@ public class InternalCharacterScriptParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleCharaType"
-    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1218:1: ruleCharaType returns [Enumerator current=null] : ( (enumLiteral_0= 'PC' ) | (enumLiteral_1= 'NPC' ) ) ;
+    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1264:1: ruleCharaType returns [Enumerator current=null] : ( (enumLiteral_0= 'PC' ) | (enumLiteral_1= 'NPC' ) ) ;
     public final Enumerator ruleCharaType() throws RecognitionException {
         Enumerator current = null;
 
@@ -3071,33 +3212,33 @@ public class InternalCharacterScriptParser extends AbstractInternalAntlrParser {
 
          enterRule(); 
         try {
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1220:28: ( ( (enumLiteral_0= 'PC' ) | (enumLiteral_1= 'NPC' ) ) )
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1221:1: ( (enumLiteral_0= 'PC' ) | (enumLiteral_1= 'NPC' ) )
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1266:28: ( ( (enumLiteral_0= 'PC' ) | (enumLiteral_1= 'NPC' ) ) )
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1267:1: ( (enumLiteral_0= 'PC' ) | (enumLiteral_1= 'NPC' ) )
             {
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1221:1: ( (enumLiteral_0= 'PC' ) | (enumLiteral_1= 'NPC' ) )
-            int alt23=2;
-            int LA23_0 = input.LA(1);
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1267:1: ( (enumLiteral_0= 'PC' ) | (enumLiteral_1= 'NPC' ) )
+            int alt24=2;
+            int LA24_0 = input.LA(1);
 
-            if ( (LA23_0==30) ) {
-                alt23=1;
+            if ( (LA24_0==30) ) {
+                alt24=1;
             }
-            else if ( (LA23_0==31) ) {
-                alt23=2;
+            else if ( (LA24_0==31) ) {
+                alt24=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 23, 0, input);
+                    new NoViableAltException("", 24, 0, input);
 
                 throw nvae;
             }
-            switch (alt23) {
+            switch (alt24) {
                 case 1 :
-                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1221:2: (enumLiteral_0= 'PC' )
+                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1267:2: (enumLiteral_0= 'PC' )
                     {
-                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1221:2: (enumLiteral_0= 'PC' )
-                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1221:4: enumLiteral_0= 'PC'
+                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1267:2: (enumLiteral_0= 'PC' )
+                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1267:4: enumLiteral_0= 'PC'
                     {
-                    enumLiteral_0=(Token)match(input,30,FOLLOW_30_in_ruleCharaType2613); 
+                    enumLiteral_0=(Token)match(input,30,FOLLOW_30_in_ruleCharaType2764); 
 
                             current = grammarAccess.getCharaTypeAccess().getPCEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_0, grammarAccess.getCharaTypeAccess().getPCEnumLiteralDeclaration_0()); 
@@ -3109,12 +3250,12 @@ public class InternalCharacterScriptParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1227:6: (enumLiteral_1= 'NPC' )
+                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1273:6: (enumLiteral_1= 'NPC' )
                     {
-                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1227:6: (enumLiteral_1= 'NPC' )
-                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1227:8: enumLiteral_1= 'NPC'
+                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1273:6: (enumLiteral_1= 'NPC' )
+                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1273:8: enumLiteral_1= 'NPC'
                     {
-                    enumLiteral_1=(Token)match(input,31,FOLLOW_31_in_ruleCharaType2630); 
+                    enumLiteral_1=(Token)match(input,31,FOLLOW_31_in_ruleCharaType2781); 
 
                             current = grammarAccess.getCharaTypeAccess().getNPCEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_1, grammarAccess.getCharaTypeAccess().getNPCEnumLiteralDeclaration_1()); 
@@ -3146,7 +3287,7 @@ public class InternalCharacterScriptParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleCharaSex"
-    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1237:1: ruleCharaSex returns [Enumerator current=null] : ( (enumLiteral_0= 'male' ) | (enumLiteral_1= 'female' ) ) ;
+    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1283:1: ruleCharaSex returns [Enumerator current=null] : ( (enumLiteral_0= 'male' ) | (enumLiteral_1= 'female' ) ) ;
     public final Enumerator ruleCharaSex() throws RecognitionException {
         Enumerator current = null;
 
@@ -3155,33 +3296,33 @@ public class InternalCharacterScriptParser extends AbstractInternalAntlrParser {
 
          enterRule(); 
         try {
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1239:28: ( ( (enumLiteral_0= 'male' ) | (enumLiteral_1= 'female' ) ) )
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1240:1: ( (enumLiteral_0= 'male' ) | (enumLiteral_1= 'female' ) )
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1285:28: ( ( (enumLiteral_0= 'male' ) | (enumLiteral_1= 'female' ) ) )
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1286:1: ( (enumLiteral_0= 'male' ) | (enumLiteral_1= 'female' ) )
             {
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1240:1: ( (enumLiteral_0= 'male' ) | (enumLiteral_1= 'female' ) )
-            int alt24=2;
-            int LA24_0 = input.LA(1);
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1286:1: ( (enumLiteral_0= 'male' ) | (enumLiteral_1= 'female' ) )
+            int alt25=2;
+            int LA25_0 = input.LA(1);
 
-            if ( (LA24_0==32) ) {
-                alt24=1;
+            if ( (LA25_0==32) ) {
+                alt25=1;
             }
-            else if ( (LA24_0==33) ) {
-                alt24=2;
+            else if ( (LA25_0==33) ) {
+                alt25=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 24, 0, input);
+                    new NoViableAltException("", 25, 0, input);
 
                 throw nvae;
             }
-            switch (alt24) {
+            switch (alt25) {
                 case 1 :
-                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1240:2: (enumLiteral_0= 'male' )
+                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1286:2: (enumLiteral_0= 'male' )
                     {
-                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1240:2: (enumLiteral_0= 'male' )
-                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1240:4: enumLiteral_0= 'male'
+                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1286:2: (enumLiteral_0= 'male' )
+                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1286:4: enumLiteral_0= 'male'
                     {
-                    enumLiteral_0=(Token)match(input,32,FOLLOW_32_in_ruleCharaSex2675); 
+                    enumLiteral_0=(Token)match(input,32,FOLLOW_32_in_ruleCharaSex2826); 
 
                             current = grammarAccess.getCharaSexAccess().getMaleEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_0, grammarAccess.getCharaSexAccess().getMaleEnumLiteralDeclaration_0()); 
@@ -3193,12 +3334,12 @@ public class InternalCharacterScriptParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1246:6: (enumLiteral_1= 'female' )
+                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1292:6: (enumLiteral_1= 'female' )
                     {
-                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1246:6: (enumLiteral_1= 'female' )
-                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1246:8: enumLiteral_1= 'female'
+                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1292:6: (enumLiteral_1= 'female' )
+                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1292:8: enumLiteral_1= 'female'
                     {
-                    enumLiteral_1=(Token)match(input,33,FOLLOW_33_in_ruleCharaSex2692); 
+                    enumLiteral_1=(Token)match(input,33,FOLLOW_33_in_ruleCharaSex2843); 
 
                             current = grammarAccess.getCharaSexAccess().getFemaleEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_1, grammarAccess.getCharaSexAccess().getFemaleEnumLiteralDeclaration_1()); 
@@ -3262,9 +3403,9 @@ public class InternalCharacterScriptParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_ruleCustomAttributeName_in_ruleCustomAttribute722 = new BitSet(new long[]{0x0000000000100000L});
     public static final BitSet FOLLOW_20_in_ruleCustomAttribute734 = new BitSet(new long[]{0x0000000030200000L});
     public static final BitSet FOLLOW_ruleAttributeType_in_ruleCustomAttribute756 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_21_in_ruleCustomAttribute775 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_21_in_ruleCustomAttribute775 = new BitSet(new long[]{0x0000000000000030L});
     public static final BitSet FOLLOW_ruleEnumValue_in_ruleCustomAttribute796 = new BitSet(new long[]{0x0000000000C00000L});
-    public static final BitSet FOLLOW_22_in_ruleCustomAttribute809 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_22_in_ruleCustomAttribute809 = new BitSet(new long[]{0x0000000000000030L});
     public static final BitSet FOLLOW_ruleEnumValue_in_ruleCustomAttribute830 = new BitSet(new long[]{0x0000000000C00000L});
     public static final BitSet FOLLOW_23_in_ruleCustomAttribute844 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleCustomAttributeName_in_entryRuleCustomAttributeName882 = new BitSet(new long[]{0x0000000000000000L});
@@ -3272,70 +3413,76 @@ public class InternalCharacterScriptParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_RULE_ID_in_ruleCustomAttributeName933 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleEnumValue_in_entryRuleEnumValue973 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleEnumValue983 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleEnumValue1024 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleCustoms_in_entryRuleCustoms1064 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleCustoms1074 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_24_in_ruleCustoms1111 = new BitSet(new long[]{0x0000000002000000L});
-    public static final BitSet FOLLOW_25_in_ruleCustoms1123 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_ruleCustomAttribute_in_ruleCustoms1144 = new BitSet(new long[]{0x0000000000004010L});
-    public static final BitSet FOLLOW_ruleCustomAttribute_in_ruleCustoms1165 = new BitSet(new long[]{0x0000000000004010L});
-    public static final BitSet FOLLOW_14_in_ruleCustoms1178 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleCharacter_in_entryRuleCharacter1214 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleCharacter1224 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_26_in_ruleCharacter1261 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleCharacter1278 = new BitSet(new long[]{0x00000000080FC010L});
-    public static final BitSet FOLLOW_27_in_ruleCharacter1296 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleCharacter1316 = new BitSet(new long[]{0x00000000000FC010L});
-    public static final BitSet FOLLOW_ruleProperty_in_ruleCharacter1339 = new BitSet(new long[]{0x00000000000FC010L});
-    public static final BitSet FOLLOW_14_in_ruleCharacter1352 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleProperty_in_entryRuleProperty1388 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleProperty1398 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleDefaultProperty_in_ruleProperty1445 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleCustomProperty_in_ruleProperty1472 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleDefaultProperty_in_entryRuleDefaultProperty1507 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleDefaultProperty1517 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFullName_in_ruleDefaultProperty1564 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleDescription_in_ruleDefaultProperty1591 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleType_in_ruleDefaultProperty1618 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAge_in_ruleDefaultProperty1645 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSex_in_ruleDefaultProperty1672 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFullName_in_entryRuleFullName1707 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleFullName1717 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_15_in_ruleFullName1754 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleFullName1771 = new BitSet(new long[]{0x0000000000000042L});
-    public static final BitSet FOLLOW_RULE_COMMENT_in_ruleFullName1793 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleDescription_in_entryRuleDescription1835 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleDescription1845 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_17_in_ruleDescription1882 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleDescription1899 = new BitSet(new long[]{0x0000000000000042L});
-    public static final BitSet FOLLOW_RULE_COMMENT_in_ruleDescription1921 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleType_in_entryRuleType1963 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleType1973 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_19_in_ruleType2010 = new BitSet(new long[]{0x00000000C0000000L});
-    public static final BitSet FOLLOW_ruleCharaType_in_ruleType2031 = new BitSet(new long[]{0x0000000000000042L});
-    public static final BitSet FOLLOW_RULE_COMMENT_in_ruleType2048 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAge_in_entryRuleAge2090 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleAge2100 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_16_in_ruleAge2137 = new BitSet(new long[]{0x0000000000000080L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleAge2154 = new BitSet(new long[]{0x0000000000000042L});
-    public static final BitSet FOLLOW_RULE_COMMENT_in_ruleAge2176 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSex_in_entryRuleSex2218 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleSex2228 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_18_in_ruleSex2265 = new BitSet(new long[]{0x0000000300000000L});
-    public static final BitSet FOLLOW_ruleCharaSex_in_ruleSex2286 = new BitSet(new long[]{0x0000000000000042L});
-    public static final BitSet FOLLOW_RULE_COMMENT_in_ruleSex2303 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleCustomProperty_in_entryRuleCustomProperty2345 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleCustomProperty2355 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleCustomProperty2400 = new BitSet(new long[]{0x00000000000000B0L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleCustomProperty2418 = new BitSet(new long[]{0x0000000000000042L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleCustomProperty2446 = new BitSet(new long[]{0x0000000000000042L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleCustomProperty2477 = new BitSet(new long[]{0x0000000000000042L});
-    public static final BitSet FOLLOW_RULE_COMMENT_in_ruleCustomProperty2495 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_28_in_ruleAttributeType2551 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_29_in_ruleAttributeType2568 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_30_in_ruleCharaType2613 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_31_in_ruleCharaType2630 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_32_in_ruleCharaSex2675 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_33_in_ruleCharaSex2692 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEnumID_in_ruleEnumValue1028 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEnumID_in_entryRuleEnumID1064 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleEnumID1075 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleEnumID1115 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleEnumID1141 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleCustoms_in_entryRuleCustoms1186 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleCustoms1196 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_24_in_ruleCustoms1233 = new BitSet(new long[]{0x0000000002000000L});
+    public static final BitSet FOLLOW_25_in_ruleCustoms1245 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_ruleCustomAttribute_in_ruleCustoms1266 = new BitSet(new long[]{0x0000000000004010L});
+    public static final BitSet FOLLOW_ruleCustomAttribute_in_ruleCustoms1287 = new BitSet(new long[]{0x0000000000004010L});
+    public static final BitSet FOLLOW_14_in_ruleCustoms1300 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleCharacter_in_entryRuleCharacter1336 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleCharacter1346 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_26_in_ruleCharacter1383 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleCharacter1400 = new BitSet(new long[]{0x00000000080FC010L});
+    public static final BitSet FOLLOW_27_in_ruleCharacter1418 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleCharacter1438 = new BitSet(new long[]{0x00000000000FC010L});
+    public static final BitSet FOLLOW_ruleProperty_in_ruleCharacter1461 = new BitSet(new long[]{0x00000000000FC010L});
+    public static final BitSet FOLLOW_14_in_ruleCharacter1474 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleProperty_in_entryRuleProperty1510 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleProperty1520 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleDefaultProperty_in_ruleProperty1567 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleCustomProperty_in_ruleProperty1594 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleDefaultProperty_in_entryRuleDefaultProperty1629 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleDefaultProperty1639 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFullName_in_ruleDefaultProperty1686 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleDescription_in_ruleDefaultProperty1713 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleType_in_ruleDefaultProperty1740 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAge_in_ruleDefaultProperty1767 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSex_in_ruleDefaultProperty1794 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFullName_in_entryRuleFullName1829 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleFullName1839 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_15_in_ruleFullName1876 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleFullName1893 = new BitSet(new long[]{0x0000000000000082L});
+    public static final BitSet FOLLOW_RULE_COMMENT_in_ruleFullName1915 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleDescription_in_entryRuleDescription1957 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleDescription1967 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_17_in_ruleDescription2004 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleDescription2021 = new BitSet(new long[]{0x0000000000000082L});
+    public static final BitSet FOLLOW_RULE_COMMENT_in_ruleDescription2043 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleType_in_entryRuleType2085 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleType2095 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_19_in_ruleType2132 = new BitSet(new long[]{0x00000000C0000000L});
+    public static final BitSet FOLLOW_ruleCharaType_in_ruleType2153 = new BitSet(new long[]{0x0000000000000082L});
+    public static final BitSet FOLLOW_RULE_COMMENT_in_ruleType2170 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAge_in_entryRuleAge2212 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleAge2222 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_16_in_ruleAge2259 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleAge2276 = new BitSet(new long[]{0x0000000000000082L});
+    public static final BitSet FOLLOW_RULE_COMMENT_in_ruleAge2298 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSex_in_entryRuleSex2340 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleSex2350 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_18_in_ruleSex2387 = new BitSet(new long[]{0x0000000300000000L});
+    public static final BitSet FOLLOW_ruleCharaSex_in_ruleSex2408 = new BitSet(new long[]{0x0000000000000082L});
+    public static final BitSet FOLLOW_RULE_COMMENT_in_ruleSex2425 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleCustomProperty_in_entryRuleCustomProperty2467 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleCustomProperty2477 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleCustomProperty2522 = new BitSet(new long[]{0x0000000000200060L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleCustomProperty2540 = new BitSet(new long[]{0x0000000000000082L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleCustomProperty2568 = new BitSet(new long[]{0x0000000000000082L});
+    public static final BitSet FOLLOW_21_in_ruleCustomProperty2592 = new BitSet(new long[]{0x0000000000000030L});
+    public static final BitSet FOLLOW_ruleEnumID_in_ruleCustomProperty2615 = new BitSet(new long[]{0x0000000000800000L});
+    public static final BitSet FOLLOW_23_in_ruleCustomProperty2627 = new BitSet(new long[]{0x0000000000000082L});
+    public static final BitSet FOLLOW_RULE_COMMENT_in_ruleCustomProperty2646 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_28_in_ruleAttributeType2702 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_29_in_ruleAttributeType2719 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_30_in_ruleCharaType2764 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_31_in_ruleCharaType2781 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_32_in_ruleCharaSex2826 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_33_in_ruleCharaSex2843 = new BitSet(new long[]{0x0000000000000002L});
 
 }

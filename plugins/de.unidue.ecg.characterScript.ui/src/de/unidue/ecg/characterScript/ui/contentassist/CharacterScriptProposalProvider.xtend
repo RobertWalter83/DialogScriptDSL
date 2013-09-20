@@ -3,13 +3,16 @@
  */
 package de.unidue.ecg.characterScript.ui.contentassist
 
+import de.unidue.ecg.characterScript.characterScript.Character
+import de.unidue.ecg.characterScript.characterScript.CustomAttribute
 import de.unidue.ecg.characterScript.characterScript.CustomProperty
+import de.unidue.ecg.characterScript.characterScript.Template
 import org.eclipse.emf.ecore.EObject
 import org.eclipse.xtext.Assignment
+import org.eclipse.xtext.Keyword
+import org.eclipse.xtext.RuleCall
 import org.eclipse.xtext.ui.editor.contentassist.ContentAssistContext
 import org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalAcceptor
-import org.eclipse.xtext.RuleCall
-import de.unidue.ecg.characterScript.characterScript.CustomAttribute
 
 /**
  * see http://www.eclipse.org/Xtext/documentation.html#contentAssist on how to customize content assistant
@@ -29,7 +32,7 @@ class CharacterScriptProposalProvider extends AbstractCharacterScriptProposalPro
 		if (model instanceof CustomProperty) {
 			val cp = model as CustomProperty
 			val ca = cp.customAttributeRef.eContainer as CustomAttribute
-			if (!ca.enumValues.empty || !ca.type.name.equals("NUMBER"))
+			if (!ca.enumValues.empty || !ca.type.getName().equals("NUMBER"))
 				return
 		}
 
@@ -41,15 +44,71 @@ class CharacterScriptProposalProvider extends AbstractCharacterScriptProposalPro
 		if (model instanceof CustomProperty) {
 			val cp = model as CustomProperty
 			val ca = cp.customAttributeRef.eContainer as CustomAttribute
-			if (!ca.enumValues.empty || !ca.type.name.equals("TEXT"))
+			if (!ca.enumValues.empty || !ca.type.getName().equals("TEXT"))
 				return
 		}
 
 		super.complete_STRING(model, ruleCall, context, acceptor)
 	}
-	
-	override complete_DefaultAttribute(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
-		super.complete_DefaultAttribute(model, ruleCall, context, acceptor)
+
+//	override completeCustomProperty_CustomAttributeRef(EObject model, Assignment assignment,
+//		ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+//
+//		if (model instanceof Character) {
+//			val character = model as Character
+//			val filter = [ IEObjectDescription ieod |
+//				
+//				if (character.template != null) {
+//					for(c:character.template.customs) {
+//						if (!c.caName.name.equals(ieod.name.toString)) {
+//							return false
+//						}
+//					}
+//				} else if(ieod.qualifiedName.segmentCount > 1) {
+//					return false
+//				}
+//				
+//				return true
+//			]
+//
+//			if (assignment.terminal instanceof CrossReference) {
+//				val terminal = (assignment.terminal as CrossReference)
+//				lookupCrossReference(terminal, context, acceptor, filter)
+//			}
+//		}
+//	}
+
+	override completeKeyword(Keyword keyword, ContentAssistContext contentAssistContext,
+		ICompletionProposalAcceptor acceptor) {
+		val model = contentAssistContext.currentModel
+		switch (model) {
+			Character: {
+				if (model.template != null && filter(keyword, model.template))
+					return
+			}
+		}
+
+		super.completeKeyword(keyword, contentAssistContext, acceptor)
+
+	}
+
+	val keywordsToFilter = newImmutableList("age", "sex", "description", "full name", "type")
+
+	def private filter(Keyword keyword, Template template) {
+		if (template == null)
+			return false
+
+		val filterList = newArrayList
+		filterList.addAll(keywordsToFilter)
+
+		template.defaults.forEach [
+			filterList.remove(it)
+		]
+
+		if (filterList.contains(keyword.value)) {
+			return true
+		}
+		return false
 	}
 
 }

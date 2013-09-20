@@ -39,6 +39,7 @@ public class CharacterScriptParser extends AbstractContentAssistParser {
 				{
 					put(grammarAccess.getDefaultAttributeAccess().getAlternatives(), "rule__DefaultAttribute__Alternatives");
 					put(grammarAccess.getCustomAttributeAccess().getAlternatives_2(), "rule__CustomAttribute__Alternatives_2");
+					put(grammarAccess.getEnumIDAccess().getAlternatives(), "rule__EnumID__Alternatives");
 					put(grammarAccess.getPropertyAccess().getAlternatives(), "rule__Property__Alternatives");
 					put(grammarAccess.getDefaultPropertyAccess().getAlternatives(), "rule__DefaultProperty__Alternatives");
 					put(grammarAccess.getCustomPropertyAccess().getAlternatives_1(), "rule__CustomProperty__Alternatives_1");
@@ -60,6 +61,7 @@ public class CharacterScriptParser extends AbstractContentAssistParser {
 					put(grammarAccess.getAgeAccess().getGroup(), "rule__Age__Group__0");
 					put(grammarAccess.getSexAccess().getGroup(), "rule__Sex__Group__0");
 					put(grammarAccess.getCustomPropertyAccess().getGroup(), "rule__CustomProperty__Group__0");
+					put(grammarAccess.getCustomPropertyAccess().getGroup_1_2(), "rule__CustomProperty__Group_1_2__0");
 					put(grammarAccess.getCharactersAccess().getImportsAssignment_0(), "rule__Characters__ImportsAssignment_0");
 					put(grammarAccess.getCharactersAccess().getTemplatesAssignment_1(), "rule__Characters__TemplatesAssignment_1");
 					put(grammarAccess.getCharactersAccess().getCustomsAssignment_2(), "rule__Characters__CustomsAssignment_2");
@@ -92,7 +94,7 @@ public class CharacterScriptParser extends AbstractContentAssistParser {
 					put(grammarAccess.getCustomPropertyAccess().getCustomAttributeRefAssignment_0(), "rule__CustomProperty__CustomAttributeRefAssignment_0");
 					put(grammarAccess.getCustomPropertyAccess().getStringValueAssignment_1_0(), "rule__CustomProperty__StringValueAssignment_1_0");
 					put(grammarAccess.getCustomPropertyAccess().getIntValueAssignment_1_1(), "rule__CustomProperty__IntValueAssignment_1_1");
-					put(grammarAccess.getCustomPropertyAccess().getEnumValueAssignment_1_2(), "rule__CustomProperty__EnumValueAssignment_1_2");
+					put(grammarAccess.getCustomPropertyAccess().getEnumValueAssignment_1_2_1(), "rule__CustomProperty__EnumValueAssignment_1_2_1");
 					put(grammarAccess.getCustomPropertyAccess().getCommentAssignment_2(), "rule__CustomProperty__CommentAssignment_2");
 				}
 			};

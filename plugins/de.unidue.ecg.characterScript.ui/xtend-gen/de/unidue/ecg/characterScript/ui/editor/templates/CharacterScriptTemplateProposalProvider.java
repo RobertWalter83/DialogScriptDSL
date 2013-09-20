@@ -29,7 +29,6 @@ import org.eclipse.xtext.resource.IEObjectDescription;
 import org.eclipse.xtext.resource.XtextResource;
 import org.eclipse.xtext.scoping.IScope;
 import org.eclipse.xtext.scoping.IScopeProvider;
-import org.eclipse.xtext.scoping.impl.ImportScope;
 import org.eclipse.xtext.ui.editor.contentassist.ContentAssistContext;
 import org.eclipse.xtext.ui.editor.contentassist.ITemplateAcceptor;
 import org.eclipse.xtext.ui.editor.templates.ContextTypeIdHelper;
@@ -59,7 +58,6 @@ public class CharacterScriptTemplateProposalProvider extends DefaultTemplateProp
     this.numberTemplateCounter = 0;
     if ((templateContext instanceof XtextTemplateContext)) {
       final XtextTemplateContext xTemplateContext = ((XtextTemplateContext) templateContext);
-      final IScopeProvider scopProvider = xTemplateContext.getScopeProvider();
       ParserRule _characterRule = this.grammarAccess.getCharacterRule();
       final String id = this.helper.getId(_characterRule);
       TemplateContextType _contextType = xTemplateContext.getContextType();
@@ -69,27 +67,26 @@ public class CharacterScriptTemplateProposalProvider extends DefaultTemplateProp
         EObject _currentModel = context.getCurrentModel();
         boolean _notEquals = (!Objects.equal(_currentModel, null));
         if (_notEquals) {
+          final IScopeProvider scopProvider = xTemplateContext.getScopeProvider();
           EObject _currentModel_1 = context.getCurrentModel();
           final IScope scope = scopProvider.getScope(_currentModel_1, 
             Literals.CHARACTER__TEMPLATE);
           final ArrayList<Template> templates = CollectionLiterals.<Template>newArrayList();
-          if ((scope instanceof ImportScope)) {
-            Iterable<IEObjectDescription> _allElements = scope.getAllElements();
-            final Procedure1<IEObjectDescription> _function = new Procedure1<IEObjectDescription>() {
-              public void apply(final IEObjectDescription it) {
-                EObject _eObjectOrProxy = it.getEObjectOrProxy();
-                XtextResource _resource = context.getResource();
-                ResourceSet _resourceSet = _resource.getResourceSet();
-                final EObject resolved = EcoreUtil2.resolve(_eObjectOrProxy, _resourceSet);
-                if ((resolved instanceof de.unidue.ecg.characterScript.characterScript.Template)) {
-                  final de.unidue.ecg.characterScript.characterScript.Template source = ((de.unidue.ecg.characterScript.characterScript.Template) resolved);
-                  Template _createDynamicTemplate = CharacterScriptTemplateProposalProvider.this.createDynamicTemplate(source);
-                  templates.add(_createDynamicTemplate);
-                }
+          Iterable<IEObjectDescription> _allElements = scope.getAllElements();
+          final Procedure1<IEObjectDescription> _function = new Procedure1<IEObjectDescription>() {
+            public void apply(final IEObjectDescription it) {
+              EObject _eObjectOrProxy = it.getEObjectOrProxy();
+              XtextResource _resource = context.getResource();
+              ResourceSet _resourceSet = _resource.getResourceSet();
+              final EObject resolved = EcoreUtil2.resolve(_eObjectOrProxy, _resourceSet);
+              if ((resolved instanceof de.unidue.ecg.characterScript.characterScript.Template)) {
+                final de.unidue.ecg.characterScript.characterScript.Template source = ((de.unidue.ecg.characterScript.characterScript.Template) resolved);
+                Template _createDynamicTemplate = CharacterScriptTemplateProposalProvider.this.createDynamicTemplate(source);
+                templates.add(_createDynamicTemplate);
               }
-            };
-            IterableExtensions.<IEObjectDescription>forEach(_allElements, _function);
-          }
+            }
+          };
+          IterableExtensions.<IEObjectDescription>forEach(_allElements, _function);
           final Procedure1<Template> _function_1 = new Procedure1<Template>() {
             public void apply(final Template it) {
               Image _image = CharacterScriptTemplateProposalProvider.this.getImage(it);
@@ -180,7 +177,7 @@ public class CharacterScriptTemplateProposalProvider extends DefaultTemplateProp
       }
       String _switchResult = null;
       AttributeType _type = attribute.getType();
-      String _name_1 = _type.name();
+      String _name_1 = _type.getName();
       final String _switchValue = _name_1;
       boolean _matched = false;
       if (!_matched) {

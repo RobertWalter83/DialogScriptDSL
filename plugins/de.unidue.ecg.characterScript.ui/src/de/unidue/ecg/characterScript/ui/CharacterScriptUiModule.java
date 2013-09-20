@@ -4,11 +4,10 @@
 package de.unidue.ecg.characterScript.ui;
 
 import org.eclipse.ui.plugin.AbstractUIPlugin;
-import org.eclipse.xtext.scoping.IScopeProvider;
 import org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalComparator;
 import org.eclipse.xtext.ui.editor.contentassist.ITemplateProposalProvider;
 
-import de.unidue.ecg.characterScript.scoping.CharacterScriptScopeProvider;
+//import de.unidue.ecg.characterScript.scoping.CharacterScriptImportScopeProvider;
 import de.unidue.ecg.characterScript.ui.editor.syntaxcoloring.CharacterScriptHighlightingConfiguration;
 import de.unidue.ecg.characterScript.ui.editor.syntaxcoloring.CharacterScriptSemanticHighlightingCalculator;
 import de.unidue.ecg.characterScript.ui.editor.templates.CharacterScriptTemplateProposalProvider;
@@ -37,9 +36,5 @@ public class CharacterScriptUiModule extends de.unidue.ecg.characterScript.ui.Ab
 	@Override
 	public Class<? extends ITemplateProposalProvider> bindITemplateProposalProvider() {
 		return CharacterScriptTemplateProposalProvider.class;
-	}
-	
-	public Class<? extends IScopeProvider> bindIScopeProvider() {
-		return CharacterScriptScopeProvider.class;
 	}
 }

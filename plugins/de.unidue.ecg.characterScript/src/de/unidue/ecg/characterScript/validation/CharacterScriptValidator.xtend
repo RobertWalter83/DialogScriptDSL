@@ -132,7 +132,7 @@ class CharacterScriptValidator extends AbstractCharacterScriptValidator {
 				val matchedTemplate = templates.findFirst[it.name.equals(template.name)]
 				
 				if(matchedTemplate == null) {
-					error('Cannot resolve the template ' + template.name,
+					error('Missing import for template ' + template.name,
 							CharacterScriptPackage.Literals.CHARACTER__TEMPLATE, UNRESOLVED_TEMPLATE, template.name)
 				}
 			}
@@ -175,7 +175,7 @@ class CharacterScriptValidator extends AbstractCharacterScriptValidator {
 		false
 	}
 
-	def dispatch boolean isValidDefault(Type property, EList<String> list) {
+	def dispatch boolean isValidDefault(Type property, EList<String> list) {  
 		if (list.contains('type')) {
 			return true
 		}

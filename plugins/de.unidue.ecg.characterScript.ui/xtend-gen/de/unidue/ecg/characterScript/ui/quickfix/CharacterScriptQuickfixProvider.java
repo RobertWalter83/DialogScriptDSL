@@ -60,11 +60,16 @@ public class CharacterScriptQuickfixProvider extends DefaultQuickfixProvider {
   public void createImport(final Issue issue, final IssueResolutionAcceptor acceptor) {
     String[] _data = issue.getData();
     final String linkText = _data[0];
+    this.addImportTemplateFix(issue, acceptor, linkText);
+    this.addLocalTemplateFix(issue, acceptor, linkText);
+  }
+  
+  public void addImportTemplateFix(final Issue issue, final IssueResolutionAcceptor acceptor, final String linkText) {
     boolean _notEquals = (!Objects.equal(linkText, null));
     if (_notEquals) {
-      String _plus = ("Import \'" + linkText);
+      String _plus = ("Add import for \'" + linkText);
       String _plus_1 = (_plus + "\'");
-      String _plus_2 = ("Import \'" + linkText);
+      String _plus_2 = ("Add import for \'" + linkText);
       String _plus_3 = (_plus_2 + "\'");
       final ISemanticModification _function = new ISemanticModification() {
         public void apply(final EObject element, final IModificationContext context) throws Exception {
@@ -85,11 +90,16 @@ public class CharacterScriptQuickfixProvider extends DefaultQuickfixProvider {
   public void createTemplate(final Issue issue, final IssueResolutionAcceptor acceptor) {
     EClass _template = CharacterScriptPackage.eINSTANCE.getTemplate();
     final String linkText = this.customLinkingDiagnosticMessageProvider.getLinkText(issue, _template);
+    this.addImportTemplateFix(issue, acceptor, linkText);
+    this.addLocalTemplateFix(issue, acceptor, linkText);
+  }
+  
+  public void addLocalTemplateFix(final Issue issue, final IssueResolutionAcceptor acceptor, final String linkText) {
     boolean _notEquals = (!Objects.equal(linkText, null));
     if (_notEquals) {
-      String _plus = ("Create template \'" + linkText);
+      String _plus = ("Create local template \'" + linkText);
       String _plus_1 = (_plus + "\'");
-      String _plus_2 = ("Create template \'" + linkText);
+      String _plus_2 = ("Create local template \'" + linkText);
       String _plus_3 = (_plus_2 + "\'");
       final ISemanticModification _function = new ISemanticModification() {
         public void apply(final EObject element, final IModificationContext context) throws Exception {
