@@ -6,6 +6,8 @@ package de.unidue.ecg.characterScript.ui.quickfix
 import com.google.inject.Inject
 import de.unidue.ecg.characterScript.characterScript.Age
 import de.unidue.ecg.characterScript.characterScript.AttributeType
+import de.unidue.ecg.characterScript.characterScript.CharaSex
+import de.unidue.ecg.characterScript.characterScript.CharaType
 import de.unidue.ecg.characterScript.characterScript.Character
 import de.unidue.ecg.characterScript.characterScript.CharacterScriptFactory
 import de.unidue.ecg.characterScript.characterScript.CharacterScriptPackage
@@ -18,14 +20,15 @@ import de.unidue.ecg.characterScript.characterScript.Type
 import de.unidue.ecg.characterScript.validation.CharacterScriptValidator
 import de.unidue.ecg.common.linking.CustomLinkingDiagnosticMessageProvider
 import org.eclipse.xtext.EcoreUtil2
+import org.eclipse.xtext.Keyword
 import org.eclipse.xtext.diagnostics.Diagnostic
+import org.eclipse.xtext.nodemodel.impl.HiddenLeafNode
+import org.eclipse.xtext.nodemodel.impl.LeafNode
+import org.eclipse.xtext.nodemodel.util.NodeModelUtils
 import org.eclipse.xtext.ui.editor.quickfix.DefaultQuickfixProvider
 import org.eclipse.xtext.ui.editor.quickfix.Fix
 import org.eclipse.xtext.ui.editor.quickfix.IssueResolutionAcceptor
 import org.eclipse.xtext.validation.Issue
-import org.eclipse.xtext.nodemodel.util.NodeModelUtils
-import org.eclipse.xtext.nodemodel.impl.LeafNode
-import org.eclipse.xtext.nodemodel.impl.HiddenLeafNode
 
 /**
  * Custom quickfixes.
@@ -41,6 +44,86 @@ class CharacterScriptQuickfixProvider extends DefaultQuickfixProvider {
 		val linkText = issue.data.get(0)
 		issue.addImportTemplateFix(acceptor, linkText)
 		issue.addLocalTemplateFix(acceptor, linkText)
+	}
+
+	@Fix(CharacterScriptValidator.MISSING_REQUIRED_DEFAULT)
+	def addRequiredDefault(Issue issue, IssueResolutionAcceptor acceptor) {
+		val propName = issue.data.get(0)
+		
+		acceptor.accept(issue, 'Add missing attribute \'' + propName + '\'',
+			'Add missing attribute \'' + propName + '\'', null) [ element, context |
+				if(element instanceof Character) {
+					val character = element as Character
+					val template = character.template
+					
+					if(template != null) {
+						switch(propName) {
+							case 'full name': {
+								val property = CharacterScriptFactory.eINSTANCE.createFullName
+								property.value = 'XYZ'
+								property.comment = '[FIX ME!]'
+								character.properties.add(property)
+							}
+							case 'sex': {
+								val property = CharacterScriptFactory.eINSTANCE.createSex
+								property.value = CharaSex.FEMALE
+								property.comment = '[FIX ME!]'
+								character.properties.add(property)
+							}
+							case 'type': {
+								val property = CharacterScriptFactory.eINSTANCE.createType
+								property.value = CharaType.PC
+								property.comment = '[FIX ME!]'
+								character.properties.add(property)
+							}
+							case 'age': {
+								val property = CharacterScriptFactory.eINSTANCE.createAge
+								property.value = 0
+								property.comment = '[FIX ME!]'
+								character.properties.add(property)
+							}
+							case 'description': {
+								val property = CharacterScriptFactory.eINSTANCE.createDescription
+								property.value = 'XYZ'
+								property.comment = '[FIX ME!]'
+								character.properties.add(property)
+							}
+						}
+					}
+				}	
+			]
+	}
+
+	@Fix(CharacterScriptValidator.MISSING_REQUIRED_CUSTOM)
+	def addRequiredCustom(Issue issue, IssueResolutionAcceptor acceptor) {
+		val propName = issue.data.get(0)
+		val propValue = issue.data.get(1)
+
+		acceptor.accept(issue, 'Add missing attribute \'' + propName + '\'',
+			'Add missing attribute \'' + propName + '\'', null) [ element, context |
+			if (element instanceof Character) {
+				val character = element as Character
+				val template = character.template
+				if (template != null) {
+
+					val property = CharacterScriptFactory.eINSTANCE.createCustomProperty
+					val ca = template.customs.findFirst[it.caName.name.equals(propName)]
+					property.setCustomAttributeRef(ca.caName)
+					if (!ca.enumValues.empty) {
+						property.setEnumValue(ca.enumValues?.get(0))
+					} else {
+						switch (ca.type.getName()) {
+							case "NUMBER": property.setIntValue(Integer.parseInt(propValue))
+							case "TEXT": property.setStringValue(propValue)
+						}
+
+					}
+
+					character.properties.add(property)
+				}
+
+			}
+		]
 	}
 
 	def addImportTemplateFix(Issue issue, IssueResolutionAcceptor acceptor, String linkText) {
@@ -73,7 +156,8 @@ class CharacterScriptQuickfixProvider extends DefaultQuickfixProvider {
 	def void addLocalTemplateFix(Issue issue, IssueResolutionAcceptor acceptor, String linkText) {
 		if (linkText != null) {
 
-			acceptor.accept(issue, 'Create local template \'' + linkText + '\'', 'Create local template \'' + linkText + '\'', null) [ element, context |
+			acceptor.accept(issue, 'Create local template \'' + linkText + '\'',
+				'Create local template \'' + linkText + '\'', null) [ element, context |
 				if (element instanceof Character) {
 
 					val model = EcoreUtil2.getContainerOfType(element, Characters)
@@ -99,27 +183,11 @@ class CharacterScriptQuickfixProvider extends DefaultQuickfixProvider {
 								template.defaults.add("type")
 							}
 							CustomProperty: {
-//								val caName = CharacterScriptFactory.eINSTANCE.createCustomAttributeName
-//								val ca = CharacterScriptFactory.eINSTANCE.createCustomAttribute
-//								
-//								caName.name = it.customAttributeRef.name
-//								ca.caName = caName
-//								
-//								if (it.enumValue != null) {
-//									val enumValue = CharacterScriptFactory.eINSTANCE.createEnumValue
-//									enumValue.name = it.enumValue.name
-//									ca.enumValues.add(enumValue)
-//									
-//								} else if (it.stringValue != null) {
-//									ca.type = AttributeType.TEXT
-//								} else {
-//									ca.type = AttributeType.NUMBER
-//								}
-//								template.customs.add(ca)
+
 								val nodeForCARef = NodeModelUtils.findActualNodeFor(it)
 								val nodeCandidates = nodeForCARef.asTreeIterable.filter(LeafNode).filter[
-									!(it instanceof HiddenLeafNode)]
-									
+									!(it instanceof HiddenLeafNode) && !(it.grammarElement instanceof Keyword)]
+
 								if (nodeCandidates.length <= 2) {
 
 									val ca = CharacterScriptFactory.eINSTANCE.createCustomAttribute
@@ -139,6 +207,7 @@ class CharacterScriptQuickfixProvider extends DefaultQuickfixProvider {
 									} else {
 										ca.type = AttributeType.NUMBER
 									}
+									ca.required = '!'
 									template.customs.add(ca)
 								}
 							}
@@ -150,7 +219,7 @@ class CharacterScriptQuickfixProvider extends DefaultQuickfixProvider {
 			]
 		}
 	}
-
+	
 //	@Fix(MyDslValidator::INVALID_NAME)
 //	def capitalizeName(Issue issue, IssueResolutionAcceptor acceptor) {
 //		acceptor.accept(issue, 'Capitalize name', 'Capitalize the name.', 'upcase.png') [

@@ -23,6 +23,7 @@ import org.eclipse.emf.ecore.EReference
 import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.xtext.EcoreUtil2
 import org.eclipse.xtext.validation.Check
+import de.unidue.ecg.dialogScript.dialogScript.DialogLine
 
 //import org.eclipse.xtext.validation.Check
 /**
@@ -48,23 +49,25 @@ class DialogScriptValidator extends AbstractDialogScriptValidator {
 	public static val HUB_CANNOT_BE_LEFT = 'hubCannotBeLeft'
 	public static val DUPLICATED_MODIFIER = 'duplicatedModifier'
 	public static val WRONG_CONDTIONAL_USAGE = 'wrongConditionalUsage'
+	public static val UNRESOLVED_CHARACTER = 'unresolvedCharacter'
 
 	@Check
 	def checkHubCanBeLeft(Hub hub) {
 		val allContents = hub.eAllContents
-		while(allContents.hasNext) {
-			if(allContents.next instanceof Jump)
+		while (allContents.hasNext) {
+			if (allContents.next instanceof Jump)
 				return
 		}
-		
-		warning('Hub cannot be left by the player. Add an exit- or enter hub-statement to avoid infinite loops.', hub, DialogScriptPackage.Literals.HUB__NAME, HUB_CANNOT_BE_LEFT)
+
+		warning('Hub cannot be left by the player. Add an exit- or enter hub-statement to avoid infinite loops.', hub,
+			DialogScriptPackage.Literals.HUB__NAME, HUB_CANNOT_BE_LEFT)
 	}
-	
+
 	@Check
 	def checkForEmptyChoice(ChoiceDialog choice) {
-		if(choice.body == null)
-			warning('Empty choices should be removed.',
-						choice, DialogScriptPackage.Literals.CHOICE_DIALOG__NAME, EMPTY_CHOICE)
+		if (choice.body == null)
+			warning('Empty choices should be removed.', choice, DialogScriptPackage.Literals.CHOICE_DIALOG__NAME,
+				EMPTY_CHOICE)
 	}
 
 	@Check
@@ -109,18 +112,19 @@ class DialogScriptValidator extends AbstractDialogScriptValidator {
 		error('A hub has to contain at least one choice!', hub, DialogScriptPackage.Literals.HUB__NAME,
 			HUB_WITHOUT_CHOICE)
 	}
-	
+
 	@Check
 	def checkForMisplacedExitHubs(Exit exit) {
-		if(exit.exitHub) {
-			if(!isInHub(exit)) {
-				error('You are not in a hub, so this statement does not make sense!', exit, DialogScriptPackage.Literals.EXIT__EXIT_HUB, MISPLACED_EXIT_HUB)
+		if (exit.exitHub) {
+			if (!isInHub(exit)) {
+				error('You are not in a hub, so this statement does not make sense!', exit,
+					DialogScriptPackage.Literals.EXIT__EXIT_HUB, MISPLACED_EXIT_HUB)
 			}
 		}
 	}
-	
+
 	def boolean isInHub(EObject element) {
-		if(element instanceof Hub)
+		if (element instanceof Hub)
 			true
 		else if (element.eContainer == null)
 			false
@@ -169,51 +173,78 @@ class DialogScriptValidator extends AbstractDialogScriptValidator {
 				DialogScriptPackage.Literals.CHOICE_DIALOG__NAME, WILDCARD_IN_CHOICE_NAME)
 		}
 	}
-	
+
 	@Check
 	def checkForModifierDuplicates(Otherwise ele) {
 		checkForModifierDuplicates(ele.modifiers, ele, DialogScriptPackage.Literals.OTHERWISE__MODIFIERS)
 	}
-	
+
 	@Check
 	def checkForModifierDuplicates(Conditional ele) {
 		checkForModifierDuplicates(ele.modifiers, ele, DialogScriptPackage.Literals.ABSTRACT_CHOICE_DIALOG__MODIFIERS)
 	}
-	
+
 	@Check
 	def checkForModifierDuplicates(ChoiceDialog ele) {
 		checkForModifierDuplicates(ele.modifiers, ele, DialogScriptPackage.Literals.ABSTRACT_CHOICE_DIALOG__MODIFIERS)
 	}
-	
+
 	@Check
 	def checkForModifierDuplicates(OtherwiseChoice ele) {
 		checkForModifierDuplicates(ele.modifiers, ele, DialogScriptPackage.Literals.OTHERWISE_CHOICE__MODIFIERS)
 	}
-	
+
 	@Check
 	def checkForModifierDuplicates(ConditionalChoiceDialog ele) {
 		checkForModifierDuplicates(ele.modifiers, ele, DialogScriptPackage.Literals.ABSTRACT_CHOICE_DIALOG__MODIFIERS)
 	}
-	
+
 	def checkForModifierDuplicates(List<Modifier> modifiers, EObject obj, EStructuralFeature feature) {
-		modifiers.forEach[ 
+		modifiers.forEach [
 			val first = modifiers.indexOf(it)
 			val last = modifiers.lastIndexOf(it)
-			if(first != last) {
+			if (first != last) {
 				error('You cannot use a modifier several times', obj, feature, last, DUPLICATED_MODIFIER)
-			}			
+			}
 		]
 	}
-	
+
 	@Check
 	def checkForCorrectConditionalsInHub(Conditional ele) {
-		if(ele.eContainer instanceof Hub) {
+		if (ele.eContainer instanceof Hub) {
 			val hub = ele.eContainer as Hub
-			if(!ele.modifiers.contains(Modifier.SINGLE) && (ele.body == null || ele.body != null && ele.body.jump == null)) {
-				error('Inside a hub, conditionals has to be either declared as \'single\' or has to exit the hub explicitly using a \'exit\' or \'enter\' statement',
-					hub, DialogScriptPackage.Literals.HUB__CHOICE_DIALOGS, hub.choiceDialogs.indexOf(ele), WRONG_CONDTIONAL_USAGE, hub.choiceDialogs.indexOf(ele).toString)		
+			if (!ele.modifiers.contains(Modifier.SINGLE) &&
+				(ele.body == null || ele.body != null && ele.body.jump == null)) {
+				error(
+					'Inside a hub, conditionals has to be either declared as \'single\' or has to exit the hub explicitly using a \'exit\' or \'enter\' statement',
+					hub, DialogScriptPackage.Literals.HUB__CHOICE_DIALOGS, hub.choiceDialogs.indexOf(ele),
+					WRONG_CONDTIONAL_USAGE, hub.choiceDialogs.indexOf(ele).toString)
 			}
 		}
+	}
+
+	@Check
+	def checkImports(DialogLine d) {
+
+		val charaName = d.character.name
+		val root = EcoreUtil2.getContainerOfType(d, Script)
+		var isIssue = false
+		val characterImports = root.charactersDefinition?.characters
+
+		if (characterImports == null) {
+			isIssue = true
+		} else {
+
+			val matchedImport = characterImports.findFirst[it.importedNamespace.equals(charaName)]
+
+			if (matchedImport == null) {
+				isIssue = true
+			}
+		}
+
+		if (isIssue)
+			error('Missing character definition for ' + charaName,
+				DialogScriptPackage.Literals.DIALOG_LINE__CHARACTER, UNRESOLVED_CHARACTER, charaName)
 	}
 
 }

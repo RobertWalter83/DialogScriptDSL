@@ -161,24 +161,22 @@ public class DialogScriptQuickfixProvider extends DefaultQuickfixProvider {
     }
   }
   
-  @Fix(Diagnostic.LINKING_DIAGNOSTIC)
+  @Fix(DialogScriptValidator.UNRESOLVED_CHARACTER)
   public void characterUnknown(final Issue issue, final IssueResolutionAcceptor acceptor) {
-    EClass _characterDefinition = DialogScriptPackage.eINSTANCE.getCharacterDefinition();
-    String linkText = this.customLinkingDiagnosticMessageProvider.getLinkText(issue, _characterDefinition);
+    String[] _data = issue.getData();
+    final String linkText = _data[0];
     boolean _notEquals = (!Objects.equal(linkText, null));
     if (_notEquals) {
-      String _plus = ("Create character \'" + linkText);
-      String _plus_1 = (_plus + "\'");
-      String _plus_2 = ("Create character \'" + linkText);
-      String _plus_3 = (_plus_2 + "\'");
+      String _plus = ("Add character \'" + linkText);
+      String _plus_1 = (_plus + "\' to script");
+      String _plus_2 = ("Add character \'" + linkText);
+      String _plus_3 = (_plus_2 + "\' to script");
       final ISemanticModification _function = new ISemanticModification() {
         public void apply(final EObject element, final IModificationContext context) throws Exception {
           if ((element instanceof DialogLine)) {
             final Script root = EcoreUtil2.<Script>getContainerOfType(element, Script.class);
-            final CharacterDefinition character = DialogScriptFactory.eINSTANCE.createCharacterDefinition();
-            EClass _characterDefinition = DialogScriptPackage.eINSTANCE.getCharacterDefinition();
-            String _linkText = DialogScriptQuickfixProvider.this.customLinkingDiagnosticMessageProvider.getLinkText(issue, _characterDefinition);
-            character.setName(_linkText);
+            final CharacterDefinition charaDef = DialogScriptFactory.eINSTANCE.createCharacterDefinition();
+            charaDef.setImportedNamespace(linkText);
             CharactersDefintion _charactersDefinition = root.getCharactersDefinition();
             boolean _equals = Objects.equal(_charactersDefinition, null);
             if (_equals) {
@@ -187,12 +185,11 @@ public class DialogScriptQuickfixProvider extends DefaultQuickfixProvider {
             }
             CharactersDefintion _charactersDefinition_1 = root.getCharactersDefinition();
             EList<CharacterDefinition> _characters = _charactersDefinition_1.getCharacters();
-            _characters.add(character);
+            _characters.add(charaDef);
           }
         }
       };
-      acceptor.accept(issue, _plus_1, _plus_3, 
-        null, _function);
+      acceptor.accept(issue, _plus_1, _plus_3, null, _function);
     }
   }
   

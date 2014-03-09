@@ -4,6 +4,7 @@
 package de.unidue.ecg.dialogScript.ui.quickfix
 
 import com.google.inject.Inject
+import de.unidue.ecg.common.linking.CustomLinkingDiagnosticMessageProvider
 import de.unidue.ecg.dialogScript.dialogScript.ConditionList
 import de.unidue.ecg.dialogScript.dialogScript.Conditional
 import de.unidue.ecg.dialogScript.dialogScript.DialogScriptFactory
@@ -14,8 +15,7 @@ import de.unidue.ecg.dialogScript.dialogScript.Script
 import de.unidue.ecg.dialogScript.dialogScript.Switch
 import de.unidue.ecg.dialogScript.dialogScript.SwitchOff
 import de.unidue.ecg.dialogScript.dialogScript.SwitchOn
-import de.unidue.ecg.dialogScript.dialogScript.SwitchValue 
-import de.unidue.ecg.common.linking.CustomLinkingDiagnosticMessageProvider
+import de.unidue.ecg.dialogScript.dialogScript.SwitchValue
 import de.unidue.ecg.dialogScript.validation.DialogScriptValidator
 import org.eclipse.xtext.EcoreUtil2
 import org.eclipse.xtext.diagnostics.Diagnostic
@@ -24,7 +24,6 @@ import org.eclipse.xtext.ui.editor.quickfix.Fix
 import org.eclipse.xtext.ui.editor.quickfix.IssueResolutionAcceptor
 import org.eclipse.xtext.validation.Issue
 import de.unidue.ecg.dialogScript.dialogScript.DialogLine
-
 
 //import org.eclipse.xtext.ui.editor.quickfix.Fix
 //import org.eclipse.xtext.ui.editor.quickfix.IssueResolutionAcceptor
@@ -138,31 +137,28 @@ class DialogScriptQuickfixProvider extends DefaultQuickfixProvider {
 		}
 	}
 
-	@Fix(Diagnostic.LINKING_DIAGNOSTIC)
+
+	@Fix(DialogScriptValidator.UNRESOLVED_CHARACTER)
 	def characterUnknown(Issue issue, IssueResolutionAcceptor acceptor) {
-		var linkText = customLinkingDiagnosticMessageProvider.getLinkText(issue,
-			DialogScriptPackage.eINSTANCE.characterDefinition)
+		val linkText = issue.data.get(0)
 
 		if (linkText != null) {
-			acceptor.accept(issue, 'Create character \'' + linkText + '\'', 'Create character \'' + linkText + '\'',
-				null) [ element, context |
+
+			acceptor.accept(issue, 'Add character \'' + linkText + '\' to script', 'Add character \'' + linkText + '\' to script', null) [ element, context |
 				if (element instanceof DialogLine) {
 
 					val root = EcoreUtil2.getContainerOfType(element, Script)
 
-					val character = DialogScriptFactory.eINSTANCE.createCharacterDefinition
-					character.setName(
-						customLinkingDiagnosticMessageProvider.getLinkText(issue,
-							DialogScriptPackage.eINSTANCE.characterDefinition))
-
-					if (root.charactersDefinition == null) {
+					val charaDef = DialogScriptFactory.eINSTANCE.createCharacterDefinition
+					charaDef.setImportedNamespace(linkText)
+					
+					if(root.charactersDefinition == null) {
 						root.charactersDefinition = DialogScriptFactory.eINSTANCE.createCharactersDefintion
 					}
-
-					root.charactersDefinition.characters.add(character)
-
+					root.charactersDefinition.characters.add(charaDef)
 				}
 			]
+
 		}
 	}
 

@@ -244,16 +244,16 @@ public class DialogScriptSemanticSequencer extends AbstractDelegatingSemanticSeq
 	
 	/**
 	 * Constraint:
-	 *     name=ID
+	 *     importedNamespace=ID
 	 */
 	protected void sequence_CharacterDefinition(EObject context, CharacterDefinition semanticObject) {
 		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, DialogScriptPackage.Literals.CHARACTER_DEFINITION__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DialogScriptPackage.Literals.CHARACTER_DEFINITION__NAME));
+			if(transientValues.isValueTransient(semanticObject, DialogScriptPackage.Literals.CHARACTER_DEFINITION__IMPORTED_NAMESPACE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DialogScriptPackage.Literals.CHARACTER_DEFINITION__IMPORTED_NAMESPACE));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getCharacterDefinitionAccess().getNameIDTerminalRuleCall_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getCharacterDefinitionAccess().getImportedNamespaceIDTerminalRuleCall_0(), semanticObject.getImportedNamespace());
 		feeder.finish();
 	}
 	
@@ -351,7 +351,7 @@ public class DialogScriptSemanticSequencer extends AbstractDelegatingSemanticSeq
 	
 	/**
 	 * Constraint:
-	 *     (character=[CharacterDefinition|ID] lines=StringID comment=COMMENT?)
+	 *     (character=[Character|ID] lines=StringID comment=COMMENT?)
 	 */
 	protected void sequence_DialogLine(EObject context, DialogLine semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

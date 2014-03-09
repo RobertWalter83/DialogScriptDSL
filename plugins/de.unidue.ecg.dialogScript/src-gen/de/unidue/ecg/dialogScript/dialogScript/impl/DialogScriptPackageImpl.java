@@ -2,6 +2,8 @@
  */
 package de.unidue.ecg.dialogScript.dialogScript.impl;
 
+import de.unidue.ecg.characterScript.characterScript.CharacterScriptPackage;
+
 import de.unidue.ecg.dialogScript.dialogScript.AbstractChoiceDialog;
 import de.unidue.ecg.dialogScript.dialogScript.CharacterDefinition;
 import de.unidue.ecg.dialogScript.dialogScript.CharactersDefintion;
@@ -349,6 +351,9 @@ public class DialogScriptPackageImpl extends EPackageImpl implements DialogScrip
 
     isInited = true;
 
+    // Initialize simple dependencies
+    CharacterScriptPackage.eINSTANCE.eClass();
+
     // Create package meta-data objects
     theDialogScriptPackage.createPackageContents();
 
@@ -449,7 +454,7 @@ public class DialogScriptPackageImpl extends EPackageImpl implements DialogScrip
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getCharacterDefinition_Name()
+  public EAttribute getCharacterDefinition_ImportedNamespace()
   {
     return (EAttribute)characterDefinitionEClass.getEStructuralFeatures().get(0);
   }
@@ -1454,7 +1459,7 @@ public class DialogScriptPackageImpl extends EPackageImpl implements DialogScrip
     createEReference(charactersDefintionEClass, CHARACTERS_DEFINTION__CHARACTERS);
 
     characterDefinitionEClass = createEClass(CHARACTER_DEFINITION);
-    createEAttribute(characterDefinitionEClass, CHARACTER_DEFINITION__NAME);
+    createEAttribute(characterDefinitionEClass, CHARACTER_DEFINITION__IMPORTED_NAMESPACE);
 
     switchesDefinitionEClass = createEClass(SWITCHES_DEFINITION);
     createEReference(switchesDefinitionEClass, SWITCHES_DEFINITION__SWITCHES);
@@ -1609,6 +1614,9 @@ public class DialogScriptPackageImpl extends EPackageImpl implements DialogScrip
     setNsPrefix(eNS_PREFIX);
     setNsURI(eNS_URI);
 
+    // Obtain other dependent packages
+    CharacterScriptPackage theCharacterScriptPackage = (CharacterScriptPackage)EPackage.Registry.INSTANCE.getEPackage(CharacterScriptPackage.eNS_URI);
+
     // Create type parameters
 
     // Set bounds for type parameters
@@ -1637,7 +1645,7 @@ public class DialogScriptPackageImpl extends EPackageImpl implements DialogScrip
     initEReference(getCharactersDefintion_Characters(), this.getCharacterDefinition(), null, "characters", null, 0, -1, CharactersDefintion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(characterDefinitionEClass, CharacterDefinition.class, "CharacterDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getCharacterDefinition_Name(), ecorePackage.getEString(), "name", null, 0, 1, CharacterDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getCharacterDefinition_ImportedNamespace(), ecorePackage.getEString(), "importedNamespace", null, 0, 1, CharacterDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(switchesDefinitionEClass, SwitchesDefinition.class, "SwitchesDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getSwitchesDefinition_Switches(), this.getSwitchDefinition(), null, "switches", null, 0, -1, SwitchesDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1759,7 +1767,7 @@ public class DialogScriptPackageImpl extends EPackageImpl implements DialogScrip
     initEAttribute(getSwitchOn_Comment(), ecorePackage.getEString(), "comment", null, 0, 1, SwitchOn.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(dialogLineEClass, DialogLine.class, "DialogLine", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getDialogLine_Character(), this.getCharacterDefinition(), null, "character", null, 0, 1, DialogLine.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getDialogLine_Character(), theCharacterScriptPackage.getCharacter(), null, "character", null, 0, 1, DialogLine.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getDialogLine_Lines(), ecorePackage.getEString(), "lines", null, 0, 1, DialogLine.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getDialogLine_Comment(), ecorePackage.getEString(), "comment", null, 0, 1, DialogLine.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 

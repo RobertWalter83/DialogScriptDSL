@@ -1,5 +1,7 @@
 package de.unidue.ecg.characterScript.util;
 
+import org.eclipse.emf.ecore.EClass;
+
 @SuppressWarnings("all")
 public class DefaultAttributeHelper {
   private String _name;
@@ -22,8 +24,19 @@ public class DefaultAttributeHelper {
     this._type = type;
   }
   
-  public DefaultAttributeHelper(final String name, final String type) {
+  private EClass _eClass;
+  
+  public EClass getEClass() {
+    return this._eClass;
+  }
+  
+  public void setEClass(final EClass eClass) {
+    this._eClass = eClass;
+  }
+  
+  public DefaultAttributeHelper(final String name, final String type, final EClass eClass) {
     this.setName(name);
     this.setType(type);
+    this.setEClass(eClass);
   }
 }

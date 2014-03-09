@@ -17,7 +17,7 @@
         eType="#//CharacterDefinition" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CharacterDefinition">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="importedNamespace" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SwitchesDefinition">
     <eStructuralFeatures xsi:type="ecore:EReference" name="switches" upperBound="-1"
@@ -179,7 +179,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="comment" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DialogLine" eSuperTypes="#//Recursive #//Statement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="character" eType="#//CharacterDefinition"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="character" eType="ecore:EClass ../../../../../../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/CharacterScript.ecore#//Character"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="lines" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="comment" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>

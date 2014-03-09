@@ -73,38 +73,67 @@ class DialogScriptProjectCreator extends WorkspaceModifyOperation implements IPr
 	}
 
 	def enhanceProject(IProject project, IProgressMonitor monitor) throws CoreException {
-		val folder = project.getFolder(new Path('./scripts/samples'))
-		folder.create(true, true, monitor)
+		val charaPath = new Path('./' + SCRIPT_ROOT + '/characters')
+		val dialogPath = new Path('./' + SCRIPT_ROOT + '/dialog')
+		
+		project.createFile('Characters.chara', charaPath, createCharacterContent.toString, monitor)
+		val dialogFile = project.createFile('Dialog.dialog', dialogPath, createDialogContent.toString, monitor)
 
-		val file = folder.getFile(new Path('Sample.dialog'))
-		val content = createContent
+		project.refreshLocal(IResource.DEPTH_INFINITE, monitor);
+		return dialogFile
+	}
+	
+	def private createFile(IProject project, String fileNameWithExtension, Path path, String content, IProgressMonitor monitor) {
+		val folder = project.getFolder(path)
+		folder.create(true, true, monitor)
+		val file = folder.getFile(new Path(fileNameWithExtension))
 		var stream = null as ByteArrayInputStream
 		try {
-			stream = new ByteArrayInputStream(content.toString.bytes)
+			stream = new ByteArrayInputStream(content.bytes)
 			file.create(stream, true, monitor)
+			return file
 		} catch (IOException io) {
 		} 
 		finally {
 			stream.close
 		}
-
-		project.refreshLocal(IResource.DEPTH_INFINITE, monitor);
-		return file
 	}
 
-	def createContent() '''
+	def createDialogContent() '''
 /* Some useful shortcuts
  * CTRL+SPACE: Get context sensitive help at the current cursor position
  * CTRL+SHIFT+F: Auto-format your file
  */
-characters: Bill, Tom
+characters: Leia, Han
 
-scene "Project Sample" 
+scene "The Sealing" 
 
-	Bill: "Hi, Tom."
-	Tom: "Hey, Bill."
+	Leia: "I love you."
+	Han: "I know."
 
 end scene
+		'''
+		
+	def createCharacterContent() '''
+/* Some useful shortcuts
+ * CTRL+SPACE: Get context sensitive help at the current cursor position
+ * CTRL+SHIFT+F: Auto-format your file
+ */
+character Leia
+	full name "Leia Organa"
+	description "Princess of Alderaan, daughter of Padme Amidala and Anakin Skywalker."
+	age 22
+	sex female
+	type NPC
+end
+
+character Han
+	full name "Han Solo"
+	description "Corellian Smuggler"
+	age 32
+	sex male
+	type PC
+end
 		'''
 
 	def getEncoding() throws CoreException {

@@ -4,7 +4,7 @@ package de.unidue.ecg.characterScript.characterScript.impl;
 
 import de.unidue.ecg.characterScript.characterScript.CharacterScriptPackage;
 import de.unidue.ecg.characterScript.characterScript.Characters;
-import de.unidue.ecg.characterScript.characterScript.Customs;
+import de.unidue.ecg.characterScript.characterScript.Globals;
 import de.unidue.ecg.characterScript.characterScript.Import;
 import de.unidue.ecg.characterScript.characterScript.Template;
 
@@ -33,7 +33,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link de.unidue.ecg.characterScript.characterScript.impl.CharactersImpl#getImports <em>Imports</em>}</li>
  *   <li>{@link de.unidue.ecg.characterScript.characterScript.impl.CharactersImpl#getTemplates <em>Templates</em>}</li>
- *   <li>{@link de.unidue.ecg.characterScript.characterScript.impl.CharactersImpl#getCustoms <em>Customs</em>}</li>
+ *   <li>{@link de.unidue.ecg.characterScript.characterScript.impl.CharactersImpl#getGlobals <em>Globals</em>}</li>
  *   <li>{@link de.unidue.ecg.characterScript.characterScript.impl.CharactersImpl#getCharacters <em>Characters</em>}</li>
  * </ul>
  * </p>
@@ -63,14 +63,14 @@ public class CharactersImpl extends MinimalEObjectImpl.Container implements Char
   protected EList<Template> templates;
 
   /**
-   * The cached value of the '{@link #getCustoms() <em>Customs</em>}' containment reference.
+   * The cached value of the '{@link #getGlobals() <em>Globals</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getCustoms()
+   * @see #getGlobals()
    * @generated
    * @ordered
    */
-  protected Customs customs;
+  protected Globals globals;
 
   /**
    * The cached value of the '{@link #getCharacters() <em>Characters</em>}' containment reference list.
@@ -136,9 +136,9 @@ public class CharactersImpl extends MinimalEObjectImpl.Container implements Char
    * <!-- end-user-doc -->
    * @generated
    */
-  public Customs getCustoms()
+  public Globals getGlobals()
   {
-    return customs;
+    return globals;
   }
 
   /**
@@ -146,13 +146,13 @@ public class CharactersImpl extends MinimalEObjectImpl.Container implements Char
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetCustoms(Customs newCustoms, NotificationChain msgs)
+  public NotificationChain basicSetGlobals(Globals newGlobals, NotificationChain msgs)
   {
-    Customs oldCustoms = customs;
-    customs = newCustoms;
+    Globals oldGlobals = globals;
+    globals = newGlobals;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CharacterScriptPackage.CHARACTERS__CUSTOMS, oldCustoms, newCustoms);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CharacterScriptPackage.CHARACTERS__GLOBALS, oldGlobals, newGlobals);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -163,20 +163,20 @@ public class CharactersImpl extends MinimalEObjectImpl.Container implements Char
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setCustoms(Customs newCustoms)
+  public void setGlobals(Globals newGlobals)
   {
-    if (newCustoms != customs)
+    if (newGlobals != globals)
     {
       NotificationChain msgs = null;
-      if (customs != null)
-        msgs = ((InternalEObject)customs).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CharacterScriptPackage.CHARACTERS__CUSTOMS, null, msgs);
-      if (newCustoms != null)
-        msgs = ((InternalEObject)newCustoms).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CharacterScriptPackage.CHARACTERS__CUSTOMS, null, msgs);
-      msgs = basicSetCustoms(newCustoms, msgs);
+      if (globals != null)
+        msgs = ((InternalEObject)globals).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CharacterScriptPackage.CHARACTERS__GLOBALS, null, msgs);
+      if (newGlobals != null)
+        msgs = ((InternalEObject)newGlobals).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CharacterScriptPackage.CHARACTERS__GLOBALS, null, msgs);
+      msgs = basicSetGlobals(newGlobals, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CharacterScriptPackage.CHARACTERS__CUSTOMS, newCustoms, newCustoms));
+      eNotify(new ENotificationImpl(this, Notification.SET, CharacterScriptPackage.CHARACTERS__GLOBALS, newGlobals, newGlobals));
   }
 
   /**
@@ -207,8 +207,8 @@ public class CharactersImpl extends MinimalEObjectImpl.Container implements Char
         return ((InternalEList<?>)getImports()).basicRemove(otherEnd, msgs);
       case CharacterScriptPackage.CHARACTERS__TEMPLATES:
         return ((InternalEList<?>)getTemplates()).basicRemove(otherEnd, msgs);
-      case CharacterScriptPackage.CHARACTERS__CUSTOMS:
-        return basicSetCustoms(null, msgs);
+      case CharacterScriptPackage.CHARACTERS__GLOBALS:
+        return basicSetGlobals(null, msgs);
       case CharacterScriptPackage.CHARACTERS__CHARACTERS:
         return ((InternalEList<?>)getCharacters()).basicRemove(otherEnd, msgs);
     }
@@ -229,8 +229,8 @@ public class CharactersImpl extends MinimalEObjectImpl.Container implements Char
         return getImports();
       case CharacterScriptPackage.CHARACTERS__TEMPLATES:
         return getTemplates();
-      case CharacterScriptPackage.CHARACTERS__CUSTOMS:
-        return getCustoms();
+      case CharacterScriptPackage.CHARACTERS__GLOBALS:
+        return getGlobals();
       case CharacterScriptPackage.CHARACTERS__CHARACTERS:
         return getCharacters();
     }
@@ -256,8 +256,8 @@ public class CharactersImpl extends MinimalEObjectImpl.Container implements Char
         getTemplates().clear();
         getTemplates().addAll((Collection<? extends Template>)newValue);
         return;
-      case CharacterScriptPackage.CHARACTERS__CUSTOMS:
-        setCustoms((Customs)newValue);
+      case CharacterScriptPackage.CHARACTERS__GLOBALS:
+        setGlobals((Globals)newValue);
         return;
       case CharacterScriptPackage.CHARACTERS__CHARACTERS:
         getCharacters().clear();
@@ -283,8 +283,8 @@ public class CharactersImpl extends MinimalEObjectImpl.Container implements Char
       case CharacterScriptPackage.CHARACTERS__TEMPLATES:
         getTemplates().clear();
         return;
-      case CharacterScriptPackage.CHARACTERS__CUSTOMS:
-        setCustoms((Customs)null);
+      case CharacterScriptPackage.CHARACTERS__GLOBALS:
+        setGlobals((Globals)null);
         return;
       case CharacterScriptPackage.CHARACTERS__CHARACTERS:
         getCharacters().clear();
@@ -307,8 +307,8 @@ public class CharactersImpl extends MinimalEObjectImpl.Container implements Char
         return imports != null && !imports.isEmpty();
       case CharacterScriptPackage.CHARACTERS__TEMPLATES:
         return templates != null && !templates.isEmpty();
-      case CharacterScriptPackage.CHARACTERS__CUSTOMS:
-        return customs != null;
+      case CharacterScriptPackage.CHARACTERS__GLOBALS:
+        return globals != null;
       case CharacterScriptPackage.CHARACTERS__CHARACTERS:
         return characters != null && !characters.isEmpty();
     }

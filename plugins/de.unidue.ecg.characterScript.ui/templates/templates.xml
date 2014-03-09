@@ -33,4 +33,16 @@ end
 	${cursor}
 end	
 </template>
+<template autoinsert="true"
+		context="de.unidue.ecg.characterScript.CharacterScript.Character"
+		deleted="false" description="insert default character"
+		enabled="true" id="DefaultCharacterTemplate" name="template: default character">character ${characterName} 
+	full name "${fullName}"
+	description "${description}"
+	type ${PC:Enum('CharaType')}
+	age ${0:var(int)}
+	sex ${female:Enum('CharaSex')}	
+end	
+${cursor}
+</template>
 </templates>

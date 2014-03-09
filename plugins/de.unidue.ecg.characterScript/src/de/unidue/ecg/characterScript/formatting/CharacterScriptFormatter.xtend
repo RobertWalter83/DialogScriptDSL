@@ -7,10 +7,11 @@ import org.eclipse.xtext.formatting.impl.AbstractDeclarativeFormatter
 import org.eclipse.xtext.formatting.impl.FormattingConfig
 import de.unidue.ecg.characterScript.services.CharacterScriptGrammarAccess
 import com.google.inject.Inject
+import org.eclipse.xtext.Keyword
+import org.eclipse.xtext.AbstractElement
 
 // import com.google.inject.Inject;
 // import de.unidue.ecg.characterScript.services.CharacterScriptGrammarAccess
-
 /**
  * This class contains custom formatting description.
  * 
@@ -22,7 +23,7 @@ import com.google.inject.Inject
 class CharacterScriptFormatter extends AbstractDeclarativeFormatter {
 
 	@Inject extension CharacterScriptGrammarAccess
-	
+
 	override protected void configureFormatting(FormattingConfig c) {
 		c.setLinewrap(0, 1, 2).before(SL_COMMENTRule)
 		c.setLinewrap(0, 1, 2).before(ML_COMMENTRule)
@@ -30,21 +31,30 @@ class CharacterScriptFormatter extends AbstractDeclarativeFormatter {
 
 		c.setLinewrap.after(charactersAccess.importsAssignment_0)
 		c.setLinewrap.after(charactersAccess.importsImportParserRuleCall_0_0)
-		
-		c.setLinewrap(2).before(templateAccess.templateKeyword_0)
-		c.setIndentation(templateAccess.nameAssignment_1, templateAccess.endKeyword_4)
-		c.setLinewrap.before(templateAccess.endKeyword_4)
-		
-		c.setLinewrap.before(templateAccess.defaultsAssignment_2)
-		c.setLinewrap.before(templateAccess.customsAssignment_3)
-		
-		c.setLinewrap.before(characterAccess.propertiesPropertyParserRuleCall_3_0)
-		c.setIndentation(characterAccess.nameAssignment_1, characterAccess.endKeyword_4)
-		c.setLinewrap.before(characterAccess.endKeyword_4)
-		
-		c.setLinewrap(2).before(characterAccess.characterKeyword_0)
-		
-		c.setLinewrap.after(characterAccess.propertiesAssignment_3)
-		
+
+		// template block
+		c.setDefaultBlockLayout(templateAccess.templateKeyword_0, templateAccess.nameAssignment_1,
+			templateAccess.endKeyword_5, templateAccess.endKeyword_5, templateAccess.defaultsAssignment_2,
+			templateAccess.customsAssignment_3, templateAccess.customsAssignment_4)
+
+		// customs block
+		c.setDefaultBlockLayout(globalsAccess.globalKeyword_0, globalsAccess.attributesKeyword_1,
+			globalsAccess.endKeyword_4, globalsAccess.endKeyword_4, globalsAccess.customsAssignment_2,
+			globalsAccess.customsAssignment_3)
+
+		// character block
+		c.setDefaultBlockLayout(characterAccess.characterKeyword_0, characterAccess.nameAssignment_1,
+			characterAccess.endKeyword_4, characterAccess.endKeyword_4, characterAccess.propertiesAssignment_3)
+
+	}
+
+	def void setDefaultBlockLayout(FormattingConfig c, Keyword start, AbstractElement indentStart,
+		AbstractElement indentEnd, Keyword end, AbstractElement... content) {
+		c.setLinewrap(2).before(start)
+		c.setIndentation(indentStart, indentEnd)
+		content.forEach[
+			c.setLinewrap.before(it)
+		]
+		c.setLinewrap.before(end)
 	}
 }

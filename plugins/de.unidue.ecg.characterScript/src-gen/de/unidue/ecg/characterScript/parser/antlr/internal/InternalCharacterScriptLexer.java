@@ -36,7 +36,9 @@ public class InternalCharacterScriptLexer extends Lexer {
     public static final int T__16=16;
     public static final int T__33=33;
     public static final int T__15=15;
+    public static final int T__34=34;
     public static final int T__18=18;
+    public static final int T__35=35;
     public static final int T__17=17;
     public static final int T__12=12;
     public static final int T__14=14;
@@ -311,11 +313,10 @@ public class InternalCharacterScriptLexer extends Lexer {
         try {
             int _type = T__24;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:23:7: ( 'custom' )
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:23:9: 'custom'
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:23:7: ( '!' )
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:23:9: '!'
             {
-            match("custom"); 
-
+            match('!'); 
 
             }
 
@@ -332,10 +333,10 @@ public class InternalCharacterScriptLexer extends Lexer {
         try {
             int _type = T__25;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:24:7: ( 'attributes' )
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:24:9: 'attributes'
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:24:7: ( 'required' )
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:24:9: 'required'
             {
-            match("attributes"); 
+            match("required"); 
 
 
             }
@@ -353,10 +354,10 @@ public class InternalCharacterScriptLexer extends Lexer {
         try {
             int _type = T__26;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:25:7: ( 'character' )
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:25:9: 'character'
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:25:7: ( 'global' )
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:25:9: 'global'
             {
-            match("character"); 
+            match("global"); 
 
 
             }
@@ -374,10 +375,10 @@ public class InternalCharacterScriptLexer extends Lexer {
         try {
             int _type = T__27;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:26:7: ( 'uses' )
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:26:9: 'uses'
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:26:7: ( 'attributes' )
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:26:9: 'attributes'
             {
-            match("uses"); 
+            match("attributes"); 
 
 
             }
@@ -395,10 +396,10 @@ public class InternalCharacterScriptLexer extends Lexer {
         try {
             int _type = T__28;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:27:7: ( 'NUMBER' )
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:27:9: 'NUMBER'
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:27:7: ( 'character' )
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:27:9: 'character'
             {
-            match("NUMBER"); 
+            match("character"); 
 
 
             }
@@ -416,10 +417,10 @@ public class InternalCharacterScriptLexer extends Lexer {
         try {
             int _type = T__29;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:28:7: ( 'TEXT' )
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:28:9: 'TEXT'
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:28:7: ( 'uses' )
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:28:9: 'uses'
             {
-            match("TEXT"); 
+            match("uses"); 
 
 
             }
@@ -437,10 +438,10 @@ public class InternalCharacterScriptLexer extends Lexer {
         try {
             int _type = T__30;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:29:7: ( 'PC' )
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:29:9: 'PC'
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:29:7: ( 'NUMBER' )
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:29:9: 'NUMBER'
             {
-            match("PC"); 
+            match("NUMBER"); 
 
 
             }
@@ -458,10 +459,10 @@ public class InternalCharacterScriptLexer extends Lexer {
         try {
             int _type = T__31;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:30:7: ( 'NPC' )
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:30:9: 'NPC'
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:30:7: ( 'TEXT' )
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:30:9: 'TEXT'
             {
-            match("NPC"); 
+            match("TEXT"); 
 
 
             }
@@ -479,10 +480,10 @@ public class InternalCharacterScriptLexer extends Lexer {
         try {
             int _type = T__32;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:31:7: ( 'male' )
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:31:9: 'male'
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:31:7: ( 'PC' )
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:31:9: 'PC'
             {
-            match("male"); 
+            match("PC"); 
 
 
             }
@@ -500,10 +501,10 @@ public class InternalCharacterScriptLexer extends Lexer {
         try {
             int _type = T__33;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:32:7: ( 'female' )
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:32:9: 'female'
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:32:7: ( 'NPC' )
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:32:9: 'NPC'
             {
-            match("female"); 
+            match("NPC"); 
 
 
             }
@@ -516,16 +517,58 @@ public class InternalCharacterScriptLexer extends Lexer {
     }
     // $ANTLR end "T__33"
 
+    // $ANTLR start "T__34"
+    public final void mT__34() throws RecognitionException {
+        try {
+            int _type = T__34;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:33:7: ( 'male' )
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:33:9: 'male'
+            {
+            match("male"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__34"
+
+    // $ANTLR start "T__35"
+    public final void mT__35() throws RecognitionException {
+        try {
+            int _type = T__35;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:34:7: ( 'female' )
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:34:9: 'female'
+            {
+            match("female"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__35"
+
     // $ANTLR start "RULE_COMMENT"
     public final void mRULE_COMMENT() throws RecognitionException {
         try {
             int _type = RULE_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1301:14: ( '[' ( options {greedy=false; } : . )* ']' )
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1301:16: '[' ( options {greedy=false; } : . )* ']'
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1371:14: ( '[' ( options {greedy=false; } : . )* ']' )
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1371:16: '[' ( options {greedy=false; } : . )* ']'
             {
             match('['); 
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1301:20: ( options {greedy=false; } : . )*
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1371:20: ( options {greedy=false; } : . )*
             loop1:
             do {
                 int alt1=2;
@@ -541,7 +584,7 @@ public class InternalCharacterScriptLexer extends Lexer {
 
                 switch (alt1) {
             	case 1 :
-            	    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1301:48: .
+            	    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1371:48: .
             	    {
             	    matchAny(); 
 
@@ -570,10 +613,10 @@ public class InternalCharacterScriptLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1303:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1303:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1373:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1373:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1303:11: ( '^' )?
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1373:11: ( '^' )?
             int alt2=2;
             int LA2_0 = input.LA(1);
 
@@ -582,7 +625,7 @@ public class InternalCharacterScriptLexer extends Lexer {
             }
             switch (alt2) {
                 case 1 :
-                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1303:11: '^'
+                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1373:11: '^'
                     {
                     match('^'); 
 
@@ -600,7 +643,7 @@ public class InternalCharacterScriptLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1303:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1373:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop3:
             do {
                 int alt3=2;
@@ -649,10 +692,10 @@ public class InternalCharacterScriptLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1305:10: ( ( '0' .. '9' )+ )
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1305:12: ( '0' .. '9' )+
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1375:10: ( ( '0' .. '9' )+ )
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1375:12: ( '0' .. '9' )+
             {
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1305:12: ( '0' .. '9' )+
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1375:12: ( '0' .. '9' )+
             int cnt4=0;
             loop4:
             do {
@@ -666,7 +709,7 @@ public class InternalCharacterScriptLexer extends Lexer {
 
                 switch (alt4) {
             	case 1 :
-            	    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1305:13: '0' .. '9'
+            	    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1375:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -698,10 +741,10 @@ public class InternalCharacterScriptLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1307:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1307:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1377:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1377:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1307:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1377:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt7=2;
             int LA7_0 = input.LA(1);
 
@@ -719,10 +762,10 @@ public class InternalCharacterScriptLexer extends Lexer {
             }
             switch (alt7) {
                 case 1 :
-                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1307:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1377:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1307:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1377:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop5:
                     do {
                         int alt5=3;
@@ -738,7 +781,7 @@ public class InternalCharacterScriptLexer extends Lexer {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1307:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1377:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -754,7 +797,7 @@ public class InternalCharacterScriptLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1307:66: ~ ( ( '\\\\' | '\"' ) )
+                    	    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1377:66: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -779,10 +822,10 @@ public class InternalCharacterScriptLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1307:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1377:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1307:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1377:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop6:
                     do {
                         int alt6=3;
@@ -798,7 +841,7 @@ public class InternalCharacterScriptLexer extends Lexer {
 
                         switch (alt6) {
                     	case 1 :
-                    	    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1307:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1377:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -814,7 +857,7 @@ public class InternalCharacterScriptLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1307:137: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1377:137: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -857,12 +900,12 @@ public class InternalCharacterScriptLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1309:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1309:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1379:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1379:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1309:24: ( options {greedy=false; } : . )*
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1379:24: ( options {greedy=false; } : . )*
             loop8:
             do {
                 int alt8=2;
@@ -887,7 +930,7 @@ public class InternalCharacterScriptLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1309:52: .
+            	    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1379:52: .
             	    {
             	    matchAny(); 
 
@@ -917,12 +960,12 @@ public class InternalCharacterScriptLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1311:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1311:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1381:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1381:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1311:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1381:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop9:
             do {
                 int alt9=2;
@@ -935,7 +978,7 @@ public class InternalCharacterScriptLexer extends Lexer {
 
                 switch (alt9) {
             	case 1 :
-            	    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1311:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1381:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -955,7 +998,7 @@ public class InternalCharacterScriptLexer extends Lexer {
                 }
             } while (true);
 
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1311:40: ( ( '\\r' )? '\\n' )?
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1381:40: ( ( '\\r' )? '\\n' )?
             int alt11=2;
             int LA11_0 = input.LA(1);
 
@@ -964,9 +1007,9 @@ public class InternalCharacterScriptLexer extends Lexer {
             }
             switch (alt11) {
                 case 1 :
-                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1311:41: ( '\\r' )? '\\n'
+                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1381:41: ( '\\r' )? '\\n'
                     {
-                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1311:41: ( '\\r' )?
+                    // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1381:41: ( '\\r' )?
                     int alt10=2;
                     int LA10_0 = input.LA(1);
 
@@ -975,7 +1018,7 @@ public class InternalCharacterScriptLexer extends Lexer {
                     }
                     switch (alt10) {
                         case 1 :
-                            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1311:41: '\\r'
+                            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1381:41: '\\r'
                             {
                             match('\r'); 
 
@@ -1007,10 +1050,10 @@ public class InternalCharacterScriptLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1313:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1313:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1383:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1383:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1313:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1383:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt12=0;
             loop12:
             do {
@@ -1064,8 +1107,8 @@ public class InternalCharacterScriptLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1315:16: ( . )
-            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1315:18: .
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1385:16: ( . )
+            // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1385:18: .
             {
             matchAny(); 
 
@@ -1080,8 +1123,8 @@ public class InternalCharacterScriptLexer extends Lexer {
     // $ANTLR end "RULE_ANY_OTHER"
 
     public void mTokens() throws RecognitionException {
-        // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1:8: ( T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | RULE_COMMENT | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
-        int alt13=30;
+        // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1:8: ( T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | RULE_COMMENT | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
+        int alt13=32;
         alt13 = dfa13.predict(input);
         switch (alt13) {
             case 1 :
@@ -1239,56 +1282,70 @@ public class InternalCharacterScriptLexer extends Lexer {
                 }
                 break;
             case 23 :
-                // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1:142: RULE_COMMENT
+                // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1:142: T__34
+                {
+                mT__34(); 
+
+                }
+                break;
+            case 24 :
+                // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1:148: T__35
+                {
+                mT__35(); 
+
+                }
+                break;
+            case 25 :
+                // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1:154: RULE_COMMENT
                 {
                 mRULE_COMMENT(); 
 
                 }
                 break;
-            case 24 :
-                // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1:155: RULE_ID
+            case 26 :
+                // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1:167: RULE_ID
                 {
                 mRULE_ID(); 
 
                 }
                 break;
-            case 25 :
-                // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1:163: RULE_INT
+            case 27 :
+                // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1:175: RULE_INT
                 {
                 mRULE_INT(); 
 
                 }
                 break;
-            case 26 :
-                // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1:172: RULE_STRING
+            case 28 :
+                // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1:184: RULE_STRING
                 {
                 mRULE_STRING(); 
 
                 }
                 break;
-            case 27 :
-                // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1:184: RULE_ML_COMMENT
+            case 29 :
+                // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1:196: RULE_ML_COMMENT
                 {
                 mRULE_ML_COMMENT(); 
 
                 }
                 break;
-            case 28 :
-                // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1:200: RULE_SL_COMMENT
+            case 30 :
+                // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1:212: RULE_SL_COMMENT
                 {
                 mRULE_SL_COMMENT(); 
 
                 }
                 break;
-            case 29 :
-                // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1:216: RULE_WS
+            case 31 :
+                // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1:228: RULE_WS
                 {
                 mRULE_WS(); 
 
                 }
                 break;
-            case 30 :
-                // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1:224: RULE_ANY_OTHER
+            case 32 :
+                // ../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/parser/antlr/internal/InternalCharacterScript.g:1:236: RULE_ANY_OTHER
                 {
                 mRULE_ANY_OTHER(); 
 
@@ -1302,187 +1359,202 @@ public class InternalCharacterScriptLexer extends Lexer {
 
     protected DFA13 dfa13 = new DFA13(this);
     static final String DFA13_eotS =
-        "\1\uffff\7\33\3\uffff\6\33\2\31\2\uffff\3\31\2\uffff\1\33\1\uffff"+
-        "\6\33\1\76\3\33\3\uffff\6\33\1\110\1\33\6\uffff\3\33\1\115\2\33"+
-        "\1\120\1\uffff\2\33\1\123\4\33\1\130\1\33\1\uffff\3\33\1\135\1\uffff"+
-        "\2\33\1\uffff\2\33\1\uffff\2\33\1\144\1\33\1\uffff\1\146\1\147\2"+
-        "\33\2\uffff\5\33\1\uffff\1\33\2\uffff\1\160\1\33\1\162\2\33\1\165"+
-        "\1\33\1\167\1\uffff\1\33\1\uffff\2\33\1\uffff\1\33\1\uffff\1\174"+
-        "\3\33\1\uffff\2\33\1\u0082\1\u0083\1\33\2\uffff\1\u0085\1\uffff";
+        "\1\uffff\7\36\4\uffff\10\36\2\34\2\uffff\3\34\2\uffff\1\36\1\uffff"+
+        "\6\36\1\103\3\36\4\uffff\7\36\1\116\1\36\6\uffff\3\36\1\123\2\36"+
+        "\1\126\1\uffff\2\36\1\131\5\36\1\137\1\36\1\uffff\3\36\1\144\1\uffff"+
+        "\2\36\1\uffff\2\36\1\uffff\3\36\1\154\1\36\1\uffff\1\156\1\157\2"+
+        "\36\2\uffff\6\36\1\uffff\1\36\2\uffff\1\171\1\36\1\173\3\36\1\177"+
+        "\1\36\1\u0081\1\uffff\1\36\1\uffff\3\36\1\uffff\1\36\1\uffff\1\u0087"+
+        "\2\36\1\u008a\1\36\1\uffff\2\36\1\uffff\1\u008e\1\u008f\1\36\2\uffff"+
+        "\1\u0091\1\uffff";
     static final String DFA13_eofS =
-        "\u0086\uffff";
+        "\u0092\uffff";
     static final String DFA13_minS =
-        "\1\0\1\155\1\145\1\156\1\145\1\147\2\145\3\uffff\1\150\1\163\1"+
-        "\120\1\105\1\103\1\141\1\0\1\101\2\uffff\2\0\1\52\2\uffff\1\160"+
-        "\1\uffff\1\155\1\160\1\144\1\154\1\155\1\145\1\60\1\164\1\163\1"+
-        "\170\3\uffff\1\163\1\141\1\145\1\115\1\103\1\130\1\60\1\154\6\uffff"+
-        "\1\157\1\160\1\145\1\60\1\154\1\141\1\60\1\uffff\1\162\1\143\1\60"+
-        "\1\164\1\162\1\163\1\102\1\60\1\124\1\uffff\1\145\1\162\1\154\1"+
-        "\60\1\uffff\1\40\1\154\1\uffff\1\151\1\162\1\uffff\1\157\1\141\1"+
-        "\60\1\105\1\uffff\2\60\1\164\1\141\2\uffff\1\145\1\142\1\151\1\155"+
-        "\1\143\1\uffff\1\122\2\uffff\1\60\1\164\1\60\1\165\1\160\1\60\1"+
-        "\164\1\60\1\uffff\1\145\1\uffff\2\164\1\uffff\1\145\1\uffff\1\60"+
-        "\1\145\1\151\1\162\1\uffff\1\163\1\157\2\60\1\156\2\uffff\1\60\1"+
-        "\uffff";
+        "\1\0\1\155\1\145\1\156\1\145\1\147\2\145\4\uffff\1\145\1\154\1"+
+        "\150\1\163\1\120\1\105\1\103\1\141\1\0\1\101\2\uffff\2\0\1\52\2"+
+        "\uffff\1\160\1\uffff\1\155\1\160\1\144\1\154\1\155\1\145\1\60\1"+
+        "\164\1\163\1\170\4\uffff\1\161\1\157\1\141\1\145\1\115\1\103\1\130"+
+        "\1\60\1\154\6\uffff\1\157\1\160\1\145\1\60\1\154\1\141\1\60\1\uffff"+
+        "\1\162\1\143\1\60\1\165\1\142\1\162\1\163\1\102\1\60\1\124\1\uffff"+
+        "\1\145\1\162\1\154\1\60\1\uffff\1\40\1\154\1\uffff\1\151\1\162\1"+
+        "\uffff\1\151\2\141\1\60\1\105\1\uffff\2\60\1\164\1\141\2\uffff\1"+
+        "\145\1\142\1\151\1\162\1\154\1\143\1\uffff\1\122\2\uffff\1\60\1"+
+        "\164\1\60\1\165\1\160\1\145\1\60\1\164\1\60\1\uffff\1\145\1\uffff"+
+        "\2\164\1\144\1\uffff\1\145\1\uffff\1\60\1\145\1\151\1\60\1\162\1"+
+        "\uffff\1\163\1\157\1\uffff\2\60\1\156\2\uffff\1\60\1\uffff";
     static final String DFA13_maxS =
-        "\1\uffff\1\155\1\171\1\156\1\165\1\164\2\145\3\uffff\1\165\1\163"+
-        "\1\125\1\105\1\103\1\141\1\uffff\1\172\2\uffff\2\uffff\1\57\2\uffff"+
-        "\1\160\1\uffff\1\155\1\160\1\144\1\154\1\155\1\145\1\172\1\164\1"+
-        "\163\1\170\3\uffff\1\163\1\141\1\145\1\115\1\103\1\130\1\172\1\154"+
-        "\6\uffff\1\157\1\160\1\145\1\172\1\154\1\141\1\172\1\uffff\1\162"+
-        "\1\143\1\172\1\164\1\162\1\163\1\102\1\172\1\124\1\uffff\1\145\1"+
-        "\162\1\154\1\172\1\uffff\1\40\1\154\1\uffff\1\151\1\162\1\uffff"+
-        "\1\157\1\141\1\172\1\105\1\uffff\2\172\1\164\1\141\2\uffff\1\145"+
-        "\1\142\1\151\1\155\1\143\1\uffff\1\122\2\uffff\1\172\1\164\1\172"+
-        "\1\165\1\160\1\172\1\164\1\172\1\uffff\1\145\1\uffff\2\164\1\uffff"+
-        "\1\145\1\uffff\1\172\1\145\1\151\1\162\1\uffff\1\163\1\157\2\172"+
-        "\1\156\2\uffff\1\172\1\uffff";
+        "\1\uffff\1\155\1\171\1\156\1\165\1\164\2\145\4\uffff\1\145\1\154"+
+        "\1\150\1\163\1\125\1\105\1\103\1\141\1\uffff\1\172\2\uffff\2\uffff"+
+        "\1\57\2\uffff\1\160\1\uffff\1\155\1\160\1\144\1\154\1\155\1\145"+
+        "\1\172\1\164\1\163\1\170\4\uffff\1\161\1\157\1\141\1\145\1\115\1"+
+        "\103\1\130\1\172\1\154\6\uffff\1\157\1\160\1\145\1\172\1\154\1\141"+
+        "\1\172\1\uffff\1\162\1\143\1\172\1\165\1\142\1\162\1\163\1\102\1"+
+        "\172\1\124\1\uffff\1\145\1\162\1\154\1\172\1\uffff\1\40\1\154\1"+
+        "\uffff\1\151\1\162\1\uffff\1\151\2\141\1\172\1\105\1\uffff\2\172"+
+        "\1\164\1\141\2\uffff\1\145\1\142\1\151\1\162\1\154\1\143\1\uffff"+
+        "\1\122\2\uffff\1\172\1\164\1\172\1\165\1\160\1\145\1\172\1\164\1"+
+        "\172\1\uffff\1\145\1\uffff\2\164\1\144\1\uffff\1\145\1\uffff\1\172"+
+        "\1\145\1\151\1\172\1\162\1\uffff\1\163\1\157\1\uffff\2\172\1\156"+
+        "\2\uffff\1\172\1\uffff";
     static final String DFA13_acceptS =
-        "\10\uffff\1\12\1\13\1\14\10\uffff\1\30\1\31\3\uffff\1\35\1\36\1"+
-        "\uffff\1\30\12\uffff\1\12\1\13\1\14\10\uffff\1\27\1\31\1\32\1\33"+
-        "\1\34\1\35\7\uffff\1\11\11\uffff\1\23\4\uffff\1\3\2\uffff\1\5\2"+
-        "\uffff\1\7\4\uffff\1\24\4\uffff\1\10\1\4\5\uffff\1\20\1\uffff\1"+
-        "\22\1\25\10\uffff\1\1\1\uffff\1\26\2\uffff\1\15\1\uffff\1\21\4\uffff"+
-        "\1\2\5\uffff\1\17\1\16\1\uffff\1\6";
+        "\10\uffff\1\12\1\13\1\14\1\15\12\uffff\1\32\1\33\3\uffff\1\37\1"+
+        "\40\1\uffff\1\32\12\uffff\1\12\1\13\1\14\1\15\11\uffff\1\31\1\33"+
+        "\1\34\1\35\1\36\1\37\7\uffff\1\11\12\uffff\1\25\4\uffff\1\3\2\uffff"+
+        "\1\5\2\uffff\1\7\5\uffff\1\26\4\uffff\1\10\1\4\6\uffff\1\22\1\uffff"+
+        "\1\24\1\27\11\uffff\1\1\1\uffff\1\30\3\uffff\1\17\1\uffff\1\23\5"+
+        "\uffff\1\2\2\uffff\1\16\3\uffff\1\21\1\20\1\uffff\1\6";
     static final String DFA13_specialS =
-        "\1\3\20\uffff\1\1\3\uffff\1\2\1\0\157\uffff}>";
+        "\1\2\23\uffff\1\1\3\uffff\1\3\1\0\170\uffff}>";
     static final String[] DFA13_transitionS = {
-            "\11\31\2\30\2\31\1\30\22\31\1\30\1\31\1\25\4\31\1\26\1\10\1"+
-            "\12\2\31\1\11\2\31\1\27\12\24\7\31\15\23\1\15\1\23\1\17\3\23"+
-            "\1\16\6\23\1\21\2\31\1\22\1\23\1\31\1\5\1\23\1\13\1\6\1\3\1"+
-            "\4\2\23\1\1\3\23\1\20\5\23\1\7\1\2\1\14\5\23\uff85\31",
-            "\1\32",
-            "\1\34\23\uffff\1\35",
-            "\1\36",
-            "\1\40\17\uffff\1\37",
-            "\1\41\13\uffff\1\42\1\43",
-            "\1\44",
-            "\1\45",
+            "\11\34\2\33\2\34\1\33\22\34\1\33\1\13\1\30\4\34\1\31\1\10\1"+
+            "\12\2\34\1\11\2\34\1\32\12\27\7\34\15\26\1\20\1\26\1\22\3\26"+
+            "\1\21\6\26\1\24\2\34\1\25\1\26\1\34\1\5\1\26\1\16\1\6\1\3\1"+
+            "\4\1\15\1\26\1\1\3\26\1\23\4\26\1\14\1\7\1\2\1\17\5\26\uff85"+
+            "\34",
+            "\1\35",
+            "\1\37\23\uffff\1\40",
+            "\1\41",
+            "\1\43\17\uffff\1\42",
+            "\1\44\13\uffff\1\45\1\46",
+            "\1\47",
+            "\1\50",
             "",
             "",
             "",
-            "\1\52\14\uffff\1\51",
-            "\1\53",
-            "\1\55\4\uffff\1\54",
+            "",
+            "\1\55",
             "\1\56",
             "\1\57",
             "\1\60",
-            "\0\61",
-            "\32\33\4\uffff\1\33\1\uffff\32\33",
+            "\1\62\4\uffff\1\61",
+            "\1\63",
+            "\1\64",
+            "\1\65",
+            "\0\66",
+            "\32\36\4\uffff\1\36\1\uffff\32\36",
             "",
             "",
-            "\0\63",
-            "\0\63",
-            "\1\64\4\uffff\1\65",
+            "\0\70",
+            "\0\70",
+            "\1\71\4\uffff\1\72",
             "",
             "",
-            "\1\67",
-            "",
-            "\1\70",
-            "\1\71",
-            "\1\72",
-            "\1\73",
             "\1\74",
+            "",
             "\1\75",
-            "\12\33\7\uffff\32\33\4\uffff\1\33\1\uffff\32\33",
+            "\1\76",
             "\1\77",
             "\1\100",
             "\1\101",
-            "",
-            "",
-            "",
             "\1\102",
-            "\1\103",
+            "\12\36\7\uffff\32\36\4\uffff\1\36\1\uffff\32\36",
             "\1\104",
             "\1\105",
             "\1\106",
+            "",
+            "",
+            "",
+            "",
             "\1\107",
-            "\12\33\7\uffff\32\33\4\uffff\1\33\1\uffff\32\33",
+            "\1\110",
             "\1\111",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
             "\1\112",
             "\1\113",
             "\1\114",
-            "\12\33\7\uffff\32\33\4\uffff\1\33\1\uffff\32\33",
-            "\1\116",
+            "\1\115",
+            "\12\36\7\uffff\32\36\4\uffff\1\36\1\uffff\32\36",
             "\1\117",
-            "\12\33\7\uffff\32\33\4\uffff\1\33\1\uffff\32\33",
             "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "\1\120",
             "\1\121",
             "\1\122",
-            "\12\33\7\uffff\32\33\4\uffff\1\33\1\uffff\32\33",
+            "\12\36\7\uffff\32\36\4\uffff\1\36\1\uffff\32\36",
             "\1\124",
             "\1\125",
-            "\1\126",
-            "\1\127",
-            "\12\33\7\uffff\32\33\4\uffff\1\33\1\uffff\32\33",
-            "\1\131",
+            "\12\36\7\uffff\32\36\4\uffff\1\36\1\uffff\32\36",
             "",
+            "\1\127",
+            "\1\130",
+            "\12\36\7\uffff\32\36\4\uffff\1\36\1\uffff\32\36",
             "\1\132",
             "\1\133",
             "\1\134",
-            "\12\33\7\uffff\32\33\4\uffff\1\33\1\uffff\32\33",
-            "",
+            "\1\135",
             "\1\136",
-            "\1\137",
-            "",
+            "\12\36\7\uffff\32\36\4\uffff\1\36\1\uffff\32\36",
             "\1\140",
-            "\1\141",
             "",
+            "\1\141",
             "\1\142",
             "\1\143",
-            "\12\33\7\uffff\32\33\4\uffff\1\33\1\uffff\32\33",
+            "\12\36\7\uffff\32\36\4\uffff\1\36\1\uffff\32\36",
+            "",
             "\1\145",
+            "\1\146",
             "",
-            "\12\33\7\uffff\32\33\4\uffff\1\33\1\uffff\32\33",
-            "\12\33\7\uffff\32\33\4\uffff\1\33\1\uffff\32\33",
+            "\1\147",
             "\1\150",
+            "",
             "\1\151",
-            "",
-            "",
             "\1\152",
             "\1\153",
-            "\1\154",
+            "\12\36\7\uffff\32\36\4\uffff\1\36\1\uffff\32\36",
             "\1\155",
-            "\1\156",
             "",
-            "\1\157",
-            "",
-            "",
-            "\12\33\7\uffff\32\33\4\uffff\1\33\1\uffff\32\33",
+            "\12\36\7\uffff\32\36\4\uffff\1\36\1\uffff\32\36",
+            "\12\36\7\uffff\32\36\4\uffff\1\36\1\uffff\32\36",
+            "\1\160",
             "\1\161",
-            "\12\33\7\uffff\32\33\4\uffff\1\33\1\uffff\32\33",
+            "",
+            "",
+            "\1\162",
             "\1\163",
             "\1\164",
-            "\12\33\7\uffff\32\33\4\uffff\1\33\1\uffff\32\33",
+            "\1\165",
             "\1\166",
-            "\12\33\7\uffff\32\33\4\uffff\1\33\1\uffff\32\33",
+            "\1\167",
             "",
             "\1\170",
             "",
-            "\1\171",
+            "",
+            "\12\36\7\uffff\32\36\4\uffff\1\36\1\uffff\32\36",
             "\1\172",
-            "",
-            "\1\173",
-            "",
-            "\12\33\7\uffff\32\33\4\uffff\1\33\1\uffff\32\33",
+            "\12\36\7\uffff\32\36\4\uffff\1\36\1\uffff\32\36",
+            "\1\174",
             "\1\175",
             "\1\176",
-            "\1\177",
-            "",
+            "\12\36\7\uffff\32\36\4\uffff\1\36\1\uffff\32\36",
             "\1\u0080",
-            "\1\u0081",
-            "\12\33\7\uffff\32\33\4\uffff\1\33\1\uffff\32\33",
-            "\12\33\7\uffff\32\33\4\uffff\1\33\1\uffff\32\33",
+            "\12\36\7\uffff\32\36\4\uffff\1\36\1\uffff\32\36",
+            "",
+            "\1\u0082",
+            "",
+            "\1\u0083",
             "\1\u0084",
+            "\1\u0085",
+            "",
+            "\1\u0086",
+            "",
+            "\12\36\7\uffff\32\36\4\uffff\1\36\1\uffff\32\36",
+            "\1\u0088",
+            "\1\u0089",
+            "\12\36\7\uffff\32\36\4\uffff\1\36\1\uffff\32\36",
+            "\1\u008b",
+            "",
+            "\1\u008c",
+            "\1\u008d",
+            "",
+            "\12\36\7\uffff\32\36\4\uffff\1\36\1\uffff\32\36",
+            "\12\36\7\uffff\32\36\4\uffff\1\36\1\uffff\32\36",
+            "\1\u0090",
             "",
             "",
-            "\12\33\7\uffff\32\33\4\uffff\1\33\1\uffff\32\33",
+            "\12\36\7\uffff\32\36\4\uffff\1\36\1\uffff\32\36",
             ""
     };
 
@@ -1516,43 +1588,33 @@ public class InternalCharacterScriptLexer extends Lexer {
             this.transition = DFA13_transition;
         }
         public String getDescription() {
-            return "1:1: Tokens : ( T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | RULE_COMMENT | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
+            return "1:1: Tokens : ( T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | RULE_COMMENT | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             IntStream input = _input;
         	int _s = s;
             switch ( s ) {
                     case 0 : 
-                        int LA13_22 = input.LA(1);
+                        int LA13_25 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA13_22>='\u0000' && LA13_22<='\uFFFF')) ) {s = 51;}
+                        if ( ((LA13_25>='\u0000' && LA13_25<='\uFFFF')) ) {s = 56;}
 
-                        else s = 25;
+                        else s = 28;
 
                         if ( s>=0 ) return s;
                         break;
                     case 1 : 
-                        int LA13_17 = input.LA(1);
+                        int LA13_20 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA13_17>='\u0000' && LA13_17<='\uFFFF')) ) {s = 49;}
+                        if ( ((LA13_20>='\u0000' && LA13_20<='\uFFFF')) ) {s = 54;}
 
-                        else s = 25;
+                        else s = 28;
 
                         if ( s>=0 ) return s;
                         break;
                     case 2 : 
-                        int LA13_21 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA13_21>='\u0000' && LA13_21<='\uFFFF')) ) {s = 51;}
-
-                        else s = 25;
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 3 : 
                         int LA13_0 = input.LA(1);
 
                         s = -1;
@@ -1576,35 +1638,51 @@ public class InternalCharacterScriptLexer extends Lexer {
 
                         else if ( (LA13_0==')') ) {s = 10;}
 
-                        else if ( (LA13_0=='c') ) {s = 11;}
+                        else if ( (LA13_0=='!') ) {s = 11;}
 
-                        else if ( (LA13_0=='u') ) {s = 12;}
+                        else if ( (LA13_0=='r') ) {s = 12;}
 
-                        else if ( (LA13_0=='N') ) {s = 13;}
+                        else if ( (LA13_0=='g') ) {s = 13;}
 
-                        else if ( (LA13_0=='T') ) {s = 14;}
+                        else if ( (LA13_0=='c') ) {s = 14;}
 
-                        else if ( (LA13_0=='P') ) {s = 15;}
+                        else if ( (LA13_0=='u') ) {s = 15;}
 
-                        else if ( (LA13_0=='m') ) {s = 16;}
+                        else if ( (LA13_0=='N') ) {s = 16;}
 
-                        else if ( (LA13_0=='[') ) {s = 17;}
+                        else if ( (LA13_0=='T') ) {s = 17;}
 
-                        else if ( (LA13_0=='^') ) {s = 18;}
+                        else if ( (LA13_0=='P') ) {s = 18;}
 
-                        else if ( ((LA13_0>='A' && LA13_0<='M')||LA13_0=='O'||(LA13_0>='Q' && LA13_0<='S')||(LA13_0>='U' && LA13_0<='Z')||LA13_0=='_'||LA13_0=='b'||(LA13_0>='g' && LA13_0<='h')||(LA13_0>='j' && LA13_0<='l')||(LA13_0>='n' && LA13_0<='r')||(LA13_0>='v' && LA13_0<='z')) ) {s = 19;}
+                        else if ( (LA13_0=='m') ) {s = 19;}
 
-                        else if ( ((LA13_0>='0' && LA13_0<='9')) ) {s = 20;}
+                        else if ( (LA13_0=='[') ) {s = 20;}
 
-                        else if ( (LA13_0=='\"') ) {s = 21;}
+                        else if ( (LA13_0=='^') ) {s = 21;}
 
-                        else if ( (LA13_0=='\'') ) {s = 22;}
+                        else if ( ((LA13_0>='A' && LA13_0<='M')||LA13_0=='O'||(LA13_0>='Q' && LA13_0<='S')||(LA13_0>='U' && LA13_0<='Z')||LA13_0=='_'||LA13_0=='b'||LA13_0=='h'||(LA13_0>='j' && LA13_0<='l')||(LA13_0>='n' && LA13_0<='q')||(LA13_0>='v' && LA13_0<='z')) ) {s = 22;}
 
-                        else if ( (LA13_0=='/') ) {s = 23;}
+                        else if ( ((LA13_0>='0' && LA13_0<='9')) ) {s = 23;}
 
-                        else if ( ((LA13_0>='\t' && LA13_0<='\n')||LA13_0=='\r'||LA13_0==' ') ) {s = 24;}
+                        else if ( (LA13_0=='\"') ) {s = 24;}
 
-                        else if ( ((LA13_0>='\u0000' && LA13_0<='\b')||(LA13_0>='\u000B' && LA13_0<='\f')||(LA13_0>='\u000E' && LA13_0<='\u001F')||LA13_0=='!'||(LA13_0>='#' && LA13_0<='&')||(LA13_0>='*' && LA13_0<='+')||(LA13_0>='-' && LA13_0<='.')||(LA13_0>=':' && LA13_0<='@')||(LA13_0>='\\' && LA13_0<=']')||LA13_0=='`'||(LA13_0>='{' && LA13_0<='\uFFFF')) ) {s = 25;}
+                        else if ( (LA13_0=='\'') ) {s = 25;}
+
+                        else if ( (LA13_0=='/') ) {s = 26;}
+
+                        else if ( ((LA13_0>='\t' && LA13_0<='\n')||LA13_0=='\r'||LA13_0==' ') ) {s = 27;}
+
+                        else if ( ((LA13_0>='\u0000' && LA13_0<='\b')||(LA13_0>='\u000B' && LA13_0<='\f')||(LA13_0>='\u000E' && LA13_0<='\u001F')||(LA13_0>='#' && LA13_0<='&')||(LA13_0>='*' && LA13_0<='+')||(LA13_0>='-' && LA13_0<='.')||(LA13_0>=':' && LA13_0<='@')||(LA13_0>='\\' && LA13_0<=']')||LA13_0=='`'||(LA13_0>='{' && LA13_0<='\uFFFF')) ) {s = 28;}
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 3 : 
+                        int LA13_24 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA13_24>='\u0000' && LA13_24<='\uFFFF')) ) {s = 56;}
+
+                        else s = 28;
 
                         if ( s>=0 ) return s;
                         break;

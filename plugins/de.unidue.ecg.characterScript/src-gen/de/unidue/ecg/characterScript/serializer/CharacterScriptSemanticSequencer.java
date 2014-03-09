@@ -8,10 +8,10 @@ import de.unidue.ecg.characterScript.characterScript.Characters;
 import de.unidue.ecg.characterScript.characterScript.CustomAttribute;
 import de.unidue.ecg.characterScript.characterScript.CustomAttributeName;
 import de.unidue.ecg.characterScript.characterScript.CustomProperty;
-import de.unidue.ecg.characterScript.characterScript.Customs;
 import de.unidue.ecg.characterScript.characterScript.Description;
 import de.unidue.ecg.characterScript.characterScript.EnumValue;
 import de.unidue.ecg.characterScript.characterScript.FullName;
+import de.unidue.ecg.characterScript.characterScript.Globals;
 import de.unidue.ecg.characterScript.characterScript.Import;
 import de.unidue.ecg.characterScript.characterScript.Sex;
 import de.unidue.ecg.characterScript.characterScript.Template;
@@ -76,12 +76,6 @@ public class CharacterScriptSemanticSequencer extends AbstractDelegatingSemantic
 					return; 
 				}
 				else break;
-			case CharacterScriptPackage.CUSTOMS:
-				if(context == grammarAccess.getCustomsRule()) {
-					sequence_Customs(context, (Customs) semanticObject); 
-					return; 
-				}
-				else break;
 			case CharacterScriptPackage.DESCRIPTION:
 				if(context == grammarAccess.getDefaultPropertyRule() ||
 				   context == grammarAccess.getDescriptionRule() ||
@@ -101,6 +95,12 @@ public class CharacterScriptSemanticSequencer extends AbstractDelegatingSemantic
 				   context == grammarAccess.getFullNameRule() ||
 				   context == grammarAccess.getPropertyRule()) {
 					sequence_FullName(context, (FullName) semanticObject); 
+					return; 
+				}
+				else break;
+			case CharacterScriptPackage.GLOBALS:
+				if(context == grammarAccess.getGlobalsRule()) {
+					sequence_Globals(context, (Globals) semanticObject); 
 					return; 
 				}
 				else break;
@@ -156,7 +156,7 @@ public class CharacterScriptSemanticSequencer extends AbstractDelegatingSemantic
 	
 	/**
 	 * Constraint:
-	 *     (imports+=Import* templates+=Template* customs=Customs? characters+=Character*)
+	 *     (imports+=Import* templates+=Template* globals=Globals? characters+=Character*)
 	 */
 	protected void sequence_Characters(EObject context, Characters semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -181,7 +181,7 @@ public class CharacterScriptSemanticSequencer extends AbstractDelegatingSemantic
 	
 	/**
 	 * Constraint:
-	 *     (caName=CustomAttributeName (type=AttributeType | (enumValues+=EnumValue enumValues+=EnumValue*)))
+	 *     (required=Required? caName=CustomAttributeName (type=AttributeType | (enumValues+=EnumValue enumValues+=EnumValue*)))
 	 */
 	protected void sequence_CustomAttribute(EObject context, CustomAttribute semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -193,15 +193,6 @@ public class CharacterScriptSemanticSequencer extends AbstractDelegatingSemantic
 	 *     (customAttributeRef=[CustomAttributeName|ID] (stringValue=STRING | intValue=INT | enumValue=[EnumValue|EnumID]) comment=COMMENT?)
 	 */
 	protected void sequence_CustomProperty(EObject context, CustomProperty semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (customAttributes+=CustomAttribute customAttributes+=CustomAttribute*)
-	 */
-	protected void sequence_Customs(EObject context, Customs semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -242,6 +233,15 @@ public class CharacterScriptSemanticSequencer extends AbstractDelegatingSemantic
 	
 	/**
 	 * Constraint:
+	 *     (customs+=CustomAttribute customs+=CustomAttribute*)
+	 */
+	protected void sequence_Globals(EObject context, Globals semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     importedNamespace=ID
 	 */
 	protected void sequence_Import(EObject context, Import semanticObject) {
@@ -267,7 +267,7 @@ public class CharacterScriptSemanticSequencer extends AbstractDelegatingSemantic
 	
 	/**
 	 * Constraint:
-	 *     (name=ID defaults+=DefaultAttribute* customs+=CustomAttribute*)
+	 *     (name=ID defaults+=DefaultAttribute* customs+=CustomAttribute customs+=CustomAttribute*)
 	 */
 	protected void sequence_Template(EObject context, Template semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

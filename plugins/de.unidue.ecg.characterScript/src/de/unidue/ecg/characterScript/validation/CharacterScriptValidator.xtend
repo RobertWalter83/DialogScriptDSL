@@ -18,6 +18,8 @@ import de.unidue.ecg.characterScript.characterScript.Type
 import org.eclipse.emf.common.util.EList
 import org.eclipse.xtext.EcoreUtil2
 import org.eclipse.xtext.validation.Check
+import com.google.common.base.Strings
+import de.unidue.ecg.characterScript.util.LanguageUtil
 
 /**
  * Custom validation rules. 
@@ -31,13 +33,54 @@ class CharacterScriptValidator extends AbstractCharacterScriptValidator {
 	public static val INVALID_ENUM_VALUE = 'invalidEnumValue'
 	public static val INVALID_PROPERTY = 'invalidProperty'
 	public static val UNRESOLVED_TEMPLATE = 'unresolvedTemplate'
+	public static val MISSING_REQUIRED_DEFAULT = 'missingRequiredDefault'
+	public static val MISSING_REQUIRED_CUSTOM = 'missingRequiredCustom'
+
+	@Check
+	def checkIfRequiredAttributeIsMissing(Character c) {
+		val t = c.template
+		if (t != null) {
+			t.defaults.forEach [ ^default |
+				if (!c.properties.filter(DefaultProperty).exists[prop|
+					^default.equals(LanguageUtil.getKeywordValueFor(prop.eClass))]) {
+					error('The attribute ' + ^default + ' is missing for the use of template ' + t.name, c,
+						CharacterScriptPackage.Literals.CHARACTER__TEMPLATE, MISSING_REQUIRED_DEFAULT,
+						^default)
+				}
+			]
+			t.customs.filter[!Strings.isNullOrEmpty(required)].forEach [ custom |
+				if (!c.properties.filter(CustomProperty).exists[prop|
+					val ca = prop.customAttributeRef.eContainer as CustomAttribute
+					EcoreUtil2.equals(ca, custom)]) {
+					error('The attribute ' + custom.caName.name + ' is missing for the use of template ' + t.name, c,
+						CharacterScriptPackage.Literals.CHARACTER__TEMPLATE, MISSING_REQUIRED_CUSTOM,
+						custom.caName.name, custom.createValueExpression)
+				}
+			]
+
+		}
+
+	}
+
+	var numberTemplateCounter = 0
+	def createValueExpression(CustomAttribute attribute) {
+		if (!attribute.enumValues.empty) {
+			return "(${" + attribute.enumValues?.get(0).name + ":Enum('value')})"
+		}
+		switch (attribute.type.getName()) {
+			case "NUMBER": return (this.numberTemplateCounter = this.numberTemplateCounter + 1).toString
+			case "TEXT": return attribute.caName.name.replaceAll("\\s+", "")
+		}
+	}
 
 	@Check
 	def checkIfAttributeTypeIsEnum(CustomProperty cp) {
 		val ca = cp.customAttributeRef.eContainer as CustomAttribute
 		if (ca?.enumValues.empty && cp.enumValue != null)
-			error('The value ' + cp.enumValue.name + ' is not available for the property ' + cp.customAttributeRef?.name,
-				CharacterScriptPackage.Literals.CUSTOM_PROPERTY__ENUM_VALUE, INVALID_ATTRIBUTE_TYPE)
+			error(
+				'The value ' + cp.enumValue.name + ' is not available for the property ' +
+					cp.customAttributeRef?.name, CharacterScriptPackage.Literals.CUSTOM_PROPERTY__ENUM_VALUE,
+				INVALID_ATTRIBUTE_TYPE)
 	}
 
 	@Check
@@ -71,15 +114,16 @@ class CharacterScriptValidator extends AbstractCharacterScriptValidator {
 	def checkTemplateAccordance(Character c) {
 		if (c.template != null) {
 			val template = c.template
-			val allowedDefaults = template.defaults
+
+			//val allowedDefaults = template.defaults
 			val allowedCustoms = template.customs
 
 			c.properties.forEach [ it, i |
 				switch it {
-					DefaultProperty case !it.isValidDefault(allowedDefaults): {
-						error('The used template ' + template.name + ' does not provide this property',
-							CharacterScriptPackage.Literals.CHARACTER__PROPERTIES, i, INVALID_PROPERTY)
-					}
+					//					DefaultProperty case !it.isValidDefault(allowedDefaults): {
+					//						error('The used template ' + template.name + ' does not provide this property',
+					//							CharacterScriptPackage.Literals.CHARACTER__PROPERTIES, i, INVALID_PROPERTY)
+					//					}
 					CustomProperty case !it.isValidCustom(allowedCustoms): {
 						error('The used template ' + template.name + ' does not provide this property',
 							CharacterScriptPackage.Literals.CHARACTER__PROPERTIES, i, INVALID_PROPERTY)
@@ -92,52 +136,53 @@ class CharacterScriptValidator extends AbstractCharacterScriptValidator {
 	@Check
 	def checkForDoubledAttributes(Character c) {
 		c.properties.forEach [
-			
 			switch it {
 				DefaultProperty: {
 					val outer = it
-					val doubled = c.properties.filter(DefaultProperty).filter[!EcoreUtil2.equals(it, outer)].findFirst[it.eClass == outer.eClass]
-					
-					if(doubled != null) {
+					val doubled = c.properties.filter(DefaultProperty).filter[!EcoreUtil2.equals(it, outer)].findFirst[
+						it.eClass == outer.eClass]
+
+					if (doubled != null) {
 						val index = c.properties.indexOf(doubled)
 						error('You cannot use a property twice',
 							CharacterScriptPackage.Literals.CHARACTER__PROPERTIES, index, INVALID_PROPERTY)
-					} 					
+					}
 				}
 				CustomProperty: {
 					val outer = it
-					val doubled = c.properties.filter(CustomProperty).filter[!EcoreUtil2.equals(it, outer)].findFirst[EcoreUtil2.equals(it.customAttributeRef, outer.customAttributeRef)]
-					
-					if(doubled != null) {
+					val doubled = c.properties.filter(CustomProperty).filter[!EcoreUtil2.equals(it, outer)].findFirst[
+						EcoreUtil2.equals(it.customAttributeRef, outer.customAttributeRef)]
+
+					if (doubled != null) {
 						val index = c.properties.indexOf(doubled)
 						error('You cannot use a property twice',
 							CharacterScriptPackage.Literals.CHARACTER__PROPERTIES, index, INVALID_PROPERTY)
-					} 	
+					}
 				}
 			}
 		]
 	}
-	
+
 	@Check
-	def checkImports(Character c){
-		if(c.template != null) {
+	def checkImports(Character c) {
+		if (c.template != null) {
 			val template = c.template
 			val root = (c.eContainer as Characters)
 			val imports = root.imports
-			
+
 			val matchedImport = imports.findFirst[it.importedNamespace.equals(template.name)]
-			
-			if(matchedImport == null) {
+
+			if (matchedImport == null) {
 				val templates = root.templates
 				val matchedTemplate = templates.findFirst[it.name.equals(template.name)]
-				
-				if(matchedTemplate == null) {
+
+				if (matchedTemplate == null) {
 					error('Missing import for template ' + template.name,
-							CharacterScriptPackage.Literals.CHARACTER__TEMPLATE, UNRESOLVED_TEMPLATE, template.name)
+						CharacterScriptPackage.Literals.CHARACTER__TEMPLATE, UNRESOLVED_TEMPLATE, template.name)
 				}
 			}
 		}
-		
+
 	}
 
 	def boolean isValidCustom(CustomProperty property, EList<CustomAttribute> list) {
@@ -175,7 +220,7 @@ class CharacterScriptValidator extends AbstractCharacterScriptValidator {
 		false
 	}
 
-	def dispatch boolean isValidDefault(Type property, EList<String> list) {  
+	def dispatch boolean isValidDefault(Type property, EList<String> list) {
 		if (list.contains('type')) {
 			return true
 		}

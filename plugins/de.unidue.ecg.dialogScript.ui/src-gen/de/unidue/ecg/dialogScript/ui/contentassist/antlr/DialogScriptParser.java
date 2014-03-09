@@ -87,7 +87,7 @@ public class DialogScriptParser extends AbstractContentAssistParser {
 					put(grammarAccess.getScriptAccess().getScenesAssignment_4(), "rule__Script__ScenesAssignment_4");
 					put(grammarAccess.getCharactersDefintionAccess().getCharactersAssignment_2(), "rule__CharactersDefintion__CharactersAssignment_2");
 					put(grammarAccess.getCharactersDefintionAccess().getCharactersAssignment_3_1(), "rule__CharactersDefintion__CharactersAssignment_3_1");
-					put(grammarAccess.getCharacterDefinitionAccess().getNameAssignment(), "rule__CharacterDefinition__NameAssignment");
+					put(grammarAccess.getCharacterDefinitionAccess().getImportedNamespaceAssignment(), "rule__CharacterDefinition__ImportedNamespaceAssignment");
 					put(grammarAccess.getSwitchesDefinitionAccess().getSwitchesAssignment_2(), "rule__SwitchesDefinition__SwitchesAssignment_2");
 					put(grammarAccess.getSwitchesDefinitionAccess().getSwitchesAssignment_3_1(), "rule__SwitchesDefinition__SwitchesAssignment_3_1");
 					put(grammarAccess.getSwitchDefinitionAccess().getNameAssignment_0(), "rule__SwitchDefinition__NameAssignment_0");

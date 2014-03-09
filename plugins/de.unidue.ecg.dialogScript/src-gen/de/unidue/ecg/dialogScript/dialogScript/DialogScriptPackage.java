@@ -151,13 +151,13 @@ public interface DialogScriptPackage extends EPackage
   int CHARACTER_DEFINITION = 2;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * The feature id for the '<em><b>Imported Namespace</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CHARACTER_DEFINITION__NAME = 0;
+  int CHARACTER_DEFINITION__IMPORTED_NAMESPACE = 0;
 
   /**
    * The number of structural features of the '<em>Character Definition</em>' class.
@@ -1448,15 +1448,15 @@ public interface DialogScriptPackage extends EPackage
   EClass getCharacterDefinition();
 
   /**
-   * Returns the meta object for the attribute '{@link de.unidue.ecg.dialogScript.dialogScript.CharacterDefinition#getName <em>Name</em>}'.
+   * Returns the meta object for the attribute '{@link de.unidue.ecg.dialogScript.dialogScript.CharacterDefinition#getImportedNamespace <em>Imported Namespace</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see de.unidue.ecg.dialogScript.dialogScript.CharacterDefinition#getName()
+   * @return the meta object for the attribute '<em>Imported Namespace</em>'.
+   * @see de.unidue.ecg.dialogScript.dialogScript.CharacterDefinition#getImportedNamespace()
    * @see #getCharacterDefinition()
    * @generated
    */
-  EAttribute getCharacterDefinition_Name();
+  EAttribute getCharacterDefinition_ImportedNamespace();
 
   /**
    * Returns the meta object for class '{@link de.unidue.ecg.dialogScript.dialogScript.SwitchesDefinition <em>Switches Definition</em>}'.
@@ -2576,12 +2576,12 @@ public interface DialogScriptPackage extends EPackage
     EClass CHARACTER_DEFINITION = eINSTANCE.getCharacterDefinition();
 
     /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Imported Namespace</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute CHARACTER_DEFINITION__NAME = eINSTANCE.getCharacterDefinition_Name();
+    EAttribute CHARACTER_DEFINITION__IMPORTED_NAMESPACE = eINSTANCE.getCharacterDefinition_ImportedNamespace();
 
     /**
      * The meta object literal for the '{@link de.unidue.ecg.dialogScript.dialogScript.impl.SwitchesDefinitionImpl <em>Switches Definition</em>}' class.

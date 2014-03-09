@@ -22,8 +22,19 @@ class CharacterScriptSemanticHighlightingCalculator implements ISemanticHighligh
 		if (resource == null || resource.getParseResult() == null)
 			return
 
-		val root = resource.parseResult.rootNode 
+		val root = resource.parseResult.rootNode
 		root.asTreeIterable.forEach [
+			val grammarElement = it.grammarElement
+			switch grammarElement {
+				RuleCall: {
+					val rule = grammarElement.rule
+
+					switch rule.name {
+						case "COMMENT":
+							acceptor.addPosition(offset, length, CharacterScriptHighlightingConfiguration.MY_COMMENT_ID)
+					}
+				}
+			}
 			if (semanticElement instanceof Property) {
 				if (filterForCrossReferencedEnumValues(grammarElement)) {
 					acceptor.addPosition(offset, length, CharacterScriptHighlightingConfiguration.FEATURE_KEYWORD)
@@ -36,18 +47,18 @@ class CharacterScriptSemanticHighlightingCalculator implements ISemanticHighligh
 				}
 			} else if (parent?.semanticElement instanceof Template && grammarElement instanceof Keyword) {
 				val keyword = grammarElement as Keyword
-				if(LanguageUtil.defaultAttributes.get(keyword.value) != null)
+				if (LanguageUtil.defaultAttributes.get(keyword.value) != null)
 					acceptor.addPosition(offset, length, CharacterScriptHighlightingConfiguration.FEATURE_KEYWORD)
 			} else if (semanticElement instanceof CustomAttributeName) {
-				if(grammarElement instanceof RuleCall) {
+				if (grammarElement instanceof RuleCall) {
 					val rule = (grammarElement as RuleCall).rule
-					if(rule.name.equals('ID'))
+					if (rule.name.equals('ID'))
 						acceptor.addPosition(offset, length, CharacterScriptHighlightingConfiguration.FEATURE_KEYWORD)
 				}
 			} else if (semanticElement instanceof CustomAttribute) {
-				if(grammarElement instanceof RuleCall) {
+				if (grammarElement instanceof RuleCall) {
 					val rule = (grammarElement as RuleCall).rule
-					if(rule.name.equals("AttributeType")) {
+					if (rule.name.equals("AttributeType")) {
 						acceptor.addPosition(offset, length, CharacterScriptHighlightingConfiguration.DEFAULT_ID)
 					}
 				}
@@ -60,6 +71,8 @@ class CharacterScriptSemanticHighlightingCalculator implements ISemanticHighligh
 	}
 
 	private dispatch def filterForCrossReferencedEnumValues(Keyword kw) {
+		if (kw.value == '(' || kw.value == ')')
+			return false
 		return true
 	}
 

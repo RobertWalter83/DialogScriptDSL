@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
+ *   <li>{@link de.unidue.ecg.characterScript.characterScript.CustomAttribute#getRequired <em>Required</em>}</li>
  *   <li>{@link de.unidue.ecg.characterScript.characterScript.CustomAttribute#getCaName <em>Ca Name</em>}</li>
  *   <li>{@link de.unidue.ecg.characterScript.characterScript.CustomAttribute#getType <em>Type</em>}</li>
  *   <li>{@link de.unidue.ecg.characterScript.characterScript.CustomAttribute#getEnumValues <em>Enum Values</em>}</li>
@@ -26,6 +27,32 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface CustomAttribute extends EObject
 {
+  /**
+   * Returns the value of the '<em><b>Required</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Required</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Required</em>' attribute.
+   * @see #setRequired(String)
+   * @see de.unidue.ecg.characterScript.characterScript.CharacterScriptPackage#getCustomAttribute_Required()
+   * @model
+   * @generated
+   */
+  String getRequired();
+
+  /**
+   * Sets the value of the '{@link de.unidue.ecg.characterScript.characterScript.CustomAttribute#getRequired <em>Required</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Required</em>' attribute.
+   * @see #getRequired()
+   * @generated
+   */
+  void setRequired(String value);
+
   /**
    * Returns the value of the '<em><b>Ca Name</b></em>' containment reference.
    * <!-- begin-user-doc -->

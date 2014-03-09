@@ -5,9 +5,13 @@ package de.unidue.ecg.dialogScript;
 
 import org.eclipse.xtext.formatting.IFormatter;
 import org.eclipse.xtext.linking.ILinkingDiagnosticMessageProvider;
+import org.eclipse.xtext.scoping.IScopeProvider;
+import org.eclipse.xtext.scoping.impl.ImportedNamespaceAwareLocalScopeProvider;
 
 import de.unidue.ecg.common.linking.CustomLinkingDiagnosticMessageProvider;
 import de.unidue.ecg.dialogScript.formatting.DialogScriptFormatter; 
+import de.unidue.ecg.dialogScript.scoping.DialogScriptImportScopeProvider;
+import de.unidue.ecg.dialogScript.scoping.DialogScriptScopeProvider;
 
 /**
  * Use this class to register components to be used at runtime / without the Equinox extension registry.
@@ -22,6 +26,15 @@ public class DialogScriptRuntimeModule extends de.unidue.ecg.dialogScript.Abstra
 	
 	public Class<? extends ILinkingDiagnosticMessageProvider> bindILinkingDiagnosticMessageProvider() {
 		return CustomLinkingDiagnosticMessageProvider.class;
+	}
+	
+	@Override
+	public Class<? extends IScopeProvider> bindIScopeProvider() {
+		return DialogScriptScopeProvider.class;
+	}
+	
+	public Class<? extends ImportedNamespaceAwareLocalScopeProvider> bindImportScopeProvider() {
+		return DialogScriptImportScopeProvider.class;
 	}
 	
 //	@Override

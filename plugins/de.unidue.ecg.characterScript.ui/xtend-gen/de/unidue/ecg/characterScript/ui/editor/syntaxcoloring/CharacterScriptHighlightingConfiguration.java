@@ -10,8 +10,12 @@ import org.eclipse.xtext.ui.editor.utils.TextStyle;
 public class CharacterScriptHighlightingConfiguration extends DefaultHighlightingConfiguration {
   public final static String FEATURE_KEYWORD = "featureKeyword";
   
+  public final static String MY_COMMENT_ID = "myComment";
+  
   public void configure(final IHighlightingConfigurationAcceptor acceptor) {
     super.configure(acceptor);
+    TextStyle _myCommentTextStyle = this.myCommentTextStyle();
+    acceptor.acceptDefaultHighlighting(CharacterScriptHighlightingConfiguration.MY_COMMENT_ID, "SemanticComment", _myCommentTextStyle);
     TextStyle _featureKeywordTextStyle = this.featureKeywordTextStyle();
     acceptor.acceptDefaultHighlighting(CharacterScriptHighlightingConfiguration.FEATURE_KEYWORD, "FeatureKeyword", _featureKeywordTextStyle);
   }
@@ -27,5 +31,14 @@ public class CharacterScriptHighlightingConfiguration extends DefaultHighlightin
       _xblockexpression = (textStyle);
     }
     return _xblockexpression;
+  }
+  
+  private TextStyle myCommentTextStyle() {
+    TextStyle _textStyle = new TextStyle();
+    final TextStyle textStyle = _textStyle;
+    RGB _rGB = new RGB(88, 88, 88);
+    textStyle.setColor(_rGB);
+    textStyle.setStyle(SWT.ITALIC);
+    return textStyle;
   }
 }

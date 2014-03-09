@@ -86,13 +86,13 @@ public interface CharacterScriptPackage extends EPackage
   int CHARACTERS__TEMPLATES = 1;
 
   /**
-   * The feature id for the '<em><b>Customs</b></em>' containment reference.
+   * The feature id for the '<em><b>Globals</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CHARACTERS__CUSTOMS = 2;
+  int CHARACTERS__GLOBALS = 2;
 
   /**
    * The feature id for the '<em><b>Characters</b></em>' containment reference list.
@@ -197,13 +197,22 @@ public interface CharacterScriptPackage extends EPackage
   int CUSTOM_ATTRIBUTE = 3;
 
   /**
+   * The feature id for the '<em><b>Required</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CUSTOM_ATTRIBUTE__REQUIRED = 0;
+
+  /**
    * The feature id for the '<em><b>Ca Name</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CUSTOM_ATTRIBUTE__CA_NAME = 0;
+  int CUSTOM_ATTRIBUTE__CA_NAME = 1;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -212,7 +221,7 @@ public interface CharacterScriptPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CUSTOM_ATTRIBUTE__TYPE = 1;
+  int CUSTOM_ATTRIBUTE__TYPE = 2;
 
   /**
    * The feature id for the '<em><b>Enum Values</b></em>' containment reference list.
@@ -221,7 +230,7 @@ public interface CharacterScriptPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CUSTOM_ATTRIBUTE__ENUM_VALUES = 2;
+  int CUSTOM_ATTRIBUTE__ENUM_VALUES = 3;
 
   /**
    * The number of structural features of the '<em>Custom Attribute</em>' class.
@@ -230,7 +239,7 @@ public interface CharacterScriptPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CUSTOM_ATTRIBUTE_FEATURE_COUNT = 3;
+  int CUSTOM_ATTRIBUTE_FEATURE_COUNT = 4;
 
   /**
    * The meta object id for the '{@link de.unidue.ecg.characterScript.characterScript.impl.CustomAttributeNameImpl <em>Custom Attribute Name</em>}' class.
@@ -289,32 +298,32 @@ public interface CharacterScriptPackage extends EPackage
   int ENUM_VALUE_FEATURE_COUNT = 1;
 
   /**
-   * The meta object id for the '{@link de.unidue.ecg.characterScript.characterScript.impl.CustomsImpl <em>Customs</em>}' class.
+   * The meta object id for the '{@link de.unidue.ecg.characterScript.characterScript.impl.GlobalsImpl <em>Globals</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see de.unidue.ecg.characterScript.characterScript.impl.CustomsImpl
-   * @see de.unidue.ecg.characterScript.characterScript.impl.CharacterScriptPackageImpl#getCustoms()
+   * @see de.unidue.ecg.characterScript.characterScript.impl.GlobalsImpl
+   * @see de.unidue.ecg.characterScript.characterScript.impl.CharacterScriptPackageImpl#getGlobals()
    * @generated
    */
-  int CUSTOMS = 6;
+  int GLOBALS = 6;
 
   /**
-   * The feature id for the '<em><b>Custom Attributes</b></em>' containment reference list.
+   * The feature id for the '<em><b>Customs</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CUSTOMS__CUSTOM_ATTRIBUTES = 0;
+  int GLOBALS__CUSTOMS = 0;
 
   /**
-   * The number of structural features of the '<em>Customs</em>' class.
+   * The number of structural features of the '<em>Globals</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CUSTOMS_FEATURE_COUNT = 1;
+  int GLOBALS_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link de.unidue.ecg.characterScript.characterScript.impl.CharacterImpl <em>Character</em>}' class.
@@ -731,15 +740,15 @@ public interface CharacterScriptPackage extends EPackage
   EReference getCharacters_Templates();
 
   /**
-   * Returns the meta object for the containment reference '{@link de.unidue.ecg.characterScript.characterScript.Characters#getCustoms <em>Customs</em>}'.
+   * Returns the meta object for the containment reference '{@link de.unidue.ecg.characterScript.characterScript.Characters#getGlobals <em>Globals</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Customs</em>'.
-   * @see de.unidue.ecg.characterScript.characterScript.Characters#getCustoms()
+   * @return the meta object for the containment reference '<em>Globals</em>'.
+   * @see de.unidue.ecg.characterScript.characterScript.Characters#getGlobals()
    * @see #getCharacters()
    * @generated
    */
-  EReference getCharacters_Customs();
+  EReference getCharacters_Globals();
 
   /**
    * Returns the meta object for the containment reference list '{@link de.unidue.ecg.characterScript.characterScript.Characters#getCharacters <em>Characters</em>}'.
@@ -827,6 +836,17 @@ public interface CharacterScriptPackage extends EPackage
   EClass getCustomAttribute();
 
   /**
+   * Returns the meta object for the attribute '{@link de.unidue.ecg.characterScript.characterScript.CustomAttribute#getRequired <em>Required</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Required</em>'.
+   * @see de.unidue.ecg.characterScript.characterScript.CustomAttribute#getRequired()
+   * @see #getCustomAttribute()
+   * @generated
+   */
+  EAttribute getCustomAttribute_Required();
+
+  /**
    * Returns the meta object for the containment reference '{@link de.unidue.ecg.characterScript.characterScript.CustomAttribute#getCaName <em>Ca Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -902,25 +922,25 @@ public interface CharacterScriptPackage extends EPackage
   EAttribute getEnumValue_Name();
 
   /**
-   * Returns the meta object for class '{@link de.unidue.ecg.characterScript.characterScript.Customs <em>Customs</em>}'.
+   * Returns the meta object for class '{@link de.unidue.ecg.characterScript.characterScript.Globals <em>Globals</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Customs</em>'.
-   * @see de.unidue.ecg.characterScript.characterScript.Customs
+   * @return the meta object for class '<em>Globals</em>'.
+   * @see de.unidue.ecg.characterScript.characterScript.Globals
    * @generated
    */
-  EClass getCustoms();
+  EClass getGlobals();
 
   /**
-   * Returns the meta object for the containment reference list '{@link de.unidue.ecg.characterScript.characterScript.Customs#getCustomAttributes <em>Custom Attributes</em>}'.
+   * Returns the meta object for the containment reference list '{@link de.unidue.ecg.characterScript.characterScript.Globals#getCustoms <em>Customs</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Custom Attributes</em>'.
-   * @see de.unidue.ecg.characterScript.characterScript.Customs#getCustomAttributes()
-   * @see #getCustoms()
+   * @return the meta object for the containment reference list '<em>Customs</em>'.
+   * @see de.unidue.ecg.characterScript.characterScript.Globals#getCustoms()
+   * @see #getGlobals()
    * @generated
    */
-  EReference getCustoms_CustomAttributes();
+  EReference getGlobals_Customs();
 
   /**
    * Returns the meta object for class '{@link de.unidue.ecg.characterScript.characterScript.Character <em>Character</em>}'.
@@ -1235,12 +1255,12 @@ public interface CharacterScriptPackage extends EPackage
     EReference CHARACTERS__TEMPLATES = eINSTANCE.getCharacters_Templates();
 
     /**
-     * The meta object literal for the '<em><b>Customs</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Globals</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference CHARACTERS__CUSTOMS = eINSTANCE.getCharacters_Customs();
+    EReference CHARACTERS__GLOBALS = eINSTANCE.getCharacters_Globals();
 
     /**
      * The meta object literal for the '<em><b>Characters</b></em>' containment reference list feature.
@@ -1313,6 +1333,14 @@ public interface CharacterScriptPackage extends EPackage
     EClass CUSTOM_ATTRIBUTE = eINSTANCE.getCustomAttribute();
 
     /**
+     * The meta object literal for the '<em><b>Required</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CUSTOM_ATTRIBUTE__REQUIRED = eINSTANCE.getCustomAttribute_Required();
+
+    /**
      * The meta object literal for the '<em><b>Ca Name</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1373,22 +1401,22 @@ public interface CharacterScriptPackage extends EPackage
     EAttribute ENUM_VALUE__NAME = eINSTANCE.getEnumValue_Name();
 
     /**
-     * The meta object literal for the '{@link de.unidue.ecg.characterScript.characterScript.impl.CustomsImpl <em>Customs</em>}' class.
+     * The meta object literal for the '{@link de.unidue.ecg.characterScript.characterScript.impl.GlobalsImpl <em>Globals</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see de.unidue.ecg.characterScript.characterScript.impl.CustomsImpl
-     * @see de.unidue.ecg.characterScript.characterScript.impl.CharacterScriptPackageImpl#getCustoms()
+     * @see de.unidue.ecg.characterScript.characterScript.impl.GlobalsImpl
+     * @see de.unidue.ecg.characterScript.characterScript.impl.CharacterScriptPackageImpl#getGlobals()
      * @generated
      */
-    EClass CUSTOMS = eINSTANCE.getCustoms();
+    EClass GLOBALS = eINSTANCE.getGlobals();
 
     /**
-     * The meta object literal for the '<em><b>Custom Attributes</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Customs</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference CUSTOMS__CUSTOM_ATTRIBUTES = eINSTANCE.getCustoms_CustomAttributes();
+    EReference GLOBALS__CUSTOMS = eINSTANCE.getGlobals_Customs();
 
     /**
      * The meta object literal for the '{@link de.unidue.ecg.characterScript.characterScript.impl.CharacterImpl <em>Character</em>}' class.

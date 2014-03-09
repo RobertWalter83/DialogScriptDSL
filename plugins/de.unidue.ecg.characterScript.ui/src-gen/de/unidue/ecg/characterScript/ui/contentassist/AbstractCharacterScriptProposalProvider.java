@@ -22,7 +22,7 @@ public class AbstractCharacterScriptProposalProvider extends org.eclipse.xtext.c
 	public void completeCharacters_Templates(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
 		completeRuleCall(((RuleCall)assignment.getTerminal()), context, acceptor);
 	}
-	public void completeCharacters_Customs(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+	public void completeCharacters_Globals(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
 		completeRuleCall(((RuleCall)assignment.getTerminal()), context, acceptor);
 	}
 	public void completeCharacters_Characters(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
@@ -40,6 +40,9 @@ public class AbstractCharacterScriptProposalProvider extends org.eclipse.xtext.c
 	public void completeTemplate_Customs(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
 		completeRuleCall(((RuleCall)assignment.getTerminal()), context, acceptor);
 	}
+	public void completeCustomAttribute_Required(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		completeRuleCall(((RuleCall)assignment.getTerminal()), context, acceptor);
+	}
 	public void completeCustomAttribute_CaName(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
 		completeRuleCall(((RuleCall)assignment.getTerminal()), context, acceptor);
 	}
@@ -55,7 +58,7 @@ public class AbstractCharacterScriptProposalProvider extends org.eclipse.xtext.c
 	public void completeEnumValue_Name(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
 		completeRuleCall(((RuleCall)assignment.getTerminal()), context, acceptor);
 	}
-	public void completeCustoms_CustomAttributes(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+	public void completeGlobals_Customs(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
 		completeRuleCall(((RuleCall)assignment.getTerminal()), context, acceptor);
 	}
 	public void completeCharacter_Name(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
@@ -128,6 +131,9 @@ public class AbstractCharacterScriptProposalProvider extends org.eclipse.xtext.c
 	public void complete_CustomAttribute(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
 		// subclasses may override
 	}
+	public void complete_Required(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		// subclasses may override
+	}
 	public void complete_CustomAttributeName(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
 		// subclasses may override
 	}
@@ -140,7 +146,7 @@ public class AbstractCharacterScriptProposalProvider extends org.eclipse.xtext.c
 	public void complete_AttributeType(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
 		// subclasses may override
 	}
-	public void complete_Customs(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+	public void complete_Globals(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
 		// subclasses may override
 	}
 	public void complete_Character(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {

@@ -14,7 +14,7 @@ CharactersDefintion:
 	'characters' ':' characters+=CharacterDefinition (',' characters+=CharacterDefinition)*;
 
 CharacterDefinition:
-	name=ID;
+	importedNamespace=ID;
 
 SwitchesDefinition:
 	'switches' ':' switches+=SwitchDefinition (',' switches+=SwitchDefinition)*;
@@ -152,8 +152,8 @@ SwitchOn:
 	'switch' 'on' sets+=[SwitchDefinition] (',' sets+=[SwitchDefinition])* comment=COMMENT?;
 
 DialogLine:
-	//character=[chara::Character] ':' lines=StringID comment=COMMENT?;
-	character=[CharacterDefinition] ':' lines=StringID comment=COMMENT?;
+	character=[chara::Character] ':' lines=StringID comment=COMMENT?;
+	//character=[CharacterDefinition] ':' lines=StringID comment=COMMENT?;
 
 terminal COMMENT:
 	'['->']';

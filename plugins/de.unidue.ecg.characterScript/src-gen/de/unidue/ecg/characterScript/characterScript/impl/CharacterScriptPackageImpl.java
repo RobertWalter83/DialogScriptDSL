@@ -12,11 +12,11 @@ import de.unidue.ecg.characterScript.characterScript.Characters;
 import de.unidue.ecg.characterScript.characterScript.CustomAttribute;
 import de.unidue.ecg.characterScript.characterScript.CustomAttributeName;
 import de.unidue.ecg.characterScript.characterScript.CustomProperty;
-import de.unidue.ecg.characterScript.characterScript.Customs;
 import de.unidue.ecg.characterScript.characterScript.DefaultProperty;
 import de.unidue.ecg.characterScript.characterScript.Description;
 import de.unidue.ecg.characterScript.characterScript.EnumValue;
 import de.unidue.ecg.characterScript.characterScript.FullName;
+import de.unidue.ecg.characterScript.characterScript.Globals;
 import de.unidue.ecg.characterScript.characterScript.Import;
 import de.unidue.ecg.characterScript.characterScript.Property;
 import de.unidue.ecg.characterScript.characterScript.Sex;
@@ -86,7 +86,7 @@ public class CharacterScriptPackageImpl extends EPackageImpl implements Characte
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass customsEClass = null;
+  private EClass globalsEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -270,7 +270,7 @@ public class CharacterScriptPackageImpl extends EPackageImpl implements Characte
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getCharacters_Customs()
+  public EReference getCharacters_Globals()
   {
     return (EReference)charactersEClass.getEStructuralFeatures().get(2);
   }
@@ -360,9 +360,19 @@ public class CharacterScriptPackageImpl extends EPackageImpl implements Characte
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getCustomAttribute_Required()
+  {
+    return (EAttribute)customAttributeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EReference getCustomAttribute_CaName()
   {
-    return (EReference)customAttributeEClass.getEStructuralFeatures().get(0);
+    return (EReference)customAttributeEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -372,7 +382,7 @@ public class CharacterScriptPackageImpl extends EPackageImpl implements Characte
    */
   public EAttribute getCustomAttribute_Type()
   {
-    return (EAttribute)customAttributeEClass.getEStructuralFeatures().get(1);
+    return (EAttribute)customAttributeEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -382,7 +392,7 @@ public class CharacterScriptPackageImpl extends EPackageImpl implements Characte
    */
   public EReference getCustomAttribute_EnumValues()
   {
-    return (EReference)customAttributeEClass.getEStructuralFeatures().get(2);
+    return (EReference)customAttributeEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -430,9 +440,9 @@ public class CharacterScriptPackageImpl extends EPackageImpl implements Characte
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getCustoms()
+  public EClass getGlobals()
   {
-    return customsEClass;
+    return globalsEClass;
   }
 
   /**
@@ -440,9 +450,9 @@ public class CharacterScriptPackageImpl extends EPackageImpl implements Characte
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getCustoms_CustomAttributes()
+  public EReference getGlobals_Customs()
   {
-    return (EReference)customsEClass.getEStructuralFeatures().get(0);
+    return (EReference)globalsEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -728,7 +738,7 @@ public class CharacterScriptPackageImpl extends EPackageImpl implements Characte
     charactersEClass = createEClass(CHARACTERS);
     createEReference(charactersEClass, CHARACTERS__IMPORTS);
     createEReference(charactersEClass, CHARACTERS__TEMPLATES);
-    createEReference(charactersEClass, CHARACTERS__CUSTOMS);
+    createEReference(charactersEClass, CHARACTERS__GLOBALS);
     createEReference(charactersEClass, CHARACTERS__CHARACTERS);
 
     importEClass = createEClass(IMPORT);
@@ -740,6 +750,7 @@ public class CharacterScriptPackageImpl extends EPackageImpl implements Characte
     createEReference(templateEClass, TEMPLATE__CUSTOMS);
 
     customAttributeEClass = createEClass(CUSTOM_ATTRIBUTE);
+    createEAttribute(customAttributeEClass, CUSTOM_ATTRIBUTE__REQUIRED);
     createEReference(customAttributeEClass, CUSTOM_ATTRIBUTE__CA_NAME);
     createEAttribute(customAttributeEClass, CUSTOM_ATTRIBUTE__TYPE);
     createEReference(customAttributeEClass, CUSTOM_ATTRIBUTE__ENUM_VALUES);
@@ -750,8 +761,8 @@ public class CharacterScriptPackageImpl extends EPackageImpl implements Characte
     enumValueEClass = createEClass(ENUM_VALUE);
     createEAttribute(enumValueEClass, ENUM_VALUE__NAME);
 
-    customsEClass = createEClass(CUSTOMS);
-    createEReference(customsEClass, CUSTOMS__CUSTOM_ATTRIBUTES);
+    globalsEClass = createEClass(GLOBALS);
+    createEReference(globalsEClass, GLOBALS__CUSTOMS);
 
     characterEClass = createEClass(CHARACTER);
     createEAttribute(characterEClass, CHARACTER__NAME);
@@ -831,7 +842,7 @@ public class CharacterScriptPackageImpl extends EPackageImpl implements Characte
     initEClass(charactersEClass, Characters.class, "Characters", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getCharacters_Imports(), this.getImport(), null, "imports", null, 0, -1, Characters.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getCharacters_Templates(), this.getTemplate(), null, "templates", null, 0, -1, Characters.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getCharacters_Customs(), this.getCustoms(), null, "customs", null, 0, 1, Characters.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getCharacters_Globals(), this.getGlobals(), null, "globals", null, 0, 1, Characters.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getCharacters_Characters(), this.getCharacter(), null, "characters", null, 0, -1, Characters.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(importEClass, Import.class, "Import", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -843,6 +854,7 @@ public class CharacterScriptPackageImpl extends EPackageImpl implements Characte
     initEReference(getTemplate_Customs(), this.getCustomAttribute(), null, "customs", null, 0, -1, Template.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(customAttributeEClass, CustomAttribute.class, "CustomAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getCustomAttribute_Required(), ecorePackage.getEString(), "required", null, 0, 1, CustomAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getCustomAttribute_CaName(), this.getCustomAttributeName(), null, "caName", null, 0, 1, CustomAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getCustomAttribute_Type(), this.getAttributeType(), "type", null, 0, 1, CustomAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getCustomAttribute_EnumValues(), this.getEnumValue(), null, "enumValues", null, 0, -1, CustomAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -853,8 +865,8 @@ public class CharacterScriptPackageImpl extends EPackageImpl implements Characte
     initEClass(enumValueEClass, EnumValue.class, "EnumValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getEnumValue_Name(), ecorePackage.getEString(), "name", null, 0, 1, EnumValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(customsEClass, Customs.class, "Customs", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getCustoms_CustomAttributes(), this.getCustomAttribute(), null, "customAttributes", null, 0, -1, Customs.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(globalsEClass, Globals.class, "Globals", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getGlobals_Customs(), this.getCustomAttribute(), null, "customs", null, 0, -1, Globals.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(characterEClass, de.unidue.ecg.characterScript.characterScript.Character.class, "Character", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getCharacter_Name(), ecorePackage.getEString(), "name", null, 0, 1, de.unidue.ecg.characterScript.characterScript.Character.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

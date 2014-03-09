@@ -22,7 +22,7 @@
     <genClasses ecoreClass="CharacterScript.ecore#//Characters">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CharacterScript.ecore#//Characters/imports"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CharacterScript.ecore#//Characters/templates"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CharacterScript.ecore#//Characters/customs"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CharacterScript.ecore#//Characters/globals"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CharacterScript.ecore#//Characters/characters"/>
     </genClasses>
     <genClasses ecoreClass="CharacterScript.ecore#//Import">
@@ -34,6 +34,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CharacterScript.ecore#//Template/customs"/>
     </genClasses>
     <genClasses ecoreClass="CharacterScript.ecore#//CustomAttribute">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CharacterScript.ecore#//CustomAttribute/required"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CharacterScript.ecore#//CustomAttribute/caName"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CharacterScript.ecore#//CustomAttribute/type"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CharacterScript.ecore#//CustomAttribute/enumValues"/>
@@ -44,8 +45,8 @@
     <genClasses ecoreClass="CharacterScript.ecore#//EnumValue">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CharacterScript.ecore#//EnumValue/name"/>
     </genClasses>
-    <genClasses ecoreClass="CharacterScript.ecore#//Customs">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CharacterScript.ecore#//Customs/customAttributes"/>
+    <genClasses ecoreClass="CharacterScript.ecore#//Globals">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CharacterScript.ecore#//Globals/customs"/>
     </genClasses>
     <genClasses ecoreClass="CharacterScript.ecore#//Character">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CharacterScript.ecore#//Character/name"/>

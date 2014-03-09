@@ -48,19 +48,36 @@ public class CharacterScriptSemanticHighlightingCalculator implements ISemanticH
     BidiTreeIterable<INode> _asTreeIterable = root.getAsTreeIterable();
     final Procedure1<INode> _function = new Procedure1<INode>() {
       public void apply(final INode it) {
+        final EObject grammarElement = it.getGrammarElement();
+        boolean _matched = false;
+        if (!_matched) {
+          if (grammarElement instanceof RuleCall) {
+            final RuleCall _ruleCall = (RuleCall)grammarElement;
+            _matched=true;
+            final AbstractRule rule = _ruleCall.getRule();
+            String _name = rule.getName();
+            final String _switchValue = _name;
+            boolean _matched_1 = false;
+            if (!_matched_1) {
+              if (Objects.equal(_switchValue,"COMMENT")) {
+                _matched_1=true;
+                int _offset = it.getOffset();
+                int _length = it.getLength();
+                acceptor.addPosition(_offset, _length, CharacterScriptHighlightingConfiguration.MY_COMMENT_ID);
+              }
+            }
+          }
+        }
         EObject _semanticElement = it.getSemanticElement();
         if ((_semanticElement instanceof Property)) {
-          EObject _grammarElement = it.getGrammarElement();
-          boolean _filterForCrossReferencedEnumValues = CharacterScriptSemanticHighlightingCalculator.this.filterForCrossReferencedEnumValues(_grammarElement);
+          boolean _filterForCrossReferencedEnumValues = CharacterScriptSemanticHighlightingCalculator.this.filterForCrossReferencedEnumValues(grammarElement);
           if (_filterForCrossReferencedEnumValues) {
             int _offset = it.getOffset();
             int _length = it.getLength();
             acceptor.addPosition(_offset, _length, CharacterScriptHighlightingConfiguration.FEATURE_KEYWORD);
           } else {
-            EObject _grammarElement_1 = it.getGrammarElement();
-            if ((_grammarElement_1 instanceof RuleCall)) {
-              EObject _grammarElement_2 = it.getGrammarElement();
-              final AbstractRule rule = ((RuleCall) _grammarElement_2).getRule();
+            if ((grammarElement instanceof RuleCall)) {
+              final AbstractRule rule = ((RuleCall) grammarElement).getRule();
               boolean _or = false;
               boolean _and = false;
               if (!(rule instanceof TerminalRule)) {
@@ -101,12 +118,10 @@ public class CharacterScriptSemanticHighlightingCalculator implements ISemanticH
           if (!(_semanticElement_1 instanceof Template)) {
             _and_1 = false;
           } else {
-            EObject _grammarElement_3 = it.getGrammarElement();
-            _and_1 = ((_semanticElement_1 instanceof Template) && (_grammarElement_3 instanceof Keyword));
+            _and_1 = ((_semanticElement_1 instanceof Template) && (grammarElement instanceof Keyword));
           }
           if (_and_1) {
-            EObject _grammarElement_4 = it.getGrammarElement();
-            final Keyword keyword = ((Keyword) _grammarElement_4);
+            final Keyword keyword = ((Keyword) grammarElement);
             HashMap<String,DefaultAttributeHelper> _defaultAttributes = LanguageUtil.getDefaultAttributes();
             String _value = keyword.getValue();
             DefaultAttributeHelper _get = _defaultAttributes.get(_value);
@@ -119,10 +134,8 @@ public class CharacterScriptSemanticHighlightingCalculator implements ISemanticH
           } else {
             EObject _semanticElement_2 = it.getSemanticElement();
             if ((_semanticElement_2 instanceof CustomAttributeName)) {
-              EObject _grammarElement_5 = it.getGrammarElement();
-              if ((_grammarElement_5 instanceof RuleCall)) {
-                EObject _grammarElement_6 = it.getGrammarElement();
-                final AbstractRule rule_1 = ((RuleCall) _grammarElement_6).getRule();
+              if ((grammarElement instanceof RuleCall)) {
+                final AbstractRule rule_1 = ((RuleCall) grammarElement).getRule();
                 String _name_2 = rule_1.getName();
                 boolean _equals_2 = _name_2.equals("ID");
                 if (_equals_2) {
@@ -134,10 +147,8 @@ public class CharacterScriptSemanticHighlightingCalculator implements ISemanticH
             } else {
               EObject _semanticElement_3 = it.getSemanticElement();
               if ((_semanticElement_3 instanceof CustomAttribute)) {
-                EObject _grammarElement_7 = it.getGrammarElement();
-                if ((_grammarElement_7 instanceof RuleCall)) {
-                  EObject _grammarElement_8 = it.getGrammarElement();
-                  final AbstractRule rule_2 = ((RuleCall) _grammarElement_8).getRule();
+                if ((grammarElement instanceof RuleCall)) {
+                  final AbstractRule rule_2 = ((RuleCall) grammarElement).getRule();
                   String _name_3 = rule_2.getName();
                   boolean _equals_3 = _name_3.equals("AttributeType");
                   if (_equals_3) {
@@ -160,6 +171,19 @@ public class CharacterScriptSemanticHighlightingCalculator implements ISemanticH
   }
   
   private boolean _filterForCrossReferencedEnumValues(final Keyword kw) {
+    boolean _or = false;
+    String _value = kw.getValue();
+    boolean _equals = Objects.equal(_value, "(");
+    if (_equals) {
+      _or = true;
+    } else {
+      String _value_1 = kw.getValue();
+      boolean _equals_1 = Objects.equal(_value_1, ")");
+      _or = (_equals || _equals_1);
+    }
+    if (_or) {
+      return false;
+    }
     return true;
   }
   

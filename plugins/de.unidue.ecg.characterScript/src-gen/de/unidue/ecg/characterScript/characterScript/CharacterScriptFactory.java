@@ -77,13 +77,13 @@ public interface CharacterScriptFactory extends EFactory
   EnumValue createEnumValue();
 
   /**
-   * Returns a new object of class '<em>Customs</em>'.
+   * Returns a new object of class '<em>Globals</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Customs</em>'.
+   * @return a new object of class '<em>Globals</em>'.
    * @generated
    */
-  Customs createCustoms();
+  Globals createGlobals();
 
   /**
    * Returns a new object of class '<em>Character</em>'.

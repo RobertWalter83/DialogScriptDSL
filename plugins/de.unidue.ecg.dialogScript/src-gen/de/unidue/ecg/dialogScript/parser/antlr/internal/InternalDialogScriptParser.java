@@ -630,28 +630,28 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleCharacterDefinition"
-    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:245:1: ruleCharacterDefinition returns [EObject current=null] : ( (lv_name_0_0= RULE_ID ) ) ;
+    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:245:1: ruleCharacterDefinition returns [EObject current=null] : ( (lv_importedNamespace_0_0= RULE_ID ) ) ;
     public final EObject ruleCharacterDefinition() throws RecognitionException {
         EObject current = null;
 
-        Token lv_name_0_0=null;
+        Token lv_importedNamespace_0_0=null;
 
          enterRule(); 
             
         try {
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:248:28: ( ( (lv_name_0_0= RULE_ID ) ) )
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:249:1: ( (lv_name_0_0= RULE_ID ) )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:248:28: ( ( (lv_importedNamespace_0_0= RULE_ID ) ) )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:249:1: ( (lv_importedNamespace_0_0= RULE_ID ) )
             {
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:249:1: ( (lv_name_0_0= RULE_ID ) )
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:250:1: (lv_name_0_0= RULE_ID )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:249:1: ( (lv_importedNamespace_0_0= RULE_ID ) )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:250:1: (lv_importedNamespace_0_0= RULE_ID )
             {
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:250:1: (lv_name_0_0= RULE_ID )
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:251:3: lv_name_0_0= RULE_ID
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:250:1: (lv_importedNamespace_0_0= RULE_ID )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:251:3: lv_importedNamespace_0_0= RULE_ID
             {
-            lv_name_0_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleCharacterDefinition446); if (state.failed) return current;
+            lv_importedNamespace_0_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleCharacterDefinition446); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
-              			newLeafNode(lv_name_0_0, grammarAccess.getCharacterDefinitionAccess().getNameIDTerminalRuleCall_0()); 
+              			newLeafNode(lv_importedNamespace_0_0, grammarAccess.getCharacterDefinitionAccess().getImportedNamespaceIDTerminalRuleCall_0()); 
               		
             }
             if ( state.backtracking==0 ) {
@@ -661,8 +661,8 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
               	        }
                      		setWithLastConsumed(
                      			current, 
-                     			"name",
-                      		lv_name_0_0, 
+                     			"importedNamespace",
+                      		lv_importedNamespace_0_0, 
                       		"ID");
               	    
             }
@@ -6934,7 +6934,7 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
             otherlv_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleDialogLine5270); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
-              		newLeafNode(otherlv_0, grammarAccess.getDialogLineAccess().getCharacterCharacterDefinitionCrossReference_0_0()); 
+              		newLeafNode(otherlv_0, grammarAccess.getDialogLineAccess().getCharacterCharacterCrossReference_0_0()); 
               	
             }
 

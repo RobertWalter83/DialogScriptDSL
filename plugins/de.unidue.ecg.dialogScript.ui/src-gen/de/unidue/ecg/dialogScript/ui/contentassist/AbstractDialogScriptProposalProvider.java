@@ -31,7 +31,7 @@ public class AbstractDialogScriptProposalProvider extends org.eclipse.xtext.comm
 	public void completeCharactersDefintion_Characters(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
 		completeRuleCall(((RuleCall)assignment.getTerminal()), context, acceptor);
 	}
-	public void completeCharacterDefinition_Name(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+	public void completeCharacterDefinition_ImportedNamespace(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
 		completeRuleCall(((RuleCall)assignment.getTerminal()), context, acceptor);
 	}
 	public void completeSwitchesDefinition_Switches(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {

@@ -5,7 +5,7 @@ generate characterScript "http://www.unidue.de/ecg/characterScript/CharacterScri
 Characters:
 	imports+=Import*
 	templates+=Template*
-	customs=Customs?
+	globals=Globals?
 	characters+=Character*;
 
 Import:
@@ -14,14 +14,18 @@ Import:
 Template:
 	'template' name=ID
 	defaults+=DefaultAttribute*
-	customs+=CustomAttribute*
+	customs+=CustomAttribute (customs+=CustomAttribute)*
 	'end';
 
-DefaultAttribute:
+DefaultAttribute: 
 	'full name' | 'age' | 'description' | 'sex' | 'type';
 
 CustomAttribute:
-	caName=CustomAttributeName 'as' (type=AttributeType | '(' enumValues+=EnumValue (',' enumValues+=EnumValue)* ')');
+	required=Required? caName=CustomAttributeName 'as' (type=AttributeType | '(' enumValues+=EnumValue (',' enumValues+=EnumValue)* ')');
+
+Required:
+	'!' | 'required'
+;
 
 CustomAttributeName:
 	name=ID;
@@ -36,9 +40,9 @@ EnumID:
 enum AttributeType:
 	NUMBER | TEXT;
 
-Customs:
-	'custom' 'attributes'
-	customAttributes+=CustomAttribute (customAttributes+=CustomAttribute)*
+Globals:
+	'global' 'attributes'
+	customs+=CustomAttribute (customs+=CustomAttribute)*
 	'end';
 
 Character:

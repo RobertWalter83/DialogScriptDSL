@@ -4,24 +4,37 @@
 package de.unidue.ecg.characterScript.ui.contentassist;
 
 import com.google.common.base.Objects;
+import com.google.common.base.Predicate;
+import com.google.common.collect.Iterables;
 import de.unidue.ecg.characterScript.characterScript.AttributeType;
+import de.unidue.ecg.characterScript.characterScript.CharacterScriptPackage.Literals;
 import de.unidue.ecg.characterScript.characterScript.CustomAttribute;
 import de.unidue.ecg.characterScript.characterScript.CustomAttributeName;
 import de.unidue.ecg.characterScript.characterScript.CustomProperty;
+import de.unidue.ecg.characterScript.characterScript.DefaultProperty;
 import de.unidue.ecg.characterScript.characterScript.EnumValue;
+import de.unidue.ecg.characterScript.characterScript.Property;
 import de.unidue.ecg.characterScript.characterScript.Template;
 import de.unidue.ecg.characterScript.ui.contentassist.AbstractCharacterScriptProposalProvider;
+import de.unidue.ecg.characterScript.util.LanguageUtil;
 import java.util.ArrayList;
-import java.util.List;
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.jface.text.contentassist.ICompletionProposal;
+import org.eclipse.xtext.AbstractElement;
 import org.eclipse.xtext.Assignment;
+import org.eclipse.xtext.CrossReference;
 import org.eclipse.xtext.Keyword;
 import org.eclipse.xtext.RuleCall;
+import org.eclipse.xtext.naming.QualifiedName;
+import org.eclipse.xtext.resource.IEObjectDescription;
+import org.eclipse.xtext.scoping.IScope;
+import org.eclipse.xtext.scoping.IScopeProvider;
 import org.eclipse.xtext.ui.editor.contentassist.ContentAssistContext;
 import org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalAcceptor;
 import org.eclipse.xtext.xbase.lib.CollectionLiterals;
-import org.eclipse.xtext.xbase.lib.Functions.Function0;
+import org.eclipse.xtext.xbase.lib.Functions.Function1;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
 
@@ -44,6 +57,28 @@ public class CharacterScriptProposalProvider extends AbstractCharacterScriptProp
     if (_not) {
       super.completeCustomProperty_EnumValue(model, assignment, context, acceptor);
     }
+  }
+  
+  public void completeCustomProperty_CustomAttributeRef(final EObject model, final Assignment assignment, final ContentAssistContext context, final ICompletionProposalAcceptor acceptor) {
+    AbstractElement _terminal = assignment.getTerminal();
+    final Predicate<IEObjectDescription> _function = new Predicate<IEObjectDescription>() {
+      public boolean apply(final IEObjectDescription ieod) {
+        EList<Property> _properties = ((de.unidue.ecg.characterScript.characterScript.Character) model).getProperties();
+        Iterable<CustomProperty> _filter = Iterables.<CustomProperty>filter(_properties, CustomProperty.class);
+        final Function1<CustomProperty,Boolean> _function = new Function1<CustomProperty,Boolean>() {
+          public Boolean apply(final CustomProperty cp) {
+            EObject _eObjectOrProxy = ieod.getEObjectOrProxy();
+            CustomAttributeName _customAttributeRef = cp.getCustomAttributeRef();
+            boolean _equals = Objects.equal(_eObjectOrProxy, _customAttributeRef);
+            return Boolean.valueOf(_equals);
+          }
+        };
+        boolean _exists = IterableExtensions.<CustomProperty>exists(_filter, _function);
+        boolean _not = (!_exists);
+        return _not;
+      }
+    };
+    this.lookupCrossReference(((CrossReference) _terminal), context, acceptor, _function);
   }
   
   public void complete_INT(final EObject model, final RuleCall ruleCall, final ContentAssistContext context, final ICompletionProposalAcceptor acceptor) {
@@ -98,6 +133,29 @@ public class CharacterScriptProposalProvider extends AbstractCharacterScriptProp
     super.complete_STRING(model, ruleCall, context, acceptor);
   }
   
+  public void completeImport_ImportedNamespace(final EObject model, final Assignment assignment, final ContentAssistContext context, final ICompletionProposalAcceptor acceptor) {
+    IScopeProvider _scopeProvider = this.getScopeProvider();
+    EObject _rootModel = context.getRootModel();
+    final IScope scope = _scopeProvider.getScope(_rootModel, Literals.CHARACTER__TEMPLATE);
+    Iterable<IEObjectDescription> _allElements = scope.getAllElements();
+    final Function1<IEObjectDescription,Boolean> _function = new Function1<IEObjectDescription,Boolean>() {
+      public Boolean apply(final IEObjectDescription ieod) {
+        EObject _eObjectOrProxy = ieod.getEObjectOrProxy();
+        return Boolean.valueOf((_eObjectOrProxy instanceof Template));
+      }
+    };
+    Iterable<IEObjectDescription> _filter = IterableExtensions.<IEObjectDescription>filter(_allElements, _function);
+    final Procedure1<IEObjectDescription> _function_1 = new Procedure1<IEObjectDescription>() {
+      public void apply(final IEObjectDescription element) {
+        QualifiedName _qualifiedName = element.getQualifiedName();
+        String _string = _qualifiedName.toString();
+        ICompletionProposal _createCompletionProposal = CharacterScriptProposalProvider.this.createCompletionProposal(_string, context);
+        acceptor.accept(_createCompletionProposal);
+      }
+    };
+    IterableExtensions.<IEObjectDescription>forEach(_filter, _function_1);
+  }
+  
   public void completeKeyword(final Keyword keyword, final ContentAssistContext contentAssistContext, final ICompletionProposalAcceptor acceptor) {
     final EObject model = contentAssistContext.getCurrentModel();
     boolean _matched = false;
@@ -105,17 +163,8 @@ public class CharacterScriptProposalProvider extends AbstractCharacterScriptProp
       if (model instanceof de.unidue.ecg.characterScript.characterScript.Character) {
         final de.unidue.ecg.characterScript.characterScript.Character _character = (de.unidue.ecg.characterScript.characterScript.Character)model;
         _matched=true;
-        boolean _and = false;
-        Template _template = _character.getTemplate();
-        boolean _notEquals = (!Objects.equal(_template, null));
-        if (!_notEquals) {
-          _and = false;
-        } else {
-          Template _template_1 = _character.getTemplate();
-          boolean _filter = this.filter(keyword, _template_1);
-          _and = (_notEquals && _filter);
-        }
-        if (_and) {
+        boolean _filter = this.filter(keyword, _character);
+        if (_filter) {
           return;
         }
       }
@@ -123,27 +172,22 @@ public class CharacterScriptProposalProvider extends AbstractCharacterScriptProp
     super.completeKeyword(keyword, contentAssistContext, acceptor);
   }
   
-  private final List<String> keywordsToFilter = new Function0<List<String>>() {
-    public List<String> apply() {
-      List<String> _newImmutableList = CollectionLiterals.<String>newImmutableList("age", "sex", "description", "full name", "type");
-      return _newImmutableList;
-    }
-  }.apply();
-  
-  private boolean filter(final Keyword keyword, final Template template) {
-    boolean _equals = Objects.equal(template, null);
+  private boolean filter(final Keyword keyword, final de.unidue.ecg.characterScript.characterScript.Character character) {
+    boolean _equals = Objects.equal(character, null);
     if (_equals) {
       return false;
     }
     final ArrayList<String> filterList = CollectionLiterals.<String>newArrayList();
-    filterList.addAll(this.keywordsToFilter);
-    EList<String> _defaults = template.getDefaults();
-    final Procedure1<String> _function = new Procedure1<String>() {
-      public void apply(final String it) {
-        filterList.remove(it);
+    EList<Property> _properties = character.getProperties();
+    Iterable<DefaultProperty> _filter = Iterables.<DefaultProperty>filter(_properties, DefaultProperty.class);
+    final Procedure1<DefaultProperty> _function = new Procedure1<DefaultProperty>() {
+      public void apply(final DefaultProperty it) {
+        EClass _eClass = it.eClass();
+        String _keywordValueFor = LanguageUtil.getKeywordValueFor(_eClass);
+        filterList.add(_keywordValueFor);
       }
     };
-    IterableExtensions.<String>forEach(_defaults, _function);
+    IterableExtensions.<DefaultProperty>forEach(_filter, _function);
     String _value = keyword.getValue();
     boolean _contains = filterList.contains(_value);
     if (_contains) {

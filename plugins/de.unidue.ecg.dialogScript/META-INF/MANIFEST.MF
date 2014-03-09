@@ -15,10 +15,10 @@ Require-Bundle: org.eclipse.xtext;visibility:=reexport,
  org.eclipse.xtext.util,
  org.eclipse.emf.ecore,
  org.eclipse.emf.common,
- org.antlr.runtime,
  org.eclipse.xtext.common.types,
  de.unidue.ecg.characterScript;bundle-version="1.0.0",
- de.unidue.ecg.common;bundle-version="1.0.0"
+ de.unidue.ecg.common;bundle-version="1.0.0",
+ org.antlr.runtime
 Import-Package: org.apache.log4j,
  org.eclipse.xtext.xbase.lib
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
@@ -33,12 +33,5 @@ Export-Package: de.unidue.ecg.dialogScript,
  de.unidue.ecg.dialogScript.parser.antlr,
  de.unidue.ecg.dialogScript.parser.antlr.internal,
  de.unidue.ecg.dialogScript.serializer,
- de.unidue.ecg.dialogScript.services,
- de.unidue.ecg.dialogScript.services,
- de.unidue.ecg.dialogScript.dialogScript,
- de.unidue.ecg.dialogScript.dialogScript.impl,
- de.unidue.ecg.dialogScript.dialogScript.util,
- de.unidue.ecg.dialogScript.serializer,
- de.unidue.ecg.dialogScript.parser.antlr,
- de.unidue.ecg.dialogScript.parser.antlr.internal
+ de.unidue.ecg.dialogScript.services
 

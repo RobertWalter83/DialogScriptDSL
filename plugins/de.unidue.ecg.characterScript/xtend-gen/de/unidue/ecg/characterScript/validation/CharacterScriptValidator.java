@@ -4,8 +4,10 @@
 package de.unidue.ecg.characterScript.validation;
 
 import com.google.common.base.Objects;
+import com.google.common.base.Strings;
 import com.google.common.collect.Iterables;
 import de.unidue.ecg.characterScript.characterScript.Age;
+import de.unidue.ecg.characterScript.characterScript.AttributeType;
 import de.unidue.ecg.characterScript.characterScript.CharacterScriptPackage.Literals;
 import de.unidue.ecg.characterScript.characterScript.Characters;
 import de.unidue.ecg.characterScript.characterScript.CustomAttribute;
@@ -20,6 +22,7 @@ import de.unidue.ecg.characterScript.characterScript.Property;
 import de.unidue.ecg.characterScript.characterScript.Sex;
 import de.unidue.ecg.characterScript.characterScript.Template;
 import de.unidue.ecg.characterScript.characterScript.Type;
+import de.unidue.ecg.characterScript.util.LanguageUtil;
 import de.unidue.ecg.characterScript.validation.AbstractCharacterScriptValidator;
 import java.util.Arrays;
 import org.eclipse.emf.common.util.EList;
@@ -48,6 +51,133 @@ public class CharacterScriptValidator extends AbstractCharacterScriptValidator {
   public final static String INVALID_PROPERTY = "invalidProperty";
   
   public final static String UNRESOLVED_TEMPLATE = "unresolvedTemplate";
+  
+  public final static String MISSING_REQUIRED_DEFAULT = "missingRequiredDefault";
+  
+  public final static String MISSING_REQUIRED_CUSTOM = "missingRequiredCustom";
+  
+  @Check
+  public void checkIfRequiredAttributeIsMissing(final de.unidue.ecg.characterScript.characterScript.Character c) {
+    final Template t = c.getTemplate();
+    boolean _notEquals = (!Objects.equal(t, null));
+    if (_notEquals) {
+      EList<String> _defaults = t.getDefaults();
+      final Procedure1<String> _function = new Procedure1<String>() {
+        public void apply(final String default_) {
+          EList<Property> _properties = c.getProperties();
+          Iterable<DefaultProperty> _filter = Iterables.<DefaultProperty>filter(_properties, DefaultProperty.class);
+          final Function1<DefaultProperty,Boolean> _function = new Function1<DefaultProperty,Boolean>() {
+            public Boolean apply(final DefaultProperty prop) {
+              EClass _eClass = prop.eClass();
+              String _keywordValueFor = LanguageUtil.getKeywordValueFor(_eClass);
+              boolean _equals = default_.equals(_keywordValueFor);
+              return Boolean.valueOf(_equals);
+            }
+          };
+          boolean _exists = IterableExtensions.<DefaultProperty>exists(_filter, _function);
+          boolean _not = (!_exists);
+          if (_not) {
+            String _plus = ("The attribute " + default_);
+            String _plus_1 = (_plus + " is missing for the use of template ");
+            String _name = t.getName();
+            String _plus_2 = (_plus_1 + _name);
+            CharacterScriptValidator.this.error(_plus_2, c, 
+              Literals.CHARACTER__TEMPLATE, CharacterScriptValidator.MISSING_REQUIRED_DEFAULT, default_);
+          }
+        }
+      };
+      IterableExtensions.<String>forEach(_defaults, _function);
+      EList<CustomAttribute> _customs = t.getCustoms();
+      final Function1<CustomAttribute,Boolean> _function_1 = new Function1<CustomAttribute,Boolean>() {
+        public Boolean apply(final CustomAttribute it) {
+          String _required = it.getRequired();
+          boolean _isNullOrEmpty = Strings.isNullOrEmpty(_required);
+          boolean _not = (!_isNullOrEmpty);
+          return Boolean.valueOf(_not);
+        }
+      };
+      Iterable<CustomAttribute> _filter = IterableExtensions.<CustomAttribute>filter(_customs, _function_1);
+      final Procedure1<CustomAttribute> _function_2 = new Procedure1<CustomAttribute>() {
+        public void apply(final CustomAttribute custom) {
+          EList<Property> _properties = c.getProperties();
+          Iterable<CustomProperty> _filter = Iterables.<CustomProperty>filter(_properties, CustomProperty.class);
+          final Function1<CustomProperty,Boolean> _function = new Function1<CustomProperty,Boolean>() {
+            public Boolean apply(final CustomProperty prop) {
+              boolean _xblockexpression = false;
+              {
+                CustomAttributeName _customAttributeRef = prop.getCustomAttributeRef();
+                EObject _eContainer = _customAttributeRef.eContainer();
+                final CustomAttribute ca = ((CustomAttribute) _eContainer);
+                boolean _equals = EcoreUtil2.equals(ca, custom);
+                _xblockexpression = (_equals);
+              }
+              return Boolean.valueOf(_xblockexpression);
+            }
+          };
+          boolean _exists = IterableExtensions.<CustomProperty>exists(_filter, _function);
+          boolean _not = (!_exists);
+          if (_not) {
+            CustomAttributeName _caName = custom.getCaName();
+            String _name = _caName.getName();
+            String _plus = ("The attribute " + _name);
+            String _plus_1 = (_plus + " is missing for the use of template ");
+            String _name_1 = t.getName();
+            String _plus_2 = (_plus_1 + _name_1);
+            CustomAttributeName _caName_1 = custom.getCaName();
+            String _name_2 = _caName_1.getName();
+            String _createValueExpression = CharacterScriptValidator.this.createValueExpression(custom);
+            CharacterScriptValidator.this.error(_plus_2, c, 
+              Literals.CHARACTER__TEMPLATE, CharacterScriptValidator.MISSING_REQUIRED_CUSTOM, _name_2, _createValueExpression);
+          }
+        }
+      };
+      IterableExtensions.<CustomAttribute>forEach(_filter, _function_2);
+    }
+  }
+  
+  private int numberTemplateCounter = 0;
+  
+  public String createValueExpression(final CustomAttribute attribute) {
+    String _xblockexpression = null;
+    {
+      EList<EnumValue> _enumValues = attribute.getEnumValues();
+      boolean _isEmpty = _enumValues.isEmpty();
+      boolean _not = (!_isEmpty);
+      if (_not) {
+        EList<EnumValue> _enumValues_1 = attribute.getEnumValues();
+        EnumValue _get = null;
+        if (_enumValues_1!=null) {
+          _get=_enumValues_1.get(0);
+        }
+        String _name = _get.getName();
+        String _plus = ("(${" + _name);
+        return (_plus + ":Enum(\'value\')})");
+      }
+      String _switchResult = null;
+      AttributeType _type = attribute.getType();
+      String _name_1 = _type.getName();
+      final String _switchValue = _name_1;
+      boolean _matched = false;
+      if (!_matched) {
+        if (Objects.equal(_switchValue,"NUMBER")) {
+          _matched=true;
+          int _plus_1 = (this.numberTemplateCounter + 1);
+          int _numberTemplateCounter = this.numberTemplateCounter = _plus_1;
+          return Integer.valueOf(_numberTemplateCounter).toString();
+        }
+      }
+      if (!_matched) {
+        if (Objects.equal(_switchValue,"TEXT")) {
+          _matched=true;
+          CustomAttributeName _caName = attribute.getCaName();
+          String _name_2 = _caName.getName();
+          return _name_2.replaceAll("\\s+", "");
+        }
+      }
+      _xblockexpression = (_switchResult);
+    }
+    return _xblockexpression;
+  }
   
   @Check
   public void checkIfAttributeTypeIsEnum(final CustomProperty cp) {
@@ -78,8 +208,8 @@ public class CharacterScriptValidator extends AbstractCharacterScriptValidator {
         _name_1=_customAttributeRef_1.getName();
       }
       String _plus_2 = (_plus_1 + _name_1);
-      this.error(_plus_2, 
-        Literals.CUSTOM_PROPERTY__ENUM_VALUE, CharacterScriptValidator.INVALID_ATTRIBUTE_TYPE);
+      this.error(_plus_2, Literals.CUSTOM_PROPERTY__ENUM_VALUE, 
+        CharacterScriptValidator.INVALID_ATTRIBUTE_TYPE);
     }
   }
   
@@ -161,27 +291,11 @@ public class CharacterScriptValidator extends AbstractCharacterScriptValidator {
     boolean _notEquals = (!Objects.equal(_template, null));
     if (_notEquals) {
       final Template template = c.getTemplate();
-      final EList<String> allowedDefaults = template.getDefaults();
       final EList<CustomAttribute> allowedCustoms = template.getCustoms();
       EList<Property> _properties = c.getProperties();
       final Procedure2<Property,Integer> _function = new Procedure2<Property,Integer>() {
         public void apply(final Property it, final Integer i) {
           boolean _matched = false;
-          if (!_matched) {
-            if (it instanceof DefaultProperty) {
-              final DefaultProperty _defaultProperty = (DefaultProperty)it;
-              boolean _isValidDefault = CharacterScriptValidator.this.isValidDefault(_defaultProperty, allowedDefaults);
-              boolean _not = (!_isValidDefault);
-              if (_not) {
-                _matched=true;
-                String _name = template.getName();
-                String _plus = ("The used template " + _name);
-                String _plus_1 = (_plus + " does not provide this property");
-                CharacterScriptValidator.this.error(_plus_1, 
-                  Literals.CHARACTER__PROPERTIES, (i).intValue(), CharacterScriptValidator.INVALID_PROPERTY);
-              }
-            }
-          }
           if (!_matched) {
             if (it instanceof CustomProperty) {
               final CustomProperty _customProperty = (CustomProperty)it;

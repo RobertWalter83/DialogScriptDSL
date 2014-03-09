@@ -4,11 +4,15 @@
 package de.unidue.ecg.characterScript.ui.contentassist
 
 import de.unidue.ecg.characterScript.characterScript.Character
+import de.unidue.ecg.characterScript.characterScript.CharacterScriptPackage
 import de.unidue.ecg.characterScript.characterScript.CustomAttribute
 import de.unidue.ecg.characterScript.characterScript.CustomProperty
+import de.unidue.ecg.characterScript.characterScript.DefaultProperty
 import de.unidue.ecg.characterScript.characterScript.Template
+import de.unidue.ecg.characterScript.util.LanguageUtil
 import org.eclipse.emf.ecore.EObject
 import org.eclipse.xtext.Assignment
+import org.eclipse.xtext.CrossReference
 import org.eclipse.xtext.Keyword
 import org.eclipse.xtext.RuleCall
 import org.eclipse.xtext.ui.editor.contentassist.ContentAssistContext
@@ -25,6 +29,15 @@ class CharacterScriptProposalProvider extends AbstractCharacterScriptProposalPro
 		val ca = cp.customAttributeRef.eContainer as CustomAttribute
 		if (!ca?.enumValues.empty)
 			super.completeCustomProperty_EnumValue(model, assignment, context, acceptor)
+	}
+
+	override completeCustomProperty_CustomAttributeRef(EObject model, Assignment assignment,
+		ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		lookupCrossReference((assignment.terminal as CrossReference), context, acceptor) [ ieod |
+			!(model as Character).properties.filter(CustomProperty).exists [ cp |
+				ieod.EObjectOrProxy == cp.customAttributeRef
+			]
+		]
 	}
 
 	override complete_INT(EObject model, RuleCall ruleCall, ContentAssistContext context,
@@ -51,40 +64,28 @@ class CharacterScriptProposalProvider extends AbstractCharacterScriptProposalPro
 		super.complete_STRING(model, ruleCall, context, acceptor)
 	}
 
-//	override completeCustomProperty_CustomAttributeRef(EObject model, Assignment assignment,
-//		ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
-//
-//		if (model instanceof Character) {
-//			val character = model as Character
-//			val filter = [ IEObjectDescription ieod |
-//				
-//				if (character.template != null) {
-//					for(c:character.template.customs) {
-//						if (!c.caName.name.equals(ieod.name.toString)) {
-//							return false
-//						}
-//					}
-//				} else if(ieod.qualifiedName.segmentCount > 1) {
-//					return false
-//				}
-//				
-//				return true
-//			]
-//
-//			if (assignment.terminal instanceof CrossReference) {
-//				val terminal = (assignment.terminal as CrossReference)
-//				lookupCrossReference(terminal, context, acceptor, filter)
-//			}
-//		}
-//	}
+	override completeImport_ImportedNamespace(EObject model, Assignment assignment, ContentAssistContext context,
+		ICompletionProposalAcceptor acceptor) {
+		val scope = this.scopeProvider.getScope(context.rootModel, CharacterScriptPackage.Literals.CHARACTER__TEMPLATE)
+		scope.allElements.filter[ieod|ieod.EObjectOrProxy instanceof Template].forEach [ element |
+			acceptor.accept(createCompletionProposal(element.qualifiedName.toString, context))
+		]
+
+	//super.completeImport_ImportedNamespace(model, assignment, context, acceptor)
+	}
 
 	override completeKeyword(Keyword keyword, ContentAssistContext contentAssistContext,
 		ICompletionProposalAcceptor acceptor) {
 		val model = contentAssistContext.currentModel
 		switch (model) {
 			Character: {
-				if (model.template != null && filter(keyword, model.template))
+				if(filter(keyword, model)) {
 					return
+				}
+//				if (model.template != null && filter(keyword, model, model.template))
+//					return
+//				else if(model.template == null && filter(keyword, model))
+//					return
 			}
 		}
 
@@ -92,17 +93,15 @@ class CharacterScriptProposalProvider extends AbstractCharacterScriptProposalPro
 
 	}
 
-	val keywordsToFilter = newImmutableList("age", "sex", "description", "full name", "type")
-
-	def private filter(Keyword keyword, Template template) {
-		if (template == null)
+	def private filter(Keyword keyword, Character character) {
+		if (character == null)
 			return false
 
 		val filterList = newArrayList
-		filterList.addAll(keywordsToFilter)
-
-		template.defaults.forEach [
-			filterList.remove(it)
+		
+		// add already used defaults to filterList
+		character.properties.filter(DefaultProperty).forEach [
+			filterList.add(LanguageUtil.getKeywordValueFor(it.eClass))
 		]
 
 		if (filterList.contains(keyword.value)) {
@@ -110,5 +109,31 @@ class CharacterScriptProposalProvider extends AbstractCharacterScriptProposalPro
 		}
 		return false
 	}
+
+//	def private filter(Keyword keyword, Character character, Template template) {
+//		if (template == null)
+//			return false
+//
+//		// first, add all available defaults to filter list
+//		val filterList = newArrayList
+////		LanguageUtil.defaultAttributes.forEach[k,v|
+////			filterList.add(k)
+////		]
+////
+////		// permit the ones that are provided by the template
+////		template.defaults.forEach [
+////			filterList.remove(it)
+////		]
+//		
+//		// prohibit the ones already used
+//		character.properties.filter(DefaultProperty).forEach [
+//			filterList.add(LanguageUtil.getKeywordValueFor(it.eClass))
+//		]
+//
+//		if (filterList.contains(keyword.value)) {
+//			return true
+//		}
+//		return false
+//	}
 
 }

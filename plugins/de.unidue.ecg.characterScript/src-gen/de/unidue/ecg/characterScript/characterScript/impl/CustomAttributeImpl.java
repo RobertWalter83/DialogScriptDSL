@@ -31,6 +31,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link de.unidue.ecg.characterScript.characterScript.impl.CustomAttributeImpl#getRequired <em>Required</em>}</li>
  *   <li>{@link de.unidue.ecg.characterScript.characterScript.impl.CustomAttributeImpl#getCaName <em>Ca Name</em>}</li>
  *   <li>{@link de.unidue.ecg.characterScript.characterScript.impl.CustomAttributeImpl#getType <em>Type</em>}</li>
  *   <li>{@link de.unidue.ecg.characterScript.characterScript.impl.CustomAttributeImpl#getEnumValues <em>Enum Values</em>}</li>
@@ -41,6 +42,26 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class CustomAttributeImpl extends MinimalEObjectImpl.Container implements CustomAttribute
 {
+  /**
+   * The default value of the '{@link #getRequired() <em>Required</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getRequired()
+   * @generated
+   * @ordered
+   */
+  protected static final String REQUIRED_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getRequired() <em>Required</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getRequired()
+   * @generated
+   * @ordered
+   */
+  protected String required = REQUIRED_EDEFAULT;
+
   /**
    * The cached value of the '{@link #getCaName() <em>Ca Name</em>}' containment reference.
    * <!-- begin-user-doc -->
@@ -100,6 +121,29 @@ public class CustomAttributeImpl extends MinimalEObjectImpl.Container implements
   protected EClass eStaticClass()
   {
     return CharacterScriptPackage.Literals.CUSTOM_ATTRIBUTE;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getRequired()
+  {
+    return required;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setRequired(String newRequired)
+  {
+    String oldRequired = required;
+    required = newRequired;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, CharacterScriptPackage.CUSTOM_ATTRIBUTE__REQUIRED, oldRequired, required));
   }
 
   /**
@@ -215,6 +259,8 @@ public class CustomAttributeImpl extends MinimalEObjectImpl.Container implements
   {
     switch (featureID)
     {
+      case CharacterScriptPackage.CUSTOM_ATTRIBUTE__REQUIRED:
+        return getRequired();
       case CharacterScriptPackage.CUSTOM_ATTRIBUTE__CA_NAME:
         return getCaName();
       case CharacterScriptPackage.CUSTOM_ATTRIBUTE__TYPE:
@@ -236,6 +282,9 @@ public class CustomAttributeImpl extends MinimalEObjectImpl.Container implements
   {
     switch (featureID)
     {
+      case CharacterScriptPackage.CUSTOM_ATTRIBUTE__REQUIRED:
+        setRequired((String)newValue);
+        return;
       case CharacterScriptPackage.CUSTOM_ATTRIBUTE__CA_NAME:
         setCaName((CustomAttributeName)newValue);
         return;
@@ -260,6 +309,9 @@ public class CustomAttributeImpl extends MinimalEObjectImpl.Container implements
   {
     switch (featureID)
     {
+      case CharacterScriptPackage.CUSTOM_ATTRIBUTE__REQUIRED:
+        setRequired(REQUIRED_EDEFAULT);
+        return;
       case CharacterScriptPackage.CUSTOM_ATTRIBUTE__CA_NAME:
         setCaName((CustomAttributeName)null);
         return;
@@ -283,6 +335,8 @@ public class CustomAttributeImpl extends MinimalEObjectImpl.Container implements
   {
     switch (featureID)
     {
+      case CharacterScriptPackage.CUSTOM_ATTRIBUTE__REQUIRED:
+        return REQUIRED_EDEFAULT == null ? required != null : !REQUIRED_EDEFAULT.equals(required);
       case CharacterScriptPackage.CUSTOM_ATTRIBUTE__CA_NAME:
         return caName != null;
       case CharacterScriptPackage.CUSTOM_ATTRIBUTE__TYPE:
@@ -304,7 +358,9 @@ public class CustomAttributeImpl extends MinimalEObjectImpl.Container implements
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (type: ");
+    result.append(" (required: ");
+    result.append(required);
+    result.append(", type: ");
     result.append(type);
     result.append(')');
     return result.toString();

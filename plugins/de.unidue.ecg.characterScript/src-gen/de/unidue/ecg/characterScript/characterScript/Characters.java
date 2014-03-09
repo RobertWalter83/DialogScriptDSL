@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link de.unidue.ecg.characterScript.characterScript.Characters#getImports <em>Imports</em>}</li>
  *   <li>{@link de.unidue.ecg.characterScript.characterScript.Characters#getTemplates <em>Templates</em>}</li>
- *   <li>{@link de.unidue.ecg.characterScript.characterScript.Characters#getCustoms <em>Customs</em>}</li>
+ *   <li>{@link de.unidue.ecg.characterScript.characterScript.Characters#getGlobals <em>Globals</em>}</li>
  *   <li>{@link de.unidue.ecg.characterScript.characterScript.Characters#getCharacters <em>Characters</em>}</li>
  * </ul>
  * </p>
@@ -60,30 +60,30 @@ public interface Characters extends EObject
   EList<Template> getTemplates();
 
   /**
-   * Returns the value of the '<em><b>Customs</b></em>' containment reference.
+   * Returns the value of the '<em><b>Globals</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Customs</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Globals</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Customs</em>' containment reference.
-   * @see #setCustoms(Customs)
-   * @see de.unidue.ecg.characterScript.characterScript.CharacterScriptPackage#getCharacters_Customs()
+   * @return the value of the '<em>Globals</em>' containment reference.
+   * @see #setGlobals(Globals)
+   * @see de.unidue.ecg.characterScript.characterScript.CharacterScriptPackage#getCharacters_Globals()
    * @model containment="true"
    * @generated
    */
-  Customs getCustoms();
+  Globals getGlobals();
 
   /**
-   * Sets the value of the '{@link de.unidue.ecg.characterScript.characterScript.Characters#getCustoms <em>Customs</em>}' containment reference.
+   * Sets the value of the '{@link de.unidue.ecg.characterScript.characterScript.Characters#getGlobals <em>Globals</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Customs</em>' containment reference.
-   * @see #getCustoms()
+   * @param value the new value of the '<em>Globals</em>' containment reference.
+   * @see #getGlobals()
    * @generated
    */
-  void setCustoms(Customs value);
+  void setGlobals(Globals value);
 
   /**
    * Returns the value of the '<em><b>Characters</b></em>' containment reference list.

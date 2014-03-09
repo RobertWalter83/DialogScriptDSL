@@ -74,8 +74,11 @@ Workflow {
     		// fragment = exporting.SimpleNamesFragment auto-inject {}
     
     		// scoping and exporting API
-    		fragment = scoping.ImportNamespacesScopingFragment auto-inject {}
-    		fragment = exporting.SimpleNamesFragment auto-inject {}
+    		fragment = scoping.ImportNamespacesScopingFragment {
+				generateStub=false
+			}
+			
+    		fragment = exporting.QualifiedNamesFragment auto-inject {}
     		fragment = builder.BuilderIntegrationFragment auto-inject {}
     
     		// generator API

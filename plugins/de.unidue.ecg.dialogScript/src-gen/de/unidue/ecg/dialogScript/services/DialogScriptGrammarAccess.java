@@ -118,19 +118,19 @@ public class DialogScriptGrammarAccess extends AbstractGrammarElementFinder {
 
 	public class CharacterDefinitionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "CharacterDefinition");
-		private final Assignment cNameAssignment = (Assignment)rule.eContents().get(1);
-		private final RuleCall cNameIDTerminalRuleCall_0 = (RuleCall)cNameAssignment.eContents().get(0);
+		private final Assignment cImportedNamespaceAssignment = (Assignment)rule.eContents().get(1);
+		private final RuleCall cImportedNamespaceIDTerminalRuleCall_0 = (RuleCall)cImportedNamespaceAssignment.eContents().get(0);
 		
 		//CharacterDefinition:
 		//
-		//	name=ID;
+		//	importedNamespace=ID;
 		public ParserRule getRule() { return rule; }
 
-		//name=ID
-		public Assignment getNameAssignment() { return cNameAssignment; }
+		//importedNamespace=ID
+		public Assignment getImportedNamespaceAssignment() { return cImportedNamespaceAssignment; }
 
 		//ID
-		public RuleCall getNameIDTerminalRuleCall_0() { return cNameIDTerminalRuleCall_0; }
+		public RuleCall getImportedNamespaceIDTerminalRuleCall_0() { return cImportedNamespaceIDTerminalRuleCall_0; }
 	}
 
 	public class SwitchesDefinitionElements extends AbstractParserRuleElementFinder {
@@ -1459,34 +1459,30 @@ public class DialogScriptGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "DialogLine");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cCharacterAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final CrossReference cCharacterCharacterDefinitionCrossReference_0_0 = (CrossReference)cCharacterAssignment_0.eContents().get(0);
-		private final RuleCall cCharacterCharacterDefinitionIDTerminalRuleCall_0_0_1 = (RuleCall)cCharacterCharacterDefinitionCrossReference_0_0.eContents().get(1);
+		private final CrossReference cCharacterCharacterCrossReference_0_0 = (CrossReference)cCharacterAssignment_0.eContents().get(0);
+		private final RuleCall cCharacterCharacterIDTerminalRuleCall_0_0_1 = (RuleCall)cCharacterCharacterCrossReference_0_0.eContents().get(1);
 		private final Keyword cColonKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cLinesAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cLinesStringIDParserRuleCall_2_0 = (RuleCall)cLinesAssignment_2.eContents().get(0);
 		private final Assignment cCommentAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cCommentCOMMENTTerminalRuleCall_3_0 = (RuleCall)cCommentAssignment_3.eContents().get(0);
 		
-		//DialogLine: //character=[chara::Character] ':' lines=StringID comment=COMMENT?;
+		//DialogLine:
 		//
-		//	character=[CharacterDefinition] ":" lines=StringID comment=COMMENT?;
+		//	character=[chara::Character] ":" lines=StringID comment=COMMENT?;
 		public ParserRule getRule() { return rule; }
 
-		////character=[chara::Character] ':' lines=StringID comment=COMMENT?;
-		//
-		//character=[CharacterDefinition] ":" lines=StringID comment=COMMENT?
+		//character=[chara::Character] ":" lines=StringID comment=COMMENT?
 		public Group getGroup() { return cGroup; }
 
-		////character=[chara::Character] ':' lines=StringID comment=COMMENT?;
-		//
-		//character=[CharacterDefinition]
+		//character=[chara::Character]
 		public Assignment getCharacterAssignment_0() { return cCharacterAssignment_0; }
 
-		//[CharacterDefinition]
-		public CrossReference getCharacterCharacterDefinitionCrossReference_0_0() { return cCharacterCharacterDefinitionCrossReference_0_0; }
+		//[chara::Character]
+		public CrossReference getCharacterCharacterCrossReference_0_0() { return cCharacterCharacterCrossReference_0_0; }
 
 		//ID
-		public RuleCall getCharacterCharacterDefinitionIDTerminalRuleCall_0_0_1() { return cCharacterCharacterDefinitionIDTerminalRuleCall_0_0_1; }
+		public RuleCall getCharacterCharacterIDTerminalRuleCall_0_0_1() { return cCharacterCharacterIDTerminalRuleCall_0_0_1; }
 
 		//":"
 		public Keyword getColonKeyword_1() { return cColonKeyword_1; }
@@ -1667,7 +1663,7 @@ public class DialogScriptGrammarAccess extends AbstractGrammarElementFinder {
 
 	//CharacterDefinition:
 	//
-	//	name=ID;
+	//	importedNamespace=ID;
 	public CharacterDefinitionElements getCharacterDefinitionAccess() {
 		return (pCharacterDefinition != null) ? pCharacterDefinition : (pCharacterDefinition = new CharacterDefinitionElements());
 	}
@@ -2034,9 +2030,9 @@ public class DialogScriptGrammarAccess extends AbstractGrammarElementFinder {
 		return getSwitchOnAccess().getRule();
 	}
 
-	//DialogLine: //character=[chara::Character] ':' lines=StringID comment=COMMENT?;
+	//DialogLine:
 	//
-	//	character=[CharacterDefinition] ":" lines=StringID comment=COMMENT?;
+	//	character=[chara::Character] ":" lines=StringID comment=COMMENT?;
 	public DialogLineElements getDialogLineAccess() {
 		return (pDialogLine != null) ? pDialogLine : (pDialogLine = new DialogLineElements());
 	}
@@ -2045,6 +2041,8 @@ public class DialogScriptGrammarAccess extends AbstractGrammarElementFinder {
 		return getDialogLineAccess().getRule();
 	}
 
+	////character=[CharacterDefinition] ':' lines=StringID comment=COMMENT?;
+	//
 	//terminal COMMENT:
 	//
 	//	"["->"]";

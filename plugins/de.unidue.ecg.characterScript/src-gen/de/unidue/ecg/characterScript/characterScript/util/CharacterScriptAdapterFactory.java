@@ -8,11 +8,11 @@ import de.unidue.ecg.characterScript.characterScript.Characters;
 import de.unidue.ecg.characterScript.characterScript.CustomAttribute;
 import de.unidue.ecg.characterScript.characterScript.CustomAttributeName;
 import de.unidue.ecg.characterScript.characterScript.CustomProperty;
-import de.unidue.ecg.characterScript.characterScript.Customs;
 import de.unidue.ecg.characterScript.characterScript.DefaultProperty;
 import de.unidue.ecg.characterScript.characterScript.Description;
 import de.unidue.ecg.characterScript.characterScript.EnumValue;
 import de.unidue.ecg.characterScript.characterScript.FullName;
+import de.unidue.ecg.characterScript.characterScript.Globals;
 import de.unidue.ecg.characterScript.characterScript.Import;
 import de.unidue.ecg.characterScript.characterScript.Property;
 import de.unidue.ecg.characterScript.characterScript.Sex;
@@ -120,9 +120,9 @@ public class CharacterScriptAdapterFactory extends AdapterFactoryImpl
         return createEnumValueAdapter();
       }
       @Override
-      public Adapter caseCustoms(Customs object)
+      public Adapter caseGlobals(Globals object)
       {
-        return createCustomsAdapter();
+        return createGlobalsAdapter();
       }
       @Override
       public Adapter caseCharacter(de.unidue.ecg.characterScript.characterScript.Character object)
@@ -282,16 +282,16 @@ public class CharacterScriptAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link de.unidue.ecg.characterScript.characterScript.Customs <em>Customs</em>}'.
+   * Creates a new adapter for an object of class '{@link de.unidue.ecg.characterScript.characterScript.Globals <em>Globals</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see de.unidue.ecg.characterScript.characterScript.Customs
+   * @see de.unidue.ecg.characterScript.characterScript.Globals
    * @generated
    */
-  public Adapter createCustomsAdapter()
+  public Adapter createGlobalsAdapter()
   {
     return null;
   }

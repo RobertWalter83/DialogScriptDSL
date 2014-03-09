@@ -5,7 +5,6 @@ package de.unidue.ecg.dialogScript.ui.labeling;
 
 import com.google.common.base.Objects;
 import com.google.inject.Inject;
-import de.unidue.ecg.dialogScript.dialogScript.CharacterDefinition;
 import de.unidue.ecg.dialogScript.dialogScript.CharactersDefintion;
 import de.unidue.ecg.dialogScript.dialogScript.ChoiceDialog;
 import de.unidue.ecg.dialogScript.dialogScript.ConditionDefinition;
@@ -145,7 +144,7 @@ public class DialogScriptLabelProvider extends DefaultEObjectLabelProvider {
   }
   
   public String text(final DialogLine line) {
-    CharacterDefinition _character = line.getCharacter();
+    de.unidue.ecg.characterScript.characterScript.Character _character = line.getCharacter();
     String _name = _character.getName();
     String _plus = (_name + ": ");
     String _lines = line.getLines();

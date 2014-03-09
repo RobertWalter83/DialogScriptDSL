@@ -308,26 +308,26 @@ public class InternalDialogScriptParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "ruleCharacterDefinition"
-    // ../de.unidue.ecg.dialogScript.ui/src-gen/de/unidue/ecg/dialogScript/ui/contentassist/antlr/internal/InternalDialogScript.g:126:1: ruleCharacterDefinition : ( ( rule__CharacterDefinition__NameAssignment ) ) ;
+    // ../de.unidue.ecg.dialogScript.ui/src-gen/de/unidue/ecg/dialogScript/ui/contentassist/antlr/internal/InternalDialogScript.g:126:1: ruleCharacterDefinition : ( ( rule__CharacterDefinition__ImportedNamespaceAssignment ) ) ;
     public final void ruleCharacterDefinition() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.unidue.ecg.dialogScript.ui/src-gen/de/unidue/ecg/dialogScript/ui/contentassist/antlr/internal/InternalDialogScript.g:130:2: ( ( ( rule__CharacterDefinition__NameAssignment ) ) )
-            // ../de.unidue.ecg.dialogScript.ui/src-gen/de/unidue/ecg/dialogScript/ui/contentassist/antlr/internal/InternalDialogScript.g:131:1: ( ( rule__CharacterDefinition__NameAssignment ) )
+            // ../de.unidue.ecg.dialogScript.ui/src-gen/de/unidue/ecg/dialogScript/ui/contentassist/antlr/internal/InternalDialogScript.g:130:2: ( ( ( rule__CharacterDefinition__ImportedNamespaceAssignment ) ) )
+            // ../de.unidue.ecg.dialogScript.ui/src-gen/de/unidue/ecg/dialogScript/ui/contentassist/antlr/internal/InternalDialogScript.g:131:1: ( ( rule__CharacterDefinition__ImportedNamespaceAssignment ) )
             {
-            // ../de.unidue.ecg.dialogScript.ui/src-gen/de/unidue/ecg/dialogScript/ui/contentassist/antlr/internal/InternalDialogScript.g:131:1: ( ( rule__CharacterDefinition__NameAssignment ) )
-            // ../de.unidue.ecg.dialogScript.ui/src-gen/de/unidue/ecg/dialogScript/ui/contentassist/antlr/internal/InternalDialogScript.g:132:1: ( rule__CharacterDefinition__NameAssignment )
+            // ../de.unidue.ecg.dialogScript.ui/src-gen/de/unidue/ecg/dialogScript/ui/contentassist/antlr/internal/InternalDialogScript.g:131:1: ( ( rule__CharacterDefinition__ImportedNamespaceAssignment ) )
+            // ../de.unidue.ecg.dialogScript.ui/src-gen/de/unidue/ecg/dialogScript/ui/contentassist/antlr/internal/InternalDialogScript.g:132:1: ( rule__CharacterDefinition__ImportedNamespaceAssignment )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getCharacterDefinitionAccess().getNameAssignment()); 
+               before(grammarAccess.getCharacterDefinitionAccess().getImportedNamespaceAssignment()); 
             }
-            // ../de.unidue.ecg.dialogScript.ui/src-gen/de/unidue/ecg/dialogScript/ui/contentassist/antlr/internal/InternalDialogScript.g:133:1: ( rule__CharacterDefinition__NameAssignment )
-            // ../de.unidue.ecg.dialogScript.ui/src-gen/de/unidue/ecg/dialogScript/ui/contentassist/antlr/internal/InternalDialogScript.g:133:2: rule__CharacterDefinition__NameAssignment
+            // ../de.unidue.ecg.dialogScript.ui/src-gen/de/unidue/ecg/dialogScript/ui/contentassist/antlr/internal/InternalDialogScript.g:133:1: ( rule__CharacterDefinition__ImportedNamespaceAssignment )
+            // ../de.unidue.ecg.dialogScript.ui/src-gen/de/unidue/ecg/dialogScript/ui/contentassist/antlr/internal/InternalDialogScript.g:133:2: rule__CharacterDefinition__ImportedNamespaceAssignment
             {
-            pushFollow(FOLLOW_rule__CharacterDefinition__NameAssignment_in_ruleCharacterDefinition220);
-            rule__CharacterDefinition__NameAssignment();
+            pushFollow(FOLLOW_rule__CharacterDefinition__ImportedNamespaceAssignment_in_ruleCharacterDefinition220);
+            rule__CharacterDefinition__ImportedNamespaceAssignment();
 
             state._fsp--;
             if (state.failed) return ;
@@ -335,7 +335,7 @@ public class InternalDialogScriptParser extends AbstractInternalContentAssistPar
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getCharacterDefinitionAccess().getNameAssignment()); 
+               after(grammarAccess.getCharacterDefinitionAccess().getImportedNamespaceAssignment()); 
             }
 
             }
@@ -17622,9 +17622,9 @@ public class InternalDialogScriptParser extends AbstractInternalContentAssistPar
     // $ANTLR end "rule__CharactersDefintion__CharactersAssignment_3_1"
 
 
-    // $ANTLR start "rule__CharacterDefinition__NameAssignment"
-    // ../de.unidue.ecg.dialogScript.ui/src-gen/de/unidue/ecg/dialogScript/ui/contentassist/antlr/internal/InternalDialogScript.g:6207:1: rule__CharacterDefinition__NameAssignment : ( RULE_ID ) ;
-    public final void rule__CharacterDefinition__NameAssignment() throws RecognitionException {
+    // $ANTLR start "rule__CharacterDefinition__ImportedNamespaceAssignment"
+    // ../de.unidue.ecg.dialogScript.ui/src-gen/de/unidue/ecg/dialogScript/ui/contentassist/antlr/internal/InternalDialogScript.g:6207:1: rule__CharacterDefinition__ImportedNamespaceAssignment : ( RULE_ID ) ;
+    public final void rule__CharacterDefinition__ImportedNamespaceAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -17636,11 +17636,11 @@ public class InternalDialogScriptParser extends AbstractInternalContentAssistPar
             // ../de.unidue.ecg.dialogScript.ui/src-gen/de/unidue/ecg/dialogScript/ui/contentassist/antlr/internal/InternalDialogScript.g:6213:1: RULE_ID
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getCharacterDefinitionAccess().getNameIDTerminalRuleCall_0()); 
+               before(grammarAccess.getCharacterDefinitionAccess().getImportedNamespaceIDTerminalRuleCall_0()); 
             }
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__CharacterDefinition__NameAssignment12434); if (state.failed) return ;
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__CharacterDefinition__ImportedNamespaceAssignment12434); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getCharacterDefinitionAccess().getNameIDTerminalRuleCall_0()); 
+               after(grammarAccess.getCharacterDefinitionAccess().getImportedNamespaceIDTerminalRuleCall_0()); 
             }
 
             }
@@ -17660,7 +17660,7 @@ public class InternalDialogScriptParser extends AbstractInternalContentAssistPar
         }
         return ;
     }
-    // $ANTLR end "rule__CharacterDefinition__NameAssignment"
+    // $ANTLR end "rule__CharacterDefinition__ImportedNamespaceAssignment"
 
 
     // $ANTLR start "rule__SwitchesDefinition__SwitchesAssignment_2"
@@ -20830,23 +20830,23 @@ public class InternalDialogScriptParser extends AbstractInternalContentAssistPar
             // ../de.unidue.ecg.dialogScript.ui/src-gen/de/unidue/ecg/dialogScript/ui/contentassist/antlr/internal/InternalDialogScript.g:7323:1: ( RULE_ID )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getDialogLineAccess().getCharacterCharacterDefinitionCrossReference_0_0()); 
+               before(grammarAccess.getDialogLineAccess().getCharacterCharacterCrossReference_0_0()); 
             }
             // ../de.unidue.ecg.dialogScript.ui/src-gen/de/unidue/ecg/dialogScript/ui/contentassist/antlr/internal/InternalDialogScript.g:7324:1: ( RULE_ID )
             // ../de.unidue.ecg.dialogScript.ui/src-gen/de/unidue/ecg/dialogScript/ui/contentassist/antlr/internal/InternalDialogScript.g:7325:1: RULE_ID
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getDialogLineAccess().getCharacterCharacterDefinitionIDTerminalRuleCall_0_0_1()); 
+               before(grammarAccess.getDialogLineAccess().getCharacterCharacterIDTerminalRuleCall_0_0_1()); 
             }
             match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__DialogLine__CharacterAssignment_014719); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getDialogLineAccess().getCharacterCharacterDefinitionIDTerminalRuleCall_0_0_1()); 
+               after(grammarAccess.getDialogLineAccess().getCharacterCharacterIDTerminalRuleCall_0_0_1()); 
             }
 
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getDialogLineAccess().getCharacterCharacterDefinitionCrossReference_0_0()); 
+               after(grammarAccess.getDialogLineAccess().getCharacterCharacterCrossReference_0_0()); 
             }
 
             }
@@ -21300,7 +21300,7 @@ public class InternalDialogScriptParser extends AbstractInternalContentAssistPar
     public static final BitSet FOLLOW_rule__CharactersDefintion__Group__0_in_ruleCharactersDefintion160 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleCharacterDefinition_in_entryRuleCharacterDefinition187 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleCharacterDefinition194 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__CharacterDefinition__NameAssignment_in_ruleCharacterDefinition220 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__CharacterDefinition__ImportedNamespaceAssignment_in_ruleCharacterDefinition220 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleSwitchesDefinition_in_entryRuleSwitchesDefinition247 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleSwitchesDefinition254 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__SwitchesDefinition__Group__0_in_ruleSwitchesDefinition280 = new BitSet(new long[]{0x0000000000000002L});
@@ -21836,7 +21836,7 @@ public class InternalDialogScriptParser extends AbstractInternalContentAssistPar
     public static final BitSet FOLLOW_ruleScene_in_rule__Script__ScenesAssignment_412341 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleCharacterDefinition_in_rule__CharactersDefintion__CharactersAssignment_212372 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleCharacterDefinition_in_rule__CharactersDefintion__CharactersAssignment_3_112403 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__CharacterDefinition__NameAssignment12434 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__CharacterDefinition__ImportedNamespaceAssignment12434 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleSwitchDefinition_in_rule__SwitchesDefinition__SwitchesAssignment_212465 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleSwitchDefinition_in_rule__SwitchesDefinition__SwitchesAssignment_3_112496 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_ID_in_rule__SwitchDefinition__NameAssignment_012527 = new BitSet(new long[]{0x0000000000000002L});

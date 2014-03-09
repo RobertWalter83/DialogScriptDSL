@@ -113,37 +113,59 @@ public class DialogScriptProjectCreator extends WorkspaceModifyOperation impleme
   }
   
   public IFile enhanceProject(final IProject project, final IProgressMonitor monitor) throws CoreException {
+    String _plus = ("./" + DialogScriptProjectCreator.SCRIPT_ROOT);
+    String _plus_1 = (_plus + "/characters");
+    Path _path = new Path(_plus_1);
+    final Path charaPath = _path;
+    String _plus_2 = ("./" + DialogScriptProjectCreator.SCRIPT_ROOT);
+    String _plus_3 = (_plus_2 + "/dialog");
+    Path _path_1 = new Path(_plus_3);
+    final Path dialogPath = _path_1;
+    CharSequence _createCharacterContent = this.createCharacterContent();
+    String _string = _createCharacterContent.toString();
+    this.createFile(project, "Characters.chara", charaPath, _string, monitor);
+    CharSequence _createDialogContent = this.createDialogContent();
+    String _string_1 = _createDialogContent.toString();
+    final IFile dialogFile = this.createFile(project, "Dialog.dialog", dialogPath, _string_1, monitor);
+    project.refreshLocal(IResource.DEPTH_INFINITE, monitor);
+    return dialogFile;
+  }
+  
+  private IFile createFile(final IProject project, final String fileNameWithExtension, final Path path, final String content, final IProgressMonitor monitor) {
     try {
-      Path _path = new Path("./scripts/samples");
-      final IFolder folder = project.getFolder(_path);
-      folder.create(true, true, monitor);
-      Path _path_1 = new Path("Sample.dialog");
-      final IFile file = folder.getFile(_path_1);
-      final CharSequence content = this.createContent();
-      ByteArrayInputStream stream = ((ByteArrayInputStream) null);
-      try {
-        String _string = content.toString();
-        byte[] _bytes = _string.getBytes();
-        ByteArrayInputStream _byteArrayInputStream = new ByteArrayInputStream(_bytes);
-        stream = _byteArrayInputStream;
-        file.create(stream, true, monitor);
-      } catch (final Throwable _t) {
-        if (_t instanceof IOException) {
-          final IOException io = (IOException)_t;
-        } else {
-          throw Exceptions.sneakyThrow(_t);
+      IFile _xblockexpression = null;
+      {
+        final IFolder folder = project.getFolder(path);
+        folder.create(true, true, monitor);
+        Path _path = new Path(fileNameWithExtension);
+        final IFile file = folder.getFile(_path);
+        ByteArrayInputStream stream = ((ByteArrayInputStream) null);
+        IFile _xtrycatchfinallyexpression = null;
+        try {
+          byte[] _bytes = content.getBytes();
+          ByteArrayInputStream _byteArrayInputStream = new ByteArrayInputStream(_bytes);
+          stream = _byteArrayInputStream;
+          file.create(stream, true, monitor);
+          return file;
+        } catch (final Throwable _t) {
+          if (_t instanceof IOException) {
+            final IOException io = (IOException)_t;
+            _xtrycatchfinallyexpression = null;
+          } else {
+            throw Exceptions.sneakyThrow(_t);
+          }
+        } finally {
+          stream.close();
         }
-      } finally {
-        stream.close();
+        _xblockexpression = (_xtrycatchfinallyexpression);
       }
-      project.refreshLocal(IResource.DEPTH_INFINITE, monitor);
-      return file;
+      return _xblockexpression;
     } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
     }
   }
   
-  public CharSequence createContent() {
+  public CharSequence createDialogContent() {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("/* Some useful shortcuts");
     _builder.newLine();
@@ -156,20 +178,75 @@ public class DialogScriptProjectCreator extends WorkspaceModifyOperation impleme
     _builder.append(" ");
     _builder.append("*/");
     _builder.newLine();
-    _builder.append("characters: Bill, Tom");
+    _builder.append("characters: Leia, Han");
     _builder.newLine();
     _builder.newLine();
-    _builder.append("scene \"Project Sample\" ");
+    _builder.append("scene \"The Sealing\" ");
     _builder.newLine();
     _builder.newLine();
     _builder.append("\t");
-    _builder.append("Bill: \"Hi, Tom.\"");
+    _builder.append("Leia: \"I love you.\"");
     _builder.newLine();
     _builder.append("\t");
-    _builder.append("Tom: \"Hey, Bill.\"");
+    _builder.append("Han: \"I know.\"");
     _builder.newLine();
     _builder.newLine();
     _builder.append("end scene");
+    _builder.newLine();
+    return _builder;
+  }
+  
+  public CharSequence createCharacterContent() {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("/* Some useful shortcuts");
+    _builder.newLine();
+    _builder.append(" ");
+    _builder.append("* CTRL+SPACE: Get context sensitive help at the current cursor position");
+    _builder.newLine();
+    _builder.append(" ");
+    _builder.append("* CTRL+SHIFT+F: Auto-format your file");
+    _builder.newLine();
+    _builder.append(" ");
+    _builder.append("*/");
+    _builder.newLine();
+    _builder.append("character Leia");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("full name \"Leia Organa\"");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("description \"Princess of Alderaan, daughter of Padme Amidala and Anakin Skywalker.\"");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("age 22");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("sex female");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("type NPC");
+    _builder.newLine();
+    _builder.append("end");
+    _builder.newLine();
+    _builder.newLine();
+    _builder.append("character Han");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("full name \"Han Solo\"");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("description \"Corellian Smuggler\"");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("age 32");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("sex male");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("type PC");
+    _builder.newLine();
+    _builder.append("end");
     _builder.newLine();
     return _builder;
   }

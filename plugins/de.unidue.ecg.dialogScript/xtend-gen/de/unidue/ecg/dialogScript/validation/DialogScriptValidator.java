@@ -5,12 +5,15 @@ package de.unidue.ecg.dialogScript.validation;
 
 import com.google.common.base.Objects;
 import de.unidue.ecg.dialogScript.dialogScript.AbstractChoiceDialog;
+import de.unidue.ecg.dialogScript.dialogScript.CharacterDefinition;
+import de.unidue.ecg.dialogScript.dialogScript.CharactersDefintion;
 import de.unidue.ecg.dialogScript.dialogScript.ChoiceDialog;
 import de.unidue.ecg.dialogScript.dialogScript.ConditionDefinition;
 import de.unidue.ecg.dialogScript.dialogScript.ConditionList;
 import de.unidue.ecg.dialogScript.dialogScript.Conditional;
 import de.unidue.ecg.dialogScript.dialogScript.ConditionalBody;
 import de.unidue.ecg.dialogScript.dialogScript.ConditionalChoiceDialog;
+import de.unidue.ecg.dialogScript.dialogScript.DialogLine;
 import de.unidue.ecg.dialogScript.dialogScript.DialogScriptPackage.Literals;
 import de.unidue.ecg.dialogScript.dialogScript.Exit;
 import de.unidue.ecg.dialogScript.dialogScript.Hub;
@@ -35,6 +38,7 @@ import org.eclipse.xtext.EcoreUtil2;
 import org.eclipse.xtext.EcoreUtil2.ElementReferenceAcceptor;
 import org.eclipse.xtext.validation.Check;
 import org.eclipse.xtext.xbase.lib.CollectionLiterals;
+import org.eclipse.xtext.xbase.lib.Functions.Function1;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
 
@@ -77,6 +81,8 @@ public class DialogScriptValidator extends AbstractDialogScriptValidator {
   
   public final static String WRONG_CONDTIONAL_USAGE = "wrongConditionalUsage";
   
+  public final static String UNRESOLVED_CHARACTER = "unresolvedCharacter";
+  
   @Check
   public void checkHubCanBeLeft(final Hub hub) {
     final TreeIterator<EObject> allContents = hub.eAllContents();
@@ -90,7 +96,8 @@ public class DialogScriptValidator extends AbstractDialogScriptValidator {
       boolean _hasNext_1 = allContents.hasNext();
       _while = _hasNext_1;
     }
-    this.warning("Hub cannot be left by the player. Add an exit- or enter hub-statement to avoid infinite loops.", hub, Literals.HUB__NAME, DialogScriptValidator.HUB_CANNOT_BE_LEFT);
+    this.warning("Hub cannot be left by the player. Add an exit- or enter hub-statement to avoid infinite loops.", hub, 
+      Literals.HUB__NAME, DialogScriptValidator.HUB_CANNOT_BE_LEFT);
   }
   
   @Check
@@ -98,7 +105,8 @@ public class DialogScriptValidator extends AbstractDialogScriptValidator {
     ConditionalBody _body = choice.getBody();
     boolean _equals = Objects.equal(_body, null);
     if (_equals) {
-      this.warning("Empty choices should be removed.", choice, Literals.CHOICE_DIALOG__NAME, DialogScriptValidator.EMPTY_CHOICE);
+      this.warning("Empty choices should be removed.", choice, Literals.CHOICE_DIALOG__NAME, 
+        DialogScriptValidator.EMPTY_CHOICE);
     }
   }
   
@@ -184,7 +192,8 @@ public class DialogScriptValidator extends AbstractDialogScriptValidator {
       boolean _isInHub = this.isInHub(exit);
       boolean _not = (!_isInHub);
       if (_not) {
-        this.error("You are not in a hub, so this statement does not make sense!", exit, Literals.EXIT__EXIT_HUB, DialogScriptValidator.MISPLACED_EXIT_HUB);
+        this.error("You are not in a hub, so this statement does not make sense!", exit, 
+          Literals.EXIT__EXIT_HUB, DialogScriptValidator.MISPLACED_EXIT_HUB);
       }
     }
   }
@@ -353,8 +362,46 @@ public class DialogScriptValidator extends AbstractDialogScriptValidator {
         EList<AbstractChoiceDialog> _choiceDialogs_1 = hub.getChoiceDialogs();
         int _indexOf_1 = _choiceDialogs_1.indexOf(ele);
         String _string = Integer.valueOf(_indexOf_1).toString();
-        this.error("Inside a hub, conditionals has to be either declared as \'single\' or has to exit the hub explicitly using a \'exit\' or \'enter\' statement", hub, Literals.HUB__CHOICE_DIALOGS, _indexOf, DialogScriptValidator.WRONG_CONDTIONAL_USAGE, _string);
+        this.error(
+          "Inside a hub, conditionals has to be either declared as \'single\' or has to exit the hub explicitly using a \'exit\' or \'enter\' statement", hub, Literals.HUB__CHOICE_DIALOGS, _indexOf, 
+          DialogScriptValidator.WRONG_CONDTIONAL_USAGE, _string);
       }
+    }
+  }
+  
+  @Check
+  public void checkImports(final DialogLine d) {
+    de.unidue.ecg.characterScript.characterScript.Character _character = d.getCharacter();
+    final String charaName = _character.getName();
+    final Script root = EcoreUtil2.<Script>getContainerOfType(d, Script.class);
+    boolean isIssue = false;
+    CharactersDefintion _charactersDefinition = root.getCharactersDefinition();
+    EList<CharacterDefinition> _characters = null;
+    if (_charactersDefinition!=null) {
+      _characters=_charactersDefinition.getCharacters();
+    }
+    final EList<CharacterDefinition> characterImports = _characters;
+    boolean _equals = Objects.equal(characterImports, null);
+    if (_equals) {
+      isIssue = true;
+    } else {
+      final Function1<CharacterDefinition,Boolean> _function = new Function1<CharacterDefinition,Boolean>() {
+        public Boolean apply(final CharacterDefinition it) {
+          String _importedNamespace = it.getImportedNamespace();
+          boolean _equals = _importedNamespace.equals(charaName);
+          return Boolean.valueOf(_equals);
+        }
+      };
+      final CharacterDefinition matchedImport = IterableExtensions.<CharacterDefinition>findFirst(characterImports, _function);
+      boolean _equals_1 = Objects.equal(matchedImport, null);
+      if (_equals_1) {
+        isIssue = true;
+      }
+    }
+    if (isIssue) {
+      String _plus = ("Missing character definition for " + charaName);
+      this.error(_plus, 
+        Literals.DIALOG_LINE__CHARACTER, DialogScriptValidator.UNRESOLVED_CHARACTER, charaName);
     }
   }
 }

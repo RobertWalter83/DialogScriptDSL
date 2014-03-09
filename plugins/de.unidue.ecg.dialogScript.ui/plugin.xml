@@ -414,7 +414,7 @@
             class="de.unidue.ecg.dialogScript.ui.DialogScriptExecutableExtensionFactory:de.unidue.ecg.dialogScript.ui.wizard.DialogScriptNewProjectWizard"
             icon="icons/icon16.png"
             id="de.unidue.ecg.dialogScript.ui.wizard.DialogScriptNewProjectWizard"
-            name="New DialogScript project"
+            name="New Dialog Project"
             project="true">
       </wizard>
    </extension>
@@ -429,7 +429,7 @@
            class="de.unidue.ecg.dialogScript.ui.wizard.DialogScriptNewDialogScriptWizard"
            icon="icons/icon16.png"
            id="de.unidue.ecg.dialogScript.ui.wizard.DialogScriptNewDialogScriptWizard"
-           name="New DialogScript script">
+           name="New Dialog Script">
      </wizard>
   </extension>
 </plugin>

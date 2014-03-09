@@ -4,7 +4,7 @@ package de.unidue.ecg.characterScript.characterScript.impl;
 
 import de.unidue.ecg.characterScript.characterScript.CharacterScriptPackage;
 import de.unidue.ecg.characterScript.characterScript.CustomAttribute;
-import de.unidue.ecg.characterScript.characterScript.Customs;
+import de.unidue.ecg.characterScript.characterScript.Globals;
 
 import java.util.Collection;
 
@@ -22,35 +22,35 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Customs</b></em>'.
+ * An implementation of the model object '<em><b>Globals</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.unidue.ecg.characterScript.characterScript.impl.CustomsImpl#getCustomAttributes <em>Custom Attributes</em>}</li>
+ *   <li>{@link de.unidue.ecg.characterScript.characterScript.impl.GlobalsImpl#getCustoms <em>Customs</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class CustomsImpl extends MinimalEObjectImpl.Container implements Customs
+public class GlobalsImpl extends MinimalEObjectImpl.Container implements Globals
 {
   /**
-   * The cached value of the '{@link #getCustomAttributes() <em>Custom Attributes</em>}' containment reference list.
+   * The cached value of the '{@link #getCustoms() <em>Customs</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getCustomAttributes()
+   * @see #getCustoms()
    * @generated
    * @ordered
    */
-  protected EList<CustomAttribute> customAttributes;
+  protected EList<CustomAttribute> customs;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected CustomsImpl()
+  protected GlobalsImpl()
   {
     super();
   }
@@ -63,7 +63,7 @@ public class CustomsImpl extends MinimalEObjectImpl.Container implements Customs
   @Override
   protected EClass eStaticClass()
   {
-    return CharacterScriptPackage.Literals.CUSTOMS;
+    return CharacterScriptPackage.Literals.GLOBALS;
   }
 
   /**
@@ -71,13 +71,13 @@ public class CustomsImpl extends MinimalEObjectImpl.Container implements Customs
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<CustomAttribute> getCustomAttributes()
+  public EList<CustomAttribute> getCustoms()
   {
-    if (customAttributes == null)
+    if (customs == null)
     {
-      customAttributes = new EObjectContainmentEList<CustomAttribute>(CustomAttribute.class, this, CharacterScriptPackage.CUSTOMS__CUSTOM_ATTRIBUTES);
+      customs = new EObjectContainmentEList<CustomAttribute>(CustomAttribute.class, this, CharacterScriptPackage.GLOBALS__CUSTOMS);
     }
-    return customAttributes;
+    return customs;
   }
 
   /**
@@ -90,8 +90,8 @@ public class CustomsImpl extends MinimalEObjectImpl.Container implements Customs
   {
     switch (featureID)
     {
-      case CharacterScriptPackage.CUSTOMS__CUSTOM_ATTRIBUTES:
-        return ((InternalEList<?>)getCustomAttributes()).basicRemove(otherEnd, msgs);
+      case CharacterScriptPackage.GLOBALS__CUSTOMS:
+        return ((InternalEList<?>)getCustoms()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -106,8 +106,8 @@ public class CustomsImpl extends MinimalEObjectImpl.Container implements Customs
   {
     switch (featureID)
     {
-      case CharacterScriptPackage.CUSTOMS__CUSTOM_ATTRIBUTES:
-        return getCustomAttributes();
+      case CharacterScriptPackage.GLOBALS__CUSTOMS:
+        return getCustoms();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -123,9 +123,9 @@ public class CustomsImpl extends MinimalEObjectImpl.Container implements Customs
   {
     switch (featureID)
     {
-      case CharacterScriptPackage.CUSTOMS__CUSTOM_ATTRIBUTES:
-        getCustomAttributes().clear();
-        getCustomAttributes().addAll((Collection<? extends CustomAttribute>)newValue);
+      case CharacterScriptPackage.GLOBALS__CUSTOMS:
+        getCustoms().clear();
+        getCustoms().addAll((Collection<? extends CustomAttribute>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -141,8 +141,8 @@ public class CustomsImpl extends MinimalEObjectImpl.Container implements Customs
   {
     switch (featureID)
     {
-      case CharacterScriptPackage.CUSTOMS__CUSTOM_ATTRIBUTES:
-        getCustomAttributes().clear();
+      case CharacterScriptPackage.GLOBALS__CUSTOMS:
+        getCustoms().clear();
         return;
     }
     super.eUnset(featureID);
@@ -158,10 +158,10 @@ public class CustomsImpl extends MinimalEObjectImpl.Container implements Customs
   {
     switch (featureID)
     {
-      case CharacterScriptPackage.CUSTOMS__CUSTOM_ATTRIBUTES:
-        return customAttributes != null && !customAttributes.isEmpty();
+      case CharacterScriptPackage.GLOBALS__CUSTOMS:
+        return customs != null && !customs.isEmpty();
     }
     return super.eIsSet(featureID);
   }
 
-} //CustomsImpl
+} //GlobalsImpl

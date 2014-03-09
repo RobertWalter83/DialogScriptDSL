@@ -4,7 +4,7 @@
     editorDirectory="/de.unidue.ecg.dialogScript.editor/src" modelPluginID="de.unidue.ecg.dialogScript"
     forceOverwrite="true" modelName="DialogScript" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     complianceLevel="5.0" copyrightFields="false" editPluginID="de.unidue.ecg.dialogScript.edit"
-    editorPluginID="de.unidue.ecg.dialogScript.editor" runtimeVersion="2.10">
+    editorPluginID="de.unidue.ecg.dialogScript.editor" runtimeVersion="2.10" usedGenPackages="../../../../../../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/CharacterScript.genmodel#//characterScript">
   <genPackages prefix="DialogScript" basePackage="de.unidue.ecg.dialogScript" disposableProviderFactory="true"
       fileExtensions="dialog" ecorePackage="DialogScript.ecore#/">
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="DialogScript.ecore#//Modifier">
@@ -25,7 +25,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DialogScript.ecore#//CharactersDefintion/characters"/>
     </genClasses>
     <genClasses ecoreClass="DialogScript.ecore#//CharacterDefinition">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DialogScript.ecore#//CharacterDefinition/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DialogScript.ecore#//CharacterDefinition/importedNamespace"/>
     </genClasses>
     <genClasses ecoreClass="DialogScript.ecore#//SwitchesDefinition">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DialogScript.ecore#//SwitchesDefinition/switches"/>

@@ -248,9 +248,9 @@ ruleCharacterDefinition returns [EObject current=null]
     @after { leaveRule(); }:
 (
 (
-		lv_name_0_0=RULE_ID
+		lv_importedNamespace_0_0=RULE_ID
 		{
-			newLeafNode(lv_name_0_0, grammarAccess.getCharacterDefinitionAccess().getNameIDTerminalRuleCall_0()); 
+			newLeafNode(lv_importedNamespace_0_0, grammarAccess.getCharacterDefinitionAccess().getImportedNamespaceIDTerminalRuleCall_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -258,8 +258,8 @@ ruleCharacterDefinition returns [EObject current=null]
 	        }
        		setWithLastConsumed(
        			$current, 
-       			"name",
-        		lv_name_0_0, 
+       			"importedNamespace",
+        		lv_importedNamespace_0_0, 
         		"ID");
 	    }
 
@@ -2502,7 +2502,7 @@ ruleDialogLine returns [EObject current=null]
         }
 	otherlv_0=RULE_ID
 	{
-		newLeafNode(otherlv_0, grammarAccess.getDialogLineAccess().getCharacterCharacterDefinitionCrossReference_0_0()); 
+		newLeafNode(otherlv_0, grammarAccess.getDialogLineAccess().getCharacterCharacterCrossReference_0_0()); 
 	}
 
 )

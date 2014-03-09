@@ -7,7 +7,7 @@
         eType="#//Import" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="templates" upperBound="-1"
         eType="#//Template" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="customs" eType="#//Customs"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="globals" eType="#//Globals"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="characters" upperBound="-1"
         eType="#//Character" containment="true"/>
@@ -23,6 +23,7 @@
         eType="#//CustomAttribute" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CustomAttribute">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="required" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="caName" eType="#//CustomAttributeName"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//AttributeType"/>
@@ -39,8 +40,8 @@
     <eLiterals name="NUMBER" literal="NUMBER"/>
     <eLiterals name="TEXT" value="1" literal="TEXT"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Customs">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="customAttributes" upperBound="-1"
+  <eClassifiers xsi:type="ecore:EClass" name="Globals">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="customs" upperBound="-1"
         eType="#//CustomAttribute" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Character">

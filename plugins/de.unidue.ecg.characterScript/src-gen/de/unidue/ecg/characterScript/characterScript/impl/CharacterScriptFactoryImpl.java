@@ -12,11 +12,11 @@ import de.unidue.ecg.characterScript.characterScript.Characters;
 import de.unidue.ecg.characterScript.characterScript.CustomAttribute;
 import de.unidue.ecg.characterScript.characterScript.CustomAttributeName;
 import de.unidue.ecg.characterScript.characterScript.CustomProperty;
-import de.unidue.ecg.characterScript.characterScript.Customs;
 import de.unidue.ecg.characterScript.characterScript.DefaultProperty;
 import de.unidue.ecg.characterScript.characterScript.Description;
 import de.unidue.ecg.characterScript.characterScript.EnumValue;
 import de.unidue.ecg.characterScript.characterScript.FullName;
+import de.unidue.ecg.characterScript.characterScript.Globals;
 import de.unidue.ecg.characterScript.characterScript.Import;
 import de.unidue.ecg.characterScript.characterScript.Property;
 import de.unidue.ecg.characterScript.characterScript.Sex;
@@ -90,7 +90,7 @@ public class CharacterScriptFactoryImpl extends EFactoryImpl implements Characte
       case CharacterScriptPackage.CUSTOM_ATTRIBUTE: return createCustomAttribute();
       case CharacterScriptPackage.CUSTOM_ATTRIBUTE_NAME: return createCustomAttributeName();
       case CharacterScriptPackage.ENUM_VALUE: return createEnumValue();
-      case CharacterScriptPackage.CUSTOMS: return createCustoms();
+      case CharacterScriptPackage.GLOBALS: return createGlobals();
       case CharacterScriptPackage.CHARACTER: return createCharacter();
       case CharacterScriptPackage.PROPERTY: return createProperty();
       case CharacterScriptPackage.DEFAULT_PROPERTY: return createDefaultProperty();
@@ -218,10 +218,10 @@ public class CharacterScriptFactoryImpl extends EFactoryImpl implements Characte
    * <!-- end-user-doc -->
    * @generated
    */
-  public Customs createCustoms()
+  public Globals createGlobals()
   {
-    CustomsImpl customs = new CustomsImpl();
-    return customs;
+    GlobalsImpl globals = new GlobalsImpl();
+    return globals;
   }
 
   /**

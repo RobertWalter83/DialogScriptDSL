@@ -8,11 +8,11 @@ import de.unidue.ecg.characterScript.characterScript.Characters;
 import de.unidue.ecg.characterScript.characterScript.CustomAttribute;
 import de.unidue.ecg.characterScript.characterScript.CustomAttributeName;
 import de.unidue.ecg.characterScript.characterScript.CustomProperty;
-import de.unidue.ecg.characterScript.characterScript.Customs;
 import de.unidue.ecg.characterScript.characterScript.DefaultProperty;
 import de.unidue.ecg.characterScript.characterScript.Description;
 import de.unidue.ecg.characterScript.characterScript.EnumValue;
 import de.unidue.ecg.characterScript.characterScript.FullName;
+import de.unidue.ecg.characterScript.characterScript.Globals;
 import de.unidue.ecg.characterScript.characterScript.Import;
 import de.unidue.ecg.characterScript.characterScript.Property;
 import de.unidue.ecg.characterScript.characterScript.Sex;
@@ -129,10 +129,10 @@ public class CharacterScriptSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case CharacterScriptPackage.CUSTOMS:
+      case CharacterScriptPackage.GLOBALS:
       {
-        Customs customs = (Customs)theEObject;
-        T result = caseCustoms(customs);
+        Globals globals = (Globals)theEObject;
+        T result = caseGlobals(globals);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -312,17 +312,17 @@ public class CharacterScriptSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Customs</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Globals</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Customs</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Globals</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseCustoms(Customs object)
+  public T caseGlobals(Globals object)
   {
     return null;
   }

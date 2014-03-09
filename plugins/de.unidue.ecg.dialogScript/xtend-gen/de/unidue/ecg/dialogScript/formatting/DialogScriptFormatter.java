@@ -160,8 +160,8 @@ public class DialogScriptFormatter extends AbstractDeclarativeFormatter {
     _setLinewrap_17.before(_endKeyword_4);
     LinewrapLocator _setLinewrap_18 = c.setLinewrap();
     DialogLineElements _dialogLineAccess = this._dialogScriptGrammarAccess.getDialogLineAccess();
-    CrossReference _characterCharacterDefinitionCrossReference_0_0 = _dialogLineAccess.getCharacterCharacterDefinitionCrossReference_0_0();
-    _setLinewrap_18.before(_characterCharacterDefinitionCrossReference_0_0);
+    CrossReference _characterCharacterCrossReference_0_0 = _dialogLineAccess.getCharacterCharacterCrossReference_0_0();
+    _setLinewrap_18.before(_characterCharacterCrossReference_0_0);
     LinewrapLocator _setLinewrap_19 = c.setLinewrap();
     FirstTimeElements _firstTimeAccess_1 = this._dialogScriptGrammarAccess.getFirstTimeAccess();
     Keyword _endKeyword_6 = _firstTimeAccess_1.getEndKeyword_6();

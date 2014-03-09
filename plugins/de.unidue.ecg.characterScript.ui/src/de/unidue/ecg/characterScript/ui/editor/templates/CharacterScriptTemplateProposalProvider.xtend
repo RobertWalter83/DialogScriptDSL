@@ -3,6 +3,7 @@ package de.unidue.ecg.characterScript.ui.editor.templates
 import com.google.inject.Inject
 import de.unidue.ecg.characterScript.characterScript.CharacterScriptPackage
 import de.unidue.ecg.characterScript.characterScript.CustomAttribute
+import de.unidue.ecg.characterScript.characterScript.Template
 import de.unidue.ecg.characterScript.services.CharacterScriptGrammarAccess
 import de.unidue.ecg.characterScript.util.DefaultAttributeHelper
 import de.unidue.ecg.characterScript.util.LanguageUtil
@@ -10,13 +11,11 @@ import org.eclipse.jface.text.templates.ContextTypeRegistry
 import org.eclipse.jface.text.templates.TemplateContext
 import org.eclipse.jface.text.templates.persistence.TemplateStore
 import org.eclipse.xtext.EcoreUtil2
-import org.eclipse.xtext.scoping.impl.ImportScope
 import org.eclipse.xtext.ui.editor.contentassist.ContentAssistContext
 import org.eclipse.xtext.ui.editor.contentassist.ITemplateAcceptor
 import org.eclipse.xtext.ui.editor.templates.ContextTypeIdHelper
 import org.eclipse.xtext.ui.editor.templates.DefaultTemplateProposalProvider
 import org.eclipse.xtext.ui.editor.templates.XtextTemplateContext
-import de.unidue.ecg.characterScript.characterScript.Template
 
 class CharacterScriptTemplateProposalProvider extends DefaultTemplateProposalProvider {
 
@@ -73,9 +72,9 @@ class CharacterScriptTemplateProposalProvider extends DefaultTemplateProposalPro
 			source.name,
 			'''
 				character ${name} uses «source.name»
-					«FOR d : source.defaults»
-						«d.createDefaultTemplateEntry»
-					«ENDFOR»
+					// default attributes 
+					«createDefaultTemplateEntries»
+					// template attributes
 					«FOR c : source.customs»
 						«c.createCustomTemplateEntry»
 					«ENDFOR»
@@ -92,12 +91,12 @@ class CharacterScriptTemplateProposalProvider extends DefaultTemplateProposalPro
 		var result = ""
 		result = result + attribute.caName.name + " "
 		result = result + attribute.createCustomValueTemplateExpression + " "
-		result
+		return result
 	}
 
 	def createCustomValueTemplateExpression(CustomAttribute attribute) {
 		if (!attribute.enumValues.empty) {
-			return "${" + attribute.enumValues?.get(0).name + ":Enum('value')}"
+			return "(${" + attribute.enumValues?.get(0).name + ":Enum('value')})"
 		}
 		switch (attribute.type.getName()) {
 			case "NUMBER": return "${" + (this.numberTemplateCounter = this.numberTemplateCounter + 1) + "}"
@@ -105,15 +104,14 @@ class CharacterScriptTemplateProposalProvider extends DefaultTemplateProposalPro
 		}
 	}
 
-	def createDefaultTemplateEntry(String key) {
-		var result = ""
-		val defaultsHelper = LanguageUtil.defaultAttributes
-		val defaultHelper = defaultsHelper.get(key)
-
-		if (defaultHelper != null) {
-			result = result + defaultHelper.name + " "
-			result = result + defaultHelper.createDefaultValueTemplateExpression + " "
+	def createDefaultTemplateEntries() {
+		val defaults = LanguageUtil.defaultAttributes.values
+		var result = ''
+		for(v:defaults) {
+			result = result + v.name + " "
+			result = result + v.createDefaultValueTemplateExpression + "\n"
 		}
+
 		result
 	}
 

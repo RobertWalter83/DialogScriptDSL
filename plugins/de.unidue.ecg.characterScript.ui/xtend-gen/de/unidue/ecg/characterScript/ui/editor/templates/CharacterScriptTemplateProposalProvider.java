@@ -11,6 +11,7 @@ import de.unidue.ecg.characterScript.services.CharacterScriptGrammarAccess;
 import de.unidue.ecg.characterScript.util.DefaultAttributeHelper;
 import de.unidue.ecg.characterScript.util.LanguageUtil;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
@@ -112,15 +113,16 @@ public class CharacterScriptTemplateProposalProvider extends DefaultTemplateProp
     String _name_3 = source.getName();
     _builder.append(_name_3, "");
     _builder.newLineIfNotEmpty();
-    {
-      EList<String> _defaults = source.getDefaults();
-      for(final String d : _defaults) {
-        _builder.append("\t");
-        String _createDefaultTemplateEntry = this.createDefaultTemplateEntry(d);
-        _builder.append(_createDefaultTemplateEntry, "	");
-        _builder.newLineIfNotEmpty();
-      }
-    }
+    _builder.append("\t");
+    _builder.append("// default attributes ");
+    _builder.newLine();
+    _builder.append("\t");
+    String _createDefaultTemplateEntries = this.createDefaultTemplateEntries();
+    _builder.append(_createDefaultTemplateEntries, "	");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t");
+    _builder.append("// template attributes");
+    _builder.newLine();
     {
       EList<CustomAttribute> _customs = source.getCustoms();
       for(final CustomAttribute c : _customs) {
@@ -142,21 +144,17 @@ public class CharacterScriptTemplateProposalProvider extends DefaultTemplateProp
   }
   
   public String createCustomTemplateEntry(final CustomAttribute attribute) {
-    String _xblockexpression = null;
-    {
-      String result = "";
-      CustomAttributeName _caName = attribute.getCaName();
-      String _name = _caName.getName();
-      String _plus = (result + _name);
-      String _plus_1 = (_plus + " ");
-      result = _plus_1;
-      String _createCustomValueTemplateExpression = this.createCustomValueTemplateExpression(attribute);
-      String _plus_2 = (result + _createCustomValueTemplateExpression);
-      String _plus_3 = (_plus_2 + " ");
-      result = _plus_3;
-      _xblockexpression = (result);
-    }
-    return _xblockexpression;
+    String result = "";
+    CustomAttributeName _caName = attribute.getCaName();
+    String _name = _caName.getName();
+    String _plus = (result + _name);
+    String _plus_1 = (_plus + " ");
+    result = _plus_1;
+    String _createCustomValueTemplateExpression = this.createCustomValueTemplateExpression(attribute);
+    String _plus_2 = (result + _createCustomValueTemplateExpression);
+    String _plus_3 = (_plus_2 + " ");
+    result = _plus_3;
+    return result;
   }
   
   public String createCustomValueTemplateExpression(final CustomAttribute attribute) {
@@ -172,8 +170,8 @@ public class CharacterScriptTemplateProposalProvider extends DefaultTemplateProp
           _get=_enumValues_1.get(0);
         }
         String _name = _get.getName();
-        String _plus = ("${" + _name);
-        return (_plus + ":Enum(\'value\')}");
+        String _plus = ("(${" + _name);
+        return (_plus + ":Enum(\'value\')})");
       }
       String _switchResult = null;
       AttributeType _type = attribute.getType();
@@ -204,22 +202,23 @@ public class CharacterScriptTemplateProposalProvider extends DefaultTemplateProp
     return _xblockexpression;
   }
   
-  public String createDefaultTemplateEntry(final String key) {
+  public String createDefaultTemplateEntries() {
     String _xblockexpression = null;
     {
+      HashMap<String,DefaultAttributeHelper> _defaultAttributes = LanguageUtil.getDefaultAttributes();
+      final Collection<DefaultAttributeHelper> defaults = _defaultAttributes.values();
       String result = "";
-      final HashMap<String,DefaultAttributeHelper> defaultsHelper = LanguageUtil.getDefaultAttributes();
-      final DefaultAttributeHelper defaultHelper = defaultsHelper.get(key);
-      boolean _notEquals = (!Objects.equal(defaultHelper, null));
-      if (_notEquals) {
-        String _name = defaultHelper.getName();
-        String _plus = (result + _name);
-        String _plus_1 = (_plus + " ");
-        result = _plus_1;
-        String _createDefaultValueTemplateExpression = this.createDefaultValueTemplateExpression(defaultHelper);
-        String _plus_2 = (result + _createDefaultValueTemplateExpression);
-        String _plus_3 = (_plus_2 + " ");
-        result = _plus_3;
+      for (final DefaultAttributeHelper v : defaults) {
+        {
+          String _name = v.getName();
+          String _plus = (result + _name);
+          String _plus_1 = (_plus + " ");
+          result = _plus_1;
+          String _createDefaultValueTemplateExpression = this.createDefaultValueTemplateExpression(v);
+          String _plus_2 = (result + _createDefaultValueTemplateExpression);
+          String _plus_3 = (_plus_2 + "\n");
+          result = _plus_3;
+        }
       }
       _xblockexpression = (result);
     }

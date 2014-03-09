@@ -8,6 +8,8 @@ import com.google.common.collect.Iterables;
 import com.google.inject.Inject;
 import de.unidue.ecg.characterScript.characterScript.Age;
 import de.unidue.ecg.characterScript.characterScript.AttributeType;
+import de.unidue.ecg.characterScript.characterScript.CharaSex;
+import de.unidue.ecg.characterScript.characterScript.CharaType;
 import de.unidue.ecg.characterScript.characterScript.CharacterScriptFactory;
 import de.unidue.ecg.characterScript.characterScript.CharacterScriptPackage;
 import de.unidue.ecg.characterScript.characterScript.Characters;
@@ -28,6 +30,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.EcoreUtil2;
+import org.eclipse.xtext.Keyword;
 import org.eclipse.xtext.diagnostics.Diagnostic;
 import org.eclipse.xtext.nodemodel.BidiTreeIterable;
 import org.eclipse.xtext.nodemodel.ICompositeNode;
@@ -62,6 +65,147 @@ public class CharacterScriptQuickfixProvider extends DefaultQuickfixProvider {
     final String linkText = _data[0];
     this.addImportTemplateFix(issue, acceptor, linkText);
     this.addLocalTemplateFix(issue, acceptor, linkText);
+  }
+  
+  @Fix(CharacterScriptValidator.MISSING_REQUIRED_DEFAULT)
+  public void addRequiredDefault(final Issue issue, final IssueResolutionAcceptor acceptor) {
+    String[] _data = issue.getData();
+    final String propName = _data[0];
+    String _plus = ("Add missing attribute \'" + propName);
+    String _plus_1 = (_plus + "\'");
+    String _plus_2 = ("Add missing attribute \'" + propName);
+    String _plus_3 = (_plus_2 + "\'");
+    final ISemanticModification _function = new ISemanticModification() {
+      public void apply(final EObject element, final IModificationContext context) throws Exception {
+        if ((element instanceof de.unidue.ecg.characterScript.characterScript.Character)) {
+          final de.unidue.ecg.characterScript.characterScript.Character character = ((de.unidue.ecg.characterScript.characterScript.Character) element);
+          final Template template = character.getTemplate();
+          boolean _notEquals = (!Objects.equal(template, null));
+          if (_notEquals) {
+            boolean _matched = false;
+            if (!_matched) {
+              if (Objects.equal(propName,"full name")) {
+                _matched=true;
+                final FullName property = CharacterScriptFactory.eINSTANCE.createFullName();
+                property.setValue("XYZ");
+                property.setComment("[FIX ME!]");
+                EList<Property> _properties = character.getProperties();
+                _properties.add(property);
+              }
+            }
+            if (!_matched) {
+              if (Objects.equal(propName,"sex")) {
+                _matched=true;
+                final Sex property_1 = CharacterScriptFactory.eINSTANCE.createSex();
+                property_1.setValue(CharaSex.FEMALE);
+                property_1.setComment("[FIX ME!]");
+                EList<Property> _properties_1 = character.getProperties();
+                _properties_1.add(property_1);
+              }
+            }
+            if (!_matched) {
+              if (Objects.equal(propName,"type")) {
+                _matched=true;
+                final Type property_2 = CharacterScriptFactory.eINSTANCE.createType();
+                property_2.setValue(CharaType.PC);
+                property_2.setComment("[FIX ME!]");
+                EList<Property> _properties_2 = character.getProperties();
+                _properties_2.add(property_2);
+              }
+            }
+            if (!_matched) {
+              if (Objects.equal(propName,"age")) {
+                _matched=true;
+                final Age property_3 = CharacterScriptFactory.eINSTANCE.createAge();
+                property_3.setValue(0);
+                property_3.setComment("[FIX ME!]");
+                EList<Property> _properties_3 = character.getProperties();
+                _properties_3.add(property_3);
+              }
+            }
+            if (!_matched) {
+              if (Objects.equal(propName,"description")) {
+                _matched=true;
+                final Description property_4 = CharacterScriptFactory.eINSTANCE.createDescription();
+                property_4.setValue("XYZ");
+                property_4.setComment("[FIX ME!]");
+                EList<Property> _properties_4 = character.getProperties();
+                _properties_4.add(property_4);
+              }
+            }
+          }
+        }
+      }
+    };
+    acceptor.accept(issue, _plus_1, _plus_3, null, _function);
+  }
+  
+  @Fix(CharacterScriptValidator.MISSING_REQUIRED_CUSTOM)
+  public void addRequiredCustom(final Issue issue, final IssueResolutionAcceptor acceptor) {
+    String[] _data = issue.getData();
+    final String propName = _data[0];
+    String[] _data_1 = issue.getData();
+    final String propValue = _data_1[1];
+    String _plus = ("Add missing attribute \'" + propName);
+    String _plus_1 = (_plus + "\'");
+    String _plus_2 = ("Add missing attribute \'" + propName);
+    String _plus_3 = (_plus_2 + "\'");
+    final ISemanticModification _function = new ISemanticModification() {
+      public void apply(final EObject element, final IModificationContext context) throws Exception {
+        if ((element instanceof de.unidue.ecg.characterScript.characterScript.Character)) {
+          final de.unidue.ecg.characterScript.characterScript.Character character = ((de.unidue.ecg.characterScript.characterScript.Character) element);
+          final Template template = character.getTemplate();
+          boolean _notEquals = (!Objects.equal(template, null));
+          if (_notEquals) {
+            final CustomProperty property = CharacterScriptFactory.eINSTANCE.createCustomProperty();
+            EList<CustomAttribute> _customs = template.getCustoms();
+            final Function1<CustomAttribute,Boolean> _function = new Function1<CustomAttribute,Boolean>() {
+              public Boolean apply(final CustomAttribute it) {
+                CustomAttributeName _caName = it.getCaName();
+                String _name = _caName.getName();
+                boolean _equals = _name.equals(propName);
+                return Boolean.valueOf(_equals);
+              }
+            };
+            final CustomAttribute ca = IterableExtensions.<CustomAttribute>findFirst(_customs, _function);
+            CustomAttributeName _caName = ca.getCaName();
+            property.setCustomAttributeRef(_caName);
+            EList<EnumValue> _enumValues = ca.getEnumValues();
+            boolean _isEmpty = _enumValues.isEmpty();
+            boolean _not = (!_isEmpty);
+            if (_not) {
+              EList<EnumValue> _enumValues_1 = ca.getEnumValues();
+              EnumValue _get = null;
+              if (_enumValues_1!=null) {
+                _get=_enumValues_1.get(0);
+              }
+              property.setEnumValue(_get);
+            } else {
+              AttributeType _type = ca.getType();
+              String _name = _type.getName();
+              final String _switchValue = _name;
+              boolean _matched = false;
+              if (!_matched) {
+                if (Objects.equal(_switchValue,"NUMBER")) {
+                  _matched=true;
+                  int _parseInt = Integer.parseInt(propValue);
+                  property.setIntValue(_parseInt);
+                }
+              }
+              if (!_matched) {
+                if (Objects.equal(_switchValue,"TEXT")) {
+                  _matched=true;
+                  property.setStringValue(propValue);
+                }
+              }
+            }
+            EList<Property> _properties = character.getProperties();
+            _properties.add(property);
+          }
+        }
+      }
+    };
+    acceptor.accept(issue, _plus_1, _plus_3, null, _function);
   }
   
   public void addImportTemplateFix(final Issue issue, final IssueResolutionAcceptor acceptor, final String linkText) {
@@ -161,8 +305,16 @@ public class CharacterScriptQuickfixProvider extends DefaultQuickfixProvider {
                     Iterable<LeafNode> _filter = Iterables.<LeafNode>filter(_asTreeIterable, LeafNode.class);
                     final Function1<LeafNode,Boolean> _function = new Function1<LeafNode,Boolean>() {
                       public Boolean apply(final LeafNode it) {
+                        boolean _and = false;
                         boolean _not = (!(it instanceof HiddenLeafNode));
-                        return Boolean.valueOf(_not);
+                        if (!_not) {
+                          _and = false;
+                        } else {
+                          EObject _grammarElement = it.getGrammarElement();
+                          boolean _not_1 = (!(_grammarElement instanceof Keyword));
+                          _and = (_not && _not_1);
+                        }
+                        return Boolean.valueOf(_and);
                       }
                     };
                     final Iterable<LeafNode> nodeCandidates = IterableExtensions.<LeafNode>filter(_filter, _function);
@@ -197,6 +349,7 @@ public class CharacterScriptQuickfixProvider extends DefaultQuickfixProvider {
                           ca.setType(AttributeType.NUMBER);
                         }
                       }
+                      ca.setRequired("!");
                       EList<CustomAttribute> _customs = template.getCustoms();
                       _customs.add(ca);
                     }
