@@ -3,4 +3,5 @@
 bin/
 *.tests/
 *.java._trace
-*.xtend-gen
+xtend-gen/
+deployment/
