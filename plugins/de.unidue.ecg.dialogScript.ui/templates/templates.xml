@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <templates>
 	<template autoinsert="true"
-		context="de.unidue.ecg.dialogScript.DialogScript.CharactersDefintion"
+		context="de.unidue.ecg.dialogScript.DialogScript.CharactersDefinition"
 		deleted="false" description="insert characters definition template"
 		enabled="true" id="CharactersDefinitionTemplate" name="template: characters definition">characters: ${character1}, ${character2}
 </template>
@@ -22,7 +22,7 @@
 		context="de.unidue.ecg.dialogScript.DialogScript.ConditionsDefinition"
 		deleted="false" description="insert conditions definition template"
 		enabled="true" id="ConditionsDefinitionTemplate" name="template: conditions definition">conditions 
-	${Condition} when ${switch1:CrossReference('Switch.switch')} is ${value1:Enum('SwitchValue')} and ${switch2:CrossReference('Switch.switch')} is ${value2:Enum('SwitchValue')}
+	set ${Condition} when ${switch1:CrossReference('Switch.switch')} is ${value1:Enum('SwitchValue')} and ${switch2:CrossReference('Switch.switch')} is ${value2:Enum('SwitchValue')}
 	${cursor}
 end
 	</template>
@@ -34,7 +34,7 @@ end
 	<template autoinsert="true"
 		context="de.unidue.ecg.dialogScript.DialogScript.ConditionDefinition"
 		deleted="false" description="insert condition definition template"
-		enabled="true" id="ConditionDefinitionTemplate" name="template: condition">${Condition} when ${switch1:CrossReference('Switch.switch')} is ${off:Enum('SwitchValue')} 
+		enabled="true" id="ConditionDefinitionTemplate" name="template: condition">set ${Condition} when ${switch1:CrossReference('Switch.switch')} is ${off:Enum('SwitchValue')} 
 </template>
 	<template autoinsert="true"
 		context="de.unidue.ecg.dialogScript.DialogScript.Defaults"
@@ -171,19 +171,19 @@ end scene</template>
 ${cursor}
 	</template>
 	<template autoinsert="true"
-		context="de.unidue.ecg.dialogScript.DialogScript.CharactersDefintion"
+		context="de.unidue.ecg.dialogScript.DialogScript.CharactersDefinition"
 		deleted="false" description="insert complete sample scene" enabled="true"
 		id="CompleteSceneExample" name="example script: complete scene">characters: Scout, Skull
 switches: talked_Skull is off, name, blinky_Nigel, skull_Nigel, pole,
 skull_Rock, skull_Moved
 
 conditions
-	HasTalkedSkull when talked_Skull is off
-	HasTalkedPole when pole is off
-	HasTalkedSkullRock when skull_Rock is off
-	HasNotTalkedJake when name is off
-	KnowsNameIsNigel when blinky_Nigel is on and skull_Nigel is off
-	IsSkullMoved when skull_Moved is on
+	set HasTalkedSkull when talked_Skull is off
+	set HasTalkedPole when pole is off
+	set HasTalkedSkullRock when skull_Rock is off
+	set HasNotTalkedJake when name is off
+	set KnowsNameIsNigel when blinky_Nigel is on and skull_Nigel is off
+	set IsSkullMoved when skull_Moved is on
 end
 
 scene "Larger Scene Sample"
@@ -294,26 +294,26 @@ scene "Larger Scene Sample"
 end scene
 	</template>
 	<template autoinsert="true"
-		context="de.unidue.ecg.dialogScript.DialogScript.CharactersDefintion"
+		context="de.unidue.ecg.dialogScript.DialogScript.CharactersDefinition"
 		deleted="false" description="insert Heavy Rain sample" enabled="true"
 		id="HeavyRainSceneSample" name="example script: Heavy Rain">characters: LAUREN, SCOTT
 switches: convince, compassionate, persist, trick, buy, disappearance, johnny, johnnysHome, 
 		  suspect, inRoomCenter is on, offerCigarette, police, johnnysFather, leads
 
 conditions
-	UnlockPhase2A 		   when convince      is on and compassionate  is on
-	UnlockPhase2B 		   when convince      is on and persist        is on
-	UnlockPhase2C 		   when compassionate is on and persist        is on
-	TriedToBuy    		   when buy           is on
-	HasTalkedDisappearance when disappearance is on
-	HasTalkedJohnny        when johnny        is on
-	HasTalkedJohnnysHome   when johnnysHome   is on
-	HasTalkedSuspect       when suspect       is on
-	HasntOfferedCigarette  when inRoomCenter  is on and offerCigarette is off
-	TimesUpA			   when police 		  is on and johnnysFather  is on
-	TimesUpB			   when police 		  is on and leads 		   is on
-	TimesUpC			   when leads 		  is on and johnnysFather  is on
-	TimesUpD			   when leads		  is on and johnnysFather  is on and police is on
+	set UnlockPhase2A 		   when convince      is on and compassionate  is on
+	set UnlockPhase2B 		   when convince      is on and persist        is on
+	set UnlockPhase2C 		   when compassionate is on and persist        is on
+	set TriedToBuy    		   when buy           is on
+	set HasTalkedDisappearance when disappearance is on
+	set HasTalkedJohnny        when johnny        is on
+	set HasTalkedJohnnysHome   when johnnysHome   is on
+	set HasTalkedSuspect       when suspect       is on
+	set HasntOfferedCigarette  when inRoomCenter  is on and offerCigarette is off
+	set TimesUpA			   when police 		  is on and johnnysFather  is on
+	set TimesUpB			   when police 		  is on and leads 		   is on
+	set TimesUpC			   when leads 		  is on and johnnysFather  is on
+	set TimesUpD			   when leads		  is on and johnnysFather  is on and police is on
 end	
 
 scene "LAUREN’S MOTEL ROOM. EVENING" 
@@ -466,16 +466,16 @@ scene "LAUREN’S MOTEL ROOM. EVENING"
 end scene
 	</template>
 	<template autoinsert="true"
-		context="de.unidue.ecg.dialogScript.DialogScript.CharactersDefintion"
+		context="de.unidue.ecg.dialogScript.DialogScript.CharactersDefinition"
 		deleted="false" description="insert Risen sample" enabled="true"
 		id="RisenSceneSample" name="example script: Risen">characters: PROTAGONIST, JAN
 switches: place, foodOrGold, safe, offer, harbourTownQuest, followJanToTheWest
 
 conditions
-	AskedAboutPlace when place is on
-	AskedAboutFoodOrGold when foodOrGold is on 
-	AskedAboutSafety when safe is on
-	TalkedOffer when offer is on  
+	set AskedAboutPlace when place is on
+	set AskedAboutFoodOrGold when foodOrGold is on 
+	set AskedAboutSafety when safe is on
+	set TalkedOffer when offer is on  
 end
 
 scene "BANDIT OUTPOST"
@@ -588,20 +588,20 @@ scene "BANDIT OUTPOST"
 end scene
 	</template>
 	<template autoinsert="true"
-		context="de.unidue.ecg.dialogScript.DialogScript.CharactersDefintion"
+		context="de.unidue.ecg.dialogScript.DialogScript.CharactersDefinition"
 		deleted="false" description="insert Mass Effect 2 sample" enabled="true"
 		id="ME2SceneSample" name="example script: Mass Effect 2">characters: EDI, SHEPARD, GRUNT
 switches: openTank, gaveName, phase5, convinced, playerShoots, shooting,
 hasShot
 
 conditions
-	OpenTank when openTank is on
-	KnowsName when gaveName is on
-	Phase5 when phase5 is on
-	GruntIsConvinced when convinced is on
-	PlayerShoots when playerShoots is on
-	EndsWithShooting when shooting is on
-	DoneShooting when hasShot is on
+	set OpenTank when openTank is on
+	set KnowsName when gaveName is on
+	set Phase5 when phase5 is on
+	set GruntIsConvinced when convinced is on
+	set PlayerShoots when playerShoots is on
+	set EndsWithShooting when shooting is on
+	set DoneShooting when hasShot is on
 end
 
 scene "NORMANDY SR-2. PORT CARGO. OPENING THE TANK."
@@ -805,7 +805,7 @@ scene "NORMANDY SR-2. PORT CARGO. RECRUITING GRUNT."
 end scene
 	</template>
 	<template autoinsert="true"
-		context="de.unidue.ecg.dialogScript.DialogScript.CharactersDefintion"
+		context="de.unidue.ecg.dialogScript.DialogScript.CharactersDefinition"
 		deleted="false" description="insert minimal sample scene" enabled="true"
 		id="MinimalSceneExample" name="example script: minimal scene">characters: Tom, Jerry
 
@@ -817,7 +817,7 @@ scene "minimal scene sample"
 end scene
 	</template>	
 	<template autoinsert="true"
-		context="de.unidue.ecg.dialogScript.DialogScript.CharactersDefintion"
+		context="de.unidue.ecg.dialogScript.DialogScript.CharactersDefinition"
 		deleted="false" description="insert empty scene + hints" enabled="true"
 		id="HintTemplate" name="template: empty scene + hints">/* Some useful shortcuts
  * CTRL+SPACE: Get context sensitive help at the current cursor position
@@ -827,7 +827,7 @@ characters: ${commaSeparatedListOfCharacterNames}
 switches: ${switch1} is ${value1:Enum('SwitchValue')}, ${switch2} is ${value2:Enum('SwitchValue')}, ${switch3} is ${value3:Enum('SwitchValue')}
 
 conditions 
-	${Condition} when ${switch1:CrossReference('Switch.switch')} is ${value4:Enum('SwitchValue')} and ${switch2:CrossReference('Switch.switch')} is ${value5:Enum('SwitchValue')}
+	set ${Condition} when ${switch1:CrossReference('Switch.switch')} is ${value4:Enum('SwitchValue')} and ${switch2:CrossReference('Switch.switch')} is ${value5:Enum('SwitchValue')}
 end
 
 scene "${sceneName}"

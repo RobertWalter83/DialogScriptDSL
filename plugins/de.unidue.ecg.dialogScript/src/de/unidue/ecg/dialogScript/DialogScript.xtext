@@ -1,20 +1,21 @@
 grammar de.unidue.ecg.dialogScript.DialogScript with org.eclipse.xtext.common.Terminals
 
 generate dialogScript "http://www.unidue.de/ecg/dialogScript/DialogScript"
-import "http://www.unidue.de/ecg/characterScript/CharacterScript" as chara
+//import "http://www.unidue.de/ecg/characterScript/CharacterScript" as chara
 
 Script:
 	{Script}
-	charactersDefinition=CharactersDefintion?
+	charactersDefinition=CharactersDefinition?
 	switchesDefinition=SwitchesDefinition?
 	conditionsDefinition=ConditionsDefinition?
 	scenes+=Scene*;
 
-CharactersDefintion:
+CharactersDefinition:
 	'characters' ':' characters+=CharacterDefinition (',' characters+=CharacterDefinition)*;
 
 CharacterDefinition:
-	importedNamespace=ID;
+	name=ID;
+	//	importedNamespace=ID;
 
 SwitchesDefinition:
 	'switches' ':' switches+=SwitchDefinition (',' switches+=SwitchDefinition)*;
@@ -28,7 +29,7 @@ ConditionsDefinition:
 	'end';
 
 ConditionDefinition:
-	name=ID 'when' switchList=SwitchList;
+	'set' name=ID 'when' switchList=SwitchList;
 
 Scene:
 	{Scene}
@@ -152,8 +153,8 @@ SwitchOn:
 	'switch' 'on' sets+=[SwitchDefinition] (',' sets+=[SwitchDefinition])* comment=COMMENT?;
 
 DialogLine:
-	character=[chara::Character] ':' lines=StringID comment=COMMENT?;
-	//character=[CharacterDefinition] ':' lines=StringID comment=COMMENT?;
+	//character=[chara::Character] ':' lines=StringID comment=COMMENT?;
+	character=[CharacterDefinition] ':' lines=StringID comment=COMMENT?;
 
 terminal COMMENT:
 	'['->']';

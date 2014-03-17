@@ -2,6 +2,7 @@
  */
 package de.unidue.ecg.dialogScript.dialogScript.impl;
 
+import de.unidue.ecg.dialogScript.dialogScript.CharacterDefinition;
 import de.unidue.ecg.dialogScript.dialogScript.DialogLine;
 import de.unidue.ecg.dialogScript.dialogScript.DialogScriptPackage;
 
@@ -37,7 +38,7 @@ public class DialogLineImpl extends RecursiveImpl implements DialogLine
    * @generated
    * @ordered
    */
-  protected de.unidue.ecg.characterScript.characterScript.Character character;
+  protected CharacterDefinition character;
 
   /**
    * The default value of the '{@link #getLines() <em>Lines</em>}' attribute.
@@ -105,12 +106,12 @@ public class DialogLineImpl extends RecursiveImpl implements DialogLine
    * <!-- end-user-doc -->
    * @generated
    */
-  public de.unidue.ecg.characterScript.characterScript.Character getCharacter()
+  public CharacterDefinition getCharacter()
   {
     if (character != null && character.eIsProxy())
     {
       InternalEObject oldCharacter = (InternalEObject)character;
-      character = (de.unidue.ecg.characterScript.characterScript.Character)eResolveProxy(oldCharacter);
+      character = (CharacterDefinition)eResolveProxy(oldCharacter);
       if (character != oldCharacter)
       {
         if (eNotificationRequired())
@@ -125,7 +126,7 @@ public class DialogLineImpl extends RecursiveImpl implements DialogLine
    * <!-- end-user-doc -->
    * @generated
    */
-  public de.unidue.ecg.characterScript.characterScript.Character basicGetCharacter()
+  public CharacterDefinition basicGetCharacter()
   {
     return character;
   }
@@ -135,9 +136,9 @@ public class DialogLineImpl extends RecursiveImpl implements DialogLine
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setCharacter(de.unidue.ecg.characterScript.characterScript.Character newCharacter)
+  public void setCharacter(CharacterDefinition newCharacter)
   {
-    de.unidue.ecg.characterScript.characterScript.Character oldCharacter = character;
+    CharacterDefinition oldCharacter = character;
     character = newCharacter;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, DialogScriptPackage.DIALOG_LINE__CHARACTER, oldCharacter, character));
@@ -221,7 +222,7 @@ public class DialogLineImpl extends RecursiveImpl implements DialogLine
     switch (featureID)
     {
       case DialogScriptPackage.DIALOG_LINE__CHARACTER:
-        setCharacter((de.unidue.ecg.characterScript.characterScript.Character)newValue);
+        setCharacter((CharacterDefinition)newValue);
         return;
       case DialogScriptPackage.DIALOG_LINE__LINES:
         setLines((String)newValue);
@@ -244,7 +245,7 @@ public class DialogLineImpl extends RecursiveImpl implements DialogLine
     switch (featureID)
     {
       case DialogScriptPackage.DIALOG_LINE__CHARACTER:
-        setCharacter((de.unidue.ecg.characterScript.characterScript.Character)null);
+        setCharacter((CharacterDefinition)null);
         return;
       case DialogScriptPackage.DIALOG_LINE__LINES:
         setLines(LINES_EDEFAULT);

@@ -3,7 +3,7 @@
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="dialogScript" nsURI="http://www.unidue.de/ecg/dialogScript/DialogScript"
     nsPrefix="dialogScript">
   <eClassifiers xsi:type="ecore:EClass" name="Script">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="charactersDefinition" eType="#//CharactersDefintion"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="charactersDefinition" eType="#//CharactersDefinition"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="switchesDefinition" eType="#//SwitchesDefinition"
         containment="true"/>
@@ -12,12 +12,12 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="scenes" upperBound="-1"
         eType="#//Scene" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="CharactersDefintion">
+  <eClassifiers xsi:type="ecore:EClass" name="CharactersDefinition">
     <eStructuralFeatures xsi:type="ecore:EReference" name="characters" upperBound="-1"
         eType="#//CharacterDefinition" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CharacterDefinition">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="importedNamespace" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SwitchesDefinition">
     <eStructuralFeatures xsi:type="ecore:EReference" name="switches" upperBound="-1"
@@ -179,7 +179,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="comment" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DialogLine" eSuperTypes="#//Recursive #//Statement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="character" eType="ecore:EClass ../../../../../../de.unidue.ecg.characterScript/src-gen/de/unidue/ecg/characterScript/CharacterScript.ecore#//Character"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="character" eType="#//CharacterDefinition"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="lines" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="comment" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>

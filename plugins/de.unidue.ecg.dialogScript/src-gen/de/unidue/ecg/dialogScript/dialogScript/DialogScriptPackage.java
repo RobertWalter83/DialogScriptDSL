@@ -113,14 +113,14 @@ public interface DialogScriptPackage extends EPackage
   int SCRIPT_FEATURE_COUNT = 4;
 
   /**
-   * The meta object id for the '{@link de.unidue.ecg.dialogScript.dialogScript.impl.CharactersDefintionImpl <em>Characters Defintion</em>}' class.
+   * The meta object id for the '{@link de.unidue.ecg.dialogScript.dialogScript.impl.CharactersDefinitionImpl <em>Characters Definition</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see de.unidue.ecg.dialogScript.dialogScript.impl.CharactersDefintionImpl
-   * @see de.unidue.ecg.dialogScript.dialogScript.impl.DialogScriptPackageImpl#getCharactersDefintion()
+   * @see de.unidue.ecg.dialogScript.dialogScript.impl.CharactersDefinitionImpl
+   * @see de.unidue.ecg.dialogScript.dialogScript.impl.DialogScriptPackageImpl#getCharactersDefinition()
    * @generated
    */
-  int CHARACTERS_DEFINTION = 1;
+  int CHARACTERS_DEFINITION = 1;
 
   /**
    * The feature id for the '<em><b>Characters</b></em>' containment reference list.
@@ -129,16 +129,16 @@ public interface DialogScriptPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CHARACTERS_DEFINTION__CHARACTERS = 0;
+  int CHARACTERS_DEFINITION__CHARACTERS = 0;
 
   /**
-   * The number of structural features of the '<em>Characters Defintion</em>' class.
+   * The number of structural features of the '<em>Characters Definition</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CHARACTERS_DEFINTION_FEATURE_COUNT = 1;
+  int CHARACTERS_DEFINITION_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link de.unidue.ecg.dialogScript.dialogScript.impl.CharacterDefinitionImpl <em>Character Definition</em>}' class.
@@ -151,13 +151,13 @@ public interface DialogScriptPackage extends EPackage
   int CHARACTER_DEFINITION = 2;
 
   /**
-   * The feature id for the '<em><b>Imported Namespace</b></em>' attribute.
+   * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CHARACTER_DEFINITION__IMPORTED_NAMESPACE = 0;
+  int CHARACTER_DEFINITION__NAME = 0;
 
   /**
    * The number of structural features of the '<em>Character Definition</em>' class.
@@ -1417,25 +1417,25 @@ public interface DialogScriptPackage extends EPackage
   EReference getScript_Scenes();
 
   /**
-   * Returns the meta object for class '{@link de.unidue.ecg.dialogScript.dialogScript.CharactersDefintion <em>Characters Defintion</em>}'.
+   * Returns the meta object for class '{@link de.unidue.ecg.dialogScript.dialogScript.CharactersDefinition <em>Characters Definition</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Characters Defintion</em>'.
-   * @see de.unidue.ecg.dialogScript.dialogScript.CharactersDefintion
+   * @return the meta object for class '<em>Characters Definition</em>'.
+   * @see de.unidue.ecg.dialogScript.dialogScript.CharactersDefinition
    * @generated
    */
-  EClass getCharactersDefintion();
+  EClass getCharactersDefinition();
 
   /**
-   * Returns the meta object for the containment reference list '{@link de.unidue.ecg.dialogScript.dialogScript.CharactersDefintion#getCharacters <em>Characters</em>}'.
+   * Returns the meta object for the containment reference list '{@link de.unidue.ecg.dialogScript.dialogScript.CharactersDefinition#getCharacters <em>Characters</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Characters</em>'.
-   * @see de.unidue.ecg.dialogScript.dialogScript.CharactersDefintion#getCharacters()
-   * @see #getCharactersDefintion()
+   * @see de.unidue.ecg.dialogScript.dialogScript.CharactersDefinition#getCharacters()
+   * @see #getCharactersDefinition()
    * @generated
    */
-  EReference getCharactersDefintion_Characters();
+  EReference getCharactersDefinition_Characters();
 
   /**
    * Returns the meta object for class '{@link de.unidue.ecg.dialogScript.dialogScript.CharacterDefinition <em>Character Definition</em>}'.
@@ -1448,15 +1448,15 @@ public interface DialogScriptPackage extends EPackage
   EClass getCharacterDefinition();
 
   /**
-   * Returns the meta object for the attribute '{@link de.unidue.ecg.dialogScript.dialogScript.CharacterDefinition#getImportedNamespace <em>Imported Namespace</em>}'.
+   * Returns the meta object for the attribute '{@link de.unidue.ecg.dialogScript.dialogScript.CharacterDefinition#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Imported Namespace</em>'.
-   * @see de.unidue.ecg.dialogScript.dialogScript.CharacterDefinition#getImportedNamespace()
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see de.unidue.ecg.dialogScript.dialogScript.CharacterDefinition#getName()
    * @see #getCharacterDefinition()
    * @generated
    */
-  EAttribute getCharacterDefinition_ImportedNamespace();
+  EAttribute getCharacterDefinition_Name();
 
   /**
    * Returns the meta object for class '{@link de.unidue.ecg.dialogScript.dialogScript.SwitchesDefinition <em>Switches Definition</em>}'.
@@ -2548,14 +2548,14 @@ public interface DialogScriptPackage extends EPackage
     EReference SCRIPT__SCENES = eINSTANCE.getScript_Scenes();
 
     /**
-     * The meta object literal for the '{@link de.unidue.ecg.dialogScript.dialogScript.impl.CharactersDefintionImpl <em>Characters Defintion</em>}' class.
+     * The meta object literal for the '{@link de.unidue.ecg.dialogScript.dialogScript.impl.CharactersDefinitionImpl <em>Characters Definition</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see de.unidue.ecg.dialogScript.dialogScript.impl.CharactersDefintionImpl
-     * @see de.unidue.ecg.dialogScript.dialogScript.impl.DialogScriptPackageImpl#getCharactersDefintion()
+     * @see de.unidue.ecg.dialogScript.dialogScript.impl.CharactersDefinitionImpl
+     * @see de.unidue.ecg.dialogScript.dialogScript.impl.DialogScriptPackageImpl#getCharactersDefinition()
      * @generated
      */
-    EClass CHARACTERS_DEFINTION = eINSTANCE.getCharactersDefintion();
+    EClass CHARACTERS_DEFINITION = eINSTANCE.getCharactersDefinition();
 
     /**
      * The meta object literal for the '<em><b>Characters</b></em>' containment reference list feature.
@@ -2563,7 +2563,7 @@ public interface DialogScriptPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference CHARACTERS_DEFINTION__CHARACTERS = eINSTANCE.getCharactersDefintion_Characters();
+    EReference CHARACTERS_DEFINITION__CHARACTERS = eINSTANCE.getCharactersDefinition_Characters();
 
     /**
      * The meta object literal for the '{@link de.unidue.ecg.dialogScript.dialogScript.impl.CharacterDefinitionImpl <em>Character Definition</em>}' class.
@@ -2576,12 +2576,12 @@ public interface DialogScriptPackage extends EPackage
     EClass CHARACTER_DEFINITION = eINSTANCE.getCharacterDefinition();
 
     /**
-     * The meta object literal for the '<em><b>Imported Namespace</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute CHARACTER_DEFINITION__IMPORTED_NAMESPACE = eINSTANCE.getCharacterDefinition_ImportedNamespace();
+    EAttribute CHARACTER_DEFINITION__NAME = eINSTANCE.getCharacterDefinition_Name();
 
     /**
      * The meta object literal for the '{@link de.unidue.ecg.dialogScript.dialogScript.impl.SwitchesDefinitionImpl <em>Switches Definition</em>}' class.

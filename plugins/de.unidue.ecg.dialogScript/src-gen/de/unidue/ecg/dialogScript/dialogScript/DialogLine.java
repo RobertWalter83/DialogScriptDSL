@@ -32,12 +32,12 @@ public interface DialogLine extends Recursive, Statement
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Character</em>' reference.
-   * @see #setCharacter(de.unidue.ecg.characterScript.characterScript.Character)
+   * @see #setCharacter(CharacterDefinition)
    * @see de.unidue.ecg.dialogScript.dialogScript.DialogScriptPackage#getDialogLine_Character()
    * @model
    * @generated
    */
-  de.unidue.ecg.characterScript.characterScript.Character getCharacter();
+  CharacterDefinition getCharacter();
 
   /**
    * Sets the value of the '{@link de.unidue.ecg.dialogScript.dialogScript.DialogLine#getCharacter <em>Character</em>}' reference.
@@ -47,7 +47,7 @@ public interface DialogLine extends Recursive, Statement
    * @see #getCharacter()
    * @generated
    */
-  void setCharacter(de.unidue.ecg.characterScript.characterScript.Character value);
+  void setCharacter(CharacterDefinition value);
 
   /**
    * Returns the value of the '<em><b>Lines</b></em>' attribute.

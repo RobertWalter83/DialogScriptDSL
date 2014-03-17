@@ -79,10 +79,10 @@ public class DialogScriptSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case DialogScriptPackage.CHARACTERS_DEFINTION:
+      case DialogScriptPackage.CHARACTERS_DEFINITION:
       {
-        CharactersDefintion charactersDefintion = (CharactersDefintion)theEObject;
-        T result = caseCharactersDefintion(charactersDefintion);
+        CharactersDefinition charactersDefinition = (CharactersDefinition)theEObject;
+        T result = caseCharactersDefinition(charactersDefinition);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -335,17 +335,17 @@ public class DialogScriptSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Characters Defintion</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Characters Definition</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Characters Defintion</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Characters Definition</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseCharactersDefintion(CharactersDefintion object)
+  public T caseCharactersDefinition(CharactersDefinition object)
   {
     return null;
   }

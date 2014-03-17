@@ -8,7 +8,7 @@ import com.google.inject.Inject;
 import de.unidue.ecg.common.linking.CustomLinkingDiagnosticMessageProvider;
 import de.unidue.ecg.dialogScript.dialogScript.AbstractChoiceDialog;
 import de.unidue.ecg.dialogScript.dialogScript.CharacterDefinition;
-import de.unidue.ecg.dialogScript.dialogScript.CharactersDefintion;
+import de.unidue.ecg.dialogScript.dialogScript.CharactersDefinition;
 import de.unidue.ecg.dialogScript.dialogScript.ConditionDefinition;
 import de.unidue.ecg.dialogScript.dialogScript.ConditionList;
 import de.unidue.ecg.dialogScript.dialogScript.Conditional;
@@ -161,29 +161,29 @@ public class DialogScriptQuickfixProvider extends DefaultQuickfixProvider {
     }
   }
   
-  @Fix(DialogScriptValidator.UNRESOLVED_CHARACTER)
+  @Fix(Diagnostic.LINKING_DIAGNOSTIC)
   public void characterUnknown(final Issue issue, final IssueResolutionAcceptor acceptor) {
-    String[] _data = issue.getData();
-    final String linkText = _data[0];
+    EClass _characterDefinition = DialogScriptPackage.eINSTANCE.getCharacterDefinition();
+    final String linkText = this.customLinkingDiagnosticMessageProvider.getLinkText(issue, _characterDefinition);
     boolean _notEquals = (!Objects.equal(linkText, null));
     if (_notEquals) {
-      String _plus = ("Add character \'" + linkText);
-      String _plus_1 = (_plus + "\' to script");
-      String _plus_2 = ("Add character \'" + linkText);
-      String _plus_3 = (_plus_2 + "\' to script");
+      String _plus = ("Create character \'" + linkText);
+      String _plus_1 = (_plus + "\'");
+      String _plus_2 = ("Create character \'" + linkText);
+      String _plus_3 = (_plus_2 + "\'");
       final ISemanticModification _function = new ISemanticModification() {
         public void apply(final EObject element, final IModificationContext context) throws Exception {
           if ((element instanceof DialogLine)) {
             final Script root = EcoreUtil2.<Script>getContainerOfType(element, Script.class);
             final CharacterDefinition charaDef = DialogScriptFactory.eINSTANCE.createCharacterDefinition();
-            charaDef.setImportedNamespace(linkText);
-            CharactersDefintion _charactersDefinition = root.getCharactersDefinition();
+            charaDef.setName(linkText);
+            CharactersDefinition _charactersDefinition = root.getCharactersDefinition();
             boolean _equals = Objects.equal(_charactersDefinition, null);
             if (_equals) {
-              CharactersDefintion _createCharactersDefintion = DialogScriptFactory.eINSTANCE.createCharactersDefintion();
-              root.setCharactersDefinition(_createCharactersDefintion);
+              CharactersDefinition _createCharactersDefinition = DialogScriptFactory.eINSTANCE.createCharactersDefinition();
+              root.setCharactersDefinition(_createCharactersDefinition);
             }
-            CharactersDefintion _charactersDefinition_1 = root.getCharactersDefinition();
+            CharactersDefinition _charactersDefinition_1 = root.getCharactersDefinition();
             EList<CharacterDefinition> _characters = _charactersDefinition_1.getCharacters();
             _characters.add(charaDef);
           }

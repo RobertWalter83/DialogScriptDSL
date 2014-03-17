@@ -25,9 +25,6 @@ import org.eclipse.xtext.ui.editor.quickfix.IssueResolutionAcceptor
 import org.eclipse.xtext.validation.Issue
 import de.unidue.ecg.dialogScript.dialogScript.DialogLine
 
-//import org.eclipse.xtext.ui.editor.quickfix.Fix
-//import org.eclipse.xtext.ui.editor.quickfix.IssueResolutionAcceptor
-//import org.eclipse.xtext.validation.Issue
 /**
  * Custom quickfixes.
  *
@@ -138,22 +135,23 @@ class DialogScriptQuickfixProvider extends DefaultQuickfixProvider {
 	}
 
 
-	@Fix(DialogScriptValidator.UNRESOLVED_CHARACTER)
+	@Fix(Diagnostic.LINKING_DIAGNOSTIC)
 	def characterUnknown(Issue issue, IssueResolutionAcceptor acceptor) {
-		val linkText = issue.data.get(0)
+		val linkText = customLinkingDiagnosticMessageProvider.getLinkText(issue,
+			DialogScriptPackage.eINSTANCE.characterDefinition)
 
 		if (linkText != null) {
 
-			acceptor.accept(issue, 'Add character \'' + linkText + '\' to script', 'Add character \'' + linkText + '\' to script', null) [ element, context |
+			acceptor.accept(issue, 'Create character \'' + linkText + '\'', 'Create character \'' + linkText + '\'', null) [ element, context |
 				if (element instanceof DialogLine) {
 
 					val root = EcoreUtil2.getContainerOfType(element, Script)
 
 					val charaDef = DialogScriptFactory.eINSTANCE.createCharacterDefinition
-					charaDef.setImportedNamespace(linkText)
-					
+					//charaDef.setImportedNamespace(linkText)
+					charaDef.setName(linkText)
 					if(root.charactersDefinition == null) {
-						root.charactersDefinition = DialogScriptFactory.eINSTANCE.createCharactersDefintion
+						root.charactersDefinition = DialogScriptFactory.eINSTANCE.createCharactersDefinition
 					}
 					root.charactersDefinition.characters.add(charaDef)
 				}

@@ -2,7 +2,7 @@
  */
 package de.unidue.ecg.dialogScript.dialogScript.impl;
 
-import de.unidue.ecg.dialogScript.dialogScript.CharactersDefintion;
+import de.unidue.ecg.dialogScript.dialogScript.CharactersDefinition;
 import de.unidue.ecg.dialogScript.dialogScript.ConditionsDefinition;
 import de.unidue.ecg.dialogScript.dialogScript.DialogScriptPackage;
 import de.unidue.ecg.dialogScript.dialogScript.Scene;
@@ -51,7 +51,7 @@ public class ScriptImpl extends MinimalEObjectImpl.Container implements Script
    * @generated
    * @ordered
    */
-  protected CharactersDefintion charactersDefinition;
+  protected CharactersDefinition charactersDefinition;
 
   /**
    * The cached value of the '{@link #getSwitchesDefinition() <em>Switches Definition</em>}' containment reference.
@@ -109,7 +109,7 @@ public class ScriptImpl extends MinimalEObjectImpl.Container implements Script
    * <!-- end-user-doc -->
    * @generated
    */
-  public CharactersDefintion getCharactersDefinition()
+  public CharactersDefinition getCharactersDefinition()
   {
     return charactersDefinition;
   }
@@ -119,9 +119,9 @@ public class ScriptImpl extends MinimalEObjectImpl.Container implements Script
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetCharactersDefinition(CharactersDefintion newCharactersDefinition, NotificationChain msgs)
+  public NotificationChain basicSetCharactersDefinition(CharactersDefinition newCharactersDefinition, NotificationChain msgs)
   {
-    CharactersDefintion oldCharactersDefinition = charactersDefinition;
+    CharactersDefinition oldCharactersDefinition = charactersDefinition;
     charactersDefinition = newCharactersDefinition;
     if (eNotificationRequired())
     {
@@ -136,7 +136,7 @@ public class ScriptImpl extends MinimalEObjectImpl.Container implements Script
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setCharactersDefinition(CharactersDefintion newCharactersDefinition)
+  public void setCharactersDefinition(CharactersDefinition newCharactersDefinition)
   {
     if (newCharactersDefinition != charactersDefinition)
     {
@@ -318,7 +318,7 @@ public class ScriptImpl extends MinimalEObjectImpl.Container implements Script
     switch (featureID)
     {
       case DialogScriptPackage.SCRIPT__CHARACTERS_DEFINITION:
-        setCharactersDefinition((CharactersDefintion)newValue);
+        setCharactersDefinition((CharactersDefinition)newValue);
         return;
       case DialogScriptPackage.SCRIPT__SWITCHES_DEFINITION:
         setSwitchesDefinition((SwitchesDefinition)newValue);
@@ -345,7 +345,7 @@ public class ScriptImpl extends MinimalEObjectImpl.Container implements Script
     switch (featureID)
     {
       case DialogScriptPackage.SCRIPT__CHARACTERS_DEFINITION:
-        setCharactersDefinition((CharactersDefintion)null);
+        setCharactersDefinition((CharactersDefinition)null);
         return;
       case DialogScriptPackage.SCRIPT__SWITCHES_DEFINITION:
         setSwitchesDefinition((SwitchesDefinition)null);

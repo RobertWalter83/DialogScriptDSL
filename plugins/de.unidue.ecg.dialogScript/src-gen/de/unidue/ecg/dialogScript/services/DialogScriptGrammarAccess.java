@@ -23,7 +23,7 @@ public class DialogScriptGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cScriptAction_0 = (Action)cGroup.eContents().get(0);
 		private final Assignment cCharactersDefinitionAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cCharactersDefinitionCharactersDefintionParserRuleCall_1_0 = (RuleCall)cCharactersDefinitionAssignment_1.eContents().get(0);
+		private final RuleCall cCharactersDefinitionCharactersDefinitionParserRuleCall_1_0 = (RuleCall)cCharactersDefinitionAssignment_1.eContents().get(0);
 		private final Assignment cSwitchesDefinitionAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cSwitchesDefinitionSwitchesDefinitionParserRuleCall_2_0 = (RuleCall)cSwitchesDefinitionAssignment_2.eContents().get(0);
 		private final Assignment cConditionsDefinitionAssignment_3 = (Assignment)cGroup.eContents().get(3);
@@ -31,26 +31,24 @@ public class DialogScriptGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cScenesAssignment_4 = (Assignment)cGroup.eContents().get(4);
 		private final RuleCall cScenesSceneParserRuleCall_4_0 = (RuleCall)cScenesAssignment_4.eContents().get(0);
 		
+		////import "http://www.unidue.de/ecg/characterScript/CharacterScript" as chara
 		//Script:
-		//
-		//	{Script} charactersDefinition=CharactersDefintion? switchesDefinition=SwitchesDefinition?
-		//
+		//	{Script} charactersDefinition=CharactersDefinition? switchesDefinition=SwitchesDefinition?
 		//	conditionsDefinition=ConditionsDefinition? scenes+=Scene*;
 		public ParserRule getRule() { return rule; }
 
-		//{Script} charactersDefinition=CharactersDefintion? switchesDefinition=SwitchesDefinition?
-		//
+		//{Script} charactersDefinition=CharactersDefinition? switchesDefinition=SwitchesDefinition?
 		//conditionsDefinition=ConditionsDefinition? scenes+=Scene*
 		public Group getGroup() { return cGroup; }
 
 		//{Script}
 		public Action getScriptAction_0() { return cScriptAction_0; }
 
-		//charactersDefinition=CharactersDefintion?
+		//charactersDefinition=CharactersDefinition?
 		public Assignment getCharactersDefinitionAssignment_1() { return cCharactersDefinitionAssignment_1; }
 
-		//CharactersDefintion
-		public RuleCall getCharactersDefinitionCharactersDefintionParserRuleCall_1_0() { return cCharactersDefinitionCharactersDefintionParserRuleCall_1_0; }
+		//CharactersDefinition
+		public RuleCall getCharactersDefinitionCharactersDefinitionParserRuleCall_1_0() { return cCharactersDefinitionCharactersDefinitionParserRuleCall_1_0; }
 
 		//switchesDefinition=SwitchesDefinition?
 		public Assignment getSwitchesDefinitionAssignment_2() { return cSwitchesDefinitionAssignment_2; }
@@ -71,8 +69,8 @@ public class DialogScriptGrammarAccess extends AbstractGrammarElementFinder {
 		public RuleCall getScenesSceneParserRuleCall_4_0() { return cScenesSceneParserRuleCall_4_0; }
 	}
 
-	public class CharactersDefintionElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "CharactersDefintion");
+	public class CharactersDefinitionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "CharactersDefinition");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cCharactersKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Keyword cColonKeyword_1 = (Keyword)cGroup.eContents().get(1);
@@ -83,8 +81,7 @@ public class DialogScriptGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cCharactersAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
 		private final RuleCall cCharactersCharacterDefinitionParserRuleCall_3_1_0 = (RuleCall)cCharactersAssignment_3_1.eContents().get(0);
 		
-		//CharactersDefintion:
-		//
+		//CharactersDefinition:
 		//	"characters" ":" characters+=CharacterDefinition ("," characters+=CharacterDefinition)*;
 		public ParserRule getRule() { return rule; }
 
@@ -118,19 +115,18 @@ public class DialogScriptGrammarAccess extends AbstractGrammarElementFinder {
 
 	public class CharacterDefinitionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "CharacterDefinition");
-		private final Assignment cImportedNamespaceAssignment = (Assignment)rule.eContents().get(1);
-		private final RuleCall cImportedNamespaceIDTerminalRuleCall_0 = (RuleCall)cImportedNamespaceAssignment.eContents().get(0);
+		private final Assignment cNameAssignment = (Assignment)rule.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_0 = (RuleCall)cNameAssignment.eContents().get(0);
 		
 		//CharacterDefinition:
-		//
-		//	importedNamespace=ID;
+		//	name=ID;
 		public ParserRule getRule() { return rule; }
 
-		//importedNamespace=ID
-		public Assignment getImportedNamespaceAssignment() { return cImportedNamespaceAssignment; }
+		//name=ID
+		public Assignment getNameAssignment() { return cNameAssignment; }
 
 		//ID
-		public RuleCall getImportedNamespaceIDTerminalRuleCall_0() { return cImportedNamespaceIDTerminalRuleCall_0; }
+		public RuleCall getNameIDTerminalRuleCall_0() { return cNameIDTerminalRuleCall_0; }
 	}
 
 	public class SwitchesDefinitionElements extends AbstractParserRuleElementFinder {
@@ -145,8 +141,8 @@ public class DialogScriptGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cSwitchesAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
 		private final RuleCall cSwitchesSwitchDefinitionParserRuleCall_3_1_0 = (RuleCall)cSwitchesAssignment_3_1.eContents().get(0);
 		
+		////	importedNamespace=ID;
 		//SwitchesDefinition:
-		//
 		//	"switches" ":" switches+=SwitchDefinition ("," switches+=SwitchDefinition)*;
 		public ParserRule getRule() { return rule; }
 
@@ -189,7 +185,6 @@ public class DialogScriptGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cValueSwitchValueEnumRuleCall_1_1_0 = (RuleCall)cValueAssignment_1_1.eContents().get(0);
 		
 		//SwitchDefinition:
-		//
 		//	name=ID ("is" value=SwitchValue)?;
 		public ParserRule getRule() { return rule; }
 
@@ -226,7 +221,6 @@ public class DialogScriptGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cEndKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
 		//ConditionsDefinition:
-		//
 		//	"conditions" conditions+=ConditionDefinition conditions+=ConditionDefinition* "end";
 		public ParserRule getRule() { return rule; }
 
@@ -255,34 +249,37 @@ public class DialogScriptGrammarAccess extends AbstractGrammarElementFinder {
 	public class ConditionDefinitionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ConditionDefinition");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cNameAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cNameIDTerminalRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
-		private final Keyword cWhenKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cSwitchListAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cSwitchListSwitchListParserRuleCall_2_0 = (RuleCall)cSwitchListAssignment_2.eContents().get(0);
+		private final Keyword cSetKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Keyword cWhenKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cSwitchListAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cSwitchListSwitchListParserRuleCall_3_0 = (RuleCall)cSwitchListAssignment_3.eContents().get(0);
 		
 		//ConditionDefinition:
-		//
-		//	name=ID "when" switchList=SwitchList;
+		//	"set" name=ID "when" switchList=SwitchList;
 		public ParserRule getRule() { return rule; }
 
-		//name=ID "when" switchList=SwitchList
+		//"set" name=ID "when" switchList=SwitchList
 		public Group getGroup() { return cGroup; }
 
+		//"set"
+		public Keyword getSetKeyword_0() { return cSetKeyword_0; }
+
 		//name=ID
-		public Assignment getNameAssignment_0() { return cNameAssignment_0; }
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 
 		//ID
-		public RuleCall getNameIDTerminalRuleCall_0_0() { return cNameIDTerminalRuleCall_0_0; }
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 
 		//"when"
-		public Keyword getWhenKeyword_1() { return cWhenKeyword_1; }
+		public Keyword getWhenKeyword_2() { return cWhenKeyword_2; }
 
 		//switchList=SwitchList
-		public Assignment getSwitchListAssignment_2() { return cSwitchListAssignment_2; }
+		public Assignment getSwitchListAssignment_3() { return cSwitchListAssignment_3; }
 
 		//SwitchList
-		public RuleCall getSwitchListSwitchListParserRuleCall_2_0() { return cSwitchListSwitchListParserRuleCall_2_0; }
+		public RuleCall getSwitchListSwitchListParserRuleCall_3_0() { return cSwitchListSwitchListParserRuleCall_3_0; }
 	}
 
 	public class SceneElements extends AbstractParserRuleElementFinder {
@@ -298,7 +295,6 @@ public class DialogScriptGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cSceneKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		//Scene:
-		//
 		//	{Scene} "scene" name=StringID dialog=Dialog "end" "scene";
 		public ParserRule getRule() { return rule; }
 
@@ -344,7 +340,6 @@ public class DialogScriptGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cPartingLinesPartingLinesParserRuleCall_4_0 = (RuleCall)cPartingLinesAssignment_4.eContents().get(0);
 		
 		//Dialog:
-		//
 		//	{Dialog} defaults=Defaults? firstTime=FirstTime? recursives+=Recursive* partingLines=PartingLines?;
 		public ParserRule getRule() { return rule; }
 
@@ -387,7 +382,6 @@ public class DialogScriptGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cDialogLineParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		
 		//Recursive:
-		//
 		//	Conditional | Hub | DialogLine;
 		public ParserRule getRule() { return rule; }
 
@@ -416,7 +410,6 @@ public class DialogScriptGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cEndKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//Defaults:
-		//
 		//	{Defaults} "defaults" comment=COMMENT? body=ConditionalBody "end";
 		public ParserRule getRule() { return rule; }
 
@@ -460,7 +453,6 @@ public class DialogScriptGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cEndKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
 		//FirstTime:
-		//
 		//	{FirstTime} "first" "time" comment=COMMENT? body=ConditionalBody otherTimes=OtherTimes? "end";
 		public ParserRule getRule() { return rule; }
 
@@ -509,7 +501,6 @@ public class DialogScriptGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cBodyConditionalBodyParserRuleCall_3_0 = (RuleCall)cBodyAssignment_3.eContents().get(0);
 		
 		//OtherTimes:
-		//
 		//	{OtherTimes} "else" comment=COMMENT? body=ConditionalBody;
 		public ParserRule getRule() { return rule; }
 
@@ -547,7 +538,6 @@ public class DialogScriptGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cEndKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//PartingLines:
-		//
 		//	{PartingLines} "parting" comment=COMMENT? body=ConditionalBody "end";
 		public ParserRule getRule() { return rule; }
 
@@ -591,7 +581,6 @@ public class DialogScriptGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cEndKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		//Hub:
-		//
 		//	isHidden?="hidden"? "hub" name=StringID hubComment=COMMENT? choiceDialogs+=AbstractChoiceDialog* "end";
 		public ParserRule getRule() { return rule; }
 
@@ -637,7 +626,6 @@ public class DialogScriptGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cConditionalParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		
 		//AbstractChoiceDialog:
-		//
 		//	ChoiceDialog | ConditionalChoiceDialog | Conditional;
 		public ParserRule getRule() { return rule; }
 
@@ -674,14 +662,11 @@ public class DialogScriptGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cEndKeyword_9 = (Keyword)cGroup.eContents().get(9);
 		
 		//ConditionalChoiceDialog:
-		//
 		//	modifiers+=Modifier* "choices" "if" "(" conditionList=ConditionList ")" comment=COMMENT? choiceDialogs+=ChoiceDialog+
-		//
 		//	otherwiseChoices+=OtherwiseChoice* "end";
 		public ParserRule getRule() { return rule; }
 
 		//modifiers+=Modifier* "choices" "if" "(" conditionList=ConditionList ")" comment=COMMENT? choiceDialogs+=ChoiceDialog+
-		//
 		//otherwiseChoices+=OtherwiseChoice* "end"
 		public Group getGroup() { return cGroup; }
 
@@ -750,14 +735,11 @@ public class DialogScriptGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cChoicesChoiceDialogParserRuleCall_5_0 = (RuleCall)cChoicesAssignment_5.eContents().get(0);
 		
 		//OtherwiseChoice:
-		//
 		//	modifiers+=Modifier* "choices" "else" ("if" "(" conditionList=ConditionList ")")? comment=COMMENT?
-		//
 		//	choices+=ChoiceDialog+;
 		public ParserRule getRule() { return rule; }
 
 		//modifiers+=Modifier* "choices" "else" ("if" "(" conditionList=ConditionList ")")? comment=COMMENT?
-		//
 		//choices+=ChoiceDialog+
 		public Group getGroup() { return cGroup; }
 
@@ -809,7 +791,6 @@ public class DialogScriptGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cSTRINGTerminalRuleCall = (RuleCall)rule.eContents().get(1);
 		
 		//StringID:
-		//
 		//	STRING;
 		public ParserRule getRule() { return rule; }
 
@@ -833,7 +814,6 @@ public class DialogScriptGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cEndKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
 		//ChoiceDialog:
-		//
 		//	{ChoiceDialog} modifiers+=Modifier* "choice" name=StringID choiceComment=COMMENT? body=ConditionalBody "end";
 		public ParserRule getRule() { return rule; }
 
@@ -887,7 +867,6 @@ public class DialogScriptGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cConditionsConditionDefinitionIDTerminalRuleCall_1_1_0_1 = (RuleCall)cConditionsConditionDefinitionCrossReference_1_1_0.eContents().get(1);
 		
 		//ConditionList:
-		//
 		//	conditions+=[ConditionDefinition] ("or" conditions+=[ConditionDefinition])*;
 		public ParserRule getRule() { return rule; }
 
@@ -927,7 +906,6 @@ public class DialogScriptGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cInvokeSceneParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		
 		//Jump:
-		//
 		//	Exit | InvokeHub | InvokeScene;
 		public ParserRule getRule() { return rule; }
 
@@ -954,7 +932,6 @@ public class DialogScriptGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cHubHubStringIDParserRuleCall_2_0_1 = (RuleCall)cHubHubCrossReference_2_0.eContents().get(1);
 		
 		//InvokeHub:
-		//
 		//	"enter" "hub" hub=[Hub|StringID];
 		public ParserRule getRule() { return rule; }
 
@@ -987,7 +964,6 @@ public class DialogScriptGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cSceneSceneStringIDParserRuleCall_2_0_1 = (RuleCall)cSceneSceneCrossReference_2_0.eContents().get(1);
 		
 		//InvokeScene:
-		//
 		//	"enter" "scene" scene=[Scene|StringID];
 		public ParserRule getRule() { return rule; }
 
@@ -1022,7 +998,6 @@ public class DialogScriptGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cExitSceneSceneKeyword_2_1_0 = (Keyword)cExitSceneAssignment_2_1.eContents().get(0);
 		
 		//Exit:
-		//
 		//	{Exit} "exit" (exitHub?="hub" | exitScene?="scene");
 		public ParserRule getRule() { return rule; }
 
@@ -1070,14 +1045,11 @@ public class DialogScriptGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cEndKeyword_8 = (Keyword)cGroup.eContents().get(8);
 		
 		//Conditional:
-		//
 		//	modifiers+=Modifier* "if" "(" conditionList=ConditionList ")" comment=COMMENT? body=ConditionalBody
-		//
 		//	otherwiseList+=Otherwise* "end";
 		public ParserRule getRule() { return rule; }
 
 		//modifiers+=Modifier* "if" "(" conditionList=ConditionList ")" comment=COMMENT? body=ConditionalBody
-		//
 		//otherwiseList+=Otherwise* "end"
 		public Group getGroup() { return cGroup; }
 
@@ -1135,7 +1107,6 @@ public class DialogScriptGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cSwitchesSwitchParserRuleCall_1_1_0 = (RuleCall)cSwitchesAssignment_1_1.eContents().get(0);
 		
 		//SwitchList:
-		//
 		//	switches+=Switch ("and" switches+=Switch)*;
 		public ParserRule getRule() { return rule; }
 
@@ -1172,7 +1143,6 @@ public class DialogScriptGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cValueSwitchValueEnumRuleCall_2_0 = (RuleCall)cValueAssignment_2.eContents().get(0);
 		
 		//Switch:
-		//
 		//	switch=[SwitchDefinition] "is" value=SwitchValue;
 		public ParserRule getRule() { return rule; }
 
@@ -1212,7 +1182,6 @@ public class DialogScriptGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cJumpJumpParserRuleCall_4_0 = (RuleCall)cJumpAssignment_4.eContents().get(0);
 		
 		//ConditionalBody:
-		//
 		//	{ConditionalBody} statements+=Statement* switchOn=SwitchOn? switchOff=SwitchOff? jump=Jump?;
 		public ParserRule getRule() { return rule; }
 
@@ -1254,7 +1223,6 @@ public class DialogScriptGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cConditionalParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
 		//Statement:
-		//
 		//	DialogLine | Conditional;
 		public ParserRule getRule() { return rule; }
 
@@ -1286,7 +1254,6 @@ public class DialogScriptGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cBodyConditionalBodyParserRuleCall_4_0 = (RuleCall)cBodyAssignment_4.eContents().get(0);
 		
 		//Otherwise:
-		//
 		//	modifiers+=Modifier* "else" ("if" "(" conditionList=ConditionList ")")? comment=COMMENT? body=ConditionalBody;
 		public ParserRule getRule() { return rule; }
 
@@ -1350,7 +1317,6 @@ public class DialogScriptGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cCommentCOMMENTTerminalRuleCall_4_0 = (RuleCall)cCommentAssignment_4.eContents().get(0);
 		
 		//SwitchOff:
-		//
 		//	"switch" "off" sets+=[SwitchDefinition] ("," sets+=[SwitchDefinition])* comment=COMMENT?;
 		public ParserRule getRule() { return rule; }
 
@@ -1411,7 +1377,6 @@ public class DialogScriptGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cCommentCOMMENTTerminalRuleCall_4_0 = (RuleCall)cCommentAssignment_4.eContents().get(0);
 		
 		//SwitchOn:
-		//
 		//	"switch" "on" sets+=[SwitchDefinition] ("," sets+=[SwitchDefinition])* comment=COMMENT?;
 		public ParserRule getRule() { return rule; }
 
@@ -1459,30 +1424,31 @@ public class DialogScriptGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "DialogLine");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cCharacterAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final CrossReference cCharacterCharacterCrossReference_0_0 = (CrossReference)cCharacterAssignment_0.eContents().get(0);
-		private final RuleCall cCharacterCharacterIDTerminalRuleCall_0_0_1 = (RuleCall)cCharacterCharacterCrossReference_0_0.eContents().get(1);
+		private final CrossReference cCharacterCharacterDefinitionCrossReference_0_0 = (CrossReference)cCharacterAssignment_0.eContents().get(0);
+		private final RuleCall cCharacterCharacterDefinitionIDTerminalRuleCall_0_0_1 = (RuleCall)cCharacterCharacterDefinitionCrossReference_0_0.eContents().get(1);
 		private final Keyword cColonKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cLinesAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cLinesStringIDParserRuleCall_2_0 = (RuleCall)cLinesAssignment_2.eContents().get(0);
 		private final Assignment cCommentAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cCommentCOMMENTTerminalRuleCall_3_0 = (RuleCall)cCommentAssignment_3.eContents().get(0);
 		
-		//DialogLine:
-		//
-		//	character=[chara::Character] ":" lines=StringID comment=COMMENT?;
+		//DialogLine: //character=[chara::Character] ':' lines=StringID comment=COMMENT?;
+		//	character=[CharacterDefinition] ":" lines=StringID comment=COMMENT?;
 		public ParserRule getRule() { return rule; }
 
-		//character=[chara::Character] ":" lines=StringID comment=COMMENT?
+		////character=[chara::Character] ':' lines=StringID comment=COMMENT?;
+		//character=[CharacterDefinition] ":" lines=StringID comment=COMMENT?
 		public Group getGroup() { return cGroup; }
 
-		//character=[chara::Character]
+		////character=[chara::Character] ':' lines=StringID comment=COMMENT?;
+		//character=[CharacterDefinition]
 		public Assignment getCharacterAssignment_0() { return cCharacterAssignment_0; }
 
-		//[chara::Character]
-		public CrossReference getCharacterCharacterCrossReference_0_0() { return cCharacterCharacterCrossReference_0_0; }
+		//[CharacterDefinition]
+		public CrossReference getCharacterCharacterDefinitionCrossReference_0_0() { return cCharacterCharacterDefinitionCrossReference_0_0; }
 
 		//ID
-		public RuleCall getCharacterCharacterIDTerminalRuleCall_0_0_1() { return cCharacterCharacterIDTerminalRuleCall_0_0_1; }
+		public RuleCall getCharacterCharacterDefinitionIDTerminalRuleCall_0_0_1() { return cCharacterCharacterDefinitionIDTerminalRuleCall_0_0_1; }
 
 		//":"
 		public Keyword getColonKeyword_1() { return cColonKeyword_1; }
@@ -1510,7 +1476,6 @@ public class DialogScriptGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRandomRandomKeyword_1_0 = (Keyword)cRandomEnumLiteralDeclaration_1.eContents().get(0);
 		
 		//enum Modifier:
-		//
 		//	single | random;
 		public EnumRule getRule() { return rule; }
 
@@ -1539,7 +1504,6 @@ public class DialogScriptGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cOffOffKeyword_1_0 = (Keyword)cOffEnumLiteralDeclaration_1.eContents().get(0);
 		
 		//enum SwitchValue:
-		//
 		//	on | off;
 		public EnumRule getRule() { return rule; }
 
@@ -1560,7 +1524,7 @@ public class DialogScriptGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	private ScriptElements pScript;
-	private CharactersDefintionElements pCharactersDefintion;
+	private CharactersDefinitionElements pCharactersDefinition;
 	private CharacterDefinitionElements pCharacterDefinition;
 	private SwitchesDefinitionElements pSwitchesDefinition;
 	private SwitchDefinitionElements pSwitchDefinition;
@@ -1637,10 +1601,9 @@ public class DialogScriptGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	
+	////import "http://www.unidue.de/ecg/characterScript/CharacterScript" as chara
 	//Script:
-	//
-	//	{Script} charactersDefinition=CharactersDefintion? switchesDefinition=SwitchesDefinition?
-	//
+	//	{Script} charactersDefinition=CharactersDefinition? switchesDefinition=SwitchesDefinition?
 	//	conditionsDefinition=ConditionsDefinition? scenes+=Scene*;
 	public ScriptElements getScriptAccess() {
 		return (pScript != null) ? pScript : (pScript = new ScriptElements());
@@ -1650,20 +1613,18 @@ public class DialogScriptGrammarAccess extends AbstractGrammarElementFinder {
 		return getScriptAccess().getRule();
 	}
 
-	//CharactersDefintion:
-	//
+	//CharactersDefinition:
 	//	"characters" ":" characters+=CharacterDefinition ("," characters+=CharacterDefinition)*;
-	public CharactersDefintionElements getCharactersDefintionAccess() {
-		return (pCharactersDefintion != null) ? pCharactersDefintion : (pCharactersDefintion = new CharactersDefintionElements());
+	public CharactersDefinitionElements getCharactersDefinitionAccess() {
+		return (pCharactersDefinition != null) ? pCharactersDefinition : (pCharactersDefinition = new CharactersDefinitionElements());
 	}
 	
-	public ParserRule getCharactersDefintionRule() {
-		return getCharactersDefintionAccess().getRule();
+	public ParserRule getCharactersDefinitionRule() {
+		return getCharactersDefinitionAccess().getRule();
 	}
 
 	//CharacterDefinition:
-	//
-	//	importedNamespace=ID;
+	//	name=ID;
 	public CharacterDefinitionElements getCharacterDefinitionAccess() {
 		return (pCharacterDefinition != null) ? pCharacterDefinition : (pCharacterDefinition = new CharacterDefinitionElements());
 	}
@@ -1672,8 +1633,8 @@ public class DialogScriptGrammarAccess extends AbstractGrammarElementFinder {
 		return getCharacterDefinitionAccess().getRule();
 	}
 
+	////	importedNamespace=ID;
 	//SwitchesDefinition:
-	//
 	//	"switches" ":" switches+=SwitchDefinition ("," switches+=SwitchDefinition)*;
 	public SwitchesDefinitionElements getSwitchesDefinitionAccess() {
 		return (pSwitchesDefinition != null) ? pSwitchesDefinition : (pSwitchesDefinition = new SwitchesDefinitionElements());
@@ -1684,7 +1645,6 @@ public class DialogScriptGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//SwitchDefinition:
-	//
 	//	name=ID ("is" value=SwitchValue)?;
 	public SwitchDefinitionElements getSwitchDefinitionAccess() {
 		return (pSwitchDefinition != null) ? pSwitchDefinition : (pSwitchDefinition = new SwitchDefinitionElements());
@@ -1695,7 +1655,6 @@ public class DialogScriptGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//ConditionsDefinition:
-	//
 	//	"conditions" conditions+=ConditionDefinition conditions+=ConditionDefinition* "end";
 	public ConditionsDefinitionElements getConditionsDefinitionAccess() {
 		return (pConditionsDefinition != null) ? pConditionsDefinition : (pConditionsDefinition = new ConditionsDefinitionElements());
@@ -1706,8 +1665,7 @@ public class DialogScriptGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//ConditionDefinition:
-	//
-	//	name=ID "when" switchList=SwitchList;
+	//	"set" name=ID "when" switchList=SwitchList;
 	public ConditionDefinitionElements getConditionDefinitionAccess() {
 		return (pConditionDefinition != null) ? pConditionDefinition : (pConditionDefinition = new ConditionDefinitionElements());
 	}
@@ -1717,7 +1675,6 @@ public class DialogScriptGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Scene:
-	//
 	//	{Scene} "scene" name=StringID dialog=Dialog "end" "scene";
 	public SceneElements getSceneAccess() {
 		return (pScene != null) ? pScene : (pScene = new SceneElements());
@@ -1728,7 +1685,6 @@ public class DialogScriptGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Dialog:
-	//
 	//	{Dialog} defaults=Defaults? firstTime=FirstTime? recursives+=Recursive* partingLines=PartingLines?;
 	public DialogElements getDialogAccess() {
 		return (pDialog != null) ? pDialog : (pDialog = new DialogElements());
@@ -1739,7 +1695,6 @@ public class DialogScriptGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Recursive:
-	//
 	//	Conditional | Hub | DialogLine;
 	public RecursiveElements getRecursiveAccess() {
 		return (pRecursive != null) ? pRecursive : (pRecursive = new RecursiveElements());
@@ -1750,7 +1705,6 @@ public class DialogScriptGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Defaults:
-	//
 	//	{Defaults} "defaults" comment=COMMENT? body=ConditionalBody "end";
 	public DefaultsElements getDefaultsAccess() {
 		return (pDefaults != null) ? pDefaults : (pDefaults = new DefaultsElements());
@@ -1761,7 +1715,6 @@ public class DialogScriptGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//FirstTime:
-	//
 	//	{FirstTime} "first" "time" comment=COMMENT? body=ConditionalBody otherTimes=OtherTimes? "end";
 	public FirstTimeElements getFirstTimeAccess() {
 		return (pFirstTime != null) ? pFirstTime : (pFirstTime = new FirstTimeElements());
@@ -1772,7 +1725,6 @@ public class DialogScriptGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//OtherTimes:
-	//
 	//	{OtherTimes} "else" comment=COMMENT? body=ConditionalBody;
 	public OtherTimesElements getOtherTimesAccess() {
 		return (pOtherTimes != null) ? pOtherTimes : (pOtherTimes = new OtherTimesElements());
@@ -1783,7 +1735,6 @@ public class DialogScriptGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//PartingLines:
-	//
 	//	{PartingLines} "parting" comment=COMMENT? body=ConditionalBody "end";
 	public PartingLinesElements getPartingLinesAccess() {
 		return (pPartingLines != null) ? pPartingLines : (pPartingLines = new PartingLinesElements());
@@ -1794,7 +1745,6 @@ public class DialogScriptGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Hub:
-	//
 	//	isHidden?="hidden"? "hub" name=StringID hubComment=COMMENT? choiceDialogs+=AbstractChoiceDialog* "end";
 	public HubElements getHubAccess() {
 		return (pHub != null) ? pHub : (pHub = new HubElements());
@@ -1805,7 +1755,6 @@ public class DialogScriptGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//AbstractChoiceDialog:
-	//
 	//	ChoiceDialog | ConditionalChoiceDialog | Conditional;
 	public AbstractChoiceDialogElements getAbstractChoiceDialogAccess() {
 		return (pAbstractChoiceDialog != null) ? pAbstractChoiceDialog : (pAbstractChoiceDialog = new AbstractChoiceDialogElements());
@@ -1816,9 +1765,7 @@ public class DialogScriptGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//ConditionalChoiceDialog:
-	//
 	//	modifiers+=Modifier* "choices" "if" "(" conditionList=ConditionList ")" comment=COMMENT? choiceDialogs+=ChoiceDialog+
-	//
 	//	otherwiseChoices+=OtherwiseChoice* "end";
 	public ConditionalChoiceDialogElements getConditionalChoiceDialogAccess() {
 		return (pConditionalChoiceDialog != null) ? pConditionalChoiceDialog : (pConditionalChoiceDialog = new ConditionalChoiceDialogElements());
@@ -1829,9 +1776,7 @@ public class DialogScriptGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//OtherwiseChoice:
-	//
 	//	modifiers+=Modifier* "choices" "else" ("if" "(" conditionList=ConditionList ")")? comment=COMMENT?
-	//
 	//	choices+=ChoiceDialog+;
 	public OtherwiseChoiceElements getOtherwiseChoiceAccess() {
 		return (pOtherwiseChoice != null) ? pOtherwiseChoice : (pOtherwiseChoice = new OtherwiseChoiceElements());
@@ -1842,7 +1787,6 @@ public class DialogScriptGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//StringID:
-	//
 	//	STRING;
 	public StringIDElements getStringIDAccess() {
 		return (pStringID != null) ? pStringID : (pStringID = new StringIDElements());
@@ -1853,7 +1797,6 @@ public class DialogScriptGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//ChoiceDialog:
-	//
 	//	{ChoiceDialog} modifiers+=Modifier* "choice" name=StringID choiceComment=COMMENT? body=ConditionalBody "end";
 	public ChoiceDialogElements getChoiceDialogAccess() {
 		return (pChoiceDialog != null) ? pChoiceDialog : (pChoiceDialog = new ChoiceDialogElements());
@@ -1864,7 +1807,6 @@ public class DialogScriptGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//enum Modifier:
-	//
 	//	single | random;
 	public ModifierElements getModifierAccess() {
 		return (unknownRuleModifier != null) ? unknownRuleModifier : (unknownRuleModifier = new ModifierElements());
@@ -1875,7 +1817,6 @@ public class DialogScriptGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//ConditionList:
-	//
 	//	conditions+=[ConditionDefinition] ("or" conditions+=[ConditionDefinition])*;
 	public ConditionListElements getConditionListAccess() {
 		return (pConditionList != null) ? pConditionList : (pConditionList = new ConditionListElements());
@@ -1886,7 +1827,6 @@ public class DialogScriptGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Jump:
-	//
 	//	Exit | InvokeHub | InvokeScene;
 	public JumpElements getJumpAccess() {
 		return (pJump != null) ? pJump : (pJump = new JumpElements());
@@ -1897,7 +1837,6 @@ public class DialogScriptGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//InvokeHub:
-	//
 	//	"enter" "hub" hub=[Hub|StringID];
 	public InvokeHubElements getInvokeHubAccess() {
 		return (pInvokeHub != null) ? pInvokeHub : (pInvokeHub = new InvokeHubElements());
@@ -1908,7 +1847,6 @@ public class DialogScriptGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//InvokeScene:
-	//
 	//	"enter" "scene" scene=[Scene|StringID];
 	public InvokeSceneElements getInvokeSceneAccess() {
 		return (pInvokeScene != null) ? pInvokeScene : (pInvokeScene = new InvokeSceneElements());
@@ -1919,7 +1857,6 @@ public class DialogScriptGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Exit:
-	//
 	//	{Exit} "exit" (exitHub?="hub" | exitScene?="scene");
 	public ExitElements getExitAccess() {
 		return (pExit != null) ? pExit : (pExit = new ExitElements());
@@ -1930,9 +1867,7 @@ public class DialogScriptGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Conditional:
-	//
 	//	modifiers+=Modifier* "if" "(" conditionList=ConditionList ")" comment=COMMENT? body=ConditionalBody
-	//
 	//	otherwiseList+=Otherwise* "end";
 	public ConditionalElements getConditionalAccess() {
 		return (pConditional != null) ? pConditional : (pConditional = new ConditionalElements());
@@ -1943,7 +1878,6 @@ public class DialogScriptGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//SwitchList:
-	//
 	//	switches+=Switch ("and" switches+=Switch)*;
 	public SwitchListElements getSwitchListAccess() {
 		return (pSwitchList != null) ? pSwitchList : (pSwitchList = new SwitchListElements());
@@ -1954,7 +1888,6 @@ public class DialogScriptGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Switch:
-	//
 	//	switch=[SwitchDefinition] "is" value=SwitchValue;
 	public SwitchElements getSwitchAccess() {
 		return (pSwitch != null) ? pSwitch : (pSwitch = new SwitchElements());
@@ -1965,7 +1898,6 @@ public class DialogScriptGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//enum SwitchValue:
-	//
 	//	on | off;
 	public SwitchValueElements getSwitchValueAccess() {
 		return (unknownRuleSwitchValue != null) ? unknownRuleSwitchValue : (unknownRuleSwitchValue = new SwitchValueElements());
@@ -1976,7 +1908,6 @@ public class DialogScriptGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//ConditionalBody:
-	//
 	//	{ConditionalBody} statements+=Statement* switchOn=SwitchOn? switchOff=SwitchOff? jump=Jump?;
 	public ConditionalBodyElements getConditionalBodyAccess() {
 		return (pConditionalBody != null) ? pConditionalBody : (pConditionalBody = new ConditionalBodyElements());
@@ -1987,7 +1918,6 @@ public class DialogScriptGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Statement:
-	//
 	//	DialogLine | Conditional;
 	public StatementElements getStatementAccess() {
 		return (pStatement != null) ? pStatement : (pStatement = new StatementElements());
@@ -1998,7 +1928,6 @@ public class DialogScriptGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Otherwise:
-	//
 	//	modifiers+=Modifier* "else" ("if" "(" conditionList=ConditionList ")")? comment=COMMENT? body=ConditionalBody;
 	public OtherwiseElements getOtherwiseAccess() {
 		return (pOtherwise != null) ? pOtherwise : (pOtherwise = new OtherwiseElements());
@@ -2009,7 +1938,6 @@ public class DialogScriptGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//SwitchOff:
-	//
 	//	"switch" "off" sets+=[SwitchDefinition] ("," sets+=[SwitchDefinition])* comment=COMMENT?;
 	public SwitchOffElements getSwitchOffAccess() {
 		return (pSwitchOff != null) ? pSwitchOff : (pSwitchOff = new SwitchOffElements());
@@ -2020,7 +1948,6 @@ public class DialogScriptGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//SwitchOn:
-	//
 	//	"switch" "on" sets+=[SwitchDefinition] ("," sets+=[SwitchDefinition])* comment=COMMENT?;
 	public SwitchOnElements getSwitchOnAccess() {
 		return (pSwitchOn != null) ? pSwitchOn : (pSwitchOn = new SwitchOnElements());
@@ -2030,9 +1957,8 @@ public class DialogScriptGrammarAccess extends AbstractGrammarElementFinder {
 		return getSwitchOnAccess().getRule();
 	}
 
-	//DialogLine:
-	//
-	//	character=[chara::Character] ":" lines=StringID comment=COMMENT?;
+	//DialogLine: //character=[chara::Character] ':' lines=StringID comment=COMMENT?;
+	//	character=[CharacterDefinition] ":" lines=StringID comment=COMMENT?;
 	public DialogLineElements getDialogLineAccess() {
 		return (pDialogLine != null) ? pDialogLine : (pDialogLine = new DialogLineElements());
 	}
@@ -2041,66 +1967,55 @@ public class DialogScriptGrammarAccess extends AbstractGrammarElementFinder {
 		return getDialogLineAccess().getRule();
 	}
 
-	////character=[CharacterDefinition] ':' lines=StringID comment=COMMENT?;
-	//
 	//terminal COMMENT:
-	//
 	//	"["->"]";
 	public TerminalRule getCOMMENTRule() {
 		return (tCOMMENT != null) ? tCOMMENT : (tCOMMENT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "COMMENT"));
 	} 
 
 	//terminal STRING:
-	//
 	//	"\"" ("\\" ("b" | "t" | "n" | "f" | "r" | "u" | "\"" | "\'" | "\\" | "{") | WILDCARD | !("\\" | "\"" | "{"))* "\"";
 	public TerminalRule getSTRINGRule() {
 		return (tSTRING != null) ? tSTRING : (tSTRING = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "STRING"));
 	} 
 
 	//terminal fragment WILDCARD:
-	//
 	//	"{" ("a".."z" | "A".."Z" | "_") ("a".."z" | "A".."Z" | "_" | "0".."9")* "}";
 	public TerminalRule getWILDCARDRule() {
 		return (tWILDCARD != null) ? tWILDCARD : (tWILDCARD = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "WILDCARD"));
 	} 
 
 	//terminal ID:
-	//
 	//	"^"? ("a".."z" | "A".."Z" | "_") ("a".."z" | "A".."Z" | "_" | "0".."9")*;
 	public TerminalRule getIDRule() {
 		return gaTerminals.getIDRule();
 	} 
 
 	//terminal INT returns ecore::EInt:
-	//
 	//	"0".."9"+;
 	public TerminalRule getINTRule() {
 		return gaTerminals.getINTRule();
 	} 
 
 	//terminal ML_COMMENT:
-	//
 	//	"/ *"->"* /";
 	public TerminalRule getML_COMMENTRule() {
 		return gaTerminals.getML_COMMENTRule();
 	} 
 
 	//terminal SL_COMMENT:
-	//
 	//	"//" !("\n" | "\r")* ("\r"? "\n")?;
 	public TerminalRule getSL_COMMENTRule() {
 		return gaTerminals.getSL_COMMENTRule();
 	} 
 
 	//terminal WS:
-	//
 	//	(" " | "\t" | "\r" | "\n")+;
 	public TerminalRule getWSRule() {
 		return gaTerminals.getWSRule();
 	} 
 
 	//terminal ANY_OTHER:
-	//
 	//	.;
 	public TerminalRule getANY_OTHERRule() {
 		return gaTerminals.getANY_OTHERRule();

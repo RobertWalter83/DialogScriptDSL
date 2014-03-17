@@ -66,7 +66,7 @@ public class DialogScriptFactoryImpl extends EFactoryImpl implements DialogScrip
     switch (eClass.getClassifierID())
     {
       case DialogScriptPackage.SCRIPT: return createScript();
-      case DialogScriptPackage.CHARACTERS_DEFINTION: return createCharactersDefintion();
+      case DialogScriptPackage.CHARACTERS_DEFINITION: return createCharactersDefinition();
       case DialogScriptPackage.CHARACTER_DEFINITION: return createCharacterDefinition();
       case DialogScriptPackage.SWITCHES_DEFINITION: return createSwitchesDefinition();
       case DialogScriptPackage.SWITCH_DEFINITION: return createSwitchDefinition();
@@ -157,10 +157,10 @@ public class DialogScriptFactoryImpl extends EFactoryImpl implements DialogScrip
    * <!-- end-user-doc -->
    * @generated
    */
-  public CharactersDefintion createCharactersDefintion()
+  public CharactersDefinition createCharactersDefinition()
   {
-    CharactersDefintionImpl charactersDefintion = new CharactersDefintionImpl();
-    return charactersDefintion;
+    CharactersDefinitionImpl charactersDefinition = new CharactersDefinitionImpl();
+    return charactersDefinition;
   }
 
   /**

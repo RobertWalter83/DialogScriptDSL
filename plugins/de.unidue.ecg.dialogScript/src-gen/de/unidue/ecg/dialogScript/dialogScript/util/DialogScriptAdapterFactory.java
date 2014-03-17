@@ -80,9 +80,9 @@ public class DialogScriptAdapterFactory extends AdapterFactoryImpl
         return createScriptAdapter();
       }
       @Override
-      public Adapter caseCharactersDefintion(CharactersDefintion object)
+      public Adapter caseCharactersDefinition(CharactersDefinition object)
       {
-        return createCharactersDefintionAdapter();
+        return createCharactersDefinitionAdapter();
       }
       @Override
       public Adapter caseCharacterDefinition(CharacterDefinition object)
@@ -277,16 +277,16 @@ public class DialogScriptAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link de.unidue.ecg.dialogScript.dialogScript.CharactersDefintion <em>Characters Defintion</em>}'.
+   * Creates a new adapter for an object of class '{@link de.unidue.ecg.dialogScript.dialogScript.CharactersDefinition <em>Characters Definition</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see de.unidue.ecg.dialogScript.dialogScript.CharactersDefintion
+   * @see de.unidue.ecg.dialogScript.dialogScript.CharactersDefinition
    * @generated
    */
-  public Adapter createCharactersDefintionAdapter()
+  public Adapter createCharactersDefinitionAdapter()
   {
     return null;
   }

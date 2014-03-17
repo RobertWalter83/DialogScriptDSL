@@ -3,9 +3,16 @@
  */
 package de.unidue.ecg.dialogScript.generator;
 
+import java.util.Collections;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.xtext.generator.IFileSystemAccess;
 import org.eclipse.xtext.generator.IGenerator;
+import org.eclipse.xtext.xbase.lib.Exceptions;
+import org.eclipse.xtext.xbase.lib.IterableExtensions;
 
 /**
  * Generates code from your model files on save.
@@ -15,5 +22,20 @@ import org.eclipse.xtext.generator.IGenerator;
 @SuppressWarnings("all")
 public class DialogScriptGenerator implements IGenerator {
   public void doGenerate(final Resource resource, final IFileSystemAccess fsa) {
+    try {
+      ResourceSetImpl _resourceSetImpl = new ResourceSetImpl();
+      final ResourceSetImpl rset = _resourceSetImpl;
+      URI _uRI = resource.getURI();
+      URI _appendFileExtension = _uRI.appendFileExtension("xml");
+      final Resource xmlResource = rset.createResource(_appendFileExtension);
+      EList<EObject> _contents = xmlResource.getContents();
+      EList<EObject> _contents_1 = resource.getContents();
+      EObject _head = IterableExtensions.<EObject>head(_contents_1);
+      _contents.add(_head);
+      xmlResource.save(Collections.EMPTY_MAP);
+      xmlResource.unload();
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
   }
 }

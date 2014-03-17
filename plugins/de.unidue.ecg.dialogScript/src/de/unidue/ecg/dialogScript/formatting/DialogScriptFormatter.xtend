@@ -64,12 +64,12 @@ class DialogScriptFormatter extends AbstractDeclarativeFormatter {
 		c.setLinewrap(2).before(choiceDialogAccess.modifiersModifierEnumRuleCall_1_0)
 		c.setLinewrap(2).before(conditionalChoiceDialogAccess.choicesKeyword_1)
 		c.setLinewrap(2).before(conditionsDefinitionAccess.conditionsKeyword_0)
-		c.setLinewrap.before(conditionDefinitionAccess.nameAssignment_0)
+		c.setLinewrap.before(conditionDefinitionAccess.nameAssignment_1)
 
 		// create new line before every dialog line
 		c.setLinewrap.before(defaultsAccess.endKeyword_4)
-		//c.setLinewrap.before(dialogLineAccess.characterCharacterDefinitionCrossReference_0_0)
-		c.setLinewrap.before(dialogLineAccess.characterCharacterCrossReference_0_0)
+		c.setLinewrap.before(dialogLineAccess.characterCharacterDefinitionCrossReference_0_0)
+//		c.setLinewrap.before(dialogLineAccess.characterCharacterCrossReference_0_0)
 		c.setLinewrap.before(firstTimeAccess.endKeyword_6)
 		c.setLinewrap.before(conditionalAccess.endKeyword_8)
 		c.setLinewrap.before(partingLinesAccess.endKeyword_4)

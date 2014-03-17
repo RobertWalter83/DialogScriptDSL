@@ -22,7 +22,6 @@ import java.util.Iterator
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider
 import org.eclipse.xtext.ui.label.DefaultEObjectLabelProvider
 import de.unidue.ecg.dialogScript.dialogScript.SwitchesDefinition
-import de.unidue.ecg.dialogScript.dialogScript.CharactersDefintion
 import de.unidue.ecg.dialogScript.dialogScript.SwitchOn
 import de.unidue.ecg.dialogScript.dialogScript.SwitchList
 import de.unidue.ecg.dialogScript.dialogScript.Switch
@@ -35,6 +34,7 @@ import de.unidue.ecg.dialogScript.dialogScript.InvokeHub
 import de.unidue.ecg.dialogScript.dialogScript.InvokeScene
 import de.unidue.ecg.dialogScript.dialogScript.Modifier
 import java.util.List
+import de.unidue.ecg.dialogScript.dialogScript.CharactersDefinition
 
 /**
  * Provides labels for a EObjects.
@@ -52,7 +52,7 @@ class DialogScriptLabelProvider extends DefaultEObjectLabelProvider {
 		'Dialog script: ' + script.eResource.URI.lastSegment
 	}
 
-	def text(CharactersDefintion ele) {
+	def text(CharactersDefinition ele) {
 		'characters'
 	}
 

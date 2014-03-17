@@ -3,7 +3,9 @@
  */
 package de.unidue.ecg.dialogScript.generator
 
+import java.util.Collections
 import org.eclipse.emf.ecore.resource.Resource
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl
 import org.eclipse.xtext.generator.IFileSystemAccess
 import org.eclipse.xtext.generator.IGenerator
 
@@ -15,10 +17,21 @@ import org.eclipse.xtext.generator.IGenerator
 class DialogScriptGenerator implements IGenerator {
 	
 	override void doGenerate(Resource resource, IFileSystemAccess fsa) {
+		
 //		fsa.generateFile('greetings.txt', 'People to greet: ' + 
 //			resource.allContents
-//				.filter(typeof(Model))
-//				.map["rrr"]
+//				.filter(typeof(DialogLine))
+//				.map[lines]
 //				.join(', '))
+//		 
+//		
+//		val map = Resource.Factory.Registry.INSTANCE.extensionToFactoryMap
+//		map.put("dialog", new XMLResourceFactoryImpl)
+//		
+		val rset = new ResourceSetImpl 
+		val xmlResource = rset.createResource(resource.URI.appendFileExtension("xml"))
+		xmlResource.contents.add(resource.contents.head)
+		xmlResource.save(Collections.EMPTY_MAP)
+		xmlResource.unload
 	}
 }

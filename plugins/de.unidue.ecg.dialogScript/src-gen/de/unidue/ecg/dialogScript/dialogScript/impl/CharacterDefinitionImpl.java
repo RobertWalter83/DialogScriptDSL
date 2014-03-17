@@ -19,7 +19,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.unidue.ecg.dialogScript.dialogScript.impl.CharacterDefinitionImpl#getImportedNamespace <em>Imported Namespace</em>}</li>
+ *   <li>{@link de.unidue.ecg.dialogScript.dialogScript.impl.CharacterDefinitionImpl#getName <em>Name</em>}</li>
  * </ul>
  * </p>
  *
@@ -28,24 +28,24 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 public class CharacterDefinitionImpl extends MinimalEObjectImpl.Container implements CharacterDefinition
 {
   /**
-   * The default value of the '{@link #getImportedNamespace() <em>Imported Namespace</em>}' attribute.
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getImportedNamespace()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected static final String IMPORTED_NAMESPACE_EDEFAULT = null;
+  protected static final String NAME_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getImportedNamespace() <em>Imported Namespace</em>}' attribute.
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getImportedNamespace()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected String importedNamespace = IMPORTED_NAMESPACE_EDEFAULT;
+  protected String name = NAME_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -73,9 +73,9 @@ public class CharacterDefinitionImpl extends MinimalEObjectImpl.Container implem
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getImportedNamespace()
+  public String getName()
   {
-    return importedNamespace;
+    return name;
   }
 
   /**
@@ -83,12 +83,12 @@ public class CharacterDefinitionImpl extends MinimalEObjectImpl.Container implem
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setImportedNamespace(String newImportedNamespace)
+  public void setName(String newName)
   {
-    String oldImportedNamespace = importedNamespace;
-    importedNamespace = newImportedNamespace;
+    String oldName = name;
+    name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DialogScriptPackage.CHARACTER_DEFINITION__IMPORTED_NAMESPACE, oldImportedNamespace, importedNamespace));
+      eNotify(new ENotificationImpl(this, Notification.SET, DialogScriptPackage.CHARACTER_DEFINITION__NAME, oldName, name));
   }
 
   /**
@@ -101,8 +101,8 @@ public class CharacterDefinitionImpl extends MinimalEObjectImpl.Container implem
   {
     switch (featureID)
     {
-      case DialogScriptPackage.CHARACTER_DEFINITION__IMPORTED_NAMESPACE:
-        return getImportedNamespace();
+      case DialogScriptPackage.CHARACTER_DEFINITION__NAME:
+        return getName();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -117,8 +117,8 @@ public class CharacterDefinitionImpl extends MinimalEObjectImpl.Container implem
   {
     switch (featureID)
     {
-      case DialogScriptPackage.CHARACTER_DEFINITION__IMPORTED_NAMESPACE:
-        setImportedNamespace((String)newValue);
+      case DialogScriptPackage.CHARACTER_DEFINITION__NAME:
+        setName((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -134,8 +134,8 @@ public class CharacterDefinitionImpl extends MinimalEObjectImpl.Container implem
   {
     switch (featureID)
     {
-      case DialogScriptPackage.CHARACTER_DEFINITION__IMPORTED_NAMESPACE:
-        setImportedNamespace(IMPORTED_NAMESPACE_EDEFAULT);
+      case DialogScriptPackage.CHARACTER_DEFINITION__NAME:
+        setName(NAME_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -151,8 +151,8 @@ public class CharacterDefinitionImpl extends MinimalEObjectImpl.Container implem
   {
     switch (featureID)
     {
-      case DialogScriptPackage.CHARACTER_DEFINITION__IMPORTED_NAMESPACE:
-        return IMPORTED_NAMESPACE_EDEFAULT == null ? importedNamespace != null : !IMPORTED_NAMESPACE_EDEFAULT.equals(importedNamespace);
+      case DialogScriptPackage.CHARACTER_DEFINITION__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
     }
     return super.eIsSet(featureID);
   }
@@ -168,8 +168,8 @@ public class CharacterDefinitionImpl extends MinimalEObjectImpl.Container implem
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (importedNamespace: ");
-    result.append(importedNamespace);
+    result.append(" (name: ");
+    result.append(name);
     result.append(')');
     return result.toString();
   }

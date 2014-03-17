@@ -94,6 +94,11 @@ public abstract class AbstractDialogScriptRuntimeModule extends DefaultRuntimeMo
 		return de.unidue.ecg.dialogScript.validation.DialogScriptValidator.class;
 	}
 
+	// contributed by org.eclipse.xtext.generator.exporting.SimpleNamesFragment
+	public Class<? extends org.eclipse.xtext.naming.IQualifiedNameProvider> bindIQualifiedNameProvider() {
+		return org.eclipse.xtext.naming.SimpleNameProvider.class;
+	}
+
 	// contributed by org.eclipse.xtext.generator.scoping.AbstractScopingFragment
 	public Class<? extends org.eclipse.xtext.scoping.IScopeProvider> bindIScopeProvider() {
 		return org.eclipse.xtext.scoping.impl.ImportedNamespaceAwareLocalScopeProvider.class;
@@ -107,11 +112,6 @@ public abstract class AbstractDialogScriptRuntimeModule extends DefaultRuntimeMo
 	// contributed by org.eclipse.xtext.generator.scoping.AbstractScopingFragment
 	public void configureIgnoreCaseLinking(com.google.inject.Binder binder) {
 		binder.bindConstant().annotatedWith(org.eclipse.xtext.scoping.IgnoreCaseLinking.class).to(false);
-	}
-
-	// contributed by org.eclipse.xtext.generator.exporting.QualifiedNamesFragment
-	public Class<? extends org.eclipse.xtext.naming.IQualifiedNameProvider> bindIQualifiedNameProvider() {
-		return org.eclipse.xtext.naming.DefaultDeclarativeQualifiedNameProvider.class;
 	}
 
 	// contributed by org.eclipse.xtext.generator.builder.BuilderIntegrationFragment

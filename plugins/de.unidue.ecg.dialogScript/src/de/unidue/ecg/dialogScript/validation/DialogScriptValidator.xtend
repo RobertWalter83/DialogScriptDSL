@@ -23,7 +23,6 @@ import org.eclipse.emf.ecore.EReference
 import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.xtext.EcoreUtil2
 import org.eclipse.xtext.validation.Check
-import de.unidue.ecg.dialogScript.dialogScript.DialogLine
 
 //import org.eclipse.xtext.validation.Check
 /**
@@ -223,28 +222,28 @@ class DialogScriptValidator extends AbstractDialogScriptValidator {
 		}
 	}
 
-	@Check
-	def checkImports(DialogLine d) {
-
-		val charaName = d.character.name
-		val root = EcoreUtil2.getContainerOfType(d, Script)
-		var isIssue = false
-		val characterImports = root.charactersDefinition?.characters
-
-		if (characterImports == null) {
-			isIssue = true
-		} else {
-
-			val matchedImport = characterImports.findFirst[it.importedNamespace.equals(charaName)]
-
-			if (matchedImport == null) {
-				isIssue = true
-			}
-		}
-
-		if (isIssue)
-			error('Missing character definition for ' + charaName,
-				DialogScriptPackage.Literals.DIALOG_LINE__CHARACTER, UNRESOLVED_CHARACTER, charaName)
-	}
+//	@Check
+//	def checkImports(DialogLine d) {
+//
+//		val charaName = d.character.name
+//		val root = EcoreUtil2.getContainerOfType(d, Script)
+//		var isIssue = false
+//		val characters = root.charactersDefinition?.characters
+//
+//		if (characters == null) {
+//			isIssue = true
+//		} else {
+//
+//			val matchedImport = characters.findFirst[it.name.equals(charaName)]
+//
+//			if (matchedImport == null) {
+//				isIssue = true
+//			}
+//		}
+//
+//		if (isIssue)
+//			error('Missing character definition for ' + charaName,
+//				DialogScriptPackage.Literals.DIALOG_LINE__CHARACTER, UNRESOLVED_CHARACTER, charaName)
+//	}
 
 }

@@ -36,12 +36,12 @@ public interface Script extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Characters Definition</em>' containment reference.
-   * @see #setCharactersDefinition(CharactersDefintion)
+   * @see #setCharactersDefinition(CharactersDefinition)
    * @see de.unidue.ecg.dialogScript.dialogScript.DialogScriptPackage#getScript_CharactersDefinition()
    * @model containment="true"
    * @generated
    */
-  CharactersDefintion getCharactersDefinition();
+  CharactersDefinition getCharactersDefinition();
 
   /**
    * Sets the value of the '{@link de.unidue.ecg.dialogScript.dialogScript.Script#getCharactersDefinition <em>Characters Definition</em>}' containment reference.
@@ -51,7 +51,7 @@ public interface Script extends EObject
    * @see #getCharactersDefinition()
    * @generated
    */
-  void setCharactersDefinition(CharactersDefintion value);
+  void setCharactersDefinition(CharactersDefinition value);
 
   /**
    * Returns the value of the '<em><b>Switches Definition</b></em>' containment reference.

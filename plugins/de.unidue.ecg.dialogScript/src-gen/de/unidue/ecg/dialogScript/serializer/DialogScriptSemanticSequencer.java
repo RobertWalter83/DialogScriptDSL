@@ -3,7 +3,7 @@ package de.unidue.ecg.dialogScript.serializer;
 import com.google.inject.Inject;
 import com.google.inject.Provider;
 import de.unidue.ecg.dialogScript.dialogScript.CharacterDefinition;
-import de.unidue.ecg.dialogScript.dialogScript.CharactersDefintion;
+import de.unidue.ecg.dialogScript.dialogScript.CharactersDefinition;
 import de.unidue.ecg.dialogScript.dialogScript.ChoiceDialog;
 import de.unidue.ecg.dialogScript.dialogScript.ConditionDefinition;
 import de.unidue.ecg.dialogScript.dialogScript.ConditionList;
@@ -59,9 +59,9 @@ public class DialogScriptSemanticSequencer extends AbstractDelegatingSemanticSeq
 					return; 
 				}
 				else break;
-			case DialogScriptPackage.CHARACTERS_DEFINTION:
-				if(context == grammarAccess.getCharactersDefintionRule()) {
-					sequence_CharactersDefintion(context, (CharactersDefintion) semanticObject); 
+			case DialogScriptPackage.CHARACTERS_DEFINITION:
+				if(context == grammarAccess.getCharactersDefinitionRule()) {
+					sequence_CharactersDefinition(context, (CharactersDefinition) semanticObject); 
 					return; 
 				}
 				else break;
@@ -244,16 +244,16 @@ public class DialogScriptSemanticSequencer extends AbstractDelegatingSemanticSeq
 	
 	/**
 	 * Constraint:
-	 *     importedNamespace=ID
+	 *     name=ID
 	 */
 	protected void sequence_CharacterDefinition(EObject context, CharacterDefinition semanticObject) {
 		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, DialogScriptPackage.Literals.CHARACTER_DEFINITION__IMPORTED_NAMESPACE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DialogScriptPackage.Literals.CHARACTER_DEFINITION__IMPORTED_NAMESPACE));
+			if(transientValues.isValueTransient(semanticObject, DialogScriptPackage.Literals.CHARACTER_DEFINITION__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DialogScriptPackage.Literals.CHARACTER_DEFINITION__NAME));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getCharacterDefinitionAccess().getImportedNamespaceIDTerminalRuleCall_0(), semanticObject.getImportedNamespace());
+		feeder.accept(grammarAccess.getCharacterDefinitionAccess().getNameIDTerminalRuleCall_0(), semanticObject.getName());
 		feeder.finish();
 	}
 	
@@ -262,7 +262,7 @@ public class DialogScriptSemanticSequencer extends AbstractDelegatingSemanticSeq
 	 * Constraint:
 	 *     (characters+=CharacterDefinition characters+=CharacterDefinition*)
 	 */
-	protected void sequence_CharactersDefintion(EObject context, CharactersDefintion semanticObject) {
+	protected void sequence_CharactersDefinition(EObject context, CharactersDefinition semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -289,8 +289,8 @@ public class DialogScriptSemanticSequencer extends AbstractDelegatingSemanticSeq
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getConditionDefinitionAccess().getNameIDTerminalRuleCall_0_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getConditionDefinitionAccess().getSwitchListSwitchListParserRuleCall_2_0(), semanticObject.getSwitchList());
+		feeder.accept(grammarAccess.getConditionDefinitionAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getConditionDefinitionAccess().getSwitchListSwitchListParserRuleCall_3_0(), semanticObject.getSwitchList());
 		feeder.finish();
 	}
 	
@@ -351,7 +351,7 @@ public class DialogScriptSemanticSequencer extends AbstractDelegatingSemanticSeq
 	
 	/**
 	 * Constraint:
-	 *     (character=[Character|ID] lines=StringID comment=COMMENT?)
+	 *     (character=[CharacterDefinition|ID] lines=StringID comment=COMMENT?)
 	 */
 	protected void sequence_DialogLine(EObject context, DialogLine semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -483,7 +483,7 @@ public class DialogScriptSemanticSequencer extends AbstractDelegatingSemanticSeq
 	
 	/**
 	 * Constraint:
-	 *     (charactersDefinition=CharactersDefintion? switchesDefinition=SwitchesDefinition? conditionsDefinition=ConditionsDefinition? scenes+=Scene*)
+	 *     (charactersDefinition=CharactersDefinition? switchesDefinition=SwitchesDefinition? conditionsDefinition=ConditionsDefinition? scenes+=Scene*)
 	 */
 	protected void sequence_Script(EObject context, Script semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

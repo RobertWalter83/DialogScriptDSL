@@ -32,13 +32,13 @@ public interface DialogScriptFactory extends EFactory
   Script createScript();
 
   /**
-   * Returns a new object of class '<em>Characters Defintion</em>'.
+   * Returns a new object of class '<em>Characters Definition</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Characters Defintion</em>'.
+   * @return a new object of class '<em>Characters Definition</em>'.
    * @generated
    */
-  CharactersDefintion createCharactersDefintion();
+  CharactersDefinition createCharactersDefinition();
 
   /**
    * Returns a new object of class '<em>Character Definition</em>'.

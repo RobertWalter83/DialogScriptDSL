@@ -17,10 +17,13 @@
       startupProgressRect="5,283,490,14"
       startupMessageRect="5,269,490,18"
       startupForegroundColor="FFFFFF" />
-   <launcher name="DialogScriptDSL">
+   <launcher name="LaunchDialogScript">
       <solaris/>
       <win useIco="false">
-         <bmp/>
+         <bmp
+            winSmallLow="/de.unidue.ecg.dialogScript.product/icons/icon16.bmp"
+            winMediumLow="/de.unidue.ecg.dialogScript.product/icons/icon32.bmp"
+            winLargeLow="/de.unidue.ecg.dialogScript.product/icons/icon48.bmp"/>
       </win>
    </launcher>
 
@@ -34,6 +37,10 @@
       <feature id="de.unidue.ecg.character.feature" version="1.0.0.qualifier"/>
       <feature id="de.unidue.ecg.dialogScript.feature" version="1.0.0.qualifier"/>
       <feature id="de.unidue.ecg.dialogScript.platform.feature" version="1.0.0.qualifier"/>
+      <feature id="org.eclipse.sdk"/>
+      <feature id="org.eclipse.emf.ecore"/>
+      <feature id="org.eclipse.rcp"/>
+      <feature id="org.eclipse.emf.common"/>
    </features>
 
 
