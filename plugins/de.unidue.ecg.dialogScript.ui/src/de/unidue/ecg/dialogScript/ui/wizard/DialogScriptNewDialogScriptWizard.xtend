@@ -24,11 +24,11 @@ class DialogScriptNewDialogScriptWizard extends Wizard implements INewWizard {
 	var DialogScriptNewDialogScriptWizardPage page = null
 	var ISelection selection = null
 
-	protected new() {
-		super();
+	new() {
+		super()
 		setNeedsProgressMonitor(true)
 	}
-	
+
 	override init(IWorkbench workbench, IStructuredSelection selection) {
 		this.selection = selection
 	}
@@ -75,15 +75,16 @@ class DialogScriptNewDialogScriptWizard extends Wizard implements INewWizard {
 		}
 		val container = resource as IContainer
 		val file = container.getFile(new Path(fileName))
+		val stream = openContentStream()
 		try {
-			val stream = openContentStream()
 			if (file.exists()) {
 				file.setContents(stream, true, true, monitor)
 			} else {
 				file.create(stream, true, monitor)
 			}
-			stream.close()
 		} catch (IOException e) {
+		} finally {
+			stream.close
 		}
 		monitor.worked(1);
 		monitor.taskName = "Opening file for editing..."
@@ -103,8 +104,7 @@ class DialogScriptNewDialogScriptWizard extends Wizard implements INewWizard {
 	}
 
 	def throwCoreException(String message) {
-		val status = new Status(IStatus.ERROR, "de.unidue.ecg.dialogScript.ui",
-				IStatus.OK, message, null);
+		val status = new Status(IStatus.ERROR, "de.unidue.ecg.dialogScript.ui", IStatus.OK, message, null);
 		throw new CoreException(status);
 	}
 }

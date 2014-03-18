@@ -38,7 +38,7 @@ public class DialogScriptNewDialogScriptWizard extends Wizard implements INewWiz
   
   private ISelection selection = null;
   
-  protected DialogScriptNewDialogScriptWizard() {
+  public DialogScriptNewDialogScriptWizard() {
     super();
     this.setNeedsProgressMonitor(true);
   }
@@ -95,74 +95,79 @@ public class DialogScriptNewDialogScriptWizard extends Wizard implements INewWiz
   }
   
   public void doFinish(final String containerName, final String inFileName, final IProgressMonitor monitor) throws CoreException {
-    String fileName = inFileName;
-    int _indexOf = fileName.indexOf(".");
-    boolean _lessThan = (_indexOf < 0);
-    if (_lessThan) {
-      String _plus = (fileName + ".dialog");
-      fileName = _plus;
-    }
-    String _plus_1 = ("Creating " + fileName);
-    monitor.beginTask(_plus_1, 2);
-    IWorkspace _workspace = ResourcesPlugin.getWorkspace();
-    final IWorkspaceRoot root = _workspace.getRoot();
-    Path _path = new Path(containerName);
-    final IResource resource = root.findMember(_path);
-    boolean _or = false;
-    boolean _exists = resource.exists();
-    boolean _not = (!_exists);
-    if (_not) {
-      _or = true;
-    } else {
-      boolean _not_1 = (!(resource instanceof IContainer));
-      _or = (_not || _not_1);
-    }
-    if (_or) {
-      String _plus_2 = ("Folder \"" + containerName);
-      String _plus_3 = (_plus_2 + "\" does not exist.");
-      this.throwCoreException(_plus_3);
-    }
-    final IContainer container = ((IContainer) resource);
-    Path _path_1 = new Path(fileName);
-    final IFile file = container.getFile(_path_1);
     try {
+      String fileName = inFileName;
+      int _indexOf = fileName.indexOf(".");
+      boolean _lessThan = (_indexOf < 0);
+      if (_lessThan) {
+        String _plus = (fileName + ".dialog");
+        fileName = _plus;
+      }
+      String _plus_1 = ("Creating " + fileName);
+      monitor.beginTask(_plus_1, 2);
+      IWorkspace _workspace = ResourcesPlugin.getWorkspace();
+      final IWorkspaceRoot root = _workspace.getRoot();
+      Path _path = new Path(containerName);
+      final IResource resource = root.findMember(_path);
+      boolean _or = false;
+      boolean _exists = resource.exists();
+      boolean _not = (!_exists);
+      if (_not) {
+        _or = true;
+      } else {
+        boolean _not_1 = (!(resource instanceof IContainer));
+        _or = (_not || _not_1);
+      }
+      if (_or) {
+        String _plus_2 = ("Folder \"" + containerName);
+        String _plus_3 = (_plus_2 + "\" does not exist.");
+        this.throwCoreException(_plus_3);
+      }
+      final IContainer container = ((IContainer) resource);
+      Path _path_1 = new Path(fileName);
+      final IFile file = container.getFile(_path_1);
       final ByteArrayInputStream stream = this.openContentStream();
-      boolean _exists_1 = file.exists();
-      if (_exists_1) {
-        file.setContents(stream, true, true, monitor);
-      } else {
-        file.create(stream, true, monitor);
+      try {
+        boolean _exists_1 = file.exists();
+        if (_exists_1) {
+          file.setContents(stream, true, true, monitor);
+        } else {
+          file.create(stream, true, monitor);
+        }
+      } catch (final Throwable _t) {
+        if (_t instanceof IOException) {
+          final IOException e = (IOException)_t;
+        } else {
+          throw Exceptions.sneakyThrow(_t);
+        }
+      } finally {
+        stream.close();
       }
-      stream.close();
-    } catch (final Throwable _t) {
-      if (_t instanceof IOException) {
-        final IOException e = (IOException)_t;
-      } else {
-        throw Exceptions.sneakyThrow(_t);
-      }
-    }
-    monitor.worked(1);
-    monitor.setTaskName("Opening file for editing...");
-    Shell _shell = this.getShell();
-    Display _display = _shell.getDisplay();
-    final Runnable _function = new Runnable() {
-      public void run() {
-        IWorkbench _workbench = PlatformUI.getWorkbench();
-        IWorkbenchWindow _activeWorkbenchWindow = _workbench.getActiveWorkbenchWindow();
-        final IWorkbenchPage page = _activeWorkbenchWindow.getActivePage();
-        try {
-          IDE.openEditor(page, file, true);
-        } catch (final Throwable _t) {
-          if (_t instanceof PartInitException) {
-            final PartInitException e = (PartInitException)_t;
-          } else {
-            throw Exceptions.sneakyThrow(_t);
+      monitor.worked(1);
+      monitor.setTaskName("Opening file for editing...");
+      Shell _shell = this.getShell();
+      Display _display = _shell.getDisplay();
+      final Runnable _function = new Runnable() {
+        public void run() {
+          IWorkbench _workbench = PlatformUI.getWorkbench();
+          IWorkbenchWindow _activeWorkbenchWindow = _workbench.getActiveWorkbenchWindow();
+          final IWorkbenchPage page = _activeWorkbenchWindow.getActivePage();
+          try {
+            IDE.openEditor(page, file, true);
+          } catch (final Throwable _t) {
+            if (_t instanceof PartInitException) {
+              final PartInitException e = (PartInitException)_t;
+            } else {
+              throw Exceptions.sneakyThrow(_t);
+            }
           }
         }
-      }
-    };
-    _display.asyncExec(_function);
-    monitor.worked(1);
+      };
+      _display.asyncExec(_function);
+      monitor.worked(1);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
   }
   
   public ByteArrayInputStream openContentStream() {
@@ -174,8 +179,7 @@ public class DialogScriptNewDialogScriptWizard extends Wizard implements INewWiz
   
   public void throwCoreException(final String message) {
     try {
-      Status _status = new Status(IStatus.ERROR, "de.unidue.ecg.dialogScript.ui", 
-        IStatus.OK, message, null);
+      Status _status = new Status(IStatus.ERROR, "de.unidue.ecg.dialogScript.ui", IStatus.OK, message, null);
       final Status status = _status;
       CoreException _coreException = new CoreException(status);
       throw _coreException;
