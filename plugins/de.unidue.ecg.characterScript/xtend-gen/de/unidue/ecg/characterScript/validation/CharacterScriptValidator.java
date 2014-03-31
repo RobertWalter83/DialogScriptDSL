@@ -8,7 +8,7 @@ import com.google.common.base.Strings;
 import com.google.common.collect.Iterables;
 import de.unidue.ecg.characterScript.characterScript.Age;
 import de.unidue.ecg.characterScript.characterScript.AttributeType;
-import de.unidue.ecg.characterScript.characterScript.CharacterScriptPackage.Literals;
+import de.unidue.ecg.characterScript.characterScript.CharacterScriptPackage;
 import de.unidue.ecg.characterScript.characterScript.Characters;
 import de.unidue.ecg.characterScript.characterScript.CustomAttribute;
 import de.unidue.ecg.characterScript.characterScript.CustomAttributeName;
@@ -77,12 +77,10 @@ public class CharacterScriptValidator extends AbstractCharacterScriptValidator {
           boolean _exists = IterableExtensions.<DefaultProperty>exists(_filter, _function);
           boolean _not = (!_exists);
           if (_not) {
-            String _plus = ("The attribute " + default_);
-            String _plus_1 = (_plus + " is missing for the use of template ");
             String _name = t.getName();
-            String _plus_2 = (_plus_1 + _name);
-            CharacterScriptValidator.this.error(_plus_2, c, 
-              Literals.CHARACTER__TEMPLATE, CharacterScriptValidator.MISSING_REQUIRED_DEFAULT, default_);
+            String _plus = ((("The attribute " + default_) + " is missing for the use of template ") + _name);
+            CharacterScriptValidator.this.error(_plus, c, 
+              CharacterScriptPackage.Literals.CHARACTER__TEMPLATE, CharacterScriptValidator.MISSING_REQUIRED_DEFAULT, default_);
           }
         }
       };
@@ -127,7 +125,7 @@ public class CharacterScriptValidator extends AbstractCharacterScriptValidator {
             String _name_2 = _caName_1.getName();
             String _createValueExpression = CharacterScriptValidator.this.createValueExpression(custom);
             CharacterScriptValidator.this.error(_plus_2, c, 
-              Literals.CHARACTER__TEMPLATE, CharacterScriptValidator.MISSING_REQUIRED_CUSTOM, _name_2, _createValueExpression);
+              CharacterScriptPackage.Literals.CHARACTER__TEMPLATE, CharacterScriptValidator.MISSING_REQUIRED_CUSTOM, _name_2, _createValueExpression);
           }
         }
       };
@@ -138,45 +136,39 @@ public class CharacterScriptValidator extends AbstractCharacterScriptValidator {
   private int numberTemplateCounter = 0;
   
   public String createValueExpression(final CustomAttribute attribute) {
-    String _xblockexpression = null;
-    {
-      EList<EnumValue> _enumValues = attribute.getEnumValues();
-      boolean _isEmpty = _enumValues.isEmpty();
-      boolean _not = (!_isEmpty);
-      if (_not) {
-        EList<EnumValue> _enumValues_1 = attribute.getEnumValues();
-        EnumValue _get = null;
-        if (_enumValues_1!=null) {
-          _get=_enumValues_1.get(0);
-        }
-        String _name = _get.getName();
-        String _plus = ("(${" + _name);
-        return (_plus + ":Enum(\'value\')})");
+    EList<EnumValue> _enumValues = attribute.getEnumValues();
+    boolean _isEmpty = _enumValues.isEmpty();
+    boolean _not = (!_isEmpty);
+    if (_not) {
+      EList<EnumValue> _enumValues_1 = attribute.getEnumValues();
+      EnumValue _get = null;
+      if (_enumValues_1!=null) {
+        _get=_enumValues_1.get(0);
       }
-      String _switchResult = null;
-      AttributeType _type = attribute.getType();
-      String _name_1 = _type.getName();
-      final String _switchValue = _name_1;
-      boolean _matched = false;
-      if (!_matched) {
-        if (Objects.equal(_switchValue,"NUMBER")) {
-          _matched=true;
-          int _plus_1 = (this.numberTemplateCounter + 1);
-          int _numberTemplateCounter = this.numberTemplateCounter = _plus_1;
-          return Integer.valueOf(_numberTemplateCounter).toString();
-        }
-      }
-      if (!_matched) {
-        if (Objects.equal(_switchValue,"TEXT")) {
-          _matched=true;
-          CustomAttributeName _caName = attribute.getCaName();
-          String _name_2 = _caName.getName();
-          return _name_2.replaceAll("\\s+", "");
-        }
-      }
-      _xblockexpression = (_switchResult);
+      String _name = _get.getName();
+      String _plus = ("(${" + _name);
+      return (_plus + ":Enum(\'value\')})");
     }
-    return _xblockexpression;
+    AttributeType _type = attribute.getType();
+    String _name_1 = _type.getName();
+    final String _switchValue = _name_1;
+    boolean _matched = false;
+    if (!_matched) {
+      if (Objects.equal(_switchValue,"NUMBER")) {
+        _matched=true;
+        int _numberTemplateCounter = this.numberTemplateCounter = (this.numberTemplateCounter + 1);
+        return Integer.valueOf(_numberTemplateCounter).toString();
+      }
+    }
+    if (!_matched) {
+      if (Objects.equal(_switchValue,"TEXT")) {
+        _matched=true;
+        CustomAttributeName _caName = attribute.getCaName();
+        String _name_2 = _caName.getName();
+        return _name_2.replaceAll("\\s+", "");
+      }
+    }
+    return null;
   }
   
   @Check
@@ -208,7 +200,7 @@ public class CharacterScriptValidator extends AbstractCharacterScriptValidator {
         _name_1=_customAttributeRef_1.getName();
       }
       String _plus_2 = (_plus_1 + _name_1);
-      this.error(_plus_2, Literals.CUSTOM_PROPERTY__ENUM_VALUE, 
+      this.error(_plus_2, CharacterScriptPackage.Literals.CUSTOM_PROPERTY__ENUM_VALUE, 
         CharacterScriptValidator.INVALID_ATTRIBUTE_TYPE);
     }
   }
@@ -239,7 +231,7 @@ public class CharacterScriptValidator extends AbstractCharacterScriptValidator {
       }
       String _plus = ("This value is not available for the property " + _name);
       this.error(_plus, 
-        Literals.CUSTOM_PROPERTY__ENUM_VALUE, CharacterScriptValidator.INVALID_ENUM_VALUE);
+        CharacterScriptPackage.Literals.CUSTOM_PROPERTY__ENUM_VALUE, CharacterScriptValidator.INVALID_ENUM_VALUE);
     }
   }
   
@@ -254,17 +246,16 @@ public class CharacterScriptValidator extends AbstractCharacterScriptValidator {
           boolean _matched = false;
           if (!_matched) {
             if (it instanceof CustomProperty) {
-              final CustomProperty _customProperty = (CustomProperty)it;
               _matched=true;
-              CustomAttributeName _customAttributeRef = _customProperty.getCustomAttributeRef();
+              CustomAttributeName _customAttributeRef = ((CustomProperty)it).getCustomAttributeRef();
               EObject _eContainer = _customAttributeRef.eContainer();
               EObject _eContainer_1 = _eContainer.eContainer();
               if ((_eContainer_1 instanceof Template)) {
-                CustomAttributeName _customAttributeRef_1 = _customProperty.getCustomAttributeRef();
+                CustomAttributeName _customAttributeRef_1 = ((CustomProperty)it).getCustomAttributeRef();
                 EObject _eContainer_2 = _customAttributeRef_1.eContainer();
                 EObject _eContainer_3 = _eContainer_2.eContainer();
                 final Template template = ((Template) _eContainer_3);
-                CustomAttributeName _customAttributeRef_2 = _customProperty.getCustomAttributeRef();
+                CustomAttributeName _customAttributeRef_2 = ((CustomProperty)it).getCustomAttributeRef();
                 String _name = null;
                 if (_customAttributeRef_2!=null) {
                   _name=_customAttributeRef_2.getName();
@@ -275,7 +266,7 @@ public class CharacterScriptValidator extends AbstractCharacterScriptValidator {
                 String _plus_2 = (_plus_1 + _name_1);
                 String _plus_3 = (_plus_2 + ". In order to use it, explicitly refer to this template.");
                 CharacterScriptValidator.this.error(_plus_3, 
-                  Literals.CHARACTER__PROPERTIES, (i).intValue(), CharacterScriptValidator.INVALID_ATTRIBUTE);
+                  CharacterScriptPackage.Literals.CHARACTER__PROPERTIES, (i).intValue(), CharacterScriptValidator.INVALID_ATTRIBUTE);
               }
             }
           }
@@ -298,8 +289,7 @@ public class CharacterScriptValidator extends AbstractCharacterScriptValidator {
           boolean _matched = false;
           if (!_matched) {
             if (it instanceof CustomProperty) {
-              final CustomProperty _customProperty = (CustomProperty)it;
-              boolean _isValidCustom = CharacterScriptValidator.this.isValidCustom(_customProperty, allowedCustoms);
+              boolean _isValidCustom = CharacterScriptValidator.this.isValidCustom(((CustomProperty)it), allowedCustoms);
               boolean _not = (!_isValidCustom);
               if (_not) {
                 _matched=true;
@@ -307,7 +297,7 @@ public class CharacterScriptValidator extends AbstractCharacterScriptValidator {
                 String _plus = ("The used template " + _name);
                 String _plus_1 = (_plus + " does not provide this property");
                 CharacterScriptValidator.this.error(_plus_1, 
-                  Literals.CHARACTER__PROPERTIES, (i).intValue(), CharacterScriptValidator.INVALID_PROPERTY);
+                  CharacterScriptPackage.Literals.CHARACTER__PROPERTIES, (i).intValue(), CharacterScriptValidator.INVALID_PROPERTY);
               }
             }
           }
@@ -325,9 +315,8 @@ public class CharacterScriptValidator extends AbstractCharacterScriptValidator {
         boolean _matched = false;
         if (!_matched) {
           if (it instanceof DefaultProperty) {
-            final DefaultProperty _defaultProperty = (DefaultProperty)it;
             _matched=true;
-            final DefaultProperty outer = _defaultProperty;
+            final DefaultProperty outer = ((DefaultProperty)it);
             EList<Property> _properties = c.getProperties();
             Iterable<DefaultProperty> _filter = Iterables.<DefaultProperty>filter(_properties, DefaultProperty.class);
             final Function1<DefaultProperty,Boolean> _function = new Function1<DefaultProperty,Boolean>() {
@@ -352,15 +341,14 @@ public class CharacterScriptValidator extends AbstractCharacterScriptValidator {
               EList<Property> _properties_1 = c.getProperties();
               final int index = _properties_1.indexOf(doubled);
               CharacterScriptValidator.this.error("You cannot use a property twice", 
-                Literals.CHARACTER__PROPERTIES, index, CharacterScriptValidator.INVALID_PROPERTY);
+                CharacterScriptPackage.Literals.CHARACTER__PROPERTIES, index, CharacterScriptValidator.INVALID_PROPERTY);
             }
           }
         }
         if (!_matched) {
           if (it instanceof CustomProperty) {
-            final CustomProperty _customProperty = (CustomProperty)it;
             _matched=true;
-            final CustomProperty outer = _customProperty;
+            final CustomProperty outer = ((CustomProperty)it);
             EList<Property> _properties = c.getProperties();
             Iterable<CustomProperty> _filter = Iterables.<CustomProperty>filter(_properties, CustomProperty.class);
             final Function1<CustomProperty,Boolean> _function = new Function1<CustomProperty,Boolean>() {
@@ -385,7 +373,7 @@ public class CharacterScriptValidator extends AbstractCharacterScriptValidator {
               EList<Property> _properties_1 = c.getProperties();
               final int index = _properties_1.indexOf(doubled);
               CharacterScriptValidator.this.error("You cannot use a property twice", 
-                Literals.CHARACTER__PROPERTIES, index, CharacterScriptValidator.INVALID_PROPERTY);
+                CharacterScriptPackage.Literals.CHARACTER__PROPERTIES, index, CharacterScriptValidator.INVALID_PROPERTY);
             }
           }
         }
@@ -430,7 +418,7 @@ public class CharacterScriptValidator extends AbstractCharacterScriptValidator {
           String _plus = ("Missing import for template " + _name);
           String _name_1 = template.getName();
           this.error(_plus, 
-            Literals.CHARACTER__TEMPLATE, CharacterScriptValidator.UNRESOLVED_TEMPLATE, _name_1);
+            CharacterScriptPackage.Literals.CHARACTER__TEMPLATE, CharacterScriptValidator.UNRESOLVED_TEMPLATE, _name_1);
         }
       }
     }

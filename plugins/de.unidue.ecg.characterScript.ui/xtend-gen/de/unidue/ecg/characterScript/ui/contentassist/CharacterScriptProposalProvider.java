@@ -7,7 +7,7 @@ import com.google.common.base.Objects;
 import com.google.common.base.Predicate;
 import com.google.common.collect.Iterables;
 import de.unidue.ecg.characterScript.characterScript.AttributeType;
-import de.unidue.ecg.characterScript.characterScript.CharacterScriptPackage.Literals;
+import de.unidue.ecg.characterScript.characterScript.CharacterScriptPackage;
 import de.unidue.ecg.characterScript.characterScript.CustomAttribute;
 import de.unidue.ecg.characterScript.characterScript.CustomAttributeName;
 import de.unidue.ecg.characterScript.characterScript.CustomProperty;
@@ -136,7 +136,7 @@ public class CharacterScriptProposalProvider extends AbstractCharacterScriptProp
   public void completeImport_ImportedNamespace(final EObject model, final Assignment assignment, final ContentAssistContext context, final ICompletionProposalAcceptor acceptor) {
     IScopeProvider _scopeProvider = this.getScopeProvider();
     EObject _rootModel = context.getRootModel();
-    final IScope scope = _scopeProvider.getScope(_rootModel, Literals.CHARACTER__TEMPLATE);
+    final IScope scope = _scopeProvider.getScope(_rootModel, CharacterScriptPackage.Literals.CHARACTER__TEMPLATE);
     Iterable<IEObjectDescription> _allElements = scope.getAllElements();
     final Function1<IEObjectDescription,Boolean> _function = new Function1<IEObjectDescription,Boolean>() {
       public Boolean apply(final IEObjectDescription ieod) {
@@ -161,9 +161,8 @@ public class CharacterScriptProposalProvider extends AbstractCharacterScriptProp
     boolean _matched = false;
     if (!_matched) {
       if (model instanceof de.unidue.ecg.characterScript.characterScript.Character) {
-        final de.unidue.ecg.characterScript.characterScript.Character _character = (de.unidue.ecg.characterScript.characterScript.Character)model;
         _matched=true;
-        boolean _filter = this.filter(keyword, _character);
+        boolean _filter = this.filter(keyword, ((de.unidue.ecg.characterScript.characterScript.Character)model));
         if (_filter) {
           return;
         }

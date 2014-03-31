@@ -11,7 +11,7 @@ import de.unidue.ecg.dialogScript.dialogScript.ConditionList;
 import de.unidue.ecg.dialogScript.dialogScript.Conditional;
 import de.unidue.ecg.dialogScript.dialogScript.ConditionalBody;
 import de.unidue.ecg.dialogScript.dialogScript.ConditionalChoiceDialog;
-import de.unidue.ecg.dialogScript.dialogScript.DialogScriptPackage.Literals;
+import de.unidue.ecg.dialogScript.dialogScript.DialogScriptPackage;
 import de.unidue.ecg.dialogScript.dialogScript.Exit;
 import de.unidue.ecg.dialogScript.dialogScript.Hub;
 import de.unidue.ecg.dialogScript.dialogScript.Jump;
@@ -32,7 +32,6 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.xtext.EcoreUtil2;
-import org.eclipse.xtext.EcoreUtil2.ElementReferenceAcceptor;
 import org.eclipse.xtext.validation.Check;
 import org.eclipse.xtext.xbase.lib.CollectionLiterals;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
@@ -93,7 +92,7 @@ public class DialogScriptValidator extends AbstractDialogScriptValidator {
       _while = _hasNext_1;
     }
     this.warning("Hub cannot be left by the player. Add an exit- or enter hub-statement to avoid infinite loops.", hub, 
-      Literals.HUB__NAME, DialogScriptValidator.HUB_CANNOT_BE_LEFT);
+      DialogScriptPackage.Literals.HUB__NAME, DialogScriptValidator.HUB_CANNOT_BE_LEFT);
   }
   
   @Check
@@ -101,7 +100,7 @@ public class DialogScriptValidator extends AbstractDialogScriptValidator {
     ConditionalBody _body = choice.getBody();
     boolean _equals = Objects.equal(_body, null);
     if (_equals) {
-      this.warning("Empty choices should be removed.", choice, Literals.CHOICE_DIALOG__NAME, 
+      this.warning("Empty choices should be removed.", choice, DialogScriptPackage.Literals.CHOICE_DIALOG__NAME, 
         DialogScriptValidator.EMPTY_CHOICE);
     }
   }
@@ -113,7 +112,7 @@ public class DialogScriptValidator extends AbstractDialogScriptValidator {
     boolean _isUpperCase = Character.isUpperCase(_charAt);
     if (_isUpperCase) {
       this.warning("It is recommended to start switches with a lower case letter", switchDefinition, 
-        Literals.SWITCH_DEFINITION__NAME, DialogScriptValidator.UPPER_CASE_SWTICH_DEFINITION);
+        DialogScriptPackage.Literals.SWITCH_DEFINITION__NAME, DialogScriptValidator.UPPER_CASE_SWTICH_DEFINITION);
     }
   }
   
@@ -124,7 +123,7 @@ public class DialogScriptValidator extends AbstractDialogScriptValidator {
     boolean _isLowerCase = Character.isLowerCase(_charAt);
     if (_isLowerCase) {
       this.warning("It is recommended to start conditions with a upper case letter", conditionDefinition, 
-        Literals.CONDITION_DEFINITION__NAME, DialogScriptValidator.LOWER_CASE_CONDITION_DEFINITION);
+        DialogScriptPackage.Literals.CONDITION_DEFINITION__NAME, DialogScriptValidator.LOWER_CASE_CONDITION_DEFINITION);
     }
   }
   
@@ -153,7 +152,7 @@ public class DialogScriptValidator extends AbstractDialogScriptValidator {
             final Otherwise issueElement = iterator.next();
             EList<Otherwise> _otherwiseList_2 = conditional.getOtherwiseList();
             int _indexOf = _otherwiseList_2.indexOf(issueElement);
-            this.warning("Unreachable area: Conditional dialog after an unconditional dialog cannot be reached", issueElement, Literals.OTHERWISE__BODY, _indexOf, DialogScriptValidator.UNREACHABLE_OTHERWISE_STATEMENT);
+            this.warning("Unreachable area: Conditional dialog after an unconditional dialog cannot be reached", issueElement, DialogScriptPackage.Literals.OTHERWISE__BODY, _indexOf, DialogScriptValidator.UNREACHABLE_OTHERWISE_STATEMENT);
             return;
           }
         }
@@ -177,7 +176,7 @@ public class DialogScriptValidator extends AbstractDialogScriptValidator {
         return;
       }
     }
-    this.error("A hub has to contain at least one choice!", hub, Literals.HUB__NAME, 
+    this.error("A hub has to contain at least one choice!", hub, DialogScriptPackage.Literals.HUB__NAME, 
       DialogScriptValidator.HUB_WITHOUT_CHOICE);
   }
   
@@ -189,7 +188,7 @@ public class DialogScriptValidator extends AbstractDialogScriptValidator {
       boolean _not = (!_isInHub);
       if (_not) {
         this.error("You are not in a hub, so this statement does not make sense!", exit, 
-          Literals.EXIT__EXIT_HUB, DialogScriptValidator.MISPLACED_EXIT_HUB);
+          DialogScriptPackage.Literals.EXIT__EXIT_HUB, DialogScriptValidator.MISPLACED_EXIT_HUB);
       }
     }
   }
@@ -221,7 +220,7 @@ public class DialogScriptValidator extends AbstractDialogScriptValidator {
       final HashSet<Hub> set = CollectionLiterals.<Hub>newHashSet(hub);
       final ArrayList<EObject> result = CollectionLiterals.<EObject>newArrayList();
       Script _containerOfType = EcoreUtil2.<Script>getContainerOfType(hub, Script.class);
-      final ElementReferenceAcceptor _function = new ElementReferenceAcceptor() {
+      final EcoreUtil2.ElementReferenceAcceptor _function = new EcoreUtil2.ElementReferenceAcceptor() {
         public void accept(final EObject referrer, final EObject referenced, final EReference reference, final int index) {
           result.add(referrer);
         }
@@ -233,7 +232,7 @@ public class DialogScriptValidator extends AbstractDialogScriptValidator {
         String _plus = ("Hidden hub " + _name);
         String _plus_1 = (_plus + 
           " is never entered explicitly. As a consequence, its content won\'t be reachable during play. Delete the \'hidden\' modifier or enter the hub from another point in your scene.");
-        this.warning(_plus_1, hub, Literals.HUB__NAME, DialogScriptValidator.UNREFERENCED_HUB);
+        this.warning(_plus_1, hub, DialogScriptPackage.Literals.HUB__NAME, DialogScriptValidator.UNREFERENCED_HUB);
       }
     }
   }
@@ -242,10 +241,9 @@ public class DialogScriptValidator extends AbstractDialogScriptValidator {
   public void checkForWildcardsInNonDialogLines(final Scene ele) {
     String _name = ele.getName();
     int _indexOf = _name.indexOf("{");
-    int _minus = (-1);
-    boolean _greaterThan = (_indexOf > _minus);
+    boolean _greaterThan = (_indexOf > (-1));
     if (_greaterThan) {
-      this.warning("Wildcards can not be processed in a scene name!", ele, Literals.SCENE__NAME, 
+      this.warning("Wildcards can not be processed in a scene name!", ele, DialogScriptPackage.Literals.SCENE__NAME, 
         DialogScriptValidator.WILDCARD_IN_SCENE_NAME);
     }
   }
@@ -254,10 +252,9 @@ public class DialogScriptValidator extends AbstractDialogScriptValidator {
   public void checkForWildcardsInNonDialogLines(final Hub ele) {
     String _name = ele.getName();
     int _indexOf = _name.indexOf("{");
-    int _minus = (-1);
-    boolean _greaterThan = (_indexOf > _minus);
+    boolean _greaterThan = (_indexOf > (-1));
     if (_greaterThan) {
-      this.warning("Wildcards can not be processed in a hub name!", ele, Literals.HUB__NAME, 
+      this.warning("Wildcards can not be processed in a hub name!", ele, DialogScriptPackage.Literals.HUB__NAME, 
         DialogScriptValidator.WILDCARD_IN_HUB_NAME);
     }
   }
@@ -266,42 +263,41 @@ public class DialogScriptValidator extends AbstractDialogScriptValidator {
   public void checkForWildcardsInNonDialogLines(final ChoiceDialog ele) {
     String _name = ele.getName();
     int _indexOf = _name.indexOf("{");
-    int _minus = (-1);
-    boolean _greaterThan = (_indexOf > _minus);
+    boolean _greaterThan = (_indexOf > (-1));
     if (_greaterThan) {
       this.warning("Wildcards can not be processed in a choice name!", ele, 
-        Literals.CHOICE_DIALOG__NAME, DialogScriptValidator.WILDCARD_IN_CHOICE_NAME);
+        DialogScriptPackage.Literals.CHOICE_DIALOG__NAME, DialogScriptValidator.WILDCARD_IN_CHOICE_NAME);
     }
   }
   
   @Check
   public void checkForModifierDuplicates(final Otherwise ele) {
     EList<Modifier> _modifiers = ele.getModifiers();
-    this.checkForModifierDuplicates(_modifiers, ele, Literals.OTHERWISE__MODIFIERS);
+    this.checkForModifierDuplicates(_modifiers, ele, DialogScriptPackage.Literals.OTHERWISE__MODIFIERS);
   }
   
   @Check
   public void checkForModifierDuplicates(final Conditional ele) {
     EList<Modifier> _modifiers = ele.getModifiers();
-    this.checkForModifierDuplicates(_modifiers, ele, Literals.ABSTRACT_CHOICE_DIALOG__MODIFIERS);
+    this.checkForModifierDuplicates(_modifiers, ele, DialogScriptPackage.Literals.ABSTRACT_CHOICE_DIALOG__MODIFIERS);
   }
   
   @Check
   public void checkForModifierDuplicates(final ChoiceDialog ele) {
     EList<Modifier> _modifiers = ele.getModifiers();
-    this.checkForModifierDuplicates(_modifiers, ele, Literals.ABSTRACT_CHOICE_DIALOG__MODIFIERS);
+    this.checkForModifierDuplicates(_modifiers, ele, DialogScriptPackage.Literals.ABSTRACT_CHOICE_DIALOG__MODIFIERS);
   }
   
   @Check
   public void checkForModifierDuplicates(final OtherwiseChoice ele) {
     EList<Modifier> _modifiers = ele.getModifiers();
-    this.checkForModifierDuplicates(_modifiers, ele, Literals.OTHERWISE_CHOICE__MODIFIERS);
+    this.checkForModifierDuplicates(_modifiers, ele, DialogScriptPackage.Literals.OTHERWISE_CHOICE__MODIFIERS);
   }
   
   @Check
   public void checkForModifierDuplicates(final ConditionalChoiceDialog ele) {
     EList<Modifier> _modifiers = ele.getModifiers();
-    this.checkForModifierDuplicates(_modifiers, ele, Literals.ABSTRACT_CHOICE_DIALOG__MODIFIERS);
+    this.checkForModifierDuplicates(_modifiers, ele, DialogScriptPackage.Literals.ABSTRACT_CHOICE_DIALOG__MODIFIERS);
   }
   
   public void checkForModifierDuplicates(final List<Modifier> modifiers, final EObject obj, final EStructuralFeature feature) {
@@ -309,8 +305,7 @@ public class DialogScriptValidator extends AbstractDialogScriptValidator {
       public void apply(final Modifier it) {
         final int first = modifiers.indexOf(it);
         final int last = modifiers.lastIndexOf(it);
-        boolean _notEquals = (first != last);
-        if (_notEquals) {
+        if ((first != last)) {
           DialogScriptValidator.this.error("You cannot use a modifier several times", obj, feature, last, DialogScriptValidator.DUPLICATED_MODIFIER);
         }
       }
@@ -359,7 +354,7 @@ public class DialogScriptValidator extends AbstractDialogScriptValidator {
         int _indexOf_1 = _choiceDialogs_1.indexOf(ele);
         String _string = Integer.valueOf(_indexOf_1).toString();
         this.error(
-          "Inside a hub, conditionals has to be either declared as \'single\' or has to exit the hub explicitly using a \'exit\' or \'enter\' statement", hub, Literals.HUB__CHOICE_DIALOGS, _indexOf, 
+          "Inside a hub, conditionals has to be either declared as \'single\' or has to exit the hub explicitly using a \'exit\' or \'enter\' statement", hub, DialogScriptPackage.Literals.HUB__CHOICE_DIALOGS, _indexOf, 
           DialogScriptValidator.WRONG_CONDTIONAL_USAGE, _string);
       }
     }

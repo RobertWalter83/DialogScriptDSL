@@ -22,8 +22,7 @@ public class DialogScriptImportScopeProvider extends ImportedNamespaceAwareLocal
       boolean _isEmpty = Strings.isEmpty(namespace);
       boolean _not = (!_isEmpty);
       if (_not) {
-        String _plus = (newNamespace + ".*");
-        newNamespace = _plus;
+        newNamespace = (newNamespace + ".*");
       }
       ImportNormalizer _createImportedNamespaceResolver = super.createImportedNamespaceResolver(newNamespace, ignoreCase);
       _xblockexpression = (_createImportedNamespaceResolver);

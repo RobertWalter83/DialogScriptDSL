@@ -104,10 +104,6 @@ public class DialogScriptQuickfixProvider extends DefaultQuickfixProvider {
     String linkText = this.customLinkingDiagnosticMessageProvider.getLinkText(issue, _conditionDefinition);
     boolean _notEquals = (!Objects.equal(linkText, null));
     if (_notEquals) {
-      String _plus = ("Create condition \'" + linkText);
-      String _plus_1 = (_plus + "\'");
-      String _plus_2 = ("Create condition \'" + linkText);
-      String _plus_3 = (_plus_2 + "\'");
       final ISemanticModification _function = new ISemanticModification() {
         public void apply(final EObject element, final IModificationContext context) throws Exception {
           if ((element instanceof ConditionList)) {
@@ -156,7 +152,7 @@ public class DialogScriptQuickfixProvider extends DefaultQuickfixProvider {
           }
         }
       };
-      acceptor.accept(issue, _plus_1, _plus_3, 
+      acceptor.accept(issue, (("Create condition \'" + linkText) + "\'"), (("Create condition \'" + linkText) + "\'"), 
         null, _function);
     }
   }
@@ -167,10 +163,6 @@ public class DialogScriptQuickfixProvider extends DefaultQuickfixProvider {
     final String linkText = this.customLinkingDiagnosticMessageProvider.getLinkText(issue, _characterDefinition);
     boolean _notEquals = (!Objects.equal(linkText, null));
     if (_notEquals) {
-      String _plus = ("Create character \'" + linkText);
-      String _plus_1 = (_plus + "\'");
-      String _plus_2 = ("Create character \'" + linkText);
-      String _plus_3 = (_plus_2 + "\'");
       final ISemanticModification _function = new ISemanticModification() {
         public void apply(final EObject element, final IModificationContext context) throws Exception {
           if ((element instanceof DialogLine)) {
@@ -189,7 +181,7 @@ public class DialogScriptQuickfixProvider extends DefaultQuickfixProvider {
           }
         }
       };
-      acceptor.accept(issue, _plus_1, _plus_3, null, _function);
+      acceptor.accept(issue, (("Create character \'" + linkText) + "\'"), (("Create character \'" + linkText) + "\'"), null, _function);
     }
   }
   
@@ -199,23 +191,13 @@ public class DialogScriptQuickfixProvider extends DefaultQuickfixProvider {
     String linkText = this.customLinkingDiagnosticMessageProvider.getLinkText(issue, _switchDefinition);
     boolean _notEquals = (!Objects.equal(linkText, null));
     if (_notEquals) {
-      String _plus = ("Create switch \'" + linkText);
-      String _plus_1 = (_plus + "\'");
-      String _plus_2 = ("Create switch \'" + linkText);
-      String _plus_3 = (_plus_2 + "\'");
       final ISemanticModification _function = new ISemanticModification() {
         public void apply(final EObject element, final IModificationContext context) throws Exception {
           boolean _or = false;
-          boolean _or_1 = false;
-          if ((element instanceof SwitchOff)) {
-            _or_1 = true;
-          } else {
-            _or_1 = ((element instanceof SwitchOff) || (element instanceof SwitchOn));
-          }
-          if (_or_1) {
+          if (((element instanceof SwitchOff) || (element instanceof SwitchOn))) {
             _or = true;
           } else {
-            _or = (_or_1 || (element instanceof Switch));
+            _or = (((element instanceof SwitchOff) || (element instanceof SwitchOn)) || (element instanceof Switch));
           }
           if (_or) {
             final Script root = EcoreUtil2.<Script>getContainerOfType(element, Script.class);
@@ -236,7 +218,7 @@ public class DialogScriptQuickfixProvider extends DefaultQuickfixProvider {
           }
         }
       };
-      acceptor.accept(issue, _plus_1, _plus_3, null, _function);
+      acceptor.accept(issue, (("Create switch \'" + linkText) + "\'"), (("Create switch \'" + linkText) + "\'"), null, _function);
     }
   }
 }

@@ -33,7 +33,6 @@ public class DialogScriptGenerator implements IGenerator {
       EObject _head = IterableExtensions.<EObject>head(_contents_1);
       _contents.add(_head);
       xmlResource.save(Collections.EMPTY_MAP);
-      xmlResource.unload();
     } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
     }

@@ -27,7 +27,6 @@ import org.eclipse.xtext.ui.wizard.IProjectInfo;
 import org.eclipse.xtext.ui.wizard.Messages;
 import org.eclipse.xtext.xbase.lib.Conversions;
 import org.eclipse.xtext.xbase.lib.Exceptions;
-import org.eclipse.xtext.xbase.lib.Functions.Function0;
 
 @SuppressWarnings("all")
 public class DialogScriptProjectCreator extends WorkspaceModifyOperation implements IProjectCreator {
@@ -40,26 +39,11 @@ public class DialogScriptProjectCreator extends WorkspaceModifyOperation impleme
   
   private final static String SCRIPT_ROOT = "scripts";
   
-  private final ImmutableList<String> FOLDER_LIST = new Function0<ImmutableList<String>>() {
-    public ImmutableList<String> apply() {
-      ImmutableList<String> _of = ImmutableList.<String>of(DialogScriptProjectCreator.SCRIPT_ROOT);
-      return _of;
-    }
-  }.apply();
+  private final ImmutableList<String> FOLDER_LIST = ImmutableList.<String>of(DialogScriptProjectCreator.SCRIPT_ROOT);
   
-  private final ImmutableList<String> PROJECT_NATURES = new Function0<ImmutableList<String>>() {
-    public ImmutableList<String> apply() {
-      ImmutableList<String> _of = ImmutableList.<String>of(XtextProjectHelper.NATURE_ID);
-      return _of;
-    }
-  }.apply();
+  private final ImmutableList<String> PROJECT_NATURES = ImmutableList.<String>of(XtextProjectHelper.NATURE_ID);
   
-  private final ImmutableList<String> BUILDER_IDS = new Function0<ImmutableList<String>>() {
-    public ImmutableList<String> apply() {
-      ImmutableList<String> _of = ImmutableList.<String>of(XtextProjectHelper.BUILDER_ID);
-      return _of;
-    }
-  }.apply();
+  private final ImmutableList<String> BUILDER_IDS = ImmutableList.<String>of(XtextProjectHelper.BUILDER_ID);
   
   protected void execute(final IProgressMonitor monitor) throws CoreException, InvocationTargetException, InterruptedException {
     String _createModelProjectMessage = this.getCreateModelProjectMessage();
@@ -113,13 +97,9 @@ public class DialogScriptProjectCreator extends WorkspaceModifyOperation impleme
   }
   
   public IFile enhanceProject(final IProject project, final IProgressMonitor monitor) throws CoreException {
-    String _plus = ("./" + DialogScriptProjectCreator.SCRIPT_ROOT);
-    String _plus_1 = (_plus + "/characters");
-    Path _path = new Path(_plus_1);
+    Path _path = new Path((("./" + DialogScriptProjectCreator.SCRIPT_ROOT) + "/characters"));
     final Path charaPath = _path;
-    String _plus_2 = ("./" + DialogScriptProjectCreator.SCRIPT_ROOT);
-    String _plus_3 = (_plus_2 + "/dialog");
-    Path _path_1 = new Path(_plus_3);
+    Path _path_1 = new Path((("./" + DialogScriptProjectCreator.SCRIPT_ROOT) + "/dialog"));
     final Path dialogPath = _path_1;
     CharSequence _createCharacterContent = this.createCharacterContent();
     String _string = _createCharacterContent.toString();

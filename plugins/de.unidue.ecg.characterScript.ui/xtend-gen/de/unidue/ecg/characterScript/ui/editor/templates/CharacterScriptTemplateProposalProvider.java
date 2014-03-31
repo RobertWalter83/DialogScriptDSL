@@ -3,7 +3,7 @@ package de.unidue.ecg.characterScript.ui.editor.templates;
 import com.google.common.base.Objects;
 import com.google.inject.Inject;
 import de.unidue.ecg.characterScript.characterScript.AttributeType;
-import de.unidue.ecg.characterScript.characterScript.CharacterScriptPackage.Literals;
+import de.unidue.ecg.characterScript.characterScript.CharacterScriptPackage;
 import de.unidue.ecg.characterScript.characterScript.CustomAttribute;
 import de.unidue.ecg.characterScript.characterScript.CustomAttributeName;
 import de.unidue.ecg.characterScript.characterScript.EnumValue;
@@ -71,7 +71,7 @@ public class CharacterScriptTemplateProposalProvider extends DefaultTemplateProp
           final IScopeProvider scopProvider = xTemplateContext.getScopeProvider();
           EObject _currentModel_1 = context.getCurrentModel();
           final IScope scope = scopProvider.getScope(_currentModel_1, 
-            Literals.CHARACTER__TEMPLATE);
+            CharacterScriptPackage.Literals.CHARACTER__TEMPLATE);
           final ArrayList<Template> templates = CollectionLiterals.<Template>newArrayList();
           Iterable<IEObjectDescription> _allElements = scope.getAllElements();
           final Procedure1<IEObjectDescription> _function = new Procedure1<IEObjectDescription>() {
@@ -118,7 +118,7 @@ public class CharacterScriptTemplateProposalProvider extends DefaultTemplateProp
     _builder.newLine();
     _builder.append("\t");
     String _createDefaultTemplateEntries = this.createDefaultTemplateEntries();
-    _builder.append(_createDefaultTemplateEntries, "	");
+    _builder.append(_createDefaultTemplateEntries, "\t");
     _builder.newLineIfNotEmpty();
     _builder.append("\t");
     _builder.append("// template attributes");
@@ -128,7 +128,7 @@ public class CharacterScriptTemplateProposalProvider extends DefaultTemplateProp
       for(final CustomAttribute c : _customs) {
         _builder.append("\t");
         String _createCustomTemplateEntry = this.createCustomTemplateEntry(c);
-        _builder.append(_createCustomTemplateEntry, "	");
+        _builder.append(_createCustomTemplateEntry, "\t");
         _builder.newLineIfNotEmpty();
       }
     }
@@ -158,48 +158,42 @@ public class CharacterScriptTemplateProposalProvider extends DefaultTemplateProp
   }
   
   public String createCustomValueTemplateExpression(final CustomAttribute attribute) {
-    String _xblockexpression = null;
-    {
-      EList<EnumValue> _enumValues = attribute.getEnumValues();
-      boolean _isEmpty = _enumValues.isEmpty();
-      boolean _not = (!_isEmpty);
-      if (_not) {
-        EList<EnumValue> _enumValues_1 = attribute.getEnumValues();
-        EnumValue _get = null;
-        if (_enumValues_1!=null) {
-          _get=_enumValues_1.get(0);
-        }
-        String _name = _get.getName();
-        String _plus = ("(${" + _name);
-        return (_plus + ":Enum(\'value\')})");
+    EList<EnumValue> _enumValues = attribute.getEnumValues();
+    boolean _isEmpty = _enumValues.isEmpty();
+    boolean _not = (!_isEmpty);
+    if (_not) {
+      EList<EnumValue> _enumValues_1 = attribute.getEnumValues();
+      EnumValue _get = null;
+      if (_enumValues_1!=null) {
+        _get=_enumValues_1.get(0);
       }
-      String _switchResult = null;
-      AttributeType _type = attribute.getType();
-      String _name_1 = _type.getName();
-      final String _switchValue = _name_1;
-      boolean _matched = false;
-      if (!_matched) {
-        if (Objects.equal(_switchValue,"NUMBER")) {
-          _matched=true;
-          int _plus_1 = (this.numberTemplateCounter + 1);
-          int _numberTemplateCounter = this.numberTemplateCounter = _plus_1;
-          String _plus_2 = ("${" + Integer.valueOf(_numberTemplateCounter));
-          return (_plus_2 + "}");
-        }
-      }
-      if (!_matched) {
-        if (Objects.equal(_switchValue,"TEXT")) {
-          _matched=true;
-          CustomAttributeName _caName = attribute.getCaName();
-          String _name_2 = _caName.getName();
-          String _replaceAll = _name_2.replaceAll("\\s+", "");
-          String _plus_3 = ("\"${" + _replaceAll);
-          return (_plus_3 + "Value}\"");
-        }
-      }
-      _xblockexpression = (_switchResult);
+      String _name = _get.getName();
+      String _plus = ("(${" + _name);
+      return (_plus + ":Enum(\'value\')})");
     }
-    return _xblockexpression;
+    AttributeType _type = attribute.getType();
+    String _name_1 = _type.getName();
+    final String _switchValue = _name_1;
+    boolean _matched = false;
+    if (!_matched) {
+      if (Objects.equal(_switchValue,"NUMBER")) {
+        _matched=true;
+        int _numberTemplateCounter = this.numberTemplateCounter = (this.numberTemplateCounter + 1);
+        String _plus_1 = ("${" + Integer.valueOf(_numberTemplateCounter));
+        return (_plus_1 + "}");
+      }
+    }
+    if (!_matched) {
+      if (Objects.equal(_switchValue,"TEXT")) {
+        _matched=true;
+        CustomAttributeName _caName = attribute.getCaName();
+        String _name_2 = _caName.getName();
+        String _replaceAll = _name_2.replaceAll("\\s+", "");
+        String _plus_2 = ("\"${" + _replaceAll);
+        return (_plus_2 + "Value}\"");
+      }
+    }
+    return null;
   }
   
   public String createDefaultTemplateEntries() {
@@ -226,17 +220,15 @@ public class CharacterScriptTemplateProposalProvider extends DefaultTemplateProp
   }
   
   public String createDefaultValueTemplateExpression(final DefaultAttributeHelper helper) {
-    String _switchResult = null;
     String _type = helper.getType();
     final String _switchValue = _type;
     boolean _matched = false;
     if (!_matched) {
       if (Objects.equal(_switchValue,"NUMBER")) {
         _matched=true;
-        int _plus = (this.numberTemplateCounter + 1);
-        int _numberTemplateCounter = this.numberTemplateCounter = _plus;
-        String _plus_1 = ("${" + Integer.valueOf(_numberTemplateCounter));
-        return (_plus_1 + "}");
+        int _numberTemplateCounter = this.numberTemplateCounter = (this.numberTemplateCounter + 1);
+        String _plus = ("${" + Integer.valueOf(_numberTemplateCounter));
+        return (_plus + "}");
       }
     }
     if (!_matched) {
@@ -244,30 +236,26 @@ public class CharacterScriptTemplateProposalProvider extends DefaultTemplateProp
         _matched=true;
         String _name = helper.getName();
         String _replaceAll = _name.replaceAll("\\s+", "");
-        String _plus_2 = ("\"${" + _replaceAll);
-        return (_plus_2 + "Value}\"");
+        String _plus_1 = ("\"${" + _replaceAll);
+        return (_plus_1 + "Value}\"");
       }
     }
     if (!_matched) {
       if (Objects.equal(_switchValue,"ENUM")) {
         _matched=true;
-        String _xifexpression = null;
         String _name_1 = helper.getName();
         boolean _equals = _name_1.equals("sex");
         if (_equals) {
           return "${female:Enum(\'CharaSex\')}";
         } else {
-          String _xifexpression_1 = null;
           String _name_2 = helper.getName();
           boolean _equals_1 = _name_2.equals("type");
           if (_equals_1) {
             return "${PC:Enum(\'CharaType\')}";
           }
-          _xifexpression = _xifexpression_1;
         }
-        _switchResult = _xifexpression;
       }
     }
-    return _switchResult;
+    return null;
   }
 }

@@ -5,17 +5,20 @@ package de.unidue.ecg.dialogScript.ui;
 
 import org.eclipse.jface.text.templates.ContextTypeRegistry;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
+import org.eclipse.xtext.builder.IXtextBuilderParticipant;
 import org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalComparator;
 import org.eclipse.xtext.ui.editor.contentassist.ITemplateProposalProvider;
 import org.eclipse.xtext.ui.resource.IResourceSetProvider;
 import org.eclipse.xtext.ui.resource.SimpleResourceSetProvider;
 import org.eclipse.xtext.ui.wizard.IProjectCreator;
 
+import de.unidue.ecg.dialogScript.ui.builderParticipant.DialogScriptBuilderParticipant;
 import de.unidue.ecg.dialogScript.ui.editor.syntaxcoloring.DialogScriptHighlightingConfiguration;
 import de.unidue.ecg.dialogScript.ui.editor.syntaxcoloring.DialogScriptSemanticHighlightingCalculator;
 import de.unidue.ecg.common.ui.contentassist.TemplatePreferringCompletionProposalProvider;
 import de.unidue.ecg.dialogScript.ui.editor.templates.TerminalRuleAwareTemplateContextTypeRegistry;
 import de.unidue.ecg.dialogScript.ui.editor.templates.TerminalRuleAwareTemplateProposalProvider;
+import de.unidue.ecg.dialogScript.ui.views.DialogGraphView;
 import de.unidue.ecg.dialogScript.ui.wizard.DialogScriptProjectCreator;
 
 
@@ -26,6 +29,8 @@ public class DialogScriptUiModule extends de.unidue.ecg.dialogScript.ui.Abstract
 	public DialogScriptUiModule(AbstractUIPlugin plugin) {
 		super(plugin);
 	}
+	
+
 	
 	public Class<? extends IProjectCreator> bindIProjectCreator() {
 		return DialogScriptProjectCreator.class;
@@ -56,5 +61,14 @@ public class DialogScriptUiModule extends de.unidue.ecg.dialogScript.ui.Abstract
 	@Override
 	public Class<? extends IResourceSetProvider> bindIResourceSetProvider() {
 		return SimpleResourceSetProvider.class;
+	}
+	
+	@Override
+	public Class<? extends IXtextBuilderParticipant> bindIXtextBuilderParticipant() {
+		return DialogScriptBuilderParticipant.class;
+	}
+	
+	public Class<DialogGraphView> bindDialogGraphView() {
+		return DialogGraphView.class;
 	}
 }

@@ -7,7 +7,7 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.xtext.diagnostics.Diagnostic;
 import org.eclipse.xtext.diagnostics.DiagnosticMessage;
 import org.eclipse.xtext.diagnostics.Severity;
-import org.eclipse.xtext.linking.ILinkingDiagnosticMessageProvider.ILinkingDiagnosticContext;
+import org.eclipse.xtext.linking.ILinkingDiagnosticMessageProvider;
 import org.eclipse.xtext.linking.impl.IllegalNodeException;
 import org.eclipse.xtext.linking.impl.LinkingDiagnosticMessageProvider;
 import org.eclipse.xtext.nodemodel.INode;
@@ -17,7 +17,7 @@ import org.eclipse.xtext.xbase.lib.Exceptions;
 
 @SuppressWarnings("all")
 public class CustomLinkingDiagnosticMessageProvider extends LinkingDiagnosticMessageProvider {
-  public DiagnosticMessage getUnresolvedProxyMessage(final ILinkingDiagnosticContext context) {
+  public DiagnosticMessage getUnresolvedProxyMessage(final ILinkingDiagnosticMessageProvider.ILinkingDiagnosticContext context) {
     EReference _reference = context.getReference();
     final EClass referenceType = _reference.getEReferenceType();
     String linkText = "";

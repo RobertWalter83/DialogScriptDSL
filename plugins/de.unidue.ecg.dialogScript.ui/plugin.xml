@@ -7,6 +7,17 @@
 	    targetID="*">
 	    <newWizardShortcut id="de.unidue.ecg.dialogScript.ui.wizard.DialogScriptNewProjectWizard"/>
 	  </perspectiveExtension>
+   <perspectiveExtension
+         targetID="*">
+      <view
+            id="de.unidue.ecg.dialogScript.ui.views.DialogGraphView"
+            minimized="false"
+            ratio="0.95f"
+            relationship="right"
+            relative="org.eclipse.ui.editorss"
+            visible="true">
+      </view>
+   </perspectiveExtension>
 	</extension>
 	<extension point="org.eclipse.ui.perspectiveExtensions">
 	  <perspectiveExtension 
@@ -150,6 +161,48 @@
             description="Copy the qualified name for the selected element"
             name="Copy Qualified Name">
       </command>
+       <command
+            defaultHandler="de.unidue.ecg.dialogScript.ui.handlers.ToggleGraphUpdate"
+            id="de.unidue.ecg.dialogScript.ui.commands.ToggleGraphUpdate"
+            name="Toggle graph update">
+            <state class="org.eclipse.ui.handlers.RegistryToggleState:true"
+     			id="org.eclipse.ui.commands.toggleState">
+			</state>
+      </command>
+      <command
+            defaultHandler="de.unidue.ecg.dialogScript.ui.handlers.ChangeLayout"
+            id="de.unidue.ecg.dialogScript.ui.commands.ChangeLayout"
+            name="Change Layout">
+      </command>
+      <command
+            defaultHandler="de.unidue.ecg.dialogScript.ui.handlers.IncreaseHorizNodeDistance"
+            id="de.unidue.ecg.dialogScript.ui.commands.IncreaseHorizNodeDistance"
+            name="Increase Horizontal Node Distance">
+      </command>
+      <command
+            defaultHandler="de.unidue.ecg.dialogScript.ui.handlers.ReduceHorizNodeDistance"
+            id="de.unidue.ecg.dialogScript.ui.commands.ReduceHorizNodeDistance"
+            name="Reduce Horizontal Node Distance">
+      </command>
+      <command
+            defaultHandler="de.unidue.ecg.dialogScript.ui.handlers.ReduceVertNodeDistance"
+            id="de.unidue.ecg.dialogScript.ui.commands.ReduceVertNodeDistance"
+            name="Reduce Vertical Node Distance">
+      </command>
+      <command
+            defaultHandler="de.unidue.ecg.dialogScript.ui.handlers.IncreaseVertNodeDistance"
+            id="de.unidue.ecg.dialogScript.ui.commands.IncreaseVertNodeDistance"
+            name="Increase Vertical Node Distance">
+      </command>
+      <command
+            defaultHandler="de.unidue.ecg.dialogScript.ui.handlers.ToggleTextAbbreviation"
+            id="de.unidue.ecg.dialogScript.ui.commands.ToggleTextAbbreviation"
+            name="Toggle text abbreviation">
+         <state
+               class="org.eclipse.ui.handlers.RegistryToggleState:true"
+               id="org.eclipse.ui.commands.toggleState">
+         </state>
+      </command>
     </extension>
     <extension point="org.eclipse.ui.menus">
         <menuContribution
@@ -195,6 +248,90 @@
 				</visibleWhen>
 			</command>
          </menuContribution>
+         <menuContribution
+               allPopups="false"
+               locationURI="toolbar:de.unidue.ecg.dialogScript.ui.views.DialogGraphView">
+            <command
+                  commandId="de.unidue.ecg.dialogScript.ui.commands.ChangeLayout"
+                  icon="icons/toggleGraph.png"
+                  id="toggleLayout"
+                  label="Toggle Layout"
+                  style="push"
+                  tooltip="Toggle graph layout direction">
+            </command>
+         </menuContribution>
+          <menuContribution
+               allPopups="false"
+               locationURI="toolbar:de.unidue.ecg.dialogScript.ui.views.DialogGraphView?after=toggleLayout">
+            <separator
+                  name="separator1"
+                  visible="true">
+            </separator> 
+         </menuContribution>
+         <menuContribution
+               allPopups="false"
+               locationURI="toolbar:de.unidue.ecg.dialogScript.ui.views.DialogGraphView?after=separator1">  
+            <command
+                  commandId="de.unidue.ecg.dialogScript.ui.commands.ToggleGraphUpdate"
+                  icon="icons/toggleGraphUpdate.png"
+                  id="toggleGraphUpdate"
+                  label="Toggle Graph Update"
+                  style="toggle"
+                  tooltip="Toggle graph update">
+            </command>
+            </menuContribution>
+            <menuContribution
+               allPopups="false"
+               locationURI="toolbar:de.unidue.ecg.dialogScript.ui.views.DialogGraphView?after=toggleTextAbbreviation">
+            <separator
+                  name="separator2"
+                  visible="true">
+            </separator> 
+         </menuContribution>
+          <menuContribution
+               allPopups="false"
+               locationURI="toolbar:de.unidue.ecg.dialogScript.ui.views.DialogGraphView?after=separator2">  
+            <command
+                  commandId="de.unidue.ecg.dialogScript.ui.commands.IncreaseHorizNodeDistance"
+                  icon="icons/increaseHoriz.png"
+                  label="Increase horizontal node distance"
+                  style="push"
+                  tooltip="Increase horizontal node distance">
+            </command>
+            <command
+                  commandId="de.unidue.ecg.dialogScript.ui.commands.ReduceHorizNodeDistance"
+                  icon="icons/reduceHoriz.png"
+                  label="Reduce horizontal node distance"
+                  style="push"
+                  tooltip="Reduce horizontal node distance">
+            </command>
+            <command
+                  commandId="de.unidue.ecg.dialogScript.ui.commands.IncreaseVertNodeDistance"
+                  icon="icons/increaseVert.png"
+                  label="Increase vertical node distance"
+                  style="push"
+                  tooltip="Increase vertical node distance">
+            </command>
+            <command
+                  commandId="de.unidue.ecg.dialogScript.ui.commands.ReduceVertNodeDistance"
+                  icon="icons/reduceVert.png"
+                  label="Reduce vertical node distance"
+                  style="push"
+                  tooltip="Reduce vertical node distance">
+            </command>
+         </menuContribution>
+          <menuContribution
+                allPopups="false"
+                locationURI="toolbar:de.unidue.ecg.dialogScript.ui.views.DialogGraphView?after=toggleGraphUpdate">
+             <command
+                   commandId="de.unidue.ecg.dialogScript.ui.commands.ToggleTextAbbreviation"
+                   icon="icons/abbreviate.png"
+                   id="toggleTextAbbreviation"
+                   label="Toggle Text Abbreviation"
+                   style="toggle"
+                   tooltip="Toggle text abbreviation">
+             </command>
+          </menuContribution>
     </extension>
     <extension point="org.eclipse.ui.menus">
 		<menuContribution locationURI="popup:#TextEditorContext?endof=group.find">
@@ -426,10 +563,19 @@
      </category>
      <wizard
            category="de.unidue.ecg.dialogScript.ui"
-           class="de.unidue.ecg.dialogScript.ui.wizard.DialogScriptNewDialogScriptWizard"
+           class="de.unidue.ecg.dialogScript.ui.DialogScriptExecutableExtensionFactory:de.unidue.ecg.dialogScript.ui.wizard.DialogScriptNewDialogScriptWizard"
            icon="icons/icon16.png"
            id="de.unidue.ecg.dialogScript.ui.wizard.DialogScriptNewDialogScriptWizard"
            name="New Dialog Script">
      </wizard>
+  </extension>
+  <extension
+        point="org.eclipse.ui.views">
+     <view
+           class="de.unidue.ecg.dialogScript.ui.DialogScriptExecutableExtensionFactory:de.unidue.ecg.dialogScript.ui.views.DialogGraphView"
+           id="de.unidue.ecg.dialogScript.ui.views.DialogGraphView"
+           name="DialogGraphView"
+           restorable="true">
+     </view>
   </extension>
 </plugin>

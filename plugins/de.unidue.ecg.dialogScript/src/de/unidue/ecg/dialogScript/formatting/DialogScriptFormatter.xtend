@@ -42,7 +42,11 @@ class DialogScriptFormatter extends AbstractDeclarativeFormatter {
 //		c.setNoSpace.between(charactersDefintionAccess.charactersCharacterDefinitionParserRuleCall_2_0,
 //			charactersDefintionAccess.charactersCharacterDefinitionParserRuleCall_3_1_0)
 
-		c.setLinewrap.before(switchesDefinitionAccess.switchesKeyword_0)
+		c.setLinewrap(2).before(switchesDefinitionAccess.switchesKeyword_0)
+		//c.setLinewrap.before(switchDefinitionAccess.nameIDTerminalRuleCall_0_0)
+		
+		c.setLinewrap(2).before(conditionsDefinitionAccess.conditionsKeyword_0)
+		c.setLinewrap.before(conditionDefinitionAccess.setKeyword_0)
 
 		// create two new line for the scene header
 		c.setLinewrap(2).before(sceneAccess.sceneKeyword_1)
@@ -63,9 +67,7 @@ class DialogScriptFormatter extends AbstractDeclarativeFormatter {
 		c.setSpace(" ").between(hubAccess.isHiddenAssignment_0, hubAccess.hubKeyword_1)
 		c.setLinewrap(2).before(choiceDialogAccess.modifiersModifierEnumRuleCall_1_0)
 		c.setLinewrap(2).before(conditionalChoiceDialogAccess.choicesKeyword_1)
-		c.setLinewrap(2).before(conditionsDefinitionAccess.conditionsKeyword_0)
-		c.setLinewrap.before(conditionDefinitionAccess.nameAssignment_1)
-
+		
 		// create new line before every dialog line
 		c.setLinewrap.before(defaultsAccess.endKeyword_4)
 		c.setLinewrap.before(dialogLineAccess.characterCharacterDefinitionCrossReference_0_0)
@@ -76,6 +78,7 @@ class DialogScriptFormatter extends AbstractDeclarativeFormatter {
 		c.setLinewrap.before(switchOnAccess.switchKeyword_0)
 		c.setLinewrap.before(switchOffAccess.switchKeyword_0)
 		c.setLinewrap.before(otherwiseAccess.modifiersModifierEnumRuleCall_0_0)
+		c.setLinewrap.before(otherwiseAccess.elseKeyword_1)
 		c.setLinewrap.before(otherwiseChoiceAccess.modifiersModifierEnumRuleCall_0_0)
 		c.setLinewrap.before(exitAccess.exitKeyword_1)
 		c.setLinewrap.before(invokeHubAccess.enterKeyword_0)

@@ -8,6 +8,9 @@ import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl
 import org.eclipse.xtext.generator.IFileSystemAccess
 import org.eclipse.xtext.generator.IGenerator
+import java.util.List
+import java.beans.PropertyChangeListener
+import java.beans.PropertyChangeEvent
 
 /**
  * Generates code from your model files on save.
@@ -15,23 +18,27 @@ import org.eclipse.xtext.generator.IGenerator
  * see http://www.eclipse.org/Xtext/documentation.html#TutorialCodeGeneration
  */
 class DialogScriptGenerator implements IGenerator {
-	
+
+	//static extension de.unidue.ecg.dialogScript.generator.DialogScriptModelChangeNotifier2
+
 	override void doGenerate(Resource resource, IFileSystemAccess fsa) {
+
+		//		fsa.generateFile('greetings.txt', 'People to greet: ' + 
+		//			resource.allContents
+		//				.filter(typeof(DialogLine))
+		//				.map[lines]
+		//				.join(', '))
+		//		 
+		//		
+		//		val map = Resource.Factory.Registry.INSTANCE.extensionToFactoryMap
+		//		map.put("dialog", new XMLResourceFactoryImpl)
+		//		
 		
-//		fsa.generateFile('greetings.txt', 'People to greet: ' + 
-//			resource.allContents
-//				.filter(typeof(DialogLine))
-//				.map[lines]
-//				.join(', '))
-//		 
-//		
-//		val map = Resource.Factory.Registry.INSTANCE.extensionToFactoryMap
-//		map.put("dialog", new XMLResourceFactoryImpl)
-//		
-		val rset = new ResourceSetImpl 
+		val rset = new ResourceSetImpl
 		val xmlResource = rset.createResource(resource.URI.appendFileExtension("xml"))
 		xmlResource.contents.add(resource.contents.head)
 		xmlResource.save(Collections.EMPTY_MAP)
-		xmlResource.unload
+		
+		
 	}
 }

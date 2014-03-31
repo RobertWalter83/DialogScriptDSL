@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="dialogScriptGraphModel" nsURI="http://www.unidue.de/ecg/dialogScript/DialogScriptGraphModel"
+    nsPrefix="dialogScriptGraphModel">
+  <eClassifiers xsi:type="ecore:EClass" name="Scene">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DialogLine"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ConditionalDialog"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Hub"/>
+  <eClassifiers xsi:type="ecore:EClass" name="FirstTimeDialog"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DefaultDialog"/>
+  <eClassifiers xsi:type="ecore:EClass" name="PartingDialog"/>
+</ecore:EPackage>

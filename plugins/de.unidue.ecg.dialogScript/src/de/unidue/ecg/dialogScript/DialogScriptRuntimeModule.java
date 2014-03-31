@@ -5,6 +5,7 @@ package de.unidue.ecg.dialogScript;
 
 import org.eclipse.xtext.formatting.IFormatter;
 import org.eclipse.xtext.linking.ILinkingDiagnosticMessageProvider;
+
 import de.unidue.ecg.common.linking.CustomLinkingDiagnosticMessageProvider;
 import de.unidue.ecg.dialogScript.formatting.DialogScriptFormatter; 
 

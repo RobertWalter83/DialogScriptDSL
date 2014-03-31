@@ -43,9 +43,8 @@ public class DialogScriptSemanticHighlightingCalculator implements ISemanticHigh
         boolean _matched = false;
         if (!_matched) {
           if (grammarElement instanceof RuleCall) {
-            final RuleCall _ruleCall = (RuleCall)grammarElement;
             _matched=true;
-            final AbstractRule rule = _ruleCall.getRule();
+            final AbstractRule rule = ((RuleCall)grammarElement).getRule();
             String _name = rule.getName();
             final String _switchValue = _name;
             boolean _matched_1 = false;
@@ -97,7 +96,6 @@ public class DialogScriptSemanticHighlightingCalculator implements ISemanticHigh
         }
         if (!_matched) {
           if (grammarElement instanceof CrossReference) {
-            final CrossReference _crossReference = (CrossReference)grammarElement;
             _matched=true;
             int _offset = it.getOffset();
             int _length = it.getLength();

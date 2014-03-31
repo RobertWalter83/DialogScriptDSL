@@ -7,7 +7,6 @@ import org.eclipse.jface.text.templates.TemplateProposal;
 import org.eclipse.xtext.ui.editor.contentassist.ConfigurableCompletionProposal;
 import org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalComparator;
 import org.eclipse.xtext.ui.editor.quickfix.QuickAssistCompletionProposal;
-import org.eclipse.xtext.xbase.lib.Functions.Function0;
 
 @SuppressWarnings("all")
 public class TemplatePreferringCompletionProposalProvider implements ICompletionProposalComparator {
@@ -17,12 +16,7 @@ public class TemplatePreferringCompletionProposalProvider implements ICompletion
   
   private final static Integer MEDIUM_RELEVANCE = ((Integer) Integer.valueOf(0));
   
-  private final static int LOW_RELEVANCE = new Function0<Integer>() {
-    public Integer apply() {
-      int _minus = (-(((Integer) Integer.valueOf(1))).intValue());
-      return _minus;
-    }
-  }.apply();
+  private final static int LOW_RELEVANCE = (-(((Integer) Integer.valueOf(1))).intValue());
   
   public int compare(final ICompletionProposal o1, final ICompletionProposal o2) {
     Integer _relevance = this.getRelevance(o1);
@@ -39,8 +33,7 @@ public class TemplatePreferringCompletionProposalProvider implements ICompletion
     }
     if (_and) {
       final int res = relevance2.compareTo(relevance1);
-      boolean _notEquals_2 = (res != 0);
-      if (_notEquals_2) {
+      if ((res != 0)) {
         return res;
       }
     }

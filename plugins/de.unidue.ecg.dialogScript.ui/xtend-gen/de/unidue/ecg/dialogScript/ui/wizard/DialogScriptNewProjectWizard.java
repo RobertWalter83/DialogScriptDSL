@@ -50,9 +50,8 @@ public class DialogScriptNewProjectWizard extends XtextNewProjectWizard {
               boolean _matched = false;
               if (!_matched) {
                 if (part instanceof ProjectExplorer) {
-                  final ProjectExplorer _projectExplorer = (ProjectExplorer)part;
                   _matched=true;
-                  _projectExplorer.setLinkingEnabled(true);
+                  ((ProjectExplorer)part).setLinkingEnabled(true);
                 }
               }
             }

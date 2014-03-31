@@ -1,42 +1,31 @@
 package de.unidue.ecg.characterScript.util;
 
-import de.unidue.ecg.characterScript.characterScript.CharacterScriptPackage.Literals;
+import de.unidue.ecg.characterScript.characterScript.CharacterScriptPackage;
 import de.unidue.ecg.characterScript.util.DefaultAttributeHelper;
 import java.util.HashMap;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.xtext.xbase.lib.CollectionLiterals;
-import org.eclipse.xtext.xbase.lib.Functions.Function0;
 
 @SuppressWarnings("all")
 public class LanguageUtil {
-  private final static HashMap<String,DefaultAttributeHelper> defaults = new Function0<HashMap<String,DefaultAttributeHelper>>() {
-    public HashMap<String,DefaultAttributeHelper> apply() {
-      HashMap<String,DefaultAttributeHelper> _newHashMap = CollectionLiterals.<String, DefaultAttributeHelper>newHashMap();
-      return _newHashMap;
-    }
-  }.apply();
+  private final static HashMap<String,DefaultAttributeHelper> defaults = CollectionLiterals.<String, DefaultAttributeHelper>newHashMap();
   
-  private final static HashMap<EClass,String> defaults2 = new Function0<HashMap<EClass,String>>() {
-    public HashMap<EClass,String> apply() {
-      HashMap<EClass,String> _newHashMap = CollectionLiterals.<EClass, String>newHashMap();
-      return _newHashMap;
-    }
-  }.apply();
+  private final static HashMap<EClass,String> defaults2 = CollectionLiterals.<EClass, String>newHashMap();
   
   public static HashMap<String,DefaultAttributeHelper> getDefaultAttributes() {
     HashMap<String,DefaultAttributeHelper> _xblockexpression = null;
     {
       boolean _isEmpty = LanguageUtil.defaults.isEmpty();
       if (_isEmpty) {
-        DefaultAttributeHelper _defaultAttributeHelper = new DefaultAttributeHelper("full name", "TEXT", Literals.FULL_NAME);
+        DefaultAttributeHelper _defaultAttributeHelper = new DefaultAttributeHelper("full name", "TEXT", CharacterScriptPackage.Literals.FULL_NAME);
         LanguageUtil.defaults.put("full name", _defaultAttributeHelper);
-        DefaultAttributeHelper _defaultAttributeHelper_1 = new DefaultAttributeHelper("age", "NUMBER", Literals.AGE);
+        DefaultAttributeHelper _defaultAttributeHelper_1 = new DefaultAttributeHelper("age", "NUMBER", CharacterScriptPackage.Literals.AGE);
         LanguageUtil.defaults.put("age", _defaultAttributeHelper_1);
-        DefaultAttributeHelper _defaultAttributeHelper_2 = new DefaultAttributeHelper("sex", "ENUM", Literals.SEX);
+        DefaultAttributeHelper _defaultAttributeHelper_2 = new DefaultAttributeHelper("sex", "ENUM", CharacterScriptPackage.Literals.SEX);
         LanguageUtil.defaults.put("sex", _defaultAttributeHelper_2);
-        DefaultAttributeHelper _defaultAttributeHelper_3 = new DefaultAttributeHelper("type", "ENUM", Literals.TYPE);
+        DefaultAttributeHelper _defaultAttributeHelper_3 = new DefaultAttributeHelper("type", "ENUM", CharacterScriptPackage.Literals.TYPE);
         LanguageUtil.defaults.put("type", _defaultAttributeHelper_3);
-        DefaultAttributeHelper _defaultAttributeHelper_4 = new DefaultAttributeHelper("description", "TEXT", Literals.DESCRIPTION);
+        DefaultAttributeHelper _defaultAttributeHelper_4 = new DefaultAttributeHelper("description", "TEXT", CharacterScriptPackage.Literals.DESCRIPTION);
         LanguageUtil.defaults.put("description", _defaultAttributeHelper_4);
       }
       _xblockexpression = (LanguageUtil.defaults);
@@ -49,11 +38,11 @@ public class LanguageUtil {
     {
       boolean _isEmpty = LanguageUtil.defaults2.isEmpty();
       if (_isEmpty) {
-        LanguageUtil.defaults2.put(Literals.FULL_NAME, "full name");
-        LanguageUtil.defaults2.put(Literals.AGE, "age");
-        LanguageUtil.defaults2.put(Literals.SEX, "sex");
-        LanguageUtil.defaults2.put(Literals.TYPE, "type");
-        LanguageUtil.defaults2.put(Literals.DESCRIPTION, "description");
+        LanguageUtil.defaults2.put(CharacterScriptPackage.Literals.FULL_NAME, "full name");
+        LanguageUtil.defaults2.put(CharacterScriptPackage.Literals.AGE, "age");
+        LanguageUtil.defaults2.put(CharacterScriptPackage.Literals.SEX, "sex");
+        LanguageUtil.defaults2.put(CharacterScriptPackage.Literals.TYPE, "type");
+        LanguageUtil.defaults2.put(CharacterScriptPackage.Literals.DESCRIPTION, "description");
       }
       _xblockexpression = (LanguageUtil.defaults2);
     }

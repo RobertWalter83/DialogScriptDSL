@@ -189,11 +189,8 @@ public class DialogScriptNewDialogScriptWizardPage extends WizardPage {
       return;
     }
     final int dotLoc = fileName.lastIndexOf(".");
-    int _minus = (-1);
-    boolean _notEquals = (dotLoc != _minus);
-    if (_notEquals) {
-      int _plus = (dotLoc + 1);
-      final String ext = fileName.substring(_plus);
+    if ((dotLoc != (-1))) {
+      final String ext = fileName.substring((dotLoc + 1));
       boolean _equalsIgnoreCase = ext.equalsIgnoreCase("dialog");
       boolean _equals_4 = (_equalsIgnoreCase == false);
       if (_equals_4) {

@@ -88,40 +88,40 @@ public class TerminalRuleAwareFollowElementAcceptor extends XtextSwitch<Boolean>
     return _xblockexpression;
   }
   
-  public Boolean addContextType(final ParserRule rule) {
+  public boolean addContextType(final ParserRule rule) {
     String _id = this.provider.helper.getId(rule);
-    Boolean _addContextType = this.addContextType(_id);
+    boolean _addContextType = this.addContextType(_id);
     return _addContextType;
   }
   
-  public Boolean addContextType(final Keyword keyword) {
+  public boolean addContextType(final Keyword keyword) {
     String _id = this.provider.helper.getId(keyword);
-    Boolean _addContextType = this.addContextType(_id);
+    boolean _addContextType = this.addContextType(_id);
     return _addContextType;
   }
   
-  public Boolean addContextType(final String id) {
-    Boolean _xblockexpression = null;
+  public boolean addContextType(final String id) {
+    boolean _xblockexpression = false;
     {
       final TemplateContextType contextType = this.provider.registry.getContextType(id);
-      Boolean _xifexpression = null;
+      boolean _xifexpression = false;
       boolean _notEquals = (!Objects.equal(contextType, null));
       if (_notEquals) {
         boolean _add = this.result.add(contextType);
-        _xifexpression = Boolean.valueOf(_add);
+        _xifexpression = _add;
       }
       _xblockexpression = (_xifexpression);
     }
     return _xblockexpression;
   }
   
-  public Boolean addContextType(final TerminalRule rule) {
+  public boolean addContextType(final TerminalRule rule) {
     Grammar _grammar = GrammarUtil.getGrammar(rule);
     String _name = _grammar.getName();
     String _plus = (_name + ".");
     String _name_1 = rule.getName();
     String _plus_1 = (_plus + _name_1);
-    Boolean _addContextType = this.addContextType(_plus_1);
+    boolean _addContextType = this.addContextType(_plus_1);
     return _addContextType;
   }
 }

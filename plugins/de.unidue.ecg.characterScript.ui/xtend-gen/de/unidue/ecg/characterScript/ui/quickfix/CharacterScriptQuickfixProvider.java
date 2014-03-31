@@ -71,10 +71,6 @@ public class CharacterScriptQuickfixProvider extends DefaultQuickfixProvider {
   public void addRequiredDefault(final Issue issue, final IssueResolutionAcceptor acceptor) {
     String[] _data = issue.getData();
     final String propName = _data[0];
-    String _plus = ("Add missing attribute \'" + propName);
-    String _plus_1 = (_plus + "\'");
-    String _plus_2 = ("Add missing attribute \'" + propName);
-    String _plus_3 = (_plus_2 + "\'");
     final ISemanticModification _function = new ISemanticModification() {
       public void apply(final EObject element, final IModificationContext context) throws Exception {
         if ((element instanceof de.unidue.ecg.characterScript.characterScript.Character)) {
@@ -137,7 +133,8 @@ public class CharacterScriptQuickfixProvider extends DefaultQuickfixProvider {
         }
       }
     };
-    acceptor.accept(issue, _plus_1, _plus_3, null, _function);
+    acceptor.accept(issue, (("Add missing attribute \'" + propName) + "\'"), 
+      (("Add missing attribute \'" + propName) + "\'"), null, _function);
   }
   
   @Fix(CharacterScriptValidator.MISSING_REQUIRED_CUSTOM)
@@ -146,10 +143,6 @@ public class CharacterScriptQuickfixProvider extends DefaultQuickfixProvider {
     final String propName = _data[0];
     String[] _data_1 = issue.getData();
     final String propValue = _data_1[1];
-    String _plus = ("Add missing attribute \'" + propName);
-    String _plus_1 = (_plus + "\'");
-    String _plus_2 = ("Add missing attribute \'" + propName);
-    String _plus_3 = (_plus_2 + "\'");
     final ISemanticModification _function = new ISemanticModification() {
       public void apply(final EObject element, final IModificationContext context) throws Exception {
         if ((element instanceof de.unidue.ecg.characterScript.characterScript.Character)) {
@@ -205,16 +198,13 @@ public class CharacterScriptQuickfixProvider extends DefaultQuickfixProvider {
         }
       }
     };
-    acceptor.accept(issue, _plus_1, _plus_3, null, _function);
+    acceptor.accept(issue, (("Add missing attribute \'" + propName) + "\'"), 
+      (("Add missing attribute \'" + propName) + "\'"), null, _function);
   }
   
   public void addImportTemplateFix(final Issue issue, final IssueResolutionAcceptor acceptor, final String linkText) {
     boolean _notEquals = (!Objects.equal(linkText, null));
     if (_notEquals) {
-      String _plus = ("Add import for \'" + linkText);
-      String _plus_1 = (_plus + "\'");
-      String _plus_2 = ("Add import for \'" + linkText);
-      String _plus_3 = (_plus_2 + "\'");
       final ISemanticModification _function = new ISemanticModification() {
         public void apply(final EObject element, final IModificationContext context) throws Exception {
           if ((element instanceof de.unidue.ecg.characterScript.characterScript.Character)) {
@@ -226,7 +216,7 @@ public class CharacterScriptQuickfixProvider extends DefaultQuickfixProvider {
           }
         }
       };
-      acceptor.accept(issue, _plus_1, _plus_3, null, _function);
+      acceptor.accept(issue, (("Add import for \'" + linkText) + "\'"), (("Add import for \'" + linkText) + "\'"), null, _function);
     }
   }
   
@@ -241,10 +231,6 @@ public class CharacterScriptQuickfixProvider extends DefaultQuickfixProvider {
   public void addLocalTemplateFix(final Issue issue, final IssueResolutionAcceptor acceptor, final String linkText) {
     boolean _notEquals = (!Objects.equal(linkText, null));
     if (_notEquals) {
-      String _plus = ("Create local template \'" + linkText);
-      String _plus_1 = (_plus + "\'");
-      String _plus_2 = ("Create local template \'" + linkText);
-      String _plus_3 = (_plus_2 + "\'");
       final ISemanticModification _function = new ISemanticModification() {
         public void apply(final EObject element, final IModificationContext context) throws Exception {
           if ((element instanceof de.unidue.ecg.characterScript.characterScript.Character)) {
@@ -258,7 +244,6 @@ public class CharacterScriptQuickfixProvider extends DefaultQuickfixProvider {
                 boolean _matched = false;
                 if (!_matched) {
                   if (it instanceof FullName) {
-                    final FullName _fullName = (FullName)it;
                     _matched=true;
                     EList<String> _defaults = template.getDefaults();
                     _defaults.add("full name");
@@ -266,7 +251,6 @@ public class CharacterScriptQuickfixProvider extends DefaultQuickfixProvider {
                 }
                 if (!_matched) {
                   if (it instanceof Age) {
-                    final Age _age = (Age)it;
                     _matched=true;
                     EList<String> _defaults = template.getDefaults();
                     _defaults.add("age");
@@ -274,7 +258,6 @@ public class CharacterScriptQuickfixProvider extends DefaultQuickfixProvider {
                 }
                 if (!_matched) {
                   if (it instanceof Description) {
-                    final Description _description = (Description)it;
                     _matched=true;
                     EList<String> _defaults = template.getDefaults();
                     _defaults.add("description");
@@ -282,7 +265,6 @@ public class CharacterScriptQuickfixProvider extends DefaultQuickfixProvider {
                 }
                 if (!_matched) {
                   if (it instanceof Sex) {
-                    final Sex _sex = (Sex)it;
                     _matched=true;
                     EList<String> _defaults = template.getDefaults();
                     _defaults.add("sex");
@@ -290,7 +272,6 @@ public class CharacterScriptQuickfixProvider extends DefaultQuickfixProvider {
                 }
                 if (!_matched) {
                   if (it instanceof Type) {
-                    final Type _type = (Type)it;
                     _matched=true;
                     EList<String> _defaults = template.getDefaults();
                     _defaults.add("type");
@@ -298,21 +279,17 @@ public class CharacterScriptQuickfixProvider extends DefaultQuickfixProvider {
                 }
                 if (!_matched) {
                   if (it instanceof CustomProperty) {
-                    final CustomProperty _customProperty = (CustomProperty)it;
                     _matched=true;
-                    final ICompositeNode nodeForCARef = NodeModelUtils.findActualNodeFor(_customProperty);
+                    final ICompositeNode nodeForCARef = NodeModelUtils.findActualNodeFor(it);
                     BidiTreeIterable<INode> _asTreeIterable = nodeForCARef.getAsTreeIterable();
                     Iterable<LeafNode> _filter = Iterables.<LeafNode>filter(_asTreeIterable, LeafNode.class);
                     final Function1<LeafNode,Boolean> _function = new Function1<LeafNode,Boolean>() {
                       public Boolean apply(final LeafNode it) {
                         boolean _and = false;
-                        boolean _not = (!(it instanceof HiddenLeafNode));
-                        if (!_not) {
+                        if (!(!(it instanceof HiddenLeafNode))) {
                           _and = false;
                         } else {
-                          EObject _grammarElement = it.getGrammarElement();
-                          boolean _not_1 = (!(_grammarElement instanceof Keyword));
-                          _and = (_not && _not_1);
+                          _and = ((!(it instanceof HiddenLeafNode)) && (!(it.getGrammarElement() instanceof Keyword)));
                         }
                         return Boolean.valueOf(_and);
                       }
@@ -327,7 +304,7 @@ public class CharacterScriptQuickfixProvider extends DefaultQuickfixProvider {
                       String _text = _get.getText();
                       caName.setName(_text);
                       ca.setCaName(caName);
-                      EnumValue _enumValue = _customProperty.getEnumValue();
+                      EnumValue _enumValue = ((CustomProperty)it).getEnumValue();
                       boolean _notEquals = (!Objects.equal(_enumValue, null));
                       if (_notEquals) {
                         LeafNode _get_1 = ((LeafNode[])Conversions.unwrapArray(nodeCandidates, LeafNode.class))[1];
@@ -341,7 +318,7 @@ public class CharacterScriptQuickfixProvider extends DefaultQuickfixProvider {
                           _enumValues.add(ev);
                         }
                       } else {
-                        String _stringValue = _customProperty.getStringValue();
+                        String _stringValue = ((CustomProperty)it).getStringValue();
                         boolean _notEquals_2 = (!Objects.equal(_stringValue, null));
                         if (_notEquals_2) {
                           ca.setType(AttributeType.TEXT);
@@ -363,7 +340,8 @@ public class CharacterScriptQuickfixProvider extends DefaultQuickfixProvider {
           }
         }
       };
-      acceptor.accept(issue, _plus_1, _plus_3, null, _function);
+      acceptor.accept(issue, (("Create local template \'" + linkText) + "\'"), 
+        (("Create local template \'" + linkText) + "\'"), null, _function);
     }
   }
 }

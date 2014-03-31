@@ -100,11 +100,9 @@ public class DialogScriptNewDialogScriptWizard extends Wizard implements INewWiz
       int _indexOf = fileName.indexOf(".");
       boolean _lessThan = (_indexOf < 0);
       if (_lessThan) {
-        String _plus = (fileName + ".dialog");
-        fileName = _plus;
+        fileName = (fileName + ".dialog");
       }
-      String _plus_1 = ("Creating " + fileName);
-      monitor.beginTask(_plus_1, 2);
+      monitor.beginTask(("Creating " + fileName), 2);
       IWorkspace _workspace = ResourcesPlugin.getWorkspace();
       final IWorkspaceRoot root = _workspace.getRoot();
       Path _path = new Path(containerName);
@@ -115,13 +113,10 @@ public class DialogScriptNewDialogScriptWizard extends Wizard implements INewWiz
       if (_not) {
         _or = true;
       } else {
-        boolean _not_1 = (!(resource instanceof IContainer));
-        _or = (_not || _not_1);
+        _or = (_not || (!(resource instanceof IContainer)));
       }
       if (_or) {
-        String _plus_2 = ("Folder \"" + containerName);
-        String _plus_3 = (_plus_2 + "\" does not exist.");
-        this.throwCoreException(_plus_3);
+        this.throwCoreException((("Folder \"" + containerName) + "\" does not exist."));
       }
       final IContainer container = ((IContainer) resource);
       Path _path_1 = new Path(fileName);

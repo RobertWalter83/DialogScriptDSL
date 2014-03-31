@@ -289,8 +289,7 @@ public class DialogScriptLabelProvider extends DefaultEObjectLabelProvider {
           result = _plus_2;
           boolean _hasNext_1 = iterator.hasNext();
           if (_hasNext_1) {
-            String _plus_3 = (result + "and ");
-            result = _plus_3;
+            result = (result + "and ");
           }
         }
         boolean _hasNext_1 = iterator.hasNext();
@@ -387,8 +386,7 @@ public class DialogScriptLabelProvider extends DefaultEObjectLabelProvider {
           result = _plus;
           boolean _hasNext_1 = iterator.hasNext();
           if (_hasNext_1) {
-            String _plus_1 = (result + ", ");
-            result = _plus_1;
+            result = (result + ", ");
           }
         }
         boolean _hasNext_1 = iterator.hasNext();
