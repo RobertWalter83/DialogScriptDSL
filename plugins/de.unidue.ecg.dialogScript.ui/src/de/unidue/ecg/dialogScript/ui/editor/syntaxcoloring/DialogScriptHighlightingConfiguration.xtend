@@ -11,7 +11,7 @@ class DialogScriptHighlightingConfiguration extends DefaultHighlightingConfigura
 	public static val ID_IS_KEYWORD = "keywordAsId"
 	public static val CROSSREF_STRING = "crossRef"
 	public static val SCENE_NAME = "sceneName"
-	public static val HUB_NAME = "hubName"
+	public static val HUB_NAME = "hubName" 
 	public static val STRING_LITERAL = "stringLiteral" 
 	
 	override def configure(IHighlightingConfigurationAcceptor acceptor) {

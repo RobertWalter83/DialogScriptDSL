@@ -2,6 +2,7 @@
  */
 package de.unidue.ecg.dialogScript.dialogScript;
 
+import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
@@ -11,6 +12,7 @@ package de.unidue.ecg.dialogScript.dialogScript;
  * <p>
  * The following features are supported:
  * <ul>
+ *   <li>{@link de.unidue.ecg.dialogScript.dialogScript.ChoiceDialog#getModifiers <em>Modifiers</em>}</li>
  *   <li>{@link de.unidue.ecg.dialogScript.dialogScript.ChoiceDialog#getName <em>Name</em>}</li>
  *   <li>{@link de.unidue.ecg.dialogScript.dialogScript.ChoiceDialog#getChoiceComment <em>Choice Comment</em>}</li>
  *   <li>{@link de.unidue.ecg.dialogScript.dialogScript.ChoiceDialog#getBody <em>Body</em>}</li>
@@ -21,8 +23,26 @@ package de.unidue.ecg.dialogScript.dialogScript;
  * @model
  * @generated
  */
-public interface ChoiceDialog extends AbstractChoiceDialog
+public interface ChoiceDialog extends HubFragment
 {
+  /**
+   * Returns the value of the '<em><b>Modifiers</b></em>' attribute list.
+   * The list contents are of type {@link de.unidue.ecg.dialogScript.dialogScript.Modifier}.
+   * The literals are from the enumeration {@link de.unidue.ecg.dialogScript.dialogScript.Modifier}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Modifiers</em>' attribute list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Modifiers</em>' attribute list.
+   * @see de.unidue.ecg.dialogScript.dialogScript.Modifier
+   * @see de.unidue.ecg.dialogScript.dialogScript.DialogScriptPackage#getChoiceDialog_Modifiers()
+   * @model unique="false"
+   * @generated
+   */
+  EList<Modifier> getModifiers();
+
   /**
    * Returns the value of the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->

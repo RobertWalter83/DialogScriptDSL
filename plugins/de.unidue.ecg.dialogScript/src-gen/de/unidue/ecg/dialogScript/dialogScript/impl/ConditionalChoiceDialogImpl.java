@@ -6,6 +6,7 @@ import de.unidue.ecg.dialogScript.dialogScript.ChoiceDialog;
 import de.unidue.ecg.dialogScript.dialogScript.ConditionList;
 import de.unidue.ecg.dialogScript.dialogScript.ConditionalChoiceDialog;
 import de.unidue.ecg.dialogScript.dialogScript.DialogScriptPackage;
+import de.unidue.ecg.dialogScript.dialogScript.Modifier;
 import de.unidue.ecg.dialogScript.dialogScript.OtherwiseChoice;
 
 import java.util.Collection;
@@ -20,6 +21,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import org.eclipse.emf.ecore.util.EDataTypeEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -30,6 +32,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link de.unidue.ecg.dialogScript.dialogScript.impl.ConditionalChoiceDialogImpl#getModifiers <em>Modifiers</em>}</li>
  *   <li>{@link de.unidue.ecg.dialogScript.dialogScript.impl.ConditionalChoiceDialogImpl#getConditionList <em>Condition List</em>}</li>
  *   <li>{@link de.unidue.ecg.dialogScript.dialogScript.impl.ConditionalChoiceDialogImpl#getComment <em>Comment</em>}</li>
  *   <li>{@link de.unidue.ecg.dialogScript.dialogScript.impl.ConditionalChoiceDialogImpl#getChoiceDialogs <em>Choice Dialogs</em>}</li>
@@ -39,8 +42,18 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class ConditionalChoiceDialogImpl extends AbstractChoiceDialogImpl implements ConditionalChoiceDialog
+public class ConditionalChoiceDialogImpl extends HubFragmentImpl implements ConditionalChoiceDialog
 {
+  /**
+   * The cached value of the '{@link #getModifiers() <em>Modifiers</em>}' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getModifiers()
+   * @generated
+   * @ordered
+   */
+  protected EList<Modifier> modifiers;
+
   /**
    * The cached value of the '{@link #getConditionList() <em>Condition List</em>}' containment reference.
    * <!-- begin-user-doc -->
@@ -110,6 +123,20 @@ public class ConditionalChoiceDialogImpl extends AbstractChoiceDialogImpl implem
   protected EClass eStaticClass()
   {
     return DialogScriptPackage.Literals.CONDITIONAL_CHOICE_DIALOG;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<Modifier> getModifiers()
+  {
+    if (modifiers == null)
+    {
+      modifiers = new EDataTypeEList<Modifier>(Modifier.class, this, DialogScriptPackage.CONDITIONAL_CHOICE_DIALOG__MODIFIERS);
+    }
+    return modifiers;
   }
 
   /**
@@ -241,6 +268,8 @@ public class ConditionalChoiceDialogImpl extends AbstractChoiceDialogImpl implem
   {
     switch (featureID)
     {
+      case DialogScriptPackage.CONDITIONAL_CHOICE_DIALOG__MODIFIERS:
+        return getModifiers();
       case DialogScriptPackage.CONDITIONAL_CHOICE_DIALOG__CONDITION_LIST:
         return getConditionList();
       case DialogScriptPackage.CONDITIONAL_CHOICE_DIALOG__COMMENT:
@@ -264,6 +293,10 @@ public class ConditionalChoiceDialogImpl extends AbstractChoiceDialogImpl implem
   {
     switch (featureID)
     {
+      case DialogScriptPackage.CONDITIONAL_CHOICE_DIALOG__MODIFIERS:
+        getModifiers().clear();
+        getModifiers().addAll((Collection<? extends Modifier>)newValue);
+        return;
       case DialogScriptPackage.CONDITIONAL_CHOICE_DIALOG__CONDITION_LIST:
         setConditionList((ConditionList)newValue);
         return;
@@ -292,6 +325,9 @@ public class ConditionalChoiceDialogImpl extends AbstractChoiceDialogImpl implem
   {
     switch (featureID)
     {
+      case DialogScriptPackage.CONDITIONAL_CHOICE_DIALOG__MODIFIERS:
+        getModifiers().clear();
+        return;
       case DialogScriptPackage.CONDITIONAL_CHOICE_DIALOG__CONDITION_LIST:
         setConditionList((ConditionList)null);
         return;
@@ -318,6 +354,8 @@ public class ConditionalChoiceDialogImpl extends AbstractChoiceDialogImpl implem
   {
     switch (featureID)
     {
+      case DialogScriptPackage.CONDITIONAL_CHOICE_DIALOG__MODIFIERS:
+        return modifiers != null && !modifiers.isEmpty();
       case DialogScriptPackage.CONDITIONAL_CHOICE_DIALOG__CONDITION_LIST:
         return conditionList != null;
       case DialogScriptPackage.CONDITIONAL_CHOICE_DIALOG__COMMENT:
@@ -341,7 +379,9 @@ public class ConditionalChoiceDialogImpl extends AbstractChoiceDialogImpl implem
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (comment: ");
+    result.append(" (modifiers: ");
+    result.append(modifiers);
+    result.append(", comment: ");
     result.append(comment);
     result.append(')');
     return result.toString();

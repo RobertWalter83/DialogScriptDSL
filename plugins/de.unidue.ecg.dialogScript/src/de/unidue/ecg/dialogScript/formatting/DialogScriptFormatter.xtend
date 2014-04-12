@@ -66,7 +66,15 @@ class DialogScriptFormatter extends AbstractDeclarativeFormatter {
 		c.setNoSpace.between(hubAccess.isHiddenAssignment_0, hubAccess.hubKeyword_1)
 		c.setSpace(" ").between(hubAccess.isHiddenAssignment_0, hubAccess.hubKeyword_1)
 		c.setLinewrap(2).before(choiceDialogAccess.modifiersModifierEnumRuleCall_1_0)
+		c.setLinewrap(2).before(choiceDialogAccess.choiceKeyword_2)
+		c.setNoSpace.between(choiceDialogAccess.modifiersModifierEnumRuleCall_1_0, choiceDialogAccess.choiceKeyword_2)
+		c.setSpace(" ").between(choiceDialogAccess.modifiersModifierEnumRuleCall_1_0, choiceDialogAccess.choiceKeyword_2)
+		
+		c.setLinewrap(2).before(conditionalChoiceDialogAccess.modifiersModifierEnumRuleCall_0_0)
 		c.setLinewrap(2).before(conditionalChoiceDialogAccess.choicesKeyword_1)
+		c.setNoSpace.between(conditionalChoiceDialogAccess.modifiersModifierEnumRuleCall_0_0, conditionalChoiceDialogAccess.choicesKeyword_1)
+		c.setSpace(" ").between(conditionalChoiceDialogAccess.modifiersModifierEnumRuleCall_0_0, conditionalChoiceDialogAccess.choicesKeyword_1)
+		
 		
 		// create new line before every dialog line
 		c.setLinewrap.before(defaultsAccess.endKeyword_4)
@@ -79,7 +87,12 @@ class DialogScriptFormatter extends AbstractDeclarativeFormatter {
 		c.setLinewrap.before(switchOffAccess.switchKeyword_0)
 		c.setLinewrap.before(otherwiseAccess.modifiersModifierEnumRuleCall_0_0)
 		c.setLinewrap.before(otherwiseAccess.elseKeyword_1)
+		c.setNoSpace.between(otherwiseAccess.modifiersModifierEnumRuleCall_0_0, otherwiseAccess.elseKeyword_1)
+		c.setSpace(" ").between(otherwiseAccess.modifiersModifierEnumRuleCall_0_0, otherwiseAccess.elseKeyword_1)
 		c.setLinewrap.before(otherwiseChoiceAccess.modifiersModifierEnumRuleCall_0_0)
+		c.setLinewrap.before(otherwiseChoiceAccess.choicesKeyword_1)
+		c.setNoSpace.between(otherwiseChoiceAccess.modifiersModifierEnumRuleCall_0_0, otherwiseChoiceAccess.choicesKeyword_1)
+		c.setSpace(" ").between(otherwiseChoiceAccess.modifiersModifierEnumRuleCall_0_0, otherwiseChoiceAccess.choicesKeyword_1)
 		c.setLinewrap.before(exitAccess.exitKeyword_1)
 		c.setLinewrap.before(invokeHubAccess.enterKeyword_0)
 		c.setLinewrap.before(invokeSceneAccess.enterKeyword_0)
@@ -100,8 +113,10 @@ class DialogScriptFormatter extends AbstractDeclarativeFormatter {
 		c.setIndentation(choiceDialogAccess.choiceKeyword_2, choiceDialogAccess.endKeyword_6)
 		c.setIndentation(conditionalChoiceDialogAccess.choicesKeyword_1, conditionalChoiceDialogAccess.endKeyword_9)
 		
+		c.setIndentationDecrement.before(otherwiseChoiceAccess.modifiersModifierEnumRuleCall_0_0)
 		c.setIndentationDecrement.before(otherwiseChoiceAccess.choicesKeyword_1)
 		c.setIndentationIncrement.after(otherwiseChoiceAccess.elseKeyword_2)
+		c.setIndentationDecrement.before(otherwiseAccess.modifiersModifierEnumRuleCall_0_0)
 		c.setIndentationDecrement.before(otherwiseAccess.elseKeyword_1)
 		c.setIndentationIncrement.after(otherwiseAccess.elseKeyword_1)
 		c.setIndentationDecrement.before(otherTimesAccess.elseKeyword_1)

@@ -15,7 +15,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link de.unidue.ecg.dialogScript.dialogScript.Hub#isIsHidden <em>Is Hidden</em>}</li>
  *   <li>{@link de.unidue.ecg.dialogScript.dialogScript.Hub#getName <em>Name</em>}</li>
  *   <li>{@link de.unidue.ecg.dialogScript.dialogScript.Hub#getHubComment <em>Hub Comment</em>}</li>
- *   <li>{@link de.unidue.ecg.dialogScript.dialogScript.Hub#getChoiceDialogs <em>Choice Dialogs</em>}</li>
+ *   <li>{@link de.unidue.ecg.dialogScript.dialogScript.Hub#getHubFragments <em>Hub Fragments</em>}</li>
  * </ul>
  * </p>
  *
@@ -104,19 +104,19 @@ public interface Hub extends Recursive
   void setHubComment(String value);
 
   /**
-   * Returns the value of the '<em><b>Choice Dialogs</b></em>' containment reference list.
-   * The list contents are of type {@link de.unidue.ecg.dialogScript.dialogScript.AbstractChoiceDialog}.
+   * Returns the value of the '<em><b>Hub Fragments</b></em>' containment reference list.
+   * The list contents are of type {@link de.unidue.ecg.dialogScript.dialogScript.HubFragment}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Choice Dialogs</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Hub Fragments</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Choice Dialogs</em>' containment reference list.
-   * @see de.unidue.ecg.dialogScript.dialogScript.DialogScriptPackage#getHub_ChoiceDialogs()
+   * @return the value of the '<em>Hub Fragments</em>' containment reference list.
+   * @see de.unidue.ecg.dialogScript.dialogScript.DialogScriptPackage#getHub_HubFragments()
    * @model containment="true"
    * @generated
    */
-  EList<AbstractChoiceDialog> getChoiceDialogs();
+  EList<HubFragment> getHubFragments();
 
 } // Hub

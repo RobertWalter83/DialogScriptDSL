@@ -16,7 +16,7 @@ class DialogScriptSemanticHighlightingCalculator implements ISemanticHighlightin
 		}
 
 		val root = resource.parseResult.rootNode
-		
+		 
 		root.asTreeIterable.forEach[
 			val grammarElement = it.grammarElement
 			switch grammarElement {

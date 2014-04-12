@@ -1914,69 +1914,55 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleRecursive"
-    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:718:1: ruleRecursive returns [EObject current=null] : (this_Conditional_0= ruleConditional | this_Hub_1= ruleHub | this_DialogLine_2= ruleDialogLine ) ;
+    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:718:1: ruleRecursive returns [EObject current=null] : (this_Hub_0= ruleHub | this_Statement_1= ruleStatement ) ;
     public final EObject ruleRecursive() throws RecognitionException {
         EObject current = null;
 
-        EObject this_Conditional_0 = null;
+        EObject this_Hub_0 = null;
 
-        EObject this_Hub_1 = null;
-
-        EObject this_DialogLine_2 = null;
+        EObject this_Statement_1 = null;
 
 
          enterRule(); 
             
         try {
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:721:28: ( (this_Conditional_0= ruleConditional | this_Hub_1= ruleHub | this_DialogLine_2= ruleDialogLine ) )
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:722:1: (this_Conditional_0= ruleConditional | this_Hub_1= ruleHub | this_DialogLine_2= ruleDialogLine )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:721:28: ( (this_Hub_0= ruleHub | this_Statement_1= ruleStatement ) )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:722:1: (this_Hub_0= ruleHub | this_Statement_1= ruleStatement )
             {
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:722:1: (this_Conditional_0= ruleConditional | this_Hub_1= ruleHub | this_DialogLine_2= ruleDialogLine )
-            int alt13=3;
-            switch ( input.LA(1) ) {
-            case 31:
-            case 42:
-            case 43:
-                {
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:722:1: (this_Hub_0= ruleHub | this_Statement_1= ruleStatement )
+            int alt13=2;
+            int LA13_0 = input.LA(1);
+
+            if ( ((LA13_0>=28 && LA13_0<=29)) ) {
                 alt13=1;
-                }
-                break;
-            case 28:
-            case 29:
-                {
+            }
+            else if ( (LA13_0==RULE_ID||LA13_0==31||(LA13_0>=42 && LA13_0<=43)) ) {
                 alt13=2;
-                }
-                break;
-            case RULE_ID:
-                {
-                alt13=3;
-                }
-                break;
-            default:
+            }
+            else {
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
                     new NoViableAltException("", 13, 0, input);
 
                 throw nvae;
             }
-
             switch (alt13) {
                 case 1 :
-                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:723:5: this_Conditional_0= ruleConditional
+                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:723:5: this_Hub_0= ruleHub
                     {
                     if ( state.backtracking==0 ) {
                        
-                              newCompositeNode(grammarAccess.getRecursiveAccess().getConditionalParserRuleCall_0()); 
+                              newCompositeNode(grammarAccess.getRecursiveAccess().getHubParserRuleCall_0()); 
                           
                     }
-                    pushFollow(FOLLOW_ruleConditional_in_ruleRecursive1426);
-                    this_Conditional_0=ruleConditional();
+                    pushFollow(FOLLOW_ruleHub_in_ruleRecursive1426);
+                    this_Hub_0=ruleHub();
 
                     state._fsp--;
                     if (state.failed) return current;
                     if ( state.backtracking==0 ) {
                        
-                              current = this_Conditional_0; 
+                              current = this_Hub_0; 
                               afterParserOrEnumRuleCall();
                           
                     }
@@ -1984,43 +1970,21 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:733:5: this_Hub_1= ruleHub
+                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:733:5: this_Statement_1= ruleStatement
                     {
                     if ( state.backtracking==0 ) {
                        
-                              newCompositeNode(grammarAccess.getRecursiveAccess().getHubParserRuleCall_1()); 
+                              newCompositeNode(grammarAccess.getRecursiveAccess().getStatementParserRuleCall_1()); 
                           
                     }
-                    pushFollow(FOLLOW_ruleHub_in_ruleRecursive1453);
-                    this_Hub_1=ruleHub();
+                    pushFollow(FOLLOW_ruleStatement_in_ruleRecursive1453);
+                    this_Statement_1=ruleStatement();
 
                     state._fsp--;
                     if (state.failed) return current;
                     if ( state.backtracking==0 ) {
                        
-                              current = this_Hub_1; 
-                              afterParserOrEnumRuleCall();
-                          
-                    }
-
-                    }
-                    break;
-                case 3 :
-                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:743:5: this_DialogLine_2= ruleDialogLine
-                    {
-                    if ( state.backtracking==0 ) {
-                       
-                              newCompositeNode(grammarAccess.getRecursiveAccess().getDialogLineParserRuleCall_2()); 
-                          
-                    }
-                    pushFollow(FOLLOW_ruleDialogLine_in_ruleRecursive1480);
-                    this_DialogLine_2=ruleDialogLine();
-
-                    state._fsp--;
-                    if (state.failed) return current;
-                    if ( state.backtracking==0 ) {
-                       
-                              current = this_DialogLine_2; 
+                              current = this_Statement_1; 
                               afterParserOrEnumRuleCall();
                           
                     }
@@ -2050,7 +2014,7 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleDefaults"
-    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:759:1: entryRuleDefaults returns [EObject current=null] : iv_ruleDefaults= ruleDefaults EOF ;
+    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:749:1: entryRuleDefaults returns [EObject current=null] : iv_ruleDefaults= ruleDefaults EOF ;
     public final EObject entryRuleDefaults() throws RecognitionException {
         EObject current = null;
 
@@ -2058,13 +2022,13 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:760:2: (iv_ruleDefaults= ruleDefaults EOF )
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:761:2: iv_ruleDefaults= ruleDefaults EOF
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:750:2: (iv_ruleDefaults= ruleDefaults EOF )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:751:2: iv_ruleDefaults= ruleDefaults EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getDefaultsRule()); 
             }
-            pushFollow(FOLLOW_ruleDefaults_in_entryRuleDefaults1515);
+            pushFollow(FOLLOW_ruleDefaults_in_entryRuleDefaults1488);
             iv_ruleDefaults=ruleDefaults();
 
             state._fsp--;
@@ -2072,7 +2036,7 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleDefaults; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleDefaults1525); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleDefaults1498); if (state.failed) return current;
 
             }
 
@@ -2090,7 +2054,7 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleDefaults"
-    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:768:1: ruleDefaults returns [EObject current=null] : ( () otherlv_1= 'defaults' ( (lv_comment_2_0= RULE_COMMENT ) )? ( (lv_body_3_0= ruleConditionalBody ) ) otherlv_4= 'end' ) ;
+    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:758:1: ruleDefaults returns [EObject current=null] : ( () otherlv_1= 'defaults' ( (lv_comment_2_0= RULE_COMMENT ) )? ( (lv_body_3_0= ruleConditionalBody ) ) otherlv_4= 'end' ) ;
     public final EObject ruleDefaults() throws RecognitionException {
         EObject current = null;
 
@@ -2103,14 +2067,14 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:771:28: ( ( () otherlv_1= 'defaults' ( (lv_comment_2_0= RULE_COMMENT ) )? ( (lv_body_3_0= ruleConditionalBody ) ) otherlv_4= 'end' ) )
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:772:1: ( () otherlv_1= 'defaults' ( (lv_comment_2_0= RULE_COMMENT ) )? ( (lv_body_3_0= ruleConditionalBody ) ) otherlv_4= 'end' )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:761:28: ( ( () otherlv_1= 'defaults' ( (lv_comment_2_0= RULE_COMMENT ) )? ( (lv_body_3_0= ruleConditionalBody ) ) otherlv_4= 'end' ) )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:762:1: ( () otherlv_1= 'defaults' ( (lv_comment_2_0= RULE_COMMENT ) )? ( (lv_body_3_0= ruleConditionalBody ) ) otherlv_4= 'end' )
             {
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:772:1: ( () otherlv_1= 'defaults' ( (lv_comment_2_0= RULE_COMMENT ) )? ( (lv_body_3_0= ruleConditionalBody ) ) otherlv_4= 'end' )
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:772:2: () otherlv_1= 'defaults' ( (lv_comment_2_0= RULE_COMMENT ) )? ( (lv_body_3_0= ruleConditionalBody ) ) otherlv_4= 'end'
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:762:1: ( () otherlv_1= 'defaults' ( (lv_comment_2_0= RULE_COMMENT ) )? ( (lv_body_3_0= ruleConditionalBody ) ) otherlv_4= 'end' )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:762:2: () otherlv_1= 'defaults' ( (lv_comment_2_0= RULE_COMMENT ) )? ( (lv_body_3_0= ruleConditionalBody ) ) otherlv_4= 'end'
             {
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:772:2: ()
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:773:5: 
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:762:2: ()
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:763:5: 
             {
             if ( state.backtracking==0 ) {
 
@@ -2122,13 +2086,13 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,23,FOLLOW_23_in_ruleDefaults1571); if (state.failed) return current;
+            otherlv_1=(Token)match(input,23,FOLLOW_23_in_ruleDefaults1544); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_1, grammarAccess.getDefaultsAccess().getDefaultsKeyword_1());
                   
             }
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:782:1: ( (lv_comment_2_0= RULE_COMMENT ) )?
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:772:1: ( (lv_comment_2_0= RULE_COMMENT ) )?
             int alt14=2;
             int LA14_0 = input.LA(1);
 
@@ -2137,12 +2101,12 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
             }
             switch (alt14) {
                 case 1 :
-                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:783:1: (lv_comment_2_0= RULE_COMMENT )
+                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:773:1: (lv_comment_2_0= RULE_COMMENT )
                     {
-                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:783:1: (lv_comment_2_0= RULE_COMMENT )
-                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:784:3: lv_comment_2_0= RULE_COMMENT
+                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:773:1: (lv_comment_2_0= RULE_COMMENT )
+                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:774:3: lv_comment_2_0= RULE_COMMENT
                     {
-                    lv_comment_2_0=(Token)match(input,RULE_COMMENT,FOLLOW_RULE_COMMENT_in_ruleDefaults1588); if (state.failed) return current;
+                    lv_comment_2_0=(Token)match(input,RULE_COMMENT,FOLLOW_RULE_COMMENT_in_ruleDefaults1561); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       			newLeafNode(lv_comment_2_0, grammarAccess.getDefaultsAccess().getCommentCOMMENTTerminalRuleCall_2_0()); 
@@ -2169,18 +2133,18 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:800:3: ( (lv_body_3_0= ruleConditionalBody ) )
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:801:1: (lv_body_3_0= ruleConditionalBody )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:790:3: ( (lv_body_3_0= ruleConditionalBody ) )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:791:1: (lv_body_3_0= ruleConditionalBody )
             {
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:801:1: (lv_body_3_0= ruleConditionalBody )
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:802:3: lv_body_3_0= ruleConditionalBody
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:791:1: (lv_body_3_0= ruleConditionalBody )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:792:3: lv_body_3_0= ruleConditionalBody
             {
             if ( state.backtracking==0 ) {
                
               	        newCompositeNode(grammarAccess.getDefaultsAccess().getBodyConditionalBodyParserRuleCall_3_0()); 
               	    
             }
-            pushFollow(FOLLOW_ruleConditionalBody_in_ruleDefaults1615);
+            pushFollow(FOLLOW_ruleConditionalBody_in_ruleDefaults1588);
             lv_body_3_0=ruleConditionalBody();
 
             state._fsp--;
@@ -2204,7 +2168,7 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_4=(Token)match(input,19,FOLLOW_19_in_ruleDefaults1627); if (state.failed) return current;
+            otherlv_4=(Token)match(input,19,FOLLOW_19_in_ruleDefaults1600); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_4, grammarAccess.getDefaultsAccess().getEndKeyword_4());
@@ -2233,7 +2197,7 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleFirstTime"
-    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:830:1: entryRuleFirstTime returns [EObject current=null] : iv_ruleFirstTime= ruleFirstTime EOF ;
+    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:820:1: entryRuleFirstTime returns [EObject current=null] : iv_ruleFirstTime= ruleFirstTime EOF ;
     public final EObject entryRuleFirstTime() throws RecognitionException {
         EObject current = null;
 
@@ -2241,13 +2205,13 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:831:2: (iv_ruleFirstTime= ruleFirstTime EOF )
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:832:2: iv_ruleFirstTime= ruleFirstTime EOF
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:821:2: (iv_ruleFirstTime= ruleFirstTime EOF )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:822:2: iv_ruleFirstTime= ruleFirstTime EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getFirstTimeRule()); 
             }
-            pushFollow(FOLLOW_ruleFirstTime_in_entryRuleFirstTime1663);
+            pushFollow(FOLLOW_ruleFirstTime_in_entryRuleFirstTime1636);
             iv_ruleFirstTime=ruleFirstTime();
 
             state._fsp--;
@@ -2255,7 +2219,7 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleFirstTime; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleFirstTime1673); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleFirstTime1646); if (state.failed) return current;
 
             }
 
@@ -2273,7 +2237,7 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleFirstTime"
-    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:839:1: ruleFirstTime returns [EObject current=null] : ( () otherlv_1= 'first' otherlv_2= 'time' ( (lv_comment_3_0= RULE_COMMENT ) )? ( (lv_body_4_0= ruleConditionalBody ) ) ( (lv_otherTimes_5_0= ruleOtherTimes ) )? otherlv_6= 'end' ) ;
+    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:829:1: ruleFirstTime returns [EObject current=null] : ( () otherlv_1= 'first' otherlv_2= 'time' ( (lv_comment_3_0= RULE_COMMENT ) )? ( (lv_body_4_0= ruleConditionalBody ) ) ( (lv_otherTimes_5_0= ruleOtherTimes ) )? otherlv_6= 'end' ) ;
     public final EObject ruleFirstTime() throws RecognitionException {
         EObject current = null;
 
@@ -2289,14 +2253,14 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:842:28: ( ( () otherlv_1= 'first' otherlv_2= 'time' ( (lv_comment_3_0= RULE_COMMENT ) )? ( (lv_body_4_0= ruleConditionalBody ) ) ( (lv_otherTimes_5_0= ruleOtherTimes ) )? otherlv_6= 'end' ) )
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:843:1: ( () otherlv_1= 'first' otherlv_2= 'time' ( (lv_comment_3_0= RULE_COMMENT ) )? ( (lv_body_4_0= ruleConditionalBody ) ) ( (lv_otherTimes_5_0= ruleOtherTimes ) )? otherlv_6= 'end' )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:832:28: ( ( () otherlv_1= 'first' otherlv_2= 'time' ( (lv_comment_3_0= RULE_COMMENT ) )? ( (lv_body_4_0= ruleConditionalBody ) ) ( (lv_otherTimes_5_0= ruleOtherTimes ) )? otherlv_6= 'end' ) )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:833:1: ( () otherlv_1= 'first' otherlv_2= 'time' ( (lv_comment_3_0= RULE_COMMENT ) )? ( (lv_body_4_0= ruleConditionalBody ) ) ( (lv_otherTimes_5_0= ruleOtherTimes ) )? otherlv_6= 'end' )
             {
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:843:1: ( () otherlv_1= 'first' otherlv_2= 'time' ( (lv_comment_3_0= RULE_COMMENT ) )? ( (lv_body_4_0= ruleConditionalBody ) ) ( (lv_otherTimes_5_0= ruleOtherTimes ) )? otherlv_6= 'end' )
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:843:2: () otherlv_1= 'first' otherlv_2= 'time' ( (lv_comment_3_0= RULE_COMMENT ) )? ( (lv_body_4_0= ruleConditionalBody ) ) ( (lv_otherTimes_5_0= ruleOtherTimes ) )? otherlv_6= 'end'
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:833:1: ( () otherlv_1= 'first' otherlv_2= 'time' ( (lv_comment_3_0= RULE_COMMENT ) )? ( (lv_body_4_0= ruleConditionalBody ) ) ( (lv_otherTimes_5_0= ruleOtherTimes ) )? otherlv_6= 'end' )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:833:2: () otherlv_1= 'first' otherlv_2= 'time' ( (lv_comment_3_0= RULE_COMMENT ) )? ( (lv_body_4_0= ruleConditionalBody ) ) ( (lv_otherTimes_5_0= ruleOtherTimes ) )? otherlv_6= 'end'
             {
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:843:2: ()
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:844:5: 
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:833:2: ()
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:834:5: 
             {
             if ( state.backtracking==0 ) {
 
@@ -2308,19 +2272,19 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,24,FOLLOW_24_in_ruleFirstTime1719); if (state.failed) return current;
+            otherlv_1=(Token)match(input,24,FOLLOW_24_in_ruleFirstTime1692); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_1, grammarAccess.getFirstTimeAccess().getFirstKeyword_1());
                   
             }
-            otherlv_2=(Token)match(input,25,FOLLOW_25_in_ruleFirstTime1731); if (state.failed) return current;
+            otherlv_2=(Token)match(input,25,FOLLOW_25_in_ruleFirstTime1704); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_2, grammarAccess.getFirstTimeAccess().getTimeKeyword_2());
                   
             }
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:857:1: ( (lv_comment_3_0= RULE_COMMENT ) )?
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:847:1: ( (lv_comment_3_0= RULE_COMMENT ) )?
             int alt15=2;
             int LA15_0 = input.LA(1);
 
@@ -2329,12 +2293,12 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
             }
             switch (alt15) {
                 case 1 :
-                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:858:1: (lv_comment_3_0= RULE_COMMENT )
+                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:848:1: (lv_comment_3_0= RULE_COMMENT )
                     {
-                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:858:1: (lv_comment_3_0= RULE_COMMENT )
-                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:859:3: lv_comment_3_0= RULE_COMMENT
+                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:848:1: (lv_comment_3_0= RULE_COMMENT )
+                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:849:3: lv_comment_3_0= RULE_COMMENT
                     {
-                    lv_comment_3_0=(Token)match(input,RULE_COMMENT,FOLLOW_RULE_COMMENT_in_ruleFirstTime1748); if (state.failed) return current;
+                    lv_comment_3_0=(Token)match(input,RULE_COMMENT,FOLLOW_RULE_COMMENT_in_ruleFirstTime1721); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       			newLeafNode(lv_comment_3_0, grammarAccess.getFirstTimeAccess().getCommentCOMMENTTerminalRuleCall_3_0()); 
@@ -2361,18 +2325,18 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:875:3: ( (lv_body_4_0= ruleConditionalBody ) )
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:876:1: (lv_body_4_0= ruleConditionalBody )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:865:3: ( (lv_body_4_0= ruleConditionalBody ) )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:866:1: (lv_body_4_0= ruleConditionalBody )
             {
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:876:1: (lv_body_4_0= ruleConditionalBody )
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:877:3: lv_body_4_0= ruleConditionalBody
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:866:1: (lv_body_4_0= ruleConditionalBody )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:867:3: lv_body_4_0= ruleConditionalBody
             {
             if ( state.backtracking==0 ) {
                
               	        newCompositeNode(grammarAccess.getFirstTimeAccess().getBodyConditionalBodyParserRuleCall_4_0()); 
               	    
             }
-            pushFollow(FOLLOW_ruleConditionalBody_in_ruleFirstTime1775);
+            pushFollow(FOLLOW_ruleConditionalBody_in_ruleFirstTime1748);
             lv_body_4_0=ruleConditionalBody();
 
             state._fsp--;
@@ -2396,7 +2360,7 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:893:2: ( (lv_otherTimes_5_0= ruleOtherTimes ) )?
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:883:2: ( (lv_otherTimes_5_0= ruleOtherTimes ) )?
             int alt16=2;
             int LA16_0 = input.LA(1);
 
@@ -2405,17 +2369,17 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
             }
             switch (alt16) {
                 case 1 :
-                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:894:1: (lv_otherTimes_5_0= ruleOtherTimes )
+                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:884:1: (lv_otherTimes_5_0= ruleOtherTimes )
                     {
-                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:894:1: (lv_otherTimes_5_0= ruleOtherTimes )
-                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:895:3: lv_otherTimes_5_0= ruleOtherTimes
+                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:884:1: (lv_otherTimes_5_0= ruleOtherTimes )
+                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:885:3: lv_otherTimes_5_0= ruleOtherTimes
                     {
                     if ( state.backtracking==0 ) {
                        
                       	        newCompositeNode(grammarAccess.getFirstTimeAccess().getOtherTimesOtherTimesParserRuleCall_5_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleOtherTimes_in_ruleFirstTime1796);
+                    pushFollow(FOLLOW_ruleOtherTimes_in_ruleFirstTime1769);
                     lv_otherTimes_5_0=ruleOtherTimes();
 
                     state._fsp--;
@@ -2442,7 +2406,7 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_6=(Token)match(input,19,FOLLOW_19_in_ruleFirstTime1809); if (state.failed) return current;
+            otherlv_6=(Token)match(input,19,FOLLOW_19_in_ruleFirstTime1782); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_6, grammarAccess.getFirstTimeAccess().getEndKeyword_6());
@@ -2471,7 +2435,7 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleOtherTimes"
-    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:923:1: entryRuleOtherTimes returns [EObject current=null] : iv_ruleOtherTimes= ruleOtherTimes EOF ;
+    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:913:1: entryRuleOtherTimes returns [EObject current=null] : iv_ruleOtherTimes= ruleOtherTimes EOF ;
     public final EObject entryRuleOtherTimes() throws RecognitionException {
         EObject current = null;
 
@@ -2479,13 +2443,13 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:924:2: (iv_ruleOtherTimes= ruleOtherTimes EOF )
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:925:2: iv_ruleOtherTimes= ruleOtherTimes EOF
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:914:2: (iv_ruleOtherTimes= ruleOtherTimes EOF )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:915:2: iv_ruleOtherTimes= ruleOtherTimes EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getOtherTimesRule()); 
             }
-            pushFollow(FOLLOW_ruleOtherTimes_in_entryRuleOtherTimes1845);
+            pushFollow(FOLLOW_ruleOtherTimes_in_entryRuleOtherTimes1818);
             iv_ruleOtherTimes=ruleOtherTimes();
 
             state._fsp--;
@@ -2493,7 +2457,7 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleOtherTimes; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleOtherTimes1855); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleOtherTimes1828); if (state.failed) return current;
 
             }
 
@@ -2511,7 +2475,7 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleOtherTimes"
-    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:932:1: ruleOtherTimes returns [EObject current=null] : ( () otherlv_1= 'else' ( (lv_comment_2_0= RULE_COMMENT ) )? ( (lv_body_3_0= ruleConditionalBody ) ) ) ;
+    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:922:1: ruleOtherTimes returns [EObject current=null] : ( () otherlv_1= 'else' ( (lv_comment_2_0= RULE_COMMENT ) )? ( (lv_body_3_0= ruleConditionalBody ) ) ) ;
     public final EObject ruleOtherTimes() throws RecognitionException {
         EObject current = null;
 
@@ -2523,14 +2487,14 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:935:28: ( ( () otherlv_1= 'else' ( (lv_comment_2_0= RULE_COMMENT ) )? ( (lv_body_3_0= ruleConditionalBody ) ) ) )
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:936:1: ( () otherlv_1= 'else' ( (lv_comment_2_0= RULE_COMMENT ) )? ( (lv_body_3_0= ruleConditionalBody ) ) )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:925:28: ( ( () otherlv_1= 'else' ( (lv_comment_2_0= RULE_COMMENT ) )? ( (lv_body_3_0= ruleConditionalBody ) ) ) )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:926:1: ( () otherlv_1= 'else' ( (lv_comment_2_0= RULE_COMMENT ) )? ( (lv_body_3_0= ruleConditionalBody ) ) )
             {
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:936:1: ( () otherlv_1= 'else' ( (lv_comment_2_0= RULE_COMMENT ) )? ( (lv_body_3_0= ruleConditionalBody ) ) )
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:936:2: () otherlv_1= 'else' ( (lv_comment_2_0= RULE_COMMENT ) )? ( (lv_body_3_0= ruleConditionalBody ) )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:926:1: ( () otherlv_1= 'else' ( (lv_comment_2_0= RULE_COMMENT ) )? ( (lv_body_3_0= ruleConditionalBody ) ) )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:926:2: () otherlv_1= 'else' ( (lv_comment_2_0= RULE_COMMENT ) )? ( (lv_body_3_0= ruleConditionalBody ) )
             {
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:936:2: ()
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:937:5: 
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:926:2: ()
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:927:5: 
             {
             if ( state.backtracking==0 ) {
 
@@ -2542,13 +2506,13 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,26,FOLLOW_26_in_ruleOtherTimes1901); if (state.failed) return current;
+            otherlv_1=(Token)match(input,26,FOLLOW_26_in_ruleOtherTimes1874); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_1, grammarAccess.getOtherTimesAccess().getElseKeyword_1());
                   
             }
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:946:1: ( (lv_comment_2_0= RULE_COMMENT ) )?
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:936:1: ( (lv_comment_2_0= RULE_COMMENT ) )?
             int alt17=2;
             int LA17_0 = input.LA(1);
 
@@ -2557,12 +2521,12 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
             }
             switch (alt17) {
                 case 1 :
-                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:947:1: (lv_comment_2_0= RULE_COMMENT )
+                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:937:1: (lv_comment_2_0= RULE_COMMENT )
                     {
-                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:947:1: (lv_comment_2_0= RULE_COMMENT )
-                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:948:3: lv_comment_2_0= RULE_COMMENT
+                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:937:1: (lv_comment_2_0= RULE_COMMENT )
+                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:938:3: lv_comment_2_0= RULE_COMMENT
                     {
-                    lv_comment_2_0=(Token)match(input,RULE_COMMENT,FOLLOW_RULE_COMMENT_in_ruleOtherTimes1918); if (state.failed) return current;
+                    lv_comment_2_0=(Token)match(input,RULE_COMMENT,FOLLOW_RULE_COMMENT_in_ruleOtherTimes1891); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       			newLeafNode(lv_comment_2_0, grammarAccess.getOtherTimesAccess().getCommentCOMMENTTerminalRuleCall_2_0()); 
@@ -2589,18 +2553,18 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:964:3: ( (lv_body_3_0= ruleConditionalBody ) )
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:965:1: (lv_body_3_0= ruleConditionalBody )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:954:3: ( (lv_body_3_0= ruleConditionalBody ) )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:955:1: (lv_body_3_0= ruleConditionalBody )
             {
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:965:1: (lv_body_3_0= ruleConditionalBody )
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:966:3: lv_body_3_0= ruleConditionalBody
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:955:1: (lv_body_3_0= ruleConditionalBody )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:956:3: lv_body_3_0= ruleConditionalBody
             {
             if ( state.backtracking==0 ) {
                
               	        newCompositeNode(grammarAccess.getOtherTimesAccess().getBodyConditionalBodyParserRuleCall_3_0()); 
               	    
             }
-            pushFollow(FOLLOW_ruleConditionalBody_in_ruleOtherTimes1945);
+            pushFollow(FOLLOW_ruleConditionalBody_in_ruleOtherTimes1918);
             lv_body_3_0=ruleConditionalBody();
 
             state._fsp--;
@@ -2647,7 +2611,7 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulePartingLines"
-    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:990:1: entryRulePartingLines returns [EObject current=null] : iv_rulePartingLines= rulePartingLines EOF ;
+    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:980:1: entryRulePartingLines returns [EObject current=null] : iv_rulePartingLines= rulePartingLines EOF ;
     public final EObject entryRulePartingLines() throws RecognitionException {
         EObject current = null;
 
@@ -2655,13 +2619,13 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:991:2: (iv_rulePartingLines= rulePartingLines EOF )
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:992:2: iv_rulePartingLines= rulePartingLines EOF
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:981:2: (iv_rulePartingLines= rulePartingLines EOF )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:982:2: iv_rulePartingLines= rulePartingLines EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getPartingLinesRule()); 
             }
-            pushFollow(FOLLOW_rulePartingLines_in_entryRulePartingLines1981);
+            pushFollow(FOLLOW_rulePartingLines_in_entryRulePartingLines1954);
             iv_rulePartingLines=rulePartingLines();
 
             state._fsp--;
@@ -2669,7 +2633,7 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_rulePartingLines; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRulePartingLines1991); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRulePartingLines1964); if (state.failed) return current;
 
             }
 
@@ -2687,7 +2651,7 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePartingLines"
-    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:999:1: rulePartingLines returns [EObject current=null] : ( () otherlv_1= 'parting' ( (lv_comment_2_0= RULE_COMMENT ) )? ( (lv_body_3_0= ruleConditionalBody ) ) otherlv_4= 'end' ) ;
+    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:989:1: rulePartingLines returns [EObject current=null] : ( () otherlv_1= 'parting' ( (lv_comment_2_0= RULE_COMMENT ) )? ( (lv_body_3_0= ruleConditionalBody ) ) otherlv_4= 'end' ) ;
     public final EObject rulePartingLines() throws RecognitionException {
         EObject current = null;
 
@@ -2700,14 +2664,14 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1002:28: ( ( () otherlv_1= 'parting' ( (lv_comment_2_0= RULE_COMMENT ) )? ( (lv_body_3_0= ruleConditionalBody ) ) otherlv_4= 'end' ) )
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1003:1: ( () otherlv_1= 'parting' ( (lv_comment_2_0= RULE_COMMENT ) )? ( (lv_body_3_0= ruleConditionalBody ) ) otherlv_4= 'end' )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:992:28: ( ( () otherlv_1= 'parting' ( (lv_comment_2_0= RULE_COMMENT ) )? ( (lv_body_3_0= ruleConditionalBody ) ) otherlv_4= 'end' ) )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:993:1: ( () otherlv_1= 'parting' ( (lv_comment_2_0= RULE_COMMENT ) )? ( (lv_body_3_0= ruleConditionalBody ) ) otherlv_4= 'end' )
             {
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1003:1: ( () otherlv_1= 'parting' ( (lv_comment_2_0= RULE_COMMENT ) )? ( (lv_body_3_0= ruleConditionalBody ) ) otherlv_4= 'end' )
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1003:2: () otherlv_1= 'parting' ( (lv_comment_2_0= RULE_COMMENT ) )? ( (lv_body_3_0= ruleConditionalBody ) ) otherlv_4= 'end'
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:993:1: ( () otherlv_1= 'parting' ( (lv_comment_2_0= RULE_COMMENT ) )? ( (lv_body_3_0= ruleConditionalBody ) ) otherlv_4= 'end' )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:993:2: () otherlv_1= 'parting' ( (lv_comment_2_0= RULE_COMMENT ) )? ( (lv_body_3_0= ruleConditionalBody ) ) otherlv_4= 'end'
             {
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1003:2: ()
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1004:5: 
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:993:2: ()
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:994:5: 
             {
             if ( state.backtracking==0 ) {
 
@@ -2719,13 +2683,13 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,27,FOLLOW_27_in_rulePartingLines2037); if (state.failed) return current;
+            otherlv_1=(Token)match(input,27,FOLLOW_27_in_rulePartingLines2010); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_1, grammarAccess.getPartingLinesAccess().getPartingKeyword_1());
                   
             }
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1013:1: ( (lv_comment_2_0= RULE_COMMENT ) )?
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1003:1: ( (lv_comment_2_0= RULE_COMMENT ) )?
             int alt18=2;
             int LA18_0 = input.LA(1);
 
@@ -2734,12 +2698,12 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
             }
             switch (alt18) {
                 case 1 :
-                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1014:1: (lv_comment_2_0= RULE_COMMENT )
+                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1004:1: (lv_comment_2_0= RULE_COMMENT )
                     {
-                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1014:1: (lv_comment_2_0= RULE_COMMENT )
-                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1015:3: lv_comment_2_0= RULE_COMMENT
+                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1004:1: (lv_comment_2_0= RULE_COMMENT )
+                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1005:3: lv_comment_2_0= RULE_COMMENT
                     {
-                    lv_comment_2_0=(Token)match(input,RULE_COMMENT,FOLLOW_RULE_COMMENT_in_rulePartingLines2054); if (state.failed) return current;
+                    lv_comment_2_0=(Token)match(input,RULE_COMMENT,FOLLOW_RULE_COMMENT_in_rulePartingLines2027); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       			newLeafNode(lv_comment_2_0, grammarAccess.getPartingLinesAccess().getCommentCOMMENTTerminalRuleCall_2_0()); 
@@ -2766,18 +2730,18 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1031:3: ( (lv_body_3_0= ruleConditionalBody ) )
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1032:1: (lv_body_3_0= ruleConditionalBody )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1021:3: ( (lv_body_3_0= ruleConditionalBody ) )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1022:1: (lv_body_3_0= ruleConditionalBody )
             {
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1032:1: (lv_body_3_0= ruleConditionalBody )
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1033:3: lv_body_3_0= ruleConditionalBody
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1022:1: (lv_body_3_0= ruleConditionalBody )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1023:3: lv_body_3_0= ruleConditionalBody
             {
             if ( state.backtracking==0 ) {
                
               	        newCompositeNode(grammarAccess.getPartingLinesAccess().getBodyConditionalBodyParserRuleCall_3_0()); 
               	    
             }
-            pushFollow(FOLLOW_ruleConditionalBody_in_rulePartingLines2081);
+            pushFollow(FOLLOW_ruleConditionalBody_in_rulePartingLines2054);
             lv_body_3_0=ruleConditionalBody();
 
             state._fsp--;
@@ -2801,7 +2765,7 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_4=(Token)match(input,19,FOLLOW_19_in_rulePartingLines2093); if (state.failed) return current;
+            otherlv_4=(Token)match(input,19,FOLLOW_19_in_rulePartingLines2066); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_4, grammarAccess.getPartingLinesAccess().getEndKeyword_4());
@@ -2830,7 +2794,7 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleHub"
-    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1061:1: entryRuleHub returns [EObject current=null] : iv_ruleHub= ruleHub EOF ;
+    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1051:1: entryRuleHub returns [EObject current=null] : iv_ruleHub= ruleHub EOF ;
     public final EObject entryRuleHub() throws RecognitionException {
         EObject current = null;
 
@@ -2838,13 +2802,13 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1062:2: (iv_ruleHub= ruleHub EOF )
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1063:2: iv_ruleHub= ruleHub EOF
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1052:2: (iv_ruleHub= ruleHub EOF )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1053:2: iv_ruleHub= ruleHub EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getHubRule()); 
             }
-            pushFollow(FOLLOW_ruleHub_in_entryRuleHub2129);
+            pushFollow(FOLLOW_ruleHub_in_entryRuleHub2102);
             iv_ruleHub=ruleHub();
 
             state._fsp--;
@@ -2852,7 +2816,7 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleHub; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleHub2139); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleHub2112); if (state.failed) return current;
 
             }
 
@@ -2870,7 +2834,7 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleHub"
-    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1070:1: ruleHub returns [EObject current=null] : ( ( (lv_isHidden_0_0= 'hidden' ) )? otherlv_1= 'hub' ( (lv_name_2_0= ruleStringID ) ) ( (lv_hubComment_3_0= RULE_COMMENT ) )? ( (lv_choiceDialogs_4_0= ruleAbstractChoiceDialog ) )* otherlv_5= 'end' ) ;
+    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1060:1: ruleHub returns [EObject current=null] : ( ( (lv_isHidden_0_0= 'hidden' ) )? otherlv_1= 'hub' ( (lv_name_2_0= ruleStringID ) ) ( (lv_hubComment_3_0= RULE_COMMENT ) )? ( (lv_hubFragments_4_0= ruleHubFragment ) )* otherlv_5= 'end' ) ;
     public final EObject ruleHub() throws RecognitionException {
         EObject current = null;
 
@@ -2880,19 +2844,19 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
         Token otherlv_5=null;
         AntlrDatatypeRuleToken lv_name_2_0 = null;
 
-        EObject lv_choiceDialogs_4_0 = null;
+        EObject lv_hubFragments_4_0 = null;
 
 
          enterRule(); 
             
         try {
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1073:28: ( ( ( (lv_isHidden_0_0= 'hidden' ) )? otherlv_1= 'hub' ( (lv_name_2_0= ruleStringID ) ) ( (lv_hubComment_3_0= RULE_COMMENT ) )? ( (lv_choiceDialogs_4_0= ruleAbstractChoiceDialog ) )* otherlv_5= 'end' ) )
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1074:1: ( ( (lv_isHidden_0_0= 'hidden' ) )? otherlv_1= 'hub' ( (lv_name_2_0= ruleStringID ) ) ( (lv_hubComment_3_0= RULE_COMMENT ) )? ( (lv_choiceDialogs_4_0= ruleAbstractChoiceDialog ) )* otherlv_5= 'end' )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1063:28: ( ( ( (lv_isHidden_0_0= 'hidden' ) )? otherlv_1= 'hub' ( (lv_name_2_0= ruleStringID ) ) ( (lv_hubComment_3_0= RULE_COMMENT ) )? ( (lv_hubFragments_4_0= ruleHubFragment ) )* otherlv_5= 'end' ) )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1064:1: ( ( (lv_isHidden_0_0= 'hidden' ) )? otherlv_1= 'hub' ( (lv_name_2_0= ruleStringID ) ) ( (lv_hubComment_3_0= RULE_COMMENT ) )? ( (lv_hubFragments_4_0= ruleHubFragment ) )* otherlv_5= 'end' )
             {
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1074:1: ( ( (lv_isHidden_0_0= 'hidden' ) )? otherlv_1= 'hub' ( (lv_name_2_0= ruleStringID ) ) ( (lv_hubComment_3_0= RULE_COMMENT ) )? ( (lv_choiceDialogs_4_0= ruleAbstractChoiceDialog ) )* otherlv_5= 'end' )
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1074:2: ( (lv_isHidden_0_0= 'hidden' ) )? otherlv_1= 'hub' ( (lv_name_2_0= ruleStringID ) ) ( (lv_hubComment_3_0= RULE_COMMENT ) )? ( (lv_choiceDialogs_4_0= ruleAbstractChoiceDialog ) )* otherlv_5= 'end'
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1064:1: ( ( (lv_isHidden_0_0= 'hidden' ) )? otherlv_1= 'hub' ( (lv_name_2_0= ruleStringID ) ) ( (lv_hubComment_3_0= RULE_COMMENT ) )? ( (lv_hubFragments_4_0= ruleHubFragment ) )* otherlv_5= 'end' )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1064:2: ( (lv_isHidden_0_0= 'hidden' ) )? otherlv_1= 'hub' ( (lv_name_2_0= ruleStringID ) ) ( (lv_hubComment_3_0= RULE_COMMENT ) )? ( (lv_hubFragments_4_0= ruleHubFragment ) )* otherlv_5= 'end'
             {
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1074:2: ( (lv_isHidden_0_0= 'hidden' ) )?
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1064:2: ( (lv_isHidden_0_0= 'hidden' ) )?
             int alt19=2;
             int LA19_0 = input.LA(1);
 
@@ -2901,12 +2865,12 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
             }
             switch (alt19) {
                 case 1 :
-                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1075:1: (lv_isHidden_0_0= 'hidden' )
+                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1065:1: (lv_isHidden_0_0= 'hidden' )
                     {
-                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1075:1: (lv_isHidden_0_0= 'hidden' )
-                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1076:3: lv_isHidden_0_0= 'hidden'
+                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1065:1: (lv_isHidden_0_0= 'hidden' )
+                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1066:3: lv_isHidden_0_0= 'hidden'
                     {
-                    lv_isHidden_0_0=(Token)match(input,28,FOLLOW_28_in_ruleHub2182); if (state.failed) return current;
+                    lv_isHidden_0_0=(Token)match(input,28,FOLLOW_28_in_ruleHub2155); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               newLeafNode(lv_isHidden_0_0, grammarAccess.getHubAccess().getIsHiddenHiddenKeyword_0_0());
@@ -2929,24 +2893,24 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,29,FOLLOW_29_in_ruleHub2208); if (state.failed) return current;
+            otherlv_1=(Token)match(input,29,FOLLOW_29_in_ruleHub2181); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_1, grammarAccess.getHubAccess().getHubKeyword_1());
                   
             }
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1093:1: ( (lv_name_2_0= ruleStringID ) )
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1094:1: (lv_name_2_0= ruleStringID )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1083:1: ( (lv_name_2_0= ruleStringID ) )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1084:1: (lv_name_2_0= ruleStringID )
             {
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1094:1: (lv_name_2_0= ruleStringID )
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1095:3: lv_name_2_0= ruleStringID
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1084:1: (lv_name_2_0= ruleStringID )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1085:3: lv_name_2_0= ruleStringID
             {
             if ( state.backtracking==0 ) {
                
               	        newCompositeNode(grammarAccess.getHubAccess().getNameStringIDParserRuleCall_2_0()); 
               	    
             }
-            pushFollow(FOLLOW_ruleStringID_in_ruleHub2229);
+            pushFollow(FOLLOW_ruleStringID_in_ruleHub2202);
             lv_name_2_0=ruleStringID();
 
             state._fsp--;
@@ -2970,7 +2934,7 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1111:2: ( (lv_hubComment_3_0= RULE_COMMENT ) )?
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1101:2: ( (lv_hubComment_3_0= RULE_COMMENT ) )?
             int alt20=2;
             int LA20_0 = input.LA(1);
 
@@ -2979,12 +2943,12 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
             }
             switch (alt20) {
                 case 1 :
-                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1112:1: (lv_hubComment_3_0= RULE_COMMENT )
+                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1102:1: (lv_hubComment_3_0= RULE_COMMENT )
                     {
-                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1112:1: (lv_hubComment_3_0= RULE_COMMENT )
-                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1113:3: lv_hubComment_3_0= RULE_COMMENT
+                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1102:1: (lv_hubComment_3_0= RULE_COMMENT )
+                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1103:3: lv_hubComment_3_0= RULE_COMMENT
                     {
-                    lv_hubComment_3_0=(Token)match(input,RULE_COMMENT,FOLLOW_RULE_COMMENT_in_ruleHub2246); if (state.failed) return current;
+                    lv_hubComment_3_0=(Token)match(input,RULE_COMMENT,FOLLOW_RULE_COMMENT_in_ruleHub2219); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       			newLeafNode(lv_hubComment_3_0, grammarAccess.getHubAccess().getHubCommentCOMMENTTerminalRuleCall_3_0()); 
@@ -3011,31 +2975,31 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1129:3: ( (lv_choiceDialogs_4_0= ruleAbstractChoiceDialog ) )*
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1119:3: ( (lv_hubFragments_4_0= ruleHubFragment ) )*
             loop21:
             do {
                 int alt21=2;
                 int LA21_0 = input.LA(1);
 
-                if ( ((LA21_0>=30 && LA21_0<=31)||LA21_0==34||(LA21_0>=42 && LA21_0<=43)) ) {
+                if ( (LA21_0==RULE_ID||(LA21_0>=30 && LA21_0<=31)||LA21_0==34||(LA21_0>=42 && LA21_0<=43)) ) {
                     alt21=1;
                 }
 
 
                 switch (alt21) {
             	case 1 :
-            	    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1130:1: (lv_choiceDialogs_4_0= ruleAbstractChoiceDialog )
+            	    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1120:1: (lv_hubFragments_4_0= ruleHubFragment )
             	    {
-            	    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1130:1: (lv_choiceDialogs_4_0= ruleAbstractChoiceDialog )
-            	    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1131:3: lv_choiceDialogs_4_0= ruleAbstractChoiceDialog
+            	    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1120:1: (lv_hubFragments_4_0= ruleHubFragment )
+            	    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1121:3: lv_hubFragments_4_0= ruleHubFragment
             	    {
             	    if ( state.backtracking==0 ) {
             	       
-            	      	        newCompositeNode(grammarAccess.getHubAccess().getChoiceDialogsAbstractChoiceDialogParserRuleCall_4_0()); 
+            	      	        newCompositeNode(grammarAccess.getHubAccess().getHubFragmentsHubFragmentParserRuleCall_4_0()); 
             	      	    
             	    }
-            	    pushFollow(FOLLOW_ruleAbstractChoiceDialog_in_ruleHub2273);
-            	    lv_choiceDialogs_4_0=ruleAbstractChoiceDialog();
+            	    pushFollow(FOLLOW_ruleHubFragment_in_ruleHub2246);
+            	    lv_hubFragments_4_0=ruleHubFragment();
 
             	    state._fsp--;
             	    if (state.failed) return current;
@@ -3046,9 +3010,9 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
             	      	        }
             	             		add(
             	             			current, 
-            	             			"choiceDialogs",
-            	              		lv_choiceDialogs_4_0, 
-            	              		"AbstractChoiceDialog");
+            	             			"hubFragments",
+            	              		lv_hubFragments_4_0, 
+            	              		"HubFragment");
             	      	        afterParserOrEnumRuleCall();
             	      	    
             	    }
@@ -3064,7 +3028,7 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            otherlv_5=(Token)match(input,19,FOLLOW_19_in_ruleHub2286); if (state.failed) return current;
+            otherlv_5=(Token)match(input,19,FOLLOW_19_in_ruleHub2259); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_5, grammarAccess.getHubAccess().getEndKeyword_5());
@@ -3092,30 +3056,30 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleHub"
 
 
-    // $ANTLR start "entryRuleAbstractChoiceDialog"
-    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1159:1: entryRuleAbstractChoiceDialog returns [EObject current=null] : iv_ruleAbstractChoiceDialog= ruleAbstractChoiceDialog EOF ;
-    public final EObject entryRuleAbstractChoiceDialog() throws RecognitionException {
+    // $ANTLR start "entryRuleHubFragment"
+    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1149:1: entryRuleHubFragment returns [EObject current=null] : iv_ruleHubFragment= ruleHubFragment EOF ;
+    public final EObject entryRuleHubFragment() throws RecognitionException {
         EObject current = null;
 
-        EObject iv_ruleAbstractChoiceDialog = null;
+        EObject iv_ruleHubFragment = null;
 
 
         try {
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1160:2: (iv_ruleAbstractChoiceDialog= ruleAbstractChoiceDialog EOF )
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1161:2: iv_ruleAbstractChoiceDialog= ruleAbstractChoiceDialog EOF
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1150:2: (iv_ruleHubFragment= ruleHubFragment EOF )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1151:2: iv_ruleHubFragment= ruleHubFragment EOF
             {
             if ( state.backtracking==0 ) {
-               newCompositeNode(grammarAccess.getAbstractChoiceDialogRule()); 
+               newCompositeNode(grammarAccess.getHubFragmentRule()); 
             }
-            pushFollow(FOLLOW_ruleAbstractChoiceDialog_in_entryRuleAbstractChoiceDialog2322);
-            iv_ruleAbstractChoiceDialog=ruleAbstractChoiceDialog();
+            pushFollow(FOLLOW_ruleHubFragment_in_entryRuleHubFragment2295);
+            iv_ruleHubFragment=ruleHubFragment();
 
             state._fsp--;
             if (state.failed) return current;
             if ( state.backtracking==0 ) {
-               current =iv_ruleAbstractChoiceDialog; 
+               current =iv_ruleHubFragment; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleAbstractChoiceDialog2332); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleHubFragment2305); if (state.failed) return current;
 
             }
 
@@ -3129,40 +3093,40 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "entryRuleAbstractChoiceDialog"
+    // $ANTLR end "entryRuleHubFragment"
 
 
-    // $ANTLR start "ruleAbstractChoiceDialog"
-    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1168:1: ruleAbstractChoiceDialog returns [EObject current=null] : (this_ChoiceDialog_0= ruleChoiceDialog | this_ConditionalChoiceDialog_1= ruleConditionalChoiceDialog | this_Conditional_2= ruleConditional ) ;
-    public final EObject ruleAbstractChoiceDialog() throws RecognitionException {
+    // $ANTLR start "ruleHubFragment"
+    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1158:1: ruleHubFragment returns [EObject current=null] : (this_ChoiceDialog_0= ruleChoiceDialog | this_ConditionalChoiceDialog_1= ruleConditionalChoiceDialog | this_Statement_2= ruleStatement ) ;
+    public final EObject ruleHubFragment() throws RecognitionException {
         EObject current = null;
 
         EObject this_ChoiceDialog_0 = null;
 
         EObject this_ConditionalChoiceDialog_1 = null;
 
-        EObject this_Conditional_2 = null;
+        EObject this_Statement_2 = null;
 
 
          enterRule(); 
             
         try {
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1171:28: ( (this_ChoiceDialog_0= ruleChoiceDialog | this_ConditionalChoiceDialog_1= ruleConditionalChoiceDialog | this_Conditional_2= ruleConditional ) )
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1172:1: (this_ChoiceDialog_0= ruleChoiceDialog | this_ConditionalChoiceDialog_1= ruleConditionalChoiceDialog | this_Conditional_2= ruleConditional )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1161:28: ( (this_ChoiceDialog_0= ruleChoiceDialog | this_ConditionalChoiceDialog_1= ruleConditionalChoiceDialog | this_Statement_2= ruleStatement ) )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1162:1: (this_ChoiceDialog_0= ruleChoiceDialog | this_ConditionalChoiceDialog_1= ruleConditionalChoiceDialog | this_Statement_2= ruleStatement )
             {
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1172:1: (this_ChoiceDialog_0= ruleChoiceDialog | this_ConditionalChoiceDialog_1= ruleConditionalChoiceDialog | this_Conditional_2= ruleConditional )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1162:1: (this_ChoiceDialog_0= ruleChoiceDialog | this_ConditionalChoiceDialog_1= ruleConditionalChoiceDialog | this_Statement_2= ruleStatement )
             int alt22=3;
             alt22 = dfa22.predict(input);
             switch (alt22) {
                 case 1 :
-                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1173:5: this_ChoiceDialog_0= ruleChoiceDialog
+                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1163:5: this_ChoiceDialog_0= ruleChoiceDialog
                     {
                     if ( state.backtracking==0 ) {
                        
-                              newCompositeNode(grammarAccess.getAbstractChoiceDialogAccess().getChoiceDialogParserRuleCall_0()); 
+                              newCompositeNode(grammarAccess.getHubFragmentAccess().getChoiceDialogParserRuleCall_0()); 
                           
                     }
-                    pushFollow(FOLLOW_ruleChoiceDialog_in_ruleAbstractChoiceDialog2379);
+                    pushFollow(FOLLOW_ruleChoiceDialog_in_ruleHubFragment2352);
                     this_ChoiceDialog_0=ruleChoiceDialog();
 
                     state._fsp--;
@@ -3177,14 +3141,14 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1183:5: this_ConditionalChoiceDialog_1= ruleConditionalChoiceDialog
+                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1173:5: this_ConditionalChoiceDialog_1= ruleConditionalChoiceDialog
                     {
                     if ( state.backtracking==0 ) {
                        
-                              newCompositeNode(grammarAccess.getAbstractChoiceDialogAccess().getConditionalChoiceDialogParserRuleCall_1()); 
+                              newCompositeNode(grammarAccess.getHubFragmentAccess().getConditionalChoiceDialogParserRuleCall_1()); 
                           
                     }
-                    pushFollow(FOLLOW_ruleConditionalChoiceDialog_in_ruleAbstractChoiceDialog2406);
+                    pushFollow(FOLLOW_ruleConditionalChoiceDialog_in_ruleHubFragment2379);
                     this_ConditionalChoiceDialog_1=ruleConditionalChoiceDialog();
 
                     state._fsp--;
@@ -3199,21 +3163,21 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1193:5: this_Conditional_2= ruleConditional
+                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1183:5: this_Statement_2= ruleStatement
                     {
                     if ( state.backtracking==0 ) {
                        
-                              newCompositeNode(grammarAccess.getAbstractChoiceDialogAccess().getConditionalParserRuleCall_2()); 
+                              newCompositeNode(grammarAccess.getHubFragmentAccess().getStatementParserRuleCall_2()); 
                           
                     }
-                    pushFollow(FOLLOW_ruleConditional_in_ruleAbstractChoiceDialog2433);
-                    this_Conditional_2=ruleConditional();
+                    pushFollow(FOLLOW_ruleStatement_in_ruleHubFragment2406);
+                    this_Statement_2=ruleStatement();
 
                     state._fsp--;
                     if (state.failed) return current;
                     if ( state.backtracking==0 ) {
                        
-                              current = this_Conditional_2; 
+                              current = this_Statement_2; 
                               afterParserOrEnumRuleCall();
                           
                     }
@@ -3239,11 +3203,11 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "ruleAbstractChoiceDialog"
+    // $ANTLR end "ruleHubFragment"
 
 
     // $ANTLR start "entryRuleConditionalChoiceDialog"
-    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1209:1: entryRuleConditionalChoiceDialog returns [EObject current=null] : iv_ruleConditionalChoiceDialog= ruleConditionalChoiceDialog EOF ;
+    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1199:1: entryRuleConditionalChoiceDialog returns [EObject current=null] : iv_ruleConditionalChoiceDialog= ruleConditionalChoiceDialog EOF ;
     public final EObject entryRuleConditionalChoiceDialog() throws RecognitionException {
         EObject current = null;
 
@@ -3251,13 +3215,13 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1210:2: (iv_ruleConditionalChoiceDialog= ruleConditionalChoiceDialog EOF )
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1211:2: iv_ruleConditionalChoiceDialog= ruleConditionalChoiceDialog EOF
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1200:2: (iv_ruleConditionalChoiceDialog= ruleConditionalChoiceDialog EOF )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1201:2: iv_ruleConditionalChoiceDialog= ruleConditionalChoiceDialog EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getConditionalChoiceDialogRule()); 
             }
-            pushFollow(FOLLOW_ruleConditionalChoiceDialog_in_entryRuleConditionalChoiceDialog2468);
+            pushFollow(FOLLOW_ruleConditionalChoiceDialog_in_entryRuleConditionalChoiceDialog2441);
             iv_ruleConditionalChoiceDialog=ruleConditionalChoiceDialog();
 
             state._fsp--;
@@ -3265,7 +3229,7 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleConditionalChoiceDialog; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleConditionalChoiceDialog2478); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleConditionalChoiceDialog2451); if (state.failed) return current;
 
             }
 
@@ -3283,7 +3247,7 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleConditionalChoiceDialog"
-    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1218:1: ruleConditionalChoiceDialog returns [EObject current=null] : ( ( (lv_modifiers_0_0= ruleModifier ) )* otherlv_1= 'choices' otherlv_2= 'if' otherlv_3= '(' ( (lv_conditionList_4_0= ruleConditionList ) ) otherlv_5= ')' ( (lv_comment_6_0= RULE_COMMENT ) )? ( (lv_choiceDialogs_7_0= ruleChoiceDialog ) )+ ( (lv_otherwiseChoices_8_0= ruleOtherwiseChoice ) )* otherlv_9= 'end' ) ;
+    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1208:1: ruleConditionalChoiceDialog returns [EObject current=null] : ( ( (lv_modifiers_0_0= ruleModifier ) )* otherlv_1= 'choices' otherlv_2= 'if' otherlv_3= '(' ( (lv_conditionList_4_0= ruleConditionList ) ) otherlv_5= ')' ( (lv_comment_6_0= RULE_COMMENT ) )? ( (lv_choiceDialogs_7_0= ruleChoiceDialog ) )+ ( (lv_otherwiseChoices_8_0= ruleOtherwiseChoice ) )* otherlv_9= 'end' ) ;
     public final EObject ruleConditionalChoiceDialog() throws RecognitionException {
         EObject current = null;
 
@@ -3305,13 +3269,13 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1221:28: ( ( ( (lv_modifiers_0_0= ruleModifier ) )* otherlv_1= 'choices' otherlv_2= 'if' otherlv_3= '(' ( (lv_conditionList_4_0= ruleConditionList ) ) otherlv_5= ')' ( (lv_comment_6_0= RULE_COMMENT ) )? ( (lv_choiceDialogs_7_0= ruleChoiceDialog ) )+ ( (lv_otherwiseChoices_8_0= ruleOtherwiseChoice ) )* otherlv_9= 'end' ) )
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1222:1: ( ( (lv_modifiers_0_0= ruleModifier ) )* otherlv_1= 'choices' otherlv_2= 'if' otherlv_3= '(' ( (lv_conditionList_4_0= ruleConditionList ) ) otherlv_5= ')' ( (lv_comment_6_0= RULE_COMMENT ) )? ( (lv_choiceDialogs_7_0= ruleChoiceDialog ) )+ ( (lv_otherwiseChoices_8_0= ruleOtherwiseChoice ) )* otherlv_9= 'end' )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1211:28: ( ( ( (lv_modifiers_0_0= ruleModifier ) )* otherlv_1= 'choices' otherlv_2= 'if' otherlv_3= '(' ( (lv_conditionList_4_0= ruleConditionList ) ) otherlv_5= ')' ( (lv_comment_6_0= RULE_COMMENT ) )? ( (lv_choiceDialogs_7_0= ruleChoiceDialog ) )+ ( (lv_otherwiseChoices_8_0= ruleOtherwiseChoice ) )* otherlv_9= 'end' ) )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1212:1: ( ( (lv_modifiers_0_0= ruleModifier ) )* otherlv_1= 'choices' otherlv_2= 'if' otherlv_3= '(' ( (lv_conditionList_4_0= ruleConditionList ) ) otherlv_5= ')' ( (lv_comment_6_0= RULE_COMMENT ) )? ( (lv_choiceDialogs_7_0= ruleChoiceDialog ) )+ ( (lv_otherwiseChoices_8_0= ruleOtherwiseChoice ) )* otherlv_9= 'end' )
             {
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1222:1: ( ( (lv_modifiers_0_0= ruleModifier ) )* otherlv_1= 'choices' otherlv_2= 'if' otherlv_3= '(' ( (lv_conditionList_4_0= ruleConditionList ) ) otherlv_5= ')' ( (lv_comment_6_0= RULE_COMMENT ) )? ( (lv_choiceDialogs_7_0= ruleChoiceDialog ) )+ ( (lv_otherwiseChoices_8_0= ruleOtherwiseChoice ) )* otherlv_9= 'end' )
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1222:2: ( (lv_modifiers_0_0= ruleModifier ) )* otherlv_1= 'choices' otherlv_2= 'if' otherlv_3= '(' ( (lv_conditionList_4_0= ruleConditionList ) ) otherlv_5= ')' ( (lv_comment_6_0= RULE_COMMENT ) )? ( (lv_choiceDialogs_7_0= ruleChoiceDialog ) )+ ( (lv_otherwiseChoices_8_0= ruleOtherwiseChoice ) )* otherlv_9= 'end'
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1212:1: ( ( (lv_modifiers_0_0= ruleModifier ) )* otherlv_1= 'choices' otherlv_2= 'if' otherlv_3= '(' ( (lv_conditionList_4_0= ruleConditionList ) ) otherlv_5= ')' ( (lv_comment_6_0= RULE_COMMENT ) )? ( (lv_choiceDialogs_7_0= ruleChoiceDialog ) )+ ( (lv_otherwiseChoices_8_0= ruleOtherwiseChoice ) )* otherlv_9= 'end' )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1212:2: ( (lv_modifiers_0_0= ruleModifier ) )* otherlv_1= 'choices' otherlv_2= 'if' otherlv_3= '(' ( (lv_conditionList_4_0= ruleConditionList ) ) otherlv_5= ')' ( (lv_comment_6_0= RULE_COMMENT ) )? ( (lv_choiceDialogs_7_0= ruleChoiceDialog ) )+ ( (lv_otherwiseChoices_8_0= ruleOtherwiseChoice ) )* otherlv_9= 'end'
             {
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1222:2: ( (lv_modifiers_0_0= ruleModifier ) )*
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1212:2: ( (lv_modifiers_0_0= ruleModifier ) )*
             loop23:
             do {
                 int alt23=2;
@@ -3324,17 +3288,17 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
                 switch (alt23) {
             	case 1 :
-            	    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1223:1: (lv_modifiers_0_0= ruleModifier )
+            	    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1213:1: (lv_modifiers_0_0= ruleModifier )
             	    {
-            	    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1223:1: (lv_modifiers_0_0= ruleModifier )
-            	    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1224:3: lv_modifiers_0_0= ruleModifier
+            	    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1213:1: (lv_modifiers_0_0= ruleModifier )
+            	    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1214:3: lv_modifiers_0_0= ruleModifier
             	    {
             	    if ( state.backtracking==0 ) {
             	       
             	      	        newCompositeNode(grammarAccess.getConditionalChoiceDialogAccess().getModifiersModifierEnumRuleCall_0_0()); 
             	      	    
             	    }
-            	    pushFollow(FOLLOW_ruleModifier_in_ruleConditionalChoiceDialog2524);
+            	    pushFollow(FOLLOW_ruleModifier_in_ruleConditionalChoiceDialog2497);
             	    lv_modifiers_0_0=ruleModifier();
 
             	    state._fsp--;
@@ -3364,36 +3328,36 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            otherlv_1=(Token)match(input,30,FOLLOW_30_in_ruleConditionalChoiceDialog2537); if (state.failed) return current;
+            otherlv_1=(Token)match(input,30,FOLLOW_30_in_ruleConditionalChoiceDialog2510); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_1, grammarAccess.getConditionalChoiceDialogAccess().getChoicesKeyword_1());
                   
             }
-            otherlv_2=(Token)match(input,31,FOLLOW_31_in_ruleConditionalChoiceDialog2549); if (state.failed) return current;
+            otherlv_2=(Token)match(input,31,FOLLOW_31_in_ruleConditionalChoiceDialog2522); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_2, grammarAccess.getConditionalChoiceDialogAccess().getIfKeyword_2());
                   
             }
-            otherlv_3=(Token)match(input,32,FOLLOW_32_in_ruleConditionalChoiceDialog2561); if (state.failed) return current;
+            otherlv_3=(Token)match(input,32,FOLLOW_32_in_ruleConditionalChoiceDialog2534); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_3, grammarAccess.getConditionalChoiceDialogAccess().getLeftParenthesisKeyword_3());
                   
             }
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1252:1: ( (lv_conditionList_4_0= ruleConditionList ) )
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1253:1: (lv_conditionList_4_0= ruleConditionList )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1242:1: ( (lv_conditionList_4_0= ruleConditionList ) )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1243:1: (lv_conditionList_4_0= ruleConditionList )
             {
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1253:1: (lv_conditionList_4_0= ruleConditionList )
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1254:3: lv_conditionList_4_0= ruleConditionList
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1243:1: (lv_conditionList_4_0= ruleConditionList )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1244:3: lv_conditionList_4_0= ruleConditionList
             {
             if ( state.backtracking==0 ) {
                
               	        newCompositeNode(grammarAccess.getConditionalChoiceDialogAccess().getConditionListConditionListParserRuleCall_4_0()); 
               	    
             }
-            pushFollow(FOLLOW_ruleConditionList_in_ruleConditionalChoiceDialog2582);
+            pushFollow(FOLLOW_ruleConditionList_in_ruleConditionalChoiceDialog2555);
             lv_conditionList_4_0=ruleConditionList();
 
             state._fsp--;
@@ -3417,13 +3381,13 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_5=(Token)match(input,33,FOLLOW_33_in_ruleConditionalChoiceDialog2594); if (state.failed) return current;
+            otherlv_5=(Token)match(input,33,FOLLOW_33_in_ruleConditionalChoiceDialog2567); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_5, grammarAccess.getConditionalChoiceDialogAccess().getRightParenthesisKeyword_5());
                   
             }
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1274:1: ( (lv_comment_6_0= RULE_COMMENT ) )?
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1264:1: ( (lv_comment_6_0= RULE_COMMENT ) )?
             int alt24=2;
             int LA24_0 = input.LA(1);
 
@@ -3432,12 +3396,12 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
             }
             switch (alt24) {
                 case 1 :
-                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1275:1: (lv_comment_6_0= RULE_COMMENT )
+                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1265:1: (lv_comment_6_0= RULE_COMMENT )
                     {
-                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1275:1: (lv_comment_6_0= RULE_COMMENT )
-                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1276:3: lv_comment_6_0= RULE_COMMENT
+                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1265:1: (lv_comment_6_0= RULE_COMMENT )
+                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1266:3: lv_comment_6_0= RULE_COMMENT
                     {
-                    lv_comment_6_0=(Token)match(input,RULE_COMMENT,FOLLOW_RULE_COMMENT_in_ruleConditionalChoiceDialog2611); if (state.failed) return current;
+                    lv_comment_6_0=(Token)match(input,RULE_COMMENT,FOLLOW_RULE_COMMENT_in_ruleConditionalChoiceDialog2584); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       			newLeafNode(lv_comment_6_0, grammarAccess.getConditionalChoiceDialogAccess().getCommentCOMMENTTerminalRuleCall_6_0()); 
@@ -3464,7 +3428,7 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1292:3: ( (lv_choiceDialogs_7_0= ruleChoiceDialog ) )+
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1282:3: ( (lv_choiceDialogs_7_0= ruleChoiceDialog ) )+
             int cnt25=0;
             loop25:
             do {
@@ -3472,17 +3436,17 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
                 alt25 = dfa25.predict(input);
                 switch (alt25) {
             	case 1 :
-            	    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1293:1: (lv_choiceDialogs_7_0= ruleChoiceDialog )
+            	    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1283:1: (lv_choiceDialogs_7_0= ruleChoiceDialog )
             	    {
-            	    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1293:1: (lv_choiceDialogs_7_0= ruleChoiceDialog )
-            	    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1294:3: lv_choiceDialogs_7_0= ruleChoiceDialog
+            	    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1283:1: (lv_choiceDialogs_7_0= ruleChoiceDialog )
+            	    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1284:3: lv_choiceDialogs_7_0= ruleChoiceDialog
             	    {
             	    if ( state.backtracking==0 ) {
             	       
             	      	        newCompositeNode(grammarAccess.getConditionalChoiceDialogAccess().getChoiceDialogsChoiceDialogParserRuleCall_7_0()); 
             	      	    
             	    }
-            	    pushFollow(FOLLOW_ruleChoiceDialog_in_ruleConditionalChoiceDialog2638);
+            	    pushFollow(FOLLOW_ruleChoiceDialog_in_ruleConditionalChoiceDialog2611);
             	    lv_choiceDialogs_7_0=ruleChoiceDialog();
 
             	    state._fsp--;
@@ -3517,7 +3481,7 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
                 cnt25++;
             } while (true);
 
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1310:3: ( (lv_otherwiseChoices_8_0= ruleOtherwiseChoice ) )*
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1300:3: ( (lv_otherwiseChoices_8_0= ruleOtherwiseChoice ) )*
             loop26:
             do {
                 int alt26=2;
@@ -3530,17 +3494,17 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
                 switch (alt26) {
             	case 1 :
-            	    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1311:1: (lv_otherwiseChoices_8_0= ruleOtherwiseChoice )
+            	    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1301:1: (lv_otherwiseChoices_8_0= ruleOtherwiseChoice )
             	    {
-            	    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1311:1: (lv_otherwiseChoices_8_0= ruleOtherwiseChoice )
-            	    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1312:3: lv_otherwiseChoices_8_0= ruleOtherwiseChoice
+            	    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1301:1: (lv_otherwiseChoices_8_0= ruleOtherwiseChoice )
+            	    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1302:3: lv_otherwiseChoices_8_0= ruleOtherwiseChoice
             	    {
             	    if ( state.backtracking==0 ) {
             	       
             	      	        newCompositeNode(grammarAccess.getConditionalChoiceDialogAccess().getOtherwiseChoicesOtherwiseChoiceParserRuleCall_8_0()); 
             	      	    
             	    }
-            	    pushFollow(FOLLOW_ruleOtherwiseChoice_in_ruleConditionalChoiceDialog2660);
+            	    pushFollow(FOLLOW_ruleOtherwiseChoice_in_ruleConditionalChoiceDialog2633);
             	    lv_otherwiseChoices_8_0=ruleOtherwiseChoice();
 
             	    state._fsp--;
@@ -3570,7 +3534,7 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            otherlv_9=(Token)match(input,19,FOLLOW_19_in_ruleConditionalChoiceDialog2673); if (state.failed) return current;
+            otherlv_9=(Token)match(input,19,FOLLOW_19_in_ruleConditionalChoiceDialog2646); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_9, grammarAccess.getConditionalChoiceDialogAccess().getEndKeyword_9());
@@ -3599,7 +3563,7 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleOtherwiseChoice"
-    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1340:1: entryRuleOtherwiseChoice returns [EObject current=null] : iv_ruleOtherwiseChoice= ruleOtherwiseChoice EOF ;
+    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1330:1: entryRuleOtherwiseChoice returns [EObject current=null] : iv_ruleOtherwiseChoice= ruleOtherwiseChoice EOF ;
     public final EObject entryRuleOtherwiseChoice() throws RecognitionException {
         EObject current = null;
 
@@ -3607,13 +3571,13 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1341:2: (iv_ruleOtherwiseChoice= ruleOtherwiseChoice EOF )
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1342:2: iv_ruleOtherwiseChoice= ruleOtherwiseChoice EOF
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1331:2: (iv_ruleOtherwiseChoice= ruleOtherwiseChoice EOF )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1332:2: iv_ruleOtherwiseChoice= ruleOtherwiseChoice EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getOtherwiseChoiceRule()); 
             }
-            pushFollow(FOLLOW_ruleOtherwiseChoice_in_entryRuleOtherwiseChoice2709);
+            pushFollow(FOLLOW_ruleOtherwiseChoice_in_entryRuleOtherwiseChoice2682);
             iv_ruleOtherwiseChoice=ruleOtherwiseChoice();
 
             state._fsp--;
@@ -3621,7 +3585,7 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleOtherwiseChoice; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleOtherwiseChoice2719); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleOtherwiseChoice2692); if (state.failed) return current;
 
             }
 
@@ -3639,7 +3603,7 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleOtherwiseChoice"
-    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1349:1: ruleOtherwiseChoice returns [EObject current=null] : ( ( (lv_modifiers_0_0= ruleModifier ) )* otherlv_1= 'choices' otherlv_2= 'else' ( ( ( 'if' )=>otherlv_3= 'if' ) otherlv_4= '(' ( (lv_conditionList_5_0= ruleConditionList ) ) otherlv_6= ')' )? ( (lv_comment_7_0= RULE_COMMENT ) )? ( (lv_choices_8_0= ruleChoiceDialog ) )+ ) ;
+    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1339:1: ruleOtherwiseChoice returns [EObject current=null] : ( ( (lv_modifiers_0_0= ruleModifier ) )* otherlv_1= 'choices' otherlv_2= 'else' ( ( ( 'if' )=>otherlv_3= 'if' ) otherlv_4= '(' ( (lv_conditionList_5_0= ruleConditionList ) ) otherlv_6= ')' )? ( (lv_comment_7_0= RULE_COMMENT ) )? ( (lv_choices_8_0= ruleChoiceDialog ) )+ ) ;
     public final EObject ruleOtherwiseChoice() throws RecognitionException {
         EObject current = null;
 
@@ -3659,13 +3623,13 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1352:28: ( ( ( (lv_modifiers_0_0= ruleModifier ) )* otherlv_1= 'choices' otherlv_2= 'else' ( ( ( 'if' )=>otherlv_3= 'if' ) otherlv_4= '(' ( (lv_conditionList_5_0= ruleConditionList ) ) otherlv_6= ')' )? ( (lv_comment_7_0= RULE_COMMENT ) )? ( (lv_choices_8_0= ruleChoiceDialog ) )+ ) )
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1353:1: ( ( (lv_modifiers_0_0= ruleModifier ) )* otherlv_1= 'choices' otherlv_2= 'else' ( ( ( 'if' )=>otherlv_3= 'if' ) otherlv_4= '(' ( (lv_conditionList_5_0= ruleConditionList ) ) otherlv_6= ')' )? ( (lv_comment_7_0= RULE_COMMENT ) )? ( (lv_choices_8_0= ruleChoiceDialog ) )+ )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1342:28: ( ( ( (lv_modifiers_0_0= ruleModifier ) )* otherlv_1= 'choices' otherlv_2= 'else' ( ( ( 'if' )=>otherlv_3= 'if' ) otherlv_4= '(' ( (lv_conditionList_5_0= ruleConditionList ) ) otherlv_6= ')' )? ( (lv_comment_7_0= RULE_COMMENT ) )? ( (lv_choices_8_0= ruleChoiceDialog ) )+ ) )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1343:1: ( ( (lv_modifiers_0_0= ruleModifier ) )* otherlv_1= 'choices' otherlv_2= 'else' ( ( ( 'if' )=>otherlv_3= 'if' ) otherlv_4= '(' ( (lv_conditionList_5_0= ruleConditionList ) ) otherlv_6= ')' )? ( (lv_comment_7_0= RULE_COMMENT ) )? ( (lv_choices_8_0= ruleChoiceDialog ) )+ )
             {
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1353:1: ( ( (lv_modifiers_0_0= ruleModifier ) )* otherlv_1= 'choices' otherlv_2= 'else' ( ( ( 'if' )=>otherlv_3= 'if' ) otherlv_4= '(' ( (lv_conditionList_5_0= ruleConditionList ) ) otherlv_6= ')' )? ( (lv_comment_7_0= RULE_COMMENT ) )? ( (lv_choices_8_0= ruleChoiceDialog ) )+ )
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1353:2: ( (lv_modifiers_0_0= ruleModifier ) )* otherlv_1= 'choices' otherlv_2= 'else' ( ( ( 'if' )=>otherlv_3= 'if' ) otherlv_4= '(' ( (lv_conditionList_5_0= ruleConditionList ) ) otherlv_6= ')' )? ( (lv_comment_7_0= RULE_COMMENT ) )? ( (lv_choices_8_0= ruleChoiceDialog ) )+
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1343:1: ( ( (lv_modifiers_0_0= ruleModifier ) )* otherlv_1= 'choices' otherlv_2= 'else' ( ( ( 'if' )=>otherlv_3= 'if' ) otherlv_4= '(' ( (lv_conditionList_5_0= ruleConditionList ) ) otherlv_6= ')' )? ( (lv_comment_7_0= RULE_COMMENT ) )? ( (lv_choices_8_0= ruleChoiceDialog ) )+ )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1343:2: ( (lv_modifiers_0_0= ruleModifier ) )* otherlv_1= 'choices' otherlv_2= 'else' ( ( ( 'if' )=>otherlv_3= 'if' ) otherlv_4= '(' ( (lv_conditionList_5_0= ruleConditionList ) ) otherlv_6= ')' )? ( (lv_comment_7_0= RULE_COMMENT ) )? ( (lv_choices_8_0= ruleChoiceDialog ) )+
             {
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1353:2: ( (lv_modifiers_0_0= ruleModifier ) )*
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1343:2: ( (lv_modifiers_0_0= ruleModifier ) )*
             loop27:
             do {
                 int alt27=2;
@@ -3678,17 +3642,17 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
                 switch (alt27) {
             	case 1 :
-            	    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1354:1: (lv_modifiers_0_0= ruleModifier )
+            	    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1344:1: (lv_modifiers_0_0= ruleModifier )
             	    {
-            	    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1354:1: (lv_modifiers_0_0= ruleModifier )
-            	    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1355:3: lv_modifiers_0_0= ruleModifier
+            	    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1344:1: (lv_modifiers_0_0= ruleModifier )
+            	    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1345:3: lv_modifiers_0_0= ruleModifier
             	    {
             	    if ( state.backtracking==0 ) {
             	       
             	      	        newCompositeNode(grammarAccess.getOtherwiseChoiceAccess().getModifiersModifierEnumRuleCall_0_0()); 
             	      	    
             	    }
-            	    pushFollow(FOLLOW_ruleModifier_in_ruleOtherwiseChoice2765);
+            	    pushFollow(FOLLOW_ruleModifier_in_ruleOtherwiseChoice2738);
             	    lv_modifiers_0_0=ruleModifier();
 
             	    state._fsp--;
@@ -3718,19 +3682,19 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            otherlv_1=(Token)match(input,30,FOLLOW_30_in_ruleOtherwiseChoice2778); if (state.failed) return current;
+            otherlv_1=(Token)match(input,30,FOLLOW_30_in_ruleOtherwiseChoice2751); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_1, grammarAccess.getOtherwiseChoiceAccess().getChoicesKeyword_1());
                   
             }
-            otherlv_2=(Token)match(input,26,FOLLOW_26_in_ruleOtherwiseChoice2790); if (state.failed) return current;
+            otherlv_2=(Token)match(input,26,FOLLOW_26_in_ruleOtherwiseChoice2763); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_2, grammarAccess.getOtherwiseChoiceAccess().getElseKeyword_2());
                   
             }
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1379:1: ( ( ( 'if' )=>otherlv_3= 'if' ) otherlv_4= '(' ( (lv_conditionList_5_0= ruleConditionList ) ) otherlv_6= ')' )?
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1369:1: ( ( ( 'if' )=>otherlv_3= 'if' ) otherlv_4= '(' ( (lv_conditionList_5_0= ruleConditionList ) ) otherlv_6= ')' )?
             int alt28=2;
             int LA28_0 = input.LA(1);
 
@@ -3739,12 +3703,12 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
             }
             switch (alt28) {
                 case 1 :
-                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1379:2: ( ( 'if' )=>otherlv_3= 'if' ) otherlv_4= '(' ( (lv_conditionList_5_0= ruleConditionList ) ) otherlv_6= ')'
+                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1369:2: ( ( 'if' )=>otherlv_3= 'if' ) otherlv_4= '(' ( (lv_conditionList_5_0= ruleConditionList ) ) otherlv_6= ')'
                     {
-                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1379:2: ( ( 'if' )=>otherlv_3= 'if' )
-                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1379:3: ( 'if' )=>otherlv_3= 'if'
+                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1369:2: ( ( 'if' )=>otherlv_3= 'if' )
+                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1369:3: ( 'if' )=>otherlv_3= 'if'
                     {
-                    otherlv_3=(Token)match(input,31,FOLLOW_31_in_ruleOtherwiseChoice2811); if (state.failed) return current;
+                    otherlv_3=(Token)match(input,31,FOLLOW_31_in_ruleOtherwiseChoice2784); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_3, grammarAccess.getOtherwiseChoiceAccess().getIfKeyword_3_0());
@@ -3753,24 +3717,24 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_4=(Token)match(input,32,FOLLOW_32_in_ruleOtherwiseChoice2824); if (state.failed) return current;
+                    otherlv_4=(Token)match(input,32,FOLLOW_32_in_ruleOtherwiseChoice2797); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_4, grammarAccess.getOtherwiseChoiceAccess().getLeftParenthesisKeyword_3_1());
                           
                     }
-                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1388:1: ( (lv_conditionList_5_0= ruleConditionList ) )
-                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1389:1: (lv_conditionList_5_0= ruleConditionList )
+                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1378:1: ( (lv_conditionList_5_0= ruleConditionList ) )
+                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1379:1: (lv_conditionList_5_0= ruleConditionList )
                     {
-                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1389:1: (lv_conditionList_5_0= ruleConditionList )
-                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1390:3: lv_conditionList_5_0= ruleConditionList
+                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1379:1: (lv_conditionList_5_0= ruleConditionList )
+                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1380:3: lv_conditionList_5_0= ruleConditionList
                     {
                     if ( state.backtracking==0 ) {
                        
                       	        newCompositeNode(grammarAccess.getOtherwiseChoiceAccess().getConditionListConditionListParserRuleCall_3_2_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleConditionList_in_ruleOtherwiseChoice2845);
+                    pushFollow(FOLLOW_ruleConditionList_in_ruleOtherwiseChoice2818);
                     lv_conditionList_5_0=ruleConditionList();
 
                     state._fsp--;
@@ -3794,7 +3758,7 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_6=(Token)match(input,33,FOLLOW_33_in_ruleOtherwiseChoice2857); if (state.failed) return current;
+                    otherlv_6=(Token)match(input,33,FOLLOW_33_in_ruleOtherwiseChoice2830); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_6, grammarAccess.getOtherwiseChoiceAccess().getRightParenthesisKeyword_3_3());
@@ -3806,7 +3770,7 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1410:3: ( (lv_comment_7_0= RULE_COMMENT ) )?
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1400:3: ( (lv_comment_7_0= RULE_COMMENT ) )?
             int alt29=2;
             int LA29_0 = input.LA(1);
 
@@ -3815,12 +3779,12 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
             }
             switch (alt29) {
                 case 1 :
-                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1411:1: (lv_comment_7_0= RULE_COMMENT )
+                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1401:1: (lv_comment_7_0= RULE_COMMENT )
                     {
-                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1411:1: (lv_comment_7_0= RULE_COMMENT )
-                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1412:3: lv_comment_7_0= RULE_COMMENT
+                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1401:1: (lv_comment_7_0= RULE_COMMENT )
+                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1402:3: lv_comment_7_0= RULE_COMMENT
                     {
-                    lv_comment_7_0=(Token)match(input,RULE_COMMENT,FOLLOW_RULE_COMMENT_in_ruleOtherwiseChoice2876); if (state.failed) return current;
+                    lv_comment_7_0=(Token)match(input,RULE_COMMENT,FOLLOW_RULE_COMMENT_in_ruleOtherwiseChoice2849); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       			newLeafNode(lv_comment_7_0, grammarAccess.getOtherwiseChoiceAccess().getCommentCOMMENTTerminalRuleCall_4_0()); 
@@ -3847,7 +3811,7 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1428:3: ( (lv_choices_8_0= ruleChoiceDialog ) )+
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1418:3: ( (lv_choices_8_0= ruleChoiceDialog ) )+
             int cnt30=0;
             loop30:
             do {
@@ -3855,17 +3819,17 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
                 alt30 = dfa30.predict(input);
                 switch (alt30) {
             	case 1 :
-            	    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1429:1: (lv_choices_8_0= ruleChoiceDialog )
+            	    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1419:1: (lv_choices_8_0= ruleChoiceDialog )
             	    {
-            	    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1429:1: (lv_choices_8_0= ruleChoiceDialog )
-            	    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1430:3: lv_choices_8_0= ruleChoiceDialog
+            	    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1419:1: (lv_choices_8_0= ruleChoiceDialog )
+            	    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1420:3: lv_choices_8_0= ruleChoiceDialog
             	    {
             	    if ( state.backtracking==0 ) {
             	       
             	      	        newCompositeNode(grammarAccess.getOtherwiseChoiceAccess().getChoicesChoiceDialogParserRuleCall_5_0()); 
             	      	    
             	    }
-            	    pushFollow(FOLLOW_ruleChoiceDialog_in_ruleOtherwiseChoice2903);
+            	    pushFollow(FOLLOW_ruleChoiceDialog_in_ruleOtherwiseChoice2876);
             	    lv_choices_8_0=ruleChoiceDialog();
 
             	    state._fsp--;
@@ -3923,7 +3887,7 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleStringID"
-    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1454:1: entryRuleStringID returns [String current=null] : iv_ruleStringID= ruleStringID EOF ;
+    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1444:1: entryRuleStringID returns [String current=null] : iv_ruleStringID= ruleStringID EOF ;
     public final String entryRuleStringID() throws RecognitionException {
         String current = null;
 
@@ -3931,13 +3895,13 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1455:2: (iv_ruleStringID= ruleStringID EOF )
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1456:2: iv_ruleStringID= ruleStringID EOF
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1445:2: (iv_ruleStringID= ruleStringID EOF )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1446:2: iv_ruleStringID= ruleStringID EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getStringIDRule()); 
             }
-            pushFollow(FOLLOW_ruleStringID_in_entryRuleStringID2941);
+            pushFollow(FOLLOW_ruleStringID_in_entryRuleStringID2914);
             iv_ruleStringID=ruleStringID();
 
             state._fsp--;
@@ -3945,7 +3909,7 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleStringID.getText(); 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleStringID2952); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleStringID2925); if (state.failed) return current;
 
             }
 
@@ -3963,7 +3927,7 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleStringID"
-    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1463:1: ruleStringID returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_STRING_0= RULE_STRING ;
+    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1453:1: ruleStringID returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_STRING_0= RULE_STRING ;
     public final AntlrDatatypeRuleToken ruleStringID() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -3972,10 +3936,10 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1466:28: (this_STRING_0= RULE_STRING )
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1467:5: this_STRING_0= RULE_STRING
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1456:28: (this_STRING_0= RULE_STRING )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1457:5: this_STRING_0= RULE_STRING
             {
-            this_STRING_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleStringID2991); if (state.failed) return current;
+            this_STRING_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleStringID2964); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               		current.merge(this_STRING_0);
@@ -4006,7 +3970,7 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleChoiceDialog"
-    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1482:1: entryRuleChoiceDialog returns [EObject current=null] : iv_ruleChoiceDialog= ruleChoiceDialog EOF ;
+    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1472:1: entryRuleChoiceDialog returns [EObject current=null] : iv_ruleChoiceDialog= ruleChoiceDialog EOF ;
     public final EObject entryRuleChoiceDialog() throws RecognitionException {
         EObject current = null;
 
@@ -4014,13 +3978,13 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1483:2: (iv_ruleChoiceDialog= ruleChoiceDialog EOF )
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1484:2: iv_ruleChoiceDialog= ruleChoiceDialog EOF
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1473:2: (iv_ruleChoiceDialog= ruleChoiceDialog EOF )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1474:2: iv_ruleChoiceDialog= ruleChoiceDialog EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getChoiceDialogRule()); 
             }
-            pushFollow(FOLLOW_ruleChoiceDialog_in_entryRuleChoiceDialog3035);
+            pushFollow(FOLLOW_ruleChoiceDialog_in_entryRuleChoiceDialog3008);
             iv_ruleChoiceDialog=ruleChoiceDialog();
 
             state._fsp--;
@@ -4028,7 +3992,7 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleChoiceDialog; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleChoiceDialog3045); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleChoiceDialog3018); if (state.failed) return current;
 
             }
 
@@ -4046,7 +4010,7 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleChoiceDialog"
-    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1491:1: ruleChoiceDialog returns [EObject current=null] : ( () ( (lv_modifiers_1_0= ruleModifier ) )* otherlv_2= 'choice' ( (lv_name_3_0= ruleStringID ) ) ( (lv_choiceComment_4_0= RULE_COMMENT ) )? ( (lv_body_5_0= ruleConditionalBody ) ) otherlv_6= 'end' ) ;
+    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1481:1: ruleChoiceDialog returns [EObject current=null] : ( () ( (lv_modifiers_1_0= ruleModifier ) )* otherlv_2= 'choice' ( (lv_name_3_0= ruleStringID ) ) ( (lv_choiceComment_4_0= RULE_COMMENT ) )? ( (lv_body_5_0= ruleConditionalBody ) ) otherlv_6= 'end' ) ;
     public final EObject ruleChoiceDialog() throws RecognitionException {
         EObject current = null;
 
@@ -4063,14 +4027,14 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1494:28: ( ( () ( (lv_modifiers_1_0= ruleModifier ) )* otherlv_2= 'choice' ( (lv_name_3_0= ruleStringID ) ) ( (lv_choiceComment_4_0= RULE_COMMENT ) )? ( (lv_body_5_0= ruleConditionalBody ) ) otherlv_6= 'end' ) )
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1495:1: ( () ( (lv_modifiers_1_0= ruleModifier ) )* otherlv_2= 'choice' ( (lv_name_3_0= ruleStringID ) ) ( (lv_choiceComment_4_0= RULE_COMMENT ) )? ( (lv_body_5_0= ruleConditionalBody ) ) otherlv_6= 'end' )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1484:28: ( ( () ( (lv_modifiers_1_0= ruleModifier ) )* otherlv_2= 'choice' ( (lv_name_3_0= ruleStringID ) ) ( (lv_choiceComment_4_0= RULE_COMMENT ) )? ( (lv_body_5_0= ruleConditionalBody ) ) otherlv_6= 'end' ) )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1485:1: ( () ( (lv_modifiers_1_0= ruleModifier ) )* otherlv_2= 'choice' ( (lv_name_3_0= ruleStringID ) ) ( (lv_choiceComment_4_0= RULE_COMMENT ) )? ( (lv_body_5_0= ruleConditionalBody ) ) otherlv_6= 'end' )
             {
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1495:1: ( () ( (lv_modifiers_1_0= ruleModifier ) )* otherlv_2= 'choice' ( (lv_name_3_0= ruleStringID ) ) ( (lv_choiceComment_4_0= RULE_COMMENT ) )? ( (lv_body_5_0= ruleConditionalBody ) ) otherlv_6= 'end' )
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1495:2: () ( (lv_modifiers_1_0= ruleModifier ) )* otherlv_2= 'choice' ( (lv_name_3_0= ruleStringID ) ) ( (lv_choiceComment_4_0= RULE_COMMENT ) )? ( (lv_body_5_0= ruleConditionalBody ) ) otherlv_6= 'end'
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1485:1: ( () ( (lv_modifiers_1_0= ruleModifier ) )* otherlv_2= 'choice' ( (lv_name_3_0= ruleStringID ) ) ( (lv_choiceComment_4_0= RULE_COMMENT ) )? ( (lv_body_5_0= ruleConditionalBody ) ) otherlv_6= 'end' )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1485:2: () ( (lv_modifiers_1_0= ruleModifier ) )* otherlv_2= 'choice' ( (lv_name_3_0= ruleStringID ) ) ( (lv_choiceComment_4_0= RULE_COMMENT ) )? ( (lv_body_5_0= ruleConditionalBody ) ) otherlv_6= 'end'
             {
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1495:2: ()
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1496:5: 
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1485:2: ()
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1486:5: 
             {
             if ( state.backtracking==0 ) {
 
@@ -4082,7 +4046,7 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1501:2: ( (lv_modifiers_1_0= ruleModifier ) )*
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1491:2: ( (lv_modifiers_1_0= ruleModifier ) )*
             loop31:
             do {
                 int alt31=2;
@@ -4095,17 +4059,17 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
                 switch (alt31) {
             	case 1 :
-            	    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1502:1: (lv_modifiers_1_0= ruleModifier )
+            	    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1492:1: (lv_modifiers_1_0= ruleModifier )
             	    {
-            	    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1502:1: (lv_modifiers_1_0= ruleModifier )
-            	    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1503:3: lv_modifiers_1_0= ruleModifier
+            	    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1492:1: (lv_modifiers_1_0= ruleModifier )
+            	    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1493:3: lv_modifiers_1_0= ruleModifier
             	    {
             	    if ( state.backtracking==0 ) {
             	       
             	      	        newCompositeNode(grammarAccess.getChoiceDialogAccess().getModifiersModifierEnumRuleCall_1_0()); 
             	      	    
             	    }
-            	    pushFollow(FOLLOW_ruleModifier_in_ruleChoiceDialog3100);
+            	    pushFollow(FOLLOW_ruleModifier_in_ruleChoiceDialog3073);
             	    lv_modifiers_1_0=ruleModifier();
 
             	    state._fsp--;
@@ -4135,24 +4099,24 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            otherlv_2=(Token)match(input,34,FOLLOW_34_in_ruleChoiceDialog3113); if (state.failed) return current;
+            otherlv_2=(Token)match(input,34,FOLLOW_34_in_ruleChoiceDialog3086); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_2, grammarAccess.getChoiceDialogAccess().getChoiceKeyword_2());
                   
             }
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1523:1: ( (lv_name_3_0= ruleStringID ) )
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1524:1: (lv_name_3_0= ruleStringID )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1513:1: ( (lv_name_3_0= ruleStringID ) )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1514:1: (lv_name_3_0= ruleStringID )
             {
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1524:1: (lv_name_3_0= ruleStringID )
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1525:3: lv_name_3_0= ruleStringID
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1514:1: (lv_name_3_0= ruleStringID )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1515:3: lv_name_3_0= ruleStringID
             {
             if ( state.backtracking==0 ) {
                
               	        newCompositeNode(grammarAccess.getChoiceDialogAccess().getNameStringIDParserRuleCall_3_0()); 
               	    
             }
-            pushFollow(FOLLOW_ruleStringID_in_ruleChoiceDialog3134);
+            pushFollow(FOLLOW_ruleStringID_in_ruleChoiceDialog3107);
             lv_name_3_0=ruleStringID();
 
             state._fsp--;
@@ -4176,7 +4140,7 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1541:2: ( (lv_choiceComment_4_0= RULE_COMMENT ) )?
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1531:2: ( (lv_choiceComment_4_0= RULE_COMMENT ) )?
             int alt32=2;
             int LA32_0 = input.LA(1);
 
@@ -4185,12 +4149,12 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
             }
             switch (alt32) {
                 case 1 :
-                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1542:1: (lv_choiceComment_4_0= RULE_COMMENT )
+                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1532:1: (lv_choiceComment_4_0= RULE_COMMENT )
                     {
-                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1542:1: (lv_choiceComment_4_0= RULE_COMMENT )
-                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1543:3: lv_choiceComment_4_0= RULE_COMMENT
+                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1532:1: (lv_choiceComment_4_0= RULE_COMMENT )
+                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1533:3: lv_choiceComment_4_0= RULE_COMMENT
                     {
-                    lv_choiceComment_4_0=(Token)match(input,RULE_COMMENT,FOLLOW_RULE_COMMENT_in_ruleChoiceDialog3151); if (state.failed) return current;
+                    lv_choiceComment_4_0=(Token)match(input,RULE_COMMENT,FOLLOW_RULE_COMMENT_in_ruleChoiceDialog3124); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       			newLeafNode(lv_choiceComment_4_0, grammarAccess.getChoiceDialogAccess().getChoiceCommentCOMMENTTerminalRuleCall_4_0()); 
@@ -4217,18 +4181,18 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1559:3: ( (lv_body_5_0= ruleConditionalBody ) )
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1560:1: (lv_body_5_0= ruleConditionalBody )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1549:3: ( (lv_body_5_0= ruleConditionalBody ) )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1550:1: (lv_body_5_0= ruleConditionalBody )
             {
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1560:1: (lv_body_5_0= ruleConditionalBody )
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1561:3: lv_body_5_0= ruleConditionalBody
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1550:1: (lv_body_5_0= ruleConditionalBody )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1551:3: lv_body_5_0= ruleConditionalBody
             {
             if ( state.backtracking==0 ) {
                
               	        newCompositeNode(grammarAccess.getChoiceDialogAccess().getBodyConditionalBodyParserRuleCall_5_0()); 
               	    
             }
-            pushFollow(FOLLOW_ruleConditionalBody_in_ruleChoiceDialog3178);
+            pushFollow(FOLLOW_ruleConditionalBody_in_ruleChoiceDialog3151);
             lv_body_5_0=ruleConditionalBody();
 
             state._fsp--;
@@ -4252,7 +4216,7 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_6=(Token)match(input,19,FOLLOW_19_in_ruleChoiceDialog3190); if (state.failed) return current;
+            otherlv_6=(Token)match(input,19,FOLLOW_19_in_ruleChoiceDialog3163); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_6, grammarAccess.getChoiceDialogAccess().getEndKeyword_6());
@@ -4281,7 +4245,7 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleConditionList"
-    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1589:1: entryRuleConditionList returns [EObject current=null] : iv_ruleConditionList= ruleConditionList EOF ;
+    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1579:1: entryRuleConditionList returns [EObject current=null] : iv_ruleConditionList= ruleConditionList EOF ;
     public final EObject entryRuleConditionList() throws RecognitionException {
         EObject current = null;
 
@@ -4289,13 +4253,13 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1590:2: (iv_ruleConditionList= ruleConditionList EOF )
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1591:2: iv_ruleConditionList= ruleConditionList EOF
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1580:2: (iv_ruleConditionList= ruleConditionList EOF )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1581:2: iv_ruleConditionList= ruleConditionList EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getConditionListRule()); 
             }
-            pushFollow(FOLLOW_ruleConditionList_in_entryRuleConditionList3226);
+            pushFollow(FOLLOW_ruleConditionList_in_entryRuleConditionList3199);
             iv_ruleConditionList=ruleConditionList();
 
             state._fsp--;
@@ -4303,7 +4267,7 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleConditionList; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleConditionList3236); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleConditionList3209); if (state.failed) return current;
 
             }
 
@@ -4321,7 +4285,7 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleConditionList"
-    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1598:1: ruleConditionList returns [EObject current=null] : ( ( (otherlv_0= RULE_ID ) ) (otherlv_1= 'or' ( (otherlv_2= RULE_ID ) ) )* ) ;
+    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1588:1: ruleConditionList returns [EObject current=null] : ( ( (otherlv_0= RULE_ID ) ) (otherlv_1= 'or' ( (otherlv_2= RULE_ID ) ) )* ) ;
     public final EObject ruleConditionList() throws RecognitionException {
         EObject current = null;
 
@@ -4332,17 +4296,17 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1601:28: ( ( ( (otherlv_0= RULE_ID ) ) (otherlv_1= 'or' ( (otherlv_2= RULE_ID ) ) )* ) )
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1602:1: ( ( (otherlv_0= RULE_ID ) ) (otherlv_1= 'or' ( (otherlv_2= RULE_ID ) ) )* )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1591:28: ( ( ( (otherlv_0= RULE_ID ) ) (otherlv_1= 'or' ( (otherlv_2= RULE_ID ) ) )* ) )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1592:1: ( ( (otherlv_0= RULE_ID ) ) (otherlv_1= 'or' ( (otherlv_2= RULE_ID ) ) )* )
             {
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1602:1: ( ( (otherlv_0= RULE_ID ) ) (otherlv_1= 'or' ( (otherlv_2= RULE_ID ) ) )* )
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1602:2: ( (otherlv_0= RULE_ID ) ) (otherlv_1= 'or' ( (otherlv_2= RULE_ID ) ) )*
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1592:1: ( ( (otherlv_0= RULE_ID ) ) (otherlv_1= 'or' ( (otherlv_2= RULE_ID ) ) )* )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1592:2: ( (otherlv_0= RULE_ID ) ) (otherlv_1= 'or' ( (otherlv_2= RULE_ID ) ) )*
             {
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1602:2: ( (otherlv_0= RULE_ID ) )
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1603:1: (otherlv_0= RULE_ID )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1592:2: ( (otherlv_0= RULE_ID ) )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1593:1: (otherlv_0= RULE_ID )
             {
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1603:1: (otherlv_0= RULE_ID )
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1604:3: otherlv_0= RULE_ID
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1593:1: (otherlv_0= RULE_ID )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1594:3: otherlv_0= RULE_ID
             {
             if ( state.backtracking==0 ) {
 
@@ -4351,7 +4315,7 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
               	        }
                       
             }
-            otherlv_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleConditionList3281); if (state.failed) return current;
+            otherlv_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleConditionList3254); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               		newLeafNode(otherlv_0, grammarAccess.getConditionListAccess().getConditionsConditionDefinitionCrossReference_0_0()); 
@@ -4363,7 +4327,7 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1615:2: (otherlv_1= 'or' ( (otherlv_2= RULE_ID ) ) )*
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1605:2: (otherlv_1= 'or' ( (otherlv_2= RULE_ID ) ) )*
             loop33:
             do {
                 int alt33=2;
@@ -4376,19 +4340,19 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
                 switch (alt33) {
             	case 1 :
-            	    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1615:4: otherlv_1= 'or' ( (otherlv_2= RULE_ID ) )
+            	    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1605:4: otherlv_1= 'or' ( (otherlv_2= RULE_ID ) )
             	    {
-            	    otherlv_1=(Token)match(input,35,FOLLOW_35_in_ruleConditionList3294); if (state.failed) return current;
+            	    otherlv_1=(Token)match(input,35,FOLLOW_35_in_ruleConditionList3267); if (state.failed) return current;
             	    if ( state.backtracking==0 ) {
 
             	          	newLeafNode(otherlv_1, grammarAccess.getConditionListAccess().getOrKeyword_1_0());
             	          
             	    }
-            	    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1619:1: ( (otherlv_2= RULE_ID ) )
-            	    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1620:1: (otherlv_2= RULE_ID )
+            	    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1609:1: ( (otherlv_2= RULE_ID ) )
+            	    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1610:1: (otherlv_2= RULE_ID )
             	    {
-            	    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1620:1: (otherlv_2= RULE_ID )
-            	    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1621:3: otherlv_2= RULE_ID
+            	    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1610:1: (otherlv_2= RULE_ID )
+            	    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1611:3: otherlv_2= RULE_ID
             	    {
             	    if ( state.backtracking==0 ) {
 
@@ -4397,7 +4361,7 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
             	      	        }
             	              
             	    }
-            	    otherlv_2=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleConditionList3314); if (state.failed) return current;
+            	    otherlv_2=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleConditionList3287); if (state.failed) return current;
             	    if ( state.backtracking==0 ) {
 
             	      		newLeafNode(otherlv_2, grammarAccess.getConditionListAccess().getConditionsConditionDefinitionCrossReference_1_1_0()); 
@@ -4441,7 +4405,7 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleJump"
-    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1640:1: entryRuleJump returns [EObject current=null] : iv_ruleJump= ruleJump EOF ;
+    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1630:1: entryRuleJump returns [EObject current=null] : iv_ruleJump= ruleJump EOF ;
     public final EObject entryRuleJump() throws RecognitionException {
         EObject current = null;
 
@@ -4449,13 +4413,13 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1641:2: (iv_ruleJump= ruleJump EOF )
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1642:2: iv_ruleJump= ruleJump EOF
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1631:2: (iv_ruleJump= ruleJump EOF )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1632:2: iv_ruleJump= ruleJump EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getJumpRule()); 
             }
-            pushFollow(FOLLOW_ruleJump_in_entryRuleJump3352);
+            pushFollow(FOLLOW_ruleJump_in_entryRuleJump3325);
             iv_ruleJump=ruleJump();
 
             state._fsp--;
@@ -4463,7 +4427,7 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleJump; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleJump3362); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleJump3335); if (state.failed) return current;
 
             }
 
@@ -4481,7 +4445,7 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleJump"
-    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1649:1: ruleJump returns [EObject current=null] : (this_Exit_0= ruleExit | this_InvokeHub_1= ruleInvokeHub | this_InvokeScene_2= ruleInvokeScene ) ;
+    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1639:1: ruleJump returns [EObject current=null] : (this_Exit_0= ruleExit | this_InvokeHub_1= ruleInvokeHub | this_InvokeScene_2= ruleInvokeScene ) ;
     public final EObject ruleJump() throws RecognitionException {
         EObject current = null;
 
@@ -4495,10 +4459,10 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1652:28: ( (this_Exit_0= ruleExit | this_InvokeHub_1= ruleInvokeHub | this_InvokeScene_2= ruleInvokeScene ) )
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1653:1: (this_Exit_0= ruleExit | this_InvokeHub_1= ruleInvokeHub | this_InvokeScene_2= ruleInvokeScene )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1642:28: ( (this_Exit_0= ruleExit | this_InvokeHub_1= ruleInvokeHub | this_InvokeScene_2= ruleInvokeScene ) )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1643:1: (this_Exit_0= ruleExit | this_InvokeHub_1= ruleInvokeHub | this_InvokeScene_2= ruleInvokeScene )
             {
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1653:1: (this_Exit_0= ruleExit | this_InvokeHub_1= ruleInvokeHub | this_InvokeScene_2= ruleInvokeScene )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1643:1: (this_Exit_0= ruleExit | this_InvokeHub_1= ruleInvokeHub | this_InvokeScene_2= ruleInvokeScene )
             int alt34=3;
             int LA34_0 = input.LA(1);
 
@@ -4531,14 +4495,14 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
             }
             switch (alt34) {
                 case 1 :
-                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1654:5: this_Exit_0= ruleExit
+                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1644:5: this_Exit_0= ruleExit
                     {
                     if ( state.backtracking==0 ) {
                        
                               newCompositeNode(grammarAccess.getJumpAccess().getExitParserRuleCall_0()); 
                           
                     }
-                    pushFollow(FOLLOW_ruleExit_in_ruleJump3409);
+                    pushFollow(FOLLOW_ruleExit_in_ruleJump3382);
                     this_Exit_0=ruleExit();
 
                     state._fsp--;
@@ -4553,14 +4517,14 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1664:5: this_InvokeHub_1= ruleInvokeHub
+                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1654:5: this_InvokeHub_1= ruleInvokeHub
                     {
                     if ( state.backtracking==0 ) {
                        
                               newCompositeNode(grammarAccess.getJumpAccess().getInvokeHubParserRuleCall_1()); 
                           
                     }
-                    pushFollow(FOLLOW_ruleInvokeHub_in_ruleJump3436);
+                    pushFollow(FOLLOW_ruleInvokeHub_in_ruleJump3409);
                     this_InvokeHub_1=ruleInvokeHub();
 
                     state._fsp--;
@@ -4575,14 +4539,14 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1674:5: this_InvokeScene_2= ruleInvokeScene
+                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1664:5: this_InvokeScene_2= ruleInvokeScene
                     {
                     if ( state.backtracking==0 ) {
                        
                               newCompositeNode(grammarAccess.getJumpAccess().getInvokeSceneParserRuleCall_2()); 
                           
                     }
-                    pushFollow(FOLLOW_ruleInvokeScene_in_ruleJump3463);
+                    pushFollow(FOLLOW_ruleInvokeScene_in_ruleJump3436);
                     this_InvokeScene_2=ruleInvokeScene();
 
                     state._fsp--;
@@ -4619,7 +4583,7 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleInvokeHub"
-    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1690:1: entryRuleInvokeHub returns [EObject current=null] : iv_ruleInvokeHub= ruleInvokeHub EOF ;
+    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1680:1: entryRuleInvokeHub returns [EObject current=null] : iv_ruleInvokeHub= ruleInvokeHub EOF ;
     public final EObject entryRuleInvokeHub() throws RecognitionException {
         EObject current = null;
 
@@ -4627,13 +4591,13 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1691:2: (iv_ruleInvokeHub= ruleInvokeHub EOF )
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1692:2: iv_ruleInvokeHub= ruleInvokeHub EOF
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1681:2: (iv_ruleInvokeHub= ruleInvokeHub EOF )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1682:2: iv_ruleInvokeHub= ruleInvokeHub EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getInvokeHubRule()); 
             }
-            pushFollow(FOLLOW_ruleInvokeHub_in_entryRuleInvokeHub3498);
+            pushFollow(FOLLOW_ruleInvokeHub_in_entryRuleInvokeHub3471);
             iv_ruleInvokeHub=ruleInvokeHub();
 
             state._fsp--;
@@ -4641,7 +4605,7 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleInvokeHub; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleInvokeHub3508); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleInvokeHub3481); if (state.failed) return current;
 
             }
 
@@ -4659,7 +4623,7 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleInvokeHub"
-    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1699:1: ruleInvokeHub returns [EObject current=null] : (otherlv_0= 'enter' otherlv_1= 'hub' ( ( ruleStringID ) ) ) ;
+    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1689:1: ruleInvokeHub returns [EObject current=null] : (otherlv_0= 'enter' otherlv_1= 'hub' ( ( ruleStringID ) ) ) ;
     public final EObject ruleInvokeHub() throws RecognitionException {
         EObject current = null;
 
@@ -4669,29 +4633,29 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1702:28: ( (otherlv_0= 'enter' otherlv_1= 'hub' ( ( ruleStringID ) ) ) )
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1703:1: (otherlv_0= 'enter' otherlv_1= 'hub' ( ( ruleStringID ) ) )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1692:28: ( (otherlv_0= 'enter' otherlv_1= 'hub' ( ( ruleStringID ) ) ) )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1693:1: (otherlv_0= 'enter' otherlv_1= 'hub' ( ( ruleStringID ) ) )
             {
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1703:1: (otherlv_0= 'enter' otherlv_1= 'hub' ( ( ruleStringID ) ) )
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1703:3: otherlv_0= 'enter' otherlv_1= 'hub' ( ( ruleStringID ) )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1693:1: (otherlv_0= 'enter' otherlv_1= 'hub' ( ( ruleStringID ) ) )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1693:3: otherlv_0= 'enter' otherlv_1= 'hub' ( ( ruleStringID ) )
             {
-            otherlv_0=(Token)match(input,36,FOLLOW_36_in_ruleInvokeHub3545); if (state.failed) return current;
+            otherlv_0=(Token)match(input,36,FOLLOW_36_in_ruleInvokeHub3518); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_0, grammarAccess.getInvokeHubAccess().getEnterKeyword_0());
                   
             }
-            otherlv_1=(Token)match(input,29,FOLLOW_29_in_ruleInvokeHub3557); if (state.failed) return current;
+            otherlv_1=(Token)match(input,29,FOLLOW_29_in_ruleInvokeHub3530); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_1, grammarAccess.getInvokeHubAccess().getHubKeyword_1());
                   
             }
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1711:1: ( ( ruleStringID ) )
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1712:1: ( ruleStringID )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1701:1: ( ( ruleStringID ) )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1702:1: ( ruleStringID )
             {
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1712:1: ( ruleStringID )
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1713:3: ruleStringID
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1702:1: ( ruleStringID )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1703:3: ruleStringID
             {
             if ( state.backtracking==0 ) {
 
@@ -4705,7 +4669,7 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
               	        newCompositeNode(grammarAccess.getInvokeHubAccess().getHubHubCrossReference_2_0()); 
               	    
             }
-            pushFollow(FOLLOW_ruleStringID_in_ruleInvokeHub3580);
+            pushFollow(FOLLOW_ruleStringID_in_ruleInvokeHub3553);
             ruleStringID();
 
             state._fsp--;
@@ -4744,7 +4708,7 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleInvokeScene"
-    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1734:1: entryRuleInvokeScene returns [EObject current=null] : iv_ruleInvokeScene= ruleInvokeScene EOF ;
+    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1724:1: entryRuleInvokeScene returns [EObject current=null] : iv_ruleInvokeScene= ruleInvokeScene EOF ;
     public final EObject entryRuleInvokeScene() throws RecognitionException {
         EObject current = null;
 
@@ -4752,13 +4716,13 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1735:2: (iv_ruleInvokeScene= ruleInvokeScene EOF )
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1736:2: iv_ruleInvokeScene= ruleInvokeScene EOF
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1725:2: (iv_ruleInvokeScene= ruleInvokeScene EOF )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1726:2: iv_ruleInvokeScene= ruleInvokeScene EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getInvokeSceneRule()); 
             }
-            pushFollow(FOLLOW_ruleInvokeScene_in_entryRuleInvokeScene3616);
+            pushFollow(FOLLOW_ruleInvokeScene_in_entryRuleInvokeScene3589);
             iv_ruleInvokeScene=ruleInvokeScene();
 
             state._fsp--;
@@ -4766,7 +4730,7 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleInvokeScene; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleInvokeScene3626); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleInvokeScene3599); if (state.failed) return current;
 
             }
 
@@ -4784,7 +4748,7 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleInvokeScene"
-    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1743:1: ruleInvokeScene returns [EObject current=null] : (otherlv_0= 'enter' otherlv_1= 'scene' ( ( ruleStringID ) ) ) ;
+    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1733:1: ruleInvokeScene returns [EObject current=null] : (otherlv_0= 'enter' otherlv_1= 'scene' ( ( ruleStringID ) ) ) ;
     public final EObject ruleInvokeScene() throws RecognitionException {
         EObject current = null;
 
@@ -4794,29 +4758,29 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1746:28: ( (otherlv_0= 'enter' otherlv_1= 'scene' ( ( ruleStringID ) ) ) )
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1747:1: (otherlv_0= 'enter' otherlv_1= 'scene' ( ( ruleStringID ) ) )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1736:28: ( (otherlv_0= 'enter' otherlv_1= 'scene' ( ( ruleStringID ) ) ) )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1737:1: (otherlv_0= 'enter' otherlv_1= 'scene' ( ( ruleStringID ) ) )
             {
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1747:1: (otherlv_0= 'enter' otherlv_1= 'scene' ( ( ruleStringID ) ) )
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1747:3: otherlv_0= 'enter' otherlv_1= 'scene' ( ( ruleStringID ) )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1737:1: (otherlv_0= 'enter' otherlv_1= 'scene' ( ( ruleStringID ) ) )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1737:3: otherlv_0= 'enter' otherlv_1= 'scene' ( ( ruleStringID ) )
             {
-            otherlv_0=(Token)match(input,36,FOLLOW_36_in_ruleInvokeScene3663); if (state.failed) return current;
+            otherlv_0=(Token)match(input,36,FOLLOW_36_in_ruleInvokeScene3636); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_0, grammarAccess.getInvokeSceneAccess().getEnterKeyword_0());
                   
             }
-            otherlv_1=(Token)match(input,22,FOLLOW_22_in_ruleInvokeScene3675); if (state.failed) return current;
+            otherlv_1=(Token)match(input,22,FOLLOW_22_in_ruleInvokeScene3648); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_1, grammarAccess.getInvokeSceneAccess().getSceneKeyword_1());
                   
             }
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1755:1: ( ( ruleStringID ) )
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1756:1: ( ruleStringID )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1745:1: ( ( ruleStringID ) )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1746:1: ( ruleStringID )
             {
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1756:1: ( ruleStringID )
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1757:3: ruleStringID
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1746:1: ( ruleStringID )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1747:3: ruleStringID
             {
             if ( state.backtracking==0 ) {
 
@@ -4830,7 +4794,7 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
               	        newCompositeNode(grammarAccess.getInvokeSceneAccess().getSceneSceneCrossReference_2_0()); 
               	    
             }
-            pushFollow(FOLLOW_ruleStringID_in_ruleInvokeScene3698);
+            pushFollow(FOLLOW_ruleStringID_in_ruleInvokeScene3671);
             ruleStringID();
 
             state._fsp--;
@@ -4869,7 +4833,7 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleExit"
-    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1778:1: entryRuleExit returns [EObject current=null] : iv_ruleExit= ruleExit EOF ;
+    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1768:1: entryRuleExit returns [EObject current=null] : iv_ruleExit= ruleExit EOF ;
     public final EObject entryRuleExit() throws RecognitionException {
         EObject current = null;
 
@@ -4877,13 +4841,13 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1779:2: (iv_ruleExit= ruleExit EOF )
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1780:2: iv_ruleExit= ruleExit EOF
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1769:2: (iv_ruleExit= ruleExit EOF )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1770:2: iv_ruleExit= ruleExit EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getExitRule()); 
             }
-            pushFollow(FOLLOW_ruleExit_in_entryRuleExit3734);
+            pushFollow(FOLLOW_ruleExit_in_entryRuleExit3707);
             iv_ruleExit=ruleExit();
 
             state._fsp--;
@@ -4891,7 +4855,7 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleExit; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleExit3744); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleExit3717); if (state.failed) return current;
 
             }
 
@@ -4909,7 +4873,7 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleExit"
-    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1787:1: ruleExit returns [EObject current=null] : ( () otherlv_1= 'exit' ( ( (lv_exitHub_2_0= 'hub' ) ) | ( (lv_exitScene_3_0= 'scene' ) ) ) ) ;
+    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1777:1: ruleExit returns [EObject current=null] : ( () otherlv_1= 'exit' ( ( (lv_exitHub_2_0= 'hub' ) ) | ( (lv_exitScene_3_0= 'scene' ) ) ) ) ;
     public final EObject ruleExit() throws RecognitionException {
         EObject current = null;
 
@@ -4920,14 +4884,14 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1790:28: ( ( () otherlv_1= 'exit' ( ( (lv_exitHub_2_0= 'hub' ) ) | ( (lv_exitScene_3_0= 'scene' ) ) ) ) )
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1791:1: ( () otherlv_1= 'exit' ( ( (lv_exitHub_2_0= 'hub' ) ) | ( (lv_exitScene_3_0= 'scene' ) ) ) )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1780:28: ( ( () otherlv_1= 'exit' ( ( (lv_exitHub_2_0= 'hub' ) ) | ( (lv_exitScene_3_0= 'scene' ) ) ) ) )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1781:1: ( () otherlv_1= 'exit' ( ( (lv_exitHub_2_0= 'hub' ) ) | ( (lv_exitScene_3_0= 'scene' ) ) ) )
             {
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1791:1: ( () otherlv_1= 'exit' ( ( (lv_exitHub_2_0= 'hub' ) ) | ( (lv_exitScene_3_0= 'scene' ) ) ) )
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1791:2: () otherlv_1= 'exit' ( ( (lv_exitHub_2_0= 'hub' ) ) | ( (lv_exitScene_3_0= 'scene' ) ) )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1781:1: ( () otherlv_1= 'exit' ( ( (lv_exitHub_2_0= 'hub' ) ) | ( (lv_exitScene_3_0= 'scene' ) ) ) )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1781:2: () otherlv_1= 'exit' ( ( (lv_exitHub_2_0= 'hub' ) ) | ( (lv_exitScene_3_0= 'scene' ) ) )
             {
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1791:2: ()
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1792:5: 
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1781:2: ()
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1782:5: 
             {
             if ( state.backtracking==0 ) {
 
@@ -4939,13 +4903,13 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,37,FOLLOW_37_in_ruleExit3790); if (state.failed) return current;
+            otherlv_1=(Token)match(input,37,FOLLOW_37_in_ruleExit3763); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_1, grammarAccess.getExitAccess().getExitKeyword_1());
                   
             }
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1801:1: ( ( (lv_exitHub_2_0= 'hub' ) ) | ( (lv_exitScene_3_0= 'scene' ) ) )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1791:1: ( ( (lv_exitHub_2_0= 'hub' ) ) | ( (lv_exitScene_3_0= 'scene' ) ) )
             int alt35=2;
             int LA35_0 = input.LA(1);
 
@@ -4964,15 +4928,15 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
             }
             switch (alt35) {
                 case 1 :
-                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1801:2: ( (lv_exitHub_2_0= 'hub' ) )
+                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1791:2: ( (lv_exitHub_2_0= 'hub' ) )
                     {
-                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1801:2: ( (lv_exitHub_2_0= 'hub' ) )
-                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1802:1: (lv_exitHub_2_0= 'hub' )
+                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1791:2: ( (lv_exitHub_2_0= 'hub' ) )
+                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1792:1: (lv_exitHub_2_0= 'hub' )
                     {
-                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1802:1: (lv_exitHub_2_0= 'hub' )
-                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1803:3: lv_exitHub_2_0= 'hub'
+                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1792:1: (lv_exitHub_2_0= 'hub' )
+                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1793:3: lv_exitHub_2_0= 'hub'
                     {
-                    lv_exitHub_2_0=(Token)match(input,29,FOLLOW_29_in_ruleExit3809); if (state.failed) return current;
+                    lv_exitHub_2_0=(Token)match(input,29,FOLLOW_29_in_ruleExit3782); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               newLeafNode(lv_exitHub_2_0, grammarAccess.getExitAccess().getExitHubHubKeyword_2_0_0());
@@ -4996,15 +4960,15 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1817:6: ( (lv_exitScene_3_0= 'scene' ) )
+                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1807:6: ( (lv_exitScene_3_0= 'scene' ) )
                     {
-                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1817:6: ( (lv_exitScene_3_0= 'scene' ) )
-                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1818:1: (lv_exitScene_3_0= 'scene' )
+                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1807:6: ( (lv_exitScene_3_0= 'scene' ) )
+                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1808:1: (lv_exitScene_3_0= 'scene' )
                     {
-                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1818:1: (lv_exitScene_3_0= 'scene' )
-                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1819:3: lv_exitScene_3_0= 'scene'
+                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1808:1: (lv_exitScene_3_0= 'scene' )
+                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1809:3: lv_exitScene_3_0= 'scene'
                     {
-                    lv_exitScene_3_0=(Token)match(input,22,FOLLOW_22_in_ruleExit3846); if (state.failed) return current;
+                    lv_exitScene_3_0=(Token)match(input,22,FOLLOW_22_in_ruleExit3819); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               newLeafNode(lv_exitScene_3_0, grammarAccess.getExitAccess().getExitSceneSceneKeyword_2_1_0());
@@ -5053,7 +5017,7 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleConditional"
-    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1840:1: entryRuleConditional returns [EObject current=null] : iv_ruleConditional= ruleConditional EOF ;
+    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1830:1: entryRuleConditional returns [EObject current=null] : iv_ruleConditional= ruleConditional EOF ;
     public final EObject entryRuleConditional() throws RecognitionException {
         EObject current = null;
 
@@ -5061,13 +5025,13 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1841:2: (iv_ruleConditional= ruleConditional EOF )
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1842:2: iv_ruleConditional= ruleConditional EOF
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1831:2: (iv_ruleConditional= ruleConditional EOF )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1832:2: iv_ruleConditional= ruleConditional EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getConditionalRule()); 
             }
-            pushFollow(FOLLOW_ruleConditional_in_entryRuleConditional3896);
+            pushFollow(FOLLOW_ruleConditional_in_entryRuleConditional3869);
             iv_ruleConditional=ruleConditional();
 
             state._fsp--;
@@ -5075,7 +5039,7 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleConditional; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleConditional3906); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleConditional3879); if (state.failed) return current;
 
             }
 
@@ -5093,7 +5057,7 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleConditional"
-    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1849:1: ruleConditional returns [EObject current=null] : ( ( (lv_modifiers_0_0= ruleModifier ) )* otherlv_1= 'if' otherlv_2= '(' ( (lv_conditionList_3_0= ruleConditionList ) ) otherlv_4= ')' ( (lv_comment_5_0= RULE_COMMENT ) )? ( (lv_body_6_0= ruleConditionalBody ) ) ( (lv_otherwiseList_7_0= ruleOtherwise ) )* otherlv_8= 'end' ) ;
+    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1839:1: ruleConditional returns [EObject current=null] : ( ( (lv_modifiers_0_0= ruleModifier ) )* otherlv_1= 'if' otherlv_2= '(' ( (lv_conditionList_3_0= ruleConditionList ) ) otherlv_4= ')' ( (lv_comment_5_0= RULE_COMMENT ) )? ( (lv_body_6_0= ruleConditionalBody ) ) ( (lv_otherwiseList_7_0= ruleOtherwise ) )* otherlv_8= 'end' ) ;
     public final EObject ruleConditional() throws RecognitionException {
         EObject current = null;
 
@@ -5114,13 +5078,13 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1852:28: ( ( ( (lv_modifiers_0_0= ruleModifier ) )* otherlv_1= 'if' otherlv_2= '(' ( (lv_conditionList_3_0= ruleConditionList ) ) otherlv_4= ')' ( (lv_comment_5_0= RULE_COMMENT ) )? ( (lv_body_6_0= ruleConditionalBody ) ) ( (lv_otherwiseList_7_0= ruleOtherwise ) )* otherlv_8= 'end' ) )
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1853:1: ( ( (lv_modifiers_0_0= ruleModifier ) )* otherlv_1= 'if' otherlv_2= '(' ( (lv_conditionList_3_0= ruleConditionList ) ) otherlv_4= ')' ( (lv_comment_5_0= RULE_COMMENT ) )? ( (lv_body_6_0= ruleConditionalBody ) ) ( (lv_otherwiseList_7_0= ruleOtherwise ) )* otherlv_8= 'end' )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1842:28: ( ( ( (lv_modifiers_0_0= ruleModifier ) )* otherlv_1= 'if' otherlv_2= '(' ( (lv_conditionList_3_0= ruleConditionList ) ) otherlv_4= ')' ( (lv_comment_5_0= RULE_COMMENT ) )? ( (lv_body_6_0= ruleConditionalBody ) ) ( (lv_otherwiseList_7_0= ruleOtherwise ) )* otherlv_8= 'end' ) )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1843:1: ( ( (lv_modifiers_0_0= ruleModifier ) )* otherlv_1= 'if' otherlv_2= '(' ( (lv_conditionList_3_0= ruleConditionList ) ) otherlv_4= ')' ( (lv_comment_5_0= RULE_COMMENT ) )? ( (lv_body_6_0= ruleConditionalBody ) ) ( (lv_otherwiseList_7_0= ruleOtherwise ) )* otherlv_8= 'end' )
             {
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1853:1: ( ( (lv_modifiers_0_0= ruleModifier ) )* otherlv_1= 'if' otherlv_2= '(' ( (lv_conditionList_3_0= ruleConditionList ) ) otherlv_4= ')' ( (lv_comment_5_0= RULE_COMMENT ) )? ( (lv_body_6_0= ruleConditionalBody ) ) ( (lv_otherwiseList_7_0= ruleOtherwise ) )* otherlv_8= 'end' )
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1853:2: ( (lv_modifiers_0_0= ruleModifier ) )* otherlv_1= 'if' otherlv_2= '(' ( (lv_conditionList_3_0= ruleConditionList ) ) otherlv_4= ')' ( (lv_comment_5_0= RULE_COMMENT ) )? ( (lv_body_6_0= ruleConditionalBody ) ) ( (lv_otherwiseList_7_0= ruleOtherwise ) )* otherlv_8= 'end'
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1843:1: ( ( (lv_modifiers_0_0= ruleModifier ) )* otherlv_1= 'if' otherlv_2= '(' ( (lv_conditionList_3_0= ruleConditionList ) ) otherlv_4= ')' ( (lv_comment_5_0= RULE_COMMENT ) )? ( (lv_body_6_0= ruleConditionalBody ) ) ( (lv_otherwiseList_7_0= ruleOtherwise ) )* otherlv_8= 'end' )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1843:2: ( (lv_modifiers_0_0= ruleModifier ) )* otherlv_1= 'if' otherlv_2= '(' ( (lv_conditionList_3_0= ruleConditionList ) ) otherlv_4= ')' ( (lv_comment_5_0= RULE_COMMENT ) )? ( (lv_body_6_0= ruleConditionalBody ) ) ( (lv_otherwiseList_7_0= ruleOtherwise ) )* otherlv_8= 'end'
             {
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1853:2: ( (lv_modifiers_0_0= ruleModifier ) )*
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1843:2: ( (lv_modifiers_0_0= ruleModifier ) )*
             loop36:
             do {
                 int alt36=2;
@@ -5133,17 +5097,17 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
                 switch (alt36) {
             	case 1 :
-            	    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1854:1: (lv_modifiers_0_0= ruleModifier )
+            	    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1844:1: (lv_modifiers_0_0= ruleModifier )
             	    {
-            	    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1854:1: (lv_modifiers_0_0= ruleModifier )
-            	    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1855:3: lv_modifiers_0_0= ruleModifier
+            	    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1844:1: (lv_modifiers_0_0= ruleModifier )
+            	    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1845:3: lv_modifiers_0_0= ruleModifier
             	    {
             	    if ( state.backtracking==0 ) {
             	       
             	      	        newCompositeNode(grammarAccess.getConditionalAccess().getModifiersModifierEnumRuleCall_0_0()); 
             	      	    
             	    }
-            	    pushFollow(FOLLOW_ruleModifier_in_ruleConditional3952);
+            	    pushFollow(FOLLOW_ruleModifier_in_ruleConditional3925);
             	    lv_modifiers_0_0=ruleModifier();
 
             	    state._fsp--;
@@ -5173,30 +5137,30 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            otherlv_1=(Token)match(input,31,FOLLOW_31_in_ruleConditional3965); if (state.failed) return current;
+            otherlv_1=(Token)match(input,31,FOLLOW_31_in_ruleConditional3938); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_1, grammarAccess.getConditionalAccess().getIfKeyword_1());
                   
             }
-            otherlv_2=(Token)match(input,32,FOLLOW_32_in_ruleConditional3977); if (state.failed) return current;
+            otherlv_2=(Token)match(input,32,FOLLOW_32_in_ruleConditional3950); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_2, grammarAccess.getConditionalAccess().getLeftParenthesisKeyword_2());
                   
             }
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1879:1: ( (lv_conditionList_3_0= ruleConditionList ) )
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1880:1: (lv_conditionList_3_0= ruleConditionList )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1869:1: ( (lv_conditionList_3_0= ruleConditionList ) )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1870:1: (lv_conditionList_3_0= ruleConditionList )
             {
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1880:1: (lv_conditionList_3_0= ruleConditionList )
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1881:3: lv_conditionList_3_0= ruleConditionList
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1870:1: (lv_conditionList_3_0= ruleConditionList )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1871:3: lv_conditionList_3_0= ruleConditionList
             {
             if ( state.backtracking==0 ) {
                
               	        newCompositeNode(grammarAccess.getConditionalAccess().getConditionListConditionListParserRuleCall_3_0()); 
               	    
             }
-            pushFollow(FOLLOW_ruleConditionList_in_ruleConditional3998);
+            pushFollow(FOLLOW_ruleConditionList_in_ruleConditional3971);
             lv_conditionList_3_0=ruleConditionList();
 
             state._fsp--;
@@ -5220,13 +5184,13 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_4=(Token)match(input,33,FOLLOW_33_in_ruleConditional4010); if (state.failed) return current;
+            otherlv_4=(Token)match(input,33,FOLLOW_33_in_ruleConditional3983); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_4, grammarAccess.getConditionalAccess().getRightParenthesisKeyword_4());
                   
             }
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1901:1: ( (lv_comment_5_0= RULE_COMMENT ) )?
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1891:1: ( (lv_comment_5_0= RULE_COMMENT ) )?
             int alt37=2;
             int LA37_0 = input.LA(1);
 
@@ -5235,12 +5199,12 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
             }
             switch (alt37) {
                 case 1 :
-                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1902:1: (lv_comment_5_0= RULE_COMMENT )
+                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1892:1: (lv_comment_5_0= RULE_COMMENT )
                     {
-                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1902:1: (lv_comment_5_0= RULE_COMMENT )
-                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1903:3: lv_comment_5_0= RULE_COMMENT
+                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1892:1: (lv_comment_5_0= RULE_COMMENT )
+                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1893:3: lv_comment_5_0= RULE_COMMENT
                     {
-                    lv_comment_5_0=(Token)match(input,RULE_COMMENT,FOLLOW_RULE_COMMENT_in_ruleConditional4027); if (state.failed) return current;
+                    lv_comment_5_0=(Token)match(input,RULE_COMMENT,FOLLOW_RULE_COMMENT_in_ruleConditional4000); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       			newLeafNode(lv_comment_5_0, grammarAccess.getConditionalAccess().getCommentCOMMENTTerminalRuleCall_5_0()); 
@@ -5267,18 +5231,18 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1919:3: ( (lv_body_6_0= ruleConditionalBody ) )
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1920:1: (lv_body_6_0= ruleConditionalBody )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1909:3: ( (lv_body_6_0= ruleConditionalBody ) )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1910:1: (lv_body_6_0= ruleConditionalBody )
             {
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1920:1: (lv_body_6_0= ruleConditionalBody )
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1921:3: lv_body_6_0= ruleConditionalBody
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1910:1: (lv_body_6_0= ruleConditionalBody )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1911:3: lv_body_6_0= ruleConditionalBody
             {
             if ( state.backtracking==0 ) {
                
               	        newCompositeNode(grammarAccess.getConditionalAccess().getBodyConditionalBodyParserRuleCall_6_0()); 
               	    
             }
-            pushFollow(FOLLOW_ruleConditionalBody_in_ruleConditional4054);
+            pushFollow(FOLLOW_ruleConditionalBody_in_ruleConditional4027);
             lv_body_6_0=ruleConditionalBody();
 
             state._fsp--;
@@ -5302,7 +5266,7 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1937:2: ( (lv_otherwiseList_7_0= ruleOtherwise ) )*
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1927:2: ( (lv_otherwiseList_7_0= ruleOtherwise ) )*
             loop38:
             do {
                 int alt38=2;
@@ -5315,17 +5279,17 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
                 switch (alt38) {
             	case 1 :
-            	    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1938:1: (lv_otherwiseList_7_0= ruleOtherwise )
+            	    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1928:1: (lv_otherwiseList_7_0= ruleOtherwise )
             	    {
-            	    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1938:1: (lv_otherwiseList_7_0= ruleOtherwise )
-            	    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1939:3: lv_otherwiseList_7_0= ruleOtherwise
+            	    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1928:1: (lv_otherwiseList_7_0= ruleOtherwise )
+            	    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1929:3: lv_otherwiseList_7_0= ruleOtherwise
             	    {
             	    if ( state.backtracking==0 ) {
             	       
             	      	        newCompositeNode(grammarAccess.getConditionalAccess().getOtherwiseListOtherwiseParserRuleCall_7_0()); 
             	      	    
             	    }
-            	    pushFollow(FOLLOW_ruleOtherwise_in_ruleConditional4075);
+            	    pushFollow(FOLLOW_ruleOtherwise_in_ruleConditional4048);
             	    lv_otherwiseList_7_0=ruleOtherwise();
 
             	    state._fsp--;
@@ -5355,7 +5319,7 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            otherlv_8=(Token)match(input,19,FOLLOW_19_in_ruleConditional4088); if (state.failed) return current;
+            otherlv_8=(Token)match(input,19,FOLLOW_19_in_ruleConditional4061); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_8, grammarAccess.getConditionalAccess().getEndKeyword_8());
@@ -5384,7 +5348,7 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleSwitchList"
-    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1967:1: entryRuleSwitchList returns [EObject current=null] : iv_ruleSwitchList= ruleSwitchList EOF ;
+    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1957:1: entryRuleSwitchList returns [EObject current=null] : iv_ruleSwitchList= ruleSwitchList EOF ;
     public final EObject entryRuleSwitchList() throws RecognitionException {
         EObject current = null;
 
@@ -5392,13 +5356,13 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1968:2: (iv_ruleSwitchList= ruleSwitchList EOF )
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1969:2: iv_ruleSwitchList= ruleSwitchList EOF
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1958:2: (iv_ruleSwitchList= ruleSwitchList EOF )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1959:2: iv_ruleSwitchList= ruleSwitchList EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getSwitchListRule()); 
             }
-            pushFollow(FOLLOW_ruleSwitchList_in_entryRuleSwitchList4124);
+            pushFollow(FOLLOW_ruleSwitchList_in_entryRuleSwitchList4097);
             iv_ruleSwitchList=ruleSwitchList();
 
             state._fsp--;
@@ -5406,7 +5370,7 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleSwitchList; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleSwitchList4134); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleSwitchList4107); if (state.failed) return current;
 
             }
 
@@ -5424,7 +5388,7 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSwitchList"
-    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1976:1: ruleSwitchList returns [EObject current=null] : ( ( (lv_switches_0_0= ruleSwitch ) ) (otherlv_1= 'and' ( (lv_switches_2_0= ruleSwitch ) ) )* ) ;
+    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1966:1: ruleSwitchList returns [EObject current=null] : ( ( (lv_switches_0_0= ruleSwitch ) ) (otherlv_1= 'and' ( (lv_switches_2_0= ruleSwitch ) ) )* ) ;
     public final EObject ruleSwitchList() throws RecognitionException {
         EObject current = null;
 
@@ -5437,24 +5401,24 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1979:28: ( ( ( (lv_switches_0_0= ruleSwitch ) ) (otherlv_1= 'and' ( (lv_switches_2_0= ruleSwitch ) ) )* ) )
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1980:1: ( ( (lv_switches_0_0= ruleSwitch ) ) (otherlv_1= 'and' ( (lv_switches_2_0= ruleSwitch ) ) )* )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1969:28: ( ( ( (lv_switches_0_0= ruleSwitch ) ) (otherlv_1= 'and' ( (lv_switches_2_0= ruleSwitch ) ) )* ) )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1970:1: ( ( (lv_switches_0_0= ruleSwitch ) ) (otherlv_1= 'and' ( (lv_switches_2_0= ruleSwitch ) ) )* )
             {
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1980:1: ( ( (lv_switches_0_0= ruleSwitch ) ) (otherlv_1= 'and' ( (lv_switches_2_0= ruleSwitch ) ) )* )
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1980:2: ( (lv_switches_0_0= ruleSwitch ) ) (otherlv_1= 'and' ( (lv_switches_2_0= ruleSwitch ) ) )*
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1970:1: ( ( (lv_switches_0_0= ruleSwitch ) ) (otherlv_1= 'and' ( (lv_switches_2_0= ruleSwitch ) ) )* )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1970:2: ( (lv_switches_0_0= ruleSwitch ) ) (otherlv_1= 'and' ( (lv_switches_2_0= ruleSwitch ) ) )*
             {
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1980:2: ( (lv_switches_0_0= ruleSwitch ) )
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1981:1: (lv_switches_0_0= ruleSwitch )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1970:2: ( (lv_switches_0_0= ruleSwitch ) )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1971:1: (lv_switches_0_0= ruleSwitch )
             {
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1981:1: (lv_switches_0_0= ruleSwitch )
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1982:3: lv_switches_0_0= ruleSwitch
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1971:1: (lv_switches_0_0= ruleSwitch )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1972:3: lv_switches_0_0= ruleSwitch
             {
             if ( state.backtracking==0 ) {
                
               	        newCompositeNode(grammarAccess.getSwitchListAccess().getSwitchesSwitchParserRuleCall_0_0()); 
               	    
             }
-            pushFollow(FOLLOW_ruleSwitch_in_ruleSwitchList4180);
+            pushFollow(FOLLOW_ruleSwitch_in_ruleSwitchList4153);
             lv_switches_0_0=ruleSwitch();
 
             state._fsp--;
@@ -5478,7 +5442,7 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1998:2: (otherlv_1= 'and' ( (lv_switches_2_0= ruleSwitch ) ) )*
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1988:2: (otherlv_1= 'and' ( (lv_switches_2_0= ruleSwitch ) ) )*
             loop39:
             do {
                 int alt39=2;
@@ -5491,26 +5455,26 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
                 switch (alt39) {
             	case 1 :
-            	    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1998:4: otherlv_1= 'and' ( (lv_switches_2_0= ruleSwitch ) )
+            	    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1988:4: otherlv_1= 'and' ( (lv_switches_2_0= ruleSwitch ) )
             	    {
-            	    otherlv_1=(Token)match(input,38,FOLLOW_38_in_ruleSwitchList4193); if (state.failed) return current;
+            	    otherlv_1=(Token)match(input,38,FOLLOW_38_in_ruleSwitchList4166); if (state.failed) return current;
             	    if ( state.backtracking==0 ) {
 
             	          	newLeafNode(otherlv_1, grammarAccess.getSwitchListAccess().getAndKeyword_1_0());
             	          
             	    }
-            	    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2002:1: ( (lv_switches_2_0= ruleSwitch ) )
-            	    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2003:1: (lv_switches_2_0= ruleSwitch )
+            	    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1992:1: ( (lv_switches_2_0= ruleSwitch ) )
+            	    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1993:1: (lv_switches_2_0= ruleSwitch )
             	    {
-            	    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2003:1: (lv_switches_2_0= ruleSwitch )
-            	    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2004:3: lv_switches_2_0= ruleSwitch
+            	    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1993:1: (lv_switches_2_0= ruleSwitch )
+            	    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1994:3: lv_switches_2_0= ruleSwitch
             	    {
             	    if ( state.backtracking==0 ) {
             	       
             	      	        newCompositeNode(grammarAccess.getSwitchListAccess().getSwitchesSwitchParserRuleCall_1_1_0()); 
             	      	    
             	    }
-            	    pushFollow(FOLLOW_ruleSwitch_in_ruleSwitchList4214);
+            	    pushFollow(FOLLOW_ruleSwitch_in_ruleSwitchList4187);
             	    lv_switches_2_0=ruleSwitch();
 
             	    state._fsp--;
@@ -5566,7 +5530,7 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleSwitch"
-    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2028:1: entryRuleSwitch returns [EObject current=null] : iv_ruleSwitch= ruleSwitch EOF ;
+    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2018:1: entryRuleSwitch returns [EObject current=null] : iv_ruleSwitch= ruleSwitch EOF ;
     public final EObject entryRuleSwitch() throws RecognitionException {
         EObject current = null;
 
@@ -5574,13 +5538,13 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2029:2: (iv_ruleSwitch= ruleSwitch EOF )
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2030:2: iv_ruleSwitch= ruleSwitch EOF
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2019:2: (iv_ruleSwitch= ruleSwitch EOF )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2020:2: iv_ruleSwitch= ruleSwitch EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getSwitchRule()); 
             }
-            pushFollow(FOLLOW_ruleSwitch_in_entryRuleSwitch4252);
+            pushFollow(FOLLOW_ruleSwitch_in_entryRuleSwitch4225);
             iv_ruleSwitch=ruleSwitch();
 
             state._fsp--;
@@ -5588,7 +5552,7 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleSwitch; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleSwitch4262); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleSwitch4235); if (state.failed) return current;
 
             }
 
@@ -5606,7 +5570,7 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSwitch"
-    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2037:1: ruleSwitch returns [EObject current=null] : ( ( (otherlv_0= RULE_ID ) ) otherlv_1= 'is' ( (lv_value_2_0= ruleSwitchValue ) ) ) ;
+    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2027:1: ruleSwitch returns [EObject current=null] : ( ( (otherlv_0= RULE_ID ) ) otherlv_1= 'is' ( (lv_value_2_0= ruleSwitchValue ) ) ) ;
     public final EObject ruleSwitch() throws RecognitionException {
         EObject current = null;
 
@@ -5618,17 +5582,17 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2040:28: ( ( ( (otherlv_0= RULE_ID ) ) otherlv_1= 'is' ( (lv_value_2_0= ruleSwitchValue ) ) ) )
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2041:1: ( ( (otherlv_0= RULE_ID ) ) otherlv_1= 'is' ( (lv_value_2_0= ruleSwitchValue ) ) )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2030:28: ( ( ( (otherlv_0= RULE_ID ) ) otherlv_1= 'is' ( (lv_value_2_0= ruleSwitchValue ) ) ) )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2031:1: ( ( (otherlv_0= RULE_ID ) ) otherlv_1= 'is' ( (lv_value_2_0= ruleSwitchValue ) ) )
             {
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2041:1: ( ( (otherlv_0= RULE_ID ) ) otherlv_1= 'is' ( (lv_value_2_0= ruleSwitchValue ) ) )
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2041:2: ( (otherlv_0= RULE_ID ) ) otherlv_1= 'is' ( (lv_value_2_0= ruleSwitchValue ) )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2031:1: ( ( (otherlv_0= RULE_ID ) ) otherlv_1= 'is' ( (lv_value_2_0= ruleSwitchValue ) ) )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2031:2: ( (otherlv_0= RULE_ID ) ) otherlv_1= 'is' ( (lv_value_2_0= ruleSwitchValue ) )
             {
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2041:2: ( (otherlv_0= RULE_ID ) )
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2042:1: (otherlv_0= RULE_ID )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2031:2: ( (otherlv_0= RULE_ID ) )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2032:1: (otherlv_0= RULE_ID )
             {
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2042:1: (otherlv_0= RULE_ID )
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2043:3: otherlv_0= RULE_ID
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2032:1: (otherlv_0= RULE_ID )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2033:3: otherlv_0= RULE_ID
             {
             if ( state.backtracking==0 ) {
 
@@ -5637,7 +5601,7 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
               	        }
                       
             }
-            otherlv_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleSwitch4307); if (state.failed) return current;
+            otherlv_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleSwitch4280); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               		newLeafNode(otherlv_0, grammarAccess.getSwitchAccess().getSwitchSwitchDefinitionCrossReference_0_0()); 
@@ -5649,24 +5613,24 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,17,FOLLOW_17_in_ruleSwitch4319); if (state.failed) return current;
+            otherlv_1=(Token)match(input,17,FOLLOW_17_in_ruleSwitch4292); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_1, grammarAccess.getSwitchAccess().getIsKeyword_1());
                   
             }
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2058:1: ( (lv_value_2_0= ruleSwitchValue ) )
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2059:1: (lv_value_2_0= ruleSwitchValue )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2048:1: ( (lv_value_2_0= ruleSwitchValue ) )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2049:1: (lv_value_2_0= ruleSwitchValue )
             {
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2059:1: (lv_value_2_0= ruleSwitchValue )
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2060:3: lv_value_2_0= ruleSwitchValue
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2049:1: (lv_value_2_0= ruleSwitchValue )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2050:3: lv_value_2_0= ruleSwitchValue
             {
             if ( state.backtracking==0 ) {
                
               	        newCompositeNode(grammarAccess.getSwitchAccess().getValueSwitchValueEnumRuleCall_2_0()); 
               	    
             }
-            pushFollow(FOLLOW_ruleSwitchValue_in_ruleSwitch4340);
+            pushFollow(FOLLOW_ruleSwitchValue_in_ruleSwitch4313);
             lv_value_2_0=ruleSwitchValue();
 
             state._fsp--;
@@ -5713,7 +5677,7 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleConditionalBody"
-    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2084:1: entryRuleConditionalBody returns [EObject current=null] : iv_ruleConditionalBody= ruleConditionalBody EOF ;
+    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2074:1: entryRuleConditionalBody returns [EObject current=null] : iv_ruleConditionalBody= ruleConditionalBody EOF ;
     public final EObject entryRuleConditionalBody() throws RecognitionException {
         EObject current = null;
 
@@ -5721,13 +5685,13 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2085:2: (iv_ruleConditionalBody= ruleConditionalBody EOF )
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2086:2: iv_ruleConditionalBody= ruleConditionalBody EOF
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2075:2: (iv_ruleConditionalBody= ruleConditionalBody EOF )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2076:2: iv_ruleConditionalBody= ruleConditionalBody EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getConditionalBodyRule()); 
             }
-            pushFollow(FOLLOW_ruleConditionalBody_in_entryRuleConditionalBody4376);
+            pushFollow(FOLLOW_ruleConditionalBody_in_entryRuleConditionalBody4349);
             iv_ruleConditionalBody=ruleConditionalBody();
 
             state._fsp--;
@@ -5735,7 +5699,7 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleConditionalBody; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleConditionalBody4386); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleConditionalBody4359); if (state.failed) return current;
 
             }
 
@@ -5753,7 +5717,7 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleConditionalBody"
-    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2093:1: ruleConditionalBody returns [EObject current=null] : ( () ( (lv_statements_1_0= ruleStatement ) )* ( (lv_switchOn_2_0= ruleSwitchOn ) )? ( (lv_switchOff_3_0= ruleSwitchOff ) )? ( (lv_jump_4_0= ruleJump ) )? ) ;
+    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2083:1: ruleConditionalBody returns [EObject current=null] : ( () ( (lv_statements_1_0= ruleStatement ) )* ( (lv_switchOn_2_0= ruleSwitchOn ) )? ( (lv_switchOff_3_0= ruleSwitchOff ) )? ( (lv_jump_4_0= ruleJump ) )? ) ;
     public final EObject ruleConditionalBody() throws RecognitionException {
         EObject current = null;
 
@@ -5769,14 +5733,14 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2096:28: ( ( () ( (lv_statements_1_0= ruleStatement ) )* ( (lv_switchOn_2_0= ruleSwitchOn ) )? ( (lv_switchOff_3_0= ruleSwitchOff ) )? ( (lv_jump_4_0= ruleJump ) )? ) )
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2097:1: ( () ( (lv_statements_1_0= ruleStatement ) )* ( (lv_switchOn_2_0= ruleSwitchOn ) )? ( (lv_switchOff_3_0= ruleSwitchOff ) )? ( (lv_jump_4_0= ruleJump ) )? )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2086:28: ( ( () ( (lv_statements_1_0= ruleStatement ) )* ( (lv_switchOn_2_0= ruleSwitchOn ) )? ( (lv_switchOff_3_0= ruleSwitchOff ) )? ( (lv_jump_4_0= ruleJump ) )? ) )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2087:1: ( () ( (lv_statements_1_0= ruleStatement ) )* ( (lv_switchOn_2_0= ruleSwitchOn ) )? ( (lv_switchOff_3_0= ruleSwitchOff ) )? ( (lv_jump_4_0= ruleJump ) )? )
             {
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2097:1: ( () ( (lv_statements_1_0= ruleStatement ) )* ( (lv_switchOn_2_0= ruleSwitchOn ) )? ( (lv_switchOff_3_0= ruleSwitchOff ) )? ( (lv_jump_4_0= ruleJump ) )? )
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2097:2: () ( (lv_statements_1_0= ruleStatement ) )* ( (lv_switchOn_2_0= ruleSwitchOn ) )? ( (lv_switchOff_3_0= ruleSwitchOff ) )? ( (lv_jump_4_0= ruleJump ) )?
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2087:1: ( () ( (lv_statements_1_0= ruleStatement ) )* ( (lv_switchOn_2_0= ruleSwitchOn ) )? ( (lv_switchOff_3_0= ruleSwitchOff ) )? ( (lv_jump_4_0= ruleJump ) )? )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2087:2: () ( (lv_statements_1_0= ruleStatement ) )* ( (lv_switchOn_2_0= ruleSwitchOn ) )? ( (lv_switchOff_3_0= ruleSwitchOff ) )? ( (lv_jump_4_0= ruleJump ) )?
             {
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2097:2: ()
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2098:5: 
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2087:2: ()
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2088:5: 
             {
             if ( state.backtracking==0 ) {
 
@@ -5788,24 +5752,24 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2103:2: ( (lv_statements_1_0= ruleStatement ) )*
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2093:2: ( (lv_statements_1_0= ruleStatement ) )*
             loop40:
             do {
                 int alt40=2;
                 alt40 = dfa40.predict(input);
                 switch (alt40) {
             	case 1 :
-            	    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2104:1: (lv_statements_1_0= ruleStatement )
+            	    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2094:1: (lv_statements_1_0= ruleStatement )
             	    {
-            	    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2104:1: (lv_statements_1_0= ruleStatement )
-            	    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2105:3: lv_statements_1_0= ruleStatement
+            	    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2094:1: (lv_statements_1_0= ruleStatement )
+            	    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2095:3: lv_statements_1_0= ruleStatement
             	    {
             	    if ( state.backtracking==0 ) {
             	       
             	      	        newCompositeNode(grammarAccess.getConditionalBodyAccess().getStatementsStatementParserRuleCall_1_0()); 
             	      	    
             	    }
-            	    pushFollow(FOLLOW_ruleStatement_in_ruleConditionalBody4441);
+            	    pushFollow(FOLLOW_ruleStatement_in_ruleConditionalBody4414);
             	    lv_statements_1_0=ruleStatement();
 
             	    state._fsp--;
@@ -5835,7 +5799,7 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2121:3: ( (lv_switchOn_2_0= ruleSwitchOn ) )?
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2111:3: ( (lv_switchOn_2_0= ruleSwitchOn ) )?
             int alt41=2;
             int LA41_0 = input.LA(1);
 
@@ -5848,17 +5812,17 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
             }
             switch (alt41) {
                 case 1 :
-                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2122:1: (lv_switchOn_2_0= ruleSwitchOn )
+                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2112:1: (lv_switchOn_2_0= ruleSwitchOn )
                     {
-                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2122:1: (lv_switchOn_2_0= ruleSwitchOn )
-                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2123:3: lv_switchOn_2_0= ruleSwitchOn
+                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2112:1: (lv_switchOn_2_0= ruleSwitchOn )
+                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2113:3: lv_switchOn_2_0= ruleSwitchOn
                     {
                     if ( state.backtracking==0 ) {
                        
                       	        newCompositeNode(grammarAccess.getConditionalBodyAccess().getSwitchOnSwitchOnParserRuleCall_2_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleSwitchOn_in_ruleConditionalBody4463);
+                    pushFollow(FOLLOW_ruleSwitchOn_in_ruleConditionalBody4436);
                     lv_switchOn_2_0=ruleSwitchOn();
 
                     state._fsp--;
@@ -5885,7 +5849,7 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2139:3: ( (lv_switchOff_3_0= ruleSwitchOff ) )?
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2129:3: ( (lv_switchOff_3_0= ruleSwitchOff ) )?
             int alt42=2;
             int LA42_0 = input.LA(1);
 
@@ -5894,17 +5858,17 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
             }
             switch (alt42) {
                 case 1 :
-                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2140:1: (lv_switchOff_3_0= ruleSwitchOff )
+                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2130:1: (lv_switchOff_3_0= ruleSwitchOff )
                     {
-                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2140:1: (lv_switchOff_3_0= ruleSwitchOff )
-                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2141:3: lv_switchOff_3_0= ruleSwitchOff
+                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2130:1: (lv_switchOff_3_0= ruleSwitchOff )
+                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2131:3: lv_switchOff_3_0= ruleSwitchOff
                     {
                     if ( state.backtracking==0 ) {
                        
                       	        newCompositeNode(grammarAccess.getConditionalBodyAccess().getSwitchOffSwitchOffParserRuleCall_3_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleSwitchOff_in_ruleConditionalBody4485);
+                    pushFollow(FOLLOW_ruleSwitchOff_in_ruleConditionalBody4458);
                     lv_switchOff_3_0=ruleSwitchOff();
 
                     state._fsp--;
@@ -5931,7 +5895,7 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2157:3: ( (lv_jump_4_0= ruleJump ) )?
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2147:3: ( (lv_jump_4_0= ruleJump ) )?
             int alt43=2;
             int LA43_0 = input.LA(1);
 
@@ -5940,17 +5904,17 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
             }
             switch (alt43) {
                 case 1 :
-                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2158:1: (lv_jump_4_0= ruleJump )
+                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2148:1: (lv_jump_4_0= ruleJump )
                     {
-                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2158:1: (lv_jump_4_0= ruleJump )
-                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2159:3: lv_jump_4_0= ruleJump
+                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2148:1: (lv_jump_4_0= ruleJump )
+                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2149:3: lv_jump_4_0= ruleJump
                     {
                     if ( state.backtracking==0 ) {
                        
                       	        newCompositeNode(grammarAccess.getConditionalBodyAccess().getJumpJumpParserRuleCall_4_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleJump_in_ruleConditionalBody4507);
+                    pushFollow(FOLLOW_ruleJump_in_ruleConditionalBody4480);
                     lv_jump_4_0=ruleJump();
 
                     state._fsp--;
@@ -6000,7 +5964,7 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleStatement"
-    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2183:1: entryRuleStatement returns [EObject current=null] : iv_ruleStatement= ruleStatement EOF ;
+    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2173:1: entryRuleStatement returns [EObject current=null] : iv_ruleStatement= ruleStatement EOF ;
     public final EObject entryRuleStatement() throws RecognitionException {
         EObject current = null;
 
@@ -6008,13 +5972,13 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2184:2: (iv_ruleStatement= ruleStatement EOF )
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2185:2: iv_ruleStatement= ruleStatement EOF
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2174:2: (iv_ruleStatement= ruleStatement EOF )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2175:2: iv_ruleStatement= ruleStatement EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getStatementRule()); 
             }
-            pushFollow(FOLLOW_ruleStatement_in_entryRuleStatement4544);
+            pushFollow(FOLLOW_ruleStatement_in_entryRuleStatement4517);
             iv_ruleStatement=ruleStatement();
 
             state._fsp--;
@@ -6022,7 +5986,7 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleStatement; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleStatement4554); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleStatement4527); if (state.failed) return current;
 
             }
 
@@ -6040,7 +6004,7 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleStatement"
-    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2192:1: ruleStatement returns [EObject current=null] : (this_DialogLine_0= ruleDialogLine | this_Conditional_1= ruleConditional ) ;
+    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2182:1: ruleStatement returns [EObject current=null] : (this_DialogLine_0= ruleDialogLine | this_Conditional_1= ruleConditional ) ;
     public final EObject ruleStatement() throws RecognitionException {
         EObject current = null;
 
@@ -6052,10 +6016,10 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2195:28: ( (this_DialogLine_0= ruleDialogLine | this_Conditional_1= ruleConditional ) )
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2196:1: (this_DialogLine_0= ruleDialogLine | this_Conditional_1= ruleConditional )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2185:28: ( (this_DialogLine_0= ruleDialogLine | this_Conditional_1= ruleConditional ) )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2186:1: (this_DialogLine_0= ruleDialogLine | this_Conditional_1= ruleConditional )
             {
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2196:1: (this_DialogLine_0= ruleDialogLine | this_Conditional_1= ruleConditional )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2186:1: (this_DialogLine_0= ruleDialogLine | this_Conditional_1= ruleConditional )
             int alt44=2;
             int LA44_0 = input.LA(1);
 
@@ -6074,14 +6038,14 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
             }
             switch (alt44) {
                 case 1 :
-                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2197:5: this_DialogLine_0= ruleDialogLine
+                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2187:5: this_DialogLine_0= ruleDialogLine
                     {
                     if ( state.backtracking==0 ) {
                        
                               newCompositeNode(grammarAccess.getStatementAccess().getDialogLineParserRuleCall_0()); 
                           
                     }
-                    pushFollow(FOLLOW_ruleDialogLine_in_ruleStatement4601);
+                    pushFollow(FOLLOW_ruleDialogLine_in_ruleStatement4574);
                     this_DialogLine_0=ruleDialogLine();
 
                     state._fsp--;
@@ -6096,14 +6060,14 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2207:5: this_Conditional_1= ruleConditional
+                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2197:5: this_Conditional_1= ruleConditional
                     {
                     if ( state.backtracking==0 ) {
                        
                               newCompositeNode(grammarAccess.getStatementAccess().getConditionalParserRuleCall_1()); 
                           
                     }
-                    pushFollow(FOLLOW_ruleConditional_in_ruleStatement4628);
+                    pushFollow(FOLLOW_ruleConditional_in_ruleStatement4601);
                     this_Conditional_1=ruleConditional();
 
                     state._fsp--;
@@ -6140,7 +6104,7 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleOtherwise"
-    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2223:1: entryRuleOtherwise returns [EObject current=null] : iv_ruleOtherwise= ruleOtherwise EOF ;
+    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2213:1: entryRuleOtherwise returns [EObject current=null] : iv_ruleOtherwise= ruleOtherwise EOF ;
     public final EObject entryRuleOtherwise() throws RecognitionException {
         EObject current = null;
 
@@ -6148,13 +6112,13 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2224:2: (iv_ruleOtherwise= ruleOtherwise EOF )
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2225:2: iv_ruleOtherwise= ruleOtherwise EOF
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2214:2: (iv_ruleOtherwise= ruleOtherwise EOF )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2215:2: iv_ruleOtherwise= ruleOtherwise EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getOtherwiseRule()); 
             }
-            pushFollow(FOLLOW_ruleOtherwise_in_entryRuleOtherwise4663);
+            pushFollow(FOLLOW_ruleOtherwise_in_entryRuleOtherwise4636);
             iv_ruleOtherwise=ruleOtherwise();
 
             state._fsp--;
@@ -6162,7 +6126,7 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleOtherwise; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleOtherwise4673); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleOtherwise4646); if (state.failed) return current;
 
             }
 
@@ -6180,7 +6144,7 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleOtherwise"
-    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2232:1: ruleOtherwise returns [EObject current=null] : ( ( (lv_modifiers_0_0= ruleModifier ) )* otherlv_1= 'else' ( ( ( 'if' )=>otherlv_2= 'if' ) otherlv_3= '(' ( (lv_conditionList_4_0= ruleConditionList ) ) otherlv_5= ')' )? ( (lv_comment_6_0= RULE_COMMENT ) )? ( (lv_body_7_0= ruleConditionalBody ) ) ) ;
+    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2222:1: ruleOtherwise returns [EObject current=null] : ( ( (lv_modifiers_0_0= ruleModifier ) )* otherlv_1= 'else' ( ( ( 'if' )=>otherlv_2= 'if' ) otherlv_3= '(' ( (lv_conditionList_4_0= ruleConditionList ) ) otherlv_5= ')' )? ( (lv_comment_6_0= RULE_COMMENT ) )? ( (lv_body_7_0= ruleConditionalBody ) ) ) ;
     public final EObject ruleOtherwise() throws RecognitionException {
         EObject current = null;
 
@@ -6199,13 +6163,13 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2235:28: ( ( ( (lv_modifiers_0_0= ruleModifier ) )* otherlv_1= 'else' ( ( ( 'if' )=>otherlv_2= 'if' ) otherlv_3= '(' ( (lv_conditionList_4_0= ruleConditionList ) ) otherlv_5= ')' )? ( (lv_comment_6_0= RULE_COMMENT ) )? ( (lv_body_7_0= ruleConditionalBody ) ) ) )
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2236:1: ( ( (lv_modifiers_0_0= ruleModifier ) )* otherlv_1= 'else' ( ( ( 'if' )=>otherlv_2= 'if' ) otherlv_3= '(' ( (lv_conditionList_4_0= ruleConditionList ) ) otherlv_5= ')' )? ( (lv_comment_6_0= RULE_COMMENT ) )? ( (lv_body_7_0= ruleConditionalBody ) ) )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2225:28: ( ( ( (lv_modifiers_0_0= ruleModifier ) )* otherlv_1= 'else' ( ( ( 'if' )=>otherlv_2= 'if' ) otherlv_3= '(' ( (lv_conditionList_4_0= ruleConditionList ) ) otherlv_5= ')' )? ( (lv_comment_6_0= RULE_COMMENT ) )? ( (lv_body_7_0= ruleConditionalBody ) ) ) )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2226:1: ( ( (lv_modifiers_0_0= ruleModifier ) )* otherlv_1= 'else' ( ( ( 'if' )=>otherlv_2= 'if' ) otherlv_3= '(' ( (lv_conditionList_4_0= ruleConditionList ) ) otherlv_5= ')' )? ( (lv_comment_6_0= RULE_COMMENT ) )? ( (lv_body_7_0= ruleConditionalBody ) ) )
             {
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2236:1: ( ( (lv_modifiers_0_0= ruleModifier ) )* otherlv_1= 'else' ( ( ( 'if' )=>otherlv_2= 'if' ) otherlv_3= '(' ( (lv_conditionList_4_0= ruleConditionList ) ) otherlv_5= ')' )? ( (lv_comment_6_0= RULE_COMMENT ) )? ( (lv_body_7_0= ruleConditionalBody ) ) )
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2236:2: ( (lv_modifiers_0_0= ruleModifier ) )* otherlv_1= 'else' ( ( ( 'if' )=>otherlv_2= 'if' ) otherlv_3= '(' ( (lv_conditionList_4_0= ruleConditionList ) ) otherlv_5= ')' )? ( (lv_comment_6_0= RULE_COMMENT ) )? ( (lv_body_7_0= ruleConditionalBody ) )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2226:1: ( ( (lv_modifiers_0_0= ruleModifier ) )* otherlv_1= 'else' ( ( ( 'if' )=>otherlv_2= 'if' ) otherlv_3= '(' ( (lv_conditionList_4_0= ruleConditionList ) ) otherlv_5= ')' )? ( (lv_comment_6_0= RULE_COMMENT ) )? ( (lv_body_7_0= ruleConditionalBody ) ) )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2226:2: ( (lv_modifiers_0_0= ruleModifier ) )* otherlv_1= 'else' ( ( ( 'if' )=>otherlv_2= 'if' ) otherlv_3= '(' ( (lv_conditionList_4_0= ruleConditionList ) ) otherlv_5= ')' )? ( (lv_comment_6_0= RULE_COMMENT ) )? ( (lv_body_7_0= ruleConditionalBody ) )
             {
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2236:2: ( (lv_modifiers_0_0= ruleModifier ) )*
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2226:2: ( (lv_modifiers_0_0= ruleModifier ) )*
             loop45:
             do {
                 int alt45=2;
@@ -6218,17 +6182,17 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
                 switch (alt45) {
             	case 1 :
-            	    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2237:1: (lv_modifiers_0_0= ruleModifier )
+            	    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2227:1: (lv_modifiers_0_0= ruleModifier )
             	    {
-            	    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2237:1: (lv_modifiers_0_0= ruleModifier )
-            	    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2238:3: lv_modifiers_0_0= ruleModifier
+            	    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2227:1: (lv_modifiers_0_0= ruleModifier )
+            	    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2228:3: lv_modifiers_0_0= ruleModifier
             	    {
             	    if ( state.backtracking==0 ) {
             	       
             	      	        newCompositeNode(grammarAccess.getOtherwiseAccess().getModifiersModifierEnumRuleCall_0_0()); 
             	      	    
             	    }
-            	    pushFollow(FOLLOW_ruleModifier_in_ruleOtherwise4719);
+            	    pushFollow(FOLLOW_ruleModifier_in_ruleOtherwise4692);
             	    lv_modifiers_0_0=ruleModifier();
 
             	    state._fsp--;
@@ -6258,23 +6222,23 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            otherlv_1=(Token)match(input,26,FOLLOW_26_in_ruleOtherwise4732); if (state.failed) return current;
+            otherlv_1=(Token)match(input,26,FOLLOW_26_in_ruleOtherwise4705); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_1, grammarAccess.getOtherwiseAccess().getElseKeyword_1());
                   
             }
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2258:1: ( ( ( 'if' )=>otherlv_2= 'if' ) otherlv_3= '(' ( (lv_conditionList_4_0= ruleConditionList ) ) otherlv_5= ')' )?
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2248:1: ( ( ( 'if' )=>otherlv_2= 'if' ) otherlv_3= '(' ( (lv_conditionList_4_0= ruleConditionList ) ) otherlv_5= ')' )?
             int alt46=2;
             alt46 = dfa46.predict(input);
             switch (alt46) {
                 case 1 :
-                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2258:2: ( ( 'if' )=>otherlv_2= 'if' ) otherlv_3= '(' ( (lv_conditionList_4_0= ruleConditionList ) ) otherlv_5= ')'
+                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2248:2: ( ( 'if' )=>otherlv_2= 'if' ) otherlv_3= '(' ( (lv_conditionList_4_0= ruleConditionList ) ) otherlv_5= ')'
                     {
-                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2258:2: ( ( 'if' )=>otherlv_2= 'if' )
-                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2258:3: ( 'if' )=>otherlv_2= 'if'
+                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2248:2: ( ( 'if' )=>otherlv_2= 'if' )
+                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2248:3: ( 'if' )=>otherlv_2= 'if'
                     {
-                    otherlv_2=(Token)match(input,31,FOLLOW_31_in_ruleOtherwise4753); if (state.failed) return current;
+                    otherlv_2=(Token)match(input,31,FOLLOW_31_in_ruleOtherwise4726); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_2, grammarAccess.getOtherwiseAccess().getIfKeyword_2_0());
@@ -6283,24 +6247,24 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_3=(Token)match(input,32,FOLLOW_32_in_ruleOtherwise4766); if (state.failed) return current;
+                    otherlv_3=(Token)match(input,32,FOLLOW_32_in_ruleOtherwise4739); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_3, grammarAccess.getOtherwiseAccess().getLeftParenthesisKeyword_2_1());
                           
                     }
-                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2267:1: ( (lv_conditionList_4_0= ruleConditionList ) )
-                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2268:1: (lv_conditionList_4_0= ruleConditionList )
+                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2257:1: ( (lv_conditionList_4_0= ruleConditionList ) )
+                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2258:1: (lv_conditionList_4_0= ruleConditionList )
                     {
-                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2268:1: (lv_conditionList_4_0= ruleConditionList )
-                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2269:3: lv_conditionList_4_0= ruleConditionList
+                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2258:1: (lv_conditionList_4_0= ruleConditionList )
+                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2259:3: lv_conditionList_4_0= ruleConditionList
                     {
                     if ( state.backtracking==0 ) {
                        
                       	        newCompositeNode(grammarAccess.getOtherwiseAccess().getConditionListConditionListParserRuleCall_2_2_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleConditionList_in_ruleOtherwise4787);
+                    pushFollow(FOLLOW_ruleConditionList_in_ruleOtherwise4760);
                     lv_conditionList_4_0=ruleConditionList();
 
                     state._fsp--;
@@ -6324,7 +6288,7 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_5=(Token)match(input,33,FOLLOW_33_in_ruleOtherwise4799); if (state.failed) return current;
+                    otherlv_5=(Token)match(input,33,FOLLOW_33_in_ruleOtherwise4772); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_5, grammarAccess.getOtherwiseAccess().getRightParenthesisKeyword_2_3());
@@ -6336,7 +6300,7 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2289:3: ( (lv_comment_6_0= RULE_COMMENT ) )?
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2279:3: ( (lv_comment_6_0= RULE_COMMENT ) )?
             int alt47=2;
             int LA47_0 = input.LA(1);
 
@@ -6345,12 +6309,12 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
             }
             switch (alt47) {
                 case 1 :
-                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2290:1: (lv_comment_6_0= RULE_COMMENT )
+                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2280:1: (lv_comment_6_0= RULE_COMMENT )
                     {
-                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2290:1: (lv_comment_6_0= RULE_COMMENT )
-                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2291:3: lv_comment_6_0= RULE_COMMENT
+                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2280:1: (lv_comment_6_0= RULE_COMMENT )
+                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2281:3: lv_comment_6_0= RULE_COMMENT
                     {
-                    lv_comment_6_0=(Token)match(input,RULE_COMMENT,FOLLOW_RULE_COMMENT_in_ruleOtherwise4818); if (state.failed) return current;
+                    lv_comment_6_0=(Token)match(input,RULE_COMMENT,FOLLOW_RULE_COMMENT_in_ruleOtherwise4791); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       			newLeafNode(lv_comment_6_0, grammarAccess.getOtherwiseAccess().getCommentCOMMENTTerminalRuleCall_3_0()); 
@@ -6377,18 +6341,18 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2307:3: ( (lv_body_7_0= ruleConditionalBody ) )
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2308:1: (lv_body_7_0= ruleConditionalBody )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2297:3: ( (lv_body_7_0= ruleConditionalBody ) )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2298:1: (lv_body_7_0= ruleConditionalBody )
             {
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2308:1: (lv_body_7_0= ruleConditionalBody )
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2309:3: lv_body_7_0= ruleConditionalBody
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2298:1: (lv_body_7_0= ruleConditionalBody )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2299:3: lv_body_7_0= ruleConditionalBody
             {
             if ( state.backtracking==0 ) {
                
               	        newCompositeNode(grammarAccess.getOtherwiseAccess().getBodyConditionalBodyParserRuleCall_4_0()); 
               	    
             }
-            pushFollow(FOLLOW_ruleConditionalBody_in_ruleOtherwise4845);
+            pushFollow(FOLLOW_ruleConditionalBody_in_ruleOtherwise4818);
             lv_body_7_0=ruleConditionalBody();
 
             state._fsp--;
@@ -6435,7 +6399,7 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleSwitchOff"
-    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2333:1: entryRuleSwitchOff returns [EObject current=null] : iv_ruleSwitchOff= ruleSwitchOff EOF ;
+    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2323:1: entryRuleSwitchOff returns [EObject current=null] : iv_ruleSwitchOff= ruleSwitchOff EOF ;
     public final EObject entryRuleSwitchOff() throws RecognitionException {
         EObject current = null;
 
@@ -6443,13 +6407,13 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2334:2: (iv_ruleSwitchOff= ruleSwitchOff EOF )
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2335:2: iv_ruleSwitchOff= ruleSwitchOff EOF
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2324:2: (iv_ruleSwitchOff= ruleSwitchOff EOF )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2325:2: iv_ruleSwitchOff= ruleSwitchOff EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getSwitchOffRule()); 
             }
-            pushFollow(FOLLOW_ruleSwitchOff_in_entryRuleSwitchOff4881);
+            pushFollow(FOLLOW_ruleSwitchOff_in_entryRuleSwitchOff4854);
             iv_ruleSwitchOff=ruleSwitchOff();
 
             state._fsp--;
@@ -6457,7 +6421,7 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleSwitchOff; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleSwitchOff4891); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleSwitchOff4864); if (state.failed) return current;
 
             }
 
@@ -6475,7 +6439,7 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSwitchOff"
-    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2342:1: ruleSwitchOff returns [EObject current=null] : (otherlv_0= 'switch' otherlv_1= 'off' ( (otherlv_2= RULE_ID ) ) (otherlv_3= ',' ( (otherlv_4= RULE_ID ) ) )* ( (lv_comment_5_0= RULE_COMMENT ) )? ) ;
+    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2332:1: ruleSwitchOff returns [EObject current=null] : (otherlv_0= 'switch' otherlv_1= 'off' ( (otherlv_2= RULE_ID ) ) (otherlv_3= ',' ( (otherlv_4= RULE_ID ) ) )* ( (lv_comment_5_0= RULE_COMMENT ) )? ) ;
     public final EObject ruleSwitchOff() throws RecognitionException {
         EObject current = null;
 
@@ -6489,29 +6453,29 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2345:28: ( (otherlv_0= 'switch' otherlv_1= 'off' ( (otherlv_2= RULE_ID ) ) (otherlv_3= ',' ( (otherlv_4= RULE_ID ) ) )* ( (lv_comment_5_0= RULE_COMMENT ) )? ) )
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2346:1: (otherlv_0= 'switch' otherlv_1= 'off' ( (otherlv_2= RULE_ID ) ) (otherlv_3= ',' ( (otherlv_4= RULE_ID ) ) )* ( (lv_comment_5_0= RULE_COMMENT ) )? )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2335:28: ( (otherlv_0= 'switch' otherlv_1= 'off' ( (otherlv_2= RULE_ID ) ) (otherlv_3= ',' ( (otherlv_4= RULE_ID ) ) )* ( (lv_comment_5_0= RULE_COMMENT ) )? ) )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2336:1: (otherlv_0= 'switch' otherlv_1= 'off' ( (otherlv_2= RULE_ID ) ) (otherlv_3= ',' ( (otherlv_4= RULE_ID ) ) )* ( (lv_comment_5_0= RULE_COMMENT ) )? )
             {
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2346:1: (otherlv_0= 'switch' otherlv_1= 'off' ( (otherlv_2= RULE_ID ) ) (otherlv_3= ',' ( (otherlv_4= RULE_ID ) ) )* ( (lv_comment_5_0= RULE_COMMENT ) )? )
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2346:3: otherlv_0= 'switch' otherlv_1= 'off' ( (otherlv_2= RULE_ID ) ) (otherlv_3= ',' ( (otherlv_4= RULE_ID ) ) )* ( (lv_comment_5_0= RULE_COMMENT ) )?
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2336:1: (otherlv_0= 'switch' otherlv_1= 'off' ( (otherlv_2= RULE_ID ) ) (otherlv_3= ',' ( (otherlv_4= RULE_ID ) ) )* ( (lv_comment_5_0= RULE_COMMENT ) )? )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2336:3: otherlv_0= 'switch' otherlv_1= 'off' ( (otherlv_2= RULE_ID ) ) (otherlv_3= ',' ( (otherlv_4= RULE_ID ) ) )* ( (lv_comment_5_0= RULE_COMMENT ) )?
             {
-            otherlv_0=(Token)match(input,39,FOLLOW_39_in_ruleSwitchOff4928); if (state.failed) return current;
+            otherlv_0=(Token)match(input,39,FOLLOW_39_in_ruleSwitchOff4901); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_0, grammarAccess.getSwitchOffAccess().getSwitchKeyword_0());
                   
             }
-            otherlv_1=(Token)match(input,40,FOLLOW_40_in_ruleSwitchOff4940); if (state.failed) return current;
+            otherlv_1=(Token)match(input,40,FOLLOW_40_in_ruleSwitchOff4913); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_1, grammarAccess.getSwitchOffAccess().getOffKeyword_1());
                   
             }
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2354:1: ( (otherlv_2= RULE_ID ) )
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2355:1: (otherlv_2= RULE_ID )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2344:1: ( (otherlv_2= RULE_ID ) )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2345:1: (otherlv_2= RULE_ID )
             {
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2355:1: (otherlv_2= RULE_ID )
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2356:3: otherlv_2= RULE_ID
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2345:1: (otherlv_2= RULE_ID )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2346:3: otherlv_2= RULE_ID
             {
             if ( state.backtracking==0 ) {
 
@@ -6520,7 +6484,7 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
               	        }
                       
             }
-            otherlv_2=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleSwitchOff4960); if (state.failed) return current;
+            otherlv_2=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleSwitchOff4933); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               		newLeafNode(otherlv_2, grammarAccess.getSwitchOffAccess().getSetsSwitchDefinitionCrossReference_2_0()); 
@@ -6532,7 +6496,7 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2367:2: (otherlv_3= ',' ( (otherlv_4= RULE_ID ) ) )*
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2357:2: (otherlv_3= ',' ( (otherlv_4= RULE_ID ) ) )*
             loop48:
             do {
                 int alt48=2;
@@ -6545,19 +6509,19 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
                 switch (alt48) {
             	case 1 :
-            	    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2367:4: otherlv_3= ',' ( (otherlv_4= RULE_ID ) )
+            	    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2357:4: otherlv_3= ',' ( (otherlv_4= RULE_ID ) )
             	    {
-            	    otherlv_3=(Token)match(input,15,FOLLOW_15_in_ruleSwitchOff4973); if (state.failed) return current;
+            	    otherlv_3=(Token)match(input,15,FOLLOW_15_in_ruleSwitchOff4946); if (state.failed) return current;
             	    if ( state.backtracking==0 ) {
 
             	          	newLeafNode(otherlv_3, grammarAccess.getSwitchOffAccess().getCommaKeyword_3_0());
             	          
             	    }
-            	    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2371:1: ( (otherlv_4= RULE_ID ) )
-            	    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2372:1: (otherlv_4= RULE_ID )
+            	    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2361:1: ( (otherlv_4= RULE_ID ) )
+            	    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2362:1: (otherlv_4= RULE_ID )
             	    {
-            	    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2372:1: (otherlv_4= RULE_ID )
-            	    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2373:3: otherlv_4= RULE_ID
+            	    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2362:1: (otherlv_4= RULE_ID )
+            	    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2363:3: otherlv_4= RULE_ID
             	    {
             	    if ( state.backtracking==0 ) {
 
@@ -6566,7 +6530,7 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
             	      	        }
             	              
             	    }
-            	    otherlv_4=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleSwitchOff4993); if (state.failed) return current;
+            	    otherlv_4=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleSwitchOff4966); if (state.failed) return current;
             	    if ( state.backtracking==0 ) {
 
             	      		newLeafNode(otherlv_4, grammarAccess.getSwitchOffAccess().getSetsSwitchDefinitionCrossReference_3_1_0()); 
@@ -6587,7 +6551,7 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2384:4: ( (lv_comment_5_0= RULE_COMMENT ) )?
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2374:4: ( (lv_comment_5_0= RULE_COMMENT ) )?
             int alt49=2;
             int LA49_0 = input.LA(1);
 
@@ -6596,12 +6560,12 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
             }
             switch (alt49) {
                 case 1 :
-                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2385:1: (lv_comment_5_0= RULE_COMMENT )
+                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2375:1: (lv_comment_5_0= RULE_COMMENT )
                     {
-                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2385:1: (lv_comment_5_0= RULE_COMMENT )
-                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2386:3: lv_comment_5_0= RULE_COMMENT
+                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2375:1: (lv_comment_5_0= RULE_COMMENT )
+                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2376:3: lv_comment_5_0= RULE_COMMENT
                     {
-                    lv_comment_5_0=(Token)match(input,RULE_COMMENT,FOLLOW_RULE_COMMENT_in_ruleSwitchOff5012); if (state.failed) return current;
+                    lv_comment_5_0=(Token)match(input,RULE_COMMENT,FOLLOW_RULE_COMMENT_in_ruleSwitchOff4985); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       			newLeafNode(lv_comment_5_0, grammarAccess.getSwitchOffAccess().getCommentCOMMENTTerminalRuleCall_4_0()); 
@@ -6651,7 +6615,7 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleSwitchOn"
-    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2410:1: entryRuleSwitchOn returns [EObject current=null] : iv_ruleSwitchOn= ruleSwitchOn EOF ;
+    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2400:1: entryRuleSwitchOn returns [EObject current=null] : iv_ruleSwitchOn= ruleSwitchOn EOF ;
     public final EObject entryRuleSwitchOn() throws RecognitionException {
         EObject current = null;
 
@@ -6659,13 +6623,13 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2411:2: (iv_ruleSwitchOn= ruleSwitchOn EOF )
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2412:2: iv_ruleSwitchOn= ruleSwitchOn EOF
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2401:2: (iv_ruleSwitchOn= ruleSwitchOn EOF )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2402:2: iv_ruleSwitchOn= ruleSwitchOn EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getSwitchOnRule()); 
             }
-            pushFollow(FOLLOW_ruleSwitchOn_in_entryRuleSwitchOn5054);
+            pushFollow(FOLLOW_ruleSwitchOn_in_entryRuleSwitchOn5027);
             iv_ruleSwitchOn=ruleSwitchOn();
 
             state._fsp--;
@@ -6673,7 +6637,7 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleSwitchOn; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleSwitchOn5064); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleSwitchOn5037); if (state.failed) return current;
 
             }
 
@@ -6691,7 +6655,7 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSwitchOn"
-    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2419:1: ruleSwitchOn returns [EObject current=null] : (otherlv_0= 'switch' otherlv_1= 'on' ( (otherlv_2= RULE_ID ) ) (otherlv_3= ',' ( (otherlv_4= RULE_ID ) ) )* ( (lv_comment_5_0= RULE_COMMENT ) )? ) ;
+    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2409:1: ruleSwitchOn returns [EObject current=null] : (otherlv_0= 'switch' otherlv_1= 'on' ( (otherlv_2= RULE_ID ) ) (otherlv_3= ',' ( (otherlv_4= RULE_ID ) ) )* ( (lv_comment_5_0= RULE_COMMENT ) )? ) ;
     public final EObject ruleSwitchOn() throws RecognitionException {
         EObject current = null;
 
@@ -6705,29 +6669,29 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2422:28: ( (otherlv_0= 'switch' otherlv_1= 'on' ( (otherlv_2= RULE_ID ) ) (otherlv_3= ',' ( (otherlv_4= RULE_ID ) ) )* ( (lv_comment_5_0= RULE_COMMENT ) )? ) )
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2423:1: (otherlv_0= 'switch' otherlv_1= 'on' ( (otherlv_2= RULE_ID ) ) (otherlv_3= ',' ( (otherlv_4= RULE_ID ) ) )* ( (lv_comment_5_0= RULE_COMMENT ) )? )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2412:28: ( (otherlv_0= 'switch' otherlv_1= 'on' ( (otherlv_2= RULE_ID ) ) (otherlv_3= ',' ( (otherlv_4= RULE_ID ) ) )* ( (lv_comment_5_0= RULE_COMMENT ) )? ) )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2413:1: (otherlv_0= 'switch' otherlv_1= 'on' ( (otherlv_2= RULE_ID ) ) (otherlv_3= ',' ( (otherlv_4= RULE_ID ) ) )* ( (lv_comment_5_0= RULE_COMMENT ) )? )
             {
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2423:1: (otherlv_0= 'switch' otherlv_1= 'on' ( (otherlv_2= RULE_ID ) ) (otherlv_3= ',' ( (otherlv_4= RULE_ID ) ) )* ( (lv_comment_5_0= RULE_COMMENT ) )? )
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2423:3: otherlv_0= 'switch' otherlv_1= 'on' ( (otherlv_2= RULE_ID ) ) (otherlv_3= ',' ( (otherlv_4= RULE_ID ) ) )* ( (lv_comment_5_0= RULE_COMMENT ) )?
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2413:1: (otherlv_0= 'switch' otherlv_1= 'on' ( (otherlv_2= RULE_ID ) ) (otherlv_3= ',' ( (otherlv_4= RULE_ID ) ) )* ( (lv_comment_5_0= RULE_COMMENT ) )? )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2413:3: otherlv_0= 'switch' otherlv_1= 'on' ( (otherlv_2= RULE_ID ) ) (otherlv_3= ',' ( (otherlv_4= RULE_ID ) ) )* ( (lv_comment_5_0= RULE_COMMENT ) )?
             {
-            otherlv_0=(Token)match(input,39,FOLLOW_39_in_ruleSwitchOn5101); if (state.failed) return current;
+            otherlv_0=(Token)match(input,39,FOLLOW_39_in_ruleSwitchOn5074); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_0, grammarAccess.getSwitchOnAccess().getSwitchKeyword_0());
                   
             }
-            otherlv_1=(Token)match(input,41,FOLLOW_41_in_ruleSwitchOn5113); if (state.failed) return current;
+            otherlv_1=(Token)match(input,41,FOLLOW_41_in_ruleSwitchOn5086); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_1, grammarAccess.getSwitchOnAccess().getOnKeyword_1());
                   
             }
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2431:1: ( (otherlv_2= RULE_ID ) )
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2432:1: (otherlv_2= RULE_ID )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2421:1: ( (otherlv_2= RULE_ID ) )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2422:1: (otherlv_2= RULE_ID )
             {
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2432:1: (otherlv_2= RULE_ID )
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2433:3: otherlv_2= RULE_ID
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2422:1: (otherlv_2= RULE_ID )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2423:3: otherlv_2= RULE_ID
             {
             if ( state.backtracking==0 ) {
 
@@ -6736,7 +6700,7 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
               	        }
                       
             }
-            otherlv_2=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleSwitchOn5133); if (state.failed) return current;
+            otherlv_2=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleSwitchOn5106); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               		newLeafNode(otherlv_2, grammarAccess.getSwitchOnAccess().getSetsSwitchDefinitionCrossReference_2_0()); 
@@ -6748,7 +6712,7 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2444:2: (otherlv_3= ',' ( (otherlv_4= RULE_ID ) ) )*
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2434:2: (otherlv_3= ',' ( (otherlv_4= RULE_ID ) ) )*
             loop50:
             do {
                 int alt50=2;
@@ -6761,19 +6725,19 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
                 switch (alt50) {
             	case 1 :
-            	    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2444:4: otherlv_3= ',' ( (otherlv_4= RULE_ID ) )
+            	    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2434:4: otherlv_3= ',' ( (otherlv_4= RULE_ID ) )
             	    {
-            	    otherlv_3=(Token)match(input,15,FOLLOW_15_in_ruleSwitchOn5146); if (state.failed) return current;
+            	    otherlv_3=(Token)match(input,15,FOLLOW_15_in_ruleSwitchOn5119); if (state.failed) return current;
             	    if ( state.backtracking==0 ) {
 
             	          	newLeafNode(otherlv_3, grammarAccess.getSwitchOnAccess().getCommaKeyword_3_0());
             	          
             	    }
-            	    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2448:1: ( (otherlv_4= RULE_ID ) )
-            	    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2449:1: (otherlv_4= RULE_ID )
+            	    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2438:1: ( (otherlv_4= RULE_ID ) )
+            	    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2439:1: (otherlv_4= RULE_ID )
             	    {
-            	    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2449:1: (otherlv_4= RULE_ID )
-            	    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2450:3: otherlv_4= RULE_ID
+            	    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2439:1: (otherlv_4= RULE_ID )
+            	    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2440:3: otherlv_4= RULE_ID
             	    {
             	    if ( state.backtracking==0 ) {
 
@@ -6782,7 +6746,7 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
             	      	        }
             	              
             	    }
-            	    otherlv_4=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleSwitchOn5166); if (state.failed) return current;
+            	    otherlv_4=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleSwitchOn5139); if (state.failed) return current;
             	    if ( state.backtracking==0 ) {
 
             	      		newLeafNode(otherlv_4, grammarAccess.getSwitchOnAccess().getSetsSwitchDefinitionCrossReference_3_1_0()); 
@@ -6803,7 +6767,7 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2461:4: ( (lv_comment_5_0= RULE_COMMENT ) )?
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2451:4: ( (lv_comment_5_0= RULE_COMMENT ) )?
             int alt51=2;
             int LA51_0 = input.LA(1);
 
@@ -6812,12 +6776,12 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
             }
             switch (alt51) {
                 case 1 :
-                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2462:1: (lv_comment_5_0= RULE_COMMENT )
+                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2452:1: (lv_comment_5_0= RULE_COMMENT )
                     {
-                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2462:1: (lv_comment_5_0= RULE_COMMENT )
-                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2463:3: lv_comment_5_0= RULE_COMMENT
+                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2452:1: (lv_comment_5_0= RULE_COMMENT )
+                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2453:3: lv_comment_5_0= RULE_COMMENT
                     {
-                    lv_comment_5_0=(Token)match(input,RULE_COMMENT,FOLLOW_RULE_COMMENT_in_ruleSwitchOn5185); if (state.failed) return current;
+                    lv_comment_5_0=(Token)match(input,RULE_COMMENT,FOLLOW_RULE_COMMENT_in_ruleSwitchOn5158); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       			newLeafNode(lv_comment_5_0, grammarAccess.getSwitchOnAccess().getCommentCOMMENTTerminalRuleCall_4_0()); 
@@ -6867,7 +6831,7 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleDialogLine"
-    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2487:1: entryRuleDialogLine returns [EObject current=null] : iv_ruleDialogLine= ruleDialogLine EOF ;
+    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2477:1: entryRuleDialogLine returns [EObject current=null] : iv_ruleDialogLine= ruleDialogLine EOF ;
     public final EObject entryRuleDialogLine() throws RecognitionException {
         EObject current = null;
 
@@ -6875,13 +6839,13 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2488:2: (iv_ruleDialogLine= ruleDialogLine EOF )
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2489:2: iv_ruleDialogLine= ruleDialogLine EOF
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2478:2: (iv_ruleDialogLine= ruleDialogLine EOF )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2479:2: iv_ruleDialogLine= ruleDialogLine EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getDialogLineRule()); 
             }
-            pushFollow(FOLLOW_ruleDialogLine_in_entryRuleDialogLine5227);
+            pushFollow(FOLLOW_ruleDialogLine_in_entryRuleDialogLine5200);
             iv_ruleDialogLine=ruleDialogLine();
 
             state._fsp--;
@@ -6889,7 +6853,7 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleDialogLine; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleDialogLine5237); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleDialogLine5210); if (state.failed) return current;
 
             }
 
@@ -6907,7 +6871,7 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleDialogLine"
-    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2496:1: ruleDialogLine returns [EObject current=null] : ( ( (otherlv_0= RULE_ID ) ) otherlv_1= ':' ( (lv_lines_2_0= ruleStringID ) ) ( (lv_comment_3_0= RULE_COMMENT ) )? ) ;
+    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2486:1: ruleDialogLine returns [EObject current=null] : ( ( (otherlv_0= RULE_ID ) ) otherlv_1= ':' ( (lv_lines_2_0= ruleStringID ) ) ( (lv_comment_3_0= RULE_COMMENT ) )? ) ;
     public final EObject ruleDialogLine() throws RecognitionException {
         EObject current = null;
 
@@ -6920,17 +6884,17 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2499:28: ( ( ( (otherlv_0= RULE_ID ) ) otherlv_1= ':' ( (lv_lines_2_0= ruleStringID ) ) ( (lv_comment_3_0= RULE_COMMENT ) )? ) )
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2500:1: ( ( (otherlv_0= RULE_ID ) ) otherlv_1= ':' ( (lv_lines_2_0= ruleStringID ) ) ( (lv_comment_3_0= RULE_COMMENT ) )? )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2489:28: ( ( ( (otherlv_0= RULE_ID ) ) otherlv_1= ':' ( (lv_lines_2_0= ruleStringID ) ) ( (lv_comment_3_0= RULE_COMMENT ) )? ) )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2490:1: ( ( (otherlv_0= RULE_ID ) ) otherlv_1= ':' ( (lv_lines_2_0= ruleStringID ) ) ( (lv_comment_3_0= RULE_COMMENT ) )? )
             {
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2500:1: ( ( (otherlv_0= RULE_ID ) ) otherlv_1= ':' ( (lv_lines_2_0= ruleStringID ) ) ( (lv_comment_3_0= RULE_COMMENT ) )? )
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2500:2: ( (otherlv_0= RULE_ID ) ) otherlv_1= ':' ( (lv_lines_2_0= ruleStringID ) ) ( (lv_comment_3_0= RULE_COMMENT ) )?
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2490:1: ( ( (otherlv_0= RULE_ID ) ) otherlv_1= ':' ( (lv_lines_2_0= ruleStringID ) ) ( (lv_comment_3_0= RULE_COMMENT ) )? )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2490:2: ( (otherlv_0= RULE_ID ) ) otherlv_1= ':' ( (lv_lines_2_0= ruleStringID ) ) ( (lv_comment_3_0= RULE_COMMENT ) )?
             {
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2500:2: ( (otherlv_0= RULE_ID ) )
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2501:1: (otherlv_0= RULE_ID )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2490:2: ( (otherlv_0= RULE_ID ) )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2491:1: (otherlv_0= RULE_ID )
             {
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2501:1: (otherlv_0= RULE_ID )
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2502:3: otherlv_0= RULE_ID
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2491:1: (otherlv_0= RULE_ID )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2492:3: otherlv_0= RULE_ID
             {
             if ( state.backtracking==0 ) {
 
@@ -6939,7 +6903,7 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
               	        }
                       
             }
-            otherlv_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleDialogLine5282); if (state.failed) return current;
+            otherlv_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleDialogLine5255); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               		newLeafNode(otherlv_0, grammarAccess.getDialogLineAccess().getCharacterCharacterDefinitionCrossReference_0_0()); 
@@ -6951,24 +6915,24 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,14,FOLLOW_14_in_ruleDialogLine5294); if (state.failed) return current;
+            otherlv_1=(Token)match(input,14,FOLLOW_14_in_ruleDialogLine5267); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_1, grammarAccess.getDialogLineAccess().getColonKeyword_1());
                   
             }
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2517:1: ( (lv_lines_2_0= ruleStringID ) )
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2518:1: (lv_lines_2_0= ruleStringID )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2507:1: ( (lv_lines_2_0= ruleStringID ) )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2508:1: (lv_lines_2_0= ruleStringID )
             {
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2518:1: (lv_lines_2_0= ruleStringID )
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2519:3: lv_lines_2_0= ruleStringID
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2508:1: (lv_lines_2_0= ruleStringID )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2509:3: lv_lines_2_0= ruleStringID
             {
             if ( state.backtracking==0 ) {
                
               	        newCompositeNode(grammarAccess.getDialogLineAccess().getLinesStringIDParserRuleCall_2_0()); 
               	    
             }
-            pushFollow(FOLLOW_ruleStringID_in_ruleDialogLine5315);
+            pushFollow(FOLLOW_ruleStringID_in_ruleDialogLine5288);
             lv_lines_2_0=ruleStringID();
 
             state._fsp--;
@@ -6992,7 +6956,7 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2535:2: ( (lv_comment_3_0= RULE_COMMENT ) )?
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2525:2: ( (lv_comment_3_0= RULE_COMMENT ) )?
             int alt52=2;
             int LA52_0 = input.LA(1);
 
@@ -7001,12 +6965,12 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
             }
             switch (alt52) {
                 case 1 :
-                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2536:1: (lv_comment_3_0= RULE_COMMENT )
+                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2526:1: (lv_comment_3_0= RULE_COMMENT )
                     {
-                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2536:1: (lv_comment_3_0= RULE_COMMENT )
-                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2537:3: lv_comment_3_0= RULE_COMMENT
+                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2526:1: (lv_comment_3_0= RULE_COMMENT )
+                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2527:3: lv_comment_3_0= RULE_COMMENT
                     {
-                    lv_comment_3_0=(Token)match(input,RULE_COMMENT,FOLLOW_RULE_COMMENT_in_ruleDialogLine5332); if (state.failed) return current;
+                    lv_comment_3_0=(Token)match(input,RULE_COMMENT,FOLLOW_RULE_COMMENT_in_ruleDialogLine5305); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       			newLeafNode(lv_comment_3_0, grammarAccess.getDialogLineAccess().getCommentCOMMENTTerminalRuleCall_3_0()); 
@@ -7056,7 +7020,7 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleModifier"
-    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2561:1: ruleModifier returns [Enumerator current=null] : ( (enumLiteral_0= 'single' ) | (enumLiteral_1= 'random' ) ) ;
+    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2551:1: ruleModifier returns [Enumerator current=null] : ( (enumLiteral_0= 'single' ) | (enumLiteral_1= 'random' ) ) ;
     public final Enumerator ruleModifier() throws RecognitionException {
         Enumerator current = null;
 
@@ -7065,10 +7029,10 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
          enterRule(); 
         try {
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2563:28: ( ( (enumLiteral_0= 'single' ) | (enumLiteral_1= 'random' ) ) )
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2564:1: ( (enumLiteral_0= 'single' ) | (enumLiteral_1= 'random' ) )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2553:28: ( ( (enumLiteral_0= 'single' ) | (enumLiteral_1= 'random' ) ) )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2554:1: ( (enumLiteral_0= 'single' ) | (enumLiteral_1= 'random' ) )
             {
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2564:1: ( (enumLiteral_0= 'single' ) | (enumLiteral_1= 'random' ) )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2554:1: ( (enumLiteral_0= 'single' ) | (enumLiteral_1= 'random' ) )
             int alt53=2;
             int LA53_0 = input.LA(1);
 
@@ -7087,12 +7051,12 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
             }
             switch (alt53) {
                 case 1 :
-                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2564:2: (enumLiteral_0= 'single' )
+                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2554:2: (enumLiteral_0= 'single' )
                     {
-                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2564:2: (enumLiteral_0= 'single' )
-                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2564:4: enumLiteral_0= 'single'
+                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2554:2: (enumLiteral_0= 'single' )
+                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2554:4: enumLiteral_0= 'single'
                     {
-                    enumLiteral_0=(Token)match(input,42,FOLLOW_42_in_ruleModifier5388); if (state.failed) return current;
+                    enumLiteral_0=(Token)match(input,42,FOLLOW_42_in_ruleModifier5361); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getModifierAccess().getSingleEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
@@ -7106,12 +7070,12 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2570:6: (enumLiteral_1= 'random' )
+                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2560:6: (enumLiteral_1= 'random' )
                     {
-                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2570:6: (enumLiteral_1= 'random' )
-                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2570:8: enumLiteral_1= 'random'
+                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2560:6: (enumLiteral_1= 'random' )
+                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2560:8: enumLiteral_1= 'random'
                     {
-                    enumLiteral_1=(Token)match(input,43,FOLLOW_43_in_ruleModifier5405); if (state.failed) return current;
+                    enumLiteral_1=(Token)match(input,43,FOLLOW_43_in_ruleModifier5378); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getModifierAccess().getRandomEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
@@ -7147,7 +7111,7 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSwitchValue"
-    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2580:1: ruleSwitchValue returns [Enumerator current=null] : ( (enumLiteral_0= 'on' ) | (enumLiteral_1= 'off' ) ) ;
+    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2570:1: ruleSwitchValue returns [Enumerator current=null] : ( (enumLiteral_0= 'on' ) | (enumLiteral_1= 'off' ) ) ;
     public final Enumerator ruleSwitchValue() throws RecognitionException {
         Enumerator current = null;
 
@@ -7156,10 +7120,10 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
          enterRule(); 
         try {
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2582:28: ( ( (enumLiteral_0= 'on' ) | (enumLiteral_1= 'off' ) ) )
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2583:1: ( (enumLiteral_0= 'on' ) | (enumLiteral_1= 'off' ) )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2572:28: ( ( (enumLiteral_0= 'on' ) | (enumLiteral_1= 'off' ) ) )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2573:1: ( (enumLiteral_0= 'on' ) | (enumLiteral_1= 'off' ) )
             {
-            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2583:1: ( (enumLiteral_0= 'on' ) | (enumLiteral_1= 'off' ) )
+            // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2573:1: ( (enumLiteral_0= 'on' ) | (enumLiteral_1= 'off' ) )
             int alt54=2;
             int LA54_0 = input.LA(1);
 
@@ -7178,12 +7142,12 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
             }
             switch (alt54) {
                 case 1 :
-                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2583:2: (enumLiteral_0= 'on' )
+                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2573:2: (enumLiteral_0= 'on' )
                     {
-                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2583:2: (enumLiteral_0= 'on' )
-                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2583:4: enumLiteral_0= 'on'
+                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2573:2: (enumLiteral_0= 'on' )
+                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2573:4: enumLiteral_0= 'on'
                     {
-                    enumLiteral_0=(Token)match(input,41,FOLLOW_41_in_ruleSwitchValue5450); if (state.failed) return current;
+                    enumLiteral_0=(Token)match(input,41,FOLLOW_41_in_ruleSwitchValue5423); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getSwitchValueAccess().getOnEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
@@ -7197,12 +7161,12 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2589:6: (enumLiteral_1= 'off' )
+                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2579:6: (enumLiteral_1= 'off' )
                     {
-                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2589:6: (enumLiteral_1= 'off' )
-                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2589:8: enumLiteral_1= 'off'
+                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2579:6: (enumLiteral_1= 'off' )
+                    // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2579:8: enumLiteral_1= 'off'
                     {
-                    enumLiteral_1=(Token)match(input,40,FOLLOW_40_in_ruleSwitchValue5467); if (state.failed) return current;
+                    enumLiteral_1=(Token)match(input,40,FOLLOW_40_in_ruleSwitchValue5440); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getSwitchValueAccess().getOffEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
@@ -7238,10 +7202,10 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
     // $ANTLR start synpred1_InternalDialogScript
     public final void synpred1_InternalDialogScript_fragment() throws RecognitionException {   
-        // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1379:3: ( 'if' )
-        // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1379:5: 'if'
+        // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1369:3: ( 'if' )
+        // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:1369:5: 'if'
         {
-        match(input,31,FOLLOW_31_in_synpred1_InternalDialogScript2803); if (state.failed) return ;
+        match(input,31,FOLLOW_31_in_synpred1_InternalDialogScript2776); if (state.failed) return ;
 
         }
     }
@@ -7249,10 +7213,10 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
 
     // $ANTLR start synpred2_InternalDialogScript
     public final void synpred2_InternalDialogScript_fragment() throws RecognitionException {   
-        // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2258:3: ( 'if' )
-        // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2258:5: 'if'
+        // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2248:3: ( 'if' )
+        // ../de.unidue.ecg.dialogScript/src-gen/de/unidue/ecg/dialogScript/parser/antlr/internal/InternalDialogScript.g:2248:5: 'if'
         {
-        match(input,31,FOLLOW_31_in_synpred2_InternalDialogScript4745); if (state.failed) return ;
+        match(input,31,FOLLOW_31_in_synpred2_InternalDialogScript4718); if (state.failed) return ;
 
         }
     }
@@ -7300,7 +7264,7 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
     static final String DFA22_eofS =
         "\6\uffff";
     static final String DFA22_minS =
-        "\3\36\3\uffff";
+        "\1\4\2\36\3\uffff";
     static final String DFA22_maxS =
         "\3\53\3\uffff";
     static final String DFA22_acceptS =
@@ -7308,7 +7272,7 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
     static final String DFA22_specialS =
         "\6\uffff}>";
     static final String[] DFA22_transitionS = {
-            "\1\4\1\5\2\uffff\1\3\7\uffff\1\1\1\2",
+            "\1\5\31\uffff\1\4\1\5\2\uffff\1\3\7\uffff\1\1\1\2",
             "\1\4\1\5\2\uffff\1\3\7\uffff\1\1\1\2",
             "\1\4\1\5\2\uffff\1\3\7\uffff\1\1\1\2",
             "",
@@ -7346,7 +7310,7 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
             this.transition = DFA22_transition;
         }
         public String getDescription() {
-            return "1172:1: (this_ChoiceDialog_0= ruleChoiceDialog | this_ConditionalChoiceDialog_1= ruleConditionalChoiceDialog | this_Conditional_2= ruleConditional )";
+            return "1162:1: (this_ChoiceDialog_0= ruleChoiceDialog | this_ConditionalChoiceDialog_1= ruleConditionalChoiceDialog | this_Statement_2= ruleStatement )";
         }
     }
     static final String DFA25_eotS =
@@ -7399,7 +7363,7 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
             this.transition = DFA25_transition;
         }
         public String getDescription() {
-            return "()+ loopback of 1292:3: ( (lv_choiceDialogs_7_0= ruleChoiceDialog ) )+";
+            return "()+ loopback of 1282:3: ( (lv_choiceDialogs_7_0= ruleChoiceDialog ) )+";
         }
     }
     static final String DFA30_eotS =
@@ -7452,7 +7416,7 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
             this.transition = DFA30_transition;
         }
         public String getDescription() {
-            return "()+ loopback of 1428:3: ( (lv_choices_8_0= ruleChoiceDialog ) )+";
+            return "()+ loopback of 1418:3: ( (lv_choices_8_0= ruleChoiceDialog ) )+";
         }
     }
     static final String DFA40_eotS =
@@ -7506,7 +7470,7 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
             this.transition = DFA40_transition;
         }
         public String getDescription() {
-            return "()* loopback of 2103:2: ( (lv_statements_1_0= ruleStatement ) )*";
+            return "()* loopback of 2093:2: ( (lv_statements_1_0= ruleStatement ) )*";
         }
     }
     static final String DFA46_eotS =
@@ -7564,7 +7528,7 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
             this.transition = DFA46_transition;
         }
         public String getDescription() {
-            return "2258:1: ( ( ( 'if' )=>otherlv_2= 'if' ) otherlv_3= '(' ( (lv_conditionList_4_0= ruleConditionList ) ) otherlv_5= ')' )?";
+            return "2248:1: ( ( ( 'if' )=>otherlv_2= 'if' ) otherlv_3= '(' ( (lv_conditionList_4_0= ruleConditionList ) ) otherlv_5= ')' )?";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             TokenStream input = (TokenStream)_input;
@@ -7650,174 +7614,173 @@ public class InternalDialogScriptParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_rulePartingLines_in_ruleDialog1332 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleRecursive_in_entryRuleRecursive1369 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleRecursive1379 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleConditional_in_ruleRecursive1426 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleHub_in_ruleRecursive1453 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleDialogLine_in_ruleRecursive1480 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleDefaults_in_entryRuleDefaults1515 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleDefaults1525 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_23_in_ruleDefaults1571 = new BitSet(new long[]{0x00000CB0B0080030L});
-    public static final BitSet FOLLOW_RULE_COMMENT_in_ruleDefaults1588 = new BitSet(new long[]{0x00000CB0B0080010L});
-    public static final BitSet FOLLOW_ruleConditionalBody_in_ruleDefaults1615 = new BitSet(new long[]{0x0000000000080000L});
-    public static final BitSet FOLLOW_19_in_ruleDefaults1627 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFirstTime_in_entryRuleFirstTime1663 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleFirstTime1673 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_24_in_ruleFirstTime1719 = new BitSet(new long[]{0x0000000002000000L});
-    public static final BitSet FOLLOW_25_in_ruleFirstTime1731 = new BitSet(new long[]{0x00000CB0B4080030L});
-    public static final BitSet FOLLOW_RULE_COMMENT_in_ruleFirstTime1748 = new BitSet(new long[]{0x00000CB0B4080010L});
-    public static final BitSet FOLLOW_ruleConditionalBody_in_ruleFirstTime1775 = new BitSet(new long[]{0x0000000004080000L});
-    public static final BitSet FOLLOW_ruleOtherTimes_in_ruleFirstTime1796 = new BitSet(new long[]{0x0000000000080000L});
-    public static final BitSet FOLLOW_19_in_ruleFirstTime1809 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleOtherTimes_in_entryRuleOtherTimes1845 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleOtherTimes1855 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_26_in_ruleOtherTimes1901 = new BitSet(new long[]{0x00000CB0B0000030L});
-    public static final BitSet FOLLOW_RULE_COMMENT_in_ruleOtherTimes1918 = new BitSet(new long[]{0x00000CB0B0000010L});
-    public static final BitSet FOLLOW_ruleConditionalBody_in_ruleOtherTimes1945 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePartingLines_in_entryRulePartingLines1981 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRulePartingLines1991 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_27_in_rulePartingLines2037 = new BitSet(new long[]{0x00000CB0B0080030L});
-    public static final BitSet FOLLOW_RULE_COMMENT_in_rulePartingLines2054 = new BitSet(new long[]{0x00000CB0B0080010L});
-    public static final BitSet FOLLOW_ruleConditionalBody_in_rulePartingLines2081 = new BitSet(new long[]{0x0000000000080000L});
-    public static final BitSet FOLLOW_19_in_rulePartingLines2093 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleHub_in_entryRuleHub2129 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleHub2139 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_28_in_ruleHub2182 = new BitSet(new long[]{0x0000000020000000L});
-    public static final BitSet FOLLOW_29_in_ruleHub2208 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_ruleStringID_in_ruleHub2229 = new BitSet(new long[]{0x00000C04C0080020L});
-    public static final BitSet FOLLOW_RULE_COMMENT_in_ruleHub2246 = new BitSet(new long[]{0x00000C04C0080000L});
-    public static final BitSet FOLLOW_ruleAbstractChoiceDialog_in_ruleHub2273 = new BitSet(new long[]{0x00000C04C0080000L});
-    public static final BitSet FOLLOW_19_in_ruleHub2286 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAbstractChoiceDialog_in_entryRuleAbstractChoiceDialog2322 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleAbstractChoiceDialog2332 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleChoiceDialog_in_ruleAbstractChoiceDialog2379 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleConditionalChoiceDialog_in_ruleAbstractChoiceDialog2406 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleConditional_in_ruleAbstractChoiceDialog2433 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleConditionalChoiceDialog_in_entryRuleConditionalChoiceDialog2468 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleConditionalChoiceDialog2478 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleModifier_in_ruleConditionalChoiceDialog2524 = new BitSet(new long[]{0x00000C0040000000L});
-    public static final BitSet FOLLOW_30_in_ruleConditionalChoiceDialog2537 = new BitSet(new long[]{0x0000000080000000L});
-    public static final BitSet FOLLOW_31_in_ruleConditionalChoiceDialog2549 = new BitSet(new long[]{0x0000000100000000L});
-    public static final BitSet FOLLOW_32_in_ruleConditionalChoiceDialog2561 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_ruleConditionList_in_ruleConditionalChoiceDialog2582 = new BitSet(new long[]{0x0000000200000000L});
-    public static final BitSet FOLLOW_33_in_ruleConditionalChoiceDialog2594 = new BitSet(new long[]{0x00000C0400000020L});
-    public static final BitSet FOLLOW_RULE_COMMENT_in_ruleConditionalChoiceDialog2611 = new BitSet(new long[]{0x00000C0400000000L});
-    public static final BitSet FOLLOW_ruleChoiceDialog_in_ruleConditionalChoiceDialog2638 = new BitSet(new long[]{0x00000C0440080000L});
-    public static final BitSet FOLLOW_ruleOtherwiseChoice_in_ruleConditionalChoiceDialog2660 = new BitSet(new long[]{0x00000C0040080000L});
-    public static final BitSet FOLLOW_19_in_ruleConditionalChoiceDialog2673 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleOtherwiseChoice_in_entryRuleOtherwiseChoice2709 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleOtherwiseChoice2719 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleModifier_in_ruleOtherwiseChoice2765 = new BitSet(new long[]{0x00000C0040000000L});
-    public static final BitSet FOLLOW_30_in_ruleOtherwiseChoice2778 = new BitSet(new long[]{0x0000000004000000L});
-    public static final BitSet FOLLOW_26_in_ruleOtherwiseChoice2790 = new BitSet(new long[]{0x00000C0480000020L});
-    public static final BitSet FOLLOW_31_in_ruleOtherwiseChoice2811 = new BitSet(new long[]{0x0000000100000000L});
-    public static final BitSet FOLLOW_32_in_ruleOtherwiseChoice2824 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_ruleConditionList_in_ruleOtherwiseChoice2845 = new BitSet(new long[]{0x0000000200000000L});
-    public static final BitSet FOLLOW_33_in_ruleOtherwiseChoice2857 = new BitSet(new long[]{0x00000C0400000020L});
-    public static final BitSet FOLLOW_RULE_COMMENT_in_ruleOtherwiseChoice2876 = new BitSet(new long[]{0x00000C0400000000L});
-    public static final BitSet FOLLOW_ruleChoiceDialog_in_ruleOtherwiseChoice2903 = new BitSet(new long[]{0x00000C0400000002L});
-    public static final BitSet FOLLOW_ruleStringID_in_entryRuleStringID2941 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleStringID2952 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleStringID2991 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleChoiceDialog_in_entryRuleChoiceDialog3035 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleChoiceDialog3045 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleModifier_in_ruleChoiceDialog3100 = new BitSet(new long[]{0x00000C0400000000L});
-    public static final BitSet FOLLOW_34_in_ruleChoiceDialog3113 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_ruleStringID_in_ruleChoiceDialog3134 = new BitSet(new long[]{0x00000CB0B0080030L});
-    public static final BitSet FOLLOW_RULE_COMMENT_in_ruleChoiceDialog3151 = new BitSet(new long[]{0x00000CB0B0080010L});
-    public static final BitSet FOLLOW_ruleConditionalBody_in_ruleChoiceDialog3178 = new BitSet(new long[]{0x0000000000080000L});
-    public static final BitSet FOLLOW_19_in_ruleChoiceDialog3190 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleConditionList_in_entryRuleConditionList3226 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleConditionList3236 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleConditionList3281 = new BitSet(new long[]{0x0000000800000002L});
-    public static final BitSet FOLLOW_35_in_ruleConditionList3294 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleConditionList3314 = new BitSet(new long[]{0x0000000800000002L});
-    public static final BitSet FOLLOW_ruleJump_in_entryRuleJump3352 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleJump3362 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleExit_in_ruleJump3409 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleInvokeHub_in_ruleJump3436 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleInvokeScene_in_ruleJump3463 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleInvokeHub_in_entryRuleInvokeHub3498 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleInvokeHub3508 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_36_in_ruleInvokeHub3545 = new BitSet(new long[]{0x0000000020000000L});
-    public static final BitSet FOLLOW_29_in_ruleInvokeHub3557 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_ruleStringID_in_ruleInvokeHub3580 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleInvokeScene_in_entryRuleInvokeScene3616 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleInvokeScene3626 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_36_in_ruleInvokeScene3663 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_22_in_ruleInvokeScene3675 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_ruleStringID_in_ruleInvokeScene3698 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleExit_in_entryRuleExit3734 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleExit3744 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_37_in_ruleExit3790 = new BitSet(new long[]{0x0000000020400000L});
-    public static final BitSet FOLLOW_29_in_ruleExit3809 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_22_in_ruleExit3846 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleConditional_in_entryRuleConditional3896 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleConditional3906 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleModifier_in_ruleConditional3952 = new BitSet(new long[]{0x00000C0080000000L});
-    public static final BitSet FOLLOW_31_in_ruleConditional3965 = new BitSet(new long[]{0x0000000100000000L});
-    public static final BitSet FOLLOW_32_in_ruleConditional3977 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_ruleConditionList_in_ruleConditional3998 = new BitSet(new long[]{0x0000000200000000L});
-    public static final BitSet FOLLOW_33_in_ruleConditional4010 = new BitSet(new long[]{0x00000CB0B4080030L});
-    public static final BitSet FOLLOW_RULE_COMMENT_in_ruleConditional4027 = new BitSet(new long[]{0x00000CB0B4080010L});
-    public static final BitSet FOLLOW_ruleConditionalBody_in_ruleConditional4054 = new BitSet(new long[]{0x00000C0004080000L});
-    public static final BitSet FOLLOW_ruleOtherwise_in_ruleConditional4075 = new BitSet(new long[]{0x00000C0004080000L});
-    public static final BitSet FOLLOW_19_in_ruleConditional4088 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSwitchList_in_entryRuleSwitchList4124 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleSwitchList4134 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSwitch_in_ruleSwitchList4180 = new BitSet(new long[]{0x0000004000000002L});
-    public static final BitSet FOLLOW_38_in_ruleSwitchList4193 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_ruleSwitch_in_ruleSwitchList4214 = new BitSet(new long[]{0x0000004000000002L});
-    public static final BitSet FOLLOW_ruleSwitch_in_entryRuleSwitch4252 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleSwitch4262 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleSwitch4307 = new BitSet(new long[]{0x0000000000020000L});
-    public static final BitSet FOLLOW_17_in_ruleSwitch4319 = new BitSet(new long[]{0x0000030000000000L});
-    public static final BitSet FOLLOW_ruleSwitchValue_in_ruleSwitch4340 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleConditionalBody_in_entryRuleConditionalBody4376 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleConditionalBody4386 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleStatement_in_ruleConditionalBody4441 = new BitSet(new long[]{0x00000CB0B0000012L});
-    public static final BitSet FOLLOW_ruleSwitchOn_in_ruleConditionalBody4463 = new BitSet(new long[]{0x000000B000000002L});
-    public static final BitSet FOLLOW_ruleSwitchOff_in_ruleConditionalBody4485 = new BitSet(new long[]{0x0000003000000002L});
-    public static final BitSet FOLLOW_ruleJump_in_ruleConditionalBody4507 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleStatement_in_entryRuleStatement4544 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleStatement4554 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleDialogLine_in_ruleStatement4601 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleConditional_in_ruleStatement4628 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleOtherwise_in_entryRuleOtherwise4663 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleOtherwise4673 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleModifier_in_ruleOtherwise4719 = new BitSet(new long[]{0x00000C0004000000L});
-    public static final BitSet FOLLOW_26_in_ruleOtherwise4732 = new BitSet(new long[]{0x00000CB0B0000030L});
-    public static final BitSet FOLLOW_31_in_ruleOtherwise4753 = new BitSet(new long[]{0x0000000100000000L});
-    public static final BitSet FOLLOW_32_in_ruleOtherwise4766 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_ruleConditionList_in_ruleOtherwise4787 = new BitSet(new long[]{0x0000000200000000L});
-    public static final BitSet FOLLOW_33_in_ruleOtherwise4799 = new BitSet(new long[]{0x00000CB0B0000030L});
-    public static final BitSet FOLLOW_RULE_COMMENT_in_ruleOtherwise4818 = new BitSet(new long[]{0x00000CB0B0000010L});
-    public static final BitSet FOLLOW_ruleConditionalBody_in_ruleOtherwise4845 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSwitchOff_in_entryRuleSwitchOff4881 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleSwitchOff4891 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_39_in_ruleSwitchOff4928 = new BitSet(new long[]{0x0000010000000000L});
-    public static final BitSet FOLLOW_40_in_ruleSwitchOff4940 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleSwitchOff4960 = new BitSet(new long[]{0x0000000000008022L});
-    public static final BitSet FOLLOW_15_in_ruleSwitchOff4973 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleSwitchOff4993 = new BitSet(new long[]{0x0000000000008022L});
-    public static final BitSet FOLLOW_RULE_COMMENT_in_ruleSwitchOff5012 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSwitchOn_in_entryRuleSwitchOn5054 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleSwitchOn5064 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_39_in_ruleSwitchOn5101 = new BitSet(new long[]{0x0000020000000000L});
-    public static final BitSet FOLLOW_41_in_ruleSwitchOn5113 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleSwitchOn5133 = new BitSet(new long[]{0x0000000000008022L});
-    public static final BitSet FOLLOW_15_in_ruleSwitchOn5146 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleSwitchOn5166 = new BitSet(new long[]{0x0000000000008022L});
-    public static final BitSet FOLLOW_RULE_COMMENT_in_ruleSwitchOn5185 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleDialogLine_in_entryRuleDialogLine5227 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleDialogLine5237 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleDialogLine5282 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_14_in_ruleDialogLine5294 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_ruleStringID_in_ruleDialogLine5315 = new BitSet(new long[]{0x0000000000000022L});
-    public static final BitSet FOLLOW_RULE_COMMENT_in_ruleDialogLine5332 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_42_in_ruleModifier5388 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_43_in_ruleModifier5405 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_41_in_ruleSwitchValue5450 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_40_in_ruleSwitchValue5467 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_31_in_synpred1_InternalDialogScript2803 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_31_in_synpred2_InternalDialogScript4745 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleHub_in_ruleRecursive1426 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleStatement_in_ruleRecursive1453 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleDefaults_in_entryRuleDefaults1488 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleDefaults1498 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_23_in_ruleDefaults1544 = new BitSet(new long[]{0x00000CB0B0080030L});
+    public static final BitSet FOLLOW_RULE_COMMENT_in_ruleDefaults1561 = new BitSet(new long[]{0x00000CB0B0080010L});
+    public static final BitSet FOLLOW_ruleConditionalBody_in_ruleDefaults1588 = new BitSet(new long[]{0x0000000000080000L});
+    public static final BitSet FOLLOW_19_in_ruleDefaults1600 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFirstTime_in_entryRuleFirstTime1636 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleFirstTime1646 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_24_in_ruleFirstTime1692 = new BitSet(new long[]{0x0000000002000000L});
+    public static final BitSet FOLLOW_25_in_ruleFirstTime1704 = new BitSet(new long[]{0x00000CB0B4080030L});
+    public static final BitSet FOLLOW_RULE_COMMENT_in_ruleFirstTime1721 = new BitSet(new long[]{0x00000CB0B4080010L});
+    public static final BitSet FOLLOW_ruleConditionalBody_in_ruleFirstTime1748 = new BitSet(new long[]{0x0000000004080000L});
+    public static final BitSet FOLLOW_ruleOtherTimes_in_ruleFirstTime1769 = new BitSet(new long[]{0x0000000000080000L});
+    public static final BitSet FOLLOW_19_in_ruleFirstTime1782 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleOtherTimes_in_entryRuleOtherTimes1818 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleOtherTimes1828 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_26_in_ruleOtherTimes1874 = new BitSet(new long[]{0x00000CB0B0000030L});
+    public static final BitSet FOLLOW_RULE_COMMENT_in_ruleOtherTimes1891 = new BitSet(new long[]{0x00000CB0B0000010L});
+    public static final BitSet FOLLOW_ruleConditionalBody_in_ruleOtherTimes1918 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePartingLines_in_entryRulePartingLines1954 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRulePartingLines1964 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_27_in_rulePartingLines2010 = new BitSet(new long[]{0x00000CB0B0080030L});
+    public static final BitSet FOLLOW_RULE_COMMENT_in_rulePartingLines2027 = new BitSet(new long[]{0x00000CB0B0080010L});
+    public static final BitSet FOLLOW_ruleConditionalBody_in_rulePartingLines2054 = new BitSet(new long[]{0x0000000000080000L});
+    public static final BitSet FOLLOW_19_in_rulePartingLines2066 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleHub_in_entryRuleHub2102 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleHub2112 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_28_in_ruleHub2155 = new BitSet(new long[]{0x0000000020000000L});
+    public static final BitSet FOLLOW_29_in_ruleHub2181 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_ruleStringID_in_ruleHub2202 = new BitSet(new long[]{0x00000C04F0080030L});
+    public static final BitSet FOLLOW_RULE_COMMENT_in_ruleHub2219 = new BitSet(new long[]{0x00000C04F0080010L});
+    public static final BitSet FOLLOW_ruleHubFragment_in_ruleHub2246 = new BitSet(new long[]{0x00000C04F0080010L});
+    public static final BitSet FOLLOW_19_in_ruleHub2259 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleHubFragment_in_entryRuleHubFragment2295 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleHubFragment2305 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleChoiceDialog_in_ruleHubFragment2352 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleConditionalChoiceDialog_in_ruleHubFragment2379 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleStatement_in_ruleHubFragment2406 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleConditionalChoiceDialog_in_entryRuleConditionalChoiceDialog2441 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleConditionalChoiceDialog2451 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleModifier_in_ruleConditionalChoiceDialog2497 = new BitSet(new long[]{0x00000C0040000000L});
+    public static final BitSet FOLLOW_30_in_ruleConditionalChoiceDialog2510 = new BitSet(new long[]{0x0000000080000000L});
+    public static final BitSet FOLLOW_31_in_ruleConditionalChoiceDialog2522 = new BitSet(new long[]{0x0000000100000000L});
+    public static final BitSet FOLLOW_32_in_ruleConditionalChoiceDialog2534 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_ruleConditionList_in_ruleConditionalChoiceDialog2555 = new BitSet(new long[]{0x0000000200000000L});
+    public static final BitSet FOLLOW_33_in_ruleConditionalChoiceDialog2567 = new BitSet(new long[]{0x00000C0400000020L});
+    public static final BitSet FOLLOW_RULE_COMMENT_in_ruleConditionalChoiceDialog2584 = new BitSet(new long[]{0x00000C0400000000L});
+    public static final BitSet FOLLOW_ruleChoiceDialog_in_ruleConditionalChoiceDialog2611 = new BitSet(new long[]{0x00000C0440080000L});
+    public static final BitSet FOLLOW_ruleOtherwiseChoice_in_ruleConditionalChoiceDialog2633 = new BitSet(new long[]{0x00000C0040080000L});
+    public static final BitSet FOLLOW_19_in_ruleConditionalChoiceDialog2646 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleOtherwiseChoice_in_entryRuleOtherwiseChoice2682 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleOtherwiseChoice2692 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleModifier_in_ruleOtherwiseChoice2738 = new BitSet(new long[]{0x00000C0040000000L});
+    public static final BitSet FOLLOW_30_in_ruleOtherwiseChoice2751 = new BitSet(new long[]{0x0000000004000000L});
+    public static final BitSet FOLLOW_26_in_ruleOtherwiseChoice2763 = new BitSet(new long[]{0x00000C0480000020L});
+    public static final BitSet FOLLOW_31_in_ruleOtherwiseChoice2784 = new BitSet(new long[]{0x0000000100000000L});
+    public static final BitSet FOLLOW_32_in_ruleOtherwiseChoice2797 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_ruleConditionList_in_ruleOtherwiseChoice2818 = new BitSet(new long[]{0x0000000200000000L});
+    public static final BitSet FOLLOW_33_in_ruleOtherwiseChoice2830 = new BitSet(new long[]{0x00000C0400000020L});
+    public static final BitSet FOLLOW_RULE_COMMENT_in_ruleOtherwiseChoice2849 = new BitSet(new long[]{0x00000C0400000000L});
+    public static final BitSet FOLLOW_ruleChoiceDialog_in_ruleOtherwiseChoice2876 = new BitSet(new long[]{0x00000C0400000002L});
+    public static final BitSet FOLLOW_ruleStringID_in_entryRuleStringID2914 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleStringID2925 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleStringID2964 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleChoiceDialog_in_entryRuleChoiceDialog3008 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleChoiceDialog3018 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleModifier_in_ruleChoiceDialog3073 = new BitSet(new long[]{0x00000C0400000000L});
+    public static final BitSet FOLLOW_34_in_ruleChoiceDialog3086 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_ruleStringID_in_ruleChoiceDialog3107 = new BitSet(new long[]{0x00000CB0B0080030L});
+    public static final BitSet FOLLOW_RULE_COMMENT_in_ruleChoiceDialog3124 = new BitSet(new long[]{0x00000CB0B0080010L});
+    public static final BitSet FOLLOW_ruleConditionalBody_in_ruleChoiceDialog3151 = new BitSet(new long[]{0x0000000000080000L});
+    public static final BitSet FOLLOW_19_in_ruleChoiceDialog3163 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleConditionList_in_entryRuleConditionList3199 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleConditionList3209 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleConditionList3254 = new BitSet(new long[]{0x0000000800000002L});
+    public static final BitSet FOLLOW_35_in_ruleConditionList3267 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleConditionList3287 = new BitSet(new long[]{0x0000000800000002L});
+    public static final BitSet FOLLOW_ruleJump_in_entryRuleJump3325 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleJump3335 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleExit_in_ruleJump3382 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleInvokeHub_in_ruleJump3409 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleInvokeScene_in_ruleJump3436 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleInvokeHub_in_entryRuleInvokeHub3471 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleInvokeHub3481 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_36_in_ruleInvokeHub3518 = new BitSet(new long[]{0x0000000020000000L});
+    public static final BitSet FOLLOW_29_in_ruleInvokeHub3530 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_ruleStringID_in_ruleInvokeHub3553 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleInvokeScene_in_entryRuleInvokeScene3589 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleInvokeScene3599 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_36_in_ruleInvokeScene3636 = new BitSet(new long[]{0x0000000000400000L});
+    public static final BitSet FOLLOW_22_in_ruleInvokeScene3648 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_ruleStringID_in_ruleInvokeScene3671 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleExit_in_entryRuleExit3707 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleExit3717 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_37_in_ruleExit3763 = new BitSet(new long[]{0x0000000020400000L});
+    public static final BitSet FOLLOW_29_in_ruleExit3782 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_22_in_ruleExit3819 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleConditional_in_entryRuleConditional3869 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleConditional3879 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleModifier_in_ruleConditional3925 = new BitSet(new long[]{0x00000C0080000000L});
+    public static final BitSet FOLLOW_31_in_ruleConditional3938 = new BitSet(new long[]{0x0000000100000000L});
+    public static final BitSet FOLLOW_32_in_ruleConditional3950 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_ruleConditionList_in_ruleConditional3971 = new BitSet(new long[]{0x0000000200000000L});
+    public static final BitSet FOLLOW_33_in_ruleConditional3983 = new BitSet(new long[]{0x00000CB0B4080030L});
+    public static final BitSet FOLLOW_RULE_COMMENT_in_ruleConditional4000 = new BitSet(new long[]{0x00000CB0B4080010L});
+    public static final BitSet FOLLOW_ruleConditionalBody_in_ruleConditional4027 = new BitSet(new long[]{0x00000C0004080000L});
+    public static final BitSet FOLLOW_ruleOtherwise_in_ruleConditional4048 = new BitSet(new long[]{0x00000C0004080000L});
+    public static final BitSet FOLLOW_19_in_ruleConditional4061 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSwitchList_in_entryRuleSwitchList4097 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleSwitchList4107 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSwitch_in_ruleSwitchList4153 = new BitSet(new long[]{0x0000004000000002L});
+    public static final BitSet FOLLOW_38_in_ruleSwitchList4166 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_ruleSwitch_in_ruleSwitchList4187 = new BitSet(new long[]{0x0000004000000002L});
+    public static final BitSet FOLLOW_ruleSwitch_in_entryRuleSwitch4225 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleSwitch4235 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleSwitch4280 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_17_in_ruleSwitch4292 = new BitSet(new long[]{0x0000030000000000L});
+    public static final BitSet FOLLOW_ruleSwitchValue_in_ruleSwitch4313 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleConditionalBody_in_entryRuleConditionalBody4349 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleConditionalBody4359 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleStatement_in_ruleConditionalBody4414 = new BitSet(new long[]{0x00000CB0B0000012L});
+    public static final BitSet FOLLOW_ruleSwitchOn_in_ruleConditionalBody4436 = new BitSet(new long[]{0x000000B000000002L});
+    public static final BitSet FOLLOW_ruleSwitchOff_in_ruleConditionalBody4458 = new BitSet(new long[]{0x0000003000000002L});
+    public static final BitSet FOLLOW_ruleJump_in_ruleConditionalBody4480 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleStatement_in_entryRuleStatement4517 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleStatement4527 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleDialogLine_in_ruleStatement4574 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleConditional_in_ruleStatement4601 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleOtherwise_in_entryRuleOtherwise4636 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleOtherwise4646 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleModifier_in_ruleOtherwise4692 = new BitSet(new long[]{0x00000C0004000000L});
+    public static final BitSet FOLLOW_26_in_ruleOtherwise4705 = new BitSet(new long[]{0x00000CB0B0000030L});
+    public static final BitSet FOLLOW_31_in_ruleOtherwise4726 = new BitSet(new long[]{0x0000000100000000L});
+    public static final BitSet FOLLOW_32_in_ruleOtherwise4739 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_ruleConditionList_in_ruleOtherwise4760 = new BitSet(new long[]{0x0000000200000000L});
+    public static final BitSet FOLLOW_33_in_ruleOtherwise4772 = new BitSet(new long[]{0x00000CB0B0000030L});
+    public static final BitSet FOLLOW_RULE_COMMENT_in_ruleOtherwise4791 = new BitSet(new long[]{0x00000CB0B0000010L});
+    public static final BitSet FOLLOW_ruleConditionalBody_in_ruleOtherwise4818 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSwitchOff_in_entryRuleSwitchOff4854 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleSwitchOff4864 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_39_in_ruleSwitchOff4901 = new BitSet(new long[]{0x0000010000000000L});
+    public static final BitSet FOLLOW_40_in_ruleSwitchOff4913 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleSwitchOff4933 = new BitSet(new long[]{0x0000000000008022L});
+    public static final BitSet FOLLOW_15_in_ruleSwitchOff4946 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleSwitchOff4966 = new BitSet(new long[]{0x0000000000008022L});
+    public static final BitSet FOLLOW_RULE_COMMENT_in_ruleSwitchOff4985 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSwitchOn_in_entryRuleSwitchOn5027 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleSwitchOn5037 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_39_in_ruleSwitchOn5074 = new BitSet(new long[]{0x0000020000000000L});
+    public static final BitSet FOLLOW_41_in_ruleSwitchOn5086 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleSwitchOn5106 = new BitSet(new long[]{0x0000000000008022L});
+    public static final BitSet FOLLOW_15_in_ruleSwitchOn5119 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleSwitchOn5139 = new BitSet(new long[]{0x0000000000008022L});
+    public static final BitSet FOLLOW_RULE_COMMENT_in_ruleSwitchOn5158 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleDialogLine_in_entryRuleDialogLine5200 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleDialogLine5210 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleDialogLine5255 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_14_in_ruleDialogLine5267 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_ruleStringID_in_ruleDialogLine5288 = new BitSet(new long[]{0x0000000000000022L});
+    public static final BitSet FOLLOW_RULE_COMMENT_in_ruleDialogLine5305 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_42_in_ruleModifier5361 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_43_in_ruleModifier5378 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_41_in_ruleSwitchValue5423 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_40_in_ruleSwitchValue5440 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_31_in_synpred1_InternalDialogScript2776 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_31_in_synpred2_InternalDialogScript4718 = new BitSet(new long[]{0x0000000000000002L});
 
 }

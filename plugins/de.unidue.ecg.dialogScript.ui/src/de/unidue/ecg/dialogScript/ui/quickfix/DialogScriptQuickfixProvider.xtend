@@ -6,24 +6,20 @@ package de.unidue.ecg.dialogScript.ui.quickfix
 import com.google.inject.Inject
 import de.unidue.ecg.common.linking.CustomLinkingDiagnosticMessageProvider
 import de.unidue.ecg.dialogScript.dialogScript.ConditionList
-import de.unidue.ecg.dialogScript.dialogScript.Conditional
+import de.unidue.ecg.dialogScript.dialogScript.DialogLine
 import de.unidue.ecg.dialogScript.dialogScript.DialogScriptFactory
 import de.unidue.ecg.dialogScript.dialogScript.DialogScriptPackage
-import de.unidue.ecg.dialogScript.dialogScript.Hub
-import de.unidue.ecg.dialogScript.dialogScript.Modifier
 import de.unidue.ecg.dialogScript.dialogScript.Script
 import de.unidue.ecg.dialogScript.dialogScript.Switch
 import de.unidue.ecg.dialogScript.dialogScript.SwitchOff
 import de.unidue.ecg.dialogScript.dialogScript.SwitchOn
 import de.unidue.ecg.dialogScript.dialogScript.SwitchValue
-import de.unidue.ecg.dialogScript.validation.DialogScriptValidator
 import org.eclipse.xtext.EcoreUtil2
 import org.eclipse.xtext.diagnostics.Diagnostic
 import org.eclipse.xtext.ui.editor.quickfix.DefaultQuickfixProvider
 import org.eclipse.xtext.ui.editor.quickfix.Fix
 import org.eclipse.xtext.ui.editor.quickfix.IssueResolutionAcceptor
 import org.eclipse.xtext.validation.Issue
-import de.unidue.ecg.dialogScript.dialogScript.DialogLine
 
 /**
  * Custom quickfixes.
@@ -56,6 +52,8 @@ class DialogScriptQuickfixProvider extends DefaultQuickfixProvider {
 	//			xtextDocument.replace(issue.offset, 1, firstLetter.toUpperCase)
 	//		]
 	//	}
+	
+	/* WHY IS THAT EVEN NEEDED? 
 	@Fix(DialogScriptValidator.WRONG_CONDTIONAL_USAGE)
 	def makeConditionSingle(Issue issue, IssueResolutionAcceptor acceptor) {
 		acceptor.accept(issue, 'Add \'single\' modifier', 'Add \'single\' modifier', null) [ element, context |
@@ -65,6 +63,7 @@ class DialogScriptQuickfixProvider extends DefaultQuickfixProvider {
 			conditional.modifiers.add(Modifier.SINGLE)
 		]
 	}
+	
 
 	@Fix(DialogScriptValidator.WRONG_CONDTIONAL_USAGE)
 	def addExitHubStatement(Issue issue, IssueResolutionAcceptor acceptor) {
@@ -79,7 +78,8 @@ class DialogScriptQuickfixProvider extends DefaultQuickfixProvider {
 			conditional.body.setJump(exit)
 		]
 	}
-
+	*/
+	
 	@Fix(Diagnostic.LINKING_DIAGNOSTIC)
 	def conditionUnknown(Issue issue, IssueResolutionAcceptor acceptor) {
 		var linkText = customLinkingDiagnosticMessageProvider.getLinkText(issue,

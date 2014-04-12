@@ -6,20 +6,14 @@ package de.unidue.ecg.dialogScript.ui.quickfix;
 import com.google.common.base.Objects;
 import com.google.inject.Inject;
 import de.unidue.ecg.common.linking.CustomLinkingDiagnosticMessageProvider;
-import de.unidue.ecg.dialogScript.dialogScript.AbstractChoiceDialog;
 import de.unidue.ecg.dialogScript.dialogScript.CharacterDefinition;
 import de.unidue.ecg.dialogScript.dialogScript.CharactersDefinition;
 import de.unidue.ecg.dialogScript.dialogScript.ConditionDefinition;
 import de.unidue.ecg.dialogScript.dialogScript.ConditionList;
-import de.unidue.ecg.dialogScript.dialogScript.Conditional;
-import de.unidue.ecg.dialogScript.dialogScript.ConditionalBody;
 import de.unidue.ecg.dialogScript.dialogScript.ConditionsDefinition;
 import de.unidue.ecg.dialogScript.dialogScript.DialogLine;
 import de.unidue.ecg.dialogScript.dialogScript.DialogScriptFactory;
 import de.unidue.ecg.dialogScript.dialogScript.DialogScriptPackage;
-import de.unidue.ecg.dialogScript.dialogScript.Exit;
-import de.unidue.ecg.dialogScript.dialogScript.Hub;
-import de.unidue.ecg.dialogScript.dialogScript.Modifier;
 import de.unidue.ecg.dialogScript.dialogScript.Script;
 import de.unidue.ecg.dialogScript.dialogScript.Switch;
 import de.unidue.ecg.dialogScript.dialogScript.SwitchDefinition;
@@ -28,7 +22,6 @@ import de.unidue.ecg.dialogScript.dialogScript.SwitchOff;
 import de.unidue.ecg.dialogScript.dialogScript.SwitchOn;
 import de.unidue.ecg.dialogScript.dialogScript.SwitchValue;
 import de.unidue.ecg.dialogScript.dialogScript.SwitchesDefinition;
-import de.unidue.ecg.dialogScript.validation.DialogScriptValidator;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
@@ -52,52 +45,32 @@ public class DialogScriptQuickfixProvider extends DefaultQuickfixProvider {
   private CustomLinkingDiagnosticMessageProvider customLinkingDiagnosticMessageProvider;
   
   /**
-   * TODO: Check for programmatic execution of rename refactoring for these rename quickfixes
+   * WHY IS THAT EVEN NEEDED?
+   * @Fix(DialogScriptValidator.WRONG_CONDTIONAL_USAGE)
+   * def makeConditionSingle(Issue issue, IssueResolutionAcceptor acceptor) {
+   * acceptor.accept(issue, 'Add \'single\' modifier', 'Add \'single\' modifier', null) [ element, context |
+   * val index = Integer.parseInt(issue.data.get(0))
+   * val hub = element as Hub
+   * val conditional = hub.choiceDialogs.get(index) as Conditional
+   * conditional.modifiers.add(Modifier.SINGLE)
+   * ]
+   * }
+   * 
+   * 
+   * @Fix(DialogScriptValidator.WRONG_CONDTIONAL_USAGE)
+   * def addExitHubStatement(Issue issue, IssueResolutionAcceptor acceptor) {
+   * acceptor.accept(issue, 'Add \'exit hub\' statement', 'Add \'exit hub\' statement', null) [ element, context |
+   * val index = Integer.parseInt(issue.data.get(0))
+   * val hub = element as Hub
+   * val conditional = hub.choiceDialogs.get(index) as Conditional
+   * if (conditional.body == null)
+   * conditional.body = DialogScriptFactory.eINSTANCE.createConditionalBody
+   * val exit = DialogScriptFactory.eINSTANCE.createExit
+   * exit.setExitHub(true)
+   * conditional.body.setJump(exit)
+   * ]
+   * }
    */
-  @Fix(DialogScriptValidator.WRONG_CONDTIONAL_USAGE)
-  public void makeConditionSingle(final Issue issue, final IssueResolutionAcceptor acceptor) {
-    final ISemanticModification _function = new ISemanticModification() {
-      public void apply(final EObject element, final IModificationContext context) throws Exception {
-        String[] _data = issue.getData();
-        String _get = _data[0];
-        final int index = Integer.parseInt(_get);
-        final Hub hub = ((Hub) element);
-        EList<AbstractChoiceDialog> _choiceDialogs = hub.getChoiceDialogs();
-        AbstractChoiceDialog _get_1 = _choiceDialogs.get(index);
-        final Conditional conditional = ((Conditional) _get_1);
-        EList<Modifier> _modifiers = conditional.getModifiers();
-        _modifiers.add(Modifier.SINGLE);
-      }
-    };
-    acceptor.accept(issue, "Add \'single\' modifier", "Add \'single\' modifier", null, _function);
-  }
-  
-  @Fix(DialogScriptValidator.WRONG_CONDTIONAL_USAGE)
-  public void addExitHubStatement(final Issue issue, final IssueResolutionAcceptor acceptor) {
-    final ISemanticModification _function = new ISemanticModification() {
-      public void apply(final EObject element, final IModificationContext context) throws Exception {
-        String[] _data = issue.getData();
-        String _get = _data[0];
-        final int index = Integer.parseInt(_get);
-        final Hub hub = ((Hub) element);
-        EList<AbstractChoiceDialog> _choiceDialogs = hub.getChoiceDialogs();
-        AbstractChoiceDialog _get_1 = _choiceDialogs.get(index);
-        final Conditional conditional = ((Conditional) _get_1);
-        ConditionalBody _body = conditional.getBody();
-        boolean _equals = Objects.equal(_body, null);
-        if (_equals) {
-          ConditionalBody _createConditionalBody = DialogScriptFactory.eINSTANCE.createConditionalBody();
-          conditional.setBody(_createConditionalBody);
-        }
-        final Exit exit = DialogScriptFactory.eINSTANCE.createExit();
-        exit.setExitHub(true);
-        ConditionalBody _body_1 = conditional.getBody();
-        _body_1.setJump(exit);
-      }
-    };
-    acceptor.accept(issue, "Add \'exit hub\' statement", "Add \'exit hub\' statement", null, _function);
-  }
-  
   @Fix(Diagnostic.LINKING_DIAGNOSTIC)
   public void conditionUnknown(final Issue issue, final IssueResolutionAcceptor acceptor) {
     EClass _conditionDefinition = DialogScriptPackage.eINSTANCE.getConditionDefinition();

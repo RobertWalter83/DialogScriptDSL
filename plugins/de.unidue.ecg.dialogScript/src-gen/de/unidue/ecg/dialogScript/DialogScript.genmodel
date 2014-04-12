@@ -73,12 +73,11 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DialogScript.ecore#//Hub/isHidden"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DialogScript.ecore#//Hub/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DialogScript.ecore#//Hub/hubComment"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DialogScript.ecore#//Hub/choiceDialogs"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DialogScript.ecore#//Hub/hubFragments"/>
     </genClasses>
-    <genClasses ecoreClass="DialogScript.ecore#//AbstractChoiceDialog">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DialogScript.ecore#//AbstractChoiceDialog/modifiers"/>
-    </genClasses>
+    <genClasses ecoreClass="DialogScript.ecore#//HubFragment"/>
     <genClasses ecoreClass="DialogScript.ecore#//ConditionalChoiceDialog">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DialogScript.ecore#//ConditionalChoiceDialog/modifiers"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DialogScript.ecore#//ConditionalChoiceDialog/conditionList"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DialogScript.ecore#//ConditionalChoiceDialog/comment"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DialogScript.ecore#//ConditionalChoiceDialog/choiceDialogs"/>
@@ -91,6 +90,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DialogScript.ecore#//OtherwiseChoice/choices"/>
     </genClasses>
     <genClasses ecoreClass="DialogScript.ecore#//ChoiceDialog">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DialogScript.ecore#//ChoiceDialog/modifiers"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DialogScript.ecore#//ChoiceDialog/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DialogScript.ecore#//ChoiceDialog/choiceComment"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DialogScript.ecore#//ChoiceDialog/body"/>
@@ -110,8 +110,8 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DialogScript.ecore#//Exit/exitScene"/>
     </genClasses>
     <genClasses ecoreClass="DialogScript.ecore#//Conditional">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DialogScript.ecore#//Conditional/modifiers"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DialogScript.ecore#//Conditional/conditionList"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DialogScript.ecore#//Conditional/comment"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DialogScript.ecore#//Conditional/body"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DialogScript.ecore#//Conditional/otherwiseList"/>
     </genClasses>
@@ -128,7 +128,9 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DialogScript.ecore#//ConditionalBody/switchOff"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DialogScript.ecore#//ConditionalBody/jump"/>
     </genClasses>
-    <genClasses ecoreClass="DialogScript.ecore#//Statement"/>
+    <genClasses ecoreClass="DialogScript.ecore#//Statement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DialogScript.ecore#//Statement/comment"/>
+    </genClasses>
     <genClasses ecoreClass="DialogScript.ecore#//Otherwise">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DialogScript.ecore#//Otherwise/modifiers"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DialogScript.ecore#//Otherwise/conditionList"/>
@@ -146,7 +148,6 @@
     <genClasses ecoreClass="DialogScript.ecore#//DialogLine">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DialogScript.ecore#//DialogLine/character"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DialogScript.ecore#//DialogLine/lines"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DialogScript.ecore#//DialogLine/comment"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

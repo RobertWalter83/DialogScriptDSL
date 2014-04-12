@@ -12,8 +12,8 @@ import org.eclipse.emf.common.util.EList;
  * <p>
  * The following features are supported:
  * <ul>
+ *   <li>{@link de.unidue.ecg.dialogScript.dialogScript.Conditional#getModifiers <em>Modifiers</em>}</li>
  *   <li>{@link de.unidue.ecg.dialogScript.dialogScript.Conditional#getConditionList <em>Condition List</em>}</li>
- *   <li>{@link de.unidue.ecg.dialogScript.dialogScript.Conditional#getComment <em>Comment</em>}</li>
  *   <li>{@link de.unidue.ecg.dialogScript.dialogScript.Conditional#getBody <em>Body</em>}</li>
  *   <li>{@link de.unidue.ecg.dialogScript.dialogScript.Conditional#getOtherwiseList <em>Otherwise List</em>}</li>
  * </ul>
@@ -23,8 +23,26 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface Conditional extends Recursive, AbstractChoiceDialog, Statement
+public interface Conditional extends Statement
 {
+  /**
+   * Returns the value of the '<em><b>Modifiers</b></em>' attribute list.
+   * The list contents are of type {@link de.unidue.ecg.dialogScript.dialogScript.Modifier}.
+   * The literals are from the enumeration {@link de.unidue.ecg.dialogScript.dialogScript.Modifier}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Modifiers</em>' attribute list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Modifiers</em>' attribute list.
+   * @see de.unidue.ecg.dialogScript.dialogScript.Modifier
+   * @see de.unidue.ecg.dialogScript.dialogScript.DialogScriptPackage#getConditional_Modifiers()
+   * @model unique="false"
+   * @generated
+   */
+  EList<Modifier> getModifiers();
+
   /**
    * Returns the value of the '<em><b>Condition List</b></em>' containment reference.
    * <!-- begin-user-doc -->
@@ -50,32 +68,6 @@ public interface Conditional extends Recursive, AbstractChoiceDialog, Statement
    * @generated
    */
   void setConditionList(ConditionList value);
-
-  /**
-   * Returns the value of the '<em><b>Comment</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Comment</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Comment</em>' attribute.
-   * @see #setComment(String)
-   * @see de.unidue.ecg.dialogScript.dialogScript.DialogScriptPackage#getConditional_Comment()
-   * @model
-   * @generated
-   */
-  String getComment();
-
-  /**
-   * Sets the value of the '{@link de.unidue.ecg.dialogScript.dialogScript.Conditional#getComment <em>Comment</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Comment</em>' attribute.
-   * @see #getComment()
-   * @generated
-   */
-  void setComment(String value);
 
   /**
    * Returns the value of the '<em><b>Body</b></em>' containment reference.

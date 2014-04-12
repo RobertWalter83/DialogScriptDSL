@@ -23,6 +23,9 @@ import org.eclipse.emf.ecore.EReference
 import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.xtext.EcoreUtil2
 import org.eclipse.xtext.validation.Check
+import de.unidue.ecg.dialogScript.dialogScript.Defaults
+import de.unidue.ecg.dialogScript.dialogScript.ConditionalBody
+import de.unidue.ecg.dialogScript.dialogScript.FirstTime
 
 //import org.eclipse.xtext.validation.Check
 /**
@@ -49,6 +52,7 @@ class DialogScriptValidator extends AbstractDialogScriptValidator {
 	public static val DUPLICATED_MODIFIER = 'duplicatedModifier'
 	public static val WRONG_CONDTIONAL_USAGE = 'wrongConditionalUsage'
 	public static val UNRESOLVED_CHARACTER = 'unresolvedCharacter'
+	public static val EMPTY_BODY = 'emptyBody'
 
 	@Check
 	def checkHubCanBeLeft(Hub hub) {
@@ -58,8 +62,9 @@ class DialogScriptValidator extends AbstractDialogScriptValidator {
 				return
 		}
 
-		warning('Hub cannot be left by the player. Add an exit- or enter hub-statement to avoid infinite loops.', hub,
-			DialogScriptPackage.Literals.HUB__NAME, HUB_CANNOT_BE_LEFT)
+		warning(
+			'Its a trap! Hub cannot be left by the player. Add an "exit- " or "enter"-statement to avoid infinite loops.',
+			hub, DialogScriptPackage.Literals.HUB__NAME, HUB_CANNOT_BE_LEFT)
 	}
 
 	@Check
@@ -104,12 +109,14 @@ class DialogScriptValidator extends AbstractDialogScriptValidator {
 
 	@Check
 	def checkForHubsWithoutChoice(Hub hub) {
-		for (c : hub.choiceDialogs) {
-			if (c instanceof ConditionalChoiceDialog || c instanceof ChoiceDialog)
-				return
+		val choices = hub.hubFragments.filter(ChoiceDialog)
+		if (choices.empty) {
+			val conditionalChoices = hub.hubFragments.filter(ConditionalChoiceDialog)
+			if(conditionalChoices.empty){			
+				error('A hub has to contain at least one choice!', hub, DialogScriptPackage.Literals.HUB__NAME,
+					HUB_WITHOUT_CHOICE)
+			} 
 		}
-		error('A hub has to contain at least one choice!', hub, DialogScriptPackage.Literals.HUB__NAME,
-			HUB_WITHOUT_CHOICE)
 	}
 
 	@Check
@@ -180,12 +187,12 @@ class DialogScriptValidator extends AbstractDialogScriptValidator {
 
 	@Check
 	def checkForModifierDuplicates(Conditional ele) {
-		checkForModifierDuplicates(ele.modifiers, ele, DialogScriptPackage.Literals.ABSTRACT_CHOICE_DIALOG__MODIFIERS)
+		checkForModifierDuplicates(ele.modifiers, ele, DialogScriptPackage.Literals.CONDITIONAL__MODIFIERS)
 	}
 
 	@Check
 	def checkForModifierDuplicates(ChoiceDialog ele) {
-		checkForModifierDuplicates(ele.modifiers, ele, DialogScriptPackage.Literals.ABSTRACT_CHOICE_DIALOG__MODIFIERS)
+		checkForModifierDuplicates(ele.modifiers, ele, DialogScriptPackage.Literals.CHOICE_DIALOG__MODIFIERS)
 	}
 
 	@Check
@@ -195,7 +202,7 @@ class DialogScriptValidator extends AbstractDialogScriptValidator {
 
 	@Check
 	def checkForModifierDuplicates(ConditionalChoiceDialog ele) {
-		checkForModifierDuplicates(ele.modifiers, ele, DialogScriptPackage.Literals.ABSTRACT_CHOICE_DIALOG__MODIFIERS)
+		checkForModifierDuplicates(ele.modifiers, ele, DialogScriptPackage.Literals.CONDITIONAL_CHOICE_DIALOG__MODIFIERS)
 	}
 
 	def checkForModifierDuplicates(List<Modifier> modifiers, EObject obj, EStructuralFeature feature) {
@@ -208,6 +215,7 @@ class DialogScriptValidator extends AbstractDialogScriptValidator {
 		]
 	}
 
+	/** WHY!?
 	@Check
 	def checkForCorrectConditionalsInHub(Conditional ele) {
 		if (ele.eContainer instanceof Hub) {
@@ -215,11 +223,48 @@ class DialogScriptValidator extends AbstractDialogScriptValidator {
 			if (!ele.modifiers.contains(Modifier.SINGLE) &&
 				(ele.body == null || ele.body != null && ele.body.jump == null)) {
 				error(
-					'Inside a hub, conditionals has to be either declared as \'single\' or has to exit the hub explicitly using a \'exit\' or \'enter\' statement',
+					'Inside a hub, conditionals have to be either declared as \'single\' or has to exit the hub explicitly using a \'exit\' or \'enter\' statement',
 					hub, DialogScriptPackage.Literals.HUB__CHOICE_DIALOGS, hub.choiceDialogs.indexOf(ele),
 					WRONG_CONDTIONAL_USAGE, hub.choiceDialogs.indexOf(ele).toString)
 			}
 		}
+	} */
+	@Check
+	def checkForEmptyElseBody(Otherwise ele) {
+		if (ele.conditionList == null || ele.conditionList.conditions.empty) {
+			val conditional = ele.eContainer as Conditional
+			val body = ele.body
+			if (body.empty) {
+				warning('Empty else-path detected. Will be ignored!', conditional,
+					DialogScriptPackage.Literals.CONDITIONAL__OTHERWISE_LIST, conditional.otherwiseList.indexOf(ele),
+					EMPTY_BODY, conditional.otherwiseList.indexOf(ele).toString)
+			}
+		}
+	}
+
+	@Check
+	def checkForEmptyDefaultsBody(Defaults ele) {
+		val body = ele.body
+		if (body.empty) {
+			warning('Empty body detected. Will be ignored!', ele.eContainer,
+				DialogScriptPackage.Literals.DIALOG__DEFAULTS, EMPTY_BODY)
+		}
+	}
+
+	@Check
+	def checkForEmptyDefaultsBody(FirstTime ele) {
+		val body = ele.body
+		if (body.empty) {
+			warning('Empty body detected. Will be ignored!', ele.eContainer,
+				DialogScriptPackage.Literals.DIALOG__FIRST_TIME, EMPTY_BODY)
+		}
+	}
+
+	private def isEmpty(ConditionalBody body) {
+		if (body == null ||
+			body.statements.empty && body.switchOn == null && body.switchOff == null && body.jump == null)
+			return true
+		return false
 	}
 
 //	@Check
@@ -245,5 +290,4 @@ class DialogScriptValidator extends AbstractDialogScriptValidator {
 //			error('Missing character definition for ' + charaName,
 //				DialogScriptPackage.Literals.DIALOG_LINE__CHARACTER, UNRESOLVED_CHARACTER, charaName)
 //	}
-
 }

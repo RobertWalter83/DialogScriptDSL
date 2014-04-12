@@ -8,4 +8,4 @@ package de.unidue.ecg.dialogScript.ui.contentassist
  */
 class DialogScriptProposalProvider extends AbstractDialogScriptProposalProvider {
 
-}
+} 

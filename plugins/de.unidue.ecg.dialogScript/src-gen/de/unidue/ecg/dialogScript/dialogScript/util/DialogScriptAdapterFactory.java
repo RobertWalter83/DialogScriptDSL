@@ -150,9 +150,9 @@ public class DialogScriptAdapterFactory extends AdapterFactoryImpl
         return createHubAdapter();
       }
       @Override
-      public Adapter caseAbstractChoiceDialog(AbstractChoiceDialog object)
+      public Adapter caseHubFragment(HubFragment object)
       {
-        return createAbstractChoiceDialogAdapter();
+        return createHubFragmentAdapter();
       }
       @Override
       public Adapter caseConditionalChoiceDialog(ConditionalChoiceDialog object)
@@ -487,16 +487,16 @@ public class DialogScriptAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link de.unidue.ecg.dialogScript.dialogScript.AbstractChoiceDialog <em>Abstract Choice Dialog</em>}'.
+   * Creates a new adapter for an object of class '{@link de.unidue.ecg.dialogScript.dialogScript.HubFragment <em>Hub Fragment</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see de.unidue.ecg.dialogScript.dialogScript.AbstractChoiceDialog
+   * @see de.unidue.ecg.dialogScript.dialogScript.HubFragment
    * @generated
    */
-  public Adapter createAbstractChoiceDialogAdapter()
+  public Adapter createHubFragmentAdapter()
   {
     return null;
   }

@@ -5,14 +5,21 @@ package de.unidue.ecg.dialogScript.dialogScript.impl;
 import de.unidue.ecg.dialogScript.dialogScript.ChoiceDialog;
 import de.unidue.ecg.dialogScript.dialogScript.ConditionalBody;
 import de.unidue.ecg.dialogScript.dialogScript.DialogScriptPackage;
+import de.unidue.ecg.dialogScript.dialogScript.Modifier;
+
+import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
+import org.eclipse.emf.ecore.util.EDataTypeEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,6 +28,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link de.unidue.ecg.dialogScript.dialogScript.impl.ChoiceDialogImpl#getModifiers <em>Modifiers</em>}</li>
  *   <li>{@link de.unidue.ecg.dialogScript.dialogScript.impl.ChoiceDialogImpl#getName <em>Name</em>}</li>
  *   <li>{@link de.unidue.ecg.dialogScript.dialogScript.impl.ChoiceDialogImpl#getChoiceComment <em>Choice Comment</em>}</li>
  *   <li>{@link de.unidue.ecg.dialogScript.dialogScript.impl.ChoiceDialogImpl#getBody <em>Body</em>}</li>
@@ -29,8 +37,18 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class ChoiceDialogImpl extends AbstractChoiceDialogImpl implements ChoiceDialog
+public class ChoiceDialogImpl extends HubFragmentImpl implements ChoiceDialog
 {
+  /**
+   * The cached value of the '{@link #getModifiers() <em>Modifiers</em>}' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getModifiers()
+   * @generated
+   * @ordered
+   */
+  protected EList<Modifier> modifiers;
+
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -100,6 +118,20 @@ public class ChoiceDialogImpl extends AbstractChoiceDialogImpl implements Choice
   protected EClass eStaticClass()
   {
     return DialogScriptPackage.Literals.CHOICE_DIALOG;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<Modifier> getModifiers()
+  {
+    if (modifiers == null)
+    {
+      modifiers = new EDataTypeEList<Modifier>(Modifier.class, this, DialogScriptPackage.CHOICE_DIALOG__MODIFIERS);
+    }
+    return modifiers;
   }
 
   /**
@@ -222,6 +254,8 @@ public class ChoiceDialogImpl extends AbstractChoiceDialogImpl implements Choice
   {
     switch (featureID)
     {
+      case DialogScriptPackage.CHOICE_DIALOG__MODIFIERS:
+        return getModifiers();
       case DialogScriptPackage.CHOICE_DIALOG__NAME:
         return getName();
       case DialogScriptPackage.CHOICE_DIALOG__CHOICE_COMMENT:
@@ -237,11 +271,16 @@ public class ChoiceDialogImpl extends AbstractChoiceDialogImpl implements Choice
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
+      case DialogScriptPackage.CHOICE_DIALOG__MODIFIERS:
+        getModifiers().clear();
+        getModifiers().addAll((Collection<? extends Modifier>)newValue);
+        return;
       case DialogScriptPackage.CHOICE_DIALOG__NAME:
         setName((String)newValue);
         return;
@@ -265,6 +304,9 @@ public class ChoiceDialogImpl extends AbstractChoiceDialogImpl implements Choice
   {
     switch (featureID)
     {
+      case DialogScriptPackage.CHOICE_DIALOG__MODIFIERS:
+        getModifiers().clear();
+        return;
       case DialogScriptPackage.CHOICE_DIALOG__NAME:
         setName(NAME_EDEFAULT);
         return;
@@ -288,6 +330,8 @@ public class ChoiceDialogImpl extends AbstractChoiceDialogImpl implements Choice
   {
     switch (featureID)
     {
+      case DialogScriptPackage.CHOICE_DIALOG__MODIFIERS:
+        return modifiers != null && !modifiers.isEmpty();
       case DialogScriptPackage.CHOICE_DIALOG__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case DialogScriptPackage.CHOICE_DIALOG__CHOICE_COMMENT:
@@ -309,7 +353,9 @@ public class ChoiceDialogImpl extends AbstractChoiceDialogImpl implements Choice
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (name: ");
+    result.append(" (modifiers: ");
+    result.append(modifiers);
+    result.append(", name: ");
     result.append(name);
     result.append(", choiceComment: ");
     result.append(choiceComment);

@@ -721,31 +721,21 @@ ruleRecursive returns [EObject current=null]
     @after { leaveRule(); }:
 (
     { 
-        newCompositeNode(grammarAccess.getRecursiveAccess().getConditionalParserRuleCall_0()); 
+        newCompositeNode(grammarAccess.getRecursiveAccess().getHubParserRuleCall_0()); 
     }
-    this_Conditional_0=ruleConditional
+    this_Hub_0=ruleHub
     { 
-        $current = $this_Conditional_0.current; 
+        $current = $this_Hub_0.current; 
         afterParserOrEnumRuleCall();
     }
 
     |
     { 
-        newCompositeNode(grammarAccess.getRecursiveAccess().getHubParserRuleCall_1()); 
+        newCompositeNode(grammarAccess.getRecursiveAccess().getStatementParserRuleCall_1()); 
     }
-    this_Hub_1=ruleHub
+    this_Statement_1=ruleStatement
     { 
-        $current = $this_Hub_1.current; 
-        afterParserOrEnumRuleCall();
-    }
-
-    |
-    { 
-        newCompositeNode(grammarAccess.getRecursiveAccess().getDialogLineParserRuleCall_2()); 
-    }
-    this_DialogLine_2=ruleDialogLine
-    { 
-        $current = $this_DialogLine_2.current; 
+        $current = $this_Statement_1.current; 
         afterParserOrEnumRuleCall();
     }
 )
@@ -1129,17 +1119,17 @@ ruleHub returns [EObject current=null]
 )?(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getHubAccess().getChoiceDialogsAbstractChoiceDialogParserRuleCall_4_0()); 
+	        newCompositeNode(grammarAccess.getHubAccess().getHubFragmentsHubFragmentParserRuleCall_4_0()); 
 	    }
-		lv_choiceDialogs_4_0=ruleAbstractChoiceDialog		{
+		lv_hubFragments_4_0=ruleHubFragment		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getHubRule());
 	        }
        		add(
        			$current, 
-       			"choiceDialogs",
-        		lv_choiceDialogs_4_0, 
-        		"AbstractChoiceDialog");
+       			"hubFragments",
+        		lv_hubFragments_4_0, 
+        		"HubFragment");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1155,23 +1145,23 @@ ruleHub returns [EObject current=null]
 
 
 
-// Entry rule entryRuleAbstractChoiceDialog
-entryRuleAbstractChoiceDialog returns [EObject current=null] 
+// Entry rule entryRuleHubFragment
+entryRuleHubFragment returns [EObject current=null] 
 	:
-	{ newCompositeNode(grammarAccess.getAbstractChoiceDialogRule()); }
-	 iv_ruleAbstractChoiceDialog=ruleAbstractChoiceDialog 
-	 { $current=$iv_ruleAbstractChoiceDialog.current; } 
+	{ newCompositeNode(grammarAccess.getHubFragmentRule()); }
+	 iv_ruleHubFragment=ruleHubFragment 
+	 { $current=$iv_ruleHubFragment.current; } 
 	 EOF 
 ;
 
-// Rule AbstractChoiceDialog
-ruleAbstractChoiceDialog returns [EObject current=null] 
+// Rule HubFragment
+ruleHubFragment returns [EObject current=null] 
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
 (
     { 
-        newCompositeNode(grammarAccess.getAbstractChoiceDialogAccess().getChoiceDialogParserRuleCall_0()); 
+        newCompositeNode(grammarAccess.getHubFragmentAccess().getChoiceDialogParserRuleCall_0()); 
     }
     this_ChoiceDialog_0=ruleChoiceDialog
     { 
@@ -1181,7 +1171,7 @@ ruleAbstractChoiceDialog returns [EObject current=null]
 
     |
     { 
-        newCompositeNode(grammarAccess.getAbstractChoiceDialogAccess().getConditionalChoiceDialogParserRuleCall_1()); 
+        newCompositeNode(grammarAccess.getHubFragmentAccess().getConditionalChoiceDialogParserRuleCall_1()); 
     }
     this_ConditionalChoiceDialog_1=ruleConditionalChoiceDialog
     { 
@@ -1191,11 +1181,11 @@ ruleAbstractChoiceDialog returns [EObject current=null]
 
     |
     { 
-        newCompositeNode(grammarAccess.getAbstractChoiceDialogAccess().getConditionalParserRuleCall_2()); 
+        newCompositeNode(grammarAccess.getHubFragmentAccess().getStatementParserRuleCall_2()); 
     }
-    this_Conditional_2=ruleConditional
+    this_Statement_2=ruleStatement
     { 
-        $current = $this_Conditional_2.current; 
+        $current = $this_Statement_2.current; 
         afterParserOrEnumRuleCall();
     }
 )

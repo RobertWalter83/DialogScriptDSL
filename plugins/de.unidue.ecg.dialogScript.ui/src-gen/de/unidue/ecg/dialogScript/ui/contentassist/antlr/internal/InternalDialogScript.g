@@ -477,25 +477,25 @@ finally {
 
 
 
-// Entry rule entryRuleAbstractChoiceDialog
-entryRuleAbstractChoiceDialog 
+// Entry rule entryRuleHubFragment
+entryRuleHubFragment 
 :
-{ before(grammarAccess.getAbstractChoiceDialogRule()); }
-	 ruleAbstractChoiceDialog
-{ after(grammarAccess.getAbstractChoiceDialogRule()); } 
+{ before(grammarAccess.getHubFragmentRule()); }
+	 ruleHubFragment
+{ after(grammarAccess.getHubFragmentRule()); } 
 	 EOF 
 ;
 
-// Rule AbstractChoiceDialog
-ruleAbstractChoiceDialog
+// Rule HubFragment
+ruleHubFragment
     @init {
 		int stackSize = keepStackSize();
     }
 	:
 (
-{ before(grammarAccess.getAbstractChoiceDialogAccess().getAlternatives()); }
-(rule__AbstractChoiceDialog__Alternatives)
-{ after(grammarAccess.getAbstractChoiceDialogAccess().getAlternatives()); }
+{ before(grammarAccess.getHubFragmentAccess().getAlternatives()); }
+(rule__HubFragment__Alternatives)
+{ after(grammarAccess.getHubFragmentAccess().getAlternatives()); }
 )
 
 ;
@@ -1054,21 +1054,15 @@ rule__Recursive__Alternatives
     }
 :
 (
-{ before(grammarAccess.getRecursiveAccess().getConditionalParserRuleCall_0()); }
-	ruleConditional
-{ after(grammarAccess.getRecursiveAccess().getConditionalParserRuleCall_0()); }
-)
-
-    |(
-{ before(grammarAccess.getRecursiveAccess().getHubParserRuleCall_1()); }
+{ before(grammarAccess.getRecursiveAccess().getHubParserRuleCall_0()); }
 	ruleHub
-{ after(grammarAccess.getRecursiveAccess().getHubParserRuleCall_1()); }
+{ after(grammarAccess.getRecursiveAccess().getHubParserRuleCall_0()); }
 )
 
     |(
-{ before(grammarAccess.getRecursiveAccess().getDialogLineParserRuleCall_2()); }
-	ruleDialogLine
-{ after(grammarAccess.getRecursiveAccess().getDialogLineParserRuleCall_2()); }
+{ before(grammarAccess.getRecursiveAccess().getStatementParserRuleCall_1()); }
+	ruleStatement
+{ after(grammarAccess.getRecursiveAccess().getStatementParserRuleCall_1()); }
 )
 
 ;
@@ -1076,27 +1070,27 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__AbstractChoiceDialog__Alternatives
+rule__HubFragment__Alternatives
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getAbstractChoiceDialogAccess().getChoiceDialogParserRuleCall_0()); }
+{ before(grammarAccess.getHubFragmentAccess().getChoiceDialogParserRuleCall_0()); }
 	ruleChoiceDialog
-{ after(grammarAccess.getAbstractChoiceDialogAccess().getChoiceDialogParserRuleCall_0()); }
+{ after(grammarAccess.getHubFragmentAccess().getChoiceDialogParserRuleCall_0()); }
 )
 
     |(
-{ before(grammarAccess.getAbstractChoiceDialogAccess().getConditionalChoiceDialogParserRuleCall_1()); }
+{ before(grammarAccess.getHubFragmentAccess().getConditionalChoiceDialogParserRuleCall_1()); }
 	ruleConditionalChoiceDialog
-{ after(grammarAccess.getAbstractChoiceDialogAccess().getConditionalChoiceDialogParserRuleCall_1()); }
+{ after(grammarAccess.getHubFragmentAccess().getConditionalChoiceDialogParserRuleCall_1()); }
 )
 
     |(
-{ before(grammarAccess.getAbstractChoiceDialogAccess().getConditionalParserRuleCall_2()); }
-	ruleConditional
-{ after(grammarAccess.getAbstractChoiceDialogAccess().getConditionalParserRuleCall_2()); }
+{ before(grammarAccess.getHubFragmentAccess().getStatementParserRuleCall_2()); }
+	ruleStatement
+{ after(grammarAccess.getHubFragmentAccess().getStatementParserRuleCall_2()); }
 )
 
 ;
@@ -3296,9 +3290,9 @@ rule__Hub__Group__4__Impl
     }
 :
 (
-{ before(grammarAccess.getHubAccess().getChoiceDialogsAssignment_4()); }
-(rule__Hub__ChoiceDialogsAssignment_4)*
-{ after(grammarAccess.getHubAccess().getChoiceDialogsAssignment_4()); }
+{ before(grammarAccess.getHubAccess().getHubFragmentsAssignment_4()); }
+(rule__Hub__HubFragmentsAssignment_4)*
+{ after(grammarAccess.getHubAccess().getHubFragmentsAssignment_4()); }
 )
 
 ;
@@ -6650,14 +6644,14 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Hub__ChoiceDialogsAssignment_4
+rule__Hub__HubFragmentsAssignment_4
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getHubAccess().getChoiceDialogsAbstractChoiceDialogParserRuleCall_4_0()); }
-	ruleAbstractChoiceDialog{ after(grammarAccess.getHubAccess().getChoiceDialogsAbstractChoiceDialogParserRuleCall_4_0()); }
+{ before(grammarAccess.getHubAccess().getHubFragmentsHubFragmentParserRuleCall_4_0()); }
+	ruleHubFragment{ after(grammarAccess.getHubAccess().getHubFragmentsHubFragmentParserRuleCall_4_0()); }
 )
 
 ;

@@ -80,7 +80,7 @@ public class DialogScriptFactoryImpl extends EFactoryImpl implements DialogScrip
       case DialogScriptPackage.OTHER_TIMES: return createOtherTimes();
       case DialogScriptPackage.PARTING_LINES: return createPartingLines();
       case DialogScriptPackage.HUB: return createHub();
-      case DialogScriptPackage.ABSTRACT_CHOICE_DIALOG: return createAbstractChoiceDialog();
+      case DialogScriptPackage.HUB_FRAGMENT: return createHubFragment();
       case DialogScriptPackage.CONDITIONAL_CHOICE_DIALOG: return createConditionalChoiceDialog();
       case DialogScriptPackage.OTHERWISE_CHOICE: return createOtherwiseChoice();
       case DialogScriptPackage.CHOICE_DIALOG: return createChoiceDialog();
@@ -311,10 +311,10 @@ public class DialogScriptFactoryImpl extends EFactoryImpl implements DialogScrip
    * <!-- end-user-doc -->
    * @generated
    */
-  public AbstractChoiceDialog createAbstractChoiceDialog()
+  public HubFragment createHubFragment()
   {
-    AbstractChoiceDialogImpl abstractChoiceDialog = new AbstractChoiceDialogImpl();
-    return abstractChoiceDialog;
+    HubFragmentImpl hubFragment = new HubFragmentImpl();
+    return hubFragment;
   }
 
   /**

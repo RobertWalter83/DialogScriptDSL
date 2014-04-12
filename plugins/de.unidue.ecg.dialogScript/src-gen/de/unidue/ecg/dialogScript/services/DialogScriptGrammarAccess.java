@@ -377,25 +377,21 @@ public class DialogScriptGrammarAccess extends AbstractGrammarElementFinder {
 	public class RecursiveElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Recursive");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cConditionalParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cHubParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		private final RuleCall cDialogLineParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final RuleCall cHubParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cStatementParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
 		//Recursive:
-		//	Conditional | Hub | DialogLine;
+		//	Hub | Statement;
 		public ParserRule getRule() { return rule; }
 
-		//Conditional | Hub | DialogLine
+		//Hub | Statement
 		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//Conditional
-		public RuleCall getConditionalParserRuleCall_0() { return cConditionalParserRuleCall_0; }
-
 		//Hub
-		public RuleCall getHubParserRuleCall_1() { return cHubParserRuleCall_1; }
+		public RuleCall getHubParserRuleCall_0() { return cHubParserRuleCall_0; }
 
-		//DialogLine
-		public RuleCall getDialogLineParserRuleCall_2() { return cDialogLineParserRuleCall_2; }
+		//Statement
+		public RuleCall getStatementParserRuleCall_1() { return cStatementParserRuleCall_1; }
 	}
 
 	public class DefaultsElements extends AbstractParserRuleElementFinder {
@@ -576,15 +572,15 @@ public class DialogScriptGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cNameStringIDParserRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
 		private final Assignment cHubCommentAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cHubCommentCOMMENTTerminalRuleCall_3_0 = (RuleCall)cHubCommentAssignment_3.eContents().get(0);
-		private final Assignment cChoiceDialogsAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cChoiceDialogsAbstractChoiceDialogParserRuleCall_4_0 = (RuleCall)cChoiceDialogsAssignment_4.eContents().get(0);
+		private final Assignment cHubFragmentsAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cHubFragmentsHubFragmentParserRuleCall_4_0 = (RuleCall)cHubFragmentsAssignment_4.eContents().get(0);
 		private final Keyword cEndKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		//Hub:
-		//	isHidden?="hidden"? "hub" name=StringID hubComment=COMMENT? choiceDialogs+=AbstractChoiceDialog* "end";
+		//	isHidden?="hidden"? "hub" name=StringID hubComment=COMMENT? hubFragments+=HubFragment* "end";
 		public ParserRule getRule() { return rule; }
 
-		//isHidden?="hidden"? "hub" name=StringID hubComment=COMMENT? choiceDialogs+=AbstractChoiceDialog* "end"
+		//isHidden?="hidden"? "hub" name=StringID hubComment=COMMENT? hubFragments+=HubFragment* "end"
 		public Group getGroup() { return cGroup; }
 
 		//isHidden?="hidden"?
@@ -608,28 +604,28 @@ public class DialogScriptGrammarAccess extends AbstractGrammarElementFinder {
 		//COMMENT
 		public RuleCall getHubCommentCOMMENTTerminalRuleCall_3_0() { return cHubCommentCOMMENTTerminalRuleCall_3_0; }
 
-		//choiceDialogs+=AbstractChoiceDialog*
-		public Assignment getChoiceDialogsAssignment_4() { return cChoiceDialogsAssignment_4; }
+		//hubFragments+=HubFragment*
+		public Assignment getHubFragmentsAssignment_4() { return cHubFragmentsAssignment_4; }
 
-		//AbstractChoiceDialog
-		public RuleCall getChoiceDialogsAbstractChoiceDialogParserRuleCall_4_0() { return cChoiceDialogsAbstractChoiceDialogParserRuleCall_4_0; }
+		//HubFragment
+		public RuleCall getHubFragmentsHubFragmentParserRuleCall_4_0() { return cHubFragmentsHubFragmentParserRuleCall_4_0; }
 
 		//"end"
 		public Keyword getEndKeyword_5() { return cEndKeyword_5; }
 	}
 
-	public class AbstractChoiceDialogElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "AbstractChoiceDialog");
+	public class HubFragmentElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "HubFragment");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cChoiceDialogParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cConditionalChoiceDialogParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		private final RuleCall cConditionalParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final RuleCall cStatementParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		
-		//AbstractChoiceDialog:
-		//	ChoiceDialog | ConditionalChoiceDialog | Conditional;
+		//HubFragment:
+		//	ChoiceDialog | ConditionalChoiceDialog | Statement;
 		public ParserRule getRule() { return rule; }
 
-		//ChoiceDialog | ConditionalChoiceDialog | Conditional
+		//ChoiceDialog | ConditionalChoiceDialog | Statement
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//ChoiceDialog
@@ -638,8 +634,8 @@ public class DialogScriptGrammarAccess extends AbstractGrammarElementFinder {
 		//ConditionalChoiceDialog
 		public RuleCall getConditionalChoiceDialogParserRuleCall_1() { return cConditionalChoiceDialogParserRuleCall_1; }
 
-		//Conditional
-		public RuleCall getConditionalParserRuleCall_2() { return cConditionalParserRuleCall_2; }
+		//Statement
+		public RuleCall getStatementParserRuleCall_2() { return cStatementParserRuleCall_2; }
 	}
 
 	public class ConditionalChoiceDialogElements extends AbstractParserRuleElementFinder {
@@ -1538,7 +1534,7 @@ public class DialogScriptGrammarAccess extends AbstractGrammarElementFinder {
 	private OtherTimesElements pOtherTimes;
 	private PartingLinesElements pPartingLines;
 	private HubElements pHub;
-	private AbstractChoiceDialogElements pAbstractChoiceDialog;
+	private HubFragmentElements pHubFragment;
 	private ConditionalChoiceDialogElements pConditionalChoiceDialog;
 	private OtherwiseChoiceElements pOtherwiseChoice;
 	private StringIDElements pStringID;
@@ -1695,7 +1691,7 @@ public class DialogScriptGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Recursive:
-	//	Conditional | Hub | DialogLine;
+	//	Hub | Statement;
 	public RecursiveElements getRecursiveAccess() {
 		return (pRecursive != null) ? pRecursive : (pRecursive = new RecursiveElements());
 	}
@@ -1745,7 +1741,7 @@ public class DialogScriptGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Hub:
-	//	isHidden?="hidden"? "hub" name=StringID hubComment=COMMENT? choiceDialogs+=AbstractChoiceDialog* "end";
+	//	isHidden?="hidden"? "hub" name=StringID hubComment=COMMENT? hubFragments+=HubFragment* "end";
 	public HubElements getHubAccess() {
 		return (pHub != null) ? pHub : (pHub = new HubElements());
 	}
@@ -1754,14 +1750,14 @@ public class DialogScriptGrammarAccess extends AbstractGrammarElementFinder {
 		return getHubAccess().getRule();
 	}
 
-	//AbstractChoiceDialog:
-	//	ChoiceDialog | ConditionalChoiceDialog | Conditional;
-	public AbstractChoiceDialogElements getAbstractChoiceDialogAccess() {
-		return (pAbstractChoiceDialog != null) ? pAbstractChoiceDialog : (pAbstractChoiceDialog = new AbstractChoiceDialogElements());
+	//HubFragment:
+	//	ChoiceDialog | ConditionalChoiceDialog | Statement;
+	public HubFragmentElements getHubFragmentAccess() {
+		return (pHubFragment != null) ? pHubFragment : (pHubFragment = new HubFragmentElements());
 	}
 	
-	public ParserRule getAbstractChoiceDialogRule() {
-		return getAbstractChoiceDialogAccess().getRule();
+	public ParserRule getHubFragmentRule() {
+		return getHubFragmentAccess().getRule();
 	}
 
 	//ConditionalChoiceDialog:

@@ -1,24 +1,28 @@
 package de.unidue.ecg.dialogScript.ui.views
 
 import com.google.inject.Singleton
+import de.unidue.ecg.dialogScript.dialogScript.ChoiceDialog
 import de.unidue.ecg.dialogScript.ui.graph.filters.GraphNodeFilter
 import de.unidue.ecg.dialogScript.ui.graph.providers.GraphLabelProvider
 import de.unidue.ecg.dialogScript.ui.graph.providers.GraphNodeContentProvider
+import java.util.List
+import java.util.Map
+import org.eclipse.emf.ecore.EObject
 import org.eclipse.emf.ecore.resource.Resource
+import org.eclipse.emf.ecore.util.EcoreUtil
+import org.eclipse.gef4.geometry.planar.Dimension
 import org.eclipse.gef4.layout.algorithms.TreeLayoutAlgorithm
 import org.eclipse.gef4.zest.core.viewers.GraphViewer
 import org.eclipse.gef4.zest.core.viewers.IZoomableWorkbenchPart
 import org.eclipse.gef4.zest.core.viewers.ZoomContributionViewItem
+import org.eclipse.gef4.zest.core.widgets.ZestStyles
 import org.eclipse.swt.SWT
 import org.eclipse.swt.widgets.Composite
+import org.eclipse.swt.widgets.Display
 import org.eclipse.ui.part.ViewPart
 import org.eclipse.xtext.EcoreUtil2
-import org.eclipse.swt.widgets.Display
-import org.eclipse.gef4.geometry.planar.Dimension
-import org.eclipse.gef4.zest.core.widgets.ZestStyles
-import java.util.List
-import org.eclipse.emf.ecore.EObject
-import org.eclipse.emf.ecore.util.EcoreUtil
+import org.eclipse.xtext.xbase.lib.Pair
+import org.eclipse.gef4.layout.algorithms.SpaceTreeLayoutAlgorithm
 
 @Singleton
 class DialogGraphView extends ViewPart implements IZoomableWorkbenchPart {
@@ -30,6 +34,17 @@ class DialogGraphView extends ViewPart implements IZoomableWorkbenchPart {
 	var List<EObject> currentModelAsFlatList
 	var Dimension vertNodeSpace
 	var Dimension horizNodeSpace
+	var Map<Pair<EObject, EObject>, ChoiceDialog> choiceHelperMap = <Pair<EObject, EObject>, ChoiceDialog>newHashMap()
+	
+	def addChoiceHelper(EObject src, EObject dest, ChoiceDialog cd) {
+		val key = new Pair(src, dest)
+		if(!choiceHelperMap.containsKey(key))
+			choiceHelperMap.put(key, cd)
+	}
+
+	def getChoiceHelperMap() {
+		choiceHelperMap
+	}
 
 	def getGraphViewer() {
 		graphViewer
@@ -37,7 +52,7 @@ class DialogGraphView extends ViewPart implements IZoomableWorkbenchPart {
 
 	override createPartControl(Composite parent) {
 		graphViewer = new GraphViewer(parent, SWT.BORDER)
-		graphViewer.contentProvider = new GraphNodeContentProvider
+		graphViewer.contentProvider = new GraphNodeContentProvider(this) 
 		graphViewer.labelProvider = new GraphLabelProvider(this)
 		graphViewer.setConnectionStyle(ZestStyles.CONNECTIONS_DIRECTED)
 		val filter = new GraphNodeFilter
@@ -48,13 +63,12 @@ class DialogGraphView extends ViewPart implements IZoomableWorkbenchPart {
 
 		vertNodeSpace = new Dimension(120d, 100d)
 		horizNodeSpace = new Dimension(160d, 100d)
-		defaultAlgorithm = new TreeLayoutAlgorithm(TreeLayoutAlgorithm.TOP_DOWN, vertNodeSpace)
+//		defaultAlgorithm = new TreeLayoutAlgorithm(TreeLayoutAlgorithm.TOP_DOWN, vertNodeSpace)
+//		graphViewer.setLayoutAlgorithm(defaultAlgorithm)
 
-		//		defaultAlgorithm = new SpaceTreeLayoutAlgorithm(TreeLayoutAlgorithm.TOP_DOWN, true)
-		//		defaultAlgorithm.setLayerGap(40)
-		//		defaultAlgorithm.setLeafGap(30)
-		//		defaultAlgorithm.setResizing(true)
-		graphViewer.setLayoutAlgorithm(defaultAlgorithm)
+		val stl = new SpaceTreeLayoutAlgorithm(TreeLayoutAlgorithm.TOP_DOWN, false)
+		graphViewer.setLayoutAlgorithm(stl)
+		
 
 		fillToolBar
 	}
@@ -71,13 +85,13 @@ class DialogGraphView extends ViewPart implements IZoomableWorkbenchPart {
 	var layout = 1
 
 	var boolean doGraphUpdate = true
-	
+
 	var boolean abbreviate = true
-	
+
 	def getAbbreviate() {
 		abbreviate
 	}
-	
+
 	def setAbbreviate(boolean value) {
 		abbreviate = value
 	}
@@ -196,10 +210,10 @@ class DialogGraphView extends ViewPart implements IZoomableWorkbenchPart {
 
 	def toggleGraphUpdate() {
 		this.doGraphUpdate = !this.doGraphUpdate
-		if(this.doGraphUpdate)
+		if (this.doGraphUpdate)
 			this.graphViewer.applyLayout
 	}
-	
+
 	def toggleTextAbbreviation() {
 		this.abbreviate = !this.abbreviate
 		this.graphViewer.refresh(true)

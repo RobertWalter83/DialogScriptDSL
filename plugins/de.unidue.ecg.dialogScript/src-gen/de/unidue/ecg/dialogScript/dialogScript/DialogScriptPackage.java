@@ -604,13 +604,13 @@ public interface DialogScriptPackage extends EPackage
   int HUB__HUB_COMMENT = RECURSIVE_FEATURE_COUNT + 2;
 
   /**
-   * The feature id for the '<em><b>Choice Dialogs</b></em>' containment reference list.
+   * The feature id for the '<em><b>Hub Fragments</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int HUB__CHOICE_DIALOGS = RECURSIVE_FEATURE_COUNT + 3;
+  int HUB__HUB_FRAGMENTS = RECURSIVE_FEATURE_COUNT + 3;
 
   /**
    * The number of structural features of the '<em>Hub</em>' class.
@@ -622,32 +622,23 @@ public interface DialogScriptPackage extends EPackage
   int HUB_FEATURE_COUNT = RECURSIVE_FEATURE_COUNT + 4;
 
   /**
-   * The meta object id for the '{@link de.unidue.ecg.dialogScript.dialogScript.impl.AbstractChoiceDialogImpl <em>Abstract Choice Dialog</em>}' class.
+   * The meta object id for the '{@link de.unidue.ecg.dialogScript.dialogScript.impl.HubFragmentImpl <em>Hub Fragment</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see de.unidue.ecg.dialogScript.dialogScript.impl.AbstractChoiceDialogImpl
-   * @see de.unidue.ecg.dialogScript.dialogScript.impl.DialogScriptPackageImpl#getAbstractChoiceDialog()
+   * @see de.unidue.ecg.dialogScript.dialogScript.impl.HubFragmentImpl
+   * @see de.unidue.ecg.dialogScript.dialogScript.impl.DialogScriptPackageImpl#getHubFragment()
    * @generated
    */
-  int ABSTRACT_CHOICE_DIALOG = 15;
+  int HUB_FRAGMENT = 15;
 
   /**
-   * The feature id for the '<em><b>Modifiers</b></em>' attribute list.
+   * The number of structural features of the '<em>Hub Fragment</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ABSTRACT_CHOICE_DIALOG__MODIFIERS = 0;
-
-  /**
-   * The number of structural features of the '<em>Abstract Choice Dialog</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ABSTRACT_CHOICE_DIALOG_FEATURE_COUNT = 1;
+  int HUB_FRAGMENT_FEATURE_COUNT = 0;
 
   /**
    * The meta object id for the '{@link de.unidue.ecg.dialogScript.dialogScript.impl.ConditionalChoiceDialogImpl <em>Conditional Choice Dialog</em>}' class.
@@ -666,7 +657,7 @@ public interface DialogScriptPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONDITIONAL_CHOICE_DIALOG__MODIFIERS = ABSTRACT_CHOICE_DIALOG__MODIFIERS;
+  int CONDITIONAL_CHOICE_DIALOG__MODIFIERS = HUB_FRAGMENT_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Condition List</b></em>' containment reference.
@@ -675,7 +666,7 @@ public interface DialogScriptPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONDITIONAL_CHOICE_DIALOG__CONDITION_LIST = ABSTRACT_CHOICE_DIALOG_FEATURE_COUNT + 0;
+  int CONDITIONAL_CHOICE_DIALOG__CONDITION_LIST = HUB_FRAGMENT_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -684,7 +675,7 @@ public interface DialogScriptPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONDITIONAL_CHOICE_DIALOG__COMMENT = ABSTRACT_CHOICE_DIALOG_FEATURE_COUNT + 1;
+  int CONDITIONAL_CHOICE_DIALOG__COMMENT = HUB_FRAGMENT_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Choice Dialogs</b></em>' containment reference list.
@@ -693,7 +684,7 @@ public interface DialogScriptPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONDITIONAL_CHOICE_DIALOG__CHOICE_DIALOGS = ABSTRACT_CHOICE_DIALOG_FEATURE_COUNT + 2;
+  int CONDITIONAL_CHOICE_DIALOG__CHOICE_DIALOGS = HUB_FRAGMENT_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Otherwise Choices</b></em>' containment reference list.
@@ -702,7 +693,7 @@ public interface DialogScriptPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONDITIONAL_CHOICE_DIALOG__OTHERWISE_CHOICES = ABSTRACT_CHOICE_DIALOG_FEATURE_COUNT + 3;
+  int CONDITIONAL_CHOICE_DIALOG__OTHERWISE_CHOICES = HUB_FRAGMENT_FEATURE_COUNT + 4;
 
   /**
    * The number of structural features of the '<em>Conditional Choice Dialog</em>' class.
@@ -711,7 +702,7 @@ public interface DialogScriptPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONDITIONAL_CHOICE_DIALOG_FEATURE_COUNT = ABSTRACT_CHOICE_DIALOG_FEATURE_COUNT + 4;
+  int CONDITIONAL_CHOICE_DIALOG_FEATURE_COUNT = HUB_FRAGMENT_FEATURE_COUNT + 5;
 
   /**
    * The meta object id for the '{@link de.unidue.ecg.dialogScript.dialogScript.impl.OtherwiseChoiceImpl <em>Otherwise Choice</em>}' class.
@@ -785,7 +776,7 @@ public interface DialogScriptPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CHOICE_DIALOG__MODIFIERS = ABSTRACT_CHOICE_DIALOG__MODIFIERS;
+  int CHOICE_DIALOG__MODIFIERS = HUB_FRAGMENT_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -794,7 +785,7 @@ public interface DialogScriptPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CHOICE_DIALOG__NAME = ABSTRACT_CHOICE_DIALOG_FEATURE_COUNT + 0;
+  int CHOICE_DIALOG__NAME = HUB_FRAGMENT_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Choice Comment</b></em>' attribute.
@@ -803,7 +794,7 @@ public interface DialogScriptPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CHOICE_DIALOG__CHOICE_COMMENT = ABSTRACT_CHOICE_DIALOG_FEATURE_COUNT + 1;
+  int CHOICE_DIALOG__CHOICE_COMMENT = HUB_FRAGMENT_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Body</b></em>' containment reference.
@@ -812,7 +803,7 @@ public interface DialogScriptPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CHOICE_DIALOG__BODY = ABSTRACT_CHOICE_DIALOG_FEATURE_COUNT + 2;
+  int CHOICE_DIALOG__BODY = HUB_FRAGMENT_FEATURE_COUNT + 3;
 
   /**
    * The number of structural features of the '<em>Choice Dialog</em>' class.
@@ -821,7 +812,7 @@ public interface DialogScriptPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CHOICE_DIALOG_FEATURE_COUNT = ABSTRACT_CHOICE_DIALOG_FEATURE_COUNT + 3;
+  int CHOICE_DIALOG_FEATURE_COUNT = HUB_FRAGMENT_FEATURE_COUNT + 4;
 
   /**
    * The meta object id for the '{@link de.unidue.ecg.dialogScript.dialogScript.impl.ConditionListImpl <em>Condition List</em>}' class.
@@ -964,6 +955,34 @@ public interface DialogScriptPackage extends EPackage
   int EXIT_FEATURE_COUNT = JUMP_FEATURE_COUNT + 2;
 
   /**
+   * The meta object id for the '{@link de.unidue.ecg.dialogScript.dialogScript.impl.StatementImpl <em>Statement</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.unidue.ecg.dialogScript.dialogScript.impl.StatementImpl
+   * @see de.unidue.ecg.dialogScript.dialogScript.impl.DialogScriptPackageImpl#getStatement()
+   * @generated
+   */
+  int STATEMENT = 28;
+
+  /**
+   * The feature id for the '<em><b>Comment</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STATEMENT__COMMENT = RECURSIVE_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Statement</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STATEMENT_FEATURE_COUNT = RECURSIVE_FEATURE_COUNT + 1;
+
+  /**
    * The meta object id for the '{@link de.unidue.ecg.dialogScript.dialogScript.impl.ConditionalImpl <em>Conditional</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -974,13 +993,22 @@ public interface DialogScriptPackage extends EPackage
   int CONDITIONAL = 24;
 
   /**
+   * The feature id for the '<em><b>Comment</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONDITIONAL__COMMENT = STATEMENT__COMMENT;
+
+  /**
    * The feature id for the '<em><b>Modifiers</b></em>' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CONDITIONAL__MODIFIERS = RECURSIVE_FEATURE_COUNT + 0;
+  int CONDITIONAL__MODIFIERS = STATEMENT_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Condition List</b></em>' containment reference.
@@ -989,16 +1017,7 @@ public interface DialogScriptPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONDITIONAL__CONDITION_LIST = RECURSIVE_FEATURE_COUNT + 1;
-
-  /**
-   * The feature id for the '<em><b>Comment</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CONDITIONAL__COMMENT = RECURSIVE_FEATURE_COUNT + 2;
+  int CONDITIONAL__CONDITION_LIST = STATEMENT_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Body</b></em>' containment reference.
@@ -1007,7 +1026,7 @@ public interface DialogScriptPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONDITIONAL__BODY = RECURSIVE_FEATURE_COUNT + 3;
+  int CONDITIONAL__BODY = STATEMENT_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Otherwise List</b></em>' containment reference list.
@@ -1016,7 +1035,7 @@ public interface DialogScriptPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONDITIONAL__OTHERWISE_LIST = RECURSIVE_FEATURE_COUNT + 4;
+  int CONDITIONAL__OTHERWISE_LIST = STATEMENT_FEATURE_COUNT + 3;
 
   /**
    * The number of structural features of the '<em>Conditional</em>' class.
@@ -1025,7 +1044,7 @@ public interface DialogScriptPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONDITIONAL_FEATURE_COUNT = RECURSIVE_FEATURE_COUNT + 5;
+  int CONDITIONAL_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 4;
 
   /**
    * The meta object id for the '{@link de.unidue.ecg.dialogScript.dialogScript.impl.SwitchListImpl <em>Switch List</em>}' class.
@@ -1146,25 +1165,6 @@ public interface DialogScriptPackage extends EPackage
    * @ordered
    */
   int CONDITIONAL_BODY_FEATURE_COUNT = 4;
-
-  /**
-   * The meta object id for the '{@link de.unidue.ecg.dialogScript.dialogScript.impl.StatementImpl <em>Statement</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see de.unidue.ecg.dialogScript.dialogScript.impl.StatementImpl
-   * @see de.unidue.ecg.dialogScript.dialogScript.impl.DialogScriptPackageImpl#getStatement()
-   * @generated
-   */
-  int STATEMENT = 28;
-
-  /**
-   * The number of structural features of the '<em>Statement</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int STATEMENT_FEATURE_COUNT = 0;
 
   /**
    * The meta object id for the '{@link de.unidue.ecg.dialogScript.dialogScript.impl.OtherwiseImpl <em>Otherwise</em>}' class.
@@ -1306,13 +1306,22 @@ public interface DialogScriptPackage extends EPackage
   int DIALOG_LINE = 32;
 
   /**
+   * The feature id for the '<em><b>Comment</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DIALOG_LINE__COMMENT = STATEMENT__COMMENT;
+
+  /**
    * The feature id for the '<em><b>Character</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int DIALOG_LINE__CHARACTER = RECURSIVE_FEATURE_COUNT + 0;
+  int DIALOG_LINE__CHARACTER = STATEMENT_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Lines</b></em>' attribute.
@@ -1321,16 +1330,7 @@ public interface DialogScriptPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DIALOG_LINE__LINES = RECURSIVE_FEATURE_COUNT + 1;
-
-  /**
-   * The feature id for the '<em><b>Comment</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DIALOG_LINE__COMMENT = RECURSIVE_FEATURE_COUNT + 2;
+  int DIALOG_LINE__LINES = STATEMENT_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Dialog Line</em>' class.
@@ -1339,7 +1339,7 @@ public interface DialogScriptPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DIALOG_LINE_FEATURE_COUNT = RECURSIVE_FEATURE_COUNT + 3;
+  int DIALOG_LINE_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link de.unidue.ecg.dialogScript.dialogScript.Modifier <em>Modifier</em>}' enum.
@@ -1843,36 +1843,25 @@ public interface DialogScriptPackage extends EPackage
   EAttribute getHub_HubComment();
 
   /**
-   * Returns the meta object for the containment reference list '{@link de.unidue.ecg.dialogScript.dialogScript.Hub#getChoiceDialogs <em>Choice Dialogs</em>}'.
+   * Returns the meta object for the containment reference list '{@link de.unidue.ecg.dialogScript.dialogScript.Hub#getHubFragments <em>Hub Fragments</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Choice Dialogs</em>'.
-   * @see de.unidue.ecg.dialogScript.dialogScript.Hub#getChoiceDialogs()
+   * @return the meta object for the containment reference list '<em>Hub Fragments</em>'.
+   * @see de.unidue.ecg.dialogScript.dialogScript.Hub#getHubFragments()
    * @see #getHub()
    * @generated
    */
-  EReference getHub_ChoiceDialogs();
+  EReference getHub_HubFragments();
 
   /**
-   * Returns the meta object for class '{@link de.unidue.ecg.dialogScript.dialogScript.AbstractChoiceDialog <em>Abstract Choice Dialog</em>}'.
+   * Returns the meta object for class '{@link de.unidue.ecg.dialogScript.dialogScript.HubFragment <em>Hub Fragment</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Abstract Choice Dialog</em>'.
-   * @see de.unidue.ecg.dialogScript.dialogScript.AbstractChoiceDialog
+   * @return the meta object for class '<em>Hub Fragment</em>'.
+   * @see de.unidue.ecg.dialogScript.dialogScript.HubFragment
    * @generated
    */
-  EClass getAbstractChoiceDialog();
-
-  /**
-   * Returns the meta object for the attribute list '{@link de.unidue.ecg.dialogScript.dialogScript.AbstractChoiceDialog#getModifiers <em>Modifiers</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Modifiers</em>'.
-   * @see de.unidue.ecg.dialogScript.dialogScript.AbstractChoiceDialog#getModifiers()
-   * @see #getAbstractChoiceDialog()
-   * @generated
-   */
-  EAttribute getAbstractChoiceDialog_Modifiers();
+  EClass getHubFragment();
 
   /**
    * Returns the meta object for class '{@link de.unidue.ecg.dialogScript.dialogScript.ConditionalChoiceDialog <em>Conditional Choice Dialog</em>}'.
@@ -1883,6 +1872,17 @@ public interface DialogScriptPackage extends EPackage
    * @generated
    */
   EClass getConditionalChoiceDialog();
+
+  /**
+   * Returns the meta object for the attribute list '{@link de.unidue.ecg.dialogScript.dialogScript.ConditionalChoiceDialog#getModifiers <em>Modifiers</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Modifiers</em>'.
+   * @see de.unidue.ecg.dialogScript.dialogScript.ConditionalChoiceDialog#getModifiers()
+   * @see #getConditionalChoiceDialog()
+   * @generated
+   */
+  EAttribute getConditionalChoiceDialog_Modifiers();
 
   /**
    * Returns the meta object for the containment reference '{@link de.unidue.ecg.dialogScript.dialogScript.ConditionalChoiceDialog#getConditionList <em>Condition List</em>}'.
@@ -1991,6 +1991,17 @@ public interface DialogScriptPackage extends EPackage
    * @generated
    */
   EClass getChoiceDialog();
+
+  /**
+   * Returns the meta object for the attribute list '{@link de.unidue.ecg.dialogScript.dialogScript.ChoiceDialog#getModifiers <em>Modifiers</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Modifiers</em>'.
+   * @see de.unidue.ecg.dialogScript.dialogScript.ChoiceDialog#getModifiers()
+   * @see #getChoiceDialog()
+   * @generated
+   */
+  EAttribute getChoiceDialog_Modifiers();
 
   /**
    * Returns the meta object for the attribute '{@link de.unidue.ecg.dialogScript.dialogScript.ChoiceDialog#getName <em>Name</em>}'.
@@ -2141,6 +2152,17 @@ public interface DialogScriptPackage extends EPackage
   EClass getConditional();
 
   /**
+   * Returns the meta object for the attribute list '{@link de.unidue.ecg.dialogScript.dialogScript.Conditional#getModifiers <em>Modifiers</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Modifiers</em>'.
+   * @see de.unidue.ecg.dialogScript.dialogScript.Conditional#getModifiers()
+   * @see #getConditional()
+   * @generated
+   */
+  EAttribute getConditional_Modifiers();
+
+  /**
    * Returns the meta object for the containment reference '{@link de.unidue.ecg.dialogScript.dialogScript.Conditional#getConditionList <em>Condition List</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2150,17 +2172,6 @@ public interface DialogScriptPackage extends EPackage
    * @generated
    */
   EReference getConditional_ConditionList();
-
-  /**
-   * Returns the meta object for the attribute '{@link de.unidue.ecg.dialogScript.dialogScript.Conditional#getComment <em>Comment</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Comment</em>'.
-   * @see de.unidue.ecg.dialogScript.dialogScript.Conditional#getComment()
-   * @see #getConditional()
-   * @generated
-   */
-  EAttribute getConditional_Comment();
 
   /**
    * Returns the meta object for the containment reference '{@link de.unidue.ecg.dialogScript.dialogScript.Conditional#getBody <em>Body</em>}'.
@@ -2300,6 +2311,17 @@ public interface DialogScriptPackage extends EPackage
    * @generated
    */
   EClass getStatement();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.unidue.ecg.dialogScript.dialogScript.Statement#getComment <em>Comment</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Comment</em>'.
+   * @see de.unidue.ecg.dialogScript.dialogScript.Statement#getComment()
+   * @see #getStatement()
+   * @generated
+   */
+  EAttribute getStatement_Comment();
 
   /**
    * Returns the meta object for class '{@link de.unidue.ecg.dialogScript.dialogScript.Otherwise <em>Otherwise</em>}'.
@@ -2450,17 +2472,6 @@ public interface DialogScriptPackage extends EPackage
    * @generated
    */
   EAttribute getDialogLine_Lines();
-
-  /**
-   * Returns the meta object for the attribute '{@link de.unidue.ecg.dialogScript.dialogScript.DialogLine#getComment <em>Comment</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Comment</em>'.
-   * @see de.unidue.ecg.dialogScript.dialogScript.DialogLine#getComment()
-   * @see #getDialogLine()
-   * @generated
-   */
-  EAttribute getDialogLine_Comment();
 
   /**
    * Returns the meta object for enum '{@link de.unidue.ecg.dialogScript.dialogScript.Modifier <em>Modifier</em>}'.
@@ -2896,30 +2907,22 @@ public interface DialogScriptPackage extends EPackage
     EAttribute HUB__HUB_COMMENT = eINSTANCE.getHub_HubComment();
 
     /**
-     * The meta object literal for the '<em><b>Choice Dialogs</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Hub Fragments</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference HUB__CHOICE_DIALOGS = eINSTANCE.getHub_ChoiceDialogs();
+    EReference HUB__HUB_FRAGMENTS = eINSTANCE.getHub_HubFragments();
 
     /**
-     * The meta object literal for the '{@link de.unidue.ecg.dialogScript.dialogScript.impl.AbstractChoiceDialogImpl <em>Abstract Choice Dialog</em>}' class.
+     * The meta object literal for the '{@link de.unidue.ecg.dialogScript.dialogScript.impl.HubFragmentImpl <em>Hub Fragment</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see de.unidue.ecg.dialogScript.dialogScript.impl.AbstractChoiceDialogImpl
-     * @see de.unidue.ecg.dialogScript.dialogScript.impl.DialogScriptPackageImpl#getAbstractChoiceDialog()
+     * @see de.unidue.ecg.dialogScript.dialogScript.impl.HubFragmentImpl
+     * @see de.unidue.ecg.dialogScript.dialogScript.impl.DialogScriptPackageImpl#getHubFragment()
      * @generated
      */
-    EClass ABSTRACT_CHOICE_DIALOG = eINSTANCE.getAbstractChoiceDialog();
-
-    /**
-     * The meta object literal for the '<em><b>Modifiers</b></em>' attribute list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute ABSTRACT_CHOICE_DIALOG__MODIFIERS = eINSTANCE.getAbstractChoiceDialog_Modifiers();
+    EClass HUB_FRAGMENT = eINSTANCE.getHubFragment();
 
     /**
      * The meta object literal for the '{@link de.unidue.ecg.dialogScript.dialogScript.impl.ConditionalChoiceDialogImpl <em>Conditional Choice Dialog</em>}' class.
@@ -2930,6 +2933,14 @@ public interface DialogScriptPackage extends EPackage
      * @generated
      */
     EClass CONDITIONAL_CHOICE_DIALOG = eINSTANCE.getConditionalChoiceDialog();
+
+    /**
+     * The meta object literal for the '<em><b>Modifiers</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CONDITIONAL_CHOICE_DIALOG__MODIFIERS = eINSTANCE.getConditionalChoiceDialog_Modifiers();
 
     /**
      * The meta object literal for the '<em><b>Condition List</b></em>' containment reference feature.
@@ -3014,6 +3025,14 @@ public interface DialogScriptPackage extends EPackage
      * @generated
      */
     EClass CHOICE_DIALOG = eINSTANCE.getChoiceDialog();
+
+    /**
+     * The meta object literal for the '<em><b>Modifiers</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CHOICE_DIALOG__MODIFIERS = eINSTANCE.getChoiceDialog_Modifiers();
 
     /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -3140,20 +3159,20 @@ public interface DialogScriptPackage extends EPackage
     EClass CONDITIONAL = eINSTANCE.getConditional();
 
     /**
+     * The meta object literal for the '<em><b>Modifiers</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CONDITIONAL__MODIFIERS = eINSTANCE.getConditional_Modifiers();
+
+    /**
      * The meta object literal for the '<em><b>Condition List</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
     EReference CONDITIONAL__CONDITION_LIST = eINSTANCE.getConditional_ConditionList();
-
-    /**
-     * The meta object literal for the '<em><b>Comment</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute CONDITIONAL__COMMENT = eINSTANCE.getConditional_Comment();
 
     /**
      * The meta object literal for the '<em><b>Body</b></em>' containment reference feature.
@@ -3266,6 +3285,14 @@ public interface DialogScriptPackage extends EPackage
      * @generated
      */
     EClass STATEMENT = eINSTANCE.getStatement();
+
+    /**
+     * The meta object literal for the '<em><b>Comment</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute STATEMENT__COMMENT = eINSTANCE.getStatement_Comment();
 
     /**
      * The meta object literal for the '{@link de.unidue.ecg.dialogScript.dialogScript.impl.OtherwiseImpl <em>Otherwise</em>}' class.
@@ -3386,14 +3413,6 @@ public interface DialogScriptPackage extends EPackage
      * @generated
      */
     EAttribute DIALOG_LINE__LINES = eINSTANCE.getDialogLine_Lines();
-
-    /**
-     * The meta object literal for the '<em><b>Comment</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute DIALOG_LINE__COMMENT = eINSTANCE.getDialogLine_Comment();
 
     /**
      * The meta object literal for the '{@link de.unidue.ecg.dialogScript.dialogScript.Modifier <em>Modifier</em>}' enum.

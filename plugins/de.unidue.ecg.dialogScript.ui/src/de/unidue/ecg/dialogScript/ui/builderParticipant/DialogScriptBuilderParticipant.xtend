@@ -15,7 +15,7 @@ class DialogScriptBuilderParticipant extends BuilderParticipant {
 
 	override protected handleChangedContents(Delta delta, IBuildContext context,
 		EclipseResourceFileSystemAccess2 fileSystemAccess) throws CoreException {
-
+ 
 		val resource = context.resourceSet.getResource(delta.uri, true);
 		if (shouldGenerate(resource, context)) {
 			try {

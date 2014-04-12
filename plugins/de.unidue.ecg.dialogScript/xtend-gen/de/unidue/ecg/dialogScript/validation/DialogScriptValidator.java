@@ -4,23 +4,29 @@
 package de.unidue.ecg.dialogScript.validation;
 
 import com.google.common.base.Objects;
-import de.unidue.ecg.dialogScript.dialogScript.AbstractChoiceDialog;
+import com.google.common.collect.Iterables;
 import de.unidue.ecg.dialogScript.dialogScript.ChoiceDialog;
 import de.unidue.ecg.dialogScript.dialogScript.ConditionDefinition;
 import de.unidue.ecg.dialogScript.dialogScript.ConditionList;
 import de.unidue.ecg.dialogScript.dialogScript.Conditional;
 import de.unidue.ecg.dialogScript.dialogScript.ConditionalBody;
 import de.unidue.ecg.dialogScript.dialogScript.ConditionalChoiceDialog;
+import de.unidue.ecg.dialogScript.dialogScript.Defaults;
 import de.unidue.ecg.dialogScript.dialogScript.DialogScriptPackage;
 import de.unidue.ecg.dialogScript.dialogScript.Exit;
+import de.unidue.ecg.dialogScript.dialogScript.FirstTime;
 import de.unidue.ecg.dialogScript.dialogScript.Hub;
+import de.unidue.ecg.dialogScript.dialogScript.HubFragment;
 import de.unidue.ecg.dialogScript.dialogScript.Jump;
 import de.unidue.ecg.dialogScript.dialogScript.Modifier;
 import de.unidue.ecg.dialogScript.dialogScript.Otherwise;
 import de.unidue.ecg.dialogScript.dialogScript.OtherwiseChoice;
 import de.unidue.ecg.dialogScript.dialogScript.Scene;
 import de.unidue.ecg.dialogScript.dialogScript.Script;
+import de.unidue.ecg.dialogScript.dialogScript.Statement;
 import de.unidue.ecg.dialogScript.dialogScript.SwitchDefinition;
+import de.unidue.ecg.dialogScript.dialogScript.SwitchOff;
+import de.unidue.ecg.dialogScript.dialogScript.SwitchOn;
 import de.unidue.ecg.dialogScript.validation.AbstractDialogScriptValidator;
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -78,6 +84,8 @@ public class DialogScriptValidator extends AbstractDialogScriptValidator {
   
   public final static String UNRESOLVED_CHARACTER = "unresolvedCharacter";
   
+  public final static String EMPTY_BODY = "emptyBody";
+  
   @Check
   public void checkHubCanBeLeft(final Hub hub) {
     final TreeIterator<EObject> allContents = hub.eAllContents();
@@ -91,8 +99,8 @@ public class DialogScriptValidator extends AbstractDialogScriptValidator {
       boolean _hasNext_1 = allContents.hasNext();
       _while = _hasNext_1;
     }
-    this.warning("Hub cannot be left by the player. Add an exit- or enter hub-statement to avoid infinite loops.", hub, 
-      DialogScriptPackage.Literals.HUB__NAME, DialogScriptValidator.HUB_CANNOT_BE_LEFT);
+    this.warning(
+      "Its a trap! Hub cannot be left by the player. Add an \"exit- \" or \"enter\"-statement to avoid infinite loops.", hub, DialogScriptPackage.Literals.HUB__NAME, DialogScriptValidator.HUB_CANNOT_BE_LEFT);
   }
   
   @Check
@@ -164,20 +172,18 @@ public class DialogScriptValidator extends AbstractDialogScriptValidator {
   
   @Check
   public void checkForHubsWithoutChoice(final Hub hub) {
-    EList<AbstractChoiceDialog> _choiceDialogs = hub.getChoiceDialogs();
-    for (final AbstractChoiceDialog c : _choiceDialogs) {
-      boolean _or = false;
-      if ((c instanceof ConditionalChoiceDialog)) {
-        _or = true;
-      } else {
-        _or = ((c instanceof ConditionalChoiceDialog) || (c instanceof ChoiceDialog));
-      }
-      if (_or) {
-        return;
+    EList<HubFragment> _hubFragments = hub.getHubFragments();
+    final Iterable<ChoiceDialog> choices = Iterables.<ChoiceDialog>filter(_hubFragments, ChoiceDialog.class);
+    boolean _isEmpty = IterableExtensions.isEmpty(choices);
+    if (_isEmpty) {
+      EList<HubFragment> _hubFragments_1 = hub.getHubFragments();
+      final Iterable<ConditionalChoiceDialog> conditionalChoices = Iterables.<ConditionalChoiceDialog>filter(_hubFragments_1, ConditionalChoiceDialog.class);
+      boolean _isEmpty_1 = IterableExtensions.isEmpty(conditionalChoices);
+      if (_isEmpty_1) {
+        this.error("A hub has to contain at least one choice!", hub, DialogScriptPackage.Literals.HUB__NAME, 
+          DialogScriptValidator.HUB_WITHOUT_CHOICE);
       }
     }
-    this.error("A hub has to contain at least one choice!", hub, DialogScriptPackage.Literals.HUB__NAME, 
-      DialogScriptValidator.HUB_WITHOUT_CHOICE);
   }
   
   @Check
@@ -279,13 +285,13 @@ public class DialogScriptValidator extends AbstractDialogScriptValidator {
   @Check
   public void checkForModifierDuplicates(final Conditional ele) {
     EList<Modifier> _modifiers = ele.getModifiers();
-    this.checkForModifierDuplicates(_modifiers, ele, DialogScriptPackage.Literals.ABSTRACT_CHOICE_DIALOG__MODIFIERS);
+    this.checkForModifierDuplicates(_modifiers, ele, DialogScriptPackage.Literals.CONDITIONAL__MODIFIERS);
   }
   
   @Check
   public void checkForModifierDuplicates(final ChoiceDialog ele) {
     EList<Modifier> _modifiers = ele.getModifiers();
-    this.checkForModifierDuplicates(_modifiers, ele, DialogScriptPackage.Literals.ABSTRACT_CHOICE_DIALOG__MODIFIERS);
+    this.checkForModifierDuplicates(_modifiers, ele, DialogScriptPackage.Literals.CHOICE_DIALOG__MODIFIERS);
   }
   
   @Check
@@ -297,7 +303,7 @@ public class DialogScriptValidator extends AbstractDialogScriptValidator {
   @Check
   public void checkForModifierDuplicates(final ConditionalChoiceDialog ele) {
     EList<Modifier> _modifiers = ele.getModifiers();
-    this.checkForModifierDuplicates(_modifiers, ele, DialogScriptPackage.Literals.ABSTRACT_CHOICE_DIALOG__MODIFIERS);
+    this.checkForModifierDuplicates(_modifiers, ele, DialogScriptPackage.Literals.CONDITIONAL_CHOICE_DIALOG__MODIFIERS);
   }
   
   public void checkForModifierDuplicates(final List<Modifier> modifiers, final EObject obj, final EStructuralFeature feature) {
@@ -313,50 +319,112 @@ public class DialogScriptValidator extends AbstractDialogScriptValidator {
     IterableExtensions.<Modifier>forEach(modifiers, _function);
   }
   
+  /**
+   * WHY!?
+   * @Check
+   * def checkForCorrectConditionalsInHub(Conditional ele) {
+   * if (ele.eContainer instanceof Hub) {
+   * val hub = ele.eContainer as Hub
+   * if (!ele.modifiers.contains(Modifier.SINGLE) &&
+   * (ele.body == null || ele.body != null && ele.body.jump == null)) {
+   * error(
+   * 'Inside a hub, conditionals have to be either declared as \'single\' or has to exit the hub explicitly using a \'exit\' or \'enter\' statement',
+   * hub, DialogScriptPackage.Literals.HUB__CHOICE_DIALOGS, hub.choiceDialogs.indexOf(ele),
+   * WRONG_CONDTIONAL_USAGE, hub.choiceDialogs.indexOf(ele).toString)
+   * }
+   * }
+   * }
+   */
   @Check
-  public void checkForCorrectConditionalsInHub(final Conditional ele) {
-    EObject _eContainer = ele.eContainer();
-    if ((_eContainer instanceof Hub)) {
-      EObject _eContainer_1 = ele.eContainer();
-      final Hub hub = ((Hub) _eContainer_1);
-      boolean _and = false;
-      EList<Modifier> _modifiers = ele.getModifiers();
-      boolean _contains = _modifiers.contains(Modifier.SINGLE);
-      boolean _not = (!_contains);
-      if (!_not) {
-        _and = false;
-      } else {
-        boolean _or = false;
-        ConditionalBody _body = ele.getBody();
-        boolean _equals = Objects.equal(_body, null);
-        if (_equals) {
-          _or = true;
-        } else {
-          boolean _and_1 = false;
-          ConditionalBody _body_1 = ele.getBody();
-          boolean _notEquals = (!Objects.equal(_body_1, null));
-          if (!_notEquals) {
-            _and_1 = false;
-          } else {
-            ConditionalBody _body_2 = ele.getBody();
-            Jump _jump = _body_2.getJump();
-            boolean _equals_1 = Objects.equal(_jump, null);
-            _and_1 = (_notEquals && _equals_1);
-          }
-          _or = (_equals || _and_1);
-        }
-        _and = (_not && _or);
-      }
-      if (_and) {
-        EList<AbstractChoiceDialog> _choiceDialogs = hub.getChoiceDialogs();
-        int _indexOf = _choiceDialogs.indexOf(ele);
-        EList<AbstractChoiceDialog> _choiceDialogs_1 = hub.getChoiceDialogs();
-        int _indexOf_1 = _choiceDialogs_1.indexOf(ele);
+  public void checkForEmptyElseBody(final Otherwise ele) {
+    boolean _or = false;
+    ConditionList _conditionList = ele.getConditionList();
+    boolean _equals = Objects.equal(_conditionList, null);
+    if (_equals) {
+      _or = true;
+    } else {
+      ConditionList _conditionList_1 = ele.getConditionList();
+      EList<ConditionDefinition> _conditions = _conditionList_1.getConditions();
+      boolean _isEmpty = _conditions.isEmpty();
+      _or = (_equals || _isEmpty);
+    }
+    if (_or) {
+      EObject _eContainer = ele.eContainer();
+      final Conditional conditional = ((Conditional) _eContainer);
+      final ConditionalBody body = ele.getBody();
+      boolean _isEmpty_1 = this.isEmpty(body);
+      if (_isEmpty_1) {
+        EList<Otherwise> _otherwiseList = conditional.getOtherwiseList();
+        int _indexOf = _otherwiseList.indexOf(ele);
+        EList<Otherwise> _otherwiseList_1 = conditional.getOtherwiseList();
+        int _indexOf_1 = _otherwiseList_1.indexOf(ele);
         String _string = Integer.valueOf(_indexOf_1).toString();
-        this.error(
-          "Inside a hub, conditionals has to be either declared as \'single\' or has to exit the hub explicitly using a \'exit\' or \'enter\' statement", hub, DialogScriptPackage.Literals.HUB__CHOICE_DIALOGS, _indexOf, 
-          DialogScriptValidator.WRONG_CONDTIONAL_USAGE, _string);
+        this.warning("Empty else-path detected. Will be ignored!", conditional, 
+          DialogScriptPackage.Literals.CONDITIONAL__OTHERWISE_LIST, _indexOf, 
+          DialogScriptValidator.EMPTY_BODY, _string);
       }
     }
+  }
+  
+  @Check
+  public void checkForEmptyDefaultsBody(final Defaults ele) {
+    final ConditionalBody body = ele.getBody();
+    boolean _isEmpty = this.isEmpty(body);
+    if (_isEmpty) {
+      EObject _eContainer = ele.eContainer();
+      this.warning("Empty body detected. Will be ignored!", _eContainer, 
+        DialogScriptPackage.Literals.DIALOG__DEFAULTS, DialogScriptValidator.EMPTY_BODY);
+    }
+  }
+  
+  @Check
+  public void checkForEmptyDefaultsBody(final FirstTime ele) {
+    final ConditionalBody body = ele.getBody();
+    boolean _isEmpty = this.isEmpty(body);
+    if (_isEmpty) {
+      EObject _eContainer = ele.eContainer();
+      this.warning("Empty body detected. Will be ignored!", _eContainer, 
+        DialogScriptPackage.Literals.DIALOG__FIRST_TIME, DialogScriptValidator.EMPTY_BODY);
+    }
+  }
+  
+  private boolean isEmpty(final ConditionalBody body) {
+    boolean _or = false;
+    boolean _equals = Objects.equal(body, null);
+    if (_equals) {
+      _or = true;
+    } else {
+      boolean _and = false;
+      boolean _and_1 = false;
+      boolean _and_2 = false;
+      EList<Statement> _statements = body.getStatements();
+      boolean _isEmpty = _statements.isEmpty();
+      if (!_isEmpty) {
+        _and_2 = false;
+      } else {
+        SwitchOn _switchOn = body.getSwitchOn();
+        boolean _equals_1 = Objects.equal(_switchOn, null);
+        _and_2 = (_isEmpty && _equals_1);
+      }
+      if (!_and_2) {
+        _and_1 = false;
+      } else {
+        SwitchOff _switchOff = body.getSwitchOff();
+        boolean _equals_2 = Objects.equal(_switchOff, null);
+        _and_1 = (_and_2 && _equals_2);
+      }
+      if (!_and_1) {
+        _and = false;
+      } else {
+        Jump _jump = body.getJump();
+        boolean _equals_3 = Objects.equal(_jump, null);
+        _and = (_and_1 && _equals_3);
+      }
+      _or = (_equals || _and);
+    }
+    if (_or) {
+      return true;
+    }
+    return false;
   }
 }

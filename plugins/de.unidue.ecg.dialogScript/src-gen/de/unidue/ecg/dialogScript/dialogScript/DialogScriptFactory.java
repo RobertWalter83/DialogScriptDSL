@@ -158,13 +158,13 @@ public interface DialogScriptFactory extends EFactory
   Hub createHub();
 
   /**
-   * Returns a new object of class '<em>Abstract Choice Dialog</em>'.
+   * Returns a new object of class '<em>Hub Fragment</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Abstract Choice Dialog</em>'.
+   * @return a new object of class '<em>Hub Fragment</em>'.
    * @generated
    */
-  AbstractChoiceDialog createAbstractChoiceDialog();
+  HubFragment createHubFragment();
 
   /**
    * Returns a new object of class '<em>Conditional Choice Dialog</em>'.

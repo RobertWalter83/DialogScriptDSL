@@ -66,8 +66,8 @@ public class DialogScriptSemanticSequencer extends AbstractDelegatingSemanticSeq
 				}
 				else break;
 			case DialogScriptPackage.CHOICE_DIALOG:
-				if(context == grammarAccess.getAbstractChoiceDialogRule() ||
-				   context == grammarAccess.getChoiceDialogRule()) {
+				if(context == grammarAccess.getChoiceDialogRule() ||
+				   context == grammarAccess.getHubFragmentRule()) {
 					sequence_ChoiceDialog(context, (ChoiceDialog) semanticObject); 
 					return; 
 				}
@@ -85,8 +85,8 @@ public class DialogScriptSemanticSequencer extends AbstractDelegatingSemanticSeq
 				}
 				else break;
 			case DialogScriptPackage.CONDITIONAL:
-				if(context == grammarAccess.getAbstractChoiceDialogRule() ||
-				   context == grammarAccess.getConditionalRule() ||
+				if(context == grammarAccess.getConditionalRule() ||
+				   context == grammarAccess.getHubFragmentRule() ||
 				   context == grammarAccess.getRecursiveRule() ||
 				   context == grammarAccess.getStatementRule()) {
 					sequence_Conditional(context, (Conditional) semanticObject); 
@@ -100,8 +100,8 @@ public class DialogScriptSemanticSequencer extends AbstractDelegatingSemanticSeq
 				}
 				else break;
 			case DialogScriptPackage.CONDITIONAL_CHOICE_DIALOG:
-				if(context == grammarAccess.getAbstractChoiceDialogRule() ||
-				   context == grammarAccess.getConditionalChoiceDialogRule()) {
+				if(context == grammarAccess.getConditionalChoiceDialogRule() ||
+				   context == grammarAccess.getHubFragmentRule()) {
 					sequence_ConditionalChoiceDialog(context, (ConditionalChoiceDialog) semanticObject); 
 					return; 
 				}
@@ -126,6 +126,7 @@ public class DialogScriptSemanticSequencer extends AbstractDelegatingSemanticSeq
 				else break;
 			case DialogScriptPackage.DIALOG_LINE:
 				if(context == grammarAccess.getDialogLineRule() ||
+				   context == grammarAccess.getHubFragmentRule() ||
 				   context == grammarAccess.getRecursiveRule() ||
 				   context == grammarAccess.getStatementRule()) {
 					sequence_DialogLine(context, (DialogLine) semanticObject); 
@@ -387,7 +388,7 @@ public class DialogScriptSemanticSequencer extends AbstractDelegatingSemanticSeq
 	
 	/**
 	 * Constraint:
-	 *     (isHidden?='hidden'? name=StringID hubComment=COMMENT? choiceDialogs+=AbstractChoiceDialog*)
+	 *     (isHidden?='hidden'? name=StringID hubComment=COMMENT? hubFragments+=HubFragment*)
 	 */
 	protected void sequence_Hub(EObject context, Hub semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

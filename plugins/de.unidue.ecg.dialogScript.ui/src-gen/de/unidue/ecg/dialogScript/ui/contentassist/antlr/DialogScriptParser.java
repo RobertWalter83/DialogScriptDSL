@@ -38,7 +38,7 @@ public class DialogScriptParser extends AbstractContentAssistParser {
 				private static final long serialVersionUID = 1L;
 				{
 					put(grammarAccess.getRecursiveAccess().getAlternatives(), "rule__Recursive__Alternatives");
-					put(grammarAccess.getAbstractChoiceDialogAccess().getAlternatives(), "rule__AbstractChoiceDialog__Alternatives");
+					put(grammarAccess.getHubFragmentAccess().getAlternatives(), "rule__HubFragment__Alternatives");
 					put(grammarAccess.getJumpAccess().getAlternatives(), "rule__Jump__Alternatives");
 					put(grammarAccess.getExitAccess().getAlternatives_2(), "rule__Exit__Alternatives_2");
 					put(grammarAccess.getStatementAccess().getAlternatives(), "rule__Statement__Alternatives");
@@ -114,7 +114,7 @@ public class DialogScriptParser extends AbstractContentAssistParser {
 					put(grammarAccess.getHubAccess().getIsHiddenAssignment_0(), "rule__Hub__IsHiddenAssignment_0");
 					put(grammarAccess.getHubAccess().getNameAssignment_2(), "rule__Hub__NameAssignment_2");
 					put(grammarAccess.getHubAccess().getHubCommentAssignment_3(), "rule__Hub__HubCommentAssignment_3");
-					put(grammarAccess.getHubAccess().getChoiceDialogsAssignment_4(), "rule__Hub__ChoiceDialogsAssignment_4");
+					put(grammarAccess.getHubAccess().getHubFragmentsAssignment_4(), "rule__Hub__HubFragmentsAssignment_4");
 					put(grammarAccess.getConditionalChoiceDialogAccess().getModifiersAssignment_0(), "rule__ConditionalChoiceDialog__ModifiersAssignment_0");
 					put(grammarAccess.getConditionalChoiceDialogAccess().getConditionListAssignment_4(), "rule__ConditionalChoiceDialog__ConditionListAssignment_4");
 					put(grammarAccess.getConditionalChoiceDialogAccess().getCommentAssignment_6(), "rule__ConditionalChoiceDialog__CommentAssignment_6");

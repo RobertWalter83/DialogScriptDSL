@@ -43,7 +43,7 @@ import de.unidue.ecg.dialogScript.dialogScript.CharactersDefinition
  */
 class DialogScriptLabelProvider extends DefaultEObjectLabelProvider {
 
-	@Inject
+	@Inject 
 	new(AdapterFactoryLabelProvider delegate) {
 		super(delegate);
 	}

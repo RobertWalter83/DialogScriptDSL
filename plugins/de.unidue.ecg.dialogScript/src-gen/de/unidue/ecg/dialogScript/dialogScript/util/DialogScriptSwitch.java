@@ -178,10 +178,10 @@ public class DialogScriptSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case DialogScriptPackage.ABSTRACT_CHOICE_DIALOG:
+      case DialogScriptPackage.HUB_FRAGMENT:
       {
-        AbstractChoiceDialog abstractChoiceDialog = (AbstractChoiceDialog)theEObject;
-        T result = caseAbstractChoiceDialog(abstractChoiceDialog);
+        HubFragment hubFragment = (HubFragment)theEObject;
+        T result = caseHubFragment(hubFragment);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -189,7 +189,7 @@ public class DialogScriptSwitch<T> extends Switch<T>
       {
         ConditionalChoiceDialog conditionalChoiceDialog = (ConditionalChoiceDialog)theEObject;
         T result = caseConditionalChoiceDialog(conditionalChoiceDialog);
-        if (result == null) result = caseAbstractChoiceDialog(conditionalChoiceDialog);
+        if (result == null) result = caseHubFragment(conditionalChoiceDialog);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -204,7 +204,7 @@ public class DialogScriptSwitch<T> extends Switch<T>
       {
         ChoiceDialog choiceDialog = (ChoiceDialog)theEObject;
         T result = caseChoiceDialog(choiceDialog);
-        if (result == null) result = caseAbstractChoiceDialog(choiceDialog);
+        if (result == null) result = caseHubFragment(choiceDialog);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -250,9 +250,9 @@ public class DialogScriptSwitch<T> extends Switch<T>
       {
         Conditional conditional = (Conditional)theEObject;
         T result = caseConditional(conditional);
-        if (result == null) result = caseRecursive(conditional);
-        if (result == null) result = caseAbstractChoiceDialog(conditional);
         if (result == null) result = caseStatement(conditional);
+        if (result == null) result = caseRecursive(conditional);
+        if (result == null) result = caseHubFragment(conditional);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -281,6 +281,8 @@ public class DialogScriptSwitch<T> extends Switch<T>
       {
         Statement statement = (Statement)theEObject;
         T result = caseStatement(statement);
+        if (result == null) result = caseRecursive(statement);
+        if (result == null) result = caseHubFragment(statement);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -309,8 +311,9 @@ public class DialogScriptSwitch<T> extends Switch<T>
       {
         DialogLine dialogLine = (DialogLine)theEObject;
         T result = caseDialogLine(dialogLine);
-        if (result == null) result = caseRecursive(dialogLine);
         if (result == null) result = caseStatement(dialogLine);
+        if (result == null) result = caseRecursive(dialogLine);
+        if (result == null) result = caseHubFragment(dialogLine);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -559,17 +562,17 @@ public class DialogScriptSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Abstract Choice Dialog</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Hub Fragment</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Abstract Choice Dialog</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Hub Fragment</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseAbstractChoiceDialog(AbstractChoiceDialog object)
+  public T caseHubFragment(HubFragment object)
   {
     return null;
   }

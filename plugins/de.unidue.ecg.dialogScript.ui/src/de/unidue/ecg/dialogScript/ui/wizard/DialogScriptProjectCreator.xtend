@@ -35,7 +35,7 @@ class DialogScriptProjectCreator extends WorkspaceModifyOperation implements IPr
 	override protected execute(IProgressMonitor monitor) throws CoreException, InvocationTargetException, InterruptedException {
 		val subMonitor = SubMonitor.convert(monitor, getCreateModelProjectMessage(), 2)
 
-		try {
+		try { 
 			val project = createProject(subMonitor.newChild(1))
 			if (project == null)
 				return;

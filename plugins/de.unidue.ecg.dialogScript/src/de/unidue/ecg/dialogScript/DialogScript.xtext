@@ -45,7 +45,7 @@ Dialog:
 	partingLines=PartingLines?;
 
 Recursive:
-	Conditional | Hub | DialogLine;
+	Hub | Statement;
 
 Defaults:
 	{Defaults}
@@ -73,11 +73,12 @@ PartingLines:
 
 Hub:
 	(isHidden?='hidden')? 'hub' name=StringID hubComment=COMMENT?
-	choiceDialogs+=AbstractChoiceDialog*
+	hubFragments+=HubFragment*
 	'end';
 
-AbstractChoiceDialog:
-	ChoiceDialog | ConditionalChoiceDialog | Conditional;
+
+HubFragment:
+	ChoiceDialog | ConditionalChoiceDialog | Statement;
 
 ConditionalChoiceDialog:
 	modifiers+=Modifier* 'choices' 'if' '(' conditionList=ConditionList ')' comment=COMMENT?

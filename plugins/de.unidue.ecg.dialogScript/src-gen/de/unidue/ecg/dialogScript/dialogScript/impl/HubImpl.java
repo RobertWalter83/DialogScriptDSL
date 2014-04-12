@@ -2,9 +2,9 @@
  */
 package de.unidue.ecg.dialogScript.dialogScript.impl;
 
-import de.unidue.ecg.dialogScript.dialogScript.AbstractChoiceDialog;
 import de.unidue.ecg.dialogScript.dialogScript.DialogScriptPackage;
 import de.unidue.ecg.dialogScript.dialogScript.Hub;
+import de.unidue.ecg.dialogScript.dialogScript.HubFragment;
 
 import java.util.Collection;
 
@@ -31,7 +31,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link de.unidue.ecg.dialogScript.dialogScript.impl.HubImpl#isIsHidden <em>Is Hidden</em>}</li>
  *   <li>{@link de.unidue.ecg.dialogScript.dialogScript.impl.HubImpl#getName <em>Name</em>}</li>
  *   <li>{@link de.unidue.ecg.dialogScript.dialogScript.impl.HubImpl#getHubComment <em>Hub Comment</em>}</li>
- *   <li>{@link de.unidue.ecg.dialogScript.dialogScript.impl.HubImpl#getChoiceDialogs <em>Choice Dialogs</em>}</li>
+ *   <li>{@link de.unidue.ecg.dialogScript.dialogScript.impl.HubImpl#getHubFragments <em>Hub Fragments</em>}</li>
  * </ul>
  * </p>
  *
@@ -100,14 +100,14 @@ public class HubImpl extends RecursiveImpl implements Hub
   protected String hubComment = HUB_COMMENT_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getChoiceDialogs() <em>Choice Dialogs</em>}' containment reference list.
+   * The cached value of the '{@link #getHubFragments() <em>Hub Fragments</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getChoiceDialogs()
+   * @see #getHubFragments()
    * @generated
    * @ordered
    */
-  protected EList<AbstractChoiceDialog> choiceDialogs;
+  protected EList<HubFragment> hubFragments;
 
   /**
    * <!-- begin-user-doc -->
@@ -204,13 +204,13 @@ public class HubImpl extends RecursiveImpl implements Hub
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<AbstractChoiceDialog> getChoiceDialogs()
+  public EList<HubFragment> getHubFragments()
   {
-    if (choiceDialogs == null)
+    if (hubFragments == null)
     {
-      choiceDialogs = new EObjectContainmentEList<AbstractChoiceDialog>(AbstractChoiceDialog.class, this, DialogScriptPackage.HUB__CHOICE_DIALOGS);
+      hubFragments = new EObjectContainmentEList<HubFragment>(HubFragment.class, this, DialogScriptPackage.HUB__HUB_FRAGMENTS);
     }
-    return choiceDialogs;
+    return hubFragments;
   }
 
   /**
@@ -223,8 +223,8 @@ public class HubImpl extends RecursiveImpl implements Hub
   {
     switch (featureID)
     {
-      case DialogScriptPackage.HUB__CHOICE_DIALOGS:
-        return ((InternalEList<?>)getChoiceDialogs()).basicRemove(otherEnd, msgs);
+      case DialogScriptPackage.HUB__HUB_FRAGMENTS:
+        return ((InternalEList<?>)getHubFragments()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -245,8 +245,8 @@ public class HubImpl extends RecursiveImpl implements Hub
         return getName();
       case DialogScriptPackage.HUB__HUB_COMMENT:
         return getHubComment();
-      case DialogScriptPackage.HUB__CHOICE_DIALOGS:
-        return getChoiceDialogs();
+      case DialogScriptPackage.HUB__HUB_FRAGMENTS:
+        return getHubFragments();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -271,9 +271,9 @@ public class HubImpl extends RecursiveImpl implements Hub
       case DialogScriptPackage.HUB__HUB_COMMENT:
         setHubComment((String)newValue);
         return;
-      case DialogScriptPackage.HUB__CHOICE_DIALOGS:
-        getChoiceDialogs().clear();
-        getChoiceDialogs().addAll((Collection<? extends AbstractChoiceDialog>)newValue);
+      case DialogScriptPackage.HUB__HUB_FRAGMENTS:
+        getHubFragments().clear();
+        getHubFragments().addAll((Collection<? extends HubFragment>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -298,8 +298,8 @@ public class HubImpl extends RecursiveImpl implements Hub
       case DialogScriptPackage.HUB__HUB_COMMENT:
         setHubComment(HUB_COMMENT_EDEFAULT);
         return;
-      case DialogScriptPackage.HUB__CHOICE_DIALOGS:
-        getChoiceDialogs().clear();
+      case DialogScriptPackage.HUB__HUB_FRAGMENTS:
+        getHubFragments().clear();
         return;
     }
     super.eUnset(featureID);
@@ -321,8 +321,8 @@ public class HubImpl extends RecursiveImpl implements Hub
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case DialogScriptPackage.HUB__HUB_COMMENT:
         return HUB_COMMENT_EDEFAULT == null ? hubComment != null : !HUB_COMMENT_EDEFAULT.equals(hubComment);
-      case DialogScriptPackage.HUB__CHOICE_DIALOGS:
-        return choiceDialogs != null && !choiceDialogs.isEmpty();
+      case DialogScriptPackage.HUB__HUB_FRAGMENTS:
+        return hubFragments != null && !hubFragments.isEmpty();
     }
     return super.eIsSet(featureID);
   }

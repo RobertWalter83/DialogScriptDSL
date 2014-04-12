@@ -12,6 +12,7 @@ import org.eclipse.emf.common.util.EList;
  * <p>
  * The following features are supported:
  * <ul>
+ *   <li>{@link de.unidue.ecg.dialogScript.dialogScript.ConditionalChoiceDialog#getModifiers <em>Modifiers</em>}</li>
  *   <li>{@link de.unidue.ecg.dialogScript.dialogScript.ConditionalChoiceDialog#getConditionList <em>Condition List</em>}</li>
  *   <li>{@link de.unidue.ecg.dialogScript.dialogScript.ConditionalChoiceDialog#getComment <em>Comment</em>}</li>
  *   <li>{@link de.unidue.ecg.dialogScript.dialogScript.ConditionalChoiceDialog#getChoiceDialogs <em>Choice Dialogs</em>}</li>
@@ -23,8 +24,26 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface ConditionalChoiceDialog extends AbstractChoiceDialog
+public interface ConditionalChoiceDialog extends HubFragment
 {
+  /**
+   * Returns the value of the '<em><b>Modifiers</b></em>' attribute list.
+   * The list contents are of type {@link de.unidue.ecg.dialogScript.dialogScript.Modifier}.
+   * The literals are from the enumeration {@link de.unidue.ecg.dialogScript.dialogScript.Modifier}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Modifiers</em>' attribute list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Modifiers</em>' attribute list.
+   * @see de.unidue.ecg.dialogScript.dialogScript.Modifier
+   * @see de.unidue.ecg.dialogScript.dialogScript.DialogScriptPackage#getConditionalChoiceDialog_Modifiers()
+   * @model unique="false"
+   * @generated
+   */
+  EList<Modifier> getModifiers();
+
   /**
    * Returns the value of the '<em><b>Condition List</b></em>' containment reference.
    * <!-- begin-user-doc -->

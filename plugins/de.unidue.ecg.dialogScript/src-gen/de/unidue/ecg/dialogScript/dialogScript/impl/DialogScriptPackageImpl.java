@@ -2,7 +2,6 @@
  */
 package de.unidue.ecg.dialogScript.dialogScript.impl;
 
-import de.unidue.ecg.dialogScript.dialogScript.AbstractChoiceDialog;
 import de.unidue.ecg.dialogScript.dialogScript.CharacterDefinition;
 import de.unidue.ecg.dialogScript.dialogScript.CharactersDefinition;
 import de.unidue.ecg.dialogScript.dialogScript.ChoiceDialog;
@@ -20,6 +19,7 @@ import de.unidue.ecg.dialogScript.dialogScript.DialogScriptPackage;
 import de.unidue.ecg.dialogScript.dialogScript.Exit;
 import de.unidue.ecg.dialogScript.dialogScript.FirstTime;
 import de.unidue.ecg.dialogScript.dialogScript.Hub;
+import de.unidue.ecg.dialogScript.dialogScript.HubFragment;
 import de.unidue.ecg.dialogScript.dialogScript.InvokeHub;
 import de.unidue.ecg.dialogScript.dialogScript.InvokeScene;
 import de.unidue.ecg.dialogScript.dialogScript.Jump;
@@ -166,7 +166,7 @@ public class DialogScriptPackageImpl extends EPackageImpl implements DialogScrip
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass abstractChoiceDialogEClass = null;
+  private EClass hubFragmentEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -819,7 +819,7 @@ public class DialogScriptPackageImpl extends EPackageImpl implements DialogScrip
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getHub_ChoiceDialogs()
+  public EReference getHub_HubFragments()
   {
     return (EReference)hubEClass.getEStructuralFeatures().get(3);
   }
@@ -829,19 +829,9 @@ public class DialogScriptPackageImpl extends EPackageImpl implements DialogScrip
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getAbstractChoiceDialog()
+  public EClass getHubFragment()
   {
-    return abstractChoiceDialogEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getAbstractChoiceDialog_Modifiers()
-  {
-    return (EAttribute)abstractChoiceDialogEClass.getEStructuralFeatures().get(0);
+    return hubFragmentEClass;
   }
 
   /**
@@ -859,9 +849,19 @@ public class DialogScriptPackageImpl extends EPackageImpl implements DialogScrip
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getConditionalChoiceDialog_Modifiers()
+  {
+    return (EAttribute)conditionalChoiceDialogEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EReference getConditionalChoiceDialog_ConditionList()
   {
-    return (EReference)conditionalChoiceDialogEClass.getEStructuralFeatures().get(0);
+    return (EReference)conditionalChoiceDialogEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -871,7 +871,7 @@ public class DialogScriptPackageImpl extends EPackageImpl implements DialogScrip
    */
   public EAttribute getConditionalChoiceDialog_Comment()
   {
-    return (EAttribute)conditionalChoiceDialogEClass.getEStructuralFeatures().get(1);
+    return (EAttribute)conditionalChoiceDialogEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -881,7 +881,7 @@ public class DialogScriptPackageImpl extends EPackageImpl implements DialogScrip
    */
   public EReference getConditionalChoiceDialog_ChoiceDialogs()
   {
-    return (EReference)conditionalChoiceDialogEClass.getEStructuralFeatures().get(2);
+    return (EReference)conditionalChoiceDialogEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -891,7 +891,7 @@ public class DialogScriptPackageImpl extends EPackageImpl implements DialogScrip
    */
   public EReference getConditionalChoiceDialog_OtherwiseChoices()
   {
-    return (EReference)conditionalChoiceDialogEClass.getEStructuralFeatures().get(3);
+    return (EReference)conditionalChoiceDialogEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -959,7 +959,7 @@ public class DialogScriptPackageImpl extends EPackageImpl implements DialogScrip
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getChoiceDialog_Name()
+  public EAttribute getChoiceDialog_Modifiers()
   {
     return (EAttribute)choiceDialogEClass.getEStructuralFeatures().get(0);
   }
@@ -969,7 +969,7 @@ public class DialogScriptPackageImpl extends EPackageImpl implements DialogScrip
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getChoiceDialog_ChoiceComment()
+  public EAttribute getChoiceDialog_Name()
   {
     return (EAttribute)choiceDialogEClass.getEStructuralFeatures().get(1);
   }
@@ -979,9 +979,19 @@ public class DialogScriptPackageImpl extends EPackageImpl implements DialogScrip
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getChoiceDialog_ChoiceComment()
+  {
+    return (EAttribute)choiceDialogEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EReference getChoiceDialog_Body()
   {
-    return (EReference)choiceDialogEClass.getEStructuralFeatures().get(2);
+    return (EReference)choiceDialogEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -1099,9 +1109,9 @@ public class DialogScriptPackageImpl extends EPackageImpl implements DialogScrip
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getConditional_ConditionList()
+  public EAttribute getConditional_Modifiers()
   {
-    return (EReference)conditionalEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)conditionalEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1109,9 +1119,9 @@ public class DialogScriptPackageImpl extends EPackageImpl implements DialogScrip
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getConditional_Comment()
+  public EReference getConditional_ConditionList()
   {
-    return (EAttribute)conditionalEClass.getEStructuralFeatures().get(1);
+    return (EReference)conditionalEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1242,6 +1252,16 @@ public class DialogScriptPackageImpl extends EPackageImpl implements DialogScrip
   public EClass getStatement()
   {
     return statementEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getStatement_Comment()
+  {
+    return (EAttribute)statementEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1389,16 +1409,6 @@ public class DialogScriptPackageImpl extends EPackageImpl implements DialogScrip
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getDialogLine_Comment()
-  {
-    return (EAttribute)dialogLineEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EEnum getModifier()
   {
     return modifierEEnum;
@@ -1503,12 +1513,12 @@ public class DialogScriptPackageImpl extends EPackageImpl implements DialogScrip
     createEAttribute(hubEClass, HUB__IS_HIDDEN);
     createEAttribute(hubEClass, HUB__NAME);
     createEAttribute(hubEClass, HUB__HUB_COMMENT);
-    createEReference(hubEClass, HUB__CHOICE_DIALOGS);
+    createEReference(hubEClass, HUB__HUB_FRAGMENTS);
 
-    abstractChoiceDialogEClass = createEClass(ABSTRACT_CHOICE_DIALOG);
-    createEAttribute(abstractChoiceDialogEClass, ABSTRACT_CHOICE_DIALOG__MODIFIERS);
+    hubFragmentEClass = createEClass(HUB_FRAGMENT);
 
     conditionalChoiceDialogEClass = createEClass(CONDITIONAL_CHOICE_DIALOG);
+    createEAttribute(conditionalChoiceDialogEClass, CONDITIONAL_CHOICE_DIALOG__MODIFIERS);
     createEReference(conditionalChoiceDialogEClass, CONDITIONAL_CHOICE_DIALOG__CONDITION_LIST);
     createEAttribute(conditionalChoiceDialogEClass, CONDITIONAL_CHOICE_DIALOG__COMMENT);
     createEReference(conditionalChoiceDialogEClass, CONDITIONAL_CHOICE_DIALOG__CHOICE_DIALOGS);
@@ -1521,6 +1531,7 @@ public class DialogScriptPackageImpl extends EPackageImpl implements DialogScrip
     createEReference(otherwiseChoiceEClass, OTHERWISE_CHOICE__CHOICES);
 
     choiceDialogEClass = createEClass(CHOICE_DIALOG);
+    createEAttribute(choiceDialogEClass, CHOICE_DIALOG__MODIFIERS);
     createEAttribute(choiceDialogEClass, CHOICE_DIALOG__NAME);
     createEAttribute(choiceDialogEClass, CHOICE_DIALOG__CHOICE_COMMENT);
     createEReference(choiceDialogEClass, CHOICE_DIALOG__BODY);
@@ -1541,8 +1552,8 @@ public class DialogScriptPackageImpl extends EPackageImpl implements DialogScrip
     createEAttribute(exitEClass, EXIT__EXIT_SCENE);
 
     conditionalEClass = createEClass(CONDITIONAL);
+    createEAttribute(conditionalEClass, CONDITIONAL__MODIFIERS);
     createEReference(conditionalEClass, CONDITIONAL__CONDITION_LIST);
-    createEAttribute(conditionalEClass, CONDITIONAL__COMMENT);
     createEReference(conditionalEClass, CONDITIONAL__BODY);
     createEReference(conditionalEClass, CONDITIONAL__OTHERWISE_LIST);
 
@@ -1560,6 +1571,7 @@ public class DialogScriptPackageImpl extends EPackageImpl implements DialogScrip
     createEReference(conditionalBodyEClass, CONDITIONAL_BODY__JUMP);
 
     statementEClass = createEClass(STATEMENT);
+    createEAttribute(statementEClass, STATEMENT__COMMENT);
 
     otherwiseEClass = createEClass(OTHERWISE);
     createEAttribute(otherwiseEClass, OTHERWISE__MODIFIERS);
@@ -1578,7 +1590,6 @@ public class DialogScriptPackageImpl extends EPackageImpl implements DialogScrip
     dialogLineEClass = createEClass(DIALOG_LINE);
     createEReference(dialogLineEClass, DIALOG_LINE__CHARACTER);
     createEAttribute(dialogLineEClass, DIALOG_LINE__LINES);
-    createEAttribute(dialogLineEClass, DIALOG_LINE__COMMENT);
 
     // Create enums
     modifierEEnum = createEEnum(MODIFIER);
@@ -1615,15 +1626,14 @@ public class DialogScriptPackageImpl extends EPackageImpl implements DialogScrip
 
     // Add supertypes to classes
     hubEClass.getESuperTypes().add(this.getRecursive());
-    conditionalChoiceDialogEClass.getESuperTypes().add(this.getAbstractChoiceDialog());
-    choiceDialogEClass.getESuperTypes().add(this.getAbstractChoiceDialog());
+    conditionalChoiceDialogEClass.getESuperTypes().add(this.getHubFragment());
+    choiceDialogEClass.getESuperTypes().add(this.getHubFragment());
     invokeHubEClass.getESuperTypes().add(this.getJump());
     invokeSceneEClass.getESuperTypes().add(this.getJump());
     exitEClass.getESuperTypes().add(this.getJump());
-    conditionalEClass.getESuperTypes().add(this.getRecursive());
-    conditionalEClass.getESuperTypes().add(this.getAbstractChoiceDialog());
     conditionalEClass.getESuperTypes().add(this.getStatement());
-    dialogLineEClass.getESuperTypes().add(this.getRecursive());
+    statementEClass.getESuperTypes().add(this.getRecursive());
+    statementEClass.getESuperTypes().add(this.getHubFragment());
     dialogLineEClass.getESuperTypes().add(this.getStatement());
 
     // Initialize classes and features; add operations and parameters
@@ -1686,12 +1696,12 @@ public class DialogScriptPackageImpl extends EPackageImpl implements DialogScrip
     initEAttribute(getHub_IsHidden(), ecorePackage.getEBoolean(), "isHidden", null, 0, 1, Hub.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getHub_Name(), ecorePackage.getEString(), "name", null, 0, 1, Hub.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getHub_HubComment(), ecorePackage.getEString(), "hubComment", null, 0, 1, Hub.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getHub_ChoiceDialogs(), this.getAbstractChoiceDialog(), null, "choiceDialogs", null, 0, -1, Hub.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getHub_HubFragments(), this.getHubFragment(), null, "hubFragments", null, 0, -1, Hub.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(abstractChoiceDialogEClass, AbstractChoiceDialog.class, "AbstractChoiceDialog", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getAbstractChoiceDialog_Modifiers(), this.getModifier(), "modifiers", null, 0, -1, AbstractChoiceDialog.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(hubFragmentEClass, HubFragment.class, "HubFragment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(conditionalChoiceDialogEClass, ConditionalChoiceDialog.class, "ConditionalChoiceDialog", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getConditionalChoiceDialog_Modifiers(), this.getModifier(), "modifiers", null, 0, -1, ConditionalChoiceDialog.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getConditionalChoiceDialog_ConditionList(), this.getConditionList(), null, "conditionList", null, 0, 1, ConditionalChoiceDialog.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getConditionalChoiceDialog_Comment(), ecorePackage.getEString(), "comment", null, 0, 1, ConditionalChoiceDialog.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getConditionalChoiceDialog_ChoiceDialogs(), this.getChoiceDialog(), null, "choiceDialogs", null, 0, -1, ConditionalChoiceDialog.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1704,6 +1714,7 @@ public class DialogScriptPackageImpl extends EPackageImpl implements DialogScrip
     initEReference(getOtherwiseChoice_Choices(), this.getChoiceDialog(), null, "choices", null, 0, -1, OtherwiseChoice.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(choiceDialogEClass, ChoiceDialog.class, "ChoiceDialog", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getChoiceDialog_Modifiers(), this.getModifier(), "modifiers", null, 0, -1, ChoiceDialog.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getChoiceDialog_Name(), ecorePackage.getEString(), "name", null, 0, 1, ChoiceDialog.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getChoiceDialog_ChoiceComment(), ecorePackage.getEString(), "choiceComment", null, 0, 1, ChoiceDialog.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getChoiceDialog_Body(), this.getConditionalBody(), null, "body", null, 0, 1, ChoiceDialog.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1724,8 +1735,8 @@ public class DialogScriptPackageImpl extends EPackageImpl implements DialogScrip
     initEAttribute(getExit_ExitScene(), ecorePackage.getEBoolean(), "exitScene", null, 0, 1, Exit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(conditionalEClass, Conditional.class, "Conditional", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getConditional_Modifiers(), this.getModifier(), "modifiers", null, 0, -1, Conditional.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getConditional_ConditionList(), this.getConditionList(), null, "conditionList", null, 0, 1, Conditional.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getConditional_Comment(), ecorePackage.getEString(), "comment", null, 0, 1, Conditional.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getConditional_Body(), this.getConditionalBody(), null, "body", null, 0, 1, Conditional.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getConditional_OtherwiseList(), this.getOtherwise(), null, "otherwiseList", null, 0, -1, Conditional.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -1743,6 +1754,7 @@ public class DialogScriptPackageImpl extends EPackageImpl implements DialogScrip
     initEReference(getConditionalBody_Jump(), this.getJump(), null, "jump", null, 0, 1, ConditionalBody.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(statementEClass, Statement.class, "Statement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getStatement_Comment(), ecorePackage.getEString(), "comment", null, 0, 1, Statement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(otherwiseEClass, Otherwise.class, "Otherwise", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getOtherwise_Modifiers(), this.getModifier(), "modifiers", null, 0, -1, Otherwise.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1761,7 +1773,6 @@ public class DialogScriptPackageImpl extends EPackageImpl implements DialogScrip
     initEClass(dialogLineEClass, DialogLine.class, "DialogLine", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getDialogLine_Character(), this.getCharacterDefinition(), null, "character", null, 0, 1, DialogLine.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getDialogLine_Lines(), ecorePackage.getEString(), "lines", null, 0, 1, DialogLine.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getDialogLine_Comment(), ecorePackage.getEString(), "comment", null, 0, 1, DialogLine.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Initialize enums and add enum literals
     initEEnum(modifierEEnum, Modifier.class, "Modifier");

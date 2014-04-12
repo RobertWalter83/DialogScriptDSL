@@ -1,12 +1,22 @@
 package de.unidue.ecg.dialogScript.ui.graph.providers
 
+import de.unidue.ecg.dialogScript.dialogScript.ChoiceDialog
 import de.unidue.ecg.dialogScript.dialogScript.Conditional
+import de.unidue.ecg.dialogScript.dialogScript.Defaults
 import de.unidue.ecg.dialogScript.dialogScript.DialogLine
+import de.unidue.ecg.dialogScript.dialogScript.FirstTime
+import de.unidue.ecg.dialogScript.dialogScript.Hub
+import de.unidue.ecg.dialogScript.dialogScript.PartingLines
 import de.unidue.ecg.dialogScript.dialogScript.Scene
+import de.unidue.ecg.dialogScript.dialogScript.Statement
 import de.unidue.ecg.dialogScript.ui.views.DialogGraphView
+import org.eclipse.draw2d.Label
+import org.eclipse.emf.ecore.EObject
 import org.eclipse.gef4.zest.core.viewers.EntityConnectionData
 import org.eclipse.gef4.zest.core.viewers.IConnectionStyleProvider
 import org.eclipse.gef4.zest.core.viewers.IEntityStyleProvider
+import org.eclipse.gef4.zest.core.viewers.IFigureProvider
+import org.eclipse.gef4.zest.core.widgets.GraphConnection
 import org.eclipse.gef4.zest.core.widgets.GraphNode
 import org.eclipse.gef4.zest.core.widgets.ZestStyles
 import org.eclipse.jface.viewers.LabelProvider
@@ -14,19 +24,12 @@ import org.eclipse.swt.SWT
 import org.eclipse.swt.graphics.Color
 import org.eclipse.swt.graphics.Font
 import org.eclipse.swt.widgets.Display
-import de.unidue.ecg.dialogScript.dialogScript.FirstTime
-import de.unidue.ecg.dialogScript.dialogScript.Defaults
-import org.eclipse.emf.ecore.EObject
-import de.unidue.ecg.dialogScript.dialogScript.PartingLines
-import org.eclipse.gef4.zest.core.widgets.GraphConnection
-import org.eclipse.draw2d.Label
-import org.eclipse.gef4.zest.core.viewers.IFigureProvider
-import org.eclipse.draw2d.IFigure
-import org.eclipse.draw2d.Ellipse
-import org.eclipse.draw2d.geometry.Dimension
-import org.eclipse.draw2d.geometry.Rectangle
-import org.eclipse.draw2d.RectangleFigure
-import org.eclipse.draw2d.Border
+import org.eclipse.xtext.EcoreUtil2
+import org.eclipse.xtext.xbase.lib.Pair
+import de.unidue.ecg.dialogScript.dialogScript.ConditionalChoiceDialog
+import de.unidue.ecg.dialogScript.dialogScript.ConditionList
+import de.unidue.ecg.dialogScript.dialogScript.OtherwiseChoice
+import java.util.List
 
 class GraphLabelProvider extends LabelProvider implements IFigureProvider, IEntityStyleProvider, IConnectionStyleProvider {
 
@@ -48,28 +51,35 @@ class GraphLabelProvider extends LabelProvider implements IFigureProvider, IEnti
 
 			switch (entity) {
 				Scene:
-					return if (this.view.abbreviate && entity.name.length > 12) {
-						entity.name.substring(0, 8) + ' ...'
-					} else
-						entity.name
+					return abbreviate(entity.name)
 				DialogLine:
-					return entity.character.name.toUpperCase + '\n' + if (this.view.abbreviate &&
-						entity.lines.length > 12) {
-
-						entity.lines.substring(0, 8) + ' ...'
-					} else
-						entity.lines.replaceAll("\\s+", " ")
+					return entity.character.name.toUpperCase + '\n' + abbreviate(entity.lines)
 				Conditional: {
 					return 'Conditional'
 				}
 				Defaults: {
-					return 'Default Lines'
+					return 'Defaults'
 				}
 				FirstTime: {
-					return 'First time condition'
+					return 'First Time'
 				}
 				PartingLines: {
 					return 'Parting'
+				}
+				Hub: {
+					return abbreviate(entity.name)
+				}
+				ChoiceDialog: {
+					return abbreviate(entity.name)
+				}
+				ConditionalChoiceDialog: {
+					return 'Conditional Choices'
+				}
+				ConditionList: {
+					return 'Choices'
+				}
+				OtherwiseChoice: {
+					return 'Choices'
 				}
 				EntityConnectionData: {
 					val source = entity.source
@@ -95,7 +105,7 @@ class GraphLabelProvider extends LabelProvider implements IFigureProvider, IEnti
 								for (otherwise : source.otherwiseList) {
 									if (otherwise.body?.statements.contains(destination)) {
 										if (otherwise.conditionList?.conditions == null) {
-											return "else"
+											return 'else'
 										}
 										return otherwise.conditionList?.conditions.join(
 											'''
@@ -107,11 +117,81 @@ class GraphLabelProvider extends LabelProvider implements IFigureProvider, IEnti
 
 							}
 						}
+						ConditionalChoiceDialog: {
+							switch (destination) {
+								ConditionList: {
+									return source.conditionList?.conditions.join(
+										'''
+											 
+											or
+										''')[name]
+								}
+								OtherwiseChoice case destination.conditionList != null: {
+									destination.conditionList.conditions.join(
+										'''
+											 
+											or
+										''')[name]
+								}
+								OtherwiseChoice case destination.conditionList == null: {
+									return 'else'
+								}
+							}
+						}
+						Statement: {
+							switch (destination) {
+								DialogLine: {
+									val cd = EcoreUtil2.getContainerOfType(destination, ChoiceDialog)
+									if (cd != null && cd.body?.statements.indexOf(destination) == 0)
+										return abbreviate(cd.name)
+								}
+							}
+							return null
+						}
+						Hub: {
+							switch (destination) {
+								DialogLine: {
+									val cd = EcoreUtil2.getContainerOfType(destination, ChoiceDialog)
+									if (cd != null && cd.body?.statements.indexOf(destination) == 0)
+										return abbreviate(cd.name)
+								}
+								EObject: {
+									val cd = this.view.getChoiceHelperMap().get(new Pair(source, destination))
+									if (cd != null) //&& cd.body?.statements.indexOf(destination) == 0)
+										return abbreviate(cd.name)
+								}
+							}
+							return null
+						}
+						ConditionList: {
+							findConnectionTextForCondChoices((source.eContainer as ConditionalChoiceDialog).choiceDialogs, destination as Statement)
+						}
+						OtherwiseChoice: {
+							findConnectionTextForCondChoices(source.choices, destination as Statement)
+						}
 					}
 				}
 			}
 
 		}
+	}
+
+	private def findConnectionTextForCondChoices(List<ChoiceDialog> choices, Statement destination) {
+
+		for (ChoiceDialog candidate : choices) {
+			if (candidate.body?.statements.contains(destination)) {
+				return abbreviate(candidate.name)
+			}
+		}
+
+		return null
+	}
+
+	private def abbreviate(String text) {
+		if (this.view.abbreviate && text.length > 12) {
+			text.replaceAll("\\s+", " ").substring(0, 8) + ' ...'
+		} else
+			text.replaceAll("\\s+", " ")
 	}
 
 	override fisheyeNode(Object entity) {
@@ -126,10 +206,18 @@ class GraphLabelProvider extends LabelProvider implements IFigureProvider, IEnti
 				new Color(Display.^default, 255, 175, 0)
 			Conditional:
 				new Color(Display.^default, 255, 215, 0)
+			ConditionalChoiceDialog:
+				new Color(Display.^default, 255, 215, 0)
+			OtherwiseChoice:
+				new Color(Display.^default, 255, 175, 0)
+			ConditionList:
+				new Color(Display.^default, 255, 175, 0)
 			Scene:
 				new Color(Display.^default, 255, 255, 255)
 			PartingLines:
 				new Color(Display.^default, 255, 175, 0)
+			Hub:
+				new Color(Display.^default, 0, 200, 0)
 		}
 	}
 
@@ -144,6 +232,8 @@ class GraphLabelProvider extends LabelProvider implements IFigureProvider, IEnti
 			Defaults: {
 				return new Color(Display.^default, 0, 0, 0)
 			}
+			Hub:
+				new Color(Display.^default, 0, 80, 0)
 			default: {
 				return new Color(Display.^default, 20, 60, 255)
 			}
@@ -151,6 +241,13 @@ class GraphLabelProvider extends LabelProvider implements IFigureProvider, IEnti
 	}
 
 	override getBorderHighlightColor(Object entity) {
+		switch (entity) {
+			Hub:
+				new Color(Display.^default, 0, 80, 0)
+			default: {
+				null
+			}
+		}
 	}
 
 	override getBorderWidth(Object entity) {
@@ -187,6 +284,8 @@ class GraphLabelProvider extends LabelProvider implements IFigureProvider, IEnti
 				new Color(Display.^default, 0, 0, 0)
 			PartingLines:
 				new Color(Display.^default, 0, 0, 0)
+			Hub:
+				new Color(Display.^default, 255, 255, 255)
 		}
 	}
 
@@ -215,7 +314,8 @@ class GraphLabelProvider extends LabelProvider implements IFigureProvider, IEnti
 
 	override getTooltip(Object entity) {
 		switch (entity) {
-			case (entity instanceof DialogLine || entity instanceof Scene): {
+			case (entity instanceof DialogLine || entity instanceof Scene || entity instanceof Hub ||
+				entity instanceof ChoiceDialog || entity instanceof EntityConnectionData): {
 				val temp = this.view.abbreviate
 				this.view.abbreviate = false
 				val tt = new Label(getText(entity))
@@ -227,6 +327,17 @@ class GraphLabelProvider extends LabelProvider implements IFigureProvider, IEnti
 	}
 
 	override getColor(Object rel) {
+		switch (rel) {
+			EntityConnectionData: {
+				val destination = rel.dest
+				switch (destination) {
+					EObject case EcoreUtil2.getContainerOfType(destination, ChoiceDialog) != null || this.view.
+						choiceHelperMap.get(new Pair(rel.source as EObject, destination)) != null: {
+						return new Color(Display.^default, 200, 0, 0)
+					}
+				}
+			}
+		}
 		new Color(Display.^default, 0, 0, 0)
 	}
 
@@ -249,13 +360,9 @@ class GraphLabelProvider extends LabelProvider implements IFigureProvider, IEnti
 	override getRouter(Object rel) {
 		null
 	}
-	
+
 	override getFigure(Object element) {
-//		var figure = new RectangleFigure()
-//		figure.size = new Dimension(100,40)
-//		figure.setBackgroundColor(new Color(Display.^default, 128,214,254))
-//		
-//		return figure
+		null
 	}
 
 //	override selfStyleConnection(Object element, GraphConnection connection) {
