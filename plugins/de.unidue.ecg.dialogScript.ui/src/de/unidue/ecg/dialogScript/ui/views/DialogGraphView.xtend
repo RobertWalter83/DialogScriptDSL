@@ -22,7 +22,6 @@ import org.eclipse.swt.widgets.Display
 import org.eclipse.ui.part.ViewPart
 import org.eclipse.xtext.EcoreUtil2
 import org.eclipse.xtext.xbase.lib.Pair
-import org.eclipse.gef4.layout.algorithms.SpaceTreeLayoutAlgorithm
 
 @Singleton
 class DialogGraphView extends ViewPart implements IZoomableWorkbenchPart {
@@ -63,11 +62,11 @@ class DialogGraphView extends ViewPart implements IZoomableWorkbenchPart {
 
 		vertNodeSpace = new Dimension(120d, 100d)
 		horizNodeSpace = new Dimension(160d, 100d)
-//		defaultAlgorithm = new TreeLayoutAlgorithm(TreeLayoutAlgorithm.TOP_DOWN, vertNodeSpace)
-//		graphViewer.setLayoutAlgorithm(defaultAlgorithm)
+		defaultAlgorithm = new TreeLayoutAlgorithm(TreeLayoutAlgorithm.TOP_DOWN, vertNodeSpace)
+		graphViewer.setLayoutAlgorithm(defaultAlgorithm)
 
-		val stl = new SpaceTreeLayoutAlgorithm(TreeLayoutAlgorithm.TOP_DOWN, false)
-		graphViewer.setLayoutAlgorithm(stl)
+//		val stl = new SpaceTreeLayoutAlgorithm(TreeLayoutAlgorithm.TOP_DOWN, false)
+//		graphViewer.setLayoutAlgorithm(stl)
 		
 
 		fillToolBar

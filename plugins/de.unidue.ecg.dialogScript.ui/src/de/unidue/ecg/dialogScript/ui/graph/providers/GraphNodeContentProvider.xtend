@@ -15,7 +15,6 @@ import de.unidue.ecg.dialogScript.dialogScript.InvokeHub
 import de.unidue.ecg.dialogScript.dialogScript.InvokeScene
 import de.unidue.ecg.dialogScript.dialogScript.PartingLines
 import de.unidue.ecg.dialogScript.dialogScript.Scene
-import de.unidue.ecg.dialogScript.dialogScript.Statement
 import java.util.List
 import org.eclipse.emf.ecore.EObject
 import org.eclipse.gef4.zest.core.viewers.IGraphEntityContentProvider
@@ -99,8 +98,8 @@ class GraphNodeContentProvider extends ArrayContentProvider implements IGraphEnt
 			}
 		}
 
-		// we looked at all siblings and found sth, but
-		// if our blocks ends with an conditional without an else branch, we need to look further
+		// we looked at all siblings but
+		// if our blocks ends with a conditional without an else branch, we need to look further
 		// we can pass the last element of our actualSiblings since this case is only true if the last sibling
 		// is a conditional with no else branch (I guess)
 		if (needsSibling && !actualSiblings.empty) {
@@ -239,48 +238,6 @@ class GraphNodeContentProvider extends ArrayContentProvider implements IGraphEnt
 
 		result.addAll(getActualSiblingsFor(in, in.hubFragments))
 
-		//		val candidate = in.hubFragments.head
-		//		if (candidate != null) {
-		//			switch (candidate) {
-		//				DialogLine: { // we are done when we find a dialogLine
-		//					result.add(candidate)
-		//				}
-		//				ChoiceDialog: { // hub directly contains choices. we need to find all for this "virtual group"
-		//					result.addAll(getAllDestinations(in, candidate))
-		//					var lookForNextChoice = true
-		//					var EObject nextSibling = candidate
-		//					while (lookForNextChoice) { // look for all direct choice siblings and add them
-		//						nextSibling = EcoreUtil2.getNextSibling(nextSibling)
-		//						if (nextSibling != null) {
-		//							val nextChoice = nextSibling as HubFragment
-		//							switch (nextChoice) {
-		//								ChoiceDialog: {
-		//									result.addAll(getAllDestinations(in, nextChoice))
-		//								}
-		//								default:
-		//									lookForNextChoice = false
-		//							}
-		//						} else {
-		//							lookForNextChoice = false
-		//						}
-		//					}
-		//				}
-		//				Conditional: {
-		//					val actualSiblings = getSiblingsInCaseOfCondition(in, hubFragments)
-		//
-		//					if (!actualSiblings.empty) {
-		//						result.addAll(actualSiblings)
-		//					}
-		//				}
-		//				ConditionalChoiceDialog: {
-		//					val actualSiblings = getSiblingsInCaseOfCondition(in, hubFragments)
-		//
-		//					if (!actualSiblings.empty) {
-		//						result.addAll(actualSiblings)
-		//					}
-		//				}
-		//			}
-		//		}
 		return result
 	}
 
@@ -387,62 +344,20 @@ class GraphNodeContentProvider extends ArrayContentProvider implements IGraphEnt
 				} else {
 					result.add(dialog.recursives?.head)
 				}
-				return result
 			}
 			FirstTime: {
 				val dialog = context.eContainer as Dialog
 				if (dialog.recursives.empty && dialog.partingLines != null) {
 					result.add(dialog.partingLines)
 				} else {
-					result.add(dialog.recursives?.head)
+					//result.add(dialog.recursives?.head)
+					result.addAll(getActualSiblingsFor(context, dialog.recursives))
 				}
-				return result
 			}
 			Conditional: {
 				val candidates = newArrayList
 				context.getAllFollowingSiblings(candidates)
 				result.addAll(getActualSiblingsFor(context, candidates))
-
-			//				if (nextSibling != null) {
-			//
-			//					switch (nextSibling) {
-			//						DialogLine: {
-			//							result.add(nextSibling)
-			//							return result
-			//						}
-			//						Conditional: {
-			//							val candidates = newArrayList
-			//							getAllFollowingSiblings(context, candidates)
-			//							result.addAll(getActualSiblingsFor(context, candidates))
-			//							return result
-			//						}
-			//						ConditionalChoiceDialog: {
-			//							result.add(nextSibling)
-			//							return result
-			//						}
-			//						ChoiceDialog: {
-			//
-			//							var lookForNextChoice = true
-			//							var EObject next = context
-			//							while (lookForNextChoice) { // look for all direct choice siblings and add them
-			//								next = EcoreUtil2.getNextSibling(next)
-			//								if (next != null) {
-			//									val nextChoice = next as HubFragment
-			//									switch (nextChoice) {
-			//										ChoiceDialog: {
-			//											result.addAll(getAllDestinations(in, nextChoice))
-			//										}
-			//										default:
-			//											lookForNextChoice = false
-			//									}
-			//								} else {
-			//									lookForNextChoice = false
-			//								}
-			//							}
-			//							return result
-			//						}
-			//					}
-			//				}
 			}
 			ConditionalChoiceDialog: {
 				val candidates = newArrayList
@@ -453,24 +368,6 @@ class GraphNodeContentProvider extends ArrayContentProvider implements IGraphEnt
 				val candidates = newArrayList
 				context.getAllFollowingSiblings(candidates)
 				result.addAll(getActualSiblingsFor(context, candidates.filter[!(it instanceof ChoiceDialog)]))
-
-			//				var nextSibling = EcoreUtil2.getNextSibling(context)
-			//
-			//				while (nextSibling != null) {
-			//					switch (nextSibling) {
-			//						Statement: {
-			//							result.add(nextSibling)
-			//							return result
-			//						}
-			//						ConditionalChoiceDialog: {
-			//							result.add(nextSibling)
-			//							return result
-			//						}
-			//						ChoiceDialog: {
-			//							nextSibling = EcoreUtil2.getNextSibling(nextSibling)
-			//						}
-			//					}
-			//				}
 			}
 			PartingLines: {
 
